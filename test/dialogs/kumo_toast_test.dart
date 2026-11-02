@@ -29,11 +29,22 @@ class _Host extends StatelessWidget {
   }
 }
 
-Future<void> _pumpHost(WidgetTester tester, {Size size = kumoPhoneSize, int limit = 3, bool reduce = false, Brightness brightness = Brightness.light}) =>
-    pumpKumo(tester, _Host(limit: limit), center: false, size: size, disableAnimations: reduce, brightness: brightness);
+Future<void> _pumpHost(
+  WidgetTester tester, {
+  Size size = kumoPhoneSize,
+  int limit = 3,
+  bool reduce = false,
+  Brightness brightness = Brightness.light,
+}) => pumpKumo(
+  tester,
+  _Host(limit: limit),
+  center: false,
+  size: size,
+  disableAnimations: reduce,
+  brightness: brightness,
+);
 
-Finder _surfaceOf(String title) =>
-    find.ancestor(of: find.text(title), matching: find.byType(DecoratedBox)).last;
+Finder _surfaceOf(String title) => find.ancestor(of: find.text(title), matching: find.byType(DecoratedBox)).last;
 
 void main() {
   for (final brightness in Brightness.values) {
@@ -374,10 +385,15 @@ void main() {
 
   testWidgets('KumoToast.of explains a missing toaster', (tester) async {
     late BuildContext captured;
-    await pumpKumo(tester, Builder(builder: (context) {
-      captured = context;
-      return const SizedBox();
-    }));
+    await pumpKumo(
+      tester,
+      Builder(
+        builder: (context) {
+          captured = context;
+          return const SizedBox();
+        },
+      ),
+    );
     expect(() => KumoToast.of(captured), throwsA(isA<FlutterError>()));
     expect(KumoToast.maybeOf(captured), isNull);
   });
@@ -430,8 +446,10 @@ void main() {
       _toasts.update(id, (toast) => toast.copyWith(title: 'image-resizer deployed', variant: KumoToastVariant.success));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 60));
-      double fade(String text) =>
-          tester.widget<FadeTransition>(find.ancestor(of: find.text(text), matching: find.byType(FadeTransition)).first).opacity.value;
+      double fade(String text) => tester
+          .widget<FadeTransition>(find.ancestor(of: find.text(text), matching: find.byType(FadeTransition)).first)
+          .opacity
+          .value;
       final incoming = fade('image-resizer deployed');
       final outgoing = fade('Deploying image-resizer');
       expect(incoming, greaterThan(0));

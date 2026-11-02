@@ -44,10 +44,16 @@ void main() {
   testWidgets('of(context) follows the theme mode', (tester) async {
     for (final b in Brightness.values) {
       late KumoChartColors palette;
-      await pumpKumo(tester, Builder(builder: (context) {
-        palette = KumoChartColors.of(context);
-        return const SizedBox();
-      }), brightness: b);
+      await pumpKumo(
+        tester,
+        Builder(
+          builder: (context) {
+            palette = KumoChartColors.of(context);
+            return const SizedBox();
+          },
+        ),
+        brightness: b,
+      );
       expect(palette.brightness, b);
       expect(identical(palette, KumoChartColors.forBrightness(b)), isTrue);
     }

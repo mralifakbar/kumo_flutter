@@ -9,30 +9,31 @@ import '../helpers/harness.dart';
 
 final _t0 = DateTime.utc(2026, 3, 4, 14);
 
-List<(DateTime, double)> _points(int n, double Function(int i) f, {Duration step = const Duration(minutes: 1)}) =>
-    [for (var i = 0; i < n; i++) (_t0.add(step * i), f(i))];
+List<(DateTime, double)> _points(int n, double Function(int i) f, {Duration step = const Duration(minutes: 1)}) => [
+  for (var i = 0; i < n; i++) (_t0.add(step * i), f(i)),
+];
 
 List<KumoTimeseriesData> _series() => [
-      KumoTimeseriesData(
-        name: 'Requests',
-        color: KumoChartColors.light.semantic(KumoChartSemanticColor.neutral),
-        data: _points(30, (i) => 100 + i * 2.0),
-      ),
-      KumoTimeseriesData(
-        name: 'Errors',
-        color: KumoChartColors.light.semantic(KumoChartSemanticColor.attention),
-        data: _points(30, (i) => (i % 5).toDouble()),
-        lineStyle: KumoTimeseriesLineStyle.dashed,
-      ),
-    ];
+  KumoTimeseriesData(
+    name: 'Requests',
+    color: KumoChartColors.light.semantic(KumoChartSemanticColor.neutral),
+    data: _points(30, (i) => 100 + i * 2.0),
+  ),
+  KumoTimeseriesData(
+    name: 'Errors',
+    color: KumoChartColors.light.semantic(KumoChartSemanticColor.attention),
+    data: _points(30, (i) => (i % 5).toDouble()),
+    lineStyle: KumoTimeseriesLineStyle.dashed,
+  ),
+];
 
 Finder get _chart => find.byType(KumoTimeseriesChart);
 
 /// The chart's own semantics node (its summary and active point).
 Finder get _chartNode => find.descendant(
-      of: _chart,
-      matching: find.byWidgetPredicate((w) => w is Semantics && (w.properties.label?.contains(' chart, ') ?? false)),
-    );
+  of: _chart,
+  matching: find.byWidgetPredicate((w) => w is Semantics && (w.properties.label?.contains(' chart, ') ?? false)),
+);
 
 Future<TestGesture> _hover(WidgetTester tester, Offset at) async {
   final gesture = await tester.createGesture(kind: PointerDeviceKind.mouse);
@@ -56,8 +57,17 @@ void main() {
             xAxisName: 'Time (UTC)',
             yAxisName: 'Count',
             thresholds: [
-              KumoTimeseriesThreshold(value: 150, label: 'Limit', color: KumoChartColors.light.semantic(KumoChartSemanticColor.attention)),
-              KumoTimeseriesThreshold(value: 40, endValue: 60, label: 'Target', color: KumoChartColors.light.semantic(KumoChartSemanticColor.success)),
+              KumoTimeseriesThreshold(
+                value: 150,
+                label: 'Limit',
+                color: KumoChartColors.light.semantic(KumoChartSemanticColor.attention),
+              ),
+              KumoTimeseriesThreshold(
+                value: 40,
+                endValue: 60,
+                label: 'Target',
+                color: KumoChartColors.light.semantic(KumoChartSemanticColor.success),
+              ),
             ],
             markers: [KumoTimeseriesMarker(time: _t0.add(const Duration(minutes: 10)), label: 'Deploy 4f2c1a9')],
             incomplete: KumoTimeseriesIncomplete(after: _t0.add(const Duration(minutes: 25))),
@@ -101,7 +111,11 @@ void main() {
   testWidgets('hovering shows a tooltip with every series, largest first, formatted', (tester) async {
     await pumpKumo(
       tester,
-      KumoTimeseriesChart(data: _series(), tooltipValueFormat: (v) => '${v.toStringAsFixed(0)} req', tooltipFooter: 'Sample data'),
+      KumoTimeseriesChart(
+        data: _series(),
+        tooltipValueFormat: (v) => '${v.toStringAsFixed(0)} req',
+        tooltipFooter: 'Sample data',
+      ),
     );
     expect(find.text('Requests'), findsNothing);
     await _hover(tester, tester.getCenter(_chart));
@@ -146,7 +160,11 @@ void main() {
         tooltipMaxItems: 2,
         data: [
           for (var s = 0; s < 4; s++)
-            KumoTimeseriesData(name: 'zone-$s', color: KumoChartColors.light.categorical(s), data: _points(10, (i) => s * 10.0 + i)),
+            KumoTimeseriesData(
+              name: 'zone-$s',
+              color: KumoChartColors.light.categorical(s),
+              data: _points(10, (i) => s * 10.0 + i),
+            ),
         ],
       ),
     );
@@ -186,7 +204,11 @@ void main() {
       KumoTimeseriesChart(
         data: _series(),
         markers: [
-          for (var i = 0; i < 3; i++) KumoTimeseriesMarker(time: _t0.add(Duration(minutes: 10 + i)), label: 'change $i'),
+          for (var i = 0; i < 3; i++)
+            KumoTimeseriesMarker(
+              time: _t0.add(Duration(minutes: 10 + i)),
+              label: 'change $i',
+            ),
         ],
       ),
     );
@@ -235,10 +257,12 @@ void main() {
   testWidgets('touch: a vertical drag scrolls the page and drops the tooltip', (tester) async {
     await pumpKumo(
       tester,
-      ListView(children: [
-        KumoTimeseriesChart(data: _series(), tooltipTimestampFormat: (d) => 'minute ${d.minute}'),
-        const SizedBox(height: 1000),
-      ]),
+      ListView(
+        children: [
+          KumoTimeseriesChart(data: _series(), tooltipTimestampFormat: (d) => 'minute ${d.minute}'),
+          const SizedBox(height: 1000),
+        ],
+      ),
       center: false,
     );
     final rect = tester.getRect(_chart);
@@ -292,7 +316,10 @@ void main() {
   testWidgets('legend toggles series, controlled and uncontrolled', (tester) async {
     final handle = tester.ensureSemantics();
     Set<String>? reported;
-    await pumpKumo(tester, KumoTimeseriesChart(data: _series(), showLegend: true, onHiddenSeriesChange: (s) => reported = s));
+    await pumpKumo(
+      tester,
+      KumoTimeseriesChart(data: _series(), showLegend: true, onHiddenSeriesChange: (s) => reported = s),
+    );
     expect(find.text('Requests'), findsOneWidget);
     await tester.tap(find.text('Errors'));
     await tester.pumpAndSettle();
@@ -303,7 +330,12 @@ void main() {
     // Controlled: the widget reflects the set it is given and only reports.
     await pumpKumo(
       tester,
-      KumoTimeseriesChart(data: _series(), showLegend: true, hiddenSeries: const {'Requests'}, onHiddenSeriesChange: (s) => reported = s),
+      KumoTimeseriesChart(
+        data: _series(),
+        showLegend: true,
+        hiddenSeries: const {'Requests'},
+        onHiddenSeriesChange: (s) => reported = s,
+      ),
     );
     expect(tester.getSemantics(_chartNode).label, contains('Hidden: Requests'));
     await tester.tap(find.text('Requests'));
@@ -337,11 +369,16 @@ void main() {
     expect(tester.hasRunningAnimations, isFalse);
   });
 
-  testWidgets('loading shows the skeleton; the sheen runs only while loading and never under reduced motion',
-      (tester) async {
+  testWidgets('loading shows the skeleton; the sheen runs only while loading and never under reduced motion', (
+    tester,
+  ) async {
     final handle = tester.ensureSemantics();
     for (final type in KumoTimeseriesChartType.values) {
-      await pumpKumo(tester, KumoTimeseriesChart(data: const [], type: type, loading: true, showLegend: true), settle: false);
+      await pumpKumo(
+        tester,
+        KumoTimeseriesChart(data: const [], type: type, loading: true, showLegend: true),
+        settle: false,
+      );
       await tester.pump(const Duration(milliseconds: 100));
       expect(find.bySemanticsLabel('Loading chart'), findsOneWidget);
       expect(tester.hasRunningAnimations, isTrue);
@@ -357,7 +394,11 @@ void main() {
     var retries = 0;
     await pumpKumo(
       tester,
-      KumoTimeseriesChart(data: _series(), error: 'Could not load requests. Check your connection, then retry.', onRetry: () => retries++),
+      KumoTimeseriesChart(
+        data: _series(),
+        error: 'Could not load requests. Check your connection, then retry.',
+        onRetry: () => retries++,
+      ),
     );
     expect(find.text('Could not load requests. Check your connection, then retry.'), findsOneWidget);
     expect(find.byIcon(KumoIcons.warningCircle), findsOneWidget);
@@ -366,7 +407,12 @@ void main() {
   });
 
   testWidgets('empty state when no series has a point', (tester) async {
-    await pumpKumo(tester, const KumoTimeseriesChart(data: [KumoTimeseriesData(name: 'Requests', color: Color(0xFF4290F0), data: [])]));
+    await pumpKumo(
+      tester,
+      const KumoTimeseriesChart(
+        data: [KumoTimeseriesData(name: 'Requests', color: Color(0xFF4290F0), data: [])],
+      ),
+    );
     expect(find.text('No data in this time range'), findsOneWidget);
     expect(find.text('Choose a longer time range to see earlier data.'), findsOneWidget);
   });
@@ -376,10 +422,13 @@ void main() {
     DateTime? to;
     await pumpKumo(
       tester,
-      KumoTimeseriesChart(data: _series(), onTimeRangeChange: (a, b) {
-        from = a;
-        to = b;
-      }),
+      KumoTimeseriesChart(
+        data: _series(),
+        onTimeRangeChange: (a, b) {
+          from = a;
+          to = b;
+        },
+      ),
     );
     final rect = tester.getRect(_chart);
     final g = await tester.startGesture(rect.centerLeft + const Offset(80, 0), kind: PointerDeviceKind.mouse);
@@ -397,23 +446,39 @@ void main() {
   testWidgets('NaN values and unsorted input do not throw', (tester) async {
     await pumpKumo(
       tester,
-      KumoTimeseriesChart(data: [
-        KumoTimeseriesData(
-          name: 'Requests',
-          color: const Color(0xFF4290F0),
-          data: [..._points(10, (i) => i == 4 ? double.nan : i.toDouble()).reversed],
-        ),
-      ]),
+      KumoTimeseriesChart(
+        data: [
+          KumoTimeseriesData(
+            name: 'Requests',
+            color: const Color(0xFF4290F0),
+            data: [..._points(10, (i) => i == 4 ? double.nan : i.toDouble()).reversed],
+          ),
+        ],
+      ),
     );
     await _hover(tester, tester.getCenter(_chart));
     expect(tester.takeException(), isNull);
   });
 
   testWidgets('time labels adapt from seconds to years without errors', (tester) async {
-    for (final step in const [Duration(seconds: 1), Duration(minutes: 30), Duration(days: 1), Duration(days: 40), Duration(days: 400)]) {
+    for (final step in const [
+      Duration(seconds: 1),
+      Duration(minutes: 30),
+      Duration(days: 1),
+      Duration(days: 40),
+      Duration(days: 400),
+    ]) {
       await pumpKumo(
         tester,
-        KumoTimeseriesChart(data: [KumoTimeseriesData(name: 'Requests', color: const Color(0xFF4290F0), data: _points(40, (i) => i * 1.5, step: step))]),
+        KumoTimeseriesChart(
+          data: [
+            KumoTimeseriesData(
+              name: 'Requests',
+              color: const Color(0xFF4290F0),
+              data: _points(40, (i) => i * 1.5, step: step),
+            ),
+          ],
+        ),
       );
       expect(tester.takeException(), isNull);
     }

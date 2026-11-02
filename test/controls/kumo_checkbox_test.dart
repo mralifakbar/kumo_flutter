@@ -63,7 +63,10 @@ void main() {
 
     testWidgets('disabled and callback-less checkboxes do not fire', (tester) async {
       var calls = 0;
-      await pumpKumo(tester, KumoCheckbox(label: 'Locked', checked: false, disabled: true, onCheckedChange: (_) => calls++));
+      await pumpKumo(
+        tester,
+        KumoCheckbox(label: 'Locked', checked: false, disabled: true, onCheckedChange: (_) => calls++),
+      );
       await tester.tap(find.text('Locked'));
       await pumpKumo(tester, const KumoCheckbox(label: 'Read only', checked: true));
       await tester.tap(find.text('Read only'));
@@ -77,7 +80,10 @@ void main() {
         tester,
         controlled<bool>(false, (v, set) => KumoCheckbox(label: 'Always use HTTPS', checked: v, onCheckedChange: set)),
       );
-      expect(tester.getSemantics(find.byType(KumoCheckbox)), containsSemantics(isChecked: false, hasCheckedState: true));
+      expect(
+        tester.getSemantics(find.byType(KumoCheckbox)),
+        containsSemantics(isChecked: false, hasCheckedState: true),
+      );
       await tester.tap(find.byType(KumoCheckbox));
       await tester.pumpAndSettle();
       expect(tester.getSemantics(find.byType(KumoCheckbox)), containsSemantics(isChecked: true, hasCheckedState: true));
@@ -86,7 +92,10 @@ void main() {
 
     testWidgets('semantics: checkbox role, label, mixed state, not a button', (tester) async {
       final handle = tester.ensureSemantics();
-      await pumpKumo(tester, KumoCheckbox(label: 'Select all', checked: false, indeterminate: true, onCheckedChange: (_) {}));
+      await pumpKumo(
+        tester,
+        KumoCheckbox(label: 'Select all', checked: false, indeterminate: true, onCheckedChange: (_) {}),
+      );
       expect(
         tester.getSemantics(find.byType(KumoCheckbox)),
         containsSemantics(
@@ -98,7 +107,10 @@ void main() {
           hasTapAction: true,
         ),
       );
-      await pumpKumo(tester, KumoCheckbox(semanticLabel: 'Select image-resizer', checked: true, onCheckedChange: (_) {}));
+      await pumpKumo(
+        tester,
+        KumoCheckbox(semanticLabel: 'Select image-resizer', checked: true, onCheckedChange: (_) {}),
+      );
       expect(find.bySemanticsLabel('Select image-resizer'), findsOneWidget);
       handle.dispose();
     });
@@ -143,7 +155,10 @@ void main() {
     });
 
     testWidgets('label first places the box after the label, in RTL too', (tester) async {
-      await pumpKumo(tester, KumoCheckbox(label: 'Remember me', controlFirst: false, checked: false, onCheckedChange: (_) {}));
+      await pumpKumo(
+        tester,
+        KumoCheckbox(label: 'Remember me', controlFirst: false, checked: false, onCheckedChange: (_) {}),
+      );
       final box = find.descendant(of: find.byType(KumoCheckbox), matching: find.byType(DecoratedBox)).first;
       expect(tester.getCenter(box).dx, greaterThan(tester.getCenter(find.text('Remember me')).dx));
       await pumpKumo(
@@ -231,7 +246,12 @@ void main() {
       final handle = tester.ensureSemantics();
       await pumpKumo(
         tester,
-        KumoCheckboxGroup<String>(error: 'Pick at least one alert', value: const [], onValueChange: (_) {}, items: _items),
+        KumoCheckboxGroup<String>(
+          error: 'Pick at least one alert',
+          value: const [],
+          onValueChange: (_) {},
+          items: _items,
+        ),
       );
       expect(tester.getSemantics(find.text('Pick at least one alert')), containsSemantics(isLiveRegion: true));
       handle.dispose();
@@ -241,7 +261,13 @@ void main() {
       final handle = tester.ensureSemantics();
       await pumpKumo(
         tester,
-        KumoCheckboxGroup<String>(legend: 'Alerts', hideLegend: true, value: const [], onValueChange: (_) {}, items: _items),
+        KumoCheckboxGroup<String>(
+          legend: 'Alerts',
+          hideLegend: true,
+          value: const [],
+          onValueChange: (_) {},
+          items: _items,
+        ),
       );
       expect(find.text('Alerts'), findsNothing);
       expect(find.bySemanticsLabel('Alerts'), findsOneWidget);
@@ -301,7 +327,11 @@ void main() {
     await tester.pumpAndSettle();
     expect(scale(), 1);
 
-    await pumpKumo(tester, KumoCheckbox(label: 'Purge cache', checked: false, onCheckedChange: (_) {}), disableAnimations: true);
+    await pumpKumo(
+      tester,
+      KumoCheckbox(label: 'Purge cache', checked: false, onCheckedChange: (_) {}),
+      disableAnimations: true,
+    );
     final g2 = await tester.startGesture(tester.getCenter(find.text('Purge cache')));
     await tester.pump(const Duration(milliseconds: 150));
     expect(scale(), 1);

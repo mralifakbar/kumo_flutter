@@ -657,7 +657,8 @@ class _KumoTimeseriesChartState extends State<KumoTimeseriesChart> with SingleTi
   @override
   void didUpdateWidget(KumoTimeseriesChart old) {
     super.didUpdateWidget(old);
-    final changed = !listEquals(old.data, widget.data) ||
+    final changed =
+        !listEquals(old.data, widget.data) ||
         old.type != widget.type ||
         !listEquals(old.thresholds, widget.thresholds) ||
         !listEquals(old.markers, widget.markers) ||
@@ -868,13 +869,15 @@ class _KumoTimeseriesChartState extends State<KumoTimeseriesChart> with SingleTi
       }
       for (final g in groups) {
         final first = g.first;
-        clusters.add(_MarkerCluster(
-          first.time.millisecondsSinceEpoch.toDouble(),
-          g.length == 1 ? first.label : '${g.length} changes',
-          first.color,
-          first.lineStyle,
-          g,
-        ));
+        clusters.add(
+          _MarkerCluster(
+            first.time.millisecondsSinceEpoch.toDouble(),
+            g.length == 1 ? first.label : '${g.length} changes',
+            first.color,
+            first.lineStyle,
+            g,
+          ),
+        );
       }
     }
 
@@ -969,9 +972,7 @@ class _KumoTimeseriesChartState extends State<KumoTimeseriesChart> with SingleTi
 
     final thresholdLabels = [
       for (final th in w.thresholds)
-        th.label == null
-            ? null
-            : _layoutText(th.label!, style.copyWith(color: th.color), scaler, maxWidth: plot.width),
+        th.label == null ? null : _layoutText(th.label!, style.copyWith(color: th.color), scaler, maxWidth: plot.width),
     ];
     final markerColor = kumo.colors.textSubtle;
     final markerLabels = [
@@ -1103,7 +1104,10 @@ class _KumoTimeseriesChartState extends State<KumoTimeseriesChart> with SingleTi
     final axes = _axes;
     if (axes == null || _pointer == null) return;
     final frame = _displayed();
-    final i = _nearestIndex(_target.times, _xToMs(frame, axes.plot, _pointer!.dx.clamp(axes.plot.left, axes.plot.right)));
+    final i = _nearestIndex(
+      _target.times,
+      _xToMs(frame, axes.plot, _pointer!.dx.clamp(axes.plot.left, axes.plot.right)),
+    );
     if (_lastSnap != null && i != _lastSnap) kumoHaptic(widget.scrubHaptic);
     _lastSnap = i;
   }
@@ -1184,14 +1188,16 @@ class _KumoTimeseriesChartState extends State<KumoTimeseriesChart> with SingleTi
     if (hidden.isNotEmpty) parts.add('Hidden: ${hidden.join(', ')}');
     for (final th in w.thresholds) {
       final name = th.label ?? 'Threshold';
-      parts.add(th.endValue == null
-          ? '$name at ${_formatValue(th.value)}'
-          : '$name from ${_formatValue(th.value)} to ${_formatValue(th.endValue!)}');
+      parts.add(
+        th.endValue == null
+            ? '$name at ${_formatValue(th.value)}'
+            : '$name from ${_formatValue(th.value)} to ${_formatValue(th.endValue!)}',
+      );
     }
     if (w.markers.isNotEmpty) {
-      parts.add([
-        for (final m in w.markers) '${m.label ?? 'Marker'} at ${_formatChartShortTime(m.time, strings)}',
-      ].join('; '));
+      parts.add(
+        [for (final m in w.markers) '${m.label ?? 'Marker'} at ${_formatChartShortTime(m.time, strings)}'].join('; '),
+      );
     }
     return _summaryCache = '${parts.join('. ')}.';
   }
@@ -1214,53 +1220,59 @@ class _KumoTimeseriesChartState extends State<KumoTimeseriesChart> with SingleTi
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
-      final width = constraints.maxWidth.isFinite ? constraints.maxWidth : 400.0;
-      final height = widget.height ?? (context.kumoIsNarrow ? 260.0 : 350.0);
-      final w = widget;
-      Widget body;
-      final String kind;
-      if (w.loading) {
-        kind = 'loading';
-        body = _ChartSkeleton(
-          shape: _bar ? _SkeletonShape.bar : _SkeletonShape.line,
-          semanticLabel: w.semanticLabel == null
-              ? context.kumoStrings.loadingChart
-              : '${context.kumoStrings.loadingChart}: ${w.semanticLabel}',
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final width = constraints.maxWidth.isFinite ? constraints.maxWidth : 400.0;
+        final height = widget.height ?? (context.kumoIsNarrow ? 260.0 : 350.0);
+        final w = widget;
+        Widget body;
+        final String kind;
+        if (w.loading) {
+          kind = 'loading';
+          body = _ChartSkeleton(
+            shape: _bar ? _SkeletonShape.bar : _SkeletonShape.line,
+            semanticLabel: w.semanticLabel == null
+                ? context.kumoStrings.loadingChart
+                : '${context.kumoStrings.loadingChart}: ${w.semanticLabel}',
+          );
+        } else if (w.error != null) {
+          kind = 'error';
+          body = Semantics(
+            liveRegion: true,
+            child: _ChartMessage(icon: KumoIcons.warningCircle, title: w.error!, onRetry: w.onRetry, danger: true),
+          );
+        } else if (w.data.every((s) => s.data.isEmpty)) {
+          kind = 'empty';
+          body = _ChartMessage(
+            icon: KumoIcons.chartLine,
+            title: w.emptyMessage ?? context.kumoStrings.noDataInRange,
+            description: w.emptyDescription,
+          );
+        } else {
+          kind = 'chart';
+          body = AnimatedBuilder(animation: _morph, builder: (context, _) => _buildChart(context, Size(width, height)));
+        }
+        // The skeleton, chart, error and empty message cross-fade.
+        body = SizedBox(
+          width: width,
+          height: height,
+          child: KumoSwap(
+            duration: KumoDurations.quick,
+            child: KeyedSubtree(key: ValueKey(kind), child: body),
+          ),
         );
-      } else if (w.error != null) {
-        kind = 'error';
-        body = Semantics(
-          liveRegion: true,
-          child: _ChartMessage(icon: KumoIcons.warningCircle, title: w.error!, onRetry: w.onRetry, danger: true),
+        if (!w.showLegend) return body;
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _buildLegend(context),
+            const SizedBox(height: KumoSpace.s2),
+            body,
+          ],
         );
-      } else if (w.data.every((s) => s.data.isEmpty)) {
-        kind = 'empty';
-        body = _ChartMessage(icon: KumoIcons.chartLine, title: w.emptyMessage ?? context.kumoStrings.noDataInRange, description: w.emptyDescription);
-      } else {
-        kind = 'chart';
-        body = AnimatedBuilder(
-          animation: _morph,
-          builder: (context, _) => _buildChart(context, Size(width, height)),
-        );
-      }
-      // The skeleton, chart, error and empty message cross-fade.
-      body = SizedBox(
-        width: width,
-        height: height,
-        child: KumoSwap(duration: KumoDurations.quick, child: KeyedSubtree(key: ValueKey(kind), child: body)),
-      );
-      if (!w.showLegend) return body;
-      return Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _buildLegend(context),
-          const SizedBox(height: KumoSpace.s2),
-          body,
-        ],
-      );
-    });
+      },
+    );
   }
 
   Widget _buildLegend(BuildContext context) {
@@ -1363,11 +1375,7 @@ class _KumoTimeseriesChartState extends State<KumoTimeseriesChart> with SingleTi
       ],
     );
 
-    chart = KumoFocusRing(
-      visible: _focusHighlight,
-      borderRadius: BorderRadius.circular(KumoRadius.lg),
-      child: chart,
-    );
+    chart = KumoFocusRing(visible: _focusHighlight, borderRadius: BorderRadius.circular(KumoRadius.lg), child: chart);
 
     chart = Listener(
       onPointerDown: (e) {
@@ -1495,68 +1503,83 @@ class _KumoTimeseriesChartState extends State<KumoTimeseriesChart> with SingleTi
     if (cluster != null) {
       final markerColor = cluster.color ?? kumo.colors.textSubtle;
       if (cluster.markers.length == 1) {
-        children.add(Padding(
-          padding: const EdgeInsets.only(bottom: KumoSpace.s1),
-          child: Text(_formatTimestamp(cluster.markers.first.time), style: header),
-        ));
+        children.add(
+          Padding(
+            padding: const EdgeInsets.only(bottom: KumoSpace.s1),
+            child: Text(_formatTimestamp(cluster.markers.first.time), style: header),
+          ),
+        );
       }
       for (final (i, m) in cluster.markers.indexed) {
-        children.add(Padding(
-          padding: EdgeInsets.only(top: i == 0 ? 0 : KumoSpace.s1),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Row(
-                spacing: KumoSpace.s2,
-                children: [
-                  _ChartDot(color: m.color ?? markerColor, size: 12),
-                  Flexible(
-                    child: Text(
-                      m.label ?? 'Reference marker',
-                      style: kumo.text(size: KumoTextSize.xs, weight: KumoTypography.medium),
+        children.add(
+          Padding(
+            padding: EdgeInsets.only(top: i == 0 ? 0 : KumoSpace.s1),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Row(
+                  spacing: KumoSpace.s2,
+                  children: [
+                    _ChartDot(color: m.color ?? markerColor, size: 12),
+                    Flexible(
+                      child: Text(
+                        m.label ?? 'Reference marker',
+                        style: kumo.text(size: KumoTextSize.xs, weight: KumoTypography.medium),
+                      ),
                     ),
-                  ),
-                  if (cluster.markers.length > 1)
-                    Text(
-                      _formatTimestamp(m.time),
-                      style: kumo.text(size: KumoTextSize.xs, color: KumoColor.textSubtle),
-                    ),
-                ],
-              ),
-              if (m.description != null)
-                Padding(
-                  padding: const EdgeInsetsDirectional.only(start: KumoSpace.s5, top: KumoSpace.s0_5),
-                  child: Text(m.description!, style: kumo.text(size: KumoTextSize.xs)),
+                    if (cluster.markers.length > 1)
+                      Text(
+                        _formatTimestamp(m.time),
+                        style: kumo.text(size: KumoTextSize.xs, color: KumoColor.textSubtle),
+                      ),
+                  ],
                 ),
-            ],
-          ),
-        ));
-      }
-      if (h.rows.isNotEmpty) {
-        children.add(Padding(
-          padding: const EdgeInsets.only(top: KumoSpace.s2),
-          child: DecoratedBox(
-            decoration: BoxDecoration(border: Border(top: BorderSide(color: kumo.colors.line))),
-            child: Padding(
-              padding: const EdgeInsets.only(top: KumoSpace.s2),
-              child: Column(mainAxisSize: MainAxisSize.min, children: _rowWidgets(context, h)),
+                if (m.description != null)
+                  Padding(
+                    padding: const EdgeInsetsDirectional.only(start: KumoSpace.s5, top: KumoSpace.s0_5),
+                    child: Text(m.description!, style: kumo.text(size: KumoTextSize.xs)),
+                  ),
+              ],
             ),
           ),
-        ));
+        );
+      }
+      if (h.rows.isNotEmpty) {
+        children.add(
+          Padding(
+            padding: const EdgeInsets.only(top: KumoSpace.s2),
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                border: Border(top: BorderSide(color: kumo.colors.line)),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(top: KumoSpace.s2),
+                child: Column(mainAxisSize: MainAxisSize.min, children: _rowWidgets(context, h)),
+              ),
+            ),
+          ),
+        );
       }
     } else {
-      children.add(Padding(
-        padding: const EdgeInsets.only(bottom: KumoSpace.s1),
-        child: Text(_formatTimestamp(_time(h.ms)), style: header),
-      ));
+      children.add(
+        Padding(
+          padding: const EdgeInsets.only(bottom: KumoSpace.s1),
+          child: Text(_formatTimestamp(_time(h.ms)), style: header),
+        ),
+      );
       children.addAll(_rowWidgets(context, h));
     }
     if (widget.tooltipFooter != null) {
-      children.add(Padding(
-        padding: const EdgeInsets.only(top: KumoSpace.s1),
-        child: Text(widget.tooltipFooter!, style: kumo.text(size: KumoTextSize.xs, color: KumoColor.textSubtle)),
-      ));
+      children.add(
+        Padding(
+          padding: const EdgeInsets.only(top: KumoSpace.s1),
+          child: Text(
+            widget.tooltipFooter!,
+            style: kumo.text(size: KumoTextSize.xs, color: KumoColor.textSubtle),
+          ),
+        ),
+      );
     }
     return _ChartTooltipSurface(
       child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.stretch, children: children),
@@ -1564,24 +1587,24 @@ class _KumoTimeseriesChartState extends State<KumoTimeseriesChart> with SingleTi
   }
 
   List<Widget> _rowWidgets(BuildContext context, _TsHover h) => [
-        for (final (name, color, v) in h.rows) _ChartTooltipRow(color: color, name: name, value: _formatValue(v)),
-        if (h.hiddenCount > 0)
-          Padding(
-            padding: const EdgeInsets.only(top: KumoSpace.s1),
-            child: Text(
-              '+${h.hiddenCount} more',
-              style: context.kumo.text(size: KumoTextSize.xs, color: KumoColor.textSubtle),
-            ),
-          ),
-      ];
+    for (final (name, color, v) in h.rows) _ChartTooltipRow(color: color, name: name, value: _formatValue(v)),
+    if (h.hiddenCount > 0)
+      Padding(
+        padding: const EdgeInsets.only(top: KumoSpace.s1),
+        child: Text(
+          '+${h.hiddenCount} more',
+          style: context.kumo.text(size: KumoTextSize.xs, color: KumoColor.textSubtle),
+        ),
+      ),
+  ];
 }
 
 List<double> _linePattern(KumoTimeseriesLineStyle style, double width) => switch (style) {
-      KumoTimeseriesLineStyle.solid => const [],
-      KumoTimeseriesLineStyle.dashed => [width * 3, width * 2],
-      // A near-zero dash with a round cap draws a dot.
-      KumoTimeseriesLineStyle.dotted => [0.01, width * 2.5],
-    };
+  KumoTimeseriesLineStyle.solid => const [],
+  KumoTimeseriesLineStyle.dashed => [width * 3, width * 2],
+  // A near-zero dash with a round cap draws a dot.
+  KumoTimeseriesLineStyle.dotted => [0.01, width * 2.5],
+};
 
 class _TsBasePainter extends CustomPainter {
   _TsBasePainter({
@@ -1632,8 +1655,10 @@ class _TsBasePainter extends CustomPainter {
       if (th.endValue == null) continue;
       final a = _y(th.value);
       final b = _y(th.endValue!);
-      canvas.drawRect(Rect.fromLTRB(plot.left, math.min(a, b), plot.right, math.max(a, b)),
-          Paint()..color = th.color.withValues(alpha: 0.1));
+      canvas.drawRect(
+        Rect.fromLTRB(plot.left, math.min(a, b), plot.right, math.max(a, b)),
+        Paint()..color = th.color.withValues(alpha: 0.1),
+      );
     }
 
     for (final (v, painter) in axes.yTicks) {
@@ -1778,7 +1803,9 @@ class _TsBasePainter extends CustomPainter {
             neg[t] = top;
           }
           final cx = _x(t);
-          sp.bars.add(Rect.fromLTRB(cx - widthPx / 2, math.min(_y(base), _y(top)), cx + widthPx / 2, math.max(_y(base), _y(top))));
+          sp.bars.add(
+            Rect.fromLTRB(cx - widthPx / 2, math.min(_y(base), _y(top)), cx + widthPx / 2, math.max(_y(base), _y(top))),
+          );
         }
         out.add(sp);
       }

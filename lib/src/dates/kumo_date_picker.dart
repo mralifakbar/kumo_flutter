@@ -479,7 +479,9 @@ class _KumoDatePickerState extends State<KumoDatePicker> {
   Widget build(BuildContext context) {
     final strings = context.kumoStrings;
     final display = _display(strings);
-    final placeholder = widget.placeholder ?? (widget.mode == KumoCalendarMode.single ? context.kumoStrings.pickDate : context.kumoStrings.pickDates);
+    final placeholder =
+        widget.placeholder ??
+        (widget.mode == KumoCalendarMode.single ? context.kumoStrings.pickDate : context.kumoStrings.pickDates);
     final trigger = KumoDatesPanelHost(
       open: _open && !widget.disabled,
       onOpenChange: _setOpen,

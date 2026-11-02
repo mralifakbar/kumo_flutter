@@ -67,23 +67,23 @@ class _DataScrollFadeState extends State<DataScrollFade> {
   Widget build(BuildContext context) {
     final transparent = widget.color.withValues(alpha: 0);
     Widget fade(bool start) => PositionedDirectional(
-          start: start ? 0 : null,
-          end: start ? null : 0,
-          top: widget.top,
-          bottom: 0,
-          width: widget.width,
-          child: IgnorePointer(
-            child: DecoratedBox(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: start ? AlignmentDirectional.centerStart : AlignmentDirectional.centerEnd,
-                  end: start ? AlignmentDirectional.centerEnd : AlignmentDirectional.centerStart,
-                  colors: [widget.color, transparent],
-                ),
-              ),
+      start: start ? 0 : null,
+      end: start ? null : 0,
+      top: widget.top,
+      bottom: 0,
+      width: widget.width,
+      child: IgnorePointer(
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: start ? AlignmentDirectional.centerStart : AlignmentDirectional.centerEnd,
+              end: start ? AlignmentDirectional.centerEnd : AlignmentDirectional.centerStart,
+              colors: [widget.color, transparent],
             ),
           ),
-        );
+        ),
+      ),
+    );
     return NotificationListener<ScrollMetricsNotification>(
       onNotification: (n) => n.depth == 0 && _onMetrics(n.metrics),
       child: NotificationListener<ScrollUpdateNotification>(

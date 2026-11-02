@@ -42,29 +42,48 @@ class _IconsPageState extends State<IconsPage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             DecoratedBox(
-              decoration: BoxDecoration(border: Border(bottom: BorderSide(color: kumo.colors.hairline))),
+              decoration: BoxDecoration(
+                border: Border(bottom: BorderSide(color: kumo.colors.hairline)),
+              ),
               child: Padding(
-                padding: EdgeInsets.fromLTRB(gutter - KumoSpace.s2, KumoSpace.s1, gutter - KumoSpace.s2, KumoSpace.s1),
-                child: Row(children: [
-                  KumoButton(
-                    icon: KumoIcons.arrowLeft,
-                    shape: KumoButtonShape.square,
-                    variant: KumoButtonVariant.ghost,
-                    semanticLabel: 'Back',
-                    onPress: () => Navigator.of(context).maybePop(),
-                  ),
-                  const Spacer(),
-                  const ThemeModeButton(),
-                ]),
+                padding: EdgeInsets.fromLTRB(
+                  gutter - KumoSpace.s2,
+                  KumoSpace.s1,
+                  gutter - KumoSpace.s2,
+                  KumoSpace.s1,
+                ),
+                child: Row(
+                  children: [
+                    KumoButton(
+                      icon: KumoIcons.arrowLeft,
+                      shape: KumoButtonShape.square,
+                      variant: KumoButtonVariant.ghost,
+                      semanticLabel: 'Back',
+                      onPress: () => Navigator.of(context).maybePop(),
+                    ),
+                    const Spacer(),
+                    const ThemeModeButton(),
+                  ],
+                ),
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(gutter, KumoSpace.s6, gutter, KumoSpace.s3),
+              padding: EdgeInsets.fromLTRB(
+                gutter,
+                KumoSpace.s6,
+                gutter,
+                KumoSpace.s3,
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 spacing: KumoSpace.s3,
                 children: [
-                  const KumoText('Icons', variant: KumoTextVariant.heading, size: KumoTextSize.lg, headingLevel: 1),
+                  const KumoText(
+                    'Icons',
+                    variant: KumoTextVariant.heading,
+                    size: KumoTextSize.lg,
+                    headingLevel: 1,
+                  ),
                   Row(
                     spacing: KumoSpace.s2,
                     children: [
@@ -89,7 +108,9 @@ class _IconsPageState extends State<IconsPage> {
                     ],
                   ),
                   KumoText(
-                    results.isEmpty ? 'No icons match "$_query". Try a broader word like "arrow" or "cloud".' : '${results.length} icons',
+                    results.isEmpty
+                        ? 'No icons match "$_query". Try a broader word like "arrow" or "cloud".'
+                        : '${results.length} icons',
                     variant: KumoTextVariant.secondary,
                     size: KumoTextSize.sm,
                   ),
@@ -98,7 +119,12 @@ class _IconsPageState extends State<IconsPage> {
             ),
             Expanded(
               child: GridView.builder(
-                padding: EdgeInsets.fromLTRB(gutter, 0, gutter, MediaQuery.paddingOf(context).bottom + KumoSpace.s8),
+                padding: EdgeInsets.fromLTRB(
+                  gutter,
+                  0,
+                  gutter,
+                  MediaQuery.paddingOf(context).bottom + KumoSpace.s8,
+                ),
                 gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                   maxCrossAxisExtent: 104,
                   mainAxisExtent: 88,
@@ -122,14 +148,22 @@ class _IconsPageState extends State<IconsPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           spacing: KumoSpace.s2,
                           children: [
-                            KumoIcon(_fill && e.fill != null ? e.fill! : e.regular, size: 24),
+                            KumoIcon(
+                              _fill && e.fill != null ? e.fill! : e.regular,
+                              size: 24,
+                            ),
                             Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: KumoSpace.s1),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: KumoSpace.s1,
+                              ),
                               child: Text(
                                 e.name,
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
-                                style: kumo.text(size: KumoTextSize.xs, color: KumoColor.textSubtle),
+                                style: kumo.text(
+                                  size: KumoTextSize.xs,
+                                  color: KumoColor.textSubtle,
+                                ),
                               ),
                             ),
                           ],

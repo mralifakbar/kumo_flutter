@@ -318,17 +318,17 @@ class _KumoAnchoredOverlayState extends State<KumoAnchoredOverlay> with TickerPr
     );
 
     double room(KumoSide s) => switch (s) {
-          KumoSide.bottom => bounds.bottom - anchorRect.bottom - widget.sideOffset,
-          KumoSide.top => anchorRect.top - widget.sideOffset - bounds.top,
-          KumoSide.left => anchorRect.left - widget.sideOffset - bounds.left,
-          KumoSide.right => bounds.right - anchorRect.right - widget.sideOffset,
-        };
+      KumoSide.bottom => bounds.bottom - anchorRect.bottom - widget.sideOffset,
+      KumoSide.top => anchorRect.top - widget.sideOffset - bounds.top,
+      KumoSide.left => anchorRect.left - widget.sideOffset - bounds.left,
+      KumoSide.right => bounds.right - anchorRect.right - widget.sideOffset,
+    };
     KumoSide opposite(KumoSide s) => switch (s) {
-          KumoSide.bottom => KumoSide.top,
-          KumoSide.top => KumoSide.bottom,
-          KumoSide.left => KumoSide.right,
-          KumoSide.right => KumoSide.left,
-        };
+      KumoSide.bottom => KumoSide.top,
+      KumoSide.top => KumoSide.bottom,
+      KumoSide.left => KumoSide.right,
+      KumoSide.right => KumoSide.left,
+    };
 
     var side = widget.side;
     if (room(side) < widget.preferredExtent && room(opposite(side)) > room(side)) side = opposite(side);
@@ -399,9 +399,7 @@ class _KumoAnchoredOverlayState extends State<KumoAnchoredOverlay> with TickerPr
     // Always present (with no bindings while closed) so opening never
     // changes the tree above the anchor and drops its focus.
     final anchor = CallbackShortcuts(
-      bindings: {
-        if (widget.open && widget.closeOnEscape) const SingleActivator(LogicalKeyboardKey.escape): _dismiss,
-      },
+      bindings: {if (widget.open && widget.closeOnEscape) const SingleActivator(LogicalKeyboardKey.escape): _dismiss},
       child: TapRegion(groupId: _group, child: widget.child),
     );
     return OverlayPortal.overlayChildLayoutBuilder(
@@ -434,10 +432,8 @@ class _EscapeHandler extends StatelessWidget {
   final Widget child;
 
   @override
-  Widget build(BuildContext context) => CallbackShortcuts(
-        bindings: {const SingleActivator(LogicalKeyboardKey.escape): onEscape},
-        child: child,
-      );
+  Widget build(BuildContext context) =>
+      CallbackShortcuts(bindings: {const SingleActivator(LogicalKeyboardKey.escape): onEscape}, child: child);
 }
 
 class _PopupLayout extends SingleChildLayoutDelegate {
@@ -468,11 +464,8 @@ class _PopupLayout extends SingleChildLayoutDelegate {
   final ValueChanged<Rect> onPositioned;
 
   @override
-  BoxConstraints getConstraintsForChild(BoxConstraints constraints) => BoxConstraints(
-        minWidth: math.min(minWidth, maxWidth),
-        maxWidth: maxWidth,
-        maxHeight: maxHeight,
-      );
+  BoxConstraints getConstraintsForChild(BoxConstraints constraints) =>
+      BoxConstraints(minWidth: math.min(minWidth, maxWidth), maxWidth: maxWidth, maxHeight: maxHeight);
 
   @override
   Offset getPositionForChild(Size size, Size childSize) {

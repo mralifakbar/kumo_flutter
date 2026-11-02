@@ -28,16 +28,9 @@ enum PickerEntryKind { option, groupLabel, separator }
 /// One row of a flattened option list.
 @immutable
 class PickerEntry<T> {
-  const PickerEntry.option(KumoSelectOption<T> this.option)
-      : kind = PickerEntryKind.option,
-        label = null;
-  const PickerEntry.groupLabel(String this.label)
-      : kind = PickerEntryKind.groupLabel,
-        option = null;
-  const PickerEntry.separator()
-      : kind = PickerEntryKind.separator,
-        option = null,
-        label = null;
+  const PickerEntry.option(KumoSelectOption<T> this.option) : kind = PickerEntryKind.option, label = null;
+  const PickerEntry.groupLabel(String this.label) : kind = PickerEntryKind.groupLabel, option = null;
+  const PickerEntry.separator() : kind = PickerEntryKind.separator, option = null, label = null;
 
   final PickerEntryKind kind;
   final KumoSelectOption<T>? option;
@@ -317,8 +310,11 @@ class _PickerOptionListState<T> extends State<PickerOptionList<T>> {
     final scaler = _scaler!;
     final dir = _dir!;
     double measureLine(TextStyle style) {
-      final tp = TextPainter(text: TextSpan(text: 'Hg', style: style), textDirection: dir, textScaler: scaler)
-        ..layout();
+      final tp = TextPainter(
+        text: TextSpan(text: 'Hg', style: style),
+        textDirection: dir,
+        textScaler: scaler,
+      )..layout();
       final h = tp.height;
       tp.dispose();
       return h;
@@ -349,7 +345,8 @@ class _PickerOptionListState<T> extends State<PickerOptionList<T>> {
       case PickerEntryKind.separator:
         h = KumoSpace.s1 * 2 + 1;
       case PickerEntryKind.groupLabel:
-        h = KumoSpace.s1_5 * 2 +
+        h =
+            KumoSpace.s1_5 * 2 +
             measure(
               e.label!,
               kumo.text(size: KumoTextSize.sm, weight: KumoTypography.semibold),
@@ -434,10 +431,7 @@ class _PickerOptionListState<T> extends State<PickerOptionList<T>> {
             checked: widget.multiple ? selected : null,
             onPress: () => widget.onPick(o),
             trailing: widget.showCheck
-                ? SizedBox(
-                    width: 16,
-                    child: selected ? const KumoIcon(KumoIcons.check, size: 14) : null,
-                  )
+                ? SizedBox(width: 16, child: selected ? const KumoIcon(KumoIcons.check, size: 14) : null)
                 : null,
           ),
         );
@@ -470,11 +464,7 @@ class _PickerOptionListState<T> extends State<PickerOptionList<T>> {
         scrollController: _scroll,
         semanticLabel: widget.semanticLabel,
         padding: widget.padding ?? const EdgeInsets.all(KumoSpace.s1_5),
-        children: [
-          ...widget.leading,
-          for (var i = 0; i < model.length; i++) _buildRow(context, i),
-          ...widget.trailing,
-        ],
+        children: [...widget.leading, for (var i = 0; i < model.length; i++) _buildRow(context, i), ...widget.trailing],
       );
     } else {
       final lead = widget.leading.length;
@@ -604,8 +594,13 @@ class PickerStatusRow extends StatelessWidget {
         child: Row(
           spacing: KumoSpace.s2,
           children: [
-            if (loading) const ExcludeSemantics(child: KumoLoader(size: KumoLoaderSize.sm, color: KumoColor.textSubtle)),
-            Flexible(child: Text(text, style: kumo.text(color: KumoColor.textSubtle))),
+            if (loading)
+              const ExcludeSemantics(
+                child: KumoLoader(size: KumoLoaderSize.sm, color: KumoColor.textSubtle),
+              ),
+            Flexible(
+              child: Text(text, style: kumo.text(color: KumoColor.textSubtle)),
+            ),
           ],
         ),
       ),
@@ -618,7 +613,12 @@ class PickerStatusRow extends StatelessWidget {
 /// changing layout. Ancestors must reach it: every widget between the
 /// field and the control either covers the area or inflates too.
 class PickerHitInflate extends SingleChildRenderObjectWidget {
-  const PickerHitInflate({super.key, required this.inflate, this.clampPadding = EdgeInsetsDirectional.zero, super.child});
+  const PickerHitInflate({
+    super.key,
+    required this.inflate,
+    this.clampPadding = EdgeInsetsDirectional.zero,
+    super.child,
+  });
 
   final EdgeInsets inflate;
 
@@ -1070,7 +1070,9 @@ class PickerChipPresence extends ParentDataWidget<_ChipWrapParentData> {
 }
 
 class _RenderChipWrap extends RenderBox
-    with ContainerRenderObjectMixin<RenderBox, _ChipWrapParentData>, RenderBoxContainerDefaultsMixin<RenderBox, _ChipWrapParentData> {
+    with
+        ContainerRenderObjectMixin<RenderBox, _ChipWrapParentData>,
+        RenderBoxContainerDefaultsMixin<RenderBox, _ChipWrapParentData> {
   _RenderChipWrap({
     required TextDirection textDirection,
     required double spacing,
@@ -1078,12 +1080,12 @@ class _RenderChipWrap extends RenderBox
     required EdgeInsets padding,
     required double fillMinWidth,
     required bool hasFill,
-  })  : _textDirection = textDirection,
-        _spacing = spacing,
-        _runSpacing = runSpacing,
-        _padding = padding,
-        _fillMinWidth = fillMinWidth,
-        _hasFill = hasFill;
+  }) : _textDirection = textDirection,
+       _spacing = spacing,
+       _runSpacing = runSpacing,
+       _padding = padding,
+       _fillMinWidth = fillMinWidth,
+       _hasFill = hasFill;
 
   TextDirection _textDirection;
   set textDirection(TextDirection v) {
@@ -1167,7 +1169,9 @@ class _RenderChipWrap extends RenderBox
   }
 
   Size _layout(BoxConstraints constraints, {required bool dry}) {
-    final maxW = constraints.hasBoundedWidth ? math.max(0.0, constraints.maxWidth - _padding.horizontal) : double.infinity;
+    final maxW = constraints.hasBoundedWidth
+        ? math.max(0.0, constraints.maxWidth - _padding.horizontal)
+        : double.infinity;
     final children = <RenderBox>[];
     for (var child = firstChild; child != null; child = childAfter(child)) {
       children.add(child);
@@ -1262,11 +1266,11 @@ class _RenderChipWrap extends RenderBox
 /// Default width for a picker placed where width is unbounded (a Row):
 /// Kumo's input widths per size (`KUMO_INPUT_STYLING`).
 double pickerDefaultWidth(KumoFieldSize size) => switch (size) {
-      KumoFieldSize.xs => 160,
-      KumoFieldSize.sm => 200,
-      KumoFieldSize.base => 280,
-      KumoFieldSize.lg => 320,
-    };
+  KumoFieldSize.xs => 160,
+  KumoFieldSize.sm => 200,
+  KumoFieldSize.base => 280,
+  KumoFieldSize.lg => 320,
+};
 
 /// Gives [child] Kumo's default field width when the parent leaves width
 /// unbounded, and fills the parent otherwise.
@@ -1278,18 +1282,18 @@ class PickerWidth extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => LayoutBuilder(
-        builder: (context, constraints) =>
-            constraints.hasBoundedWidth ? child : SizedBox(width: pickerDefaultWidth(size), child: child),
-      );
+    builder: (context, constraints) =>
+        constraints.hasBoundedWidth ? child : SizedBox(width: pickerDefaultWidth(size), child: child),
+  );
 }
 
 /// Caret icon size per field size (`CaretUpDownIcon` sizes in Kumo).
 double pickerIconSize(KumoFieldSize size) => switch (size) {
-      KumoFieldSize.xs => 12,
-      KumoFieldSize.sm => 14,
-      KumoFieldSize.base => 16,
-      KumoFieldSize.lg => 18,
-    };
+  KumoFieldSize.xs => 12,
+  KumoFieldSize.sm => 14,
+  KumoFieldSize.base => 16,
+  KumoFieldSize.lg => 18,
+};
 
 /// Room for a popup under and above [anchor], with the on-screen keyboard
 /// taken off the bottom. [KumoAnchoredOverlay] measures against the whole
@@ -1309,7 +1313,12 @@ double pickerIconSize(KumoFieldSize size) => switch (size) {
 
 /// The side to open on: [preferred] unless it has under [wanted] of room
 /// and the other side has more.
-KumoSide pickerSide(BuildContext anchor, {KumoSide preferred = KumoSide.bottom, double wanted = 200, double sideOffset = 4}) {
+KumoSide pickerSide(
+  BuildContext anchor, {
+  KumoSide preferred = KumoSide.bottom,
+  double wanted = 200,
+  double sideOffset = 4,
+}) {
   final room = pickerRoom(anchor, sideOffset: sideOffset);
   if (room.rect == null) return preferred;
   if (preferred == KumoSide.bottom && room.below < wanted && room.above > room.below) return KumoSide.top;
@@ -1318,7 +1327,12 @@ KumoSide pickerSide(BuildContext anchor, {KumoSide preferred = KumoSide.bottom, 
 }
 
 /// The list height for [placement], clipped to the room above the keyboard.
-double pickerMaxHeight(BuildContext context, KumoPopupPlacement placement, {double cap = double.infinity, double sideOffset = 4}) {
+double pickerMaxHeight(
+  BuildContext context,
+  KumoPopupPlacement placement, {
+  double cap = double.infinity,
+  double sideOffset = 4,
+}) {
   var h = math.min(placement.maxHeight, cap);
   final media = MediaQuery.maybeOf(context);
   if (media != null && placement.side == KumoSide.bottom) {

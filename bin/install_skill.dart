@@ -16,9 +16,7 @@ Future<void> main(List<String> args) async {
     return;
   }
   final targetIndex = args.indexOf('--target');
-  final target = targetIndex >= 0 && targetIndex + 1 < args.length
-      ? args[targetIndex + 1]
-      : '.claude/skills';
+  final target = targetIndex >= 0 && targetIndex + 1 < args.length ? args[targetIndex + 1] : '.claude/skills';
 
   final libUri = await Isolate.resolvePackageUri(Uri.parse('package:kumo_flutter/kumo_flutter.dart'));
   if (libUri == null) {
@@ -38,7 +36,8 @@ Future<void> main(List<String> args) async {
     final agents = File('AGENTS.md');
     const start = '<!-- kumo-flutter:start -->';
     const end = '<!-- kumo-flutter:end -->';
-    final block = '$start\n## kumo_flutter\n'
+    final block =
+        '$start\n## kumo_flutter\n'
         'This app uses kumo_flutter (Kumo design system for Flutter). Before UI work, read '
         '`${out.path}/SKILL.md` (components) and `${craft.path}/SKILL.md` (craft standard and '
         'delivery checklist) and follow both.\n$end\n';

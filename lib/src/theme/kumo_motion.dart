@@ -74,12 +74,10 @@ abstract final class KumoMotion {
 
   /// True when the platform asks for reduced motion. Components swap slides,
   /// springs and loops for short cross-fades or no motion at all.
-  static bool reduceMotion(BuildContext context) =>
-      MediaQuery.maybeDisableAnimationsOf(context) ?? false;
+  static bool reduceMotion(BuildContext context) => MediaQuery.maybeDisableAnimationsOf(context) ?? false;
 
   /// Duration to use for a transition, collapsed to zero under reduced motion.
-  static Duration duration(BuildContext context, Duration normal) =>
-      reduceMotion(context) ? Duration.zero : normal;
+  static Duration duration(BuildContext context, Duration normal) => reduceMotion(context) ? Duration.zero : normal;
 
   /// Where a flick would come to rest, using exponential deceleration (the same
   /// projection UIScrollView uses). [velocity] is in logical px per second.

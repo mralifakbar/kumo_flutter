@@ -241,16 +241,9 @@ class _DeleteDialog extends StatelessWidget {
         spacing: KumoSpace.s3,
         children: [
           Expanded(
-            child: Semantics(
-              header: true,
-              child: Text('Delete $name', style: kumo.heading()),
-            ),
+            child: Semantics(header: true, child: Text('Delete $name', style: kumo.heading())),
           ),
-          KumoDialogClose(
-            variant: KumoButtonVariant.ghost,
-            size: KumoButtonSize.sm,
-            disabled: deleting,
-          ),
+          KumoDialogClose(variant: KumoButtonVariant.ghost, size: KumoButtonSize.sm, disabled: deleting),
         ],
       ),
     );
@@ -272,10 +265,8 @@ class _DeleteDialog extends StatelessWidget {
                   duration: KumoMotion.duration(context, KumoDurations.quick),
                   switchInCurve: KumoCurves.enter,
                   switchOutCurve: KumoCurves.exit,
-                  layoutBuilder: (current, previous) => Stack(
-                    alignment: AlignmentDirectional.topStart,
-                    children: [...previous, ?current],
-                  ),
+                  layoutBuilder: (current, previous) =>
+                      Stack(alignment: AlignmentDirectional.topStart, children: [...previous, ?current]),
                   child: error == null || error.isEmpty
                       ? const SizedBox(key: ValueKey('no-error'), width: double.infinity)
                       : Padding(
@@ -405,7 +396,9 @@ class _CopyChip extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           spacing: KumoSpace.s1_5,
           children: [
-            Flexible(child: Text(name, style: kumo.code(weight: KumoTypography.medium))),
+            Flexible(
+              child: Text(name, style: kumo.code(weight: KumoTypography.medium)),
+            ),
             KumoIcon(
               copied ? KumoIcons.check : KumoIcons.copy,
               size: 12,
@@ -436,4 +429,3 @@ class _GrowSize extends StatelessWidget {
     );
   }
 }
-

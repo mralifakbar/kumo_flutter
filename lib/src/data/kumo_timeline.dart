@@ -9,6 +9,7 @@ import '../theme/kumo_motion.dart';
 import '../theme/kumo_theme.dart';
 import '../theme/kumo_tokens.dart';
 import '../theme/kumo_typography.dart';
+import '../system/kumo_size_reveal.dart';
 
 /// Outcome of a [KumoTimelineItem]. Each status has its own icon shape, so
 /// it never relies on color alone.
@@ -195,7 +196,9 @@ class _KumoTimelineState extends State<KumoTimeline> {
       crossAxisAlignment: CrossAxisAlignment.start,
       spacing: KumoSpace.s2,
       children: [
-        Expanded(child: Text(item.title, style: kumo.text(weight: KumoTypography.medium))),
+        Expanded(
+          child: Text(item.title, style: kumo.text(weight: KumoTypography.medium)),
+        ),
         if (item.time != null)
           Padding(
             padding: const EdgeInsets.only(top: 1),
@@ -218,9 +221,16 @@ class _KumoTimelineState extends State<KumoTimeline> {
         if (item.description != null)
           Padding(
             padding: const EdgeInsets.only(top: KumoSpace.s0_5),
-            child: Text(item.description!, style: kumo.text(size: KumoTextSize.sm, color: KumoColor.textSubtle)),
+            child: Text(
+              item.description!,
+              style: kumo.text(size: KumoTextSize.sm, color: KumoColor.textSubtle),
+            ),
           ),
-        if (item.content != null) Padding(padding: const EdgeInsets.only(top: KumoSpace.s2), child: item.content),
+        if (item.content != null)
+          Padding(
+            padding: const EdgeInsets.only(top: KumoSpace.s2),
+            child: item.content,
+          ),
       ],
     );
 
@@ -252,7 +262,10 @@ class _KumoTimelineState extends State<KumoTimeline> {
             start: _marker + (item.onPress != null ? KumoSpace.s1 : KumoSpace.s3),
             bottom: last ? 0 : KumoSpace.s6,
           ),
-          child: ConstrainedBox(constraints: const BoxConstraints(minHeight: _marker), child: body),
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(minHeight: _marker),
+            child: body,
+          ),
         ),
         if (!last)
           PositionedDirectional(
@@ -323,9 +336,8 @@ class _TimelineEntryState extends State<_TimelineEntry> with SingleTickerProvide
   @override
   Widget build(BuildContext context) {
     if (!_wrap) return widget.child;
-    return SizeTransition(
+    return KumoSizeReveal(
       sizeFactor: _curve,
-      axisAlignment: -1,
       child: FadeTransition(opacity: _curve, child: widget.child),
     );
   }

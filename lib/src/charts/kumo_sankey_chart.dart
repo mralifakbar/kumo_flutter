@@ -108,17 +108,17 @@ enum KumoSankeyFocus {
 @immutable
 class KumoSankeyTooltipDetails {
   const KumoSankeyTooltipDetails.node({required KumoSankeyNode this.node, required this.nodeIndex, required this.color})
-      : link = null,
-        source = null,
-        target = null;
+    : link = null,
+      source = null,
+      target = null;
 
   const KumoSankeyTooltipDetails.link({
     required KumoSankeyLink this.link,
     required KumoSankeyNode this.source,
     required KumoSankeyNode this.target,
     required this.color,
-  })  : node = null,
-        nodeIndex = null;
+  }) : node = null,
+       nodeIndex = null;
 
   final KumoSankeyNode? node;
   final int? nodeIndex;
@@ -358,8 +358,13 @@ _SankeyLayout _layoutSankey({
     final l = links[i];
     if (l.source < 0 || l.source >= nodes.length || l.target < 0 || l.target >= nodes.length) continue;
     if (l.source == l.target || !(l.value > 0)) continue;
-    final link = _SLink(i, l.id ?? '${sNodes[l.source].key}->${sNodes[l.target].key}#$i', sNodes[l.source],
-        sNodes[l.target], l.value);
+    final link = _SLink(
+      i,
+      l.id ?? '${sNodes[l.source].key}->${sNodes[l.target].key}#$i',
+      sNodes[l.source],
+      sNodes[l.target],
+      l.value,
+    );
     sLinks.add(link);
     link.source.sourceLinks.add(link);
     link.target.targetLinks.add(link);
@@ -406,8 +411,7 @@ _SankeyLayout _layoutSankey({
       KumoSankeyNodeAlign.left => n.depth,
       KumoSankeyNodeAlign.right => maxDepth - n.height,
       KumoSankeyNodeAlign.justify => n.sourceLinks.isEmpty ? maxDepth : n.depth,
-    }
-        .clamp(0, maxDepth);
+    }.clamp(0, maxDepth);
   }
   final columns = List.generate(layers, (_) => <_SNode>[]);
   for (final n in active) {
@@ -683,13 +687,24 @@ class _KumoSankeyChartState extends State<KumoSankeyChart> with TickerProviderSt
   bool get _showValues => widget.showNodeValues ?? widget.nodes.any((n) => n.value != null);
 
   List<Color> _colors(KumoChartColors palette) => [
-        for (var i = 0; i < widget.nodes.length; i++)
-          widget.nodes[i].color ?? widget.defaultNodeColor ?? palette.categorical(i),
-      ];
+    for (var i = 0; i < widget.nodes.length; i++)
+      widget.nodes[i].color ?? widget.defaultNodeColor ?? palette.categorical(i),
+  ];
 
   _SankeyLayout _layoutFor(Size size, KumoChartColors palette) {
     final w = widget;
-    final key = (size, w.nodes, w.links, w.nodeWidth, w.nodePadding, w.left, w.right, w.nodeAlign, palette, w.defaultNodeColor);
+    final key = (
+      size,
+      w.nodes,
+      w.links,
+      w.nodeWidth,
+      w.nodePadding,
+      w.left,
+      w.right,
+      w.nodeAlign,
+      palette,
+      w.defaultNodeColor,
+    );
     if (_target != null && _targetKey == key) return _displayed();
     final pad = size.height * 0.05;
     final next = _layoutSankey(
@@ -795,7 +810,11 @@ class _KumoSankeyChartState extends State<KumoSankeyChart> with TickerProviderSt
         return _SankeyFocusSet({...up.nodes, ...down.nodes}, {...up.links, ...down.links});
       }
       return _SankeyFocusSet(
-        {node.index, for (final l in node.sourceLinks) l.target.index, for (final l in node.targetLinks) l.source.index},
+        {
+          node.index,
+          for (final l in node.sourceLinks) l.target.index,
+          for (final l in node.targetLinks) l.source.index,
+        },
         {for (final l in node.sourceLinks) l.index, for (final l in node.targetLinks) l.index},
       );
     }
@@ -896,7 +915,9 @@ class _KumoSankeyChartState extends State<KumoSankeyChart> with TickerProviderSt
     final parts = <String>[];
     if (w.semanticLabel != null) parts.add(w.semanticLabel!);
     final links = layout?.links ?? const <_SLink>[];
-    parts.add('Sankey chart, ${layout?.nodes.length ?? 0} nodes, ${links.length} ${links.length == 1 ? 'flow' : 'flows'}');
+    parts.add(
+      'Sankey chart, ${layout?.nodes.length ?? 0} nodes, ${links.length} ${links.length == 1 ? 'flow' : 'flows'}',
+    );
     for (final l in links) {
       parts.add('${w.nodes[l.source.index].name} to ${w.nodes[l.target.index].name}: ${_format(l.value)}');
     }
@@ -951,15 +972,19 @@ class _KumoSankeyChartState extends State<KumoSankeyChart> with TickerProviderSt
       if (!showValue) {
         span = TextSpan(text: node.name, style: nameStyle);
       } else if (w.nodeLabelLayout == KumoSankeyLabelLayout.inline) {
-        span = TextSpan(children: [
-          TextSpan(text: node.name, style: strongName),
-          TextSpan(text: ' ${_format(node.value!)}', style: valueStyle),
-        ]);
+        span = TextSpan(
+          children: [
+            TextSpan(text: node.name, style: strongName),
+            TextSpan(text: ' ${_format(node.value!)}', style: valueStyle),
+          ],
+        );
       } else {
-        span = TextSpan(children: [
-          TextSpan(text: _format(node.value!), style: valueStyle),
-          TextSpan(text: '\n${node.name}', style: strongName),
-        ]);
+        span = TextSpan(
+          children: [
+            TextSpan(text: _format(node.value!), style: valueStyle),
+            TextSpan(text: '\n${node.name}', style: strongName),
+          ],
+        );
       }
       final rightHalf = n.x0 > layout.size.width / 2;
       _labels[n.index] = TextPainter(
@@ -978,44 +1003,56 @@ class _KumoSankeyChartState extends State<KumoSankeyChart> with TickerProviderSt
   @override
   Widget build(BuildContext context) {
     final w = widget;
-    return LayoutBuilder(builder: (context, constraints) {
-      final width = constraints.maxWidth.isFinite ? constraints.maxWidth : 400.0;
-      final size = Size(width, w.height);
-      Widget body;
-      final String kind;
-      final hasFlows =
-          w.links.any((l) => l.value > 0 && l.source != l.target && l.source >= 0 && l.target >= 0 && l.source < w.nodes.length && l.target < w.nodes.length);
-      if (w.loading) {
-        kind = 'loading';
-        body = _ChartSkeleton(
-          shape: _SkeletonShape.sankey,
-          semanticLabel: w.semanticLabel == null
-              ? context.kumoStrings.loadingChart
-              : '${context.kumoStrings.loadingChart}: ${w.semanticLabel}',
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final width = constraints.maxWidth.isFinite ? constraints.maxWidth : 400.0;
+        final size = Size(width, w.height);
+        Widget body;
+        final String kind;
+        final hasFlows = w.links.any(
+          (l) =>
+              l.value > 0 &&
+              l.source != l.target &&
+              l.source >= 0 &&
+              l.target >= 0 &&
+              l.source < w.nodes.length &&
+              l.target < w.nodes.length,
         );
-      } else if (w.error != null) {
-        kind = 'error';
-        body = Semantics(
-          liveRegion: true,
-          child: _ChartMessage(icon: KumoIcons.warningCircle, title: w.error!, onRetry: w.onRetry, danger: true),
+        if (w.loading) {
+          kind = 'loading';
+          body = _ChartSkeleton(
+            shape: _SkeletonShape.sankey,
+            semanticLabel: w.semanticLabel == null
+                ? context.kumoStrings.loadingChart
+                : '${context.kumoStrings.loadingChart}: ${w.semanticLabel}',
+          );
+        } else if (w.error != null) {
+          kind = 'error';
+          body = Semantics(
+            liveRegion: true,
+            child: _ChartMessage(icon: KumoIcons.warningCircle, title: w.error!, onRetry: w.onRetry, danger: true),
+          );
+        } else if (!hasFlows) {
+          kind = 'empty';
+          body = _ChartMessage(icon: KumoIcons.flowArrow, title: w.emptyMessage, description: w.emptyDescription);
+        } else {
+          kind = 'chart';
+          body = AnimatedBuilder(
+            animation: Listenable.merge([_morph, _emphasis]),
+            builder: (context, _) => _buildDiagram(context, size),
+          );
+        }
+        // The skeleton, diagram, error and empty message cross-fade.
+        return SizedBox(
+          width: width,
+          height: w.height,
+          child: KumoSwap(
+            duration: KumoDurations.quick,
+            child: KeyedSubtree(key: ValueKey(kind), child: body),
+          ),
         );
-      } else if (!hasFlows) {
-        kind = 'empty';
-        body = _ChartMessage(icon: KumoIcons.flowArrow, title: w.emptyMessage, description: w.emptyDescription);
-      } else {
-        kind = 'chart';
-        body = AnimatedBuilder(
-          animation: Listenable.merge([_morph, _emphasis]),
-          builder: (context, _) => _buildDiagram(context, size),
-        );
-      }
-      // The skeleton, diagram, error and empty message cross-fade.
-      return SizedBox(
-        width: width,
-        height: w.height,
-        child: KumoSwap(duration: KumoDurations.quick, child: KeyedSubtree(key: ValueKey(kind), child: body)),
-      );
-    });
+      },
+    );
   }
 
   Widget _buildDiagram(BuildContext context, Size size) {
@@ -1055,7 +1092,10 @@ class _KumoSankeyChartState extends State<KumoSankeyChart> with TickerProviderSt
         if (tooltip != null)
           Positioned.fill(
             child: IgnorePointer(
-              child: CustomSingleChildLayout(delegate: _ChartTooltipLayout(anchor: anchor), child: tooltip),
+              child: CustomSingleChildLayout(
+                delegate: _ChartTooltipLayout(anchor: anchor),
+                child: tooltip,
+              ),
             ),
           ),
       ],
@@ -1149,22 +1189,32 @@ class _KumoSankeyChartState extends State<KumoSankeyChart> with TickerProviderSt
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Row(spacing: 6, children: [
-              _ChartDot(color: details.color, size: 10),
-              Flexible(child: Text(node.name, style: strong)),
-            ]),
+            Row(
+              spacing: 6,
+              children: [
+                _ChartDot(color: details.color, size: 10),
+                Flexible(child: Text(node.name, style: strong)),
+              ],
+            ),
             if (node.tooltipData != null)
               for (final e in node.tooltipData!.entries)
                 Padding(
                   padding: const EdgeInsets.only(top: KumoSpace.s1),
-                  child: Row(children: [
-                    Expanded(child: Text(e.key, style: kumo.text(size: KumoTextSize.xs, color: KumoColor.textSubtle))),
-                    const SizedBox(width: KumoSpace.s4),
-                    Text(
-                      e.value is num ? _format((e.value as num).toDouble()) : '${e.value}',
-                      style: strong.copyWith(fontFeatures: const [FontFeature.tabularFigures()]),
-                    ),
-                  ]),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          e.key,
+                          style: kumo.text(size: KumoTextSize.xs, color: KumoColor.textSubtle),
+                        ),
+                      ),
+                      const SizedBox(width: KumoSpace.s4),
+                      Text(
+                        e.value is num ? _format((e.value as num).toDouble()) : '${e.value}',
+                        style: strong.copyWith(fontFeatures: const [FontFeature.tabularFigures()]),
+                      ),
+                    ],
+                  ),
                 ),
           ],
         ),

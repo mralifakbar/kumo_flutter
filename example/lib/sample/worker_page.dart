@@ -8,7 +8,12 @@ import 'sample_data.dart';
 /// A Worker's detail page: overview with a sample request chart, deployment
 /// history with rollback, and settings with a danger zone.
 class WorkerPage extends StatefulWidget {
-  const WorkerPage({super.key, required this.worker, required this.onChanged, required this.onDeleted});
+  const WorkerPage({
+    super.key,
+    required this.worker,
+    required this.onChanged,
+    required this.onDeleted,
+  });
 
   final SampleWorker worker;
   final VoidCallback onChanged;
@@ -42,7 +47,11 @@ class _WorkerPageState extends State<WorkerPage> {
           final navigator = Navigator.of(context);
           navigator.popUntil((r) => r == page);
           navigator.pop();
-          showKumoToast(context, title: '${w.name} deleted', variant: KumoToastVariant.success);
+          showKumoToast(
+            context,
+            title: '${w.name} deleted',
+            variant: KumoToastVariant.success,
+          );
         },
       ),
       _ => _Overview(worker: w),
@@ -58,7 +67,10 @@ class _WorkerPageState extends State<WorkerPage> {
                 border: Border(bottom: BorderSide(color: kumo.colors.hairline)),
               ),
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: gutter - KumoSpace.s2, vertical: KumoSpace.s1),
+                padding: EdgeInsets.symmetric(
+                  horizontal: gutter - KumoSpace.s2,
+                  vertical: KumoSpace.s1,
+                ),
                 child: Row(
                   children: [
                     KumoButton(
@@ -98,7 +110,8 @@ class _WorkerPageState extends State<WorkerPage> {
                                     items: [
                                       KumoBreadcrumbsItem(
                                         label: 'Workers',
-                                        onPress: () => Navigator.of(context).maybePop(),
+                                        onPress: () =>
+                                            Navigator.of(context).maybePop(),
                                       ),
                                     ],
                                     current: w.name,
@@ -106,9 +119,18 @@ class _WorkerPageState extends State<WorkerPage> {
                             title: w.name,
                             description: w.description,
                             tabs: const [
-                              KumoPageHeaderTab(label: 'Overview', value: 'overview'),
-                              KumoPageHeaderTab(label: 'Deployments', value: 'deployments'),
-                              KumoPageHeaderTab(label: 'Settings', value: 'settings'),
+                              KumoPageHeaderTab(
+                                label: 'Overview',
+                                value: 'overview',
+                              ),
+                              KumoPageHeaderTab(
+                                label: 'Deployments',
+                                value: 'deployments',
+                              ),
+                              KumoPageHeaderTab(
+                                label: 'Settings',
+                                value: 'settings',
+                              ),
                             ],
                             value: _tab,
                             onValueChange: (v) => setState(() => _tab = v),
@@ -166,8 +188,10 @@ class _Overview extends StatelessWidget {
                 child: KumoBadge(
                   status.label,
                   variant: switch (status.tone) {
-                    KumoResourceListStatusTone.success => KumoBadgeVariant.success,
-                    KumoResourceListStatusTone.warning => KumoBadgeVariant.warning,
+                    KumoResourceListStatusTone.success =>
+                      KumoBadgeVariant.success,
+                    KumoResourceListStatusTone.warning =>
+                      KumoBadgeVariant.warning,
                     KumoResourceListStatusTone.danger => KumoBadgeVariant.error,
                     _ => KumoBadgeVariant.secondary,
                   },
@@ -185,7 +209,11 @@ class _Overview extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           spacing: KumoSpace.s3,
           children: [
-            const KumoText('Requests in the last 24 hours', variant: KumoTextVariant.heading, headingLevel: 2),
+            const KumoText(
+              'Requests in the last 24 hours',
+              variant: KumoTextVariant.heading,
+              headingLevel: 2,
+            ),
             const KumoText(
               'Sample data, generated for this demo.',
               variant: KumoTextVariant.secondary,
@@ -194,7 +222,8 @@ class _Overview extends StatelessWidget {
             KumoLayerCard(
               padding: const EdgeInsets.all(KumoSpace.s4),
               child: KumoTimeseriesChart(
-                semanticLabel: 'Requests and errors for ${worker.name}, sample data',
+                semanticLabel:
+                    'Requests and errors for ${worker.name}, sample data',
                 yAxisName: 'Requests',
                 gradient: true,
                 data: [
@@ -229,7 +258,11 @@ class _Fact extends StatelessWidget {
     crossAxisAlignment: CrossAxisAlignment.start,
     spacing: KumoSpace.s1,
     children: [
-      KumoText(label, variant: KumoTextVariant.secondary, size: KumoTextSize.sm),
+      KumoText(
+        label,
+        variant: KumoTextVariant.secondary,
+        size: KumoTextSize.sm,
+      ),
       child,
     ],
   );
@@ -250,7 +283,8 @@ class _DeploymentsState extends State<_Deployments> {
     final confirmed = await showKumoAlertDialog(
       context,
       title: 'Roll back to ${d.version}?',
-      description: '${widget.worker.name} will serve "${d.message}" again. You can redeploy the current version later.',
+      description:
+          '${widget.worker.name} will serve "${d.message}" again. You can redeploy the current version later.',
       confirmLabel: 'Roll back',
     );
     if (confirmed != true || !mounted) return;
@@ -277,11 +311,19 @@ class _DeploymentsState extends State<_Deployments> {
               description: 'Deployed by ${items[i].author}',
               status: items[i].failed
                   ? KumoTimelineStatus.danger
-                  : (i == 0 ? KumoTimelineStatus.success : KumoTimelineStatus.neutral),
-              statusLabel: items[i].failed ? 'Failed' : (i == 0 ? 'Current' : 'Previous'),
+                  : (i == 0
+                        ? KumoTimelineStatus.success
+                        : KumoTimelineStatus.neutral),
+              statusLabel: items[i].failed
+                  ? 'Failed'
+                  : (i == 0 ? 'Current' : 'Previous'),
               trailing: i == 0 || items[i].failed
                   ? null
-                  : KumoButton(label: 'Roll back', size: KumoButtonSize.sm, onPress: () => _rollBack(items[i])),
+                  : KumoButton(
+                      label: 'Roll back',
+                      size: KumoButtonSize.sm,
+                      onPress: () => _rollBack(items[i]),
+                    ),
             ),
         ],
       ),
@@ -290,7 +332,11 @@ class _DeploymentsState extends State<_Deployments> {
 }
 
 class _Settings extends StatefulWidget {
-  const _Settings({required this.worker, required this.onChanged, required this.onDeleted});
+  const _Settings({
+    required this.worker,
+    required this.onChanged,
+    required this.onDeleted,
+  });
 
   final SampleWorker worker;
   final VoidCallback onChanged;
@@ -372,7 +418,9 @@ class _SettingsState extends State<_Settings> {
                     isDeleting: _deleting,
                     onDelete: () async {
                       setState(() => _deleting = true);
-                      await Future<void>.delayed(const Duration(milliseconds: 600));
+                      await Future<void>.delayed(
+                        const Duration(milliseconds: 600),
+                      );
                       if (!mounted) return;
                       setState(() {
                         _deleting = false;

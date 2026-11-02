@@ -265,7 +265,12 @@ class _KumoDialogState extends State<KumoDialog> {
           onNotification: (n) => n.depth == 0 ? _onMetrics(n.metrics) : false,
           child: SingleChildScrollView(
             controller: _scroll,
-            padding: EdgeInsets.fromLTRB(pad.left, hasHeader ? size.gap : pad.top, pad.right, hasFooter ? 0 : pad.bottom),
+            padding: EdgeInsets.fromLTRB(
+              pad.left,
+              hasHeader ? size.gap : pad.top,
+              pad.right,
+              hasFooter ? 0 : pad.bottom,
+            ),
             child: widget.child,
           ),
         ),
@@ -381,11 +386,8 @@ class _SmoothHeightState extends State<_SmoothHeight> with SingleTickerProviderS
     final follow = !_known || KumoMotion.reduceMotion(context);
     return AnimatedBuilder(
       animation: _height,
-      builder: (context, child) => _HeightBox(
-        height: follow ? null : _height.value,
-        onChildHeight: _onChildHeight,
-        child: child,
-      ),
+      builder: (context, child) =>
+          _HeightBox(height: follow ? null : _height.value, onChildHeight: _onChildHeight, child: child),
       child: widget.child,
     );
   }
@@ -449,7 +451,13 @@ class _RenderHeightBox extends RenderProxyBox {
       context.paintChild(child, offset);
       return;
     }
-    layer = context.pushClipRect(needsCompositing, offset, Offset.zero & size, super.paint, oldLayer: layer as ClipRectLayer?);
+    layer = context.pushClipRect(
+      needsCompositing,
+      offset,
+      Offset.zero & size,
+      super.paint,
+      oldLayer: layer as ClipRectLayer?,
+    );
   }
 
   @override
@@ -467,8 +475,7 @@ class _Separator extends StatelessWidget {
   final Color? color;
 
   @override
-  Widget build(BuildContext context) =>
-      SizedBox(height: 1, child: ColoredBox(color: color ?? const Color(0x00000000)));
+  Widget build(BuildContext context) => SizedBox(height: 1, child: ColoredBox(color: color ?? const Color(0x00000000)));
 }
 
 /// Kumo's `Dialog.Title`: a 20px semibold heading that names the dialog for
@@ -580,7 +587,9 @@ class KumoDialogClose extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final buttonSize =
-        size ?? context.dependOnInheritedWidgetOfExactType<_KumoDialogPanelScope>()?.size.buttonSize ?? KumoButtonSize.base;
+        size ??
+        context.dependOnInheritedWidgetOfExactType<_KumoDialogPanelScope>()?.size.buttonSize ??
+        KumoButtonSize.base;
     void close() {
       onPress?.call();
       KumoDialog.closeFrom(context, result);
@@ -708,11 +717,7 @@ Future<bool> showKumoAlertDialog(
         size: size,
         leading: badgeIcon == null ? null : _AlertBadge(icon: badgeIcon, destructive: destructive),
         actions: [
-          KumoDialogClose(
-            label: cancelLabel ?? context.kumoStrings.cancel,
-            result: false,
-            autofocus: destructive,
-          ),
+          KumoDialogClose(label: cancelLabel ?? context.kumoStrings.cancel, result: false, autofocus: destructive),
           KumoDialogClose(
             label: confirmLabel,
             result: true,
@@ -849,10 +854,10 @@ class _KumoDialogRootState extends State<KumoDialogRoot> {
     final navigator = Navigator.of(context, rootNavigator: widget.useRootNavigator);
     late final Route<void> route;
     Widget content(BuildContext context) => _KumoDialogScope(
-          role: widget.role,
-          close: (_) => _closeRoute(route),
-          child: ValueListenableBuilder<Widget>(valueListenable: _dialog, builder: (context, dialog, _) => dialog),
-        );
+      role: widget.role,
+      close: (_) => _closeRoute(route),
+      child: ValueListenableBuilder<Widget>(valueListenable: _dialog, builder: (context, dialog, _) => dialog),
+    );
     final usesSheet = widget.dialog is KumoLayerDialog || widget.dialog is KumoDrawer;
     route = usesSheet
         ? KumoSheetRoute<void>(builder: content, semanticLabel: widget.semanticLabel)

@@ -242,8 +242,10 @@ class _KumoClipboardTextState extends State<KumoClipboardText>
       ),
     );
 
-    final directionalRadius = BorderRadiusDirectional.only(topEnd: radius.topRight, bottomEnd: radius.bottomRight)
-        .resolve(Directionality.of(context));
+    final directionalRadius = BorderRadiusDirectional.only(
+      topEnd: radius.topRight,
+      bottomEnd: radius.bottomRight,
+    ).resolve(Directionality.of(context));
     Widget copyButton = sideButton(
       label: widget.copyLabel ?? strings.copy,
       onPress: _copy,

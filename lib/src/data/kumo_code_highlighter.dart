@@ -151,23 +151,23 @@ class KumoCodeColors {
 
   /// The color for a token [type].
   Color of(KumoCodeTokenType type) => switch (type) {
-        KumoCodeTokenType.plain => plain,
-        KumoCodeTokenType.keyword => keyword,
-        KumoCodeTokenType.string => string,
-        KumoCodeTokenType.number => number,
-        KumoCodeTokenType.comment => comment,
-        KumoCodeTokenType.function => function,
-        KumoCodeTokenType.type => this.type,
-        KumoCodeTokenType.property => property,
-        KumoCodeTokenType.tag => tag,
-        KumoCodeTokenType.attribute => attribute,
-        KumoCodeTokenType.operator => operator,
-        KumoCodeTokenType.punctuation => punctuation,
-        KumoCodeTokenType.variable => variable,
-        KumoCodeTokenType.inserted => inserted,
-        KumoCodeTokenType.deleted => deleted,
-        KumoCodeTokenType.meta => meta,
-      };
+    KumoCodeTokenType.plain => plain,
+    KumoCodeTokenType.keyword => keyword,
+    KumoCodeTokenType.string => string,
+    KumoCodeTokenType.number => number,
+    KumoCodeTokenType.comment => comment,
+    KumoCodeTokenType.function => function,
+    KumoCodeTokenType.type => this.type,
+    KumoCodeTokenType.property => property,
+    KumoCodeTokenType.tag => tag,
+    KumoCodeTokenType.attribute => attribute,
+    KumoCodeTokenType.operator => operator,
+    KumoCodeTokenType.punctuation => punctuation,
+    KumoCodeTokenType.variable => variable,
+    KumoCodeTokenType.inserted => inserted,
+    KumoCodeTokenType.deleted => deleted,
+    KumoCodeTokenType.meta => meta,
+  };
 
   @override
   bool operator ==(Object other) =>
@@ -277,7 +277,7 @@ typedef _Guard = bool Function(_Lexer lexer);
 
 class _Rule {
   _Rule(String pattern, this.type, {this.push, this.pop = false, this.when, bool caseSensitive = true})
-      : pattern = RegExp(pattern, caseSensitive: caseSensitive);
+    : pattern = RegExp(pattern, caseSensitive: caseSensitive);
 
   final RegExp pattern;
   final KumoCodeTokenType type;
@@ -437,11 +437,7 @@ _Grammar _jsGrammar({required bool typescript, required bool jsx}) {
     _memberAccess,
     _Rule(r'[A-Za-z_$][\w$]*(?=\s*(?:<[\w\s,.<>\[\]|]*>)?\()', _fn),
     _Rule(r'[A-Z][\w$]*', _ty),
-    _Rule(
-      r'[A-Za-z_$][\w$]*(?=\??\s*:)',
-      _prop,
-      when: (l) => l.atLineStart || l.prevIs(const {'{', ','}),
-    ),
+    _Rule(r'[A-Za-z_$][\w$]*(?=\??\s*:)', _prop, when: (l) => l.atLineStart || l.prevIs(const {'{', ','})),
     _Rule(r'[A-Za-z_$][\w$]*', _t),
     _Rule(r'\{', _punc, push: 'root'),
     _Rule(r'\}', _punc, pop: true),
@@ -531,16 +527,16 @@ _Grammar _pythonGrammar() {
 }
 
 _Grammar _jsonGrammar({required bool comments}) => _Grammar({
-      'root': [
-        _ws,
-        if (comments) ...[_lineComment, _blockComment],
-        _Rule(r'"(?:\\.|[^"\\\n])*"(?=\s*:)', _prop),
-        _dq,
-        _Rule(r'-?(?:\d+\.?\d*|\.\d+)(?:[eE][+-]?\d+)?', _num),
-        _Rule(_words(['true', 'false', 'null']), _num),
-        _Rule(r'[{}\[\],:]', _punc),
-      ],
-    });
+  'root': [
+    _ws,
+    if (comments) ...[_lineComment, _blockComment],
+    _Rule(r'"(?:\\.|[^"\\\n])*"(?=\s*:)', _prop),
+    _dq,
+    _Rule(r'-?(?:\d+\.?\d*|\.\d+)(?:[eE][+-]?\d+)?', _num),
+    _Rule(_words(['true', 'false', 'null']), _num),
+    _Rule(r'[{}\[\],:]', _punc),
+  ],
+});
 
 _Grammar _bashGrammar() {
   const keywords = [
@@ -575,25 +571,27 @@ _Grammar _bashGrammar() {
 }
 
 _Grammar _tomlGrammar() => _Grammar({
-      'root': [
-        _ws,
-        _hashComment,
-        _Rule(r'\[\[?[^\]\n]*\]\]?', _ty, when: (l) => l.atLineStart),
-        _Rule(
-          r'(?:[A-Za-z0-9_-]+|"[^"\n]*"|' "'[^'\\n]*')" r'(?:\s*\.\s*(?:[A-Za-z0-9_-]+|"[^"\n]*"))*(?=\s*=)',
-          _prop,
-          when: (l) => l.atLineStart || l.prevIs(const {'{', ','}),
-        ),
-        _Rule(r'"""[\s\S]*?(?:"""|$)', _str),
-        _Rule(r"'''[\s\S]*?(?:'''|$)", _str),
-        _dq,
-        _Rule(r"'[^'\n]*'?", _str),
-        _Rule(r'\d{4}-\d{2}-\d{2}(?:[T ]\d{2}:\d{2}(?::\d{2}(?:\.\d+)?)?)?(?:Z|[+-]\d{2}:\d{2})?', _num),
-        _Rule(r'[+-]?(?:0x[\da-fA-F_]+|0o[0-7_]+|0b[01_]+|\d[\d_]*(?:\.\d[\d_]*)?(?:[eE][+-]?\d+)?|inf\b|nan\b)', _num),
-        _Rule(_words(['true', 'false']), _num),
-        _Rule(r'[=\[\]{},.]', _punc),
-      ],
-    });
+  'root': [
+    _ws,
+    _hashComment,
+    _Rule(r'\[\[?[^\]\n]*\]\]?', _ty, when: (l) => l.atLineStart),
+    _Rule(
+      r'(?:[A-Za-z0-9_-]+|"[^"\n]*"|'
+      "'[^'\\n]*')"
+      r'(?:\s*\.\s*(?:[A-Za-z0-9_-]+|"[^"\n]*"))*(?=\s*=)',
+      _prop,
+      when: (l) => l.atLineStart || l.prevIs(const {'{', ','}),
+    ),
+    _Rule(r'"""[\s\S]*?(?:"""|$)', _str),
+    _Rule(r"'''[\s\S]*?(?:'''|$)", _str),
+    _dq,
+    _Rule(r"'[^'\n]*'?", _str),
+    _Rule(r'\d{4}-\d{2}-\d{2}(?:[T ]\d{2}:\d{2}(?::\d{2}(?:\.\d+)?)?)?(?:Z|[+-]\d{2}:\d{2})?', _num),
+    _Rule(r'[+-]?(?:0x[\da-fA-F_]+|0o[0-7_]+|0b[01_]+|\d[\d_]*(?:\.\d[\d_]*)?(?:[eE][+-]?\d+)?|inf\b|nan\b)', _num),
+    _Rule(_words(['true', 'false']), _num),
+    _Rule(r'[=\[\]{},.]', _punc),
+  ],
+});
 
 _Grammar _yamlGrammar() {
   // A key sits at the start of a line, after a list dash, or inside a flow map.
@@ -626,23 +624,23 @@ _Grammar _yamlGrammar() {
 }
 
 _Grammar _htmlGrammar() => _Grammar({
-      'root': [
-        _ws,
-        _Rule(r'<!--[\s\S]*?(?:-->|$)', _com),
-        _Rule(r'<![A-Za-z][^>]*>?|<\?[\s\S]*?(?:\?>|$)', _meta),
-        _Rule(r'</?[A-Za-z][\w:.-]*', _tag, push: 'tag'),
-        _Rule(r'&(?:#\d+|#x[\da-fA-F]+|\w+);', _num),
-        _Rule(r'[^<&\s]+', _t),
-      ],
-      'tag': [
-        _ws,
-        _Rule(r'/?>', _tag, pop: true),
-        _Rule(r'"[^"]*"?', _str),
-        _Rule(r"'[^']*'?", _str),
-        _Rule(r'=', _op),
-        _Rule(r'''[^\s=/>"']+''', _attr),
-      ],
-    });
+  'root': [
+    _ws,
+    _Rule(r'<!--[\s\S]*?(?:-->|$)', _com),
+    _Rule(r'<![A-Za-z][^>]*>?|<\?[\s\S]*?(?:\?>|$)', _meta),
+    _Rule(r'</?[A-Za-z][\w:.-]*', _tag, push: 'tag'),
+    _Rule(r'&(?:#\d+|#x[\da-fA-F]+|\w+);', _num),
+    _Rule(r'[^<&\s]+', _t),
+  ],
+  'tag': [
+    _ws,
+    _Rule(r'/?>', _tag, pop: true),
+    _Rule(r'"[^"]*"?', _str),
+    _Rule(r"'[^']*'?", _str),
+    _Rule(r'=', _op),
+    _Rule(r'''[^\s=/>"']+''', _attr),
+  ],
+});
 
 _Grammar _cssGrammar() {
   final value = <_Rule>[
@@ -691,7 +689,19 @@ _Grammar _sqlGrammar() {
     'foreign', 'references', 'default', 'unique', 'check', 'constraint', 'if', 'returning', 'with', 'asc',
     'desc', 'begin', 'commit', 'rollback', 'transaction', 'pragma', 'autoincrement',
   ];
-  const types = ['integer', 'int', 'text', 'real', 'blob', 'numeric', 'varchar', 'char', 'boolean', 'date', 'timestamp'];
+  const types = [
+    'integer',
+    'int',
+    'text',
+    'real',
+    'blob',
+    'numeric',
+    'varchar',
+    'char',
+    'boolean',
+    'date',
+    'timestamp',
+  ];
   return _Grammar({
     'root': [
       _ws,
@@ -725,22 +735,22 @@ _Grammar _diffGrammar() {
 }
 
 _Grammar _hclGrammar() => _Grammar({
-      'root': [
-        _ws,
-        _hashComment,
-        _lineComment,
-        _blockComment,
-        _Rule(r'<<-?\s*([A-Z]+)\n[\s\S]*?\n\s*\1', _str),
-        _dq,
-        _cNumber,
-        _Rule(_words(['true', 'false', 'null']), _num),
-        _Rule(_words(['for', 'in', 'if', 'else', 'endif', 'endfor']), _kw),
-        _Rule(r'[A-Za-z_][\w-]*(?=\s+(?:"|\{|[A-Za-z_][\w-]*\s*\{))', _kw, when: (l) => l.atLineStart),
-        _Rule(r'[A-Za-z_][\w-]*(?=\s*=(?!=))', _prop, when: (l) => l.atLineStart || l.prevIs(const {'{', ','})),
-        _memberAccess,
-        _Rule(r'[A-Za-z_][\w-]*(?=\()', _fn),
-        _Rule(r'[A-Za-z_][\w-]*', _t),
-        _Rule(r'=>|[<>!=]=|&&|\|\||[-+*/%<>=!?:]', _op),
-        _Rule(r'[{}()\[\],.]', _punc),
-      ],
-    });
+  'root': [
+    _ws,
+    _hashComment,
+    _lineComment,
+    _blockComment,
+    _Rule(r'<<-?\s*([A-Z]+)\n[\s\S]*?\n\s*\1', _str),
+    _dq,
+    _cNumber,
+    _Rule(_words(['true', 'false', 'null']), _num),
+    _Rule(_words(['for', 'in', 'if', 'else', 'endif', 'endfor']), _kw),
+    _Rule(r'[A-Za-z_][\w-]*(?=\s+(?:"|\{|[A-Za-z_][\w-]*\s*\{))', _kw, when: (l) => l.atLineStart),
+    _Rule(r'[A-Za-z_][\w-]*(?=\s*=(?!=))', _prop, when: (l) => l.atLineStart || l.prevIs(const {'{', ','})),
+    _memberAccess,
+    _Rule(r'[A-Za-z_][\w-]*(?=\()', _fn),
+    _Rule(r'[A-Za-z_][\w-]*', _t),
+    _Rule(r'=>|[<>!=]=|&&|\|\||[-+*/%<>=!?:]', _op),
+    _Rule(r'[{}()\[\],.]', _punc),
+  ],
+});

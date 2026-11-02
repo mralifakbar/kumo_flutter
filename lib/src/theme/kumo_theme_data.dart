@@ -27,9 +27,9 @@ enum KumoTapTargetSize {
 
   /// The platform default.
   static KumoTapTargetSize get platformDefault => switch (defaultTargetPlatform) {
-        TargetPlatform.iOS || TargetPlatform.android || TargetPlatform.fuchsia => padded,
-        _ => shrinkWrap,
-      };
+    TargetPlatform.iOS || TargetPlatform.android || TargetPlatform.fuchsia => padded,
+    _ => shrinkWrap,
+  };
 }
 
 /// A resolved Kumo theme for one mode. Read it with `context.kumo`.
@@ -53,28 +53,26 @@ class KumoThemeData {
     KumoThemeVariant variant = KumoThemeVariant.kumo,
     KumoTypography typography = const KumoTypography(),
     KumoTapTargetSize? tapTargetSize,
-  }) =>
-      KumoThemeData(
-        brightness: Brightness.light,
-        colors: variant == KumoThemeVariant.fedramp ? KumoColorSchemes.fedrampLight : KumoColorSchemes.light,
-        variant: variant,
-        typography: typography,
-        tapTargetSize: tapTargetSize ?? KumoTapTargetSize.platformDefault,
-      );
+  }) => KumoThemeData(
+    brightness: Brightness.light,
+    colors: variant == KumoThemeVariant.fedramp ? KumoColorSchemes.fedrampLight : KumoColorSchemes.light,
+    variant: variant,
+    typography: typography,
+    tapTargetSize: tapTargetSize ?? KumoTapTargetSize.platformDefault,
+  );
 
   /// Kumo dark mode.
   factory KumoThemeData.dark({
     KumoThemeVariant variant = KumoThemeVariant.kumo,
     KumoTypography typography = const KumoTypography(),
     KumoTapTargetSize? tapTargetSize,
-  }) =>
-      KumoThemeData(
-        brightness: Brightness.dark,
-        colors: variant == KumoThemeVariant.fedramp ? KumoColorSchemes.fedrampDark : KumoColorSchemes.dark,
-        variant: variant,
-        typography: typography,
-        tapTargetSize: tapTargetSize ?? KumoTapTargetSize.platformDefault,
-      );
+  }) => KumoThemeData(
+    brightness: Brightness.dark,
+    colors: variant == KumoThemeVariant.fedramp ? KumoColorSchemes.fedrampDark : KumoColorSchemes.dark,
+    variant: variant,
+    typography: typography,
+    tapTargetSize: tapTargetSize ?? KumoTapTargetSize.platformDefault,
+  );
 
   /// Used when no theme is above a widget.
   static const KumoThemeData fallback = KumoThemeData(brightness: Brightness.light, colors: KumoColorSchemes.light);
@@ -99,16 +97,18 @@ class KumoThemeData {
     FontWeight weight = KumoTypography.normal,
     KumoColor color = KumoColor.textDefault,
     double height = KumoTypography.bodyHeight,
-  }) =>
-      typography.body(size: size, weight: weight, color: colors[color], height: height);
+  }) => typography.body(size: size, weight: weight, color: colors[color], height: height);
 
   /// Heading text style.
   TextStyle heading({KumoHeadingSize size = KumoHeadingSize.base, KumoColor color = KumoColor.textDefault}) =>
       typography.heading(size: size, color: colors[color]);
 
   /// Monospace text style.
-  TextStyle code({bool large = false, KumoColor color = KumoColor.textDefault, FontWeight weight = KumoTypography.normal}) =>
-      typography.code(large: large, color: colors[color], weight: weight);
+  TextStyle code({
+    bool large = false,
+    KumoColor color = KumoColor.textDefault,
+    FontWeight weight = KumoTypography.normal,
+  }) => typography.code(large: large, color: colors[color], weight: weight);
 
   /// Box shadows for an elevation step.
   List<BoxShadow> shadow(KumoShadow shadow) => shadow.boxShadows;
@@ -119,14 +119,13 @@ class KumoThemeData {
     KumoThemeVariant? variant,
     KumoTypography? typography,
     KumoTapTargetSize? tapTargetSize,
-  }) =>
-      KumoThemeData(
-        brightness: brightness ?? this.brightness,
-        colors: colors ?? this.colors,
-        variant: variant ?? this.variant,
-        typography: typography ?? this.typography,
-        tapTargetSize: tapTargetSize ?? this.tapTargetSize,
-      );
+  }) => KumoThemeData(
+    brightness: brightness ?? this.brightness,
+    colors: colors ?? this.colors,
+    variant: variant ?? this.variant,
+    typography: typography ?? this.typography,
+    tapTargetSize: tapTargetSize ?? this.tapTargetSize,
+  );
 
   /// Interpolates colors; discrete settings switch at the midpoint.
   static KumoThemeData lerp(KumoThemeData a, KumoThemeData b, double t) {

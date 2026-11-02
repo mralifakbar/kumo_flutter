@@ -79,7 +79,8 @@ class KumoTableSort {
       : KumoTableSort(id, KumoTableSortDirection.ascending);
 
   @override
-  bool operator ==(Object other) => other is KumoTableSort && other.columnId == columnId && other.direction == direction;
+  bool operator ==(Object other) =>
+      other is KumoTableSort && other.columnId == columnId && other.direction == direction;
 
   @override
   int get hashCode => Object.hash(columnId, direction);
@@ -93,15 +94,11 @@ class KumoTableSort {
 @immutable
 class KumoTableColumnWidth {
   /// Exactly [width] pixels (a `<col>` width with `layout="fixed"`).
-  const KumoTableColumnWidth.fixed(double this.width)
-      : flex = 0,
-        minWidth = width;
+  const KumoTableColumnWidth.fixed(double this.width) : flex = 0, minWidth = width;
 
   /// A share of the room left after fixed columns, never narrower than
   /// [minWidth]. When the minimums do not fit, the table scrolls sideways.
-  const KumoTableColumnWidth.flex([this.flex = 1, this.minWidth = 120])
-      : width = null,
-        assert(flex > 0);
+  const KumoTableColumnWidth.flex([this.flex = 1, this.minWidth = 120]) : width = null, assert(flex > 0);
 
   final double? width;
   final int flex;
@@ -208,7 +205,11 @@ class KumoTablePlaceholder extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           if (icon != null) ...[KumoIcon(icon!, size: 24, color: iconColor), const SizedBox(height: KumoSpace.s3)],
-          Text(title, textAlign: TextAlign.center, style: kumo.text(weight: KumoTypography.medium)),
+          Text(
+            title,
+            textAlign: TextAlign.center,
+            style: kumo.text(weight: KumoTypography.medium),
+          ),
           if (description != null) ...[
             const SizedBox(height: KumoSpace.s1),
             Text(
@@ -484,7 +485,9 @@ class _KumoTableState<T> extends State<KumoTable<T>> with SingleTickerProviderSt
         final footer = widget.footer == null
             ? null
             : DecoratedBox(
-                decoration: BoxDecoration(border: Border(top: BorderSide(color: c.fill))),
+                decoration: BoxDecoration(
+                  border: Border(top: BorderSide(color: c.fill)),
+                ),
                 child: widget.footer,
               );
 
@@ -497,7 +500,11 @@ class _KumoTableState<T> extends State<KumoTable<T>> with SingleTickerProviderSt
           grid = Column(
             mainAxisSize: bounded ? MainAxisSize.max : MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [head, if (bounded) Expanded(child: _fill(state)) else state, ?footer],
+            children: [
+              head,
+              if (bounded) Expanded(child: _fill(state)) else state,
+              ?footer,
+            ],
           );
           return grid;
         }
@@ -517,7 +524,13 @@ class _KumoTableState<T> extends State<KumoTable<T>> with SingleTickerProviderSt
             },
           );
           grid = sticky
-              ? Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [header, Expanded(child: list)])
+              ? Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    header,
+                    Expanded(child: list),
+                  ],
+                )
               : list;
           grid = SizedBox(width: tableWidth, height: constraints.maxHeight, child: grid);
         } else {
@@ -538,19 +551,19 @@ class _KumoTableState<T> extends State<KumoTable<T>> with SingleTickerProviderSt
   /// Centers a body state in the room left, scrolling if large text makes
   /// it taller than that.
   Widget _fill(Widget state) => LayoutBuilder(
-        builder: (context, constraints) => SingleChildScrollView(
-          child: ConstrainedBox(
-            constraints: BoxConstraints(minHeight: constraints.maxHeight),
-            child: Center(child: state),
-          ),
-        ),
-      );
+    builder: (context, constraints) => SingleChildScrollView(
+      child: ConstrainedBox(
+        constraints: BoxConstraints(minHeight: constraints.maxHeight),
+        child: Center(child: state),
+      ),
+    ),
+  );
 
   Widget _scroll(Widget child, Color fade) => DataScrollFade(
-        controller: _horizontal,
-        color: fade,
-        child: SingleChildScrollView(controller: _horizontal, scrollDirection: Axis.horizontal, child: child),
-      );
+    controller: _horizontal,
+    color: fade,
+    child: SingleChildScrollView(controller: _horizontal, scrollDirection: Axis.horizontal, child: child),
+  );
 
   EdgeInsets _cellPadding({required bool header}) {
     final compact = header
@@ -560,10 +573,10 @@ class _KumoTableState<T> extends State<KumoTable<T>> with SingleTickerProviderSt
   }
 
   static AlignmentDirectional _alignment(KumoTableAlign align) => switch (align) {
-        KumoTableAlign.start => AlignmentDirectional.centerStart,
-        KumoTableAlign.center => AlignmentDirectional.center,
-        KumoTableAlign.end => AlignmentDirectional.centerEnd,
-      };
+    KumoTableAlign.start => AlignmentDirectional.centerStart,
+    KumoTableAlign.center => AlignmentDirectional.center,
+    KumoTableAlign.end => AlignmentDirectional.centerEnd,
+  };
 
   Widget _header(
     BuildContext context,
@@ -587,65 +600,74 @@ class _KumoTableState<T> extends State<KumoTable<T>> with SingleTickerProviderSt
       final ids = widget.rows.map(_id);
       final count = ids.where(widget.selected!.contains).length;
       final all = widget.rows.isNotEmpty && count == widget.rows.length;
-      cells.add(Center(
-        child: DataCheckbox(
-          checked: all,
-          mixed: count > 0 && !all,
-          disabled: widget.rows.isEmpty,
-          semanticLabel: strings.selectAll,
-          hitArea: Size(checkWidth, math.max(40, kumo.minTapTarget)),
-          onChanged: widget.onSelectionChange == null ? null : (_) => _toggleAll(!all),
+      cells.add(
+        Center(
+          child: DataCheckbox(
+            checked: all,
+            mixed: count > 0 && !all,
+            disabled: widget.rows.isEmpty,
+            semanticLabel: strings.selectAll,
+            hitArea: Size(checkWidth, math.max(40, kumo.minTapTarget)),
+            onChanged: widget.onSelectionChange == null ? null : (_) => _toggleAll(!all),
+          ),
         ),
-      ));
+      );
     }
     for (final col in widget.columns) {
       final align = col.resolvedAlign;
       final sorted = widget.sort?.columnId == col.id ? widget.sort!.direction : null;
       Widget label = col.header ?? Text(col.label, style: style);
       if (col.sortable) {
-        final icon = _SortIndicator(
-          direction: sorted,
-          color: compact ? KumoColor.textStrong : KumoColor.textDefault,
-        );
+        final icon = _SortIndicator(direction: sorted, color: compact ? KumoColor.textStrong : KumoColor.textDefault);
         final next = (widget.sort ?? KumoTableSort(col.id, KumoTableSortDirection.descending)).toggled(col.id);
         label = Row(
           mainAxisSize: MainAxisSize.min,
           spacing: KumoSpace.s1,
-          children: align == KumoTableAlign.end
-              ? [icon, Flexible(child: label)]
-              : [Flexible(child: label), icon],
+          children: align == KumoTableAlign.end ? [icon, Flexible(child: label)] : [Flexible(child: label), icon],
         );
-        cells.add(KumoPressable(
-          onPress: widget.onSortChange == null ? null : () => widget.onSortChange!(next),
-          semanticLabel: col.label,
-          // aria-sort, read as the button's value.
-          semanticValue: switch (sorted) {
-            KumoTableSortDirection.ascending => context.kumoStrings.sortedAscending,
-            KumoTableSortDirection.descending => context.kumoStrings.sortedDescending,
-            null => null,
-          },
-          semanticHint: next.direction == KumoTableSortDirection.ascending ? strings.sortAscending : strings.sortDescending,
-          excludeChildSemantics: true,
-          scaleOnPress: false,
-          minTapTargetSize: 0,
-          focusRingOffset: -2,
-          builder: (context, state) => Container(
-            color: state.active ? c.tint : null,
-            padding: padding,
-            alignment: _alignment(align),
-            child: label,
+        cells.add(
+          KumoPressable(
+            onPress: widget.onSortChange == null ? null : () => widget.onSortChange!(next),
+            semanticLabel: col.label,
+            // aria-sort, read as the button's value.
+            semanticValue: switch (sorted) {
+              KumoTableSortDirection.ascending => context.kumoStrings.sortedAscending,
+              KumoTableSortDirection.descending => context.kumoStrings.sortedDescending,
+              null => null,
+            },
+            semanticHint: next.direction == KumoTableSortDirection.ascending
+                ? strings.sortAscending
+                : strings.sortDescending,
+            excludeChildSemantics: true,
+            scaleOnPress: false,
+            minTapTargetSize: 0,
+            focusRingOffset: -2,
+            builder: (context, state) => Container(
+              color: state.active ? c.tint : null,
+              padding: padding,
+              alignment: _alignment(align),
+              child: label,
+            ),
           ),
-        ));
+        );
       } else {
-        cells.add(Semantics(
-          header: true,
-          child: Padding(padding: padding, child: Align(alignment: _alignment(align), heightFactor: 1, child: label)),
-        ));
+        cells.add(
+          Semantics(
+            header: true,
+            child: Padding(
+              padding: padding,
+              child: Align(alignment: _alignment(align), heightFactor: 1, child: label),
+            ),
+          ),
+        );
       }
     }
 
     return DecoratedBox(
-      decoration: BoxDecoration(color: background, border: Border(bottom: BorderSide(color: c.fill))),
+      decoration: BoxDecoration(
+        color: background,
+        border: Border(bottom: BorderSide(color: c.fill)),
+      ),
       child: _TableRowLayout(
         widths: widths,
         pins: pins,
@@ -774,7 +796,10 @@ class _KumoTableState<T> extends State<KumoTable<T>> with SingleTickerProviderSt
     final c = kumo.colors;
     final strings = context.kumoStrings;
     final state = _bodyState(context);
-    final visible = [for (final col in widget.columns) if (col.showInCards) col];
+    final visible = [
+      for (final col in widget.columns)
+        if (col.showInCards) col,
+    ];
 
     Widget card(int index) {
       final row = widget.rows[index];
@@ -786,71 +811,82 @@ class _KumoTableState<T> extends State<KumoTable<T>> with SingleTickerProviderSt
         return _RowTint(
           color: selected ? c.tint : c.base,
           builder: (context, resting) => Container(
-          decoration: BoxDecoration(
-            color: active ? c.tint : resting,
-            borderRadius: radius,
-            border: KumoRing.border(c.line),
-          ),
-          padding: const EdgeInsetsDirectional.fromSTEB(KumoSpace.s4, KumoSpace.s3, KumoSpace.s4, KumoSpace.s3),
-          child: DataHoverScope(
-            active: active,
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              spacing: KumoSpace.s3,
-              children: [
-                if (_selectable)
-                  DataCheckbox(
-                    checked: selected,
-                    semanticLabel: name == null ? strings.selectRow : '${strings.select} $name',
-                    hitArea: const Size(24, 22),
-                    onChanged: widget.onSelectionChange == null ? null : (v) => _toggleRow(row, v),
-                  ),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    spacing: KumoSpace.s1_5,
-                    children: [
-                      if (title != null)
-                        DefaultTextStyle(
-                          style: kumo.text(weight: KumoTypography.medium),
-                          child: Builder(builder: (context) => title.cell(context, row)),
-                        ),
-                      for (final col in visible.skip(1))
-                        // Centered, so a label stays level with a cell
-                        // taller than its text (a switch with a 44px target).
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          spacing: KumoSpace.s3,
-                          children: [
-                            if (col.label.isNotEmpty)
-                              Text(col.label, style: kumo.text(size: KumoTextSize.sm, color: KumoColor.textSubtle)),
-                            Expanded(
-                              child: Align(
-                                alignment: col.label.isEmpty ? AlignmentDirectional.centerStart : AlignmentDirectional.centerEnd,
-                                child: DefaultTextStyle(
-                                  style: col.numeric
-                                      ? kumo.text().copyWith(fontFeatures: const [FontFeature.tabularFigures()])
-                                      : kumo.text(),
-                                  textAlign: col.label.isEmpty ? TextAlign.start : TextAlign.end,
-                                  child: Builder(builder: (context) => col.cell(context, row)),
+            decoration: BoxDecoration(
+              color: active ? c.tint : resting,
+              borderRadius: radius,
+              border: KumoRing.border(c.line),
+            ),
+            padding: const EdgeInsetsDirectional.fromSTEB(KumoSpace.s4, KumoSpace.s3, KumoSpace.s4, KumoSpace.s3),
+            child: DataHoverScope(
+              active: active,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                spacing: KumoSpace.s3,
+                children: [
+                  if (_selectable)
+                    DataCheckbox(
+                      checked: selected,
+                      semanticLabel: name == null ? strings.selectRow : '${strings.select} $name',
+                      hitArea: const Size(24, 22),
+                      onChanged: widget.onSelectionChange == null ? null : (v) => _toggleRow(row, v),
+                    ),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      spacing: KumoSpace.s1_5,
+                      children: [
+                        if (title != null)
+                          DefaultTextStyle(
+                            style: kumo.text(weight: KumoTypography.medium),
+                            child: Builder(builder: (context) => title.cell(context, row)),
+                          ),
+                        for (final col in visible.skip(1))
+                          // Centered, so a label stays level with a cell
+                          // taller than its text (a switch with a 44px target).
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            spacing: KumoSpace.s3,
+                            children: [
+                              if (col.label.isNotEmpty)
+                                Text(
+                                  col.label,
+                                  style: kumo.text(size: KumoTextSize.sm, color: KumoColor.textSubtle),
+                                ),
+                              Expanded(
+                                child: Align(
+                                  alignment: col.label.isEmpty
+                                      ? AlignmentDirectional.centerStart
+                                      : AlignmentDirectional.centerEnd,
+                                  child: DefaultTextStyle(
+                                    style: col.numeric
+                                        ? kumo.text().copyWith(fontFeatures: const [FontFeature.tabularFigures()])
+                                        : kumo.text(),
+                                    textAlign: col.label.isEmpty ? TextAlign.start : TextAlign.end,
+                                    child: Builder(builder: (context) => col.cell(context, row)),
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                    ],
+                            ],
+                          ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
-        ),
         );
       }
 
       final key = ValueKey<Object>(_id(row));
       final Widget item = widget.onRowPress == null
-          ? Semantics(key: key, container: true, selected: _selectable ? selected : null, label: name, child: body(false))
+          ? Semantics(
+              key: key,
+              container: true,
+              selected: _selectable ? selected : null,
+              label: name,
+              child: body(false),
+            )
           : KumoPressable(
               key: key,
               onPress: () => widget.onRowPress!(row),
@@ -863,7 +899,10 @@ class _KumoTableState<T> extends State<KumoTable<T>> with SingleTickerProviderSt
       return FadeTransition(
         key: key,
         opacity: _rowOpacity,
-        child: Padding(padding: const EdgeInsets.only(bottom: KumoSpace.s2), child: item),
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: KumoSpace.s2),
+          child: item,
+        ),
       );
     }
 
@@ -883,7 +922,9 @@ class _KumoTableState<T> extends State<KumoTable<T>> with SingleTickerProviderSt
               hitArea: const Size(24, 32),
               onChanged: widget.onSelectionChange == null ? null : (_) => _toggleAll(!all),
             ),
-            ExcludeSemantics(child: Text(strings.selectAll, style: kumo.text(color: KumoColor.textSubtle))),
+            ExcludeSemantics(
+              child: Text(strings.selectAll, style: kumo.text(color: KumoColor.textSubtle)),
+            ),
           ],
         ),
       );
@@ -957,11 +998,11 @@ class _RowTint extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => TweenAnimationBuilder<Color?>(
-        tween: ColorTween(end: color),
-        duration: KumoMotion.duration(context, KumoDurations.fast),
-        curve: KumoCurves.standard,
-        builder: (context, value, _) => builder(context, value ?? color),
-      );
+    tween: ColorTween(end: color),
+    duration: KumoMotion.duration(context, KumoDurations.fast),
+    curve: KumoCurves.standard,
+    builder: (context, value, _) => builder(context, value ?? color),
+  );
 }
 
 /// Hover tracking for rows that are not pressable, so a
@@ -982,15 +1023,15 @@ class _HoverRowState extends State<_HoverRow> {
 
   @override
   Widget build(BuildContext context) => MouseRegion(
-        onEnter: (_) => setState(() => _hovered = true),
-        onExit: (_) => setState(() => _hovered = false),
-        child: Focus(
-          canRequestFocus: false,
-          skipTraversal: true,
-          onFocusChange: (f) => setState(() => _focused = f),
-          child: widget.builder(_hovered || _focused),
-        ),
-      );
+    onEnter: (_) => setState(() => _hovered = true),
+    onExit: (_) => setState(() => _hovered = false),
+    child: Focus(
+      canRequestFocus: false,
+      skipTraversal: true,
+      onFocusChange: (f) => setState(() => _focused = f),
+      child: widget.builder(_hovered || _focused),
+    ),
+  );
 }
 
 /// Lays out one row's cells at fixed widths, stretches them to the tallest
@@ -1018,13 +1059,13 @@ class _TableRowLayout extends MultiChildRenderObjectWidget {
 
   @override
   RenderObject createRenderObject(BuildContext context) => _RenderTableRow(
-        widths: widths,
-        pins: pins,
-        controller: controller,
-        background: background,
-        textDirection: textDirection,
-        minHeight: minHeight,
-      );
+    widths: widths,
+    pins: pins,
+    controller: controller,
+    background: background,
+    textDirection: textDirection,
+    minHeight: minHeight,
+  );
 
   @override
   void updateRenderObject(BuildContext context, _RenderTableRow renderObject) {
@@ -1041,7 +1082,9 @@ class _TableRowLayout extends MultiChildRenderObjectWidget {
 class _RowParentData extends ContainerBoxParentData<RenderBox> {}
 
 class _RenderTableRow extends RenderBox
-    with ContainerRenderObjectMixin<RenderBox, _RowParentData>, RenderBoxContainerDefaultsMixin<RenderBox, _RowParentData> {
+    with
+        ContainerRenderObjectMixin<RenderBox, _RowParentData>,
+        RenderBoxContainerDefaultsMixin<RenderBox, _RowParentData> {
   _RenderTableRow({
     required List<double> widths,
     required List<KumoTableColumnPin?> pins,
@@ -1049,12 +1092,12 @@ class _RenderTableRow extends RenderBox
     required Color background,
     required TextDirection textDirection,
     required double minHeight,
-  })  : _minHeight = minHeight,
-        _widths = widths,
-        _pins = pins,
-        _controller = controller,
-        _background = background,
-        _textDirection = textDirection;
+  }) : _minHeight = minHeight,
+       _widths = widths,
+       _pins = pins,
+       _controller = controller,
+       _background = background,
+       _textDirection = textDirection;
 
   double _minHeight;
   set minHeight(double value) {

@@ -7,54 +7,63 @@ import '../demo.dart';
 /// zone, Worker and setting here is sample data.
 final KumoDemoCategory controlsCategory = KumoDemoCategory(
   title: 'Controls',
-  description: 'Checkboxes, radios, switches, sliders, button groups and toggles. Settings shown are sample data.',
+  description:
+      'Checkboxes, radios, switches, sliders, button groups and toggles. Settings shown are sample data.',
   icon: KumoIcons.toggleRight,
   demos: [
     KumoDemo(
       title: 'KumoCheckbox',
-      description: 'Checked, indeterminate select-all, label first, disabled, error and card checkboxes.',
+      description:
+          'Checked, indeterminate select-all, label first, disabled, error and card checkboxes.',
       docPath: 'doc/components/KumoCheckbox.md',
       builder: (_) => const _CheckboxDemo(),
     ),
     KumoDemo(
       title: 'KumoCheckboxGroup',
-      description: 'A legend over checkboxes with live validation, horizontal layout and joined cards.',
+      description:
+          'A legend over checkboxes with live validation, horizontal layout and joined cards.',
       docPath: 'doc/components/KumoCheckboxGroup.md',
       builder: (_) => const _CheckboxGroupDemo(),
     ),
     KumoDemo(
       title: 'KumoRadioGroup',
-      description: 'Vertical, horizontal, segmented and card radio groups with arrow-key selection.',
+      description:
+          'Vertical, horizontal, segmented and card radio groups with arrow-key selection.',
       docPath: 'doc/components/KumoRadioGroup.md',
       builder: (_) => const _RadioDemo(),
     ),
     KumoDemo(
       title: 'KumoSwitch',
-      description: 'Draggable switches in three sizes, neutral, disabled, saving and grouped.',
+      description:
+          'Draggable switches in three sizes, neutral, disabled, saving and grouped.',
       docPath: 'doc/components/KumoSwitch.md',
       builder: (_) => const _SwitchDemo(),
     ),
     KumoDemo(
       title: 'KumoSlider',
-      description: 'Single and range sliders with steps, formatted values, sizes and a disabled state.',
+      description:
+          'Single and range sliders with steps, formatted values, sizes and a disabled state.',
       docPath: 'doc/components/KumoSlider.md',
       builder: (_) => const _SliderDemo(),
     ),
     KumoDemo(
       title: 'KumoButtonGroup',
-      description: 'Split buttons with a working menu, in primary and secondary styles and three sizes.',
+      description:
+          'Split buttons with a working menu, in primary and secondary styles and three sizes.',
       docPath: 'doc/components/KumoButtonGroup.md',
       builder: (_) => const _ButtonGroupDemo(),
     ),
     KumoDemo(
       title: 'KumoToggle',
-      description: 'Pressed-state buttons for filters and formatting, ghost and outline.',
+      description:
+          'Pressed-state buttons for filters and formatting, ghost and outline.',
       docPath: 'doc/components/KumoToggle.md',
       builder: (_) => const _ToggleDemo(),
     ),
     KumoDemo(
       title: 'KumoToggleGroup',
-      description: 'Single and multiple selection groups, segmented or ghost, in three sizes.',
+      description:
+          'Single and multiple selection groups, segmented or ghost, in three sizes.',
       docPath: 'doc/components/KumoToggleGroup.md',
       builder: (_) => const _ToggleGroupDemo(),
     ),
@@ -62,12 +71,13 @@ final KumoDemoCategory controlsCategory = KumoDemoCategory(
 );
 
 Widget _column(List<Widget> children) => Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      spacing: KumoSpace.s6,
-      children: children,
-    );
+  crossAxisAlignment: CrossAxisAlignment.stretch,
+  spacing: KumoSpace.s6,
+  children: children,
+);
 
-Widget _start(Widget child) => Align(alignment: AlignmentDirectional.centerStart, child: child);
+Widget _start(Widget child) =>
+    Align(alignment: AlignmentDirectional.centerStart, child: child);
 
 class _CheckboxDemo extends StatefulWidget {
   const _CheckboxDemo();
@@ -82,7 +92,11 @@ class _CheckboxDemoState extends State<_CheckboxDemo> {
   bool _terms = false;
   bool _card = true;
   final Set<String> _routes = {'api.example.com/*'};
-  static const _allRoutes = ['api.example.com/*', 'example.com/images/*', 'example.com/blog/*'];
+  static const _allRoutes = [
+    'api.example.com/*',
+    'example.com/images/*',
+    'example.com/blog/*',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -90,11 +104,13 @@ class _CheckboxDemoState extends State<_CheckboxDemo> {
     return _column([
       DemoSection(
         title: 'Basic',
-        child: _start(KumoCheckbox(
-          label: 'Purge cache after deploy',
-          checked: _purge,
-          onCheckedChange: (v) => setState(() => _purge = v),
-        )),
+        child: _start(
+          KumoCheckbox(
+            label: 'Purge cache after deploy',
+            checked: _purge,
+            onCheckedChange: (v) => setState(() => _purge = v),
+          ),
+        ),
       ),
       DemoSection(
         title: 'Indeterminate',
@@ -120,7 +136,9 @@ class _CheckboxDemoState extends State<_CheckboxDemo> {
                     KumoCheckbox(
                       label: route,
                       checked: _routes.contains(route),
-                      onCheckedChange: (v) => setState(() => v ? _routes.add(route) : _routes.remove(route)),
+                      onCheckedChange: (v) => setState(
+                        () => v ? _routes.add(route) : _routes.remove(route),
+                      ),
                     ),
                 ],
               ),
@@ -130,41 +148,55 @@ class _CheckboxDemoState extends State<_CheckboxDemo> {
       ),
       DemoSection(
         title: 'Label first',
-        child: _start(KumoCheckbox(
-          label: 'Remember this device',
-          controlFirst: false,
-          checked: _remember,
-          onCheckedChange: (v) => setState(() => _remember = v),
-        )),
+        child: _start(
+          KumoCheckbox(
+            label: 'Remember this device',
+            controlFirst: false,
+            checked: _remember,
+            onCheckedChange: (v) => setState(() => _remember = v),
+          ),
+        ),
       ),
       DemoSection(
         title: 'Description, optional and tooltip',
-        child: _start(KumoCheckbox(
-          label: 'Email me a weekly usage report',
-          description: 'Sent every Monday to the account owner.',
-          required: false,
-          labelTooltip: 'You can unsubscribe from the email itself',
-          checked: _remember,
-          onCheckedChange: (v) => setState(() => _remember = v),
-        )),
+        child: _start(
+          KumoCheckbox(
+            label: 'Email me a weekly usage report',
+            description: 'Sent every Monday to the account owner.',
+            required: false,
+            labelTooltip: 'You can unsubscribe from the email itself',
+            checked: _remember,
+            onCheckedChange: (v) => setState(() => _remember = v),
+          ),
+        ),
       ),
       DemoSection(
         title: 'Error',
         caption: 'Check the box to clear the error.',
-        child: _start(KumoCheckbox(
-          label: 'I understand this deletes the R2 bucket assets',
-          error: _terms ? null : 'Confirm to continue.',
-          checked: _terms,
-          onCheckedChange: (v) => setState(() => _terms = v),
-        )),
+        child: _start(
+          KumoCheckbox(
+            label: 'I understand this deletes the R2 bucket assets',
+            error: _terms ? null : 'Confirm to continue.',
+            checked: _terms,
+            onCheckedChange: (v) => setState(() => _terms = v),
+          ),
+        ),
       ),
       const DemoSection(
         title: 'Disabled',
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            KumoCheckbox(label: 'Managed by your organization', checked: true, disabled: true),
-            KumoCheckbox(label: 'Unavailable on the Free plan', checked: false, disabled: true),
+            KumoCheckbox(
+              label: 'Managed by your organization',
+              checked: true,
+              disabled: true,
+            ),
+            KumoCheckbox(
+              label: 'Unavailable on the Free plan',
+              checked: false,
+              disabled: true,
+            ),
           ],
         ),
       ),
@@ -196,10 +228,26 @@ class _CheckboxGroupDemoState extends State<_CheckboxGroupDemo> {
   List<String> _scanGrid = const ['web', 'mail'];
 
   static const _scanItems = [
-    KumoCheckboxGroupItem(value: 'web', label: 'Web traffic', description: 'Uploads and downloads through Gateway HTTP policies.'),
-    KumoCheckboxGroupItem(value: 'ai', label: 'AI prompts', description: 'Prompts sent to AI apps and their responses.'),
-    KumoCheckboxGroupItem(value: 'saas', label: 'SaaS storage', description: 'Files in connected apps and cloud accounts.'),
-    KumoCheckboxGroupItem(value: 'mail', label: 'Outbound email', description: 'Email leaving your organization.'),
+    KumoCheckboxGroupItem(
+      value: 'web',
+      label: 'Web traffic',
+      description: 'Uploads and downloads through Gateway HTTP policies.',
+    ),
+    KumoCheckboxGroupItem(
+      value: 'ai',
+      label: 'AI prompts',
+      description: 'Prompts sent to AI apps and their responses.',
+    ),
+    KumoCheckboxGroupItem(
+      value: 'saas',
+      label: 'SaaS storage',
+      description: 'Files in connected apps and cloud accounts.',
+    ),
+    KumoCheckboxGroupItem(
+      value: 'mail',
+      label: 'Outbound email',
+      description: 'Email leaving your organization.',
+    ),
   ];
 
   @override
@@ -215,10 +263,23 @@ class _CheckboxGroupDemoState extends State<_CheckboxGroupDemo> {
           value: _alerts,
           onValueChange: (v) => setState(() => _alerts = v),
           items: const [
-            KumoCheckboxGroupItem(value: 'deploys', label: 'Failed Worker deployments'),
-            KumoCheckboxGroupItem(value: 'usage', label: 'Usage above 80% of plan limits'),
-            KumoCheckboxGroupItem(value: 'tokens', label: 'API tokens expiring this week'),
-            KumoCheckboxGroupItem(value: 'billing', label: 'Billing changes', disabled: true),
+            KumoCheckboxGroupItem(
+              value: 'deploys',
+              label: 'Failed Worker deployments',
+            ),
+            KumoCheckboxGroupItem(
+              value: 'usage',
+              label: 'Usage above 80% of plan limits',
+            ),
+            KumoCheckboxGroupItem(
+              value: 'tokens',
+              label: 'API tokens expiring this week',
+            ),
+            KumoCheckboxGroupItem(
+              value: 'billing',
+              label: 'Billing changes',
+              disabled: true,
+            ),
           ],
         ),
       ),
@@ -377,9 +438,22 @@ class _RadioDemoState extends State<_RadioDemo> {
           value: _plan,
           onValueChange: (v) => setState(() => _plan = v),
           items: const [
-            KumoRadio(value: 'free', label: 'Free', description: 'For personal projects and testing.'),
-            KumoRadio(value: 'pro', label: 'Pro', description: 'Image optimization and more page rules.'),
-            KumoRadio(value: 'business', label: 'Business', description: 'Custom SSL and a 100% uptime SLA.', disabled: true),
+            KumoRadio(
+              value: 'free',
+              label: 'Free',
+              description: 'For personal projects and testing.',
+            ),
+            KumoRadio(
+              value: 'pro',
+              label: 'Pro',
+              description: 'Image optimization and more page rules.',
+            ),
+            KumoRadio(
+              value: 'business',
+              label: 'Business',
+              description: 'Custom SSL and a 100% uptime SLA.',
+              disabled: true,
+            ),
           ],
         ),
       ),
@@ -405,8 +479,16 @@ class _RadioDemoState extends State<_RadioDemo> {
           value: _position,
           onValueChange: (v) => setState(() => _position = v),
           items: const [
-            KumoRadio(value: 'us', label: '7 days', description: 'Included in every plan.'),
-            KumoRadio(value: 'eu', label: '30 days', description: 'Billed per GB stored.'),
+            KumoRadio(
+              value: 'us',
+              label: '7 days',
+              description: 'Included in every plan.',
+            ),
+            KumoRadio(
+              value: 'eu',
+              label: '30 days',
+              description: 'Billed per GB stored.',
+            ),
           ],
         ),
       ),
@@ -423,7 +505,9 @@ class _SwitchDemo extends StatefulWidget {
 
 class _SwitchDemoState extends State<_SwitchDemo> {
   bool _https = true;
-  final Map<KumoSwitchSize, bool> _sizes = {for (final s in KumoSwitchSize.values) s: true};
+  final Map<KumoSwitchSize, bool> _sizes = {
+    for (final s in KumoSwitchSize.values) s: true,
+  };
   bool _neutral = false;
   bool _labelFirst = true;
   bool _proxy = false;
@@ -448,11 +532,13 @@ class _SwitchDemoState extends State<_SwitchDemo> {
       DemoSection(
         title: 'Basic',
         caption: 'Tap, or drag the thumb.',
-        child: _start(KumoSwitch(
-          label: 'Always use HTTPS',
-          checked: _https,
-          onCheckedChange: (v) => setState(() => _https = v),
-        )),
+        child: _start(
+          KumoSwitch(
+            label: 'Always use HTTPS',
+            checked: _https,
+            onCheckedChange: (v) => setState(() => _https = v),
+          ),
+        ),
       ),
       DemoSection(
         title: 'Sizes',
@@ -476,39 +562,53 @@ class _SwitchDemoState extends State<_SwitchDemo> {
       DemoSection(
         title: 'Neutral',
         caption: 'Monochrome, for settings that should not draw the eye.',
-        child: _start(KumoSwitch(
-          label: 'Compact table rows',
-          variant: KumoSwitchVariant.neutral,
-          checked: _neutral,
-          onCheckedChange: (v) => setState(() => _neutral = v),
-        )),
+        child: _start(
+          KumoSwitch(
+            label: 'Compact table rows',
+            variant: KumoSwitchVariant.neutral,
+            checked: _neutral,
+            onCheckedChange: (v) => setState(() => _neutral = v),
+          ),
+        ),
       ),
       DemoSection(
         title: 'Label first',
-        child: _start(KumoSwitch(
-          label: 'Development mode',
-          controlFirst: false,
-          checked: _labelFirst,
-          onCheckedChange: (v) => setState(() => _labelFirst = v),
-        )),
+        child: _start(
+          KumoSwitch(
+            label: 'Development mode',
+            controlFirst: false,
+            checked: _labelFirst,
+            onCheckedChange: (v) => setState(() => _labelFirst = v),
+          ),
+        ),
       ),
       DemoSection(
         title: 'Saving',
         caption: 'Input is ignored while the change is saved.',
-        child: _start(KumoSwitch(
-          label: _saving ? 'Proxy status (saving)' : 'Proxy status',
-          checked: _proxy,
-          transitioning: _saving,
-          onCheckedChange: _saveProxy,
-        )),
+        child: _start(
+          KumoSwitch(
+            label: _saving ? 'Proxy status (saving)' : 'Proxy status',
+            checked: _proxy,
+            transitioning: _saving,
+            onCheckedChange: _saveProxy,
+          ),
+        ),
       ),
       const DemoSection(
         title: 'Disabled',
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            KumoSwitch(label: 'Enforced by policy', checked: true, disabled: true),
-            KumoSwitch(label: 'Requires Enterprise', checked: false, disabled: true),
+            KumoSwitch(
+              label: 'Enforced by policy',
+              checked: true,
+              disabled: true,
+            ),
+            KumoSwitch(
+              label: 'Requires Enterprise',
+              checked: false,
+              disabled: true,
+            ),
           ],
         ),
       ),
@@ -518,9 +618,21 @@ class _SwitchDemoState extends State<_SwitchDemo> {
           legend: 'Notifications',
           description: 'Delivered to the account owner.',
           children: [
-            KumoSwitch(label: 'Deploy failures', checked: _failures, onCheckedChange: (v) => setState(() => _failures = v)),
-            KumoSwitch(label: 'Weekly usage report', checked: _report, onCheckedChange: (v) => setState(() => _report = v)),
-            KumoSwitch(label: 'Usage limit warnings', checked: _usage, onCheckedChange: (v) => setState(() => _usage = v)),
+            KumoSwitch(
+              label: 'Deploy failures',
+              checked: _failures,
+              onCheckedChange: (v) => setState(() => _failures = v),
+            ),
+            KumoSwitch(
+              label: 'Weekly usage report',
+              checked: _report,
+              onCheckedChange: (v) => setState(() => _report = v),
+            ),
+            KumoSwitch(
+              label: 'Usage limit warnings',
+              checked: _usage,
+              onCheckedChange: (v) => setState(() => _usage = v),
+            ),
           ],
         ),
       ),
@@ -549,7 +661,9 @@ class _SliderDemoState extends State<_SliderDemo> {
     return _column([
       DemoSection(
         title: 'Basic',
-        caption: _committed == null ? 'Drag the thumb or tap the track.' : 'Committed: ${_committed!.round()} minutes',
+        caption: _committed == null
+            ? 'Drag the thumb or tap the track.'
+            : 'Committed: ${_committed!.round()} minutes',
         child: KumoSlider(
           label: 'Edge cache TTL (minutes)',
           value: _ttl,
@@ -565,7 +679,8 @@ class _SliderDemoState extends State<_SliderDemo> {
           max: 1000,
           step: 10,
           largeStep: 100,
-          thumbSemanticLabel: (i) => i == 0 ? 'Minimum response time' : 'Maximum response time',
+          thumbSemanticLabel: (i) =>
+              i == 0 ? 'Minimum response time' : 'Maximum response time',
           onValuesChange: (v) => setState(() => _latency = v),
         ),
       ),
@@ -597,8 +712,17 @@ class _SliderDemoState extends State<_SliderDemo> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           spacing: KumoSpace.s6,
           children: [
-            KumoSlider(label: 'Small', size: KumoSliderSize.sm, value: _small, onValueChange: (v) => setState(() => _small = v)),
-            KumoSlider(label: 'Base', value: _base, onValueChange: (v) => setState(() => _base = v)),
+            KumoSlider(
+              label: 'Small',
+              size: KumoSliderSize.sm,
+              value: _small,
+              onValueChange: (v) => setState(() => _small = v),
+            ),
+            KumoSlider(
+              label: 'Base',
+              value: _base,
+              onValueChange: (v) => setState(() => _base = v),
+            ),
           ],
         ),
       ),
@@ -622,9 +746,9 @@ class _ButtonGroupDemoState extends State<_ButtonGroupDemo> {
   String _last = 'Nothing run yet';
 
   void _run(String action) => setState(() {
-        _openMenu = null;
-        _last = action;
-      });
+    _openMenu = null;
+    _last = action;
+  });
 
   Widget _split({
     required String id,
@@ -645,12 +769,16 @@ class _ButtonGroupDemoState extends State<_ButtonGroupDemo> {
           trapFocus: true,
           onDismiss: () => setState(() => _openMenu = null),
           overlayBuilder: (context, _) => KumoMenuPanel(
-            children: [for (final a in actions) KumoMenuRow(label: a, onPress: () => _run(a))],
+            children: [
+              for (final a in actions)
+                KumoMenuRow(label: a, onPress: () => _run(a)),
+            ],
           ),
           child: KumoButtonGroupButton(
             icon: KumoIcons.caretDown,
             semanticLabel: 'More ${label.toLowerCase()} options',
-            onPress: () => setState(() => _openMenu = _openMenu == id ? null : id),
+            onPress: () =>
+                setState(() => _openMenu = _openMenu == id ? null : id),
           ),
         ),
       ],
@@ -660,23 +788,35 @@ class _ButtonGroupDemoState extends State<_ButtonGroupDemo> {
   @override
   Widget build(BuildContext context) {
     return _column([
-      KumoText('Last action: $_last', variant: KumoTextVariant.secondary, size: KumoTextSize.sm),
+      KumoText(
+        'Last action: $_last',
+        variant: KumoTextVariant.secondary,
+        size: KumoTextSize.sm,
+      ),
       DemoSection(
         title: 'Split button',
-        child: _start(_split(
-          id: 'deploy',
-          label: 'Deploy',
-          actions: const ['Deploy to staging', 'Deploy and tail logs', 'Schedule deploy'],
-        )),
+        child: _start(
+          _split(
+            id: 'deploy',
+            label: 'Deploy',
+            actions: const [
+              'Deploy to staging',
+              'Deploy and tail logs',
+              'Schedule deploy',
+            ],
+          ),
+        ),
       ),
       DemoSection(
         title: 'Secondary',
-        child: _start(_split(
-          id: 'save',
-          label: 'Save',
-          variant: KumoButtonVariant.secondary,
-          actions: const ['Save as draft', 'Save and publish', 'Save a copy'],
-        )),
+        child: _start(
+          _split(
+            id: 'save',
+            label: 'Save',
+            variant: KumoButtonVariant.secondary,
+            actions: const ['Save as draft', 'Save and publish', 'Save a copy'],
+          ),
+        ),
       ),
       DemoSection(
         title: 'Sizes',
@@ -685,7 +825,11 @@ class _ButtonGroupDemoState extends State<_ButtonGroupDemo> {
           runSpacing: KumoSpace.s4,
           crossAxisAlignment: WrapCrossAlignment.center,
           children: [
-            for (final size in [KumoButtonSize.sm, KumoButtonSize.base, KumoButtonSize.lg])
+            for (final size in [
+              KumoButtonSize.sm,
+              KumoButtonSize.base,
+              KumoButtonSize.lg,
+            ])
               _split(
                 id: 'size-${size.name}',
                 label: 'Deploy',
@@ -697,14 +841,26 @@ class _ButtonGroupDemoState extends State<_ButtonGroupDemo> {
       ),
       DemoSection(
         title: 'Joined actions',
-        child: _start(KumoButtonGroup(
-          semanticLabel: 'Worker version',
-          children: [
-            KumoButtonGroupButton(label: 'Roll back', icon: KumoIcons.arrowCounterClockwise, onPress: () => _run('Roll back')),
-            KumoButtonGroupButton(label: 'Promote', onPress: () => _run('Promote')),
-            const KumoButtonGroupButton(label: 'Delete', variant: KumoButtonVariant.secondaryDestructive),
-          ],
-        )),
+        child: _start(
+          KumoButtonGroup(
+            semanticLabel: 'Worker version',
+            children: [
+              KumoButtonGroupButton(
+                label: 'Roll back',
+                icon: KumoIcons.arrowCounterClockwise,
+                onPress: () => _run('Roll back'),
+              ),
+              KumoButtonGroupButton(
+                label: 'Promote',
+                onPress: () => _run('Promote'),
+              ),
+              const KumoButtonGroupButton(
+                label: 'Delete',
+                variant: KumoButtonVariant.secondaryDestructive,
+              ),
+            ],
+          ),
+        ),
       ),
     ]);
   }
@@ -776,69 +932,109 @@ class _ToggleGroupDemoState extends State<_ToggleGroupDemo> {
   String? _level = 'all';
   List<String> _methods = const ['GET'];
   List<String> _format = const ['bold'];
-  final Map<KumoToggleSize, String?> _sizes = {for (final s in KumoToggleSize.values) s: 'day'};
+  final Map<KumoToggleSize, String?> _sizes = {
+    for (final s in KumoToggleSize.values) s: 'day',
+  };
 
   @override
   Widget build(BuildContext context) {
     return _column([
       DemoSection(
         title: 'Single selection',
-        caption: 'Tab into the group, move with the arrow keys, press Space to choose.',
-        child: _start(KumoToggleGroup<String>(
-          semanticLabel: 'Layout',
-          value: _view,
-          allowDeselect: false,
-          onValueChange: (v) => setState(() => _view = v),
-          items: const [
-            KumoToggleGroupItem(value: 'list', icon: KumoIcons.rows, semanticLabel: 'List view'),
-            KumoToggleGroupItem(value: 'grid', icon: KumoIcons.squaresFour, semanticLabel: 'Grid view'),
-            KumoToggleGroupItem(value: 'table', icon: KumoIcons.table, semanticLabel: 'Table view'),
-          ],
-        )),
+        caption:
+            'Tab into the group, move with the arrow keys, press Space to choose.',
+        child: _start(
+          KumoToggleGroup<String>(
+            semanticLabel: 'Layout',
+            value: _view,
+            allowDeselect: false,
+            onValueChange: (v) => setState(() => _view = v),
+            items: const [
+              KumoToggleGroupItem(
+                value: 'list',
+                icon: KumoIcons.rows,
+                semanticLabel: 'List view',
+              ),
+              KumoToggleGroupItem(
+                value: 'grid',
+                icon: KumoIcons.squaresFour,
+                semanticLabel: 'Grid view',
+              ),
+              KumoToggleGroupItem(
+                value: 'table',
+                icon: KumoIcons.table,
+                semanticLabel: 'Table view',
+              ),
+            ],
+          ),
+        ),
       ),
       DemoSection(
         title: 'Optional single selection',
         caption: 'Press the selected level again to clear it.',
-        child: _start(KumoToggleGroup<String>(
-          semanticLabel: 'Log level',
-          value: _level,
-          onValueChange: (v) => setState(() => _level = v),
-          items: const [
-            KumoToggleGroupItem(value: 'all', label: 'All'),
-            KumoToggleGroupItem(value: 'warn', label: 'Warnings'),
-            KumoToggleGroupItem(value: 'error', label: 'Errors'),
-          ],
-        )),
+        child: _start(
+          KumoToggleGroup<String>(
+            semanticLabel: 'Log level',
+            value: _level,
+            onValueChange: (v) => setState(() => _level = v),
+            items: const [
+              KumoToggleGroupItem(value: 'all', label: 'All'),
+              KumoToggleGroupItem(value: 'warn', label: 'Warnings'),
+              KumoToggleGroupItem(value: 'error', label: 'Errors'),
+            ],
+          ),
+        ),
       ),
       DemoSection(
         title: 'Multiple selection',
-        child: _start(KumoToggleGroup<String>.multiple(
-          semanticLabel: 'HTTP methods',
-          values: _methods,
-          onValuesChange: (v) => setState(() => _methods = v),
-          items: const [
-            KumoToggleGroupItem(value: 'GET', label: 'GET'),
-            KumoToggleGroupItem(value: 'POST', label: 'POST'),
-            KumoToggleGroupItem(value: 'PUT', label: 'PUT'),
-            KumoToggleGroupItem(value: 'DELETE', label: 'DELETE'),
-          ],
-        )),
+        child: _start(
+          KumoToggleGroup<String>.multiple(
+            semanticLabel: 'HTTP methods',
+            values: _methods,
+            onValuesChange: (v) => setState(() => _methods = v),
+            items: const [
+              KumoToggleGroupItem(value: 'GET', label: 'GET'),
+              KumoToggleGroupItem(value: 'POST', label: 'POST'),
+              KumoToggleGroupItem(value: 'PUT', label: 'PUT'),
+              KumoToggleGroupItem(value: 'DELETE', label: 'DELETE'),
+            ],
+          ),
+        ),
       ),
       DemoSection(
         title: 'Ghost group',
         caption: 'Separate toggles, for toolbars.',
-        child: _start(KumoToggleGroup<String>.multiple(
-          semanticLabel: 'Text formatting',
-          variant: KumoToggleVariant.ghost,
-          values: _format,
-          onValuesChange: (v) => setState(() => _format = v),
-          items: const [
-            KumoToggleGroupItem(value: 'bold', icon: KumoIcons.textB, title: 'Bold'),
-            KumoToggleGroupItem(value: 'italic', icon: KumoIcons.textItalic, title: 'Italic'),
-            KumoToggleGroupItem(value: 'underline', icon: KumoIcons.textUnderline, title: 'Underline'),
-            KumoToggleGroupItem(value: 'code', icon: KumoIcons.code, title: 'Code', disabled: true),
-          ],
-        )),
+        child: _start(
+          KumoToggleGroup<String>.multiple(
+            semanticLabel: 'Text formatting',
+            variant: KumoToggleVariant.ghost,
+            values: _format,
+            onValuesChange: (v) => setState(() => _format = v),
+            items: const [
+              KumoToggleGroupItem(
+                value: 'bold',
+                icon: KumoIcons.textB,
+                title: 'Bold',
+              ),
+              KumoToggleGroupItem(
+                value: 'italic',
+                icon: KumoIcons.textItalic,
+                title: 'Italic',
+              ),
+              KumoToggleGroupItem(
+                value: 'underline',
+                icon: KumoIcons.textUnderline,
+                title: 'Underline',
+              ),
+              KumoToggleGroupItem(
+                value: 'code',
+                icon: KumoIcons.code,
+                title: 'Code',
+                disabled: true,
+              ),
+            ],
+          ),
+        ),
       ),
       DemoSection(
         title: 'Sizes',

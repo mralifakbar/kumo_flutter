@@ -10,10 +10,13 @@ const _regions = <KumoSelectItem<String>>[
   KumoSelectOption(value: 'wnam', label: 'Western North America'),
   KumoSelectOption(value: 'sam', label: 'South America', disabled: true),
   KumoSelectSeparator(),
-  KumoSelectGroup(label: 'Europe', options: [
-    KumoSelectOption(value: 'weur', label: 'Western Europe'),
-    KumoSelectOption(value: 'eeur', label: 'Eastern Europe'),
-  ]),
+  KumoSelectGroup(
+    label: 'Europe',
+    options: [
+      KumoSelectOption(value: 'weur', label: 'Western Europe'),
+      KumoSelectOption(value: 'eeur', label: 'Eastern Europe'),
+    ],
+  ),
 ];
 
 class _Host extends StatefulWidget {
@@ -43,27 +46,27 @@ class _HostState extends State<_Host> {
 
   @override
   Widget build(BuildContext context) => Align(
-        alignment: Alignment.topCenter,
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: SizedBox(
-            width: 280,
-            child: KumoSelect<String>(
-              label: 'Region',
-              placeholder: 'Choose a region',
-              options: widget.options,
-              value: value,
-              presentation: widget.presentation,
-              disabled: widget.disabled,
-              loading: widget.loading,
-              onValueChange: (v) {
-                widget.onChange?.call(v);
-                setState(() => value = v);
-              },
-            ),
-          ),
+    alignment: Alignment.topCenter,
+    child: Padding(
+      padding: const EdgeInsets.all(16),
+      child: SizedBox(
+        width: 280,
+        child: KumoSelect<String>(
+          label: 'Region',
+          placeholder: 'Choose a region',
+          options: widget.options,
+          value: value,
+          presentation: widget.presentation,
+          disabled: widget.disabled,
+          loading: widget.loading,
+          onValueChange: (v) {
+            widget.onChange?.call(v);
+            setState(() => value = v);
+          },
         ),
-      );
+      ),
+    ),
+  );
 }
 
 class _MultiHost extends StatefulWidget {
@@ -80,18 +83,18 @@ class _MultiHostState extends State<_MultiHost> {
 
   @override
   Widget build(BuildContext context) => Align(
-        alignment: Alignment.topCenter,
-        child: SizedBox(
-          width: 280,
-          child: KumoSelect<String>.multiple(
-            label: 'Visible columns',
-            presentation: widget.presentation,
-            options: KumoSelectOption.fromLabels(['Name', 'Route', 'Status', 'Last deploy']),
-            values: values,
-            onValuesChange: (v) => setState(() => values = v),
-          ),
-        ),
-      );
+    alignment: Alignment.topCenter,
+    child: SizedBox(
+      width: 280,
+      child: KumoSelect<String>.multiple(
+        label: 'Visible columns',
+        presentation: widget.presentation,
+        options: KumoSelectOption.fromLabels(['Name', 'Route', 'Status', 'Last deploy']),
+        values: values,
+        onValuesChange: (v) => setState(() => values = v),
+      ),
+    ),
+  );
 }
 
 Finder _trigger() => find.byType(KumoFieldBox);
@@ -102,7 +105,13 @@ void main() {
       await pumpKumo(tester, const _Host(), brightness: b, size: kumoDesktopSize, center: false);
       expect(find.text('Region'), findsOneWidget);
       expect(find.text('Choose a region'), findsOneWidget);
-      await pumpKumo(tester, _Host(key: UniqueKey(), initial: 'weur'), brightness: b, size: kumoDesktopSize, center: false);
+      await pumpKumo(
+        tester,
+        _Host(key: UniqueKey(), initial: 'weur'),
+        brightness: b,
+        size: kumoDesktopSize,
+        center: false,
+      );
       expect(find.text('Western Europe'), findsOneWidget);
       expect(tester.takeException(), isNull);
     }
@@ -148,7 +157,12 @@ void main() {
 
   testWidgets('keyboard: Tab focuses, arrows open and move, Enter picks, Escape closes', (tester) async {
     final picked = <String?>[];
-    await pumpKumo(tester, _Host(initial: 'enam', onChange: picked.add), size: kumoDesktopSize, center: false);
+    await pumpKumo(
+      tester,
+      _Host(initial: 'enam', onChange: picked.add),
+      size: kumoDesktopSize,
+      center: false,
+    );
     await tester.sendKeyEvent(LogicalKeyboardKey.tab);
     await tester.pump();
     await tester.sendKeyEvent(LogicalKeyboardKey.arrowDown);
@@ -288,7 +302,12 @@ void main() {
 
   testWidgets('long lists build lazily and open scrolled to the current value', (tester) async {
     final many = [for (var i = 0; i < 3000; i++) KumoSelectOption(value: 'w$i', label: 'worker-$i')];
-    await pumpKumo(tester, _Host(options: many, initial: 'w2400'), size: kumoDesktopSize, center: false);
+    await pumpKumo(
+      tester,
+      _Host(options: many, initial: 'w2400'),
+      size: kumoDesktopSize,
+      center: false,
+    );
     await tester.tap(_trigger());
     await tester.pumpAndSettle();
     expect(find.byType(ListView), findsOneWidget);
@@ -312,7 +331,10 @@ void main() {
   testWidgets('unbounded width falls back to the Kumo default width', (tester) async {
     await pumpKumo(
       tester,
-      const Row(mainAxisSize: MainAxisSize.min, children: [KumoSelect<String>(options: _regions, placeholder: 'Pick')]),
+      const Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [KumoSelect<String>(options: _regions, placeholder: 'Pick')],
+      ),
       size: kumoDesktopSize,
     );
     expect(tester.getSize(_trigger()).width, 280);
@@ -321,7 +343,10 @@ void main() {
   testWidgets('error shows under the trigger and turns the ring red', (tester) async {
     await pumpKumo(
       tester,
-      const SizedBox(width: 280, child: KumoSelect<String>(options: _regions, label: 'Region', error: 'Choose a region to deploy to')),
+      const SizedBox(
+        width: 280,
+        child: KumoSelect<String>(options: _regions, label: 'Region', error: 'Choose a region to deploy to'),
+      ),
       size: kumoDesktopSize,
     );
     expect(find.text('Choose a region to deploy to'), findsOneWidget);
@@ -336,7 +361,12 @@ void main() {
     expect(find.byType(KumoMenuPanel), findsOneWidget);
     expect(find.byType(KumoSheet), findsNothing);
 
-    await pumpKumo(tester, const _MultiHost(presentation: KumoPresentation.sheet), size: kumoDesktopSize, center: false);
+    await pumpKumo(
+      tester,
+      const _MultiHost(presentation: KumoPresentation.sheet),
+      size: kumoDesktopSize,
+      center: false,
+    );
     await tester.tap(_trigger());
     await tester.pumpAndSettle();
     expect(find.byType(KumoSheet), findsOneWidget);
@@ -352,7 +382,13 @@ void main() {
 
   testWidgets('the shown value cross-fades when it changes; instant under reduced motion', (tester) async {
     for (final reduce in [false, true]) {
-      await pumpKumo(tester, const _Host(initial: 'enam'), size: kumoDesktopSize, center: false, disableAnimations: reduce);
+      await pumpKumo(
+        tester,
+        const _Host(initial: 'enam'),
+        size: kumoDesktopSize,
+        center: false,
+        disableAnimations: reduce,
+      );
       await tester.tap(_trigger());
       await tester.pumpAndSettle();
       await tester.tap(find.text('Western Europe').last);

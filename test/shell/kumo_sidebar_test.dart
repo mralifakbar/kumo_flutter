@@ -54,40 +54,52 @@ class _NavState extends State<_Nav> {
                   setState(() => width = w);
                 }
               : null,
-          header: const KumoSidebarHeader(children: [
-            KumoIcon(KumoIcons.cube),
-            Expanded(child: KumoText('Company', bold: true, truncate: true)),
-          ]),
+          header: const KumoSidebarHeader(
+            children: [
+              KumoIcon(KumoIcons.cube),
+              Expanded(child: KumoText('Company', bold: true, truncate: true)),
+            ],
+          ),
           footer: const KumoSidebarFooter(children: [KumoSidebarTrigger()]),
-          child: KumoSidebarContent(children: [
-            KumoSidebarGroup(children: [
-              KumoSidebarMenuButton(
-                icon: KumoIcons.house,
-                label: 'Home',
-                active: true,
-                onPress: () => widget.onPress?.call('Home'),
-              ),
-              KumoSidebarMenuButton(
-                icon: KumoIcons.chartBar,
-                label: 'Analytics and logs',
-                onPress: () => widget.onPress?.call('Analytics'),
-              ),
-            ]),
-            KumoSidebarGroup(label: 'Build', children: [
-              KumoSidebarCollapsible(
-                icon: KumoIcons.code,
-                label: 'Compute',
+          child: KumoSidebarContent(
+            children: [
+              KumoSidebarGroup(
                 children: [
-                  KumoSidebarMenuSubButton(label: 'Workers', onPress: () => widget.onPress?.call('Workers')),
-                  KumoSidebarMenuSubButton(label: 'Containers', badge: 'Beta', onPress: () {}),
+                  KumoSidebarMenuButton(
+                    icon: KumoIcons.house,
+                    label: 'Home',
+                    active: true,
+                    onPress: () => widget.onPress?.call('Home'),
+                  ),
+                  KumoSidebarMenuButton(
+                    icon: KumoIcons.chartBar,
+                    label: 'Analytics and logs',
+                    onPress: () => widget.onPress?.call('Analytics'),
+                  ),
                 ],
               ),
-              KumoSidebarMenuButton(icon: KumoIcons.database, label: 'Storage', onPress: () {}),
-            ]),
-            KumoSidebarGroup(label: 'Protect', children: [
-              KumoSidebarMenuButton(icon: KumoIcons.lock, label: 'Zero Trust', badge: 'Beta', onPress: () {}),
-            ]),
-          ]),
+              KumoSidebarGroup(
+                label: 'Build',
+                children: [
+                  KumoSidebarCollapsible(
+                    icon: KumoIcons.code,
+                    label: 'Compute',
+                    children: [
+                      KumoSidebarMenuSubButton(label: 'Workers', onPress: () => widget.onPress?.call('Workers')),
+                      KumoSidebarMenuSubButton(label: 'Containers', badge: 'Beta', onPress: () {}),
+                    ],
+                  ),
+                  KumoSidebarMenuButton(icon: KumoIcons.database, label: 'Storage', onPress: () {}),
+                ],
+              ),
+              KumoSidebarGroup(
+                label: 'Protect',
+                children: [
+                  KumoSidebarMenuButton(icon: KumoIcons.lock, label: 'Zero Trust', badge: 'Beta', onPress: () {}),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -199,11 +211,13 @@ void main() {
       SizedBox(
         height: 300,
         child: KumoSidebar(
-          child: KumoSidebarContent(children: [
-            KumoSidebarGroup(children: [
-              KumoSidebarMenuButton(label: 'Billing', disabled: true, onPress: () => pressed++),
-            ]),
-          ]),
+          child: KumoSidebarContent(
+            children: [
+              KumoSidebarGroup(
+                children: [KumoSidebarMenuButton(label: 'Billing', disabled: true, onPress: () => pressed++)],
+              ),
+            ],
+          ),
         ),
       ),
       size: kumoDesktopSize,
@@ -244,10 +258,12 @@ void main() {
     final changes = <bool>[];
     final completes = <bool>[];
     Widget build(bool open) => SizedBox(
-          height: 400,
-          child: KumoSidebar(
-            child: KumoSidebarContent(children: [
-              KumoSidebarGroup(children: [
+      height: 400,
+      child: KumoSidebar(
+        child: KumoSidebarContent(
+          children: [
+            KumoSidebarGroup(
+              children: [
                 KumoSidebarCollapsible(
                   label: 'Compute',
                   icon: KumoIcons.code,
@@ -256,10 +272,12 @@ void main() {
                   onOpenChangeComplete: completes.add,
                   children: const [KumoSidebarMenuSubButton(label: 'Workers')],
                 ),
-              ]),
-            ]),
-          ),
-        );
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
     await pumpKumo(tester, build(false), size: kumoDesktopSize);
     await tester.tap(find.text('Compute'));
     await tester.pumpAndSettle();
@@ -283,12 +301,15 @@ void main() {
 
   testWidgets('group labels fold into dividers in the rail', (tester) async {
     await pumpKumo(tester, const _Nav(), size: kumoDesktopSize, center: false);
-    final expandedHeight = tester.getSize(find.ancestor(of: find.text('Build'), matching: find.byType(ClipRect)).first).height;
+    final expandedHeight = tester
+        .getSize(find.ancestor(of: find.text('Build'), matching: find.byType(ClipRect)).first)
+        .height;
     expect(expandedHeight, greaterThan(30));
     await tester.tap(find.bySemanticsLabel('Collapse sidebar'));
     await tester.pumpAndSettle();
-    final collapsedHeight =
-        tester.getSize(find.ancestor(of: find.text('Build'), matching: find.byType(ClipRect)).first).height;
+    final collapsedHeight = tester
+        .getSize(find.ancestor(of: find.text('Build'), matching: find.byType(ClipRect)).first)
+        .height;
     expect(collapsedHeight, 0);
   });
 
@@ -354,7 +375,11 @@ void main() {
         child: KumoSidebar(
           open: false,
           collapsible: KumoSidebarCollapseMode.offcanvas,
-          child: KumoSidebarContent(children: [KumoSidebarGroup(children: [KumoSidebarMenuButton(label: 'Home')])]),
+          child: KumoSidebarContent(
+            children: [
+              KumoSidebarGroup(children: [KumoSidebarMenuButton(label: 'Home')]),
+            ],
+          ),
         ),
       ),
       size: kumoDesktopSize,
@@ -377,26 +402,40 @@ void main() {
     late StateSetter setOuter;
     await pumpKumo(
       tester,
-      StatefulBuilder(builder: (context, setState) {
-        setOuter = setState;
-        return SizedBox(
-          height: 400,
-          child: KumoSidebar(
-            child: KumoSidebarSlidingViews(activeKey: surface, children: const [
-              KumoSidebarSlidingView(
-                value: 'account',
-                child: KumoSidebarContent(children: [KumoSidebarGroup(children: [KumoSidebarMenuButton(label: 'Domains')])]),
+      StatefulBuilder(
+        builder: (context, setState) {
+          setOuter = setState;
+          return SizedBox(
+            height: 400,
+            child: KumoSidebar(
+              child: KumoSidebarSlidingViews(
+                activeKey: surface,
+                children: const [
+                  KumoSidebarSlidingView(
+                    value: 'account',
+                    child: KumoSidebarContent(
+                      children: [
+                        KumoSidebarGroup(children: [KumoSidebarMenuButton(label: 'Domains')]),
+                      ],
+                    ),
+                  ),
+                  KumoSidebarSlidingView(
+                    value: 'zone',
+                    child: KumoSidebarContent(
+                      children: [
+                        KumoSidebarGroup(
+                          label: 'example.com',
+                          children: [KumoSidebarMenuButton(label: 'DNS')],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
-              KumoSidebarSlidingView(
-                value: 'zone',
-                child: KumoSidebarContent(children: [
-                  KumoSidebarGroup(label: 'example.com', children: [KumoSidebarMenuButton(label: 'DNS')]),
-                ]),
-              ),
-            ]),
-          ),
-        );
-      }),
+            ),
+          );
+        },
+      ),
       size: kumoDesktopSize,
     );
     final handle = tester.ensureSemantics();
@@ -457,7 +496,12 @@ void main() {
       const SizedBox(
         height: 300,
         child: KumoSidebar(
-          header: KumoSidebarHeader(children: [Expanded(child: KumoText('Nav')), KumoSidebarClose()]),
+          header: KumoSidebarHeader(
+            children: [
+              Expanded(child: KumoText('Nav')),
+              KumoSidebarClose(),
+            ],
+          ),
           child: KumoSidebarContent(children: []),
         ),
       ),
@@ -474,13 +518,17 @@ void main() {
         child: SizedBox(
           height: 300,
           child: KumoSidebar(
-            child: KumoSidebarContent(children: [
-              KumoSidebarGroup(children: [
-                KumoSidebarMenuButton(label: 'Home', icon: KumoIcons.house),
-                KumoSidebarSeparator(),
-                KumoSidebarMenuSub(children: [KumoSidebarMenuSubButton(label: 'Overview', active: true)]),
-              ]),
-            ]),
+            child: KumoSidebarContent(
+              children: [
+                KumoSidebarGroup(
+                  children: [
+                    KumoSidebarMenuButton(label: 'Home', icon: KumoIcons.house),
+                    KumoSidebarSeparator(),
+                    KumoSidebarMenuSub(children: [KumoSidebarMenuSubButton(label: 'Overview', active: true)]),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -511,10 +559,12 @@ void main() {
         height: 300,
         child: KumoSidebar(
           open: false,
-          child: Builder(builder: (context) {
-            data = KumoSidebar.of(context);
-            return const SizedBox();
-          }),
+          child: Builder(
+            builder: (context) {
+              data = KumoSidebar.of(context);
+              return const SizedBox();
+            },
+          ),
         ),
       ),
       size: kumoDesktopSize,
@@ -530,8 +580,9 @@ void main() {
     expect(tester.getSize(flight), Size.zero, reason: 'at rest the active row paints its own tint');
     expect(_rowTint(tester, 'Home'), isNotNull);
     final homeTop = tester.getRect(find.ancestor(of: find.text('Home'), matching: find.byType(DecoratedBox)).first).top;
-    final storageTop =
-        tester.getRect(find.ancestor(of: find.text('Storage'), matching: find.byType(DecoratedBox)).first).top;
+    final storageTop = tester
+        .getRect(find.ancestor(of: find.text('Storage'), matching: find.byType(DecoratedBox)).first)
+        .top;
 
     await tester.tap(find.text('Storage'));
     // The destination is measured after the frame that activates it.
@@ -604,7 +655,9 @@ void main() {
 
 /// Background color of the tint box behind [label]'s row, null when clear.
 Color? _rowTint(WidgetTester tester, String label) {
-  final box = tester.widget<DecoratedBox>(find.ancestor(of: find.text(label), matching: find.byType(DecoratedBox)).first);
+  final box = tester.widget<DecoratedBox>(
+    find.ancestor(of: find.text(label), matching: find.byType(DecoratedBox)).first,
+  );
   return (box.decoration as BoxDecoration).color;
 }
 
@@ -622,26 +675,25 @@ class _ActiveNavState extends State<_ActiveNav> {
   @override
   Widget build(BuildContext context) {
     KumoSidebarMenuButton row(IconData icon, String label) => KumoSidebarMenuButton(
-          icon: icon,
-          label: label,
-          active: route == label,
-          onPress: () => setState(() => route = label),
-        );
+      icon: icon,
+      label: label,
+      active: route == label,
+      onPress: () => setState(() => route = label),
+    );
     return Align(
       alignment: Alignment.topLeft,
       child: SizedBox(
         height: 600,
         child: KumoSidebar(
-          child: KumoSidebarContent(children: [
-            KumoSidebarGroup(children: [
-              row(KumoIcons.house, 'Home'),
-              row(KumoIcons.chartBar, 'Analytics and logs'),
-            ]),
-            KumoSidebarGroup(label: 'Build', children: [
-              row(KumoIcons.code, 'Workers'),
-              row(KumoIcons.database, 'Storage'),
-            ]),
-          ]),
+          child: KumoSidebarContent(
+            children: [
+              KumoSidebarGroup(children: [row(KumoIcons.house, 'Home'), row(KumoIcons.chartBar, 'Analytics and logs')]),
+              KumoSidebarGroup(
+                label: 'Build',
+                children: [row(KumoIcons.code, 'Workers'), row(KumoIcons.database, 'Storage')],
+              ),
+            ],
+          ),
         ),
       ),
     );

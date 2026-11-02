@@ -7,42 +7,49 @@ import '../demo.dart';
 /// resources below are sample data.
 final KumoDemoCategory menusCategory = KumoDemoCategory(
   title: 'Menus and popovers',
-  description: 'Anchored menus, popovers and toolbars that switch to bottom sheets on phones.',
+  description:
+      'Anchored menus, popovers and toolbars that switch to bottom sheets on phones.',
   icon: KumoIcons.listBullets,
   demos: [
     KumoDemo(
       title: 'KumoDropdownMenu',
-      description: 'Actions, checkboxes, radio groups and submenus anchored to a trigger.',
+      description:
+          'Actions, checkboxes, radio groups and submenus anchored to a trigger.',
       docPath: 'doc/components/KumoDropdownMenu.md',
       builder: (context) => const _DropdownDemo(),
     ),
     KumoDemo(
       title: 'KumoPopover',
-      description: 'Interactive content anchored to a trigger, with an arrow, title and close button.',
+      description:
+          'Interactive content anchored to a trigger, with an arrow, title and close button.',
       docPath: 'doc/components/KumoPopover.md',
       builder: (context) => const _PopoverDemo(),
     ),
     KumoDemo(
       title: 'KumoContextMenu',
-      description: 'A menu at the pointer on right click, or on long press with touch.',
+      description:
+          'A menu at the pointer on right click, or on long press with touch.',
       docPath: 'doc/components/KumoContextMenu.md',
       builder: (context) => const _ContextMenuDemo(),
     ),
     KumoDemo(
       title: 'KumoHoverCard',
-      description: 'A preview card that opens while the pointer rests on a link.',
+      description:
+          'A preview card that opens while the pointer rests on a link.',
       docPath: 'doc/components/KumoHoverCard.md',
       builder: (context) => const _HoverCardDemo(),
     ),
     KumoDemo(
       title: 'KumoMenubar',
-      description: 'A bar of menus with arrow-key navigation and hover switching.',
+      description:
+          'A bar of menus with arrow-key navigation and hover switching.',
       docPath: 'doc/components/KumoMenubar.md',
       builder: (context) => const _MenubarDemo(),
     ),
     KumoDemo(
       title: 'KumoToolbar',
-      description: 'Grouped controls with roving focus that overflow into a More menu.',
+      description:
+          'Grouped controls with roving focus that overflow into a More menu.',
       docPath: 'doc/components/KumoToolbar.md',
       builder: (context) => const _ToolbarDemo(),
     ),
@@ -102,7 +109,8 @@ class _DropdownDemoState extends State<_DropdownDemo> {
       children: [
         DemoSection(
           title: 'Actions',
-          caption: 'Items without an icon line up with the ones that have one. Delete uses danger text.',
+          caption:
+              'Items without an icon line up with the ones that have one. Delete uses danger text.',
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -114,11 +122,18 @@ class _DropdownDemoState extends State<_DropdownDemo> {
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     spacing: KumoSpace.s1_5,
-                    children: [const Text('image-resizer'), KumoDropdownCaret(open: menu.isOpen)],
+                    children: [
+                      const Text('image-resizer'),
+                      KumoDropdownCaret(open: menu.isOpen),
+                    ],
                   ),
                 ),
                 items: [
-                  KumoDropdownItem(label: 'Rename', icon: KumoIcons.pencilSimple, onPress: () => _did('Renamed')),
+                  KumoDropdownItem(
+                    label: 'Rename',
+                    icon: KumoIcons.pencilSimple,
+                    onPress: () => _did('Renamed'),
+                  ),
                   KumoDropdownItem(
                     label: 'Duplicate',
                     icon: KumoIcons.copy,
@@ -126,8 +141,14 @@ class _DropdownDemoState extends State<_DropdownDemo> {
                     onPress: () => _did('Duplicated'),
                   ),
                   const KumoDropdownSeparator(),
-                  KumoDropdownItem(label: 'Move to account', onPress: () => _did('Moved')),
-                  const KumoDropdownItem(label: 'Transfer ownership', disabled: true),
+                  KumoDropdownItem(
+                    label: 'Move to account',
+                    onPress: () => _did('Moved'),
+                  ),
+                  const KumoDropdownItem(
+                    label: 'Transfer ownership',
+                    disabled: true,
+                  ),
                   const KumoDropdownSeparator(),
                   KumoDropdownItem(
                     label: 'Delete Worker',
@@ -147,7 +168,8 @@ class _DropdownDemoState extends State<_DropdownDemo> {
           child: Align(
             alignment: AlignmentDirectional.centerStart,
             child: KumoDropdownMenu(
-              triggerBuilder: (context, menu) => KumoButton(label: 'View options', onPress: menu.toggle),
+              triggerBuilder: (context, menu) =>
+                  KumoButton(label: 'View options', onPress: menu.toggle),
               items: [
                 KumoDropdownGroup(
                   label: 'Display',
@@ -175,16 +197,28 @@ class _DropdownDemoState extends State<_DropdownDemo> {
         ),
         DemoSection(
           title: 'Submenus and radio groups',
-          caption: 'Hover, tap or press ArrowRight on Region. In the sheet it pushes in place with a back row.',
+          caption:
+              'Hover, tap or press ArrowRight on Region. In the sheet it pushes in place with a back row.',
           child: Align(
             alignment: AlignmentDirectional.centerStart,
             child: KumoDropdownMenu(
               sheetTitle: 'Account',
-              triggerBuilder: (context, menu) =>
-                  KumoButton(label: 'Account', icon: KumoIcons.user, onPress: menu.toggle),
+              triggerBuilder: (context, menu) => KumoButton(
+                label: 'Account',
+                icon: KumoIcons.user,
+                onPress: menu.toggle,
+              ),
               items: [
-                KumoDropdownItem(label: 'Profile', icon: KumoIcons.user, onPress: () => _did('Opened profile')),
-                KumoDropdownItem(label: 'Billing', icon: KumoIcons.creditCard, onPress: () => _did('Opened billing')),
+                KumoDropdownItem(
+                  label: 'Profile',
+                  icon: KumoIcons.user,
+                  onPress: () => _did('Opened profile'),
+                ),
+                KumoDropdownItem(
+                  label: 'Billing',
+                  icon: KumoIcons.creditCard,
+                  onPress: () => _did('Opened billing'),
+                ),
                 KumoDropdownSubmenu(
                   label: 'Region',
                   icon: KumoIcons.globe,
@@ -194,10 +228,22 @@ class _DropdownDemoState extends State<_DropdownDemo> {
                       label: 'Region',
                       onValueChange: (v) => setState(() => _region = v),
                       children: const [
-                        KumoDropdownRadioItem(value: 'wnam', label: 'Western North America'),
-                        KumoDropdownRadioItem(value: 'enam', label: 'Eastern North America'),
-                        KumoDropdownRadioItem(value: 'weur', label: 'Western Europe'),
-                        KumoDropdownRadioItem(value: 'apac', label: 'Asia Pacific'),
+                        KumoDropdownRadioItem(
+                          value: 'wnam',
+                          label: 'Western North America',
+                        ),
+                        KumoDropdownRadioItem(
+                          value: 'enam',
+                          label: 'Eastern North America',
+                        ),
+                        KumoDropdownRadioItem(
+                          value: 'weur',
+                          label: 'Western Europe',
+                        ),
+                        KumoDropdownRadioItem(
+                          value: 'apac',
+                          label: 'Asia Pacific',
+                        ),
                       ],
                     ),
                   ],
@@ -220,7 +266,8 @@ class _DropdownDemoState extends State<_DropdownDemo> {
         ),
         DemoSection(
           title: 'Presentation',
-          caption: 'Auto uses a bottom sheet below 768px. Force either one here.',
+          caption:
+              'Auto uses a bottom sheet below 768px. Force either one here.',
           child: Wrap(
             spacing: KumoSpace.s2,
             runSpacing: KumoSpace.s2,
@@ -229,16 +276,31 @@ class _DropdownDemoState extends State<_DropdownDemo> {
                 KumoButton(
                   label: p.name,
                   size: KumoButtonSize.sm,
-                  variant: p == _presentation ? KumoButtonVariant.primary : KumoButtonVariant.secondary,
+                  variant: p == _presentation
+                      ? KumoButtonVariant.primary
+                      : KumoButtonVariant.secondary,
                   onPress: () => setState(() => _presentation = p),
                 ),
               KumoDropdownMenu(
                 presentation: _presentation,
-                triggerBuilder: (context, menu) => KumoButton(label: 'Add', icon: KumoIcons.plus, onPress: menu.toggle),
+                triggerBuilder: (context, menu) => KumoButton(
+                  label: 'Add',
+                  icon: KumoIcons.plus,
+                  onPress: menu.toggle,
+                ),
                 items: [
-                  KumoDropdownItem(label: 'Worker', onPress: () => _did('Added Worker')),
-                  KumoDropdownItem(label: 'Pages project', onPress: () => _did('Added Pages project')),
-                  KumoDropdownItem(label: 'KV namespace', onPress: () => _did('Added KV namespace')),
+                  KumoDropdownItem(
+                    label: 'Worker',
+                    onPress: () => _did('Added Worker'),
+                  ),
+                  KumoDropdownItem(
+                    label: 'Pages project',
+                    onPress: () => _did('Added Pages project'),
+                  ),
+                  KumoDropdownItem(
+                    label: 'KV namespace',
+                    onPress: () => _did('Added KV namespace'),
+                  ),
                 ],
               ),
             ],
@@ -246,7 +308,8 @@ class _DropdownDemoState extends State<_DropdownDemo> {
         ),
         DemoSection(
           title: 'Custom trigger and long list',
-          caption: 'Any widget can be the trigger. Long menus scroll inside the room they have.',
+          caption:
+              'Any widget can be the trigger. Long menus scroll inside the room they have.',
           child: Row(
             spacing: KumoSpace.s3,
             children: [
@@ -256,19 +319,38 @@ class _DropdownDemoState extends State<_DropdownDemo> {
                   width: 32,
                   height: 32,
                   alignment: Alignment.center,
-                  decoration: BoxDecoration(color: context.kumo.colors.brand, shape: BoxShape.circle),
-                  child: const KumoText('MR', dangerouslySetColor: Color(0xFFFFFFFF), size: KumoTextSize.sm),
+                  decoration: BoxDecoration(
+                    color: context.kumo.colors.brand,
+                    shape: BoxShape.circle,
+                  ),
+                  child: const KumoText(
+                    'MR',
+                    dangerouslySetColor: Color(0xFFFFFFFF),
+                    size: KumoTextSize.sm,
+                  ),
                 ),
                 items: [
-                  KumoDropdownItem(label: 'Profile', icon: KumoIcons.user, onPress: () => _did('Opened profile')),
-                  KumoDropdownItem(label: 'Settings', icon: KumoIcons.gear, onPress: () => _did('Opened settings')),
+                  KumoDropdownItem(
+                    label: 'Profile',
+                    icon: KumoIcons.user,
+                    onPress: () => _did('Opened profile'),
+                  ),
+                  KumoDropdownItem(
+                    label: 'Settings',
+                    icon: KumoIcons.gear,
+                    onPress: () => _did('Opened settings'),
+                  ),
                 ],
               ),
               KumoDropdownMenu(
-                triggerBuilder: (context, menu) => KumoButton(label: 'Pick a zone', onPress: menu.toggle),
+                triggerBuilder: (context, menu) =>
+                    KumoButton(label: 'Pick a zone', onPress: menu.toggle),
                 items: [
                   for (var i = 1; i <= 30; i++)
-                    KumoDropdownItem(label: 'zone-$i.example.com', onPress: () => _did('Picked zone-$i.example.com')),
+                    KumoDropdownItem(
+                      label: 'zone-$i.example.com',
+                      onPress: () => _did('Picked zone-$i.example.com'),
+                    ),
                 ],
               ),
             ],
@@ -296,7 +378,8 @@ class _PopoverDemoState extends State<_PopoverDemo> {
       children: [
         DemoSection(
           title: 'Basic',
-          caption: 'Focus moves into the popover; Escape or a tap outside closes it.',
+          caption:
+              'Focus moves into the popover; Escape or a tap outside closes it.',
           child: Align(
             alignment: AlignmentDirectional.centerStart,
             child: KumoPopover(
@@ -309,10 +392,15 @@ class _PopoverDemoState extends State<_PopoverDemo> {
               children: [
                 const KumoPopoverTitle('Notifications'),
                 KumoPopoverDescription(
-                  _unread == 0 ? 'No new alerts for example.com.' : '$_unread new alerts for example.com.',
+                  _unread == 0
+                      ? 'No new alerts for example.com.'
+                      : '$_unread new alerts for example.com.',
                 ),
                 const SizedBox(height: KumoSpace.s3),
-                KumoPopoverClose(label: 'Mark all read', onPress: () => setState(() => _unread = 0)),
+                KumoPopoverClose(
+                  label: 'Mark all read',
+                  onPress: () => setState(() => _unread = 0),
+                ),
               ],
             ),
           ),
@@ -327,7 +415,8 @@ class _PopoverDemoState extends State<_PopoverDemo> {
               for (final side in KumoSide.values)
                 KumoPopover(
                   side: side,
-                  triggerBuilder: (context, popover) => KumoButton(label: side.name, onPress: popover.toggle),
+                  triggerBuilder: (context, popover) =>
+                      KumoButton(label: side.name, onPress: popover.toggle),
                   children: [
                     KumoPopoverTitle('Opens ${side.name}'),
                     const KumoPopoverDescription('Popover placement.'),
@@ -345,11 +434,16 @@ class _PopoverDemoState extends State<_PopoverDemo> {
               open: _open,
               onOpenChange: (v) => setState(() => _open = v),
               width: 288,
-              triggerBuilder: (context, popover) =>
-                  KumoButton(label: 'Cache settings', icon: KumoIcons.gearSix, onPress: popover.toggle),
+              triggerBuilder: (context, popover) => KumoButton(
+                label: 'Cache settings',
+                icon: KumoIcons.gearSix,
+                onPress: popover.toggle,
+              ),
               children: [
                 const KumoPopoverTitle('Browser cache TTL'),
-                const KumoPopoverDescription('How long browsers keep cached files from example.com.'),
+                const KumoPopoverDescription(
+                  'How long browsers keep cached files from example.com.',
+                ),
                 const SizedBox(height: KumoSpace.s3),
                 Row(
                   spacing: KumoSpace.s2,
@@ -389,7 +483,8 @@ class _ContextMenuDemoState extends State<_ContextMenuDemo> {
       children: [
         DemoSection(
           title: 'DNS record',
-          caption: 'Right-click the record, long-press it on touch, or focus it and press Shift+F10.',
+          caption:
+              'Right-click the record, long-press it on touch, or focus it and press Shift+F10.',
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -410,8 +505,17 @@ class _ContextMenuDemoState extends State<_ContextMenuDemo> {
                     label: 'Change TTL',
                     icon: KumoIcons.clock,
                     children: [
-                      for (final ttl in ['Auto', '5 minutes', '1 hour', '1 day'])
-                        KumoDropdownItem(label: ttl, onPress: () => setState(() => _action = 'TTL set to $ttl')),
+                      for (final ttl in [
+                        'Auto',
+                        '5 minutes',
+                        '1 hour',
+                        '1 day',
+                      ])
+                        KumoDropdownItem(
+                          label: ttl,
+                          onPress: () =>
+                              setState(() => _action = 'TTL set to $ttl'),
+                        ),
                     ],
                   ),
                   const KumoDropdownSeparator(),
@@ -427,7 +531,10 @@ class _ContextMenuDemoState extends State<_ContextMenuDemo> {
                   semanticLabel: 'A record, example.com, 192.0.2.1',
                   borderRadius: BorderRadius.circular(KumoRadius.lg),
                   builder: (context, state) => Container(
-                    padding: const EdgeInsets.symmetric(horizontal: KumoSpace.s4, vertical: KumoSpace.s3),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: KumoSpace.s4,
+                      vertical: KumoSpace.s3,
+                    ),
                     decoration: BoxDecoration(
                       color: state.active ? c.tint : c.base,
                       borderRadius: BorderRadius.circular(KumoRadius.lg),
@@ -437,8 +544,13 @@ class _ContextMenuDemoState extends State<_ContextMenuDemo> {
                       spacing: KumoSpace.s3,
                       children: [
                         KumoText('A', bold: true),
-                        Expanded(child: KumoText('example.com', truncate: true)),
-                        KumoText('192.0.2.1', variant: KumoTextVariant.secondary),
+                        Expanded(
+                          child: KumoText('example.com', truncate: true),
+                        ),
+                        KumoText(
+                          '192.0.2.1',
+                          variant: KumoTextVariant.secondary,
+                        ),
                       ],
                     ),
                   ),
@@ -462,7 +574,8 @@ class _HoverCardDemo extends StatelessWidget {
       children: [
         DemoSection(
           title: 'Worker preview',
-          caption: 'Hover the name, focus it with Tab, or long-press it on touch. The link still opens the Worker.',
+          caption:
+              'Hover the name, focus it with Tab, or long-press it on touch. The link still opens the Worker.',
           child: Align(
             alignment: AlignmentDirectional.centerStart,
             child: KumoHoverCard(
@@ -472,18 +585,29 @@ class _HoverCardDemo extends StatelessWidget {
                 spacing: KumoSpace.s1,
                 children: [
                   KumoText('image-resizer', bold: true),
-                  KumoText('Last deployed 2 hours ago from main. Sample data.', variant: KumoTextVariant.secondary),
+                  KumoText(
+                    'Last deployed 2 hours ago from main. Sample data.',
+                    variant: KumoTextVariant.secondary,
+                  ),
                   SizedBox(height: KumoSpace.s1),
                   Row(
                     spacing: KumoSpace.s1_5,
                     children: [
-                      KumoIcon(KumoIcons.checkCircle, color: KumoColor.textSuccess),
+                      KumoIcon(
+                        KumoIcons.checkCircle,
+                        color: KumoColor.textSuccess,
+                      ),
                       KumoText('Healthy', size: KumoTextSize.sm),
                     ],
                   ),
                 ],
               ),
-              child: KumoButton(label: 'image-resizer', variant: KumoButtonVariant.ghost, isLink: true, onPress: () {}),
+              child: KumoButton(
+                label: 'image-resizer',
+                variant: KumoButtonVariant.ghost,
+                isLink: true,
+                onPress: () {},
+              ),
             ),
           ),
         ),
@@ -513,7 +637,8 @@ class _MenubarDemoState extends State<_MenubarDemo> {
       children: [
         DemoSection(
           title: 'Worker editor',
-          caption: 'Open a menu, then hover or use Left and Right to move between menus.',
+          caption:
+              'Open a menu, then hover or use Left and Right to move between menus.',
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -529,12 +654,22 @@ class _MenubarDemoState extends State<_MenubarDemo> {
                         shortcut: '⌘N',
                         onPress: () => _did('New Worker'),
                       ),
-                      KumoDropdownItem(label: 'Save', shortcut: '⌘S', onPress: () => _did('Saved')),
+                      KumoDropdownItem(
+                        label: 'Save',
+                        shortcut: '⌘S',
+                        onPress: () => _did('Saved'),
+                      ),
                       KumoDropdownSubmenu(
                         label: 'Export',
                         children: [
-                          KumoDropdownItem(label: 'wrangler.toml', onPress: () => _did('Exported wrangler.toml')),
-                          KumoDropdownItem(label: 'Bundle', onPress: () => _did('Exported bundle')),
+                          KumoDropdownItem(
+                            label: 'wrangler.toml',
+                            onPress: () => _did('Exported wrangler.toml'),
+                          ),
+                          KumoDropdownItem(
+                            label: 'Bundle',
+                            onPress: () => _did('Exported bundle'),
+                          ),
                         ],
                       ),
                     ],
@@ -562,8 +697,14 @@ class _MenubarDemoState extends State<_MenubarDemo> {
                         label: 'Environment',
                         onValueChange: (v) => setState(() => _env = v),
                         children: const [
-                          KumoDropdownRadioItem(value: 'production', label: 'Production'),
-                          KumoDropdownRadioItem(value: 'staging', label: 'Staging'),
+                          KumoDropdownRadioItem(
+                            value: 'production',
+                            label: 'Production',
+                          ),
+                          KumoDropdownRadioItem(
+                            value: 'staging',
+                            label: 'Staging',
+                          ),
                         ],
                       ),
                       const KumoDropdownSeparator(),
@@ -578,8 +719,14 @@ class _MenubarDemoState extends State<_MenubarDemo> {
                     label: 'Settings',
                     icon: KumoIcons.gearSix,
                     items: [
-                      KumoDropdownItem(label: 'Variables', onPress: () => _did('Opened variables')),
-                      KumoDropdownItem(label: 'Triggers', onPress: () => _did('Opened triggers')),
+                      KumoDropdownItem(
+                        label: 'Variables',
+                        onPress: () => _did('Opened variables'),
+                      ),
+                      KumoDropdownItem(
+                        label: 'Triggers',
+                        onPress: () => _did('Opened triggers'),
+                      ),
                     ],
                   ),
                 ],
@@ -652,7 +799,8 @@ class _ToolbarDemoState extends State<_ToolbarDemo> {
         ),
         DemoSection(
           title: 'Groups and toggles',
-          caption: 'Bold and italic are toggles; they sit in one group with no divider between them.',
+          caption:
+              'Bold and italic are toggles; they sit in one group with no divider between them.',
           child: Align(
             alignment: AlignmentDirectional.centerStart,
             child: KumoToolbar(
@@ -701,7 +849,8 @@ class _ToolbarDemoState extends State<_ToolbarDemo> {
         ),
         DemoSection(
           title: 'Overflow',
-          caption: 'Narrow the toolbar: items at the end move into More instead of overflowing.',
+          caption:
+              'Narrow the toolbar: items at the end move into More instead of overflowing.',
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             spacing: KumoSpace.s3,
@@ -713,7 +862,9 @@ class _ToolbarDemoState extends State<_ToolbarDemo> {
                     KumoButton(
                       label: '${(w * 100).round()}%',
                       size: KumoButtonSize.sm,
-                      variant: w == _width ? KumoButtonVariant.primary : KumoButtonVariant.secondary,
+                      variant: w == _width
+                          ? KumoButtonVariant.primary
+                          : KumoButtonVariant.secondary,
                       onPress: () => setState(() => _width = w),
                     ),
                 ],
@@ -741,7 +892,11 @@ class _ToolbarDemoState extends State<_ToolbarDemo> {
                           label: 'Share',
                           onPress: () => _did('Share link copied'),
                         ),
-                        KumoToolbarButton(icon: KumoIcons.trash, label: 'Delete', onPress: () => _did('Deleted')),
+                        KumoToolbarButton(
+                          icon: KumoIcons.trash,
+                          label: 'Delete',
+                          onPress: () => _did('Deleted'),
+                        ),
                       ],
                     ),
                   ),

@@ -7,13 +7,7 @@ import '../helpers/harness.dart';
 
 /// Holds the dialog's open state the way an app would.
 class _Host extends StatefulWidget {
-  const _Host({
-    this.caseSensitive = true,
-    this.errorMessage,
-    this.deleting = false,
-    this.onDelete,
-    this.openChanges,
-  });
+  const _Host({this.caseSensitive = true, this.errorMessage, this.deleting = false, this.onDelete, this.openChanges});
 
   final bool caseSensitive;
   final String? errorMessage;
@@ -56,18 +50,25 @@ Future<void> _open(WidgetTester tester) async {
   await tester.pumpAndSettle();
 }
 
-KumoButton _deleteButton(WidgetTester tester) => tester.widget<KumoButton>(find.widgetWithText(KumoButton, 'Delete Zone'));
+KumoButton _deleteButton(WidgetTester tester) =>
+    tester.widget<KumoButton>(find.widgetWithText(KumoButton, 'Delete Zone'));
 
 void main() {
   testWidgets('opens with clear copy in light and dark', (tester) async {
     for (final b in Brightness.values) {
-      await pumpKumo(tester, KeyedSubtree(key: ValueKey(b), child: const _Host()), brightness: b);
+      await pumpKumo(
+        tester,
+        KeyedSubtree(key: ValueKey(b), child: const _Host()),
+        brightness: b,
+      );
       await _open(tester);
       expect(tester.takeException(), isNull);
       expect(find.text('Delete example.com'), findsOneWidget);
       expect(
-        find.textContaining('This action cannot be undone. This will permanently delete the example.com zone.',
-            findRichText: true),
+        find.textContaining(
+          'This action cannot be undone. This will permanently delete the example.com zone.',
+          findRichText: true,
+        ),
         findsOneWidget,
       );
       expect(find.text('Cancel'), findsOneWidget);
@@ -192,16 +193,18 @@ void main() {
     late StateSetter set;
     await pumpKumo(
       tester,
-      StatefulBuilder(builder: (context, setState) {
-        set = setState;
-        return KumoDeleteResource(
-          open: open,
-          onOpenChange: (v) => setState(() => open = v),
-          resourceType: 'Worker',
-          resourceName: 'image-resizer',
-          onDelete: () {},
-        );
-      }),
+      StatefulBuilder(
+        builder: (context, setState) {
+          set = setState;
+          return KumoDeleteResource(
+            open: open,
+            onOpenChange: (v) => setState(() => open = v),
+            resourceType: 'Worker',
+            resourceName: 'image-resizer',
+            onDelete: () {},
+          );
+        },
+      ),
     );
     expect(find.text('Delete image-resizer'), findsOneWidget);
     expect(find.text('Delete Worker'), findsOneWidget);
@@ -262,17 +265,19 @@ void main() {
     var open = false;
     await pumpKumo(
       tester,
-      StatefulBuilder(builder: (context, setState) {
-        set = setState;
-        return KumoDeleteResource(
-          open: open,
-          onOpenChange: (v) => setState(() => open = v),
-          resourceType: 'Zone',
-          resourceName: 'example.com',
-          errorMessage: error,
-          onDelete: () {},
-        );
-      }),
+      StatefulBuilder(
+        builder: (context, setState) {
+          set = setState;
+          return KumoDeleteResource(
+            open: open,
+            onOpenChange: (v) => setState(() => open = v),
+            resourceType: 'Zone',
+            resourceName: 'example.com',
+            errorMessage: error,
+            onDelete: () {},
+          );
+        },
+      ),
     );
     set(() => open = true);
     await tester.pumpAndSettle();
@@ -294,7 +299,9 @@ void main() {
   testWidgets('reduced motion: the error banner appears in one frame', (tester) async {
     await pumpKumo(tester, const _Host(), disableAnimations: true);
     await _open(tester);
-    await tester.pumpWidget(kumoHarness(const _Host(errorMessage: 'Could not delete example.com.'), disableAnimations: true));
+    await tester.pumpWidget(
+      kumoHarness(const _Host(errorMessage: 'Could not delete example.com.'), disableAnimations: true),
+    );
     await tester.pump();
     await tester.pump();
     expect(tester.hasRunningAnimations, isFalse);

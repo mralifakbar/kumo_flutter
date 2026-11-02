@@ -43,11 +43,13 @@ void main() {
               highlightLines: [3],
             ),
             const KumoClipboardText(text: '023e105f4ecef8ad9ca31a8372d0c353', size: KumoClipboardTextSize.base),
-            const KumoTimeline(items: [
-              KumoTimelineItem(title: 'Deploying', time: 'Now', status: KumoTimelineStatus.active),
-              KumoTimelineItem(title: 'Deployed', time: '2 min ago', status: KumoTimelineStatus.success),
-              KumoTimelineItem(title: 'Build failed', time: '1 h ago', status: KumoTimelineStatus.danger),
-            ]),
+            const KumoTimeline(
+              items: [
+                KumoTimelineItem(title: 'Deploying', time: 'Now', status: KumoTimelineStatus.active),
+                KumoTimelineItem(title: 'Deployed', time: '2 min ago', status: KumoTimelineStatus.success),
+                KumoTimelineItem(title: 'Build failed', time: '1 h ago', status: KumoTimelineStatus.danger),
+              ],
+            ),
           ],
         ),
       ),

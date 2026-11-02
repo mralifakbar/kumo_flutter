@@ -11,10 +11,15 @@ void main() {
     for (final b in Brightness.values) {
       await pumpKumo(
         tester,
-        Wrap(spacing: 8, runSpacing: 8, children: [
-          for (final v in KumoButtonVariant.values)
-            for (final s in KumoButtonSize.values) KumoButton(label: '${v.name} ${s.name}', variant: v, size: s, onPress: () {}),
-        ]),
+        Wrap(
+          spacing: 8,
+          runSpacing: 8,
+          children: [
+            for (final v in KumoButtonVariant.values)
+              for (final s in KumoButtonSize.values)
+                KumoButton(label: '${v.name} ${s.name}', variant: v, size: s, onPress: () {}),
+          ],
+        ),
         brightness: b,
       );
       expect(tester.takeException(), isNull);
@@ -23,7 +28,11 @@ void main() {
 
   testWidgets('heights match Kumo with a mouse', (tester) async {
     for (final s in KumoButtonSize.values) {
-      await pumpKumo(tester, KumoButton(label: 'Save', size: s, onPress: () {}), tapTargetSize: KumoTapTargetSize.shrinkWrap);
+      await pumpKumo(
+        tester,
+        KumoButton(label: 'Save', size: s, onPress: () {}),
+        tapTargetSize: KumoTapTargetSize.shrinkWrap,
+      );
       expect(tester.getSize(find.byType(KumoButton)).height, s.height);
     }
   });
@@ -107,9 +116,22 @@ void main() {
   });
 
   testWidgets('block stretches; text scale 2 does not overflow', (tester) async {
-    await pumpKumo(tester, SizedBox(width: 300, child: KumoButton(label: 'Create Worker', block: true, onPress: () {})));
+    await pumpKumo(
+      tester,
+      SizedBox(
+        width: 300,
+        child: KumoButton(label: 'Create Worker', block: true, onPress: () {}),
+      ),
+    );
     expect(tester.getSize(find.byType(KumoButton)).width, 300);
-    await pumpKumo(tester, SizedBox(width: 200, child: KumoButton(label: 'Create a very long Worker name', icon: KumoIcons.plus, onPress: () {})), textScale: 2);
+    await pumpKumo(
+      tester,
+      SizedBox(
+        width: 200,
+        child: KumoButton(label: 'Create a very long Worker name', icon: KumoIcons.plus, onPress: () {}),
+      ),
+      textScale: 2,
+    );
     expect(tester.takeException(), isNull);
   });
 
@@ -122,19 +144,25 @@ void main() {
   });
 
   testWidgets('RTL puts the icon on the right', (tester) async {
-    await pumpKumo(tester, KumoButton(label: 'Add', icon: KumoIcons.plus, onPress: () {}), textDirection: TextDirection.rtl);
+    await pumpKumo(
+      tester,
+      KumoButton(label: 'Add', icon: KumoIcons.plus, onPress: () {}),
+      textDirection: TextDirection.rtl,
+    );
     expect(tester.getCenter(find.byType(KumoIcon)).dx, greaterThan(tester.getCenter(find.text('Add')).dx));
   });
 
   group('motion', () {
-    double fadeOf(WidgetTester tester, Finder f) => tester
-        .widget<FadeTransition>(find.ancestor(of: f, matching: find.byType(FadeTransition)).first)
-        .opacity
-        .value;
+    double fadeOf(WidgetTester tester, Finder f) =>
+        tester.widget<FadeTransition>(find.ancestor(of: f, matching: find.byType(FadeTransition)).first).opacity.value;
 
     testWidgets('loading cross-fades the icon into a spinner and keeps the label', (tester) async {
       await pumpKumo(tester, KumoButton(label: 'Deploy', icon: KumoIcons.rocketLaunch, onPress: () {}));
-      await pumpKumo(tester, KumoButton(label: 'Deploy', icon: KumoIcons.rocketLaunch, loading: true, onPress: () {}), settle: false);
+      await pumpKumo(
+        tester,
+        KumoButton(label: 'Deploy', icon: KumoIcons.rocketLaunch, loading: true, onPress: () {}),
+        settle: false,
+      );
       await tester.pump(const Duration(milliseconds: 50));
       expect(fadeOf(tester, find.byType(KumoLoader)), inExclusiveRange(0, 1));
       expect(fadeOf(tester, find.byIcon(KumoIcons.rocketLaunch)), inExclusiveRange(0, 1));
@@ -212,11 +240,14 @@ void main() {
           tester.widget<Opacity>(find.ancestor(of: find.text(text), matching: find.byType(Opacity)).first).opacity;
       await pumpKumo(
         tester,
-        Row(mainAxisSize: MainAxisSize.min, children: [
-          KumoButton(icon: KumoIcons.copy, shape: KumoButtonShape.square, title: 'Copy token', onPress: () {}),
-          const SizedBox(width: 40),
-          KumoButton(icon: KumoIcons.trash, shape: KumoButtonShape.square, title: 'Delete token', onPress: () {}),
-        ]),
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            KumoButton(icon: KumoIcons.copy, shape: KumoButtonShape.square, title: 'Copy token', onPress: () {}),
+            const SizedBox(width: 40),
+            KumoButton(icon: KumoIcons.trash, shape: KumoButtonShape.square, title: 'Delete token', onPress: () {}),
+          ],
+        ),
         size: kumoDesktopSize,
         tapTargetSize: KumoTapTargetSize.shrinkWrap,
       );
@@ -246,4 +277,3 @@ void main() {
     });
   });
 }
-

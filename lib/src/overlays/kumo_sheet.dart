@@ -1,4 +1,3 @@
-
 import 'dart:math' as math;
 
 import 'package:flutter/rendering.dart';
@@ -22,8 +21,7 @@ class KumoSheetScope extends InheritedWidget {
 
   final void Function([Object? result]) close;
 
-  static KumoSheetScope? maybeOf(BuildContext context) =>
-      context.dependOnInheritedWidgetOfExactType<KumoSheetScope>();
+  static KumoSheetScope? maybeOf(BuildContext context) => context.dependOnInheritedWidgetOfExactType<KumoSheetScope>();
 
   /// Closes the sheet that [context] belongs to. Works from inside the sheet
   /// and from the context of the widget that builds it (a State whose build
@@ -219,7 +217,9 @@ class KumoSheetState extends State<KumoSheet> with TickerProviderStateMixin {
     final points = widget.snapPoints;
     final count = _snapOffsets.length;
     // _snapOffsets is ordered from most open (0) to least open.
-    _snapIndex = points == null || points.isEmpty ? 0 : (count - 1 - (widget.initialSnapPointIndex ?? 0)).clamp(0, count - 1);
+    _snapIndex = points == null || points.isEmpty
+        ? 0
+        : (count - 1 - (widget.initialSnapPointIndex ?? 0)).clamp(0, count - 1);
     final target = _snapOffsets[_snapIndex];
     if (_reduceMotion) {
       _offset.value = target;
@@ -329,8 +329,7 @@ class KumoSheetState extends State<KumoSheet> with TickerProviderStateMixin {
       });
       return;
     }
-    KumoMotion.springTo(_offset, _extent, spring: KumoSprings.sheet, velocity: math.max(velocity, 0))
-        .whenComplete(() {
+    KumoMotion.springTo(_offset, _extent, spring: KumoSprings.sheet, velocity: math.max(velocity, 0)).whenComplete(() {
       if (_exiting) _finishExit();
     });
   }
@@ -408,10 +407,12 @@ class KumoSheetState extends State<KumoSheet> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
-      _area = constraints.biggest;
-      return _buildSheet(context, constraints.biggest);
-    });
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        _area = constraints.biggest;
+        return _buildSheet(context, constraints.biggest);
+      },
+    );
   }
 
   Widget _buildSheet(BuildContext context, Size size) {
@@ -437,7 +438,10 @@ class KumoSheetState extends State<KumoSheet> with TickerProviderStateMixin {
     // Sheets live in their own route, outside the app's DefaultTextStyle.
     Widget body = DefaultTextStyle(
       style: theme.text(),
-      child: IconTheme(data: IconThemeData(color: theme.colors.textDefault, size: 16), child: widget.child),
+      child: IconTheme(
+        data: IconThemeData(color: theme.colors.textDefault, size: 16),
+        child: widget.child,
+      ),
     );
     if (widget.edge == KumoSheetEdge.bottom) {
       body = ScrollConfiguration(
@@ -478,9 +482,7 @@ class KumoSheetState extends State<KumoSheet> with TickerProviderStateMixin {
           ? Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: widget.edge == KumoSheetEdge.bottom
-                  ? [?widget.header, surface]
-                  : [surface, ?widget.header],
+              children: widget.edge == KumoSheetEdge.bottom ? [?widget.header, surface] : [surface, ?widget.header],
             )
           : surface,
     );
@@ -495,20 +497,26 @@ class KumoSheetState extends State<KumoSheet> with TickerProviderStateMixin {
         final translate = value > 0 ? value : 0.0;
         final filler = overdrag > 0
             ? (_vertical
-                ? SizedBox(height: overdrag, child: ColoredBox(color: surfaceColor))
-                : SizedBox(width: overdrag, child: ColoredBox(color: surfaceColor)))
+                  ? SizedBox(
+                      height: overdrag,
+                      child: ColoredBox(color: surfaceColor),
+                    )
+                  : SizedBox(
+                      width: overdrag,
+                      child: ColoredBox(color: surfaceColor),
+                    ))
             : null;
         final Widget content = switch (widget.edge) {
           KumoSheetEdge.bottom => Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [child!, ?filler],
-            ),
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [child!, ?filler],
+          ),
           KumoSheetEdge.top => Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [?filler, child!],
-            ),
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [?filler, child!],
+          ),
           KumoSheetEdge.start => Row(mainAxisSize: MainAxisSize.min, children: [?filler, child!]),
           KumoSheetEdge.end => Row(mainAxisSize: MainAxisSize.min, children: [child!, ?filler]),
         };
@@ -551,11 +559,7 @@ class KumoSheetState extends State<KumoSheet> with TickerProviderStateMixin {
             );
     }
 
-    sheet = Semantics(
-      explicitChildNodes: true,
-      label: widget.accessibilityLabel,
-      child: sheet,
-    );
+    sheet = Semantics(explicitChildNodes: true, label: widget.accessibilityLabel, child: sheet);
 
     final alignment = switch (widget.edge) {
       KumoSheetEdge.bottom => Alignment.bottomCenter,
@@ -611,12 +615,10 @@ class _SheetScrollPhysics extends ScrollPhysics {
   final KumoSheetState sheet;
 
   @override
-  _SheetScrollPhysics applyTo(ScrollPhysics? ancestor) =>
-      _SheetScrollPhysics(sheet, parent: buildParent(ancestor));
+  _SheetScrollPhysics applyTo(ScrollPhysics? ancestor) => _SheetScrollPhysics(sheet, parent: buildParent(ancestor));
 
   @override
-  ScrollPhysics buildParent(ScrollPhysics? ancestor) =>
-      super.buildParent(ancestor) ?? const ClampingScrollPhysics();
+  ScrollPhysics buildParent(ScrollPhysics? ancestor) => super.buildParent(ancestor) ?? const ClampingScrollPhysics();
 
   @override
   bool shouldAcceptUserOffset(ScrollMetrics position) => true;
@@ -690,7 +692,10 @@ class KumoSheetHandle extends StatelessWidget {
           child: Container(
             width: 36,
             height: 4,
-            decoration: BoxDecoration(color: kumo.colors.interact, borderRadius: BorderRadius.circular(KumoRadius.full)),
+            decoration: BoxDecoration(
+              color: kumo.colors.interact,
+              borderRadius: BorderRadius.circular(KumoRadius.full),
+            ),
           ),
         ),
       ),

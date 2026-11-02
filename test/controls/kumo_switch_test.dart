@@ -41,7 +41,13 @@ void main() {
             for (final size in KumoSwitchSize.values)
               for (final variant in KumoSwitchVariant.values)
                 for (final checked in [false, true])
-                  KumoSwitch(label: '$size $variant', size: size, variant: variant, checked: checked, onCheckedChange: (_) {}),
+                  KumoSwitch(
+                    label: '$size $variant',
+                    size: size,
+                    variant: variant,
+                    checked: checked,
+                    onCheckedChange: (_) {},
+                  ),
             const KumoSwitch(label: 'Disabled', checked: true, disabled: true),
           ],
         ),
@@ -66,13 +72,19 @@ void main() {
     expect(haptics, ['HapticFeedbackType.selectionClick']);
     await pumpKumo(tester, KumoSwitch(label: 'Locked', checked: false, disabled: true, onCheckedChange: calls.add));
     await tester.tap(find.text('Locked'));
-    await pumpKumo(tester, KumoSwitch(label: 'Saving', checked: false, transitioning: true, onCheckedChange: calls.add));
+    await pumpKumo(
+      tester,
+      KumoSwitch(label: 'Saving', checked: false, transitioning: true, onCheckedChange: calls.add),
+    );
     await tester.tap(find.text('Saving'));
     expect(calls, [true]);
   });
 
   testWidgets('controlled: thumb springs to the new value', (tester) async {
-    await pumpKumo(tester, controlled<bool>(false, (v, set) => KumoSwitch(label: 'Proxy', checked: v, onCheckedChange: set)));
+    await pumpKumo(
+      tester,
+      controlled<bool>(false, (v, set) => KumoSwitch(label: 'Proxy', checked: v, onCheckedChange: set)),
+    );
     expect(thumbOffset(tester), 0);
     await tester.tap(find.byType(KumoSwitch));
     await tester.pump();
@@ -96,7 +108,13 @@ void main() {
     await pumpKumo(tester, KumoSwitch(label: 'Always use HTTPS', checked: true, onCheckedChange: (_) {}));
     expect(
       tester.getSemantics(find.text('Always use HTTPS')),
-      containsSemantics(label: 'Always use HTTPS', hasToggledState: true, isToggled: true, isButton: false, hasTapAction: true),
+      containsSemantics(
+        label: 'Always use HTTPS',
+        hasToggledState: true,
+        isToggled: true,
+        isButton: false,
+        hasTapAction: true,
+      ),
     );
     await pumpKumo(tester, KumoSwitch(checked: false, onCheckedChange: (_) {}));
     expect(find.bySemanticsLabel('Switch'), findsOneWidget);
@@ -116,7 +134,10 @@ void main() {
   group('drag', () {
     testWidgets('the thumb follows the finger and a slow drag past halfway turns it on', (tester) async {
       final haptics = recordHaptics(tester);
-      await pumpKumo(tester, controlled<bool>(false, (v, set) => KumoSwitch(label: 'Proxy', checked: v, onCheckedChange: set)));
+      await pumpKumo(
+        tester,
+        controlled<bool>(false, (v, set) => KumoSwitch(label: 'Proxy', checked: v, onCheckedChange: set)),
+      );
       final start = tester.getTopLeft(find.byType(KumoSwitch)) + const Offset(4, 22);
       final gesture = await tester.startGesture(start);
       await gesture.moveBy(const Offset(6, 0));

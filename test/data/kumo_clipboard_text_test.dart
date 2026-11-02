@@ -11,12 +11,15 @@ void main() {
     for (final b in Brightness.values) {
       await pumpKumo(
         tester,
-        Column(mainAxisSize: MainAxisSize.min, children: [
-          for (final s in KumoClipboardTextSize.values) ...[
-            KumoClipboardText(text: '023e105f4ecef8ad9ca31a8372d0c353', size: s),
-            KumoClipboardText(text: 'cf_live_7Hq2xK9mZ', size: s, masked: true),
+        Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            for (final s in KumoClipboardTextSize.values) ...[
+              KumoClipboardText(text: '023e105f4ecef8ad9ca31a8372d0c353', size: s),
+              KumoClipboardText(text: 'cf_live_7Hq2xK9mZ', size: s, masked: true),
+            ],
           ],
-        ]),
+        ),
         brightness: b,
       );
       expect(tester.takeException(), isNull);
@@ -25,7 +28,11 @@ void main() {
 
   testWidgets('heights match Kumo with a mouse and reach 44 on touch', (tester) async {
     for (final s in KumoClipboardTextSize.values) {
-      await pumpKumo(tester, KumoClipboardText(text: 'abc', size: s), tapTargetSize: KumoTapTargetSize.shrinkWrap);
+      await pumpKumo(
+        tester,
+        KumoClipboardText(text: 'abc', size: s),
+        tapTargetSize: KumoTapTargetSize.shrinkWrap,
+      );
       expect(tester.getSize(find.byType(KumoClipboardText)).height, s.height);
     }
     await pumpKumo(tester, const KumoClipboardText(text: 'abc', size: KumoClipboardTextSize.sm));
@@ -35,7 +42,10 @@ void main() {
   testWidgets('copies text, or textToCopy when given, and calls onCopy', (tester) async {
     final copied = mockClipboard(tester);
     var calls = 0;
-    await pumpKumo(tester, KumoClipboardText(text: 'cf_live_***', textToCopy: 'cf_live_7Hq2xK9mZ', onCopy: () => calls++));
+    await pumpKumo(
+      tester,
+      KumoClipboardText(text: 'cf_live_***', textToCopy: 'cf_live_7Hq2xK9mZ', onCopy: () => calls++),
+    );
     await tester.tap(find.bySemanticsLabel('Copy'));
     await settleCopy(tester);
     expect(copied, ['cf_live_7Hq2xK9mZ']);
@@ -49,8 +59,9 @@ void main() {
     final announced = mockAnnouncements(tester);
     await pumpKumo(tester, const KumoClipboardText(text: 'abc'));
     expect(find.byIcon(KumoIcons.check), findsOneWidget); // mounted, transparent, below the copy icon
-    double checkOpacity() =>
-        tester.widget<Opacity>(find.ancestor(of: find.byIcon(KumoIcons.check), matching: find.byType(Opacity)).first).opacity;
+    double checkOpacity() => tester
+        .widget<Opacity>(find.ancestor(of: find.byIcon(KumoIcons.check), matching: find.byType(Opacity)).first)
+        .opacity;
     expect(checkOpacity(), 0);
     await tester.tap(find.bySemanticsLabel('Copy'));
     await settleCopy(tester);
@@ -94,7 +105,17 @@ void main() {
     expect(find.text('••••••••'), findsOneWidget);
     expect(
       tester.getSemantics(find.bySemanticsLabel('Show')),
-      matchesSemantics(label: 'Show', isButton: true, hasToggledState: true, isToggled: false, hasEnabledState: true, isEnabled: true, hasTapAction: true, isFocusable: true, hasFocusAction: true),
+      matchesSemantics(
+        label: 'Show',
+        isButton: true,
+        hasToggledState: true,
+        isToggled: false,
+        hasEnabledState: true,
+        isEnabled: true,
+        hasTapAction: true,
+        isFocusable: true,
+        hasFocusAction: true,
+      ),
     );
     await tester.tap(find.bySemanticsLabel('Show'));
     await tester.pumpAndSettle();
@@ -123,7 +144,10 @@ void main() {
     mockClipboard(tester);
     await pumpKumo(
       tester,
-      const KumoClipboardText(text: 'npx wrangler deploy', tooltip: KumoClipboardTextTooltip(copiedText: 'Command copied')),
+      const KumoClipboardText(
+        text: 'npx wrangler deploy',
+        tooltip: KumoClipboardTextTooltip(copiedText: 'Command copied'),
+      ),
     );
     await tester.tap(find.bySemanticsLabel('Copy'));
     await settleCopy(tester);
@@ -139,7 +163,11 @@ void main() {
       tester,
       const Padding(
         padding: EdgeInsets.all(16),
-        child: KumoClipboardText(text: 'https://example.com/a/very/long/path/to/an/r2/object.png', block: true, masked: true),
+        child: KumoClipboardText(
+          text: 'https://example.com/a/very/long/path/to/an/r2/object.png',
+          block: true,
+          masked: true,
+        ),
       ),
       textScale: 2,
       textDirection: TextDirection.rtl,

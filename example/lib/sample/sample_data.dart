@@ -47,13 +47,20 @@ class SampleWorker {
   /// A deterministic, made-up request curve for the last 24 hours.
   List<(DateTime, double)> requests(DateTime now) {
     final rnd = math.Random(seed);
-    final start = DateTime.utc(now.year, now.month, now.day, now.hour).subtract(const Duration(hours: 23));
+    final start = DateTime.utc(
+      now.year,
+      now.month,
+      now.day,
+      now.hour,
+    ).subtract(const Duration(hours: 23));
     final base = 400 + seed % 7 * 90;
     return [
       for (var h = 0; h < 24; h++)
         (
           start.add(Duration(hours: h)),
-          (base * (0.6 + 0.4 * math.sin((h - 6) / 24 * 2 * math.pi).abs()) + rnd.nextInt(120)).roundToDouble(),
+          (base * (0.6 + 0.4 * math.sin((h - 6) / 24 * 2 * math.pi).abs()) +
+                  rnd.nextInt(120))
+              .roundToDouble(),
         ),
     ];
   }
@@ -61,8 +68,12 @@ class SampleWorker {
   /// Made-up error counts aligned with [requests].
   List<(DateTime, double)> errors(DateTime now) {
     final rnd = math.Random(seed + 1);
-    final faulty = health == WorkerHealth.failing || health == WorkerHealth.degraded;
-    return [for (final (t, v) in requests(now)) (t, (v * (faulty ? 0.04 : 0.005) + rnd.nextInt(4)).roundToDouble())];
+    final faulty =
+        health == WorkerHealth.failing || health == WorkerHealth.degraded;
+    return [
+      for (final (t, v) in requests(now))
+        (t, (v * (faulty ? 0.04 : 0.005) + rnd.nextInt(4)).roundToDouble()),
+    ];
   }
 }
 
@@ -110,7 +121,12 @@ List<SampleWorker> sampleWorkers() => [
         ago: '5 days ago',
         failed: true,
       ),
-      SampleDeployment(version: 'v39', message: 'Initial deploy', author: 'sam', ago: 'Sep 30'),
+      SampleDeployment(
+        version: 'v39',
+        message: 'Initial deploy',
+        author: 'sam',
+        ago: 'Sep 30',
+      ),
     ],
   ),
   SampleWorker(
@@ -127,7 +143,12 @@ List<SampleWorker> sampleWorkers() => [
         author: 'riya',
         ago: '1 hour ago',
       ),
-      SampleDeployment(version: 'v16', message: 'Log rejected sessions', author: 'riya', ago: 'Yesterday'),
+      SampleDeployment(
+        version: 'v16',
+        message: 'Log rejected sessions',
+        author: 'riya',
+        ago: 'Yesterday',
+      ),
     ],
   ),
   SampleWorker(
@@ -146,7 +167,12 @@ List<SampleWorker> sampleWorkers() => [
         ago: '3 hours ago',
         failed: true,
       ),
-      SampleDeployment(version: 'v7', message: 'Respect the language cookie', author: 'ci-token', ago: 'Oct 28'),
+      SampleDeployment(
+        version: 'v7',
+        message: 'Respect the language cookie',
+        author: 'ci-token',
+        ago: 'Oct 28',
+      ),
     ],
   ),
   SampleWorker(
@@ -157,16 +183,53 @@ List<SampleWorker> sampleWorkers() => [
     lastDeploy: 'Oct 12',
     seed: 11,
     deployments: const [
-      SampleDeployment(version: 'v3', message: 'Use the new title font', author: 'sam', ago: 'Oct 12'),
+      SampleDeployment(
+        version: 'v3',
+        message: 'Use the new title font',
+        author: 'sam',
+        ago: 'Oct 12',
+      ),
     ],
   ),
 ];
 
 List<SampleDnsRecord> sampleDnsRecords() => [
-  SampleDnsRecord(type: 'A', name: 'example.com', content: '192.0.2.10', proxied: true),
-  SampleDnsRecord(type: 'AAAA', name: 'example.com', content: '2001:db8::10', proxied: true),
-  SampleDnsRecord(type: 'CNAME', name: 'www', content: 'example.com', proxied: true),
-  SampleDnsRecord(type: 'CNAME', name: 'blog', content: 'blog-host.example.net', proxied: false),
-  SampleDnsRecord(type: 'MX', name: 'example.com', content: 'mail.example.net', proxied: false, ttl: '1 hr'),
-  SampleDnsRecord(type: 'TXT', name: '_dmarc', content: 'v=DMARC1; p=quarantine', proxied: false, ttl: '1 hr'),
+  SampleDnsRecord(
+    type: 'A',
+    name: 'example.com',
+    content: '192.0.2.10',
+    proxied: true,
+  ),
+  SampleDnsRecord(
+    type: 'AAAA',
+    name: 'example.com',
+    content: '2001:db8::10',
+    proxied: true,
+  ),
+  SampleDnsRecord(
+    type: 'CNAME',
+    name: 'www',
+    content: 'example.com',
+    proxied: true,
+  ),
+  SampleDnsRecord(
+    type: 'CNAME',
+    name: 'blog',
+    content: 'blog-host.example.net',
+    proxied: false,
+  ),
+  SampleDnsRecord(
+    type: 'MX',
+    name: 'example.com',
+    content: 'mail.example.net',
+    proxied: false,
+    ttl: '1 hr',
+  ),
+  SampleDnsRecord(
+    type: 'TXT',
+    name: '_dmarc',
+    content: 'v=DMARC1; p=quarantine',
+    proxied: false,
+    ttl: '1 hr',
+  ),
 ];

@@ -71,11 +71,11 @@ enum KumoGridGap {
 
   /// The gap at [width].
   double at(double width) => switch (this) {
-        none => 0,
-        sm => KumoSpace.s3,
-        base => width >= KumoBreakpoints.lg ? KumoSpace.s8 : (width >= KumoBreakpoints.md ? KumoSpace.s6 : KumoSpace.s2),
-        lg => KumoSpace.s8,
-      };
+    none => 0,
+    sm => KumoSpace.s3,
+    base => width >= KumoBreakpoints.lg ? KumoSpace.s8 : (width >= KumoBreakpoints.md ? KumoSpace.s6 : KumoSpace.s2),
+    lg => KumoSpace.s8,
+  };
 }
 
 /// Explicit equal-column counts per breakpoint, for layouts the presets do
@@ -87,8 +87,7 @@ enum KumoGridGap {
 /// ```
 @immutable
 class KumoGridColumns {
-  const KumoGridColumns({this.base = 1, this.sm, this.md, this.lg, this.xl})
-      : assert(base > 0);
+  const KumoGridColumns({this.base = 1, this.sm, this.md, this.lg, this.xl}) : assert(base > 0);
 
   final int base;
 
@@ -116,7 +115,12 @@ class KumoGridColumns {
 
   @override
   bool operator ==(Object other) =>
-      other is KumoGridColumns && other.base == base && other.sm == sm && other.md == md && other.lg == lg && other.xl == xl;
+      other is KumoGridColumns &&
+      other.base == base &&
+      other.sm == sm &&
+      other.md == md &&
+      other.lg == lg &&
+      other.xl == xl;
 
   @override
   int get hashCode => Object.hash(base, sm, md, lg, xl);
@@ -183,8 +187,13 @@ class KumoGrid extends StatelessWidget {
             i == children.length - 1
                 ? children[i]
                 : DecoratedBox(
-                    decoration: BoxDecoration(border: Border(bottom: BorderSide(color: line))),
-                    child: Padding(padding: const EdgeInsets.only(bottom: KumoSpace.s8), child: children[i]),
+                    decoration: BoxDecoration(
+                      border: Border(bottom: BorderSide(color: line)),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: KumoSpace.s8),
+                      child: children[i],
+                    ),
                   ),
         ];
       }
@@ -221,11 +230,13 @@ class _GridLayout extends MultiChildRenderObjectWidget {
 class _GridParentData extends ContainerBoxParentData<RenderBox> {}
 
 class _RenderGrid extends RenderBox
-    with ContainerRenderObjectMixin<RenderBox, _GridParentData>, RenderBoxContainerDefaultsMixin<RenderBox, _GridParentData> {
+    with
+        ContainerRenderObjectMixin<RenderBox, _GridParentData>,
+        RenderBoxContainerDefaultsMixin<RenderBox, _GridParentData> {
   _RenderGrid({required List<int> tracks, required double gap, required TextDirection textDirection})
-      : _tracks = tracks,
-        _gap = gap,
-        _textDirection = textDirection;
+    : _tracks = tracks,
+      _gap = gap,
+      _textDirection = textDirection;
 
   List<int> _tracks;
   set tracks(List<int> value) {

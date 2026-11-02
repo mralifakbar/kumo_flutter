@@ -141,7 +141,12 @@ class _KumoDrawerState extends State<KumoDrawer> {
       accessibilityLabel: widget.title ?? widget.semanticLabel,
       child: panel,
     );
-    return patchDarkEdge ? KumoTheme(data: kumo.copyWith(brightness: Brightness.light), child: sheet) : sheet;
+    return patchDarkEdge
+        ? KumoTheme(
+            data: kumo.copyWith(brightness: Brightness.light),
+            child: sheet,
+          )
+        : sheet;
   }
 
   Widget _panel(BuildContext context) {
@@ -176,8 +181,7 @@ class _KumoDrawerState extends State<KumoDrawer> {
                           container: true,
                           child: KumoText(widget.title!, variant: KumoTextVariant.heading, headingLevel: 2),
                         ),
-                      if (widget.description != null)
-                        KumoText(widget.description!, variant: KumoTextVariant.secondary),
+                      if (widget.description != null) KumoText(widget.description!, variant: KumoTextVariant.secondary),
                     ],
                   ),
                 ),
@@ -214,7 +218,9 @@ class _KumoDrawerState extends State<KumoDrawer> {
     final footer = widget.actions.isEmpty
         ? null
         : DecoratedBox(
-            decoration: BoxDecoration(border: Border(top: BorderSide(color: edge(_contentBelow)))),
+            decoration: BoxDecoration(
+              border: Border(top: BorderSide(color: edge(_contentBelow))),
+            ),
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: KumoSpace.s5, vertical: KumoSpace.s4),
               child: KumoDialogFooter(children: widget.actions),
@@ -230,10 +236,7 @@ class _KumoDrawerState extends State<KumoDrawer> {
             semanticLabel: strings.close,
             onAccessibilityPress: widget.dismissible ? () => KumoDialog.closeFrom(context) : null,
           ),
-        if (header != null) ...[
-          header,
-          SizedBox(height: 1, child: ColoredBox(color: edge(_contentAbove))),
-        ],
+        if (header != null) ...[header, SizedBox(height: 1, child: ColoredBox(color: edge(_contentAbove)))],
         if (_vertical) Flexible(child: body) else Expanded(child: body),
         ?footer,
         if (side == KumoSheetEdge.top)
@@ -277,6 +280,8 @@ Future<T?> showKumoDrawer<T>(
   String? semanticLabel,
   bool useRootNavigator = true,
 }) {
-  return Navigator.of(context, rootNavigator: useRootNavigator)
-      .push<T>(KumoSheetRoute<T>(builder: builder, semanticLabel: semanticLabel));
+  return Navigator.of(
+    context,
+    rootNavigator: useRootNavigator,
+  ).push<T>(KumoSheetRoute<T>(builder: builder, semanticLabel: semanticLabel));
 }

@@ -8,21 +8,32 @@ import 'package:kumo_flutter/kumo_flutter.dart';
 import '../helpers/harness.dart';
 
 List<KumoCommandGroup> _groups(List<String> ran) => [
-      KumoCommandGroup(label: 'Workers', items: [
-        KumoCommandItem(title: 'Deploy image-resizer', icon: KumoIcons.rocket, onSelect: () => ran.add('deploy')),
-        KumoCommandItem(title: 'View logs', icon: KumoIcons.terminal, keywords: ['tail'], onSelect: () => ran.add('logs')),
-        const KumoCommandItem(title: 'Delete Worker', icon: KumoIcons.trash, disabled: true),
-      ]),
-      KumoCommandGroup(label: 'Cache', items: [
-        KumoCommandItem(
-          title: 'Purge everything',
-          breadcrumbs: const ['example.com'],
-          shortcut: 'P',
-          onSelect: () => ran.add('purge'),
-        ),
-        KumoCommandItem(title: 'Cache docs', external: true, onSelect: () => ran.add('docs')),
-      ]),
-    ];
+  KumoCommandGroup(
+    label: 'Workers',
+    items: [
+      KumoCommandItem(title: 'Deploy image-resizer', icon: KumoIcons.rocket, onSelect: () => ran.add('deploy')),
+      KumoCommandItem(
+        title: 'View logs',
+        icon: KumoIcons.terminal,
+        keywords: ['tail'],
+        onSelect: () => ran.add('logs'),
+      ),
+      const KumoCommandItem(title: 'Delete Worker', icon: KumoIcons.trash, disabled: true),
+    ],
+  ),
+  KumoCommandGroup(
+    label: 'Cache',
+    items: [
+      KumoCommandItem(
+        title: 'Purge everything',
+        breadcrumbs: const ['example.com'],
+        shortcut: 'P',
+        onSelect: () => ran.add('purge'),
+      ),
+      KumoCommandItem(title: 'Cache docs', external: true, onSelect: () => ran.add('docs')),
+    ],
+  ),
+];
 
 class _Opener extends StatelessWidget {
   const _Opener({required this.ran, this.onResult, this.onSearch, this.presentation = KumoPresentation.auto});
@@ -34,9 +45,9 @@ class _Opener extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => KumoCommandPaletteShortcut(
-        onTrigger: () => _open(context),
-        child: KumoButton(label: 'Open command palette', onPress: () => _open(context)),
-      );
+    onTrigger: () => _open(context),
+    child: KumoButton(label: 'Open command palette', onPress: () => _open(context)),
+  );
 
   Future<void> _open(BuildContext context) async {
     final r = await showKumoCommandPalette(
@@ -45,10 +56,16 @@ class _Opener extends StatelessWidget {
       groups: _groups(ran),
       onSearch: onSearch,
       presentation: presentation,
-      footer: const KumoCommandPaletteFooter(children: [
-        KumoCommandPaletteKeyHint(label: 'Navigate', keys: ['Up', 'Down'], icons: [KumoIcons.arrowUp, KumoIcons.arrowDown]),
-        KumoCommandPaletteKeyHint(label: 'Run', keys: ['Enter'], icons: [KumoIcons.arrowElbowDownLeft]),
-      ]),
+      footer: const KumoCommandPaletteFooter(
+        children: [
+          KumoCommandPaletteKeyHint(
+            label: 'Navigate',
+            keys: ['Up', 'Down'],
+            icons: [KumoIcons.arrowUp, KumoIcons.arrowDown],
+          ),
+          KumoCommandPaletteKeyHint(label: 'Run', keys: ['Enter'], icons: [KumoIcons.arrowElbowDownLeft]),
+        ],
+      ),
     );
     onResult?.call(r);
   }
@@ -56,8 +73,7 @@ class _Opener extends StatelessWidget {
 
 Finder get _input => find.byType(TextField);
 
-Finder _item(String title) =>
-    find.byWidgetPredicate((w) => w is KumoCommandPaletteItem && w.item.title == title);
+Finder _item(String title) => find.byWidgetPredicate((w) => w is KumoCommandPaletteItem && w.item.title == title);
 
 Finder _itemButton(String title) => find.descendant(of: _item(title), matching: find.byType(KumoPressable));
 
@@ -69,7 +85,12 @@ Future<void> _openPalette(WidgetTester tester) async {
 void main() {
   testWidgets('wide: opens as a dialog with the search focused, footer shown', (tester) async {
     for (final b in Brightness.values) {
-      await pumpKumo(tester, const _Opener(ran: []), size: kumoDesktopSize, brightness: b);
+      await pumpKumo(
+        tester,
+        const _Opener(ran: []),
+        size: kumoDesktopSize,
+        brightness: b,
+      );
       await _openPalette(tester);
       expect(find.byType(KumoSheet), findsNothing);
       expect(find.byType(KumoCommandPalette), findsOneWidget);
@@ -87,7 +108,11 @@ void main() {
   testWidgets('typing filters with marked matches; Enter runs the first result and closes', (tester) async {
     final ran = <String>[];
     KumoCommandItem? result;
-    await pumpKumo(tester, _Opener(ran: ran, onResult: (r) => result = r), size: kumoDesktopSize);
+    await pumpKumo(
+      tester,
+      _Opener(ran: ran, onResult: (r) => result = r),
+      size: kumoDesktopSize,
+    );
     await _openPalette(tester);
     await tester.enterText(_input, 'purge');
     await tester.pumpAndSettle();
@@ -104,8 +129,7 @@ void main() {
     final ran = <String>[];
     await pumpKumo(tester, _Opener(ran: ran), size: kumoDesktopSize);
     await _openPalette(tester);
-    bool lit(String title) =>
-        tester.widget<KumoCommandPaletteItem>(_item(title)).highlighted;
+    bool lit(String title) => tester.widget<KumoCommandPaletteItem>(_item(title)).highlighted;
     expect(lit('Deploy image-resizer'), isTrue);
     await tester.sendKeyEvent(LogicalKeyboardKey.arrowDown);
     await tester.sendKeyEvent(LogicalKeyboardKey.arrowDown);
@@ -145,7 +169,11 @@ void main() {
 
   testWidgets('empty state names the cause; Escape closes with no result', (tester) async {
     KumoCommandItem? result = const KumoCommandItem(title: 'sentinel');
-    await pumpKumo(tester, _Opener(ran: const [], onResult: (r) => result = r), size: kumoDesktopSize);
+    await pumpKumo(
+      tester,
+      _Opener(ran: const [], onResult: (r) => result = r),
+      size: kumoDesktopSize,
+    );
     await _openPalette(tester);
     await tester.enterText(_input, 'zzzz');
     await tester.pumpAndSettle();
@@ -164,13 +192,20 @@ void main() {
       return c.future;
     }
 
-    await pumpKumo(tester, _Opener(ran: const [], onSearch: search), size: kumoDesktopSize);
+    await pumpKumo(
+      tester,
+      _Opener(ran: const [], onSearch: search),
+      size: kumoDesktopSize,
+    );
     await _openPalette(tester);
     await tester.enterText(_input, 'assets');
     await tester.pump();
     expect(find.byType(KumoCommandPaletteLoading), findsOneWidget);
     pending.last.complete(const [
-      KumoCommandGroup(label: 'R2 buckets', items: [KumoCommandItem(title: 'assets')]),
+      KumoCommandGroup(
+        label: 'R2 buckets',
+        items: [KumoCommandItem(title: 'assets')],
+      ),
     ]);
     await tester.pumpAndSettle();
     expect(find.text('R2 buckets'), findsOneWidget);
@@ -264,7 +299,12 @@ void main() {
 
   testWidgets('filtering narrows the panel smoothly; reduced motion resizes at once', (tester) async {
     for (final reduce in [false, true]) {
-      await pumpKumo(tester, const _Opener(ran: []), size: kumoDesktopSize, disableAnimations: reduce);
+      await pumpKumo(
+        tester,
+        const _Opener(ran: []),
+        size: kumoDesktopSize,
+        disableAnimations: reduce,
+      );
       await _openPalette(tester);
       final before = tester.getSize(find.byType(KumoCommandPalette)).height;
       await tester.enterText(_input, 'purge');
@@ -296,6 +336,7 @@ void main() {
       final w = find.descendant(of: _item(title), matching: find.byType(FadeTransition)).first;
       return tester.widget<FadeTransition>(w).opacity.value;
     }
+
     expect(fill('Deploy image-resizer'), 1);
     await tester.sendKeyEvent(LogicalKeyboardKey.arrowDown);
     await tester.pump();

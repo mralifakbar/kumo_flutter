@@ -289,6 +289,8 @@ class _OtpCaretState extends State<_OtpCaret> {
     super.didChangeDependencies();
     // Blinks on a timer like Flutter's own caret, only while on screen and
     // with motion allowed.
+    // TickerMode.valuesOf replaces this on newer Flutter but is missing on 3.38.
+    // ignore: deprecated_member_use
     final run = TickerMode.of(context) && !KumoMotion.reduceMotion(context);
     if (run && _timer == null) {
       _timer = Timer.periodic(const Duration(milliseconds: 500), (_) => setState(() => _visible = !_visible));

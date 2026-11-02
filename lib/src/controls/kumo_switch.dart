@@ -74,14 +74,15 @@ class _SwitchColors {
     }
     return on
         ? _SwitchColors(dark ? _blue600 : _blue500, dark ? _blue500 : _blue600, dark ? _blue300 : c.base)
-        : _SwitchColors(dark ? _neutral700 : _neutral200, dark ? _neutral600 : _neutral300, dark ? _neutral850 : c.base);
+        : _SwitchColors(
+            dark ? _neutral700 : _neutral200,
+            dark ? _neutral600 : _neutral300,
+            dark ? _neutral850 : c.base,
+          );
   }
 
-  static _SwitchColors lerp(_SwitchColors a, _SwitchColors b, double t) => _SwitchColors(
-        Color.lerp(a.track, b.track, t)!,
-        Color.lerp(a.ring, b.ring, t)!,
-        Color.lerp(a.thumb, b.thumb, t)!,
-      );
+  static _SwitchColors lerp(_SwitchColors a, _SwitchColors b, double t) =>
+      _SwitchColors(Color.lerp(a.track, b.track, t)!, Color.lerp(a.ring, b.ring, t)!, Color.lerp(a.thumb, b.thumb, t)!);
 }
 
 /// Kumo's `Switch`: an on/off control for a setting that takes effect at
@@ -276,7 +277,8 @@ class _KumoSwitchState extends State<KumoSwitch> with TickerProviderStateMixin {
     final group = _group;
     final controlFirst = widget.controlFirst ?? group?.controlFirst ?? true;
     final disabled = _disabled;
-    final labelNode = widget.labelWidget ??
+    final labelNode =
+        widget.labelWidget ??
         (widget.label == null
             ? null
             : ControlLabelText(

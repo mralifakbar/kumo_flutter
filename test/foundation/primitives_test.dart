@@ -8,13 +8,16 @@ void main() {
   testWidgets('KumoText variants resolve Kumo styles', (tester) async {
     await pumpKumo(
       tester,
-      const Column(mainAxisSize: MainAxisSize.min, children: [
-        KumoText('Body'),
-        KumoText('Muted', variant: KumoTextVariant.secondary),
-        KumoText('Title', variant: KumoTextVariant.heading, size: KumoTextSize.lg, headingLevel: 1),
-        KumoText('code', variant: KumoTextVariant.mono),
-        KumoText('Strong', bold: true),
-      ]),
+      const Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          KumoText('Body'),
+          KumoText('Muted', variant: KumoTextVariant.secondary),
+          KumoText('Title', variant: KumoTextVariant.heading, size: KumoTextSize.lg, headingLevel: 1),
+          KumoText('code', variant: KumoTextVariant.mono),
+          KumoText('Strong', bold: true),
+        ],
+      ),
     );
     TextStyle style(String t) => tester.widget<Text>(find.text(t)).style!;
     expect(style('Body').fontSize, 14);
@@ -69,7 +72,10 @@ void main() {
     final handle = tester.ensureSemantics();
     await pumpKumo(
       tester,
-      const KumoLocale(strings: KumoStrings(loading: 'Memuat'), child: KumoLoader()),
+      const KumoLocale(
+        strings: KumoStrings(loading: 'Memuat'),
+        child: KumoLoader(),
+      ),
       disableAnimations: true,
     );
     expect(find.bySemanticsLabel('Memuat'), findsOneWidget);
@@ -87,14 +93,19 @@ void main() {
     var taps = 0;
     await pumpKumo(
       tester,
-      Column(mainAxisSize: MainAxisSize.min, children: [
-        const KumoLayerCard(child: Text('Plain')),
-        const KumoLayerCard.layered(children: [
-          KumoLayerCardSecondary(child: Text('Header')),
-          KumoLayerCardPrimary(child: Text('Content')),
-        ]),
-        KumoLayerCard(onPress: () => taps++, semanticLabel: 'Open Worker', child: const Text('Pressable')),
-      ]),
+      Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const KumoLayerCard(child: Text('Plain')),
+          const KumoLayerCard.layered(
+            children: [
+              KumoLayerCardSecondary(child: Text('Header')),
+              KumoLayerCardPrimary(child: Text('Content')),
+            ],
+          ),
+          KumoLayerCard(onPress: () => taps++, semanticLabel: 'Open Worker', child: const Text('Pressable')),
+        ],
+      ),
     );
     expect(find.text('Header'), findsOneWidget);
     await tester.tap(find.text('Pressable'));
@@ -105,10 +116,13 @@ void main() {
     await pumpKumo(
       tester,
       KumoFocusTrap(
-        child: Column(mainAxisSize: MainAxisSize.min, children: [
-          KumoButton(label: 'One', onPress: () {}),
-          KumoButton(label: 'Two', onPress: () {}),
-        ]),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            KumoButton(label: 'One', onPress: () {}),
+            KumoButton(label: 'Two', onPress: () {}),
+          ],
+        ),
       ),
     );
     expect(tester.takeException(), isNull);

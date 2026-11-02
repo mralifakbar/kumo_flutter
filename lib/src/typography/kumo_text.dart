@@ -91,20 +91,21 @@ class KumoText extends StatelessWidget {
   }) {
     final kumo = context.kumo;
     return switch (variant) {
-      KumoTextVariant.heading =>
-        kumo.heading(size: size == KumoTextSize.lg ? KumoHeadingSize.lg : KumoHeadingSize.base),
+      KumoTextVariant.heading => kumo.heading(
+        size: size == KumoTextSize.lg ? KumoHeadingSize.lg : KumoHeadingSize.base,
+      ),
       KumoTextVariant.mono => kumo.code(large: size == KumoTextSize.lg),
       KumoTextVariant.monoSecondary => kumo.code(large: size == KumoTextSize.lg, color: KumoColor.textSubtle),
       _ => kumo.text(
-          size: size,
-          weight: bold ? KumoTypography.medium : KumoTypography.normal,
-          color: switch (variant) {
-            KumoTextVariant.secondary => KumoColor.textSubtle,
-            KumoTextVariant.success => KumoColor.textLink,
-            KumoTextVariant.error => KumoColor.textDanger,
-            _ => KumoColor.textDefault,
-          },
-        ),
+        size: size,
+        weight: bold ? KumoTypography.medium : KumoTypography.normal,
+        color: switch (variant) {
+          KumoTextVariant.secondary => KumoColor.textSubtle,
+          KumoTextVariant.success => KumoColor.textLink,
+          KumoTextVariant.error => KumoColor.textDanger,
+          _ => KumoColor.textDefault,
+        },
+      ),
     };
   }
 
@@ -118,8 +119,14 @@ class KumoText extends StatelessWidget {
     final lines = truncate ? 1 : maxLines;
     final overflow = truncate || maxLines != null ? TextOverflow.ellipsis : null;
     // Wrap a region in SelectionArea to make it selectable.
-    Widget result =
-        Text(text, style: style, textAlign: textAlign, maxLines: lines, overflow: overflow, semanticsLabel: semanticsLabel);
+    Widget result = Text(
+      text,
+      style: style,
+      textAlign: textAlign,
+      maxLines: lines,
+      overflow: overflow,
+      semanticsLabel: semanticsLabel,
+    );
     if (headingLevel != null) {
       result = Semantics(header: true, headingLevel: headingLevel!.clamp(1, 6), child: result);
     }

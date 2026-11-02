@@ -188,8 +188,8 @@ void main() {
 
     group('node motion', () {
       Widget diagram({required bool selected}) => KumoFlowDiagram(
-            children: [KumoFlowNode(label: 'WAF', selected: selected, onPress: () {})],
-          );
+        children: [KumoFlowNode(label: 'WAF', selected: selected, onPress: () {})],
+      );
       double ringWidth(WidgetTester tester) {
         final box = tester.widget<DecoratedBox>(
           find.ancestor(of: find.text('WAF'), matching: find.byType(DecoratedBox)).first,

@@ -126,7 +126,10 @@ void main() {
   });
 
   testWidgets('indeterminate to measured cross-fades', (tester) async {
-    Widget progress(double? value) => SizedBox(width: 300, child: KumoProgress(value: value, label: 'Uploading assets'));
+    Widget progress(double? value) => SizedBox(
+      width: 300,
+      child: KumoProgress(value: value, label: 'Uploading assets'),
+    );
     await pumpKumo(tester, progress(null), settle: false);
     await tester.pump(const Duration(milliseconds: 100));
     await pumpKumo(tester, progress(40), settle: false);
@@ -138,7 +141,10 @@ void main() {
   });
 
   testWidgets('reduced motion: measured progress replaces the loop at once', (tester) async {
-    Widget progress(double? value) => SizedBox(width: 300, child: KumoProgress(value: value, label: 'Uploading assets'));
+    Widget progress(double? value) => SizedBox(
+      width: 300,
+      child: KumoProgress(value: value, label: 'Uploading assets'),
+    );
     await pumpKumo(tester, progress(null), disableAnimations: true);
     await pumpKumo(tester, progress(40), disableAnimations: true, settle: false);
     await tester.pump();

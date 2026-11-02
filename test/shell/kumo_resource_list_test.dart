@@ -33,17 +33,19 @@ void main() {
     for (final b in Brightness.values) {
       await pumpKumo(
         tester,
-        _list(children: const [
-          KumoResourceListItem(
-            title: 'production-kv',
-            metadata: ['Created 2 days ago', '1,204 keys'],
-            status: KumoResourceListStatus(label: 'Active', tone: KumoResourceListStatusTone.success),
-          ),
-          KumoResourceListItem(
-            title: 'staging-kv',
-            status: KumoResourceListStatus(label: 'Read only', tone: KumoResourceListStatusTone.warning),
-          ),
-        ]),
+        _list(
+          children: const [
+            KumoResourceListItem(
+              title: 'production-kv',
+              metadata: ['Created 2 days ago', '1,204 keys'],
+              status: KumoResourceListStatus(label: 'Active', tone: KumoResourceListStatusTone.success),
+            ),
+            KumoResourceListItem(
+              title: 'staging-kv',
+              status: KumoResourceListStatus(label: 'Read only', tone: KumoResourceListStatusTone.warning),
+            ),
+          ],
+        ),
         brightness: b,
         size: kumoDesktopSize,
         center: false,
@@ -71,13 +73,15 @@ void main() {
     final events = <String>[];
     await pumpKumo(
       tester,
-      _list(children: [
-        KumoResourceListItem(
-          title: 'production-kv',
-          onPress: () => events.add('open'),
-          actions: [KumoButton(label: 'Rename', size: KumoButtonSize.sm, onPress: () => events.add('rename'))],
-        ),
-      ]),
+      _list(
+        children: [
+          KumoResourceListItem(
+            title: 'production-kv',
+            onPress: () => events.add('open'),
+            actions: [KumoButton(label: 'Rename', size: KumoButtonSize.sm, onPress: () => events.add('rename'))],
+          ),
+        ],
+      ),
       size: kumoDesktopSize,
       center: false,
     );
@@ -134,10 +138,10 @@ void main() {
 
   testWidgets('aside sits beside the list from 1280px and above it below', (tester) async {
     Widget build() => _list(
-          usage: const SizedBox(height: 80, child: Text('Usage example')),
-          additional: const SizedBox(height: 40, child: Text('Learn more')),
-          children: const [KumoResourceListItem(title: 'production-kv')],
-        );
+      usage: const SizedBox(height: 80, child: Text('Usage example')),
+      additional: const SizedBox(height: 40, child: Text('Learn more')),
+      children: const [KumoResourceListItem(title: 'production-kv')],
+    );
     await pumpKumo(tester, build(), size: const Size(1440, 900), center: false);
     final usage = tester.getRect(find.text('Usage example'));
     final item = tester.getRect(find.text('production-kv'));
@@ -152,13 +156,15 @@ void main() {
   testWidgets('narrow items put status and actions under the name', (tester) async {
     await pumpKumo(
       tester,
-      _list(children: [
-        KumoResourceListItem(
-          title: 'production-kv',
-          status: const KumoResourceListStatus(label: 'Active', tone: KumoResourceListStatusTone.success),
-          actions: [KumoButton(label: 'View', size: KumoButtonSize.sm, onPress: () {})],
-        ),
-      ]),
+      _list(
+        children: [
+          KumoResourceListItem(
+            title: 'production-kv',
+            status: const KumoResourceListStatus(label: 'Active', tone: KumoResourceListStatusTone.success),
+            actions: [KumoButton(label: 'View', size: KumoButtonSize.sm, onPress: () {})],
+          ),
+        ],
+      ),
       center: false,
     );
     expect(tester.getRect(find.text('Active')).top, greaterThan(tester.getRect(find.text('production-kv')).bottom));
@@ -166,13 +172,15 @@ void main() {
 
   testWidgets('390px with 2x text does not overflow in any state', (tester) async {
     for (final w in [
-      _list(children: const [
-        KumoResourceListItem(
-          title: 'a-very-long-namespace-name-for-production-traffic',
-          metadata: ['Created 2 days ago', '1,204 keys', 'Binding: CACHE'],
-          status: KumoResourceListStatus(label: 'Active', tone: KumoResourceListStatusTone.success),
-        ),
-      ]),
+      _list(
+        children: const [
+          KumoResourceListItem(
+            title: 'a-very-long-namespace-name-for-production-traffic',
+            metadata: ['Created 2 days ago', '1,204 keys', 'Binding: CACHE'],
+            status: KumoResourceListStatus(label: 'Active', tone: KumoResourceListStatusTone.success),
+          ),
+        ],
+      ),
       _list(loading: true),
       _list(error: 'Could not load namespaces.', onRetry: () {}),
       _list(),
@@ -201,13 +209,13 @@ void main() {
   });
 
   testWidgets('a removed card collapses out and the next one slides up', (tester) async {
-    List<Widget> items(List<String> names) => [
-          for (final n in names) KumoResourceListItem(key: ValueKey(n), title: n),
-        ];
+    List<Widget> items(List<String> names) => [for (final n in names) KumoResourceListItem(key: ValueKey(n), title: n)];
     await pumpKumo(tester, _list(children: items(['alpha', 'beta', 'gamma'])), size: kumoDesktopSize, center: false);
     final start = tester.getRect(find.text('gamma')).top;
     final betaTop = tester.getRect(find.text('beta')).top;
-    await tester.pumpWidget(kumoHarness(_list(children: items(['alpha', 'gamma'])), size: kumoDesktopSize, center: false));
+    await tester.pumpWidget(
+      kumoHarness(_list(children: items(['alpha', 'gamma'])), size: kumoDesktopSize, center: false),
+    );
     await tester.pump(const Duration(milliseconds: 100));
     expect(find.text('beta'), findsOneWidget, reason: 'still collapsing');
     final mid = tester.getRect(find.text('gamma')).top;
@@ -229,25 +237,22 @@ void main() {
   });
 
   testWidgets('reduced motion swaps states and removes cards in one frame', (tester) async {
-    List<Widget> items(List<String> names) => [
-          for (final n in names) KumoResourceListItem(key: ValueKey(n), title: n),
-        ];
+    List<Widget> items(List<String> names) => [for (final n in names) KumoResourceListItem(key: ValueKey(n), title: n)];
     await pumpKumo(tester, _list(loading: true), size: kumoDesktopSize, center: false, disableAnimations: true);
-    await tester.pumpWidget(kumoHarness(
-      _list(children: items(['alpha', 'beta'])),
-      size: kumoDesktopSize,
-      center: false,
-      disableAnimations: true,
-    ));
+    await tester.pumpWidget(
+      kumoHarness(
+        _list(children: items(['alpha', 'beta'])),
+        size: kumoDesktopSize,
+        center: false,
+        disableAnimations: true,
+      ),
+    );
     await tester.pump();
     expect(find.text('alpha'), findsOneWidget);
     expect(tester.hasRunningAnimations, isFalse);
-    await tester.pumpWidget(kumoHarness(
-      _list(children: items(['alpha'])),
-      size: kumoDesktopSize,
-      center: false,
-      disableAnimations: true,
-    ));
+    await tester.pumpWidget(
+      kumoHarness(_list(children: items(['alpha'])), size: kumoDesktopSize, center: false, disableAnimations: true),
+    );
     await tester.pump();
     expect(find.text('beta'), findsNothing);
     expect(tester.hasRunningAnimations, isFalse);

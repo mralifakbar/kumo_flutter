@@ -254,7 +254,9 @@ void main() {
     await pumpKumo(tester, _host(KumoTracker(days: mixed)), settle: false);
     await tester.pump(const Duration(milliseconds: 60));
     final fades = tester
-        .widgetList<FadeTransition>(find.descendant(of: find.byType(KumoTracker), matching: find.byType(FadeTransition)))
+        .widgetList<FadeTransition>(
+          find.descendant(of: find.byType(KumoTracker), matching: find.byType(FadeTransition)),
+        )
         .map((f) => f.opacity.value)
         .where((v) => v > 0 && v < 1);
     expect(fades, isNotEmpty);

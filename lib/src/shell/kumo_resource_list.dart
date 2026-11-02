@@ -10,6 +10,7 @@ import '../theme/kumo_motion.dart';
 import '../theme/kumo_theme.dart';
 import '../theme/kumo_tokens.dart';
 import '../theme/kumo_typography.dart';
+import '../system/kumo_size_reveal.dart';
 
 /// Meaning of a [KumoResourceListStatus]. Each tone pairs a color with an
 /// icon, so status never relies on color alone.
@@ -94,9 +95,17 @@ class KumoResourceListEmpty extends StatelessWidget {
           if (description != null)
             ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 420),
-              child: Text(description!, textAlign: TextAlign.center, style: kumo.text(color: KumoColor.textSubtle)),
+              child: Text(
+                description!,
+                textAlign: TextAlign.center,
+                style: kumo.text(color: KumoColor.textSubtle),
+              ),
             ),
-          if (action != null) Padding(padding: const EdgeInsets.only(top: KumoSpace.s2), child: action),
+          if (action != null)
+            Padding(
+              padding: const EdgeInsets.only(top: KumoSpace.s2),
+              child: action,
+            ),
         ],
       ),
     );
@@ -158,64 +167,69 @@ class KumoResourceListItem extends StatelessWidget {
     final c = kumo.colors;
     final radius = BorderRadius.circular(KumoRadius.lg);
 
-    Widget card(bool hovered) => LayoutBuilder(builder: (context, constraints) {
-          final narrow = constraints.maxWidth < 480;
-          final name = Text(
-            title,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: mono ? kumo.code(large: true, weight: KumoTypography.medium) : kumo.heading(),
-          );
-          final meta = metadata.isEmpty
-              ? null
-              : Text(metadata.join('  ·  '), style: kumo.text(size: KumoTextSize.sm, color: KumoColor.textSubtle));
-          final info = Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            spacing: KumoSpace.s1,
-            children: [name, ?meta],
-          );
-          final statusPill = status == null ? null : _StatusPill(status: status!);
-          final actionRow = actions.isEmpty
-              ? null
-              : Wrap(spacing: KumoSpace.s2, runSpacing: KumoSpace.s2, children: actions);
-          final head = Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            spacing: KumoSpace.s3,
-            children: [
-              ?leading,
-              Expanded(child: info),
-              if (!narrow) ?statusPill,
-              if (!narrow) ?actionRow,
-            ],
-          );
-          final Widget body = narrow && (statusPill != null || actionRow != null)
-              ? Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  spacing: KumoSpace.s3,
-                  children: [
-                    head,
-                    Wrap(
-                      spacing: KumoSpace.s2,
-                      runSpacing: KumoSpace.s2,
-                      crossAxisAlignment: WrapCrossAlignment.center,
-                      alignment: WrapAlignment.spaceBetween,
-                      children: [?statusPill, ?actionRow],
-                    ),
-                  ],
-                )
-              : head;
-          return Container(
-            padding: const EdgeInsets.symmetric(horizontal: KumoSpace.s5, vertical: KumoSpace.s4),
-            decoration: BoxDecoration(
-              color: hovered ? c.tint : c.base,
-              borderRadius: radius,
-              border: KumoRing.border(c.line),
-              boxShadow: KumoShadow.xs.boxShadows,
-            ),
-            child: body,
-          );
-        });
+    Widget card(bool hovered) => LayoutBuilder(
+      builder: (context, constraints) {
+        final narrow = constraints.maxWidth < 480;
+        final name = Text(
+          title,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: mono ? kumo.code(large: true, weight: KumoTypography.medium) : kumo.heading(),
+        );
+        final meta = metadata.isEmpty
+            ? null
+            : Text(
+                metadata.join('  ·  '),
+                style: kumo.text(size: KumoTextSize.sm, color: KumoColor.textSubtle),
+              );
+        final info = Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          spacing: KumoSpace.s1,
+          children: [name, ?meta],
+        );
+        final statusPill = status == null ? null : _StatusPill(status: status!);
+        final actionRow = actions.isEmpty
+            ? null
+            : Wrap(spacing: KumoSpace.s2, runSpacing: KumoSpace.s2, children: actions);
+        final head = Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          spacing: KumoSpace.s3,
+          children: [
+            ?leading,
+            Expanded(child: info),
+            if (!narrow) ?statusPill,
+            if (!narrow) ?actionRow,
+          ],
+        );
+        final Widget body = narrow && (statusPill != null || actionRow != null)
+            ? Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                spacing: KumoSpace.s3,
+                children: [
+                  head,
+                  Wrap(
+                    spacing: KumoSpace.s2,
+                    runSpacing: KumoSpace.s2,
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    alignment: WrapAlignment.spaceBetween,
+                    children: [?statusPill, ?actionRow],
+                  ),
+                ],
+              )
+            : head;
+        return Container(
+          padding: const EdgeInsets.symmetric(horizontal: KumoSpace.s5, vertical: KumoSpace.s4),
+          decoration: BoxDecoration(
+            color: hovered ? c.tint : c.base,
+            borderRadius: radius,
+            border: KumoRing.border(c.line),
+            boxShadow: KumoShadow.xs.boxShadows,
+          ),
+          child: body,
+        );
+      },
+    );
 
     if (onPress == null) {
       return Semantics(container: true, label: semanticLabel, child: card(false));
@@ -255,7 +269,10 @@ class _StatusPill extends StatelessWidget {
         spacing: KumoSpace.s1,
         children: [
           KumoIcon(status.icon ?? icon, size: 12, color: fg),
-          Text(status.label, style: kumo.text(size: KumoTextSize.xs, weight: KumoTypography.medium, color: fg)),
+          Text(
+            status.label,
+            style: kumo.text(size: KumoTextSize.xs, weight: KumoTypography.medium, color: fg),
+          ),
         ],
       ),
     );
@@ -356,103 +373,107 @@ class KumoResourceList extends StatelessWidget {
     final c = kumo.colors;
     return ColoredBox(
       color: c.overlay,
-      child: LayoutBuilder(builder: (context, constraints) {
-        final w = constraints.maxWidth;
-        final md = w >= KumoBreakpoints.md;
-        final lg = w >= KumoBreakpoints.lg;
-        final xl = w >= KumoBreakpoints.xl;
-        final padding = lg
-            ? const EdgeInsets.symmetric(horizontal: KumoSpace.s10, vertical: 36)
-            : EdgeInsets.all(md ? KumoSpace.s8 : KumoSpace.s6);
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          final w = constraints.maxWidth;
+          final md = w >= KumoBreakpoints.md;
+          final lg = w >= KumoBreakpoints.lg;
+          final xl = w >= KumoBreakpoints.xl;
+          final padding = lg
+              ? const EdgeInsets.symmetric(horizontal: KumoSpace.s10, vertical: 36)
+              : EdgeInsets.all(md ? KumoSpace.s8 : KumoSpace.s6);
 
-        final titleRow = Row(
-          spacing: KumoSpace.s1_5,
-          children: [
-            ?(iconWidget ?? (icon == null ? null : KumoIcon(icon!, size: 32, color: KumoColor.textSubtle))),
-            if (title != null)
-              Flexible(
-                child: Semantics(
-                  header: true,
-                  headingLevel: 1,
-                  child: Text(title!, style: kumo.heading(size: KumoHeadingSize.h1)),
-                ),
-              ),
-          ],
-        );
-        Widget heading = Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          spacing: KumoSpace.s1_5,
-          children: [
-            titleRow,
-            if (description != null && md)
-              Text(description!, style: kumo.text(size: KumoTextSize.lg, color: KumoColor.textSubtle)),
-          ],
-        );
-        if (actions.isNotEmpty) {
-          final bar = Wrap(spacing: KumoSpace.s2, runSpacing: KumoSpace.s2, children: actions);
-          heading = md
-              ? Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  spacing: KumoSpace.s4,
-                  children: [Expanded(child: heading), bar],
-                )
-              : Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  spacing: KumoSpace.s4,
-                  children: [heading, bar],
-                );
-        }
-
-        final list = _content(context);
-        final hasAside = usage != null || additionalContent != null;
-        final Widget body;
-        if (xl && hasAside) {
-          body = Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            spacing: KumoSpace.s8,
+          final titleRow = Row(
+            spacing: KumoSpace.s1_5,
             children: [
-              Expanded(child: list),
-              SizedBox(
-                width: 380,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    ?usage,
-                    if (additionalContent != null)
-                      Padding(
-                        padding: EdgeInsets.only(top: usage != null ? KumoSpace.s6 : 0),
-                        child: additionalContent,
-                      ),
-                  ],
+              ?(iconWidget ?? (icon == null ? null : KumoIcon(icon!, size: 32, color: KumoColor.textSubtle))),
+              if (title != null)
+                Flexible(
+                  child: Semantics(
+                    header: true,
+                    headingLevel: 1,
+                    child: Text(title!, style: kumo.heading(size: KumoHeadingSize.h1)),
+                  ),
                 ),
-              ),
             ],
           );
-        } else {
-          body = Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            spacing: KumoSpace.s6,
-            children: [?usage, list, ?additionalContent],
-          );
-        }
-
-        Widget page = Padding(
-          padding: padding,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+          Widget heading = Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
-            spacing: xl ? KumoSpace.s6 : KumoSpace.s4,
-            children: [heading, body],
-          ),
-        );
-        page = Align(
-          alignment: Alignment.topCenter,
-          child: ConstrainedBox(constraints: const BoxConstraints(maxWidth: 1400), child: page),
-        );
-        if (!scrollable) return page;
-        return SingleChildScrollView(controller: controller, child: page);
-      }),
+            spacing: KumoSpace.s1_5,
+            children: [
+              titleRow,
+              if (description != null && md)
+                Text(
+                  description!,
+                  style: kumo.text(size: KumoTextSize.lg, color: KumoColor.textSubtle),
+                ),
+            ],
+          );
+          if (actions.isNotEmpty) {
+            final bar = Wrap(spacing: KumoSpace.s2, runSpacing: KumoSpace.s2, children: actions);
+            heading = md
+                ? Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    spacing: KumoSpace.s4,
+                    children: [
+                      Expanded(child: heading),
+                      bar,
+                    ],
+                  )
+                : Column(crossAxisAlignment: CrossAxisAlignment.start, spacing: KumoSpace.s4, children: [heading, bar]);
+          }
+
+          final list = _content(context);
+          final hasAside = usage != null || additionalContent != null;
+          final Widget body;
+          if (xl && hasAside) {
+            body = Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: KumoSpace.s8,
+              children: [
+                Expanded(child: list),
+                SizedBox(
+                  width: 380,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      ?usage,
+                      if (additionalContent != null)
+                        Padding(
+                          padding: EdgeInsets.only(top: usage != null ? KumoSpace.s6 : 0),
+                          child: additionalContent,
+                        ),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          } else {
+            body = Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              spacing: KumoSpace.s6,
+              children: [?usage, list, ?additionalContent],
+            );
+          }
+
+          Widget page = Padding(
+            padding: padding,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisSize: MainAxisSize.min,
+              spacing: xl ? KumoSpace.s6 : KumoSpace.s4,
+              children: [heading, body],
+            ),
+          );
+          page = Align(
+            alignment: Alignment.topCenter,
+            child: ConstrainedBox(constraints: const BoxConstraints(maxWidth: 1400), child: page),
+          );
+          if (!scrollable) return page;
+          return SingleChildScrollView(controller: controller, child: page);
+        },
+      ),
     );
   }
 
@@ -495,18 +516,25 @@ class KumoResourceList extends StatelessWidget {
 
   (String, Widget) _state(BuildContext context, KumoStrings strings) {
     if (loading) {
-      return ('loading', Semantics(
-        label: loadingLabel ?? strings.loading,
-        liveRegion: true,
-        container: true,
-        child: const ExcludeSemantics(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            spacing: KumoSpace.s4,
-            children: [_PlaceholderCard(widthFactor: 0.4), _PlaceholderCard(widthFactor: 0.3), _PlaceholderCard(widthFactor: 0.5)],
+      return (
+        'loading',
+        Semantics(
+          label: loadingLabel ?? strings.loading,
+          liveRegion: true,
+          container: true,
+          child: const ExcludeSemantics(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              spacing: KumoSpace.s4,
+              children: [
+                _PlaceholderCard(widthFactor: 0.4),
+                _PlaceholderCard(widthFactor: 0.3),
+                _PlaceholderCard(widthFactor: 0.5),
+              ],
+            ),
           ),
         ),
-      ));
+      );
     }
     if (error != null) {
       return ('error', _ErrorPanel(message: error!, onRetry: onRetry, retryLabel: retryLabel ?? strings.retry));
@@ -525,13 +553,13 @@ class _PlaceholderCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final c = context.kumo.colors;
     Widget bar(double factor, double height) => FractionallySizedBox(
-          alignment: AlignmentDirectional.centerStart,
-          widthFactor: factor,
-          child: Container(
-            height: height,
-            decoration: BoxDecoration(color: c.fill, borderRadius: BorderRadius.circular(KumoRadius.full)),
-          ),
-        );
+      alignment: AlignmentDirectional.centerStart,
+      widthFactor: factor,
+      child: Container(
+        height: height,
+        decoration: BoxDecoration(color: c.fill, borderRadius: BorderRadius.circular(KumoRadius.full)),
+      ),
+    );
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: KumoSpace.s5, vertical: KumoSpace.s5),
       decoration: BoxDecoration(
@@ -612,7 +640,7 @@ class _AnimatedItems extends StatefulWidget {
 
 class _Item {
   _Item(this.key, this.widget, this.controller)
-      : curved = CurvedAnimation(parent: controller, curve: KumoCurves.standard);
+    : curved = CurvedAnimation(parent: controller, curve: KumoCurves.standard);
 
   final Key key;
   Widget widget;
@@ -632,8 +660,8 @@ class _Item {
 class _AnimatedItemsState extends State<_AnimatedItems> with TickerProviderStateMixin {
   List<_Item> _items = [];
 
-  static bool _keyed(List<Widget> children) => children.every((c) => c.key != null) &&
-      children.map((c) => c.key).toSet().length == children.length;
+  static bool _keyed(List<Widget> children) =>
+      children.every((c) => c.key != null) && children.map((c) => c.key).toSet().length == children.length;
 
   @override
   void initState() {
@@ -757,9 +785,8 @@ class _AnimatedItemsState extends State<_AnimatedItems> with TickerProviderState
             ignoring: item.leaving,
             child: ExcludeSemantics(
               excluding: item.leaving,
-              child: SizeTransition(
+              child: KumoSizeReveal(
                 sizeFactor: curved,
-                axisAlignment: -1,
                 child: FadeTransition(
                   opacity: curved,
                   child: Padding(padding: gap, child: item.widget),
@@ -773,4 +800,3 @@ class _AnimatedItemsState extends State<_AnimatedItems> with TickerProviderState
     return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: rows);
   }
 }
-

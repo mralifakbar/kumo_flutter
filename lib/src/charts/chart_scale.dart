@@ -58,12 +58,12 @@ double _niceNumber(double v) {
   final nf = f < 1.5
       ? 1
       : f < 2.5
-          ? 2
-          : f < 4
-              ? 3
-              : f < 7
-                  ? 5
-                  : 10;
+      ? 2
+      : f < 4
+      ? 3
+      : f < 7
+      ? 5
+      : 10;
   return nf * pow;
 }
 
@@ -101,13 +101,13 @@ const _kTimeSteps = <(_TimeUnit, int)>[
 ];
 
 double _unitMs(_TimeUnit unit) => switch (unit) {
-      _TimeUnit.second => 1000,
-      _TimeUnit.minute => 60000,
-      _TimeUnit.hour => 3600000,
-      _TimeUnit.day => 86400000,
-      _TimeUnit.month => 30 * 86400000,
-      _TimeUnit.year => 365 * 86400000,
-    };
+  _TimeUnit.second => 1000,
+  _TimeUnit.minute => 60000,
+  _TimeUnit.hour => 3600000,
+  _TimeUnit.day => 86400000,
+  _TimeUnit.month => 30 * 86400000,
+  _TimeUnit.year => 365 * 86400000,
+};
 
 /// Time axis ticks for [startMs]..[endMs], about [count] of them, aligned to
 /// calendar boundaries in the data's own zone ([utc] or local), with labels
@@ -136,17 +136,17 @@ List<_TimeTick> _timeTicks(double startMs, double endMs, int count, bool utc, Ku
     _TimeUnit.year => make(start.year ~/ step * step),
   };
   DateTime next(DateTime d) => switch (unit) {
-        _TimeUnit.second => make(d.year, d.month, d.day, d.hour, d.minute, d.second + step),
-        _TimeUnit.minute => make(d.year, d.month, d.day, d.hour, d.minute + step),
-        _TimeUnit.hour => make(d.year, d.month, d.day, d.hour + step),
-        _TimeUnit.day => () {
-            final n = make(d.year, d.month, d.day + step);
-            // Day steps restart on the 1st so ticks stay on the same days each month.
-            return n.month != d.month ? make(d.year, d.month + 1) : n;
-          }(),
-        _TimeUnit.month => make(d.year, d.month + step),
-        _TimeUnit.year => make(d.year + step),
-      };
+    _TimeUnit.second => make(d.year, d.month, d.day, d.hour, d.minute, d.second + step),
+    _TimeUnit.minute => make(d.year, d.month, d.day, d.hour, d.minute + step),
+    _TimeUnit.hour => make(d.year, d.month, d.day, d.hour + step),
+    _TimeUnit.day => () {
+      final n = make(d.year, d.month, d.day + step);
+      // Day steps restart on the 1st so ticks stay on the same days each month.
+      return n.month != d.month ? make(d.year, d.month + 1) : n;
+    }(),
+    _TimeUnit.month => make(d.year, d.month + step),
+    _TimeUnit.year => make(d.year + step),
+  };
 
   String two(int v) => v.toString().padLeft(2, '0');
   final ticks = <_TimeTick>[];
@@ -158,11 +158,12 @@ List<_TimeTick> _timeTicks(double startMs, double endMs, int count, bool utc, Ku
       final monthName = strings.monthNamesShort[cur.month - 1];
       final (label, major) = switch (unit) {
         _TimeUnit.second => ('${two(cur.hour)}:${two(cur.minute)}:${two(cur.second)}', false),
-        _TimeUnit.minute || _TimeUnit.hour =>
-          midnight ? ('$monthName ${cur.day}', true) : ('${two(cur.hour)}:${two(cur.minute)}', false),
-        _TimeUnit.day => cur.day == 1
-            ? (cur.month == 1 ? ('${cur.year}', true) : (monthName, true))
-            : ('$monthName ${cur.day}', false),
+        _TimeUnit.minute ||
+        _TimeUnit.hour => midnight ? ('$monthName ${cur.day}', true) : ('${two(cur.hour)}:${two(cur.minute)}', false),
+        _TimeUnit.day =>
+          cur.day == 1
+              ? (cur.month == 1 ? ('${cur.year}', true) : (monthName, true))
+              : ('$monthName ${cur.day}', false),
         _TimeUnit.month => cur.month == 1 ? ('${cur.year}', true) : (monthName, false),
         _TimeUnit.year => ('${cur.year}', false),
       };

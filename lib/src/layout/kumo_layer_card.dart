@@ -36,8 +36,8 @@ class KumoLayerCard extends StatelessWidget {
   }) : children = null;
 
   const KumoLayerCard.layered({super.key, required List<Widget> this.children, this.onPress, this.semanticLabel})
-      : child = null,
-        padding = EdgeInsets.zero;
+    : child = null,
+      padding = EdgeInsets.zero;
 
   final Widget? child;
   final List<Widget>? children;
@@ -57,23 +57,23 @@ class KumoLayerCard extends StatelessWidget {
     final layered = children != null;
 
     Widget card(bool hovered) => DecoratedBox(
-          decoration: BoxDecoration(
-            color: layered ? c.elevated : (hovered ? c.tint : c.base),
-            borderRadius: radius,
-            border: KumoRing.border(layered ? c.hairline : c.line),
-            boxShadow: layered ? null : KumoShadow.xs.boxShadows,
-          ),
-          child: ClipRRect(
-            borderRadius: radius,
-            child: layered
-                ? Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: children!,
-                  )
-                : Padding(padding: padding, child: child),
-          ),
-        );
+      decoration: BoxDecoration(
+        color: layered ? c.elevated : (hovered ? c.tint : c.base),
+        borderRadius: radius,
+        border: KumoRing.border(layered ? c.hairline : c.line),
+        boxShadow: layered ? null : KumoShadow.xs.boxShadows,
+      ),
+      child: ClipRRect(
+        borderRadius: radius,
+        child: layered
+            ? Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: children!,
+              )
+            : Padding(padding: padding, child: child),
+      ),
+    );
 
     if (onPress == null) return card(false);
     return KumoPressable(
@@ -104,7 +104,10 @@ class KumoLayerCardSecondary extends StatelessWidget {
         style: kumo.text(weight: KumoTypography.medium, color: KumoColor.textSubtle),
         child: Row(
           spacing: KumoSpace.s2,
-          children: [Expanded(child: child), ?trailing],
+          children: [
+            Expanded(child: child),
+            ?trailing,
+          ],
         ),
       ),
     );

@@ -28,22 +28,17 @@ Future<void> _open(WidgetTester tester) async {
   await tester.pumpAndSettle();
 }
 
-KumoDrawer _drawer({
-  KumoSheetEdge side = KumoSheetEdge.end,
-  bool dismissible = true,
-  Widget? child,
-}) =>
-    KumoDrawer(
-      side: side,
-      dismissible: dismissible,
-      title: 'image-resizer',
-      description: 'Worker settings',
-      actions: const [
-        KumoDialogClose(label: 'Cancel'),
-        KumoDialogClose(label: 'Save settings', variant: KumoButtonVariant.primary, result: 'saved'),
-      ],
-      child: child ?? const Text('Compatibility date 2026-10-26'),
-    );
+KumoDrawer _drawer({KumoSheetEdge side = KumoSheetEdge.end, bool dismissible = true, Widget? child}) => KumoDrawer(
+  side: side,
+  dismissible: dismissible,
+  title: 'image-resizer',
+  description: 'Worker settings',
+  actions: const [
+    KumoDialogClose(label: 'Cancel'),
+    KumoDialogClose(label: 'Save settings', variant: KumoButtonVariant.primary, result: 'saved'),
+  ],
+  child: child ?? const Text('Compatibility date 2026-10-26'),
+);
 
 Rect _surface(WidgetTester tester) =>
     tester.getRect(find.descendant(of: find.byType(KumoSheet), matching: find.byType(ClipRRect)).first);
@@ -53,7 +48,12 @@ void main() {
 
   for (final brightness in Brightness.values) {
     testWidgets('renders in ${brightness.name} mode', (tester) async {
-      await pumpKumo(tester, _Launcher(drawer: (_) => _drawer()), brightness: brightness, size: kumoDesktopSize);
+      await pumpKumo(
+        tester,
+        _Launcher(drawer: (_) => _drawer()),
+        brightness: brightness,
+        size: kumoDesktopSize,
+      );
       await _open(tester);
       expect(find.text('image-resizer'), findsOneWidget);
       expect(tester.takeException(), isNull);

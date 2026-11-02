@@ -78,7 +78,11 @@ class DataCheckbox extends StatelessWidget {
         if (disabled) box = Opacity(opacity: 0.5, child: box);
         final area = hitArea;
         if (area == null) return box;
-        return SizedBox(width: area.width, height: area.height, child: Center(child: box));
+        return SizedBox(
+          width: area.width,
+          height: area.height,
+          child: Center(child: box),
+        );
       },
       showFocusRing: false,
     );

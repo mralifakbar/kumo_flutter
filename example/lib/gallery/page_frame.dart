@@ -38,7 +38,10 @@ class PageFrame extends StatelessWidget {
                 border: Border(bottom: BorderSide(color: kumo.colors.hairline)),
               ),
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: gutter - KumoSpace.s2, vertical: KumoSpace.s1),
+                padding: EdgeInsets.symmetric(
+                  horizontal: gutter - KumoSpace.s2,
+                  vertical: KumoSpace.s1,
+                ),
                 child: Row(
                   children: [
                     if (canPop)
@@ -52,12 +55,17 @@ class PageFrame extends StatelessWidget {
                     else
                       Flexible(
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: KumoSpace.s2),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: KumoSpace.s2,
+                          ),
                           child: Text(
                             'kumo_flutter',
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
-                            style: kumo.code(large: true, weight: KumoTypography.medium),
+                            style: kumo.code(
+                              large: true,
+                              weight: KumoTypography.medium,
+                            ),
                           ),
                         ),
                       ),
@@ -74,26 +82,46 @@ class PageFrame extends StatelessWidget {
                     child: _Constrained(
                       maxWidth: maxWidth,
                       child: Padding(
-                        padding: EdgeInsets.fromLTRB(gutter, KumoSpace.s6, gutter, KumoSpace.s6),
+                        padding: EdgeInsets.fromLTRB(
+                          gutter,
+                          KumoSpace.s6,
+                          gutter,
+                          KumoSpace.s6,
+                        ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           spacing: KumoSpace.s1_5,
                           children: [
-                            KumoText(title, variant: KumoTextVariant.heading, size: KumoTextSize.lg, headingLevel: 1),
-                            if (description != null) KumoText(description!, variant: KumoTextVariant.secondary),
+                            KumoText(
+                              title,
+                              variant: KumoTextVariant.heading,
+                              size: KumoTextSize.lg,
+                              headingLevel: 1,
+                            ),
+                            if (description != null)
+                              KumoText(
+                                description!,
+                                variant: KumoTextVariant.secondary,
+                              ),
                           ],
                         ),
                       ),
                     ),
                   ),
                   SliverPadding(
-                    padding: EdgeInsets.only(bottom: MediaQuery.paddingOf(context).bottom + KumoSpace.s8),
+                    padding: EdgeInsets.only(
+                      bottom:
+                          MediaQuery.paddingOf(context).bottom + KumoSpace.s8,
+                    ),
                     sliver: SliverList.list(
                       children: [
                         for (final c in children)
                           _Constrained(
                             maxWidth: maxWidth,
-                            child: Padding(padding: EdgeInsets.symmetric(horizontal: gutter), child: c),
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: gutter),
+                              child: c,
+                            ),
                           ),
                       ],
                     ),
@@ -116,10 +144,10 @@ class _Constrained extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Align(
-        alignment: Alignment.topCenter,
-        child: ConstrainedBox(
-          constraints: BoxConstraints(maxWidth: maxWidth),
-          child: SizedBox(width: double.infinity, child: child),
-        ),
-      );
+    alignment: Alignment.topCenter,
+    child: ConstrainedBox(
+      constraints: BoxConstraints(maxWidth: maxWidth),
+      child: SizedBox(width: double.infinity, child: child),
+    ),
+  );
 }

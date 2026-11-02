@@ -115,9 +115,9 @@ class KumoButton extends StatelessWidget {
     this.expanded,
     this.shadow = true,
   }) : assert(
-          shape == KumoButtonShape.base || semanticLabel != null || title != null,
-          'Icon-only buttons need a semanticLabel or title',
-        );
+         shape == KumoButtonShape.base || semanticLabel != null || title != null,
+         'Icon-only buttons need a semanticLabel or title',
+       );
 
   /// Button text, sentence case.
   final String? label;
@@ -204,10 +204,10 @@ class KumoButton extends StatelessWidget {
             dangerouslySetColor: textColor,
           )
         : iconWidget != null
-            ? KeyedSubtree(key: iconWidget!.key ?? const ValueKey('kumo-button-icon'), child: iconWidget!)
-            : (icon != null
-                ? KumoIcon(icon!, key: ValueKey(icon), size: size.iconSize, dangerouslySetColor: textColor)
-                : null);
+        ? KeyedSubtree(key: iconWidget!.key ?? const ValueKey('kumo-button-icon'), child: iconWidget!)
+        : (icon != null
+              ? KumoIcon(icon!, key: ValueKey(icon), size: size.iconSize, dangerouslySetColor: textColor)
+              : null);
 
     final effectiveLabel = semanticLabel ?? title;
     final pressable = KumoPressable(
@@ -256,7 +256,9 @@ class KumoButton extends StatelessWidget {
               // under the whole box, where a transparent fill lets it show
               // through as a grey wash. Outline buttons go without it.
               shadows = const [];
-              border = KumoRing.border(hover ? (accent ?? c.focus).withValues(alpha: accent == null ? 0.25 : 0.5) : c.line);
+              border = KumoRing.border(
+                hover ? (accent ?? c.focus).withValues(alpha: accent == null ? 0.25 : 0.5) : c.line,
+              );
               if (hover && accent == null) fg = c.textStrong;
             default:
               break;
@@ -277,7 +279,8 @@ class KumoButton extends StatelessWidget {
             offset: Offset(0, -size.textLift),
             // A new label ("Copy" to "Copied") cross-fades and the button
             // eases to its new width instead of jumping.
-            child: child ??
+            child:
+                child ??
                 KumoSwap(
                   animateSize: true,
                   child: Text(
@@ -298,7 +301,8 @@ class KumoButton extends StatelessWidget {
         if (compact) {
           content = Center(
             child: KumoSwap(
-              child: leading ??
+              child:
+                  leading ??
                   (child != null
                       ? KeyedSubtree(
                           key: child!.key ?? const ValueKey('kumo-button-child'),
@@ -354,7 +358,13 @@ class KumoButton extends StatelessWidget {
             border: border,
             boxShadow: shadows,
           ),
-          child: DefaultTextStyle(style: textStyle, child: IconTheme(data: IconThemeData(color: fg), child: content)),
+          child: DefaultTextStyle(
+            style: textStyle,
+            child: IconTheme(
+              data: IconThemeData(color: fg),
+              child: content,
+            ),
+          ),
         );
         if (emphasisToken != null) {
           // The 1px inset highlight along the top edge of emphasis buttons.
@@ -404,6 +414,7 @@ class KumoRefreshButton extends StatelessWidget {
   final bool loading;
   final KumoButtonSize size;
   final KumoButtonVariant variant;
+
   /// Defaults to [KumoStrings.refresh].
   final String? semanticLabel;
 
@@ -422,7 +433,10 @@ class KumoRefreshButton extends StatelessWidget {
       semanticLabel: semanticLabel ?? context.kumoStrings.refresh,
       onPress: loading ? null : onPress,
       disabled: false,
-      iconWidget: _Spinning(spinning: loading, child: KumoIcon(KumoIcons.arrowsClockwise, size: iconSize)),
+      iconWidget: _Spinning(
+        spinning: loading,
+        child: KumoIcon(KumoIcons.arrowsClockwise, size: iconSize),
+      ),
     );
   }
 }

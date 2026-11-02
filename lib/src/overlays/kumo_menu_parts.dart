@@ -216,7 +216,8 @@ class KumoMenuRow extends StatelessWidget {
       canRequestFocus: canRequestFocus,
       builder: (context, state) {
         final lit = highlighted || state.active || state.focused;
-        final lead = leading ?? (icon != null ? KumoIcon(icon!, color: destructive ? KumoColor.textDanger : null) : null);
+        final lead =
+            leading ?? (icon != null ? KumoIcon(icon!, color: destructive ? KumoColor.textDanger : null) : null);
         return Opacity(
           opacity: disabled ? 0.5 : 1,
           child: Container(
@@ -236,14 +237,25 @@ class KumoMenuRow extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(label, style: kumo.text(color: fg), maxLines: 2, overflow: TextOverflow.ellipsis),
+                      Text(
+                        label,
+                        style: kumo.text(color: fg),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                       if (description != null)
-                        Text(description!, style: kumo.text(size: KumoTextSize.sm, color: KumoColor.textSubtle)),
+                        Text(
+                          description!,
+                          style: kumo.text(size: KumoTextSize.sm, color: KumoColor.textSubtle),
+                        ),
                     ],
                   ),
                 ),
                 if (shortcut != null)
-                  Text(shortcut!, style: kumo.text(size: KumoTextSize.sm, color: KumoColor.textSubtle)),
+                  Text(
+                    shortcut!,
+                    style: kumo.text(size: KumoTextSize.sm, color: KumoColor.textSubtle),
+                  ),
                 ?trailing,
               ],
             ),
@@ -262,9 +274,9 @@ class KumoMenuSeparator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.symmetric(vertical: KumoSpace.s1),
-        child: SizedBox(height: 1, child: ColoredBox(color: context.kumo.colors.hairline)),
-      );
+    padding: const EdgeInsets.symmetric(vertical: KumoSpace.s1),
+    child: SizedBox(height: 1, child: ColoredBox(color: context.kumo.colors.hairline)),
+  );
 }
 
 /// The heading of a group of menu rows: small semibold subtle text.
@@ -275,13 +287,13 @@ class KumoMenuGroupLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Semantics(
-        header: true,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: KumoSpace.s2, vertical: KumoSpace.s1_5),
-          child: Text(
-            text,
-            style: context.kumo.text(size: KumoTextSize.sm, weight: KumoTypography.semibold, color: KumoColor.textSubtle),
-          ),
-        ),
-      );
+    header: true,
+    child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: KumoSpace.s2, vertical: KumoSpace.s1_5),
+      child: Text(
+        text,
+        style: context.kumo.text(size: KumoTextSize.sm, weight: KumoTypography.semibold, color: KumoColor.textSubtle),
+      ),
+    ),
+  );
 }

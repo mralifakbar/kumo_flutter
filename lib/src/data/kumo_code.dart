@@ -341,7 +341,11 @@ class _DataCodeBlockState extends State<DataCodeBlock> with SingleTickerProvider
 
   Future<void> _copy() async {
     final strings = context.kumoStrings;
-    final ok = await copyText(widget.copyText, copied: widget.copiedLabel ?? strings.copied, failed: strings.copyFailed);
+    final ok = await copyText(
+      widget.copyText,
+      copied: widget.copiedLabel ?? strings.copied,
+      failed: strings.copyFailed,
+    );
     if (ok) widget.onCopy?.call();
   }
 
@@ -360,12 +364,12 @@ class _DataCodeBlockState extends State<DataCodeBlock> with SingleTickerProvider
     final strut = StrutStyle.fromTextStyle(widget.style, forceStrutHeight: true);
 
     Widget lineText(int i) => Text.rich(
-          TextSpan(children: widget.lines[i].isEmpty ? const [TextSpan(text: ' ')] : widget.lines[i]),
-          style: widget.style,
-          strutStyle: strut,
-          softWrap: widget.wrap,
-          textScaler: textScaler,
-        );
+      TextSpan(children: widget.lines[i].isEmpty ? const [TextSpan(text: ' ')] : widget.lines[i]),
+      style: widget.style,
+      strutStyle: strut,
+      softWrap: widget.wrap,
+      textScaler: textScaler,
+    );
 
     Widget line(int i) {
       final tint = highlighted.contains(i + 1);
@@ -379,13 +383,8 @@ class _DataCodeBlockState extends State<DataCodeBlock> with SingleTickerProvider
     // Line numbers sit outside the horizontal scroll, like Kumo's gutter
     // (`pl-3 pr-4`, 40% opacity).
     final numberStyle = widget.style.copyWith(color: c.textDefault.withValues(alpha: 0.4));
-    Widget number(int i) => Text(
-          '${i + 1}',
-          style: numberStyle,
-          strutStyle: strut,
-          textAlign: TextAlign.end,
-          textScaler: textScaler,
-        );
+    Widget number(int i) =>
+        Text('${i + 1}', style: numberStyle, strutStyle: strut, textAlign: TextAlign.end, textScaler: textScaler);
     final gutterPadding = EdgeInsetsDirectional.only(start: plain ? 0 : KumoSpace.s3, end: KumoSpace.s4);
 
     Widget code;
@@ -411,7 +410,10 @@ class _DataCodeBlockState extends State<DataCodeBlock> with SingleTickerProvider
                   children: [
                     Padding(
                       padding: gutterPadding,
-                      child: SizedBox(width: gutterWidth, child: ExcludeSemantics(child: number(i))),
+                      child: SizedBox(
+                        width: gutterWidth,
+                        child: ExcludeSemantics(child: number(i)),
+                      ),
                     ),
                     Expanded(child: line(i)),
                   ],
@@ -493,7 +495,10 @@ class _DataCodeBlockState extends State<DataCodeBlock> with SingleTickerProvider
         code = Row(
           children: [
             Expanded(child: code),
-            Padding(padding: const EdgeInsets.symmetric(horizontal: KumoSpace.s2), child: button),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: KumoSpace.s2),
+              child: button,
+            ),
           ],
         );
       } else {
@@ -514,7 +519,11 @@ class _DataCodeBlockState extends State<DataCodeBlock> with SingleTickerProvider
     if (plain) return code;
     const radius = BorderRadius.all(Radius.circular(KumoRadius.md));
     return DecoratedBox(
-      decoration: BoxDecoration(color: c.base, borderRadius: radius, border: Border.all(color: c.fill)),
+      decoration: BoxDecoration(
+        color: c.base,
+        borderRadius: radius,
+        border: Border.all(color: c.fill),
+      ),
       child: ClipRRect(borderRadius: radius, child: code),
     );
   }

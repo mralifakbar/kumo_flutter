@@ -10,7 +10,9 @@ import 'data_test_utils.dart';
 const _id = 'f86b3f10-32e9-4db7-ae95-84a1b2c3d4e5';
 
 double _iconOpacity(WidgetTester tester) => tester
-    .widget<AnimatedOpacity>(find.ancestor(of: find.byIcon(KumoIcons.copySimple), matching: find.byType(AnimatedOpacity)))
+    .widget<AnimatedOpacity>(
+      find.ancestor(of: find.byIcon(KumoIcons.copySimple), matching: find.byType(AnimatedOpacity)),
+    )
     .opacity;
 
 void main() {
@@ -18,12 +20,15 @@ void main() {
     for (final b in Brightness.values) {
       await pumpKumo(
         tester,
-        const Column(mainAxisSize: MainAxisSize.min, children: [
-          KumoInlineCopyText(_id),
-          KumoInlineCopyText(_id, variant: KumoTextVariant.mono, size: KumoTextSize.lg),
-          KumoInlineCopyText('image-resizer', variant: KumoTextVariant.body, bold: true),
-          KumoInlineCopyText.rich(value: _id, child: Text('Database ID: f86b3f10')),
-        ]),
+        const Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            KumoInlineCopyText(_id),
+            KumoInlineCopyText(_id, variant: KumoTextVariant.mono, size: KumoTextSize.lg),
+            KumoInlineCopyText('image-resizer', variant: KumoTextVariant.body, bold: true),
+            KumoInlineCopyText.rich(value: _id, child: Text('Database ID: f86b3f10')),
+          ],
+        ),
         brightness: b,
       );
       expect(tester.takeException(), isNull);
@@ -52,7 +57,10 @@ void main() {
     final handle = tester.ensureSemantics();
     mockClipboard(tester);
     final announced = mockAnnouncements(tester);
-    await pumpKumo(tester, const KumoInlineCopyText(_id, copyLabel: 'Copy database ID', copiedLabel: 'Database ID copied'));
+    await pumpKumo(
+      tester,
+      const KumoInlineCopyText(_id, copyLabel: 'Copy database ID', copiedLabel: 'Database ID copied'),
+    );
     expect(
       tester.getSemantics(find.byType(KumoInlineCopyText)),
       matchesSemantics(
@@ -145,7 +153,10 @@ void main() {
   testWidgets('truncates in a narrow row at 2x text', (tester) async {
     await pumpKumo(
       tester,
-      const SizedBox(width: 160, child: Row(children: [Flexible(child: KumoInlineCopyText(_id))])),
+      const SizedBox(
+        width: 160,
+        child: Row(children: [Flexible(child: KumoInlineCopyText(_id))]),
+      ),
       textScale: 2,
     );
     expect(tester.takeException(), isNull);

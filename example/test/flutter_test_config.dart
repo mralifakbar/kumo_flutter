@@ -17,8 +17,15 @@ Future<void> testExecutable(FutureOr<void> Function() testMain) async {
     await loader.load();
   }
 
-  await load('packages/kumo_flutter/Inter', ['Inter-Regular.ttf', 'Inter-Medium.ttf', 'Inter-SemiBold.ttf']);
-  await load('packages/kumo_flutter/JetBrainsMono', ['JetBrainsMono-Regular.ttf', 'JetBrainsMono-Medium.ttf']);
+  await load('packages/kumo_flutter/Inter', [
+    'Inter-Regular.ttf',
+    'Inter-Medium.ttf',
+    'Inter-SemiBold.ttf',
+  ]);
+  await load('packages/kumo_flutter/JetBrainsMono', [
+    'JetBrainsMono-Regular.ttf',
+    'JetBrainsMono-Medium.ttf',
+  ]);
   await load('packages/kumo_flutter/Phosphor', ['Phosphor.ttf']);
   await load('packages/kumo_flutter/PhosphorFill', ['Phosphor-Fill.ttf']);
   await testMain();

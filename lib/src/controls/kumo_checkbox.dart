@@ -111,7 +111,8 @@ class KumoCheckbox extends StatelessWidget {
     final isError = variant == KumoCheckboxVariant.error || error != null;
     final hasLabel = label != null || labelWidget != null;
     final inert = disabled || onCheckedChange == null;
-    final labelNode = labelWidget ??
+    final labelNode =
+        labelWidget ??
         (label == null
             ? null
             : ControlLabelText(
@@ -236,7 +237,12 @@ class KumoCheckboxGroup<T> extends StatelessWidget {
   final bool? controlFirst;
 
   void _toggle(T v, bool checked) {
-    final next = checked ? [...value, v] : [for (final x in value) if (x != v) x];
+    final next = checked
+        ? [...value, v]
+        : [
+            for (final x in value)
+              if (x != v) x,
+          ];
     onValueChange!(next);
   }
 
@@ -248,16 +254,14 @@ class KumoCheckboxGroup<T> extends StatelessWidget {
       final itemAppearance = item.appearance ?? appearance;
       final card = itemAppearance == KumoCheckboxAppearance.card;
       final checked = value.contains(item.value);
-      final isError = (item.variant ?? (error != null ? KumoCheckboxVariant.error : KumoCheckboxVariant.base)) ==
+      final isError =
+          (item.variant ?? (error != null ? KumoCheckboxVariant.error : KumoCheckboxVariant.base)) ==
           KumoCheckboxVariant.error;
       final itemDisabled = disabled || item.disabled;
       return _CheckboxTile(
         checked: checked,
         onPress: itemDisabled || onValueChange == null ? null : () => _toggle(item.value, !checked),
-        label: ControlLabelText(
-          text: item.label,
-          weight: card ? KumoTypography.medium : KumoTypography.normal,
-        ),
+        label: ControlLabelText(text: item.label, weight: card ? KumoTypography.medium : KumoTypography.normal),
         description: item.description,
         isError: isError,
         card: card,
@@ -376,11 +380,17 @@ class _CheckboxTile extends StatelessWidget {
             children: [
               ?label,
               if (description != null)
-                Text(description!, style: kumo.text(size: KumoTextSize.sm, color: KumoColor.textSubtle)),
+                Text(
+                  description!,
+                  style: kumo.text(size: KumoTextSize.sm, color: KumoColor.textSubtle),
+                ),
               if (error != null)
                 Semantics(
                   liveRegion: true,
-                  child: Text(error!, style: kumo.text(size: KumoTextSize.sm, color: KumoColor.textDanger)),
+                  child: Text(
+                    error!,
+                    style: kumo.text(size: KumoTextSize.sm, color: KumoColor.textDanger),
+                  ),
                 ),
             ],
           );
@@ -392,9 +402,17 @@ class _CheckboxTile extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             spacing: KumoSpace.s3,
             children: [
-              if (controlFirst) Padding(padding: const EdgeInsets.only(top: KumoSpace.s0_5), child: control),
+              if (controlFirst)
+                Padding(
+                  padding: const EdgeInsets.only(top: KumoSpace.s0_5),
+                  child: control,
+                ),
               Expanded(child: text ?? const SizedBox.shrink()),
-              if (!controlFirst) Padding(padding: const EdgeInsets.only(top: KumoSpace.s0_5), child: control),
+              if (!controlFirst)
+                Padding(
+                  padding: const EdgeInsets.only(top: KumoSpace.s0_5),
+                  child: control,
+                ),
             ],
           );
           final background = checked && !isError

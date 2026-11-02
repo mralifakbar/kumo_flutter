@@ -20,46 +20,56 @@ final KumoDemoCategory datesCategory = KumoDemoCategory(
     ),
     KumoDemo(
       title: 'KumoDatePicker',
-      description: 'Date fields that open a popover on wide screens and a sheet on phones, with range presets.',
+      description:
+          'Date fields that open a popover on wide screens and a sheet on phones, with range presets.',
       docPath: 'doc/components/KumoDatePicker.md',
       builder: (_) => const _DatePickerDemo(),
     ),
     KumoDemo(
       title: 'KumoDateRangePicker',
-      description: 'Deprecated alias kept for migration; it renders KumoDatePicker.range.',
+      description:
+          'Deprecated alias kept for migration; it renders KumoDatePicker.range.',
       docPath: 'doc/components/KumoDateRangePicker.md',
       builder: (_) => const _DateRangePickerDemo(),
     ),
     KumoDemo(
       title: 'KumoTimePicker',
-      description: 'Time fields with popover columns on wide screens and snapping wheels in a sheet on phones.',
+      description:
+          'Time fields with popover columns on wide screens and snapping wheels in a sheet on phones.',
       docPath: 'doc/components/KumoTimePicker.md',
       builder: (_) => const _TimePickerDemo(),
     ),
     KumoDemo(
       title: 'KumoTimeInput',
-      description: 'Typed hours, minutes and seconds with arrow-key steps, 12 and 24 hour formats.',
+      description:
+          'Typed hours, minutes and seconds with arrow-key steps, 12 and 24 hour formats.',
       docPath: 'doc/components/KumoTimeInput.md',
       builder: (_) => const _TimeInputDemo(),
     ),
     KumoDemo(
       title: 'KumoDateInput',
-      description: 'Typed dates with separators inserted as you type, validation and a calendar button.',
+      description:
+          'Typed dates with separators inserted as you type, validation and a calendar button.',
       docPath: 'doc/components/KumoDateInput.md',
       builder: (_) => const _DateInputDemo(),
     ),
   ],
 );
 
-Widget _column(List<Widget> children) =>
-    Column(crossAxisAlignment: CrossAxisAlignment.stretch, spacing: KumoSpace.s6, children: children);
+Widget _column(List<Widget> children) => Column(
+  crossAxisAlignment: CrossAxisAlignment.stretch,
+  spacing: KumoSpace.s6,
+  children: children,
+);
 
-Widget _framed(Widget calendar) => Align(alignment: AlignmentDirectional.centerStart, child: calendar);
+Widget _framed(Widget calendar) =>
+    Align(alignment: AlignmentDirectional.centerStart, child: calendar);
 
 /// Kumo's demos give the calendar `p-3`; it has no padding of its own.
 const EdgeInsets _pad = EdgeInsets.all(KumoSpace.s3);
 
-String _short(BuildContext context, DateTime? d) => d == null ? 'None' : context.kumoStrings.shortDate(d);
+String _short(BuildContext context, DateTime? d) =>
+    d == null ? 'None' : context.kumoStrings.shortDate(d);
 
 class _CalendarDemo extends StatefulWidget {
   const _CalendarDemo();
@@ -81,13 +91,18 @@ class _CalendarDemoState extends State<_CalendarDemo> {
     return _column([
       DemoSection(
         title: 'Single date',
-        caption: 'Tap a day, tap it again to clear. Swipe the grid on touch to change month.',
+        caption:
+            'Tap a day, tap it again to clear. Swipe the grid on touch to change month.',
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           spacing: KumoSpace.s3,
           children: [
             _framed(
-              KumoCalendar.single(padding: _pad, value: _single, onValueChange: (d) => setState(() => _single = d)),
+              KumoCalendar.single(
+                padding: _pad,
+                value: _single,
+                onValueChange: (d) => setState(() => _single = d),
+              ),
             ),
             KumoText(
               'Selected: ${_short(context, _single)}',
@@ -99,22 +114,29 @@ class _CalendarDemoState extends State<_CalendarDemo> {
       ),
       DemoSection(
         title: 'Multiple dates with a limit',
-        caption: 'Pick up to 5 maintenance days for the zone example.com. Booked days are unavailable.',
+        caption:
+            'Pick up to 5 maintenance days for the zone example.com. Booked days are unavailable.',
         child: _framed(
           KumoCalendar.multiple(
             padding: _pad,
             value: _maintenance,
             max: 5,
             fixedWeeks: true,
-            isDateDisabled: (d) => d.year == today.year && d.month == today.month && booked.contains(d.day),
+            isDateDisabled: (d) =>
+                d.year == today.year &&
+                d.month == today.month &&
+                booked.contains(d.day),
             onValueChange: (d) => setState(() => _maintenance = d),
-            footer: Text('${_maintenance.length}/5 days selected. Grayed dates are unavailable.'),
+            footer: Text(
+              '${_maintenance.length}/5 days selected. Grayed dates are unavailable.',
+            ),
           ),
         ),
       ),
       DemoSection(
         title: 'Range across two months',
-        caption: 'Side by side when there is room, stacked on a phone. Days outside each month are hidden.',
+        caption:
+            'Side by side when there is room, stacked on a phone. Days outside each month are hidden.',
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           spacing: KumoSpace.s3,
@@ -152,7 +174,14 @@ class _CalendarDemoState extends State<_CalendarDemo> {
       ),
       DemoSection(
         title: 'Disabled',
-        child: _framed(KumoCalendar.single(padding: _pad, disabled: true, value: today, onValueChange: (_) {})),
+        child: _framed(
+          KumoCalendar.single(
+            padding: _pad,
+            disabled: true,
+            value: today,
+            onValueChange: (_) {},
+          ),
+        ),
       ),
     ]);
   }
@@ -179,7 +208,8 @@ class _DatePickerDemoState extends State<_DatePickerDemo> {
     return _column([
       DemoSection(
         title: 'Single date',
-        caption: 'Closes when a day is picked. Popover on wide screens, bottom sheet below 768px.',
+        caption:
+            'Closes when a day is picked. Popover on wide screens, bottom sheet below 768px.',
         child: KumoDatePicker.single(
           label: 'Certificate expiry',
           description: 'Sample certificate for example.com.',
@@ -190,7 +220,8 @@ class _DatePickerDemoState extends State<_DatePickerDemo> {
       ),
       DemoSection(
         title: 'Range with presets',
-        caption: 'Kumo\'s presets beside two months; chips above the calendar in the sheet.',
+        caption:
+            'Kumo\'s presets beside two months; chips above the calendar in the sheet.',
         child: KumoDatePicker.range(
           label: 'Analytics period',
           value: _period,
@@ -245,7 +276,12 @@ class _DatePickerDemoState extends State<_DatePickerDemo> {
       ),
       DemoSection(
         title: 'Disabled',
-        child: KumoDatePicker.single(label: 'Billing date', disabled: true, value: today, onValueChange: (_) {}),
+        child: KumoDatePicker.single(
+          label: 'Billing date',
+          disabled: true,
+          value: today,
+          onValueChange: (_) {},
+        ),
       ),
     ]);
   }
@@ -266,7 +302,8 @@ class _DateRangePickerDemoState extends State<_DateRangePickerDemo> {
     return _column([
       DemoSection(
         title: 'Deprecated',
-        caption: 'Kumo deprecated DateRangePicker. Use KumoDatePicker.range in new code; this alias forwards to it.',
+        caption:
+            'Kumo deprecated DateRangePicker. Use KumoDatePicker.range in new code; this alias forwards to it.',
         // ignore: deprecated_member_use
         child: KumoDateRangePicker(
           label: 'Log retention window',
@@ -295,7 +332,8 @@ class _TimePickerDemoState extends State<_TimePickerDemo> {
     return _column([
       DemoSection(
         title: '12-hour',
-        caption: 'Popover columns on wide screens; on phones, wheels that follow the finger and snap.',
+        caption:
+            'Popover columns on wide screens; on phones, wheels that follow the finger and snap.',
         child: KumoTimePicker(
           label: 'Cron trigger time',
           description: 'Sample schedule for the Worker image-resizer.',
@@ -319,7 +357,9 @@ class _TimePickerDemoState extends State<_TimePickerDemo> {
           label: 'Maintenance slot',
           minuteStep: 15,
           value: _slot,
-          error: _slot != null && _slot!.hour < 6 ? 'Pick a slot after 6:00 AM.' : null,
+          error: _slot != null && _slot!.hour < 6
+              ? 'Pick a slot after 6:00 AM.'
+              : null,
           onValueChange: (t) => setState(() => _slot = t),
         ),
       ),
@@ -350,11 +390,13 @@ class _TimeInputDemoState extends State<_TimeInputDemo> {
 
   @override
   Widget build(BuildContext context) {
-    final endsBeforeStart = _start != null && _end != null && _end!.compareTo(_start!) <= 0;
+    final endsBeforeStart =
+        _start != null && _end != null && _end!.compareTo(_start!) <= 0;
     return _column([
       DemoSection(
         title: '12-hour',
-        caption: 'Type digits, or use Arrow Up and Down. A and P set AM and PM.',
+        caption:
+            'Type digits, or use Arrow Up and Down. A and P set AM and PM.',
         child: KumoTimeInput(
           label: 'Backup window starts',
           value: _start,
@@ -399,7 +441,11 @@ class _TimeInputDemoState extends State<_TimeInputDemo> {
               value: _start,
               onValueChange: (t) => setState(() => _start = t),
             ),
-            const KumoTimeInput(semanticLabel: 'Disabled', disabled: true, value: KumoTimeValue(hour: 9)),
+            const KumoTimeInput(
+              semanticLabel: 'Disabled',
+              disabled: true,
+              value: KumoTimeValue(hour: 9),
+            ),
           ],
         ),
       ),
@@ -424,7 +470,8 @@ class _DateInputDemoState extends State<_DateInputDemo> {
     return _column([
       DemoSection(
         title: 'ISO format',
-        caption: 'Separators appear as you type. February 30 or a past day shows an error.',
+        caption:
+            'Separators appear as you type. February 30 or a past day shows an error.',
         child: KumoDateInput(
           label: 'API token expires on',
           description: 'Sample token for the R2 bucket assets.',
@@ -439,14 +486,21 @@ class _DateInputDemoState extends State<_DateInputDemo> {
           label: 'Launch date',
           format: KumoDateInputFormat.mdy,
           value: _launch,
-          isDateDisabled: (d) => d.weekday == DateTime.saturday || d.weekday == DateTime.sunday,
-          unavailableDateMessage: 'Launches happen on weekdays. Pick Monday to Friday.',
+          isDateDisabled: (d) =>
+              d.weekday == DateTime.saturday || d.weekday == DateTime.sunday,
+          unavailableDateMessage:
+              'Launches happen on weekdays. Pick Monday to Friday.',
           onValueChange: (d) => setState(() => _launch = d),
         ),
       ),
       DemoSection(
         title: 'Disabled',
-        child: KumoDateInput(label: 'Zone created on', disabled: true, value: today, onValueChange: (_) {}),
+        child: KumoDateInput(
+          label: 'Zone created on',
+          disabled: true,
+          value: today,
+          onValueChange: (_) {},
+        ),
       ),
     ]);
   }

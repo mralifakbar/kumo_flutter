@@ -17,10 +17,12 @@ class GallerySettings extends InheritedWidget {
   final ValueChanged<KumoThemeMode> onModeChange;
   final ValueChanged<KumoThemeVariant> onVariantChange;
 
-  static GallerySettings? maybeOf(BuildContext context) => context.dependOnInheritedWidgetOfExactType<GallerySettings>();
+  static GallerySettings? maybeOf(BuildContext context) =>
+      context.dependOnInheritedWidgetOfExactType<GallerySettings>();
 
   @override
-  bool updateShouldNotify(GallerySettings oldWidget) => mode != oldWidget.mode || variant != oldWidget.variant;
+  bool updateShouldNotify(GallerySettings oldWidget) =>
+      mode != oldWidget.mode || variant != oldWidget.variant;
 }
 
 /// A labeled button that cycles the theme mode: System, Light, Dark.
@@ -36,10 +38,12 @@ class ThemeModeButton extends StatelessWidget {
       KumoThemeMode.light => ('Light', KumoIcons.sun),
       KumoThemeMode.dark => ('Dark', KumoIcons.moon),
     };
-    final next = KumoThemeMode.values[(settings.mode.index + 1) % KumoThemeMode.values.length];
+    final next = KumoThemeMode
+        .values[(settings.mode.index + 1) % KumoThemeMode.values.length];
     // Phones with large text get the icon alone; the tooltip and the
     // accessible name still say which theme is on.
-    final compact = context.kumoIsNarrow && MediaQuery.textScalerOf(context).scale(14) > 18;
+    final compact =
+        context.kumoIsNarrow && MediaQuery.textScalerOf(context).scale(14) > 18;
     return KumoButton(
       label: compact ? null : 'Theme: $label',
       icon: icon,

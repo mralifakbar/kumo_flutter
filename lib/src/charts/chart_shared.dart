@@ -155,9 +155,11 @@ class _ChartDot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => SizedBox.square(
-        dimension: size,
-        child: DecoratedBox(decoration: BoxDecoration(color: color, shape: BoxShape.circle)),
-      );
+    dimension: size,
+    child: DecoratedBox(
+      decoration: BoxDecoration(color: color, shape: BoxShape.circle),
+    ),
+  );
 }
 
 /// Places a tooltip beside an anchor point: to the right and top-aligned
@@ -217,7 +219,12 @@ class _ChartMessage extends StatelessWidget {
             const SizedBox(height: KumoSpace.s1),
             KumoText(title, bold: true, textAlign: TextAlign.center),
             if (description != null)
-              KumoText(description!, variant: KumoTextVariant.secondary, size: KumoTextSize.sm, textAlign: TextAlign.center),
+              KumoText(
+                description!,
+                variant: KumoTextVariant.secondary,
+                size: KumoTextSize.sm,
+                textAlign: TextAlign.center,
+              ),
             if (onRetry != null) ...[
               const SizedBox(height: KumoSpace.s2),
               KumoButton(
@@ -298,7 +305,7 @@ class _ChartSkeletonState extends State<_ChartSkeleton> with SingleTickerProvide
 
 class _ChartSkeletonPainter extends CustomPainter {
   _ChartSkeletonPainter({required this.shape, required this.color, required this.dark, this.shimmer})
-      : super(repaint: shimmer);
+    : super(repaint: shimmer);
 
   final _SkeletonShape shape;
   final Color color;
@@ -374,8 +381,14 @@ class _ChartSkeletonPainter extends CustomPainter {
         for (var i = 0; i < lefts.length; i++) {
           final a = lefts[i];
           final b = rights[i % rights.length];
-          final band = _sankeyBand(a.right, a.top, a.bottom, b.left, b.top + (i == 2 ? b.height / 2 : 0),
-              b.top + (i == 2 ? b.height : b.height / 2));
+          final band = _sankeyBand(
+            a.right,
+            a.top,
+            a.bottom,
+            b.left,
+            b.top + (i == 2 ? b.height / 2 : 0),
+            b.top + (i == 2 ? b.height : b.height / 2),
+          );
           canvas.drawPath(band, link);
           clip.addPath(band, Offset.zero);
         }
@@ -387,15 +400,12 @@ class _ChartSkeletonPainter extends CustomPainter {
 
     final sheenOpacity = dark ? 0.16 : 0.24;
     final sheen = Paint()
-      ..shader = ui.Gradient.linear(Offset.zero, Offset(size.width, 0), [
-        color.withValues(alpha: 0),
-        color.withValues(alpha: sheenOpacity),
-        color.withValues(alpha: 0),
-      ], const [
-        0,
-        0.5,
-        1
-      ]);
+      ..shader = ui.Gradient.linear(
+        Offset.zero,
+        Offset(size.width, 0),
+        [color.withValues(alpha: 0), color.withValues(alpha: sheenOpacity), color.withValues(alpha: 0)],
+        const [0, 0.5, 1],
+      );
     final t = shimmer?.value;
     // CSS translates the sheen from -100% to 100% of its width with ease-in-out.
     final dx = t == null ? 0.0 : (-1 + 2 * _easeInOut.transform(t)) * size.width;
@@ -426,7 +436,9 @@ Path _sankeyBand(double x0, double y0Top, double y0Bottom, double x1, double y1T
 /// A fixed-width skeleton bar: the public [KumoSkeletonLine] (same colors
 /// and corner radius as Kumo's `SkeletonLine`), static like the rest of a
 /// chart's loading state.
-Widget _skeletonBar(double width, double height) =>
-    SizedBox(width: width, child: KumoSkeletonLine(widthFactor: 1, height: height));
+Widget _skeletonBar(double width, double height) => SizedBox(
+  width: width,
+  child: KumoSkeletonLine(widthFactor: 1, height: height),
+);
 
 double _lerp(double a, double b, double t) => a + (b - a) * t;

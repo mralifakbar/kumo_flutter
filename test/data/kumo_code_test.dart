@@ -35,14 +35,22 @@ void main() {
       await pumpKumo(
         tester,
         SingleChildScrollView(
-          child: Column(children: [
-            for (final v in KumoCodeVariant.values) ...[
-              KumoCodeHighlighted(code: _worker, lang: 'ts', variant: v, showLineNumbers: true, highlightLines: const [3]),
-              KumoCodeHighlighted(code: _worker, lang: 'ts', variant: v, wrap: true, showLineNumbers: true),
-              const KumoCode(code: 'npx wrangler deploy'),
-              const KumoCode.block(code: 'npx wrangler deploy', showCopyButton: true),
+          child: Column(
+            children: [
+              for (final v in KumoCodeVariant.values) ...[
+                KumoCodeHighlighted(
+                  code: _worker,
+                  lang: 'ts',
+                  variant: v,
+                  showLineNumbers: true,
+                  highlightLines: const [3],
+                ),
+                KumoCodeHighlighted(code: _worker, lang: 'ts', variant: v, wrap: true, showLineNumbers: true),
+                const KumoCode(code: 'npx wrangler deploy'),
+                const KumoCode.block(code: 'npx wrangler deploy', showCopyButton: true),
+              ],
             ],
-          ]),
+          ),
         ),
         brightness: b,
       );
@@ -82,16 +90,30 @@ void main() {
 
   testWidgets('long lines scroll sideways; wrap keeps them in view', (tester) async {
     final long = 'const token = "${'x' * 200}";';
-    await pumpKumo(tester, SizedBox(width: 300, child: KumoCodeHighlighted(code: long, lang: 'ts')));
+    await pumpKumo(
+      tester,
+      SizedBox(
+        width: 300,
+        child: KumoCodeHighlighted(code: long, lang: 'ts'),
+      ),
+    );
     expect(tester.takeException(), isNull);
-    final scrollable = find.byWidgetPredicate((w) => w is SingleChildScrollView && w.scrollDirection == Axis.horizontal);
+    final scrollable = find.byWidgetPredicate(
+      (w) => w is SingleChildScrollView && w.scrollDirection == Axis.horizontal,
+    );
     expect(scrollable, findsOneWidget);
     await tester.drag(scrollable, const Offset(-200, 0));
     await tester.pumpAndSettle();
     final controller = tester.widget<SingleChildScrollView>(scrollable).controller!;
     expect(controller.offset, greaterThan(0));
 
-    await pumpKumo(tester, SizedBox(width: 300, child: KumoCodeHighlighted(code: long, lang: 'ts', wrap: true)));
+    await pumpKumo(
+      tester,
+      SizedBox(
+        width: 300,
+        child: KumoCodeHighlighted(code: long, lang: 'ts', wrap: true),
+      ),
+    );
     expect(scrollable, findsNothing);
     expect(tester.takeException(), isNull);
   });
@@ -127,7 +149,9 @@ void main() {
   });
 
   testWidgets('copy button is hidden until hover with a mouse, always shown on touch', (tester) async {
-    double opacity() => tester.widget<AnimatedOpacity>(find.ancestor(of: find.text('Copy'), matching: find.byType(AnimatedOpacity)).last).opacity;
+    double opacity() => tester
+        .widget<AnimatedOpacity>(find.ancestor(of: find.text('Copy'), matching: find.byType(AnimatedOpacity)).last)
+        .opacity;
     await pumpKumo(tester, const KumoCodeHighlighted(code: 'a\nb', lang: 'ts', showCopyButton: true));
     expect(opacity(), 1);
     await pumpKumo(
@@ -152,7 +176,9 @@ void main() {
     );
     await tester.sendKeyEvent(LogicalKeyboardKey.tab);
     await tester.pumpAndSettle();
-    final opacity = tester.widget<AnimatedOpacity>(find.ancestor(of: find.text('Copy'), matching: find.byType(AnimatedOpacity)).last);
+    final opacity = tester.widget<AnimatedOpacity>(
+      find.ancestor(of: find.text('Copy'), matching: find.byType(AnimatedOpacity)).last,
+    );
     expect(opacity.opacity, 1);
     await tester.sendKeyEvent(LogicalKeyboardKey.enter);
     await settleCopy(tester);

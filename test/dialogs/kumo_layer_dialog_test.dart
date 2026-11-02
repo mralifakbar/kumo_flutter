@@ -28,18 +28,17 @@ Future<void> _open(WidgetTester tester) async {
   await tester.pumpAndSettle();
 }
 
-Widget _longBody() => Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [for (var i = 0; i < 60; i++) Text('Shortcut $i')],
-    );
+Widget _longBody() =>
+    Column(crossAxisAlignment: CrossAxisAlignment.start, children: [for (var i = 0; i < 60; i++) Text('Shortcut $i')]);
 
 KumoLayerDialog _informational({Widget? body}) => KumoLayerDialog(
-      title: 'Keyboard shortcuts',
-      description: 'Browse shortcuts without changing a setting.',
-      body: body ?? const Text('Press / to search Workers.'),
-    );
+  title: 'Keyboard shortcuts',
+  description: 'Browse shortcuts without changing a setting.',
+  body: body ?? const Text('Press / to search Workers.'),
+);
 
-KumoLayerDialog _withAction({VoidCallback? onSave, bool dismissDisabled = false, String? dismissLabel}) => KumoLayerDialog(
+KumoLayerDialog _withAction({VoidCallback? onSave, bool dismissDisabled = false, String? dismissLabel}) =>
+    KumoLayerDialog(
       title: 'Configure custom hostname',
       description: 'Route requests for this hostname to your Worker.',
       body: const Text('api.example.com'),
@@ -54,7 +53,12 @@ void main() {
   for (final brightness in Brightness.values) {
     for (final size in [kumoPhoneSize, kumoDesktopSize]) {
       testWidgets('renders in ${brightness.name} at ${size.width.toInt()}px', (tester) async {
-        await pumpKumo(tester, _Launcher(dialog: (_) => _withAction()), brightness: brightness, size: size);
+        await pumpKumo(
+          tester,
+          _Launcher(dialog: (_) => _withAction()),
+          brightness: brightness,
+          size: size,
+        );
         await _open(tester);
         expect(find.text('Configure custom hostname'), findsOneWidget);
         expect(find.text('Save hostname'), findsOneWidget);
@@ -76,7 +80,11 @@ void main() {
 
     testWidgets('with an action it shows Close and the action instead of the X', (tester) async {
       var saved = 0;
-      await pumpKumo(tester, _Launcher(dialog: (_) => _withAction(onSave: () => saved++)), size: kumoDesktopSize);
+      await pumpKumo(
+        tester,
+        _Launcher(dialog: (_) => _withAction(onSave: () => saved++)),
+        size: kumoDesktopSize,
+      );
       await _open(tester);
       expect(find.byIcon(KumoIcons.x), findsNothing);
       expect(find.text('Close'), findsOneWidget);
@@ -179,7 +187,11 @@ void main() {
     });
 
     testWidgets('dismissLabel renames the dismiss button', (tester) async {
-      await pumpKumo(tester, _Launcher(dialog: (_) => _withAction(dismissLabel: 'Keep editing')), size: kumoDesktopSize);
+      await pumpKumo(
+        tester,
+        _Launcher(dialog: (_) => _withAction(dismissLabel: 'Keep editing')),
+        size: kumoDesktopSize,
+      );
       await _open(tester);
       expect(find.text('Keep editing'), findsOneWidget);
     });
@@ -261,11 +273,15 @@ void main() {
   });
 
   testWidgets('the description folds away once the body scrolls', (tester) async {
-    await pumpKumo(tester, _Launcher(dialog: (_) => _informational(body: _longBody())), size: kumoDesktopSize);
+    await pumpKumo(
+      tester,
+      _Launcher(dialog: (_) => _informational(body: _longBody())),
+      size: kumoDesktopSize,
+    );
     await _open(tester);
     Align fold() => tester.widget<Align>(
-          find.ancestor(of: find.text('Browse shortcuts without changing a setting.'), matching: find.byType(Align)).first,
-        );
+      find.ancestor(of: find.text('Browse shortcuts without changing a setting.'), matching: find.byType(Align)).first,
+    );
     expect(fold().heightFactor, 1);
     await tester.drag(find.text('Shortcut 5'), const Offset(0, -120));
     await tester.pumpAndSettle();

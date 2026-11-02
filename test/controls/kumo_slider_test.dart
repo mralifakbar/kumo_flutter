@@ -26,16 +26,18 @@ void main() {
       await pumpKumo(
         tester,
         brightness: brightness,
-        sized(Column(
-          mainAxisSize: MainAxisSize.min,
-          spacing: 24,
-          children: [
-            KumoSlider(label: 'Base', value: 40, onValueChange: (_) {}),
-            KumoSlider(label: 'Small', size: KumoSliderSize.sm, value: 30, onValueChange: (_) {}),
-            KumoSlider.range(label: 'Range', values: (start: 25, end: 75), onValuesChange: (_) {}),
-            const KumoSlider(label: 'Locked', value: 70, disabled: true),
-          ],
-        )),
+        sized(
+          Column(
+            mainAxisSize: MainAxisSize.min,
+            spacing: 24,
+            children: [
+              KumoSlider(label: 'Base', value: 40, onValueChange: (_) {}),
+              KumoSlider(label: 'Small', size: KumoSliderSize.sm, value: 30, onValueChange: (_) {}),
+              KumoSlider.range(label: 'Range', values: (start: 25, end: 75), onValuesChange: (_) {}),
+              const KumoSlider(label: 'Locked', value: 70, disabled: true),
+            ],
+          ),
+        ),
       );
       expect(find.text('40'), findsOneWidget);
       expect(find.text('25'), findsOneWidget);
@@ -48,15 +50,17 @@ void main() {
     final commits = <double>[];
     await pumpKumo(
       tester,
-      sized(controlled<double>(
-        50,
-        (v, set) => KumoSlider(
-          label: 'Volume',
-          value: v,
-          onValueChange: (next) => set((changes..add(next)).last),
-          onValueCommitted: commits.add,
+      sized(
+        controlled<double>(
+          50,
+          (v, set) => KumoSlider(
+            label: 'Volume',
+            value: v,
+            onValueChange: (next) => set((changes..add(next)).last),
+            onValueCommitted: commits.add,
+          ),
         ),
-      )),
+      ),
     );
     final start = tester.getCenter(thumb(0));
     expect(start.dx, closeTo(centerFor(tester, 0.5), 0.01));
@@ -95,10 +99,12 @@ void main() {
     final commits = <double>[];
     await pumpKumo(
       tester,
-      sized(controlled<double>(
-        0,
-        (v, set) => KumoSlider(label: 'Volume', value: v, onValueChange: set, onValueCommitted: commits.add),
-      )),
+      sized(
+        controlled<double>(
+          0,
+          (v, set) => KumoSlider(label: 'Volume', value: v, onValueChange: set, onValueCommitted: commits.add),
+        ),
+      ),
     );
     await tester.tapAt(Offset(centerFor(tester, 0.25), tester.getCenter(thumb(0)).dy));
     await tester.pumpAndSettle();
@@ -109,13 +115,18 @@ void main() {
   testWidgets('keyboard: arrows, Page Up/Down, Shift+arrow, Home and End', (tester) async {
     await pumpKumo(
       tester,
-      sized(controlled<double>(
-        50,
-        (v, set) => Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [KumoSlider(label: 'Volume', value: v, onValueChange: set), KumoText('Value: $v')],
+      sized(
+        controlled<double>(
+          50,
+          (v, set) => Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              KumoSlider(label: 'Volume', value: v, onValueChange: set),
+              KumoText('Value: $v'),
+            ],
+          ),
         ),
-      )),
+      ),
     );
     await tester.sendKeyEvent(LogicalKeyboardKey.tab);
     await tester.pump();
@@ -139,7 +150,11 @@ void main() {
 
   testWidgets('keyboard: Left and Right are mirrored in RTL', (tester) async {
     final calls = <double>[];
-    await pumpKumo(tester, textDirection: TextDirection.rtl, sized(KumoSlider(label: 'Volume', value: 50, onValueChange: calls.add)));
+    await pumpKumo(
+      tester,
+      textDirection: TextDirection.rtl,
+      sized(KumoSlider(label: 'Volume', value: 50, onValueChange: calls.add)),
+    );
     await tester.sendKeyEvent(LogicalKeyboardKey.tab);
     await tester.pump();
     await tester.sendKeyEvent(LogicalKeyboardKey.arrowRight);
@@ -180,14 +195,16 @@ void main() {
     KumoSliderRange? last;
     await pumpKumo(
       tester,
-      sized(controlled<KumoSliderRange>(
-        (start: 20, end: 40),
-        (v, set) => KumoSlider.range(
-          values: v,
-          thumbSemanticLabel: (i) => i == 0 ? 'Minimum price' : 'Maximum price',
-          onValuesChange: (next) => set(last = next),
+      sized(
+        controlled<KumoSliderRange>(
+          (start: 20, end: 40),
+          (v, set) => KumoSlider.range(
+            values: v,
+            thumbSemanticLabel: (i) => i == 0 ? 'Minimum price' : 'Maximum price',
+            onValuesChange: (next) => set(last = next),
+          ),
         ),
-      )),
+      ),
     );
     expect(find.bySemanticsLabel('Minimum price'), findsOneWidget);
     expect(find.bySemanticsLabel('Maximum price'), findsOneWidget);
@@ -203,15 +220,17 @@ void main() {
     double? last;
     await pumpKumo(
       tester,
-      sized(KumoSlider(
-        label: 'Sampling rate',
-        value: 0.25,
-        min: 0,
-        max: 1,
-        step: 0.05,
-        format: (v) => '${(v * 100).round()}%',
-        onValueChange: (v) => last = v,
-      )),
+      sized(
+        KumoSlider(
+          label: 'Sampling rate',
+          value: 0.25,
+          min: 0,
+          max: 1,
+          step: 0.05,
+          format: (v) => '${(v * 100).round()}%',
+          onValueChange: (v) => last = v,
+        ),
+      ),
     );
     expect(find.text('25%'), findsOneWidget);
     expect(find.text('0%'), findsOneWidget);
@@ -222,7 +241,10 @@ void main() {
 
   testWidgets('disabled: no callbacks and no focus', (tester) async {
     var calls = 0;
-    await pumpKumo(tester, sized(KumoSlider(label: 'Locked', value: 70, disabled: true, onValueChange: (_) => calls++)));
+    await pumpKumo(
+      tester,
+      sized(KumoSlider(label: 'Locked', value: 70, disabled: true, onValueChange: (_) => calls++)),
+    );
     await tester.dragFrom(tester.getCenter(thumb(0)), const Offset(-60, 0));
     await tester.tapAt(Offset(centerFor(tester, 0.1), tester.getCenter(thumb(0)).dy));
     await tester.sendKeyEvent(LogicalKeyboardKey.tab);
@@ -238,7 +260,12 @@ void main() {
     await tester.pumpAndSettle();
 
     await pumpKumo(tester, disableAnimations: true, sized(const KumoSlider(label: 'Volume', value: 0)));
-    await pumpKumo(tester, disableAnimations: true, sized(const KumoSlider(label: 'Volume', value: 100)), settle: false);
+    await pumpKumo(
+      tester,
+      disableAnimations: true,
+      sized(const KumoSlider(label: 'Volume', value: 100)),
+      settle: false,
+    );
     await tester.pump();
     expect(tester.hasRunningAnimations, isFalse);
     expect(tester.getCenter(thumb(0)).dx, closeTo(centerFor(tester, 1), 0.01));

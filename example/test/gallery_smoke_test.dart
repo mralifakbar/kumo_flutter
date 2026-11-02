@@ -19,12 +19,18 @@ void main() {
   for (final category in galleryCategories) {
     for (final demo in category.demos) {
       for (final (name, size, brightness, scale) in configs) {
-        testWidgets('${category.title} / ${demo.title} / $name', (tester) async {
+        testWidgets('${category.title} / ${demo.title} / $name', (
+          tester,
+        ) async {
           tester.view.physicalSize = size * tester.view.devicePixelRatio;
           addTearDown(tester.view.resetPhysicalSize);
           await tester.pumpWidget(
             MediaQuery(
-              data: MediaQueryData(size: size, textScaler: TextScaler.linear(scale), platformBrightness: brightness),
+              data: MediaQueryData(
+                size: size,
+                textScaler: TextScaler.linear(scale),
+                platformBrightness: brightness,
+              ),
               child: GalleryApp(home: DemoPage(demo: demo)),
             ),
           );
@@ -62,16 +68,25 @@ void main() {
     await tester.tap(find.text('Theme: Light'));
     await tester.pumpAndSettle();
     expect(find.text('Theme: Dark'), findsOneWidget);
-    expect(KumoTheme.of(tester.element(find.text('Theme: Dark'))).isDark, isTrue);
+    expect(
+      KumoTheme.of(tester.element(find.text('Theme: Dark'))).isDark,
+      isTrue,
+    );
   });
 }
 
 /// Text that fell back to Flutter's debug style (red, yellow double
 /// underline) has no Kumo or Material text style above it.
 void expectNoFallbackText(WidgetTester tester) {
-  for (final p in tester.renderObjectList<RenderParagraph>(find.byType(RichText))) {
+  for (final p in tester.renderObjectList<RenderParagraph>(
+    find.byType(RichText),
+  )) {
     final style = p.text.style;
-    expect(style?.decorationColor == const Color(0xFFFFFF00) && style?.decorationStyle == TextDecorationStyle.double, isFalse,
-        reason: 'Fallback text style on "${p.text.toPlainText()}"');
+    expect(
+      style?.decorationColor == const Color(0xFFFFFF00) &&
+          style?.decorationStyle == TextDecorationStyle.double,
+      isFalse,
+      reason: 'Fallback text style on "${p.text.toPlainText()}"',
+    );
   }
 }

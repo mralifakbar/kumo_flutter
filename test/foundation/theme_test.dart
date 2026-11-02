@@ -58,14 +58,16 @@ void main() {
   testWidgets('provider follows the platform brightness in system mode', (tester) async {
     late KumoThemeData seen;
     Widget app(Brightness platform) => MediaQuery(
-          data: MediaQueryData(platformBrightness: platform),
-          child: KumoThemeProvider(
-            child: Builder(builder: (context) {
-              seen = context.kumo;
-              return const SizedBox();
-            }),
-          ),
-        );
+      data: MediaQueryData(platformBrightness: platform),
+      child: KumoThemeProvider(
+        child: Builder(
+          builder: (context) {
+            seen = context.kumo;
+            return const SizedBox();
+          },
+        ),
+      ),
+    );
     await tester.pumpWidget(app(Brightness.light));
     expect(seen.brightness, Brightness.light);
     await tester.pumpWidget(app(Brightness.dark));
@@ -77,15 +79,17 @@ void main() {
   testWidgets('provider cross-fades a mode change, instantly under reduced motion', (tester) async {
     late KumoThemeData seen;
     Widget app(KumoThemeMode mode, {bool reduce = false}) => MediaQuery(
-          data: MediaQueryData(disableAnimations: reduce),
-          child: KumoThemeProvider(
-            mode: mode,
-            child: Builder(builder: (context) {
-              seen = context.kumo;
-              return const SizedBox();
-            }),
-          ),
-        );
+      data: MediaQueryData(disableAnimations: reduce),
+      child: KumoThemeProvider(
+        mode: mode,
+        child: Builder(
+          builder: (context) {
+            seen = context.kumo;
+            return const SizedBox();
+          },
+        ),
+      ),
+    );
     await tester.pumpWidget(app(KumoThemeMode.light));
     await tester.pumpWidget(app(KumoThemeMode.dark));
     await tester.pump(const Duration(milliseconds: 100));
@@ -101,14 +105,18 @@ void main() {
 
   testWidgets('fedramp variant recolors surfaces', (tester) async {
     late KumoThemeData seen;
-    await tester.pumpWidget(KumoThemeProvider(
-      mode: KumoThemeMode.light,
-      variant: KumoThemeVariant.fedramp,
-      child: Builder(builder: (context) {
-        seen = context.kumo;
-        return const SizedBox();
-      }),
-    ));
+    await tester.pumpWidget(
+      KumoThemeProvider(
+        mode: KumoThemeMode.light,
+        variant: KumoThemeVariant.fedramp,
+        child: Builder(
+          builder: (context) {
+            seen = context.kumo;
+            return const SizedBox();
+          },
+        ),
+      ),
+    );
     expect(seen.colors.canvas, const Color(0xFF5B697C));
   });
 

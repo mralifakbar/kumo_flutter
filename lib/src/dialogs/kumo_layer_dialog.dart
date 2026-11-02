@@ -226,7 +226,10 @@ class KumoLayerDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     final desktop = MediaQuery.sizeOf(context).width >= KumoBreakpoints.sm;
     Widget frame = _LayerDialogFrame(dialog: this, desktop: desktop);
-    frame = PopScope(canPop: !dismissDisabled, child: _EscapeGuard(blocked: dismissDisabled, child: frame));
+    frame = PopScope(
+      canPop: !dismissDisabled,
+      child: _EscapeGuard(blocked: dismissDisabled, child: frame),
+    );
     if (desktop) {
       return _LayerDialogDesktop(
         width: size.width,
@@ -267,8 +270,10 @@ Future<T?> showKumoLayerDialog<T>(
   String? semanticLabel,
   bool useRootNavigator = true,
 }) {
-  return Navigator.of(context, rootNavigator: useRootNavigator)
-      .push<T>(KumoLayerDialog.createRoute<T>(builder: builder, semanticLabel: semanticLabel));
+  return Navigator.of(
+    context,
+    rootNavigator: useRootNavigator,
+  ).push<T>(KumoLayerDialog.createRoute<T>(builder: builder, semanticLabel: semanticLabel));
 }
 
 /// Kumo's `LayerDialog.Separator`: a hairline between sections of the body
@@ -298,7 +303,10 @@ class KumoLayerDialogSeparator extends StatelessWidget {
             child: OverflowBox(
               minWidth: width,
               maxWidth: width,
-              child: ColoredBox(color: color, child: SizedBox(width: width, height: 1)),
+              child: ColoredBox(
+                color: color,
+                child: SizedBox(width: width, height: 1),
+              ),
             ),
           );
         },
@@ -438,7 +446,9 @@ class _LayerDialogDesktopState extends State<_LayerDialogDesktop> with SingleTic
               bottomInset + KumoSpace.s6,
             ),
             child: Align(
-              alignment: widget.verticalAlign == KumoLayerDialogVerticalAlign.top ? Alignment.topCenter : Alignment.center,
+              alignment: widget.verticalAlign == KumoLayerDialogVerticalAlign.top
+                  ? Alignment.topCenter
+                  : Alignment.center,
               child: panel,
             ),
           ),
@@ -480,7 +490,9 @@ class _LayerDialogFrame extends StatelessWidget {
               ),
             ),
           ),
-        Flexible(child: _LayerDialogBody(dialog: dialog, desktop: desktop)),
+        Flexible(
+          child: _LayerDialogBody(dialog: dialog, desktop: desktop),
+        ),
         if (desktop && action != null)
           Padding(
             padding: const EdgeInsets.only(top: 7),
@@ -506,7 +518,10 @@ class _LayerDialogFrame extends StatelessWidget {
             border: KumoRing.border(c.line),
             boxShadow: _layerShadow,
           )
-        : BoxDecoration(color: c.elevated, border: Border(top: BorderSide(color: c.hairline)));
+        : BoxDecoration(
+            color: c.elevated,
+            border: Border(top: BorderSide(color: c.hairline)),
+          );
 
     return Semantics(
       container: true,
@@ -718,7 +733,9 @@ class _LayerDialogBodyState extends State<_LayerDialogBody> with SingleTickerPro
               Flexible(child: faded),
               if (!desktop && action != null)
                 DecoratedBox(
-                  decoration: BoxDecoration(border: Border(top: BorderSide(color: c.hairline))),
+                  decoration: BoxDecoration(
+                    border: Border(top: BorderSide(color: c.hairline)),
+                  ),
                   child: Padding(
                     padding: const EdgeInsets.all(KumoSpace.s4),
                     child: _LayerDialogActions(dialog: dialog, action: action, desktop: false),
@@ -831,7 +848,10 @@ class _PrimaryActionState extends State<_PrimaryAction> {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         spacing: KumoSpace.px,
-        children: [Flexible(child: button), caret],
+        children: [
+          Flexible(child: button),
+          caret,
+        ],
       ),
     );
   }

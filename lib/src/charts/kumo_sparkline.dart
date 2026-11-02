@@ -136,39 +136,44 @@ class _KumoSparklineState extends State<KumoSparkline> with SingleTickerProvider
   Widget build(BuildContext context) {
     final kumo = context.kumo;
     final palette = KumoChartColors.forBrightness(kumo.brightness);
-    return LayoutBuilder(builder: (context, constraints) {
-      final width = widget.width ?? (constraints.maxWidth.isFinite ? constraints.maxWidth : 120.0);
-      final Widget paint;
-      if (widget.loading) {
-        paint = CustomPaint(
-          size: Size(width, widget.height),
-          painter: _SparklineSkeletonPainter(color: palette.semantic(KumoChartSemanticColor.skeleton), dark: kumo.isDark),
-        );
-      } else {
-        paint = AnimatedBuilder(
-          animation: _morph,
-          builder: (context, _) => CustomPaint(
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final width = widget.width ?? (constraints.maxWidth.isFinite ? constraints.maxWidth : 120.0);
+        final Widget paint;
+        if (widget.loading) {
+          paint = CustomPaint(
             size: Size(width, widget.height),
-            painter: _SparklinePainter(
-              values: _current(),
-              color: widget.color ?? palette.categorical(0),
-              area: widget.area,
-              endDot: widget.showEndDot,
-              minMax: widget.showMinMax,
-              strokeWidth: widget.strokeWidth,
-              ringColor: kumo.colors.base,
-              emptyColor: kumo.colors.textSubtle.withValues(alpha: 0.35),
+            painter: _SparklineSkeletonPainter(
+              color: palette.semantic(KumoChartSemanticColor.skeleton),
+              dark: kumo.isDark,
             ),
-          ),
+          );
+        } else {
+          paint = AnimatedBuilder(
+            animation: _morph,
+            builder: (context, _) => CustomPaint(
+              size: Size(width, widget.height),
+              painter: _SparklinePainter(
+                values: _current(),
+                color: widget.color ?? palette.categorical(0),
+                area: widget.area,
+                endDot: widget.showEndDot,
+                minMax: widget.showMinMax,
+                strokeWidth: widget.strokeWidth,
+                ringColor: kumo.colors.base,
+                emptyColor: kumo.colors.textSubtle.withValues(alpha: 0.35),
+              ),
+            ),
+          );
+        }
+        return Semantics(
+          container: true,
+          image: true,
+          label: _summary(),
+          child: SizedBox(width: width, height: widget.height, child: paint),
         );
-      }
-      return Semantics(
-        container: true,
-        image: true,
-        label: _summary(),
-        child: SizedBox(width: width, height: widget.height, child: paint),
-      );
-    });
+      },
+    );
   }
 }
 

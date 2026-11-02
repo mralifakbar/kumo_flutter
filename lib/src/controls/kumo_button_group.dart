@@ -127,7 +127,10 @@ class KumoButtonGroupButton extends StatelessWidget {
     this.semanticLabel,
     this.focusNode,
   }) : assert(label != null || icon != null, 'Pass a label or an icon'),
-       assert(label != null || semanticLabel != null || title != null, 'Icon-only buttons need a semanticLabel or title');
+       assert(
+         label != null || semanticLabel != null || title != null,
+         'Icon-only buttons need a semanticLabel or title',
+       );
 
   final String? label;
 
@@ -257,7 +260,13 @@ class KumoButtonGroupButton extends StatelessWidget {
                 Flexible(
                   child: Transform.translate(
                     offset: Offset(0, -size.textLift),
-                    child: Text(label!, style: textStyle, maxLines: 1, overflow: TextOverflow.ellipsis, softWrap: false),
+                    child: Text(
+                      label!,
+                      style: textStyle,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      softWrap: false,
+                    ),
                   ),
                 ),
                 if (endIcon != null) KumoIcon(endIcon!, size: size.iconSize, dangerouslySetColor: fg),
@@ -298,7 +307,10 @@ class KumoButtonGroupButton extends StatelessWidget {
         // Drawn just inside the edge so the next button's seam cannot cover it.
         surface = KumoFocusRing(visible: state.focused, borderRadius: resolved, offset: -2, child: surface);
         if (isDisabled) surface = Opacity(opacity: 0.5, child: surface);
-        return Padding(padding: EdgeInsets.symmetric(vertical: touchPad), child: surface);
+        return Padding(
+          padding: EdgeInsets.symmetric(vertical: touchPad),
+          child: surface,
+        );
       },
     );
     if (title != null) result = KumoTooltip(content: title!, child: result);

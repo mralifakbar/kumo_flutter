@@ -197,7 +197,10 @@ class KumoDropdownCheckboxItem extends StatelessWidget {
         shortcut: shortcut,
         disabled: disabled,
         checked: checked,
-        leading: SizedBox(width: 16, child: Center(child: _MenuCheck(checked: checked, size: 12))),
+        leading: SizedBox(
+          width: 16,
+          child: Center(child: _MenuCheck(checked: checked, size: 12)),
+        ),
         onPress: off
             ? null
             : () {
@@ -242,8 +245,7 @@ class _MenuCheckState extends State<_MenuCheck> with SingleTickerProviderStateMi
   void initState() {
     super.initState();
     // Unbounded so the bounce curve can overshoot past 1.
-    _t = AnimationController.unbounded(vsync: this, value: widget.checked ? 1 : 0)
-      ..duration = KumoDurations.moderate;
+    _t = AnimationController.unbounded(vsync: this, value: widget.checked ? 1 : 0)..duration = KumoDurations.moderate;
   }
 
   @override

@@ -81,19 +81,19 @@ void main() {
   testWidgets('onDismiss adds a labeled X', (tester) async {
     final semantics = tester.ensureSemantics();
     var dismissed = false;
-    await pumpKumo(
-      tester,
-      _padded(KumoBanner(title: 'Update available', onDismiss: () => dismissed = true)),
+    await pumpKumo(tester, _padded(KumoBanner(title: 'Update available', onDismiss: () => dismissed = true)));
+    expect(
+      tester.getSemantics(find.bySemanticsLabel('Dismiss')),
+      matchesSemantics(
+        label: 'Dismiss',
+        isButton: true,
+        isEnabled: true,
+        hasEnabledState: true,
+        isFocusable: true,
+        hasTapAction: true,
+        hasFocusAction: true,
+      ),
     );
-    expect(tester.getSemantics(find.bySemanticsLabel('Dismiss')), matchesSemantics(
-      label: 'Dismiss',
-      isButton: true,
-      isEnabled: true,
-      hasEnabledState: true,
-      isFocusable: true,
-      hasTapAction: true,
-      hasFocusAction: true,
-    ));
     await tester.tap(find.byIcon(KumoIcons.x));
     await tester.pumpAndSettle();
     expect(dismissed, isTrue, reason: 'runs once the banner has collapsed');
@@ -102,18 +102,21 @@ void main() {
 
   testWidgets('actions sit beside the text when wide and under it when narrow', (tester) async {
     Widget banner(double width) => _padded(
-          KumoBanner(
-            title: 'Session expiring',
-            description: 'Your session ends in 5 minutes.',
-            actions: [KumoBannerAction(label: 'Extend', onPress: () {})],
-          ),
-          width: width,
-        );
+      KumoBanner(
+        title: 'Session expiring',
+        description: 'Your session ends in 5 minutes.',
+        actions: [KumoBannerAction(label: 'Extend', onPress: () {})],
+      ),
+      width: width,
+    );
     await pumpKumo(tester, banner(600), size: kumoDesktopSize);
     expect(tester.getCenter(find.text('Extend')).dx, greaterThan(tester.getRect(find.text('Session expiring')).right));
 
     await pumpKumo(tester, banner(320));
-    expect(tester.getTopLeft(find.text('Extend')).dy, greaterThan(tester.getBottomLeft(find.text('Session expiring')).dy));
+    expect(
+      tester.getTopLeft(find.text('Extend')).dy,
+      greaterThan(tester.getBottomLeft(find.text('Session expiring')).dy),
+    );
   });
 
   testWidgets('actions take the banner size', (tester) async {
@@ -123,7 +126,10 @@ void main() {
         Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            KumoBanner(title: 'Base', actions: [KumoBannerAction(label: 'Base action', onPress: () {})]),
+            KumoBanner(
+              title: 'Base',
+              actions: [KumoBannerAction(label: 'Base action', onPress: () {})],
+            ),
             KumoBanner(
               title: 'Compact',
               size: KumoBannerSize.sm,
@@ -143,10 +149,7 @@ void main() {
   });
 
   testWidgets('touch hit areas are at least 44px', (tester) async {
-    await pumpKumo(
-      tester,
-      _padded(KumoBanner(title: 'Update available', onDismiss: () {}), width: 358),
-    );
+    await pumpKumo(tester, _padded(KumoBanner(title: 'Update available', onDismiss: () {}), width: 358));
     final size = tester.getSize(find.ancestor(of: find.byIcon(KumoIcons.x), matching: find.byType(KumoPressable)));
     expect(size.width, greaterThanOrEqualTo(44));
     expect(size.height, greaterThanOrEqualTo(44));
@@ -189,13 +192,15 @@ void main() {
       textDirection: TextDirection.rtl,
     );
     expect(tester.takeException(), isNull);
-    expect(tester.getCenter(find.byIcon(KumoIcons.warningFill)).dx, greaterThan(tester.getCenter(find.text('SSL certificate expires in 6 days')).dx));
+    expect(
+      tester.getCenter(find.byIcon(KumoIcons.warningFill)).dx,
+      greaterThan(tester.getCenter(find.text('SSL certificate expires in 6 days')).dx),
+    );
   });
 
   group('motion', () {
-    Widget column(Widget banner) => _padded(
-          Column(mainAxisSize: MainAxisSize.min, children: [banner, const Text('Below the banner')]),
-        );
+    Widget column(Widget banner) =>
+        _padded(Column(mainAxisSize: MainAxisSize.min, children: [banner, const Text('Below the banner')]));
 
     testWidgets('dismiss collapses the banner so the content below slides up', (tester) async {
       var dismissed = false;

@@ -10,7 +10,8 @@ trademarks or logos; the Cloudflare logo component is not included.
 Third-party material included in this product:
 
   * Kumo (https://github.com/cloudflare/kumo), Copyright (c) 2026 Cloudflare,
-    Inc., MIT License (full text in LICENSE). Derived material: semantic color
+    Inc., MIT License (original text in
+    assets/licenses/Kumo-MIT.txt; also credited in LICENSE). Derived material: semantic color
     tokens of the kumo and fedramp themes (converted from OKLCH CSS by
     tool/generate_theme.dart), typography and spacing scales, component
     variants, dimensions, copy defaults and behavior, re-implemented in Dart.

@@ -34,30 +34,30 @@ class _HostState extends State<_Host> {
 
   @override
   Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            KumoTagInput(
-              label: 'Allowed origins',
-              placeholder: 'Add an origin',
-              value: tags,
-              validateValue: widget.validate,
-              maxValues: widget.maxValues,
-              allowDuplicates: widget.allowDuplicates,
-              readOnly: widget.readOnly,
-              disabled: widget.disabled,
-              labels: widget.labels,
-              onValueChange: (v) => setState(() {
-                changes++;
-                tags = v;
-              }),
-            ),
-            Text('tags=${tags.join('|')}'),
-            Text('changes=$changes'),
-          ],
+    padding: const EdgeInsets.all(16),
+    child: Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        KumoTagInput(
+          label: 'Allowed origins',
+          placeholder: 'Add an origin',
+          value: tags,
+          validateValue: widget.validate,
+          maxValues: widget.maxValues,
+          allowDuplicates: widget.allowDuplicates,
+          readOnly: widget.readOnly,
+          disabled: widget.disabled,
+          labels: widget.labels,
+          onValueChange: (v) => setState(() {
+            changes++;
+            tags = v;
+          }),
         ),
-      );
+        Text('tags=${tags.join('|')}'),
+        Text('changes=$changes'),
+      ],
+    ),
+  );
 }
 
 Finder get _input => find.byType(TextField);
@@ -162,7 +162,10 @@ void main() {
   });
 
   testWidgets('readOnly and disabled block adding and removing', (tester) async {
-    for (final host in const [_Host(initial: ['a'], readOnly: true), _Host(initial: ['a'], disabled: true)]) {
+    for (final host in const [
+      _Host(initial: ['a'], readOnly: true),
+      _Host(initial: ['a'], disabled: true),
+    ]) {
       await pumpKumo(tester, host);
       await tester.tap(find.bySemanticsLabel('Remove a'), warnIfMissed: false);
       await tester.pump();
@@ -176,7 +179,10 @@ void main() {
       _Host(
         initial: const ['uno'],
         maxValues: 1,
-        labels: KumoTagInputLabels(removeValue: (v) => 'Eliminar $v', maxValuesReached: (n) => 'Maximo de $n etiquetas.'),
+        labels: KumoTagInputLabels(
+          removeValue: (v) => 'Eliminar $v',
+          maxValuesReached: (n) => 'Maximo de $n etiquetas.',
+        ),
       ),
     );
     expect(find.bySemanticsLabel('Eliminar uno'), findsOneWidget);
@@ -193,18 +199,16 @@ void main() {
     await tester.enterText(_input, 'ftp://x,');
     await tester.pump();
     expect(
-      tester.getSemantics(find.ancestor(of: find.text('Origins must start with https://'), matching: find.byType(Semantics)).first),
+      tester.getSemantics(
+        find.ancestor(of: find.text('Origins must start with https://'), matching: find.byType(Semantics)).first,
+      ),
       containsSemantics(isLiveRegion: true),
     );
     handle.dispose();
   });
 
   testWidgets('many tags wrap at 390px and 2x text without overflow', (tester) async {
-    await pumpKumo(
-      tester,
-      _Host(initial: [for (var i = 0; i < 6; i++) 'worker-$i.example.workers.dev']),
-      textScale: 2,
-    );
+    await pumpKumo(tester, _Host(initial: [for (var i = 0; i < 6; i++) 'worker-$i.example.workers.dev']), textScale: 2);
     expect(tester.takeException(), isNull);
     final field = tester.getRect(find.byType(KumoFieldBox));
     expect(field.width, lessThanOrEqualTo(390));
@@ -219,7 +223,10 @@ void main() {
   double chipWidth(WidgetTester tester, String label) => tester
       .getSize(
         find
-            .ancestor(of: find.text(label), matching: find.byWidgetPredicate((w) => w.runtimeType.toString() == '_ChipReveal'))
+            .ancestor(
+              of: find.text(label),
+              matching: find.byWidgetPredicate((w) => w.runtimeType.toString() == '_ChipReveal'),
+            )
             .first,
       )
       .width;
@@ -258,7 +265,10 @@ void main() {
     await tester.tap(_input);
     await tester.enterText(_input, 'https://c.example.com,');
     await tester.pump();
-    expect(chipWidth(tester, 'https://c.example.com'), greaterThan(tester.getSize(find.text('https://c.example.com')).width));
+    expect(
+      chipWidth(tester, 'https://c.example.com'),
+      greaterThan(tester.getSize(find.text('https://c.example.com')).width),
+    );
   });
 
   testWidgets('an invalid tag shows its error with a short open and fade, no shake', (tester) async {

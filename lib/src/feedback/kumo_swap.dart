@@ -109,12 +109,12 @@ class _SwapTransitionState extends State<_SwapTransition> {
 
   @override
   Widget build(BuildContext context) => IgnorePointer(
-        ignoring: _leaving,
-        child: ExcludeSemantics(
-          excluding: _leaving,
-          child: FadeTransition(opacity: widget.animation, child: widget.child),
-        ),
-      );
+    ignoring: _leaving,
+    child: ExcludeSemantics(
+      excluding: _leaving,
+      child: FadeTransition(opacity: widget.animation, child: widget.child),
+    ),
+  );
 }
 
 /// Lays the swap's children over each other like a [Stack], but sizes itself
@@ -143,10 +143,12 @@ class _SwapLayout extends MultiChildRenderObjectWidget {
 class _SwapParentData extends ContainerBoxParentData<RenderBox> {}
 
 class _RenderSwapLayout extends RenderBox
-    with ContainerRenderObjectMixin<RenderBox, _SwapParentData>, RenderBoxContainerDefaultsMixin<RenderBox, _SwapParentData> {
+    with
+        ContainerRenderObjectMixin<RenderBox, _SwapParentData>,
+        RenderBoxContainerDefaultsMixin<RenderBox, _SwapParentData> {
   _RenderSwapLayout({required Alignment alignment, required bool sizedByLast})
-      : _alignment = alignment,
-        _sizedByLast = sizedByLast;
+    : _alignment = alignment,
+      _sizedByLast = sizedByLast;
 
   Alignment _alignment;
   set alignment(Alignment value) {

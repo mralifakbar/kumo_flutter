@@ -58,7 +58,9 @@ void main() {
     await tester.pump(const Duration(milliseconds: 60));
     final mid = _belowTop(tester);
     final fade = tester
-        .widgetList<FadeTransition>(find.ancestor(of: find.text('Enter a valid hostname'), matching: find.byType(FadeTransition)))
+        .widgetList<FadeTransition>(
+          find.ancestor(of: find.text('Enter a valid hostname'), matching: find.byType(FadeTransition)),
+        )
         .firstWhere((f) => f.alwaysIncludeSemantics);
     expect(fade.opacity.value, inExclusiveRange(0, 1));
     await tester.pumpAndSettle();

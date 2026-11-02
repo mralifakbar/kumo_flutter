@@ -33,16 +33,17 @@ Future<void> _open(WidgetTester tester) async {
 }
 
 KumoDialog _sample({List<Widget>? actions, Widget? child, KumoDialogSize size = KumoDialogSize.base}) => KumoDialog(
-      title: 'Rename Worker',
-      description: 'The workers.dev URL changes; routes keep working.',
-      size: size,
-      actions: actions ??
-          const [
-            KumoDialogClose(label: 'Cancel', result: 'cancel'),
-            KumoDialogClose(label: 'Rename', variant: KumoButtonVariant.primary, result: 'rename'),
-          ],
-      child: child,
-    );
+  title: 'Rename Worker',
+  description: 'The workers.dev URL changes; routes keep working.',
+  size: size,
+  actions:
+      actions ??
+      const [
+        KumoDialogClose(label: 'Cancel', result: 'cancel'),
+        KumoDialogClose(label: 'Rename', variant: KumoButtonVariant.primary, result: 'rename'),
+      ],
+  child: child,
+);
 
 void main() {
   setUp(() => _result = null);
@@ -146,14 +147,14 @@ void main() {
 
   group('showKumoAlertDialog', () {
     Widget launcher({bool destructive = true}) => _Launcher(
-          open: (context) => showKumoAlertDialog(
-            context,
-            title: 'Delete image-resizer?',
-            description: 'Routes pointing at this Worker stop serving traffic.',
-            confirmLabel: 'Delete Worker',
-            destructive: destructive,
-          ),
-        );
+      open: (context) => showKumoAlertDialog(
+        context,
+        title: 'Delete image-resizer?',
+        description: 'Routes pointing at this Worker stop serving traffic.',
+        confirmLabel: 'Delete Worker',
+        destructive: destructive,
+      ),
+    );
 
     testWidgets('returns true on confirm and false on cancel', (tester) async {
       await pumpKumo(tester, launcher());
@@ -209,7 +210,9 @@ void main() {
       testWidgets('${size.name} is ${size.width}px wide on desktop', (tester) async {
         await pumpKumo(
           tester,
-          _Launcher(open: (context) => showKumoDialog<void>(context, builder: (_) => _sample(size: size))),
+          _Launcher(
+            open: (context) => showKumoDialog<void>(context, builder: (_) => _sample(size: size)),
+          ),
           size: kumoDesktopSize,
         );
         await _open(tester);
@@ -226,9 +229,8 @@ void main() {
         _Launcher(
           open: (context) => showKumoDialog<void>(
             context,
-            builder: (_) => _sample(
-              child: Column(children: [for (var i = 0; i < 40; i++) Text('record-$i.example.com')]),
-            ),
+            builder: (_) =>
+                _sample(child: Column(children: [for (var i = 0; i < 40; i++) Text('record-$i.example.com')])),
           ),
         ),
       );
@@ -362,25 +364,25 @@ void main() {
   });
   group('motion', () {
     Widget growing() => _Launcher(
-          open: (context) => showKumoDialog<void>(
-            context,
-            builder: (context) => StatefulBuilder(
-              builder: (context, setState) => KumoDialog(
-                title: 'Create API token',
-                size: _wide ? KumoDialogSize.lg : KumoDialogSize.base,
-                showCloseButton: false,
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    // A plain tap target: this test is about the panel, not buttons.
-                    GestureDetector(onTap: () => setState(() => _wide = !_wide), child: const Text('Add permission')),
-                    if (_wide) ...[const SizedBox(height: 120), const Text('Workers edit')],
-                  ],
-                ),
-              ),
+      open: (context) => showKumoDialog<void>(
+        context,
+        builder: (context) => StatefulBuilder(
+          builder: (context, setState) => KumoDialog(
+            title: 'Create API token',
+            size: _wide ? KumoDialogSize.lg : KumoDialogSize.base,
+            showCloseButton: false,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                // A plain tap target: this test is about the panel, not buttons.
+                GestureDetector(onTap: () => setState(() => _wide = !_wide), child: const Text('Add permission')),
+                if (_wide) ...[const SizedBox(height: 120), const Text('Workers edit')],
+              ],
             ),
           ),
-        );
+        ),
+      ),
+    );
 
     setUp(() => _wide = false);
 
@@ -417,7 +419,6 @@ void main() {
       expect(tester.hasRunningAnimations, isFalse);
     });
   });
-
 }
 
 class _RootHost extends StatefulWidget {
@@ -456,5 +457,4 @@ class _RootHostState extends State<_RootHost> {
       child: KumoButton(label: 'Edit record', onPress: () => _set(true)),
     );
   }
-
 }

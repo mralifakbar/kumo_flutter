@@ -15,9 +15,7 @@ class CategoryPage extends StatelessWidget {
     return PageFrame(
       title: category.title,
       description: category.description,
-      children: [
-        for (final demo in category.demos) _DemoBlock(demo: demo),
-      ],
+      children: [for (final demo in category.demos) _DemoBlock(demo: demo)],
     );
   }
 }
@@ -30,10 +28,10 @@ class DemoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => PageFrame(
-        title: demo.title,
-        description: demo.description,
-        children: [Builder(builder: demo.builder)],
-      );
+    title: demo.title,
+    description: demo.description,
+    children: [Builder(builder: demo.builder)],
+  );
 }
 
 class _DemoBlock extends StatelessWidget {
@@ -48,7 +46,13 @@ class _DemoBlock extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(demo.title, style: context.kumo.code(large: true, weight: KumoTypography.medium)),
+          Text(
+            demo.title,
+            style: context.kumo.code(
+              large: true,
+              weight: KumoTypography.medium,
+            ),
+          ),
           const SizedBox(height: KumoSpace.s1),
           KumoText(demo.description, variant: KumoTextVariant.secondary),
           const SizedBox(height: KumoSpace.s4),

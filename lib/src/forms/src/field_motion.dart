@@ -9,6 +9,7 @@ import '../../theme/kumo_motion.dart';
 import '../../theme/kumo_theme.dart';
 import '../../theme/kumo_tokens.dart';
 import '../../theme/kumo_typography.dart';
+import '../../system/kumo_size_reveal.dart';
 
 /// The line under a field: its error (danger icon and text, announced) or its
 /// description. A message that appears grows the space it needs and fades in;
@@ -185,9 +186,8 @@ class _FieldMessageState extends State<FieldMessage> with SingleTickerProviderSt
               child: message,
             ),
           );
-    return SizeTransition(
+    return KumoSizeReveal(
       sizeFactor: _reveal,
-      axisAlignment: -1,
       child: FadeTransition(
         opacity: _reveal,
         // Announced from the first frame, not once it is visible.

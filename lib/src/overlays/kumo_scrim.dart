@@ -26,6 +26,11 @@ class KumoScrim extends StatelessWidget {
       child: ColoredBox(color: color, child: const SizedBox.expand()),
     );
     if (onPress == null) return ExcludeSemantics(child: scrim);
-    return Semantics(button: true, label: semanticLabel, onTap: onPress, child: ExcludeSemantics(child: scrim));
+    return Semantics(
+      button: true,
+      label: semanticLabel,
+      onTap: onPress,
+      child: ExcludeSemantics(child: scrim),
+    );
   }
 }

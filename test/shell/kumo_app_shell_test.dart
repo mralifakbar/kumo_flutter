@@ -15,41 +15,49 @@ Widget _shell({
   bool fullScreen = false,
   EdgeInsets padding = EdgeInsets.zero,
 }) {
-  return Builder(builder: (context) {
-    final mq = MediaQuery.of(context);
-    return MediaQuery(
-      data: mq.copyWith(padding: padding, viewPadding: padding),
-      child: KumoAppShell(
-        onDrawerOpenChange: drawerChanges?.add,
-        fullScreenDrawer: fullScreen,
-        sidebar: KumoSidebar(
-          header: const KumoSidebarHeader(children: [
-            Expanded(child: KumoText('Company', bold: true)),
-            KumoSidebarClose(),
-          ]),
-          footer: const KumoSidebarFooter(children: [KumoSidebarTrigger()]),
-          child: KumoSidebarContent(children: [
-            KumoSidebarGroup(children: [
-              KumoSidebarMenuButton(
-                icon: KumoIcons.house,
-                label: 'Home',
-                active: true,
-                onPress: () => pressed?.add('Home'),
-              ),
-              KumoSidebarMenuButton(
-                icon: KumoIcons.code,
-                label: 'Workers',
-                onPress: () => pressed?.add('Workers'),
-              ),
-            ]),
-          ]),
+  return Builder(
+    builder: (context) {
+      final mq = MediaQuery.of(context);
+      return MediaQuery(
+        data: mq.copyWith(padding: padding, viewPadding: padding),
+        child: KumoAppShell(
+          onDrawerOpenChange: drawerChanges?.add,
+          fullScreenDrawer: fullScreen,
+          sidebar: KumoSidebar(
+            header: const KumoSidebarHeader(
+              children: [
+                Expanded(child: KumoText('Company', bold: true)),
+                KumoSidebarClose(),
+              ],
+            ),
+            footer: const KumoSidebarFooter(children: [KumoSidebarTrigger()]),
+            child: KumoSidebarContent(
+              children: [
+                KumoSidebarGroup(
+                  children: [
+                    KumoSidebarMenuButton(
+                      icon: KumoIcons.house,
+                      label: 'Home',
+                      active: true,
+                      onPress: () => pressed?.add('Home'),
+                    ),
+                    KumoSidebarMenuButton(
+                      icon: KumoIcons.code,
+                      label: 'Workers',
+                      onPress: () => pressed?.add('Workers'),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          topBar: const KumoText('Overview', variant: KumoTextVariant.heading),
+          bottomNavigation: bottom ? const SizedBox(height: 56, child: Center(child: Text('Bottom bar'))) : null,
+          body: const Center(child: Text('Page body')),
         ),
-        topBar: const KumoText('Overview', variant: KumoTextVariant.heading),
-        bottomNavigation: bottom ? const SizedBox(height: 56, child: Center(child: Text('Bottom bar'))) : null,
-        body: const Center(child: Text('Page body')),
-      ),
-    );
-  });
+      );
+    },
+  );
 }
 
 double _drawerLeft(WidgetTester tester) => tester.getRect(find.byType(KumoSidebar)).left;
@@ -96,10 +104,10 @@ void main() {
 
     testWidgets('controlled sidebarOpen is followed', (tester) async {
       Widget build(bool open) => KumoAppShell(
-            sidebarOpen: open,
-            sidebar: const KumoSidebar(child: KumoSidebarContent(children: [])),
-            body: const SizedBox(),
-          );
+        sidebarOpen: open,
+        sidebar: const KumoSidebar(child: KumoSidebarContent(children: [])),
+        body: const SizedBox(),
+      );
       await pumpKumo(tester, build(false), size: kumoDesktopSize, center: false);
       expect(tester.getSize(find.byType(KumoSidebar)).width, 57);
       await tester.pumpWidget(kumoHarness(build(true), size: kumoDesktopSize, center: false));
@@ -140,8 +148,13 @@ void main() {
       expect(_drawerLeft(tester), 0);
       expect(tester.getSize(find.byType(KumoSidebar)).width, 260);
       final focused = FocusManager.instance.primaryFocus!;
-      expect(find.descendant(of: find.byType(KumoSidebar), matching: find.byWidgetPredicate((w) => w is Focus && w.focusNode == focused)),
-          findsOneWidget);
+      expect(
+        find.descendant(
+          of: find.byType(KumoSidebar),
+          matching: find.byWidgetPredicate((w) => w is Focus && w.focusNode == focused),
+        ),
+        findsOneWidget,
+      );
       expect(KumoAppShell.of(tester.element(find.text('Page body'))).drawerOpen, isTrue);
     });
 
@@ -297,12 +310,14 @@ void main() {
       const padding = EdgeInsets.only(top: 47, bottom: 34);
       await pumpKumo(
         tester,
-        Builder(builder: (context) {
-          return MediaQuery(
-            data: MediaQuery.of(context).copyWith(padding: padding, viewPadding: padding),
-            child: const KumoAppShell(body: SizedBox.expand(key: Key('body'))),
-          );
-        }),
+        Builder(
+          builder: (context) {
+            return MediaQuery(
+              data: MediaQuery.of(context).copyWith(padding: padding, viewPadding: padding),
+              child: const KumoAppShell(body: SizedBox.expand(key: Key('body'))),
+            );
+          },
+        ),
         center: false,
       );
       expect(tester.getRect(find.byKey(const Key('body'))).bottom, kumoPhoneSize.height - 34);
@@ -323,7 +338,13 @@ void main() {
 
     testWidgets('light, dark and 2x text without overflow', (tester) async {
       for (final b in Brightness.values) {
-        await pumpKumo(tester, KeyedSubtree(key: ValueKey(b), child: _shell()), brightness: b, textScale: 2, center: false);
+        await pumpKumo(
+          tester,
+          KeyedSubtree(key: ValueKey(b), child: _shell()),
+          brightness: b,
+          textScale: 2,
+          center: false,
+        );
         await _openWithButton(tester);
         expect(tester.takeException(), isNull);
       }
@@ -395,11 +416,13 @@ void main() {
           home: KumoAppShell(
             topBar: const Text('Workers'),
             sidebar: KumoSidebar(
-              child: KumoSidebarContent(children: [
-                KumoSidebarGroup(children: [
-                  KumoSidebarMenuButton(icon: KumoIcons.house, label: 'Home', onPress: () {}),
-                ]),
-              ]),
+              child: KumoSidebarContent(
+                children: [
+                  KumoSidebarGroup(
+                    children: [KumoSidebarMenuButton(icon: KumoIcons.house, label: 'Home', onPress: () {})],
+                  ),
+                ],
+              ),
             ),
             body: const Text('Page body'),
           ),
@@ -429,11 +452,14 @@ void main() {
           home: Align(
             alignment: Alignment.topLeft,
             child: KumoSidebar(
-              child: KumoSidebarContent(children: [
-                KumoSidebarGroup(label: 'Build', children: [
-                  KumoSidebarMenuButton(icon: KumoIcons.code, label: 'Workers', onPress: () {}),
-                ]),
-              ]),
+              child: KumoSidebarContent(
+                children: [
+                  KumoSidebarGroup(
+                    label: 'Build',
+                    children: [KumoSidebarMenuButton(icon: KumoIcons.code, label: 'Workers', onPress: () {})],
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -446,4 +472,3 @@ void main() {
     }
   });
 }
-

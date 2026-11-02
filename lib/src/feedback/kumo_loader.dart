@@ -52,6 +52,7 @@ class KumoLoader extends StatefulWidget {
   /// Defaults to the surrounding text color.
   final KumoColor? color;
   final Color? dangerouslySetColor;
+
   /// Accessible name. Defaults to [KumoStrings.loading]; pass an empty
   /// string when surrounding text already says what is loading.
   final String? semanticLabel;
@@ -83,7 +84,8 @@ class _KumoLoaderState extends State<KumoLoader> with SingleTickerProviderStateM
 
   @override
   Widget build(BuildContext context) {
-    final color = widget.dangerouslySetColor ??
+    final color =
+        widget.dangerouslySetColor ??
         (widget.color != null ? context.kumo.color(widget.color!) : DefaultTextStyle.of(context).style.color) ??
         context.kumo.colors.textDefault;
     final d = widget.dimension ?? widget.size.dimension;
@@ -94,15 +96,18 @@ class _KumoLoaderState extends State<KumoLoader> with SingleTickerProviderStateM
     return Semantics(
       label: widget.semanticLabel ?? context.kumoStrings.loading,
       liveRegion: true,
-      child: SizedBox.square(dimension: d, child: CustomPaint(painter: painter)),
+      child: SizedBox.square(
+        dimension: d,
+        child: CustomPaint(painter: painter),
+      ),
     );
   }
 }
 
 class _LoaderPainter extends CustomPainter {
   _LoaderPainter({required this.color, required this.t, this.still = false, AnimationController? repaint})
-      : _controller = repaint,
-        super(repaint: repaint);
+    : _controller = repaint,
+      super(repaint: repaint);
 
   final Color color;
   final double t;

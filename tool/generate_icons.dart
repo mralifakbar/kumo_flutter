@@ -52,11 +52,13 @@ void main(List<String> args) {
     final tags = meta[n]?.tags.where((t) => !t.startsWith('*')).take(6).join(', ');
     icons.writeln('  /// `$n`${tags == null || tags.isEmpty ? '' : ': $tags'}.');
     icons.writeln(
-        '  static const IconData $d = IconData(0x${regular[n]!.toRadixString(16)}, fontFamily: _regular, fontPackage: _package);');
+      '  static const IconData $d = IconData(0x${regular[n]!.toRadixString(16)}, fontFamily: _regular, fontPackage: _package);',
+    );
     if (fill.containsKey(n)) {
       icons.writeln('  /// `$n`, fill weight.');
       icons.writeln(
-          '  static const IconData ${d}Fill = IconData(0x${fill[n]!.toRadixString(16)}, fontFamily: _fill, fontPackage: _package);');
+        '  static const IconData ${d}Fill = IconData(0x${fill[n]!.toRadixString(16)}, fontFamily: _fill, fontPackage: _package);',
+      );
     }
   }
   icons.writeln('}');
@@ -77,7 +79,9 @@ void main(List<String> args) {
     ..writeln()
     ..writeln('/// One icon in the catalog.')
     ..writeln('class KumoIconEntry {')
-    ..writeln('  const KumoIconEntry(this.name, this.regular, this.fill, {this.categories = const [], this.tags = const []});')
+    ..writeln(
+      '  const KumoIconEntry(this.name, this.regular, this.fill, {this.categories = const [], this.tags = const []});',
+    )
     ..writeln()
     ..writeln('  /// Phosphor kebab-case name, such as `caret-down`.')
     ..writeln('  final String name;')
@@ -90,7 +94,9 @@ void main(List<String> args) {
     ..writeln('  bool matches(String query) {')
     ..writeln('    final q = query.trim().toLowerCase();')
     ..writeln('    if (q.isEmpty) return true;')
-    ..writeln("    return name.contains(q.replaceAll(' ', '-')) || tags.any((t) => t.contains(q)) || categories.any((c) => c.contains(q));")
+    ..writeln(
+      "    return name.contains(q.replaceAll(' ', '-')) || tags.any((t) => t.contains(q)) || categories.any((c) => c.contains(q));",
+    )
     ..writeln('  }')
     ..writeln('}')
     ..writeln()
@@ -100,8 +106,10 @@ void main(List<String> args) {
   for (final n in names) {
     final d = dartNames[n]!;
     final m = meta[n];
-    catalog.writeln("  KumoIconEntry('$n', KumoIcons.$d, ${fill.containsKey(n) ? 'KumoIcons.${d}Fill' : 'null'}"
-        "${m == null ? '' : ', categories: ${list(m.categories)}, tags: ${list(m.tags.where((t) => !t.startsWith('*')).toList())}'}),");
+    catalog.writeln(
+      "  KumoIconEntry('$n', KumoIcons.$d, ${fill.containsKey(n) ? 'KumoIcons.${d}Fill' : 'null'}"
+      "${m == null ? '' : ', categories: ${list(m.categories)}, tags: ${list(m.tags.where((t) => !t.startsWith('*')).toList())}'}),",
+    );
   }
   catalog.writeln('];');
   File('lib/kumo_icon_catalog.dart').writeAsStringSync(catalog.toString());
@@ -123,10 +131,9 @@ Map<String, _Meta> _metadata(String ts) {
   final result = <String, _Meta>{};
   final entry = RegExp(r'name: "([a-z0-9-]+)",[\s\S]*?categories: \[([^\]]*)\],[\s\S]*?tags: \[([^\]]*)\]');
   for (final m in entry.allMatches(ts)) {
-    final cats = RegExp(r'IconCategory\.([A-Z_]+)')
-        .allMatches(m.group(2)!)
-        .map((c) => c.group(1)!.toLowerCase().replaceAll('_', ' '))
-        .toList();
+    final cats = RegExp(
+      r'IconCategory\.([A-Z_]+)',
+    ).allMatches(m.group(2)!).map((c) => c.group(1)!.toLowerCase().replaceAll('_', ' ')).toList();
     final tags = RegExp(r'"([^"]+)"').allMatches(m.group(3)!).map((t) => t.group(1)!.toLowerCase()).toList();
     result.putIfAbsent(m.group(1)!, () => _Meta(cats, tags));
   }

@@ -295,7 +295,9 @@ void main() {
 
   testWidgets('revealing fades the value in; reduced motion swaps at once', (tester) async {
     double fade() => tester
-        .widget<FadeTransition>(find.ancestor(of: find.byType(EditableText), matching: find.byType(FadeTransition)).first)
+        .widget<FadeTransition>(
+          find.ancestor(of: find.byType(EditableText), matching: find.byType(FadeTransition)).first,
+        )
         .opacity
         .value;
     await pumpKumo(tester, const _Secret());

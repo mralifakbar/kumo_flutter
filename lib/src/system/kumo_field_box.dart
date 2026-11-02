@@ -154,11 +154,9 @@ class KumoFieldBox extends StatelessWidget {
             child: child,
           ),
           child: Padding(
-            padding: padding ??
-                EdgeInsetsDirectional.symmetric(
-                  horizontal: size.paddingX,
-                  vertical: multiline ? KumoSpace.s2 : 0,
-                ),
+            padding:
+                padding ??
+                EdgeInsetsDirectional.symmetric(horizontal: size.paddingX, vertical: multiline ? KumoSpace.s2 : 0),
             // heightFactor 1 sizes to the content; the min height above still
             // applies, with the content centered in it.
             child: Align(

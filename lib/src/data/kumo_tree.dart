@@ -15,6 +15,7 @@ import '../theme/kumo_theme.dart';
 import '../theme/kumo_tokens.dart';
 import '../theme/kumo_typography.dart';
 import 'data_hover_scope.dart';
+import '../system/kumo_size_reveal.dart';
 
 /// One item in a [KumoTree].
 ///
@@ -305,7 +306,12 @@ class _KumoTreeState extends State<KumoTree> {
       final failed = _failed.contains(node.id);
       block = KeyedSubtree(
         key: ValueKey(failed ? 'failed' : 'loading'),
-        child: _statusRow(context, depth + 1, failed: failed, onRetry: failed ? () => setState(() => _load(node, retry: true)) : null),
+        child: _statusRow(
+          context,
+          depth + 1,
+          failed: failed,
+          onRetry: failed ? () => setState(() => _load(node, retry: true)) : null,
+        ),
       );
     } else {
       block = Column(
@@ -317,7 +323,9 @@ class _KumoTreeState extends State<KumoTree> {
     }
     // Loading, failed and loaded children cross-fade while the block eases to
     // its new height, so rows below slide instead of jumping.
-    return ClipRect(child: KumoSwap(animateSize: true, alignment: AlignmentDirectional.topStart, child: block));
+    return ClipRect(
+      child: KumoSwap(animateSize: true, alignment: AlignmentDirectional.topStart, child: block),
+    );
   }
 
   double _start(int depth) => KumoSpace.s2 + depth * widget.indent;
@@ -378,7 +386,8 @@ class _KumoTreeState extends State<KumoTree> {
     final focus = _nodeFor(node.id)..skipTraversal = node.id != _tabStop;
     final rtl = Directionality.of(context) == TextDirection.rtl;
     final interactive =
-        !node.disabled && (widget.onValueChange != null || (node.isBranch && widget.expandOnPress && widget.onExpandedChange != null));
+        !node.disabled &&
+        (widget.onValueChange != null || (node.isBranch && widget.expandOnPress && widget.onExpandedChange != null));
 
     return KumoPressable(
       key: ValueKey(('row', node.id)),
@@ -406,7 +415,11 @@ class _KumoTreeState extends State<KumoTree> {
                 turns: expanded ? (rtl ? -0.25 : 0.25) : 0,
                 duration: KumoMotion.duration(context, KumoDurations.moderate),
                 curve: KumoCurves.standard,
-                child: KumoIcon(rtl ? KumoIcons.caretLeft : KumoIcons.caretRight, size: 12, color: KumoColor.textSubtle),
+                child: KumoIcon(
+                  rtl ? KumoIcons.caretLeft : KumoIcons.caretRight,
+                  size: 12,
+                  color: KumoColor.textSubtle,
+                ),
               )
             : null;
         final icon = expanded ? (node.expandedIcon ?? node.icon) : node.icon;
@@ -490,9 +503,8 @@ class _TreeCollapsibleState extends State<_TreeCollapsible> with SingleTickerPro
     if (_controller.isDismissed && !widget.open) return const SizedBox.shrink();
     // Height and opacity share the caret's 200ms curve, so the caret, the
     // rows sliding in and their fade all finish together.
-    return SizeTransition(
+    return KumoSizeReveal(
       sizeFactor: _curve,
-      axisAlignment: -1,
       child: FadeTransition(opacity: _curve, child: widget.builder(context)),
     );
   }

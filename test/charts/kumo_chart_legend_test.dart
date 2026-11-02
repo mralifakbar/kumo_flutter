@@ -13,14 +13,17 @@ void main() {
     for (final b in Brightness.values) {
       await pumpKumo(
         tester,
-        const Wrap(spacing: 16, children: [
-          KumoChartLegend.small(name: 'Requests', color: _red, value: '1,234'),
-          KumoChartLegend.small(name: 'Errors', color: _red),
-          KumoChartLegend.large(name: 'P99', color: _red, value: '124', unit: 'ms'),
-          KumoChartLegend.large(name: 'P50', color: _red, value: '10', inactive: true),
-          KumoChartLegend.loading(),
-          KumoChartLegend.loading(size: KumoChartLegendSize.large),
-        ]),
+        const Wrap(
+          spacing: 16,
+          children: [
+            KumoChartLegend.small(name: 'Requests', color: _red, value: '1,234'),
+            KumoChartLegend.small(name: 'Errors', color: _red),
+            KumoChartLegend.large(name: 'P99', color: _red, value: '124', unit: 'ms'),
+            KumoChartLegend.large(name: 'P50', color: _red, value: '10', inactive: true),
+            KumoChartLegend.loading(),
+            KumoChartLegend.loading(size: KumoChartLegendSize.large),
+          ],
+        ),
         brightness: b,
       );
       expect(tester.takeException(), isNull);
@@ -30,12 +33,19 @@ void main() {
   });
 
   testWidgets('large items are at least Kumo\'s 168px wide on wide screens; small items 16px tall', (tester) async {
-    await pumpKumo(tester, const KumoChartLegend.large(name: 'P99', color: _red, value: '1', unit: 'ms'), size: kumoDesktopSize);
+    await pumpKumo(
+      tester,
+      const KumoChartLegend.large(name: 'P99', color: _red, value: '1', unit: 'ms'),
+      size: kumoDesktopSize,
+    );
     expect(tester.getSize(find.byType(KumoChartLegend)).width, greaterThanOrEqualTo(168));
     await pumpKumo(tester, const KumoChartLegend.large(name: 'P99', color: _red, value: '1', unit: 'ms'));
     expect(tester.getSize(find.byType(KumoChartLegend)).width, lessThan(168));
-    await pumpKumo(tester, const KumoChartLegend.small(name: 'P99', color: _red, value: '1'),
-        tapTargetSize: KumoTapTargetSize.shrinkWrap);
+    await pumpKumo(
+      tester,
+      const KumoChartLegend.small(name: 'P99', color: _red, value: '1'),
+      tapTargetSize: KumoTapTargetSize.shrinkWrap,
+    );
     expect(tester.getSize(find.byType(KumoChartLegend)).height, 16);
   });
 
@@ -109,9 +119,19 @@ void main() {
   testWidgets('text scale 2.0 at 390px does not overflow', (tester) async {
     await pumpKumo(
       tester,
-      Wrap(spacing: 16, children: [
-        for (var i = 0; i < 4; i++) KumoChartLegend.large(name: 'Worker image-resizer $i', color: _red, value: '12,400', unit: 'req/s', onPress: () {}),
-      ]),
+      Wrap(
+        spacing: 16,
+        children: [
+          for (var i = 0; i < 4; i++)
+            KumoChartLegend.large(
+              name: 'Worker image-resizer $i',
+              color: _red,
+              value: '12,400',
+              unit: 'req/s',
+              onPress: () {},
+            ),
+        ],
+      ),
       textScale: 2,
     );
     expect(tester.takeException(), isNull);

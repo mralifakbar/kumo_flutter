@@ -58,7 +58,10 @@ Widget _toggleContent(
     spacing: KumoSpace.s1_5,
     children: [
       if (icon != null) KumoIcon(icon, size: size.iconSize, dangerouslySetColor: color),
-      if (label != null) Flexible(child: Text(label, style: style, maxLines: 1, softWrap: false, overflow: TextOverflow.ellipsis)),
+      if (label != null)
+        Flexible(
+          child: Text(label, style: style, maxLines: 1, softWrap: false, overflow: TextOverflow.ellipsis),
+        ),
     ],
   );
 }
@@ -131,7 +134,10 @@ class KumoToggle extends StatelessWidget {
     this.focusNode,
     this.autofocus = false,
   }) : assert(label != null || icon != null, 'Pass a label or an icon'),
-       assert(label != null || semanticLabel != null || title != null, 'Icon-only toggles need a semanticLabel or title');
+       assert(
+         label != null || semanticLabel != null || title != null,
+         'Icon-only toggles need a semanticLabel or title',
+       );
 
   final bool pressed;
 
@@ -239,9 +245,9 @@ class KumoToggleGroup<T> extends StatefulWidget {
     this.size = KumoToggleSize.base,
     this.disabled = false,
     this.semanticLabel,
-  })  : multiple = false,
-        values = const [],
-        onValuesChange = null;
+  }) : multiple = false,
+       values = const [],
+       onValuesChange = null;
 
   /// Any number of items pressed.
   ///
@@ -265,10 +271,10 @@ class KumoToggleGroup<T> extends StatefulWidget {
     this.size = KumoToggleSize.base,
     this.disabled = false,
     this.semanticLabel,
-  })  : multiple = true,
-        value = null,
-        onValueChange = null,
-        allowDeselect = true;
+  }) : multiple = true,
+       value = null,
+       onValueChange = null,
+       allowDeselect = true;
 
   final List<KumoToggleGroupItem<T>> items;
 
@@ -347,7 +353,14 @@ class _KumoToggleGroupState<T> extends State<KumoToggleGroup<T>> with TickerProv
     final v = widget.items[i].value;
     if (widget.multiple) {
       final on = widget.values.contains(v);
-      widget.onValuesChange!(on ? [for (final x in widget.values) if (x != v) x] : [...widget.values, v]);
+      widget.onValuesChange!(
+        on
+            ? [
+                for (final x in widget.values)
+                  if (x != v) x,
+              ]
+            : [...widget.values, v],
+      );
     } else if (widget.value == v) {
       if (widget.allowDeselect) widget.onValueChange!(null);
     } else {
@@ -362,7 +375,10 @@ class _KumoToggleGroupState<T> extends State<KumoToggleGroup<T>> with TickerProv
     _focus.sync(items.length, 'KumoToggleGroup');
     var tabStop = _tabStop;
     if (tabStop == null || tabStop >= items.length || !_enabled(tabStop)) {
-      final pressed = [for (var i = 0; i < items.length; i++) if (_isOn(i) && _enabled(i)) i];
+      final pressed = [
+        for (var i = 0; i < items.length; i++)
+          if (_isOn(i) && _enabled(i)) i,
+      ];
       tabStop = pressed.isNotEmpty ? pressed.first : (RovingFocus.first(items.length, _enabled) ?? 0);
     }
     _focus.setTabStop(tabStop);
@@ -424,9 +440,7 @@ class _KumoToggleGroupState<T> extends State<KumoToggleGroup<T>> with TickerProv
             radius: size.radius,
             touchPad: touchPad,
             minWidth: square ? math.max(size.height, kumo.minTapTarget) : 0,
-            padding: square
-                ? EdgeInsetsDirectional.zero
-                : EdgeInsetsDirectional.symmetric(horizontal: size.paddingX),
+            padding: square ? EdgeInsetsDirectional.zero : EdgeInsetsDirectional.symmetric(horizontal: size.paddingX),
             child: slides ? null : content,
           );
           if (!enabled) surface = Opacity(opacity: 0.5, child: surface);

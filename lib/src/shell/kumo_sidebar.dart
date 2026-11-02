@@ -191,7 +191,8 @@ class KumoSidebarHost extends InheritedWidget {
   /// Called after a navigation row is pressed.
   final VoidCallback? onNavigate;
 
-  static KumoSidebarHost? maybeOf(BuildContext context) => context.dependOnInheritedWidgetOfExactType<KumoSidebarHost>();
+  static KumoSidebarHost? maybeOf(BuildContext context) =>
+      context.dependOnInheritedWidgetOfExactType<KumoSidebarHost>();
 
   @override
   bool updateShouldNotify(KumoSidebarHost oldWidget) =>
@@ -340,8 +341,7 @@ class _KumoSidebarState extends State<KumoSidebar> with SingleTickerProviderStat
   void initState() {
     super.initState();
     _ownOpen = widget.initialOpen;
-    _collapse = AnimationController(vsync: this, duration: widget.animationDuration)
-      ..addStatusListener(_onStatus);
+    _collapse = AnimationController(vsync: this, duration: widget.animationDuration)..addStatusListener(_onStatus);
     _curved = CurvedAnimation(parent: _collapse, curve: _kSidebarCurve);
   }
 
@@ -437,7 +437,11 @@ class _KumoSidebarState extends State<KumoSidebar> with SingleTickerProviderStat
         data: mq.removePadding(removeTop: true, removeBottom: true, removeLeft: true, removeRight: true),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [?widget.header, Expanded(child: body), ?widget.footer],
+          children: [
+            ?widget.header,
+            Expanded(child: body),
+            ?widget.footer,
+          ],
         ),
       ),
     );
@@ -446,7 +450,10 @@ class _KumoSidebarState extends State<KumoSidebar> with SingleTickerProviderStat
     // icon defaults instead of relying on a Scaffold above it.
     panel = DefaultTextStyle(
       style: kumo.text(),
-      child: IconTheme(data: IconThemeData(color: c.textDefault, size: 16), child: panel),
+      child: IconTheme(
+        data: IconThemeData(color: c.textDefault, size: 16),
+        child: panel,
+      ),
     );
 
     final expandedWidth = drawer ? (host?.drawerWidth ?? widget.width) : widget.width;
@@ -457,14 +464,15 @@ class _KumoSidebarState extends State<KumoSidebar> with SingleTickerProviderStat
     };
 
     final startSide = widget.side == KumoSidebarSide.start;
-    final showBorder = widget.variant == KumoSidebarVariant.sidebar &&
+    final showBorder =
+        widget.variant == KumoSidebarVariant.sidebar &&
         !(drawer && host?.drawerWidth != null && host!.drawerWidth! >= mq.size.width);
     final edge = BorderSide(color: c.line);
     final Border? border = !showBorder
         ? null
         : startSide != rtl
-            ? Border(right: edge)
-            : Border(left: edge);
+        ? Border(right: edge)
+        : Border(left: edge);
 
     final radius = floating ? BorderRadius.circular(KumoRadius.lg) : BorderRadius.zero;
     final resizable = widget.onWidthChange != null && !drawer && widget.collapsible != KumoSidebarCollapseMode.none;
@@ -600,7 +608,9 @@ class KumoSidebarHeader extends StatelessWidget {
     return Container(
       constraints: const BoxConstraints(minHeight: 58),
       padding: padding ?? const EdgeInsets.symmetric(horizontal: KumoSpace.s3),
-      decoration: BoxDecoration(border: Border(bottom: BorderSide(color: c.line))),
+      decoration: BoxDecoration(
+        border: Border(bottom: BorderSide(color: c.line)),
+      ),
       child: Row(spacing: KumoSpace.s1, children: children),
     );
   }
@@ -1251,9 +1261,12 @@ class _SidebarRow extends StatelessWidget {
 
     Widget content(KumoPressState state) {
       final fg = state.focused ? c.textStrong : c.textDefault;
-      final style = kumo.text(size: KumoTextSize.sm, weight: size.weight, color: KumoColor.textDefault).copyWith(color: fg);
+      final style = kumo
+          .text(size: KumoTextSize.sm, weight: size.weight, color: KumoColor.textDefault)
+          .copyWith(color: fg);
       final leading =
-          iconWidget ?? (icon == null ? null : KumoIcon(icon!, size: size.iconSize, dangerouslySetColor: fg.withValues(alpha: 0.4)));
+          iconWidget ??
+          (icon == null ? null : KumoIcon(icon!, size: size.iconSize, dangerouslySetColor: fg.withValues(alpha: 0.4)));
       final trail = trailingBuilder?.call(state.active) ?? trailing;
       return Row(
         spacing: leading == null ? 0 : KumoSpace.s3,
@@ -1299,10 +1312,8 @@ class _SidebarRow extends StatelessWidget {
             row = AnimatedBuilder(
               animation: collapse,
               child: row,
-              builder: (context, child) => Transform.translate(
-                offset: Offset(-3 * collapse.value * (rtl ? -1 : 1), 0),
-                child: child,
-              ),
+              builder: (context, child) =>
+                  Transform.translate(offset: Offset(-3 * collapse.value * (rtl ? -1 : 1), 0), child: child),
             );
           }
           return ConstrainedBox(
@@ -1361,10 +1372,7 @@ class _SidebarRow extends StatelessWidget {
           child: child,
           builder: (context, child) => Align(
             alignment: AlignmentDirectional.centerStart,
-            child: SizedBox(
-              width: lerpDouble(full, math.min(full, _kRailItemWidth), collapse.value),
-              child: child,
-            ),
+            child: SizedBox(width: lerpDouble(full, math.min(full, _kRailItemWidth), collapse.value), child: child),
           ),
         );
       },
@@ -1455,13 +1463,7 @@ class KumoSidebarMenuSub extends StatelessWidget {
             padding: const EdgeInsetsDirectional.only(start: 28),
             child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, spacing: KumoSpace.px, children: children),
           ),
-          PositionedDirectional(
-            start: 19,
-            top: 1,
-            bottom: 1,
-            width: 1,
-            child: ColoredBox(color: c.line),
-          ),
+          PositionedDirectional(start: 19, top: 1, bottom: 1, width: 1, child: ColoredBox(color: c.line)),
         ],
       ),
     );
@@ -1676,7 +1678,10 @@ class _KumoSidebarCollapsibleState extends State<KumoSidebarCollapsible> with Si
 
     final content = AnimatedBuilder(
       animation: _curved,
-      child: KeyedSubtree(key: _contentKey, child: KumoSidebarMenuSub(children: widget.children)),
+      child: KeyedSubtree(
+        key: _contentKey,
+        child: KumoSidebarMenuSub(children: widget.children),
+      ),
       builder: (context, child) {
         final value = _curved.value;
         final hidden = value == 0;
@@ -1776,7 +1781,10 @@ class KumoSidebarFooter extends StatelessWidget {
     return Container(
       constraints: const BoxConstraints(minHeight: 48),
       padding: const EdgeInsets.symmetric(horizontal: KumoSpace.s4),
-      decoration: BoxDecoration(color: c.base, border: Border(top: BorderSide(color: c.line))),
+      decoration: BoxDecoration(
+        color: c.base,
+        border: Border(top: BorderSide(color: c.line)),
+      ),
       child: AnimatedBuilder(
         animation: collapse,
         builder: (context, child) => Transform.translate(
@@ -1819,8 +1827,8 @@ class KumoSidebarTrigger extends StatelessWidget {
     final label = data?.drawer ?? false
         ? strings.closeSidebar
         : open
-            ? (collapseLabel ?? context.kumoStrings.collapseSidebar)
-            : (expandLabel ?? context.kumoStrings.expandSidebar);
+        ? (collapseLabel ?? context.kumoStrings.collapseSidebar)
+        : (expandLabel ?? context.kumoStrings.expandSidebar);
     final collapse = data?.collapse ?? kAlwaysDismissedAnimation;
     final rtl = Directionality.of(context) == TextDirection.rtl;
     return KumoPressable(
@@ -1879,10 +1887,7 @@ class _PanelIconPainter extends CustomPainter {
       ..strokeWidth = 1.5
       ..strokeCap = StrokeCap.round
       ..color = color;
-    canvas.drawRRect(
-      RRect.fromLTRBR(2.75, 3.75, 21.25, 20.25, const Radius.circular(2.97)),
-      paint,
-    );
+    canvas.drawRRect(RRect.fromLTRBR(2.75, 3.75, 21.25, 20.25, const Radius.circular(2.97)), paint);
     final dx = lerpDouble(1, 10.5, progress)!;
     canvas.drawLine(Offset(6.25 + dx, 7.25), Offset(6.25 + dx, 16.75), paint);
     canvas.restore();
@@ -1942,15 +1947,15 @@ class KumoSidebarLoading extends StatelessWidget {
     final c = context.kumo.colors;
     final collapse = KumoSidebar.maybeOf(context)?.collapse ?? kAlwaysDismissedAnimation;
     Widget bar(double width, double height, double radius) => Container(
-          width: width,
-          height: height,
-          decoration: BoxDecoration(color: c.fill, borderRadius: BorderRadius.circular(radius)),
-        );
+      width: width,
+      height: height,
+      decoration: BoxDecoration(color: c.fill, borderRadius: BorderRadius.circular(radius)),
+    );
     Widget fading(Widget child) => AnimatedBuilder(
-          animation: collapse,
-          child: child,
-          builder: (context, child) => Opacity(opacity: 1 - collapse.value, child: child),
-        );
+      animation: collapse,
+      child: child,
+      builder: (context, child) => Opacity(opacity: 1 - collapse.value, child: child),
+    );
     return Semantics(
       label: label ?? context.kumoStrings.loading,
       liveRegion: true,
@@ -2254,9 +2259,8 @@ class _ResizeHandleState extends State<_ResizeHandle> {
       child: Focus(
         focusNode: _focus,
         onKeyEvent: _onKey,
-        onFocusChange: (v) => setState(
-          () => _focused = v && FocusManager.instance.highlightMode == FocusHighlightMode.traditional,
-        ),
+        onFocusChange: (v) =>
+            setState(() => _focused = v && FocusManager.instance.highlightMode == FocusHighlightMode.traditional),
         child: MouseRegion(
           cursor: SystemMouseCursors.resizeColumn,
           onEnter: (_) => setState(() => _hovered = true),

@@ -7,12 +7,14 @@ import '../demo.dart';
 /// other categories are built on. All resource names are sample data.
 final KumoDemoCategory foundationCategory = KumoDemoCategory(
   title: 'Foundation',
-  description: 'Buttons, text, loaders, tooltips, cards and the overlay primitives.',
+  description:
+      'Buttons, text, loaders, tooltips, cards and the overlay primitives.',
   icon: KumoIcons.cube,
   demos: [
     KumoDemo(
       title: 'KumoButton',
-      description: 'Six variants, four sizes, icon-only shapes, loading and disabled.',
+      description:
+          'Six variants, four sizes, icon-only shapes, loading and disabled.',
       docPath: 'doc/components/KumoButton.md',
       builder: (_) => const _ButtonDemo(),
     ),
@@ -30,7 +32,8 @@ final KumoDemoCategory foundationCategory = KumoDemoCategory(
     ),
     KumoDemo(
       title: 'KumoTooltip',
-      description: 'Hover, keyboard focus or long press a control to see its label.',
+      description:
+          'Hover, keyboard focus or long press a control to see its label.',
       docPath: 'doc/components/KumoTooltip.md',
       builder: (_) => const _TooltipDemo(),
     ),
@@ -42,13 +45,15 @@ final KumoDemoCategory foundationCategory = KumoDemoCategory(
     ),
     KumoDemo(
       title: 'KumoAnchoredOverlay',
-      description: 'A custom popup that flips, follows its trigger and scales from it.',
+      description:
+          'A custom popup that flips, follows its trigger and scales from it.',
       docPath: 'doc/components/KumoAnchoredOverlay.md',
       builder: (_) => const _OverlayDemo(),
     ),
     KumoDemo(
       title: 'KumoSheet',
-      description: 'A bottom sheet that follows the finger and snaps by velocity.',
+      description:
+          'A bottom sheet that follows the finger and snaps by velocity.',
       docPath: 'doc/components/KumoSheet.md',
       builder: (_) => const _SheetDemo(),
     ),
@@ -81,48 +86,115 @@ class _ButtonDemoState extends State<_ButtonDemo> {
         DemoSection(
           title: 'Variants',
           caption: 'Pressed $_presses times',
-          child: Wrap(spacing: KumoSpace.s2, runSpacing: KumoSpace.s2, children: [
-            KumoButton(label: 'Create Worker', variant: KumoButtonVariant.primary, onPress: () => setState(() => _presses++)),
-            KumoButton(label: 'Cancel', onPress: () => setState(() => _presses++)),
-            KumoButton(label: 'Edit', variant: KumoButtonVariant.ghost, onPress: () => setState(() => _presses++)),
-            KumoButton(label: 'Filter', variant: KumoButtonVariant.outline, onPress: () => setState(() => _presses++)),
-            KumoButton(label: 'Revoke token', variant: KumoButtonVariant.secondaryDestructive, onPress: () => setState(() => _presses++)),
-            KumoButton(label: 'Delete zone', variant: KumoButtonVariant.destructive, onPress: () => setState(() => _presses++)),
-          ]),
+          child: Wrap(
+            spacing: KumoSpace.s2,
+            runSpacing: KumoSpace.s2,
+            children: [
+              KumoButton(
+                label: 'Create Worker',
+                variant: KumoButtonVariant.primary,
+                onPress: () => setState(() => _presses++),
+              ),
+              KumoButton(
+                label: 'Cancel',
+                onPress: () => setState(() => _presses++),
+              ),
+              KumoButton(
+                label: 'Edit',
+                variant: KumoButtonVariant.ghost,
+                onPress: () => setState(() => _presses++),
+              ),
+              KumoButton(
+                label: 'Filter',
+                variant: KumoButtonVariant.outline,
+                onPress: () => setState(() => _presses++),
+              ),
+              KumoButton(
+                label: 'Revoke token',
+                variant: KumoButtonVariant.secondaryDestructive,
+                onPress: () => setState(() => _presses++),
+              ),
+              KumoButton(
+                label: 'Delete zone',
+                variant: KumoButtonVariant.destructive,
+                onPress: () => setState(() => _presses++),
+              ),
+            ],
+          ),
         ),
         DemoSection(
           title: 'Sizes',
-          child: Wrap(spacing: KumoSpace.s2, runSpacing: KumoSpace.s2, crossAxisAlignment: WrapCrossAlignment.center, children: [
-            for (final s in KumoButtonSize.values) KumoButton(label: 'Size ${s.name}', size: s, onPress: () {}),
-          ]),
+          child: Wrap(
+            spacing: KumoSpace.s2,
+            runSpacing: KumoSpace.s2,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            children: [
+              for (final s in KumoButtonSize.values)
+                KumoButton(label: 'Size ${s.name}', size: s, onPress: () {}),
+            ],
+          ),
         ),
         DemoSection(
           title: 'Icons',
-          child: Wrap(spacing: KumoSpace.s2, runSpacing: KumoSpace.s2, children: [
-            KumoButton(label: 'Add record', icon: KumoIcons.plus, onPress: () {}),
-            KumoButton(label: 'Actions', endIcon: KumoIcons.caretDown, onPress: () {}),
-            KumoButton(icon: KumoIcons.copy, shape: KumoButtonShape.square, title: 'Copy token', onPress: () {}),
-            KumoButton(icon: KumoIcons.gear, shape: KumoButtonShape.circle, title: 'Settings', onPress: () {}),
-            KumoRefreshButton(onPress: () {}),
-          ]),
+          child: Wrap(
+            spacing: KumoSpace.s2,
+            runSpacing: KumoSpace.s2,
+            children: [
+              KumoButton(
+                label: 'Add record',
+                icon: KumoIcons.plus,
+                onPress: () {},
+              ),
+              KumoButton(
+                label: 'Actions',
+                endIcon: KumoIcons.caretDown,
+                onPress: () {},
+              ),
+              KumoButton(
+                icon: KumoIcons.copy,
+                shape: KumoButtonShape.square,
+                title: 'Copy token',
+                onPress: () {},
+              ),
+              KumoButton(
+                icon: KumoIcons.gear,
+                shape: KumoButtonShape.circle,
+                title: 'Settings',
+                onPress: () {},
+              ),
+              KumoRefreshButton(onPress: () {}),
+            ],
+          ),
         ),
         DemoSection(
           title: 'Loading and disabled',
           caption: 'The label stays while loading, so the width does not jump.',
-          child: Wrap(spacing: KumoSpace.s2, runSpacing: KumoSpace.s2, children: [
-            KumoButton(
-              label: _deploying ? 'Deploying' : 'Deploy',
-              variant: KumoButtonVariant.primary,
-              loading: _deploying,
-              onPress: _deploy,
-            ),
-            const KumoButton(label: 'Disabled'),
-            const KumoButton(label: 'Disabled primary', variant: KumoButtonVariant.primary),
-          ]),
+          child: Wrap(
+            spacing: KumoSpace.s2,
+            runSpacing: KumoSpace.s2,
+            children: [
+              KumoButton(
+                label: _deploying ? 'Deploying' : 'Deploy',
+                variant: KumoButtonVariant.primary,
+                loading: _deploying,
+                onPress: _deploy,
+              ),
+              const KumoButton(label: 'Disabled'),
+              const KumoButton(
+                label: 'Disabled primary',
+                variant: KumoButtonVariant.primary,
+              ),
+            ],
+          ),
         ),
         DemoSection(
           title: 'Block',
-          child: KumoButton(label: 'Deploy to production', variant: KumoButtonVariant.primary, block: true, onPress: () {}),
+          child: KumoButton(
+            label: 'Deploy to production',
+            variant: KumoButtonVariant.primary,
+            block: true,
+            onPress: () {},
+          ),
         ),
       ],
     );
@@ -139,13 +211,24 @@ class _TextDemo extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         spacing: KumoSpace.s2,
         children: [
-          KumoText('Workers', variant: KumoTextVariant.heading, size: KumoTextSize.lg),
+          KumoText(
+            'Workers',
+            variant: KumoTextVariant.heading,
+            size: KumoTextSize.lg,
+          ),
           KumoText('Recent deployments', variant: KumoTextVariant.heading),
           KumoText('image-resizer was deployed to production.'),
           KumoText('Deployed by the CI token', bold: true),
-          KumoText('3 minutes ago', variant: KumoTextVariant.secondary, size: KumoTextSize.sm),
+          KumoText(
+            '3 minutes ago',
+            variant: KumoTextVariant.secondary,
+            size: KumoTextSize.sm,
+          ),
           KumoText('Route matched', variant: KumoTextVariant.success),
-          KumoText('Build failed: missing binding', variant: KumoTextVariant.error),
+          KumoText(
+            'Build failed: missing binding',
+            variant: KumoTextVariant.error,
+          ),
           KumoText('wrangler.toml', variant: KumoTextVariant.mono),
           KumoText('a1b2c3d4', variant: KumoTextVariant.monoSecondary),
         ],
@@ -166,7 +249,12 @@ class _LoaderDemo extends StatelessWidget {
           KumoLoader(size: KumoLoaderSize.sm),
           KumoLoader(),
           KumoLoader(size: KumoLoaderSize.lg),
-          Expanded(child: KumoText('Loading deployments', variant: KumoTextVariant.secondary)),
+          Expanded(
+            child: KumoText(
+              'Loading deployments',
+              variant: KumoTextVariant.secondary,
+            ),
+          ),
         ],
       ),
     );
@@ -178,18 +266,25 @@ class _TooltipDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(spacing: KumoSpace.s2, runSpacing: KumoSpace.s2, children: [
-      for (final side in KumoSide.values)
-        KumoTooltip(
-          content: 'Opens on the ${side.name}',
-          side: side,
-          child: KumoButton(label: side.name, onPress: () {}),
+    return Wrap(
+      spacing: KumoSpace.s2,
+      runSpacing: KumoSpace.s2,
+      children: [
+        for (final side in KumoSide.values)
+          KumoTooltip(
+            content: 'Opens on the ${side.name}',
+            side: side,
+            child: KumoButton(label: side.name, onPress: () {}),
+          ),
+        const KumoTooltip(
+          content: 'Served from the edge cache',
+          child: Padding(
+            padding: EdgeInsets.all(KumoSpace.s2),
+            child: KumoIcon(KumoIcons.info, semanticLabel: 'About caching'),
+          ),
         ),
-      const KumoTooltip(
-        content: 'Served from the edge cache',
-        child: Padding(padding: EdgeInsets.all(KumoSpace.s2), child: KumoIcon(KumoIcons.info, semanticLabel: 'About caching')),
-      ),
-    ]);
+      ],
+    );
   }
 }
 
@@ -215,26 +310,43 @@ class _LayerCardDemoState extends State<_LayerCardDemo> {
             spacing: KumoSpace.s1_5,
             children: [
               KumoText('Web Analytics', variant: KumoTextVariant.heading),
-              KumoText('Measure site traffic without changing your code.', variant: KumoTextVariant.secondary),
+              KumoText(
+                'Measure site traffic without changing your code.',
+                variant: KumoTextVariant.secondary,
+              ),
             ],
           ),
         ),
-        KumoLayerCard.layered(children: [
-          KumoLayerCardSecondary(
-            trailing: KumoButton(label: 'Configure', size: KumoButtonSize.sm, onPress: () {}),
-            child: const Text('Caching'),
-          ),
-          const KumoLayerCardPrimary(child: KumoText('Cache static assets at the edge for 4 hours.')),
-        ]),
+        KumoLayerCard.layered(
+          children: [
+            KumoLayerCardSecondary(
+              trailing: KumoButton(
+                label: 'Configure',
+                size: KumoButtonSize.sm,
+                onPress: () {},
+              ),
+              child: const Text('Caching'),
+            ),
+            const KumoLayerCardPrimary(
+              child: KumoText('Cache static assets at the edge for 4 hours.'),
+            ),
+          ],
+        ),
         KumoLayerCard(
           onPress: () => setState(() => _opened++),
           semanticLabel: 'Open image-resizer',
-          child: Row(children: [
-            const Expanded(child: KumoText('image-resizer', bold: true)),
-            KumoText('Opened $_opened times', variant: KumoTextVariant.secondary, size: KumoTextSize.sm),
-            const SizedBox(width: KumoSpace.s2),
-            const KumoIcon(KumoIcons.caretRight, color: KumoColor.textSubtle),
-          ]),
+          child: Row(
+            children: [
+              const Expanded(child: KumoText('image-resizer', bold: true)),
+              KumoText(
+                'Opened $_opened times',
+                variant: KumoTextVariant.secondary,
+                size: KumoTextSize.sm,
+              ),
+              const SizedBox(width: KumoSpace.s2),
+              const KumoIcon(KumoIcons.caretRight, color: KumoColor.textSubtle),
+            ],
+          ),
         ),
       ],
     );
@@ -270,12 +382,18 @@ class _OverlayDemoState extends State<_OverlayDemo> {
               spacing: KumoSpace.s1_5,
               children: [
                 const KumoText('Popup', variant: KumoTextVariant.heading),
-                KumoText('This popup sits on the ${placement.side.name} side. Tap outside or press Escape to close.', variant: KumoTextVariant.secondary),
+                KumoText(
+                  'This popup sits on the ${placement.side.name} side. Tap outside or press Escape to close.',
+                  variant: KumoTextVariant.secondary,
+                ),
               ],
             ),
           ),
         ),
-        child: KumoButton(label: _open ? 'Close popup' : 'Open popup', onPress: () => setState(() => _open = !_open)),
+        child: KumoButton(
+          label: _open ? 'Close popup' : 'Open popup',
+          onPress: () => setState(() => _open = !_open),
+        ),
       ),
     );
   }
@@ -297,7 +415,12 @@ class _SheetDemoState extends State<_SheetDemo> {
       context: context,
       semanticLabel: 'Choose a region',
       builder: (context) => Padding(
-        padding: const EdgeInsets.fromLTRB(KumoSpace.s4, KumoSpace.s2, KumoSpace.s4, KumoSpace.s4),
+        padding: const EdgeInsets.fromLTRB(
+          KumoSpace.s4,
+          KumoSpace.s2,
+          KumoSpace.s4,
+          KumoSpace.s4,
+        ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -305,7 +428,11 @@ class _SheetDemoState extends State<_SheetDemo> {
           children: [
             const Padding(
               padding: EdgeInsets.only(bottom: KumoSpace.s2),
-              child: KumoText('Choose a region', variant: KumoTextVariant.heading, headingLevel: 2),
+              child: KumoText(
+                'Choose a region',
+                variant: KumoTextVariant.heading,
+                headingLevel: 2,
+              ),
             ),
             for (final r in regions)
               KumoMenuRow(
@@ -326,8 +453,17 @@ class _SheetDemoState extends State<_SheetDemo> {
     return Row(
       spacing: KumoSpace.s3,
       children: [
-        KumoButton(label: 'Choose region', icon: KumoIcons.globe, onPress: _open),
-        Expanded(child: KumoText(_region == null ? 'No region chosen' : 'Region: $_region', variant: KumoTextVariant.secondary)),
+        KumoButton(
+          label: 'Choose region',
+          icon: KumoIcons.globe,
+          onPress: _open,
+        ),
+        Expanded(
+          child: KumoText(
+            _region == null ? 'No region chosen' : 'Region: $_region',
+            variant: KumoTextVariant.secondary,
+          ),
+        ),
       ],
     );
   }

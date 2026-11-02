@@ -32,10 +32,12 @@ class _HostState extends State<_Host> {
           child: SizedBox(
             width: 150,
             height: 100,
-            child: Column(children: [
-              Text('Popup ${placement.side.name}'),
-              KumoButton(label: 'Inside', onPress: () {}),
-            ]),
+            child: Column(
+              children: [
+                Text('Popup ${placement.side.name}'),
+                KumoButton(label: 'Inside', onPress: () {}),
+              ],
+            ),
           ),
         ),
         child: KumoButton(label: 'Trigger', onPress: () => setState(() => open = !open)),
@@ -50,7 +52,10 @@ void main() {
     await tester.tap(find.text('Trigger'));
     await tester.pumpAndSettle();
     expect(find.text('Popup bottom'), findsOneWidget);
-    expect(tester.getTopLeft(find.byType(KumoPopupSurface)).dy, greaterThan(tester.getBottomLeft(find.text('Trigger')).dy));
+    expect(
+      tester.getTopLeft(find.byType(KumoPopupSurface)).dy,
+      greaterThan(tester.getBottomLeft(find.text('Trigger')).dy),
+    );
     await tester.tap(find.text('Trigger'));
     await tester.pumpAndSettle();
     expect(find.textContaining('Popup'), findsNothing);
@@ -101,7 +106,9 @@ void main() {
     await tester.tap(find.text('Trigger'));
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 16));
-    final scale = tester.widgetList<Transform>(find.ancestor(of: find.byType(KumoPopupSurface), matching: find.byType(Transform))).first;
+    final scale = tester
+        .widgetList<Transform>(find.ancestor(of: find.byType(KumoPopupSurface), matching: find.byType(Transform)))
+        .first;
     expect(scale.transform.storage[0], lessThan(1));
     expect(scale.alignment, const Alignment(0, -1));
     await tester.pumpAndSettle();
@@ -112,7 +119,9 @@ void main() {
     await tester.tap(find.text('Trigger'));
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 16));
-    final still = tester.widgetList<Transform>(find.ancestor(of: find.byType(KumoPopupSurface), matching: find.byType(Transform))).first;
+    final still = tester
+        .widgetList<Transform>(find.ancestor(of: find.byType(KumoPopupSurface), matching: find.byType(Transform)))
+        .first;
     expect(still.transform.storage[0], 1);
   });
 
@@ -177,7 +186,10 @@ void main() {
         Builder(
           builder: (context) => KumoButton(
             label: 'Open',
-            onPress: () => showKumoSheet<void>(context: context, builder: (_) => const SizedBox(height: 300, child: Text('Body'))),
+            onPress: () => showKumoSheet<void>(
+              context: context,
+              builder: (_) => const SizedBox(height: 300, child: Text('Body')),
+            ),
           ),
         ),
       );
@@ -199,14 +211,17 @@ void main() {
       Builder(
         builder: (context) => KumoButton(
           label: 'Open',
-          onPress: () => Navigator.of(context).push(KumoDialogRoute<void>(builder: (_) => const Center(child: Text('Dialog')))),
+          onPress: () =>
+              Navigator.of(context).push(KumoDialogRoute<void>(builder: (_) => const Center(child: Text('Dialog')))),
         ),
       ),
     );
     await tester.tap(find.text('Open'));
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 50));
-    final scale = tester.widget<ScaleTransition>(find.ancestor(of: find.text('Dialog'), matching: find.byType(ScaleTransition)).first);
+    final scale = tester.widget<ScaleTransition>(
+      find.ancestor(of: find.text('Dialog'), matching: find.byType(ScaleTransition)).first,
+    );
     expect(scale.scale.value, inInclusiveRange(0.9, 1.0));
     await tester.pumpAndSettle();
     await tester.tapAt(const Offset(10, 10));

@@ -325,7 +325,9 @@ class _KumoAppShellState extends State<KumoAppShell> with SingleTickerProviderSt
 
   KumoAppShellLayout _layoutFor(double width) {
     if (widget.layout != null) return widget.layout!;
-    if (widget.sidebar == null) return width < widget.narrowBreakpoint ? KumoAppShellLayout.narrow : KumoAppShellLayout.wide;
+    if (widget.sidebar == null) {
+      return width < widget.narrowBreakpoint ? KumoAppShellLayout.narrow : KumoAppShellLayout.wide;
+    }
     if (width < widget.narrowBreakpoint) return KumoAppShellLayout.narrow;
     if (width < widget.wideBreakpoint) return KumoAppShellLayout.medium;
     return KumoAppShellLayout.wide;
@@ -333,44 +335,46 @@ class _KumoAppShellState extends State<KumoAppShell> with SingleTickerProviderSt
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
-      final layout = _layoutFor(constraints.maxWidth);
-      if (_lastLayout != layout) {
-        final leftNarrow = _lastLayout == KumoAppShellLayout.narrow;
-        _lastLayout = layout;
-        _railExpanded = false;
-        if (leftNarrow && (_drawerOpen || _drawer.value != 0)) {
-          _drawer.value = 0;
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            if (mounted) _setDrawerOpen(false);
-          });
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final layout = _layoutFor(constraints.maxWidth);
+        if (_lastLayout != layout) {
+          final leftNarrow = _lastLayout == KumoAppShellLayout.narrow;
+          _lastLayout = layout;
+          _railExpanded = false;
+          if (leftNarrow && (_drawerOpen || _drawer.value != 0)) {
+            _drawer.value = 0;
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              if (mounted) _setDrawerOpen(false);
+            });
+          }
         }
-      }
-      final data = KumoAppShellData(
-        layout: layout,
-        drawerOpen: _drawerOpen && layout == KumoAppShellLayout.narrow,
-        openDrawer: _openDrawer,
-        closeDrawer: _closeDrawer,
-        toggleSidebar: _toggleSidebar,
-      );
-      final frame = layout == KumoAppShellLayout.narrow
-          ? _buildNarrow(context, constraints)
-          : _buildPersistent(context, layout);
-      // The shell is a page: it sets up its own text and icon defaults so a
-      // route with no Scaffold above it never falls back to Material's
-      // debug text style (the yellow double underline).
-      final kumo = context.kumo;
-      return _KumoAppShellScope(
-        data: data,
-        child: DefaultTextStyle(
-          style: kumo.text(),
-          child: IconTheme(
-            data: IconThemeData(color: kumo.colors.textDefault, size: 16),
-            child: ColoredBox(color: kumo.colors.canvas, child: frame),
+        final data = KumoAppShellData(
+          layout: layout,
+          drawerOpen: _drawerOpen && layout == KumoAppShellLayout.narrow,
+          openDrawer: _openDrawer,
+          closeDrawer: _closeDrawer,
+          toggleSidebar: _toggleSidebar,
+        );
+        final frame = layout == KumoAppShellLayout.narrow
+            ? _buildNarrow(context, constraints)
+            : _buildPersistent(context, layout);
+        // The shell is a page: it sets up its own text and icon defaults so a
+        // route with no Scaffold above it never falls back to Material's
+        // debug text style (the yellow double underline).
+        final kumo = context.kumo;
+        return _KumoAppShellScope(
+          data: data,
+          child: DefaultTextStyle(
+            style: kumo.text(),
+            child: IconTheme(
+              data: IconThemeData(color: kumo.colors.textDefault, size: 16),
+              child: ColoredBox(color: kumo.colors.canvas, child: frame),
+            ),
           ),
-        ),
-      );
-    });
+        );
+      },
+    );
   }
 
   Widget _body(BuildContext context, {required bool top, required bool bottom}) {
@@ -466,7 +470,10 @@ class _KumoAppShellState extends State<KumoAppShell> with SingleTickerProviderSt
       onOpenChange: (_) {},
       onClose: _closeDrawer,
       onNavigate: widget.closeDrawerOnNavigate ? _closeDrawer : null,
-      child: SizedBox(width: drawerWidth, child: KeyedSubtree(key: _sidebarKey, child: sidebar)),
+      child: SizedBox(
+        width: drawerWidth,
+        child: KeyedSubtree(key: _sidebarKey, child: sidebar),
+      ),
     );
 
     final layer = AnimatedBuilder(
@@ -580,14 +587,20 @@ class _ShellTopBar extends StatelessWidget {
     final top = MediaQuery.paddingOf(context).top;
     return Container(
       padding: EdgeInsets.only(top: top),
-      decoration: BoxDecoration(color: c.base, border: Border(bottom: BorderSide(color: c.line))),
+      decoration: BoxDecoration(
+        color: c.base,
+        border: Border(bottom: BorderSide(color: c.line)),
+      ),
       child: ConstrainedBox(
         constraints: const BoxConstraints(minHeight: 48),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: KumoSpace.s3, vertical: KumoSpace.s1),
           child: Row(
             spacing: KumoSpace.s2,
-            children: [?leading, Expanded(child: child ?? const SizedBox.shrink())],
+            children: [
+              ?leading,
+              Expanded(child: child ?? const SizedBox.shrink()),
+            ],
           ),
         ),
       ),
@@ -604,7 +617,10 @@ class _ShellBottomBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final c = context.kumo.colors;
     return DecoratedBox(
-      decoration: BoxDecoration(color: c.base, border: Border(top: BorderSide(color: c.line))),
+      decoration: BoxDecoration(
+        color: c.base,
+        border: Border(top: BorderSide(color: c.line)),
+      ),
       child: SafeArea(top: false, child: child),
     );
   }

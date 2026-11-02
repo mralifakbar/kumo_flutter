@@ -11,54 +11,63 @@ import '../demo.dart';
 /// is sample data.
 final KumoDemoCategory displayCategory = KumoDemoCategory(
   title: 'Display',
-  description: 'Badges, empty states, meters, progress, avatars, uptime trackers and key chips.',
+  description:
+      'Badges, empty states, meters, progress, avatars, uptime trackers and key chips.',
   icon: KumoIcons.tag,
   demos: [
     KumoDemo(
       title: 'KumoBadge',
-      description: 'Semantic, color and subtle variants, dot status, icons and a linked badge.',
+      description:
+          'Semantic, color and subtle variants, dot status, icons and a linked badge.',
       docPath: 'doc/components/KumoBadge.md',
       builder: (_) => const _BadgeDemo(),
     ),
     KumoDemo(
       title: 'KumoEmpty',
-      description: 'Three sizes, a copyable command, and a list that moves between empty, loading, error and filled.',
+      description:
+          'Three sizes, a copyable command, and a list that moves between empty, loading, error and filled.',
       docPath: 'doc/components/KumoEmpty.md',
       builder: (_) => const _EmptyDemo(),
     ),
     KumoDemo(
       title: 'KumoMeter',
-      description: 'Quota meters with custom values and thresholds that change tone and add a status line.',
+      description:
+          'Quota meters with custom values and thresholds that change tone and add a status line.',
       docPath: 'doc/components/KumoMeter.md',
       builder: (_) => const _MeterDemo(),
     ),
     KumoDemo(
       title: 'KumoSkeletonLine',
-      description: 'Static placeholder lines, with the shimmer tied to a loading flag.',
+      description:
+          'Static placeholder lines, with the shimmer tied to a loading flag.',
       docPath: 'doc/components/KumoSkeletonLine.md',
       builder: (_) => const _SkeletonDemo(),
     ),
     KumoDemo(
       title: 'KumoProgress',
-      description: 'Linear and circular progress, indeterminate only while preparing.',
+      description:
+          'Linear and circular progress, indeterminate only while preparing.',
       docPath: 'doc/components/KumoProgress.md',
       builder: (_) => const _ProgressDemo(),
     ),
     KumoDemo(
       title: 'KumoAvatar',
-      description: 'Initials fallback, sizes, shapes, presence and an overlapping group.',
+      description:
+          'Initials fallback, sizes, shapes, presence and an overlapping group.',
       docPath: 'doc/components/KumoAvatar.md',
       builder: (_) => const _AvatarDemo(),
     ),
     KumoDemo(
       title: 'KumoTracker',
-      description: 'Day-by-day uptime with a tooltip per bar, a legend and its loading, error and empty states.',
+      description:
+          'Day-by-day uptime with a tooltip per bar, a legend and its loading, error and empty states.',
       docPath: 'doc/components/KumoTracker.md',
       builder: (_) => const _TrackerDemo(),
     ),
     KumoDemo(
       title: 'KumoKbd',
-      description: 'Key chips and shortcuts, named the way each platform names them.',
+      description:
+          'Key chips and shortcuts, named the way each platform names them.',
       docPath: 'doc/components/KumoKbd.md',
       builder: (_) => const _KbdDemo(),
     ),
@@ -111,7 +120,8 @@ class _BadgeDemoState extends State<_BadgeDemo> {
         ),
         DemoSection(
           title: 'Color variants',
-          caption: 'For product categories where a semantic color would say the wrong thing.',
+          caption:
+              'For product categories where a semantic color would say the wrong thing.',
           child: _wrap(const [
             KumoBadge('Neutral', variant: KumoBadgeVariant.neutral),
             KumoBadge('Red', variant: KumoBadgeVariant.red),
@@ -127,7 +137,10 @@ class _BadgeDemoState extends State<_BadgeDemo> {
           child: _wrap(const [
             KumoBadge('Teal subtle', variant: KumoBadgeVariant.tealSubtle),
             KumoBadge('Orange subtle', variant: KumoBadgeVariant.orangeSubtle),
-            KumoBadge('Neutral subtle', variant: KumoBadgeVariant.neutralSubtle),
+            KumoBadge(
+              'Neutral subtle',
+              variant: KumoBadgeVariant.neutralSubtle,
+            ),
             KumoBadge('Inverted', variant: KumoBadgeVariant.inverted),
           ]),
         ),
@@ -135,17 +148,41 @@ class _BadgeDemoState extends State<_BadgeDemo> {
           title: 'Dot status',
           caption: 'The label names the state; the dot only reinforces it.',
           child: _wrap(const [
-            KumoBadge('Healthy', variant: KumoBadgeVariant.success, appearance: KumoBadgeAppearance.dot),
-            KumoBadge('Rate limited', variant: KumoBadgeVariant.warning, appearance: KumoBadgeAppearance.dot),
-            KumoBadge('Down', variant: KumoBadgeVariant.error, appearance: KumoBadgeAppearance.dot),
-            KumoBadge('Paused', variant: KumoBadgeVariant.neutral, appearance: KumoBadgeAppearance.dot),
+            KumoBadge(
+              'Healthy',
+              variant: KumoBadgeVariant.success,
+              appearance: KumoBadgeAppearance.dot,
+            ),
+            KumoBadge(
+              'Rate limited',
+              variant: KumoBadgeVariant.warning,
+              appearance: KumoBadgeAppearance.dot,
+            ),
+            KumoBadge(
+              'Down',
+              variant: KumoBadgeVariant.error,
+              appearance: KumoBadgeAppearance.dot,
+            ),
+            KumoBadge(
+              'Paused',
+              variant: KumoBadgeVariant.neutral,
+              appearance: KumoBadgeAppearance.dot,
+            ),
           ]),
         ),
         DemoSection(
           title: 'With an icon, and sizes',
           child: _wrap(const [
-            KumoBadge('Verified', variant: KumoBadgeVariant.success, icon: KumoIcons.checkCircle),
-            KumoBadge('Proxied', variant: KumoBadgeVariant.info, icon: KumoIcons.cloud),
+            KumoBadge(
+              'Verified',
+              variant: KumoBadgeVariant.success,
+              icon: KumoIcons.checkCircle,
+            ),
+            KumoBadge(
+              'Proxied',
+              variant: KumoBadgeVariant.info,
+              icon: KumoIcons.cloud,
+            ),
             KumoBadge('Base'),
             KumoBadge('Large', size: KumoBadgeSize.lg),
           ]),
@@ -162,7 +199,9 @@ class _BadgeDemoState extends State<_BadgeDemo> {
         ),
         DemoSection(
           title: 'Linked badge',
-          caption: _opened == 0 ? 'Hover to see the ring, tap to open.' : 'Changelog opened $_opened times.',
+          caption: _opened == 0
+              ? 'Hover to see the ring, tap to open.'
+              : 'Changelog opened $_opened times.',
           child: Align(
             alignment: AlignmentDirectional.centerStart,
             child: KumoBadge(
@@ -211,7 +250,8 @@ class _EmptyDemoState extends State<_EmptyDemo> {
         size: KumoEmptySize.sm,
         icon: KumoIcons.archive,
         title: 'No R2 buckets yet',
-        description: 'Buckets in this account appear here. Create one to store objects for your Workers.',
+        description:
+            'Buckets in this account appear here. Create one to store objects for your Workers.',
         contents: _wrap([
           KumoButton(
             label: 'Create bucket',
@@ -226,7 +266,11 @@ class _EmptyDemoState extends State<_EmptyDemo> {
           crossAxisAlignment: CrossAxisAlignment.start,
           spacing: KumoSpace.s3,
           children: [
-            KumoSkeletonLine(widthFactor: 0.4, animate: true, semanticLabel: 'Loading R2 buckets'),
+            KumoSkeletonLine(
+              widthFactor: 0.4,
+              animate: true,
+              semanticLabel: 'Loading R2 buckets',
+            ),
             KumoSkeletonLine(animate: true),
             KumoSkeletonLine(animate: true),
           ],
@@ -236,7 +280,8 @@ class _EmptyDemoState extends State<_EmptyDemo> {
         size: KumoEmptySize.sm,
         icon: KumoIcons.cloudSlash,
         title: 'Could not load buckets',
-        description: 'The request to the R2 API timed out. Check your connection, then retry.',
+        description:
+            'The request to the R2 API timed out. Check your connection, then retry.',
         contents: KumoButton(
           label: 'Retry',
           variant: KumoButtonVariant.primary,
@@ -250,14 +295,18 @@ class _EmptyDemoState extends State<_EmptyDemo> {
           children: [
             Row(
               children: [
-                Expanded(child: KumoText('assets', variant: KumoTextVariant.mono)),
+                Expanded(
+                  child: KumoText('assets', variant: KumoTextVariant.mono),
+                ),
                 KumoBadge('Public', variant: KumoBadgeVariant.info),
               ],
             ),
             KumoSeparator(),
             Row(
               children: [
-                Expanded(child: KumoText('backups', variant: KumoTextVariant.mono)),
+                Expanded(
+                  child: KumoText('backups', variant: KumoTextVariant.mono),
+                ),
                 KumoBadge('Private', variant: KumoBadgeVariant.secondary),
               ],
             ),
@@ -290,7 +339,9 @@ class _EmptyDemoState extends State<_EmptyDemo> {
                       _ListState.filled => 'Filled',
                     },
                     size: KumoButtonSize.sm,
-                    variant: _state == s ? KumoButtonVariant.primary : KumoButtonVariant.secondary,
+                    variant: _state == s
+                        ? KumoButtonVariant.primary
+                        : KumoButtonVariant.secondary,
                     onPress: () {
                       _timer?.cancel();
                       setState(() => _state = s);
@@ -307,7 +358,8 @@ class _EmptyDemoState extends State<_EmptyDemo> {
           child: KumoEmpty(
             icon: KumoIcons.folderOpen,
             title: 'No Workers in this account',
-            description: 'Create a Worker from the command line, then deploy it with wrangler.',
+            description:
+                'Create a Worker from the command line, then deploy it with wrangler.',
             commandLine: 'npm create cloudflare@latest',
           ),
         ),
@@ -349,7 +401,8 @@ class _MeterDemoState extends State<_MeterDemo> {
       children: [
         DemoSection(
           title: 'Thresholds',
-          caption: 'Upload or delete to cross the 8 GB and 10 GB marks. The bar eases from where it is. $_sampleNote',
+          caption:
+              'Upload or delete to cross the 8 GB and 10 GB marks. The bar eases from where it is. $_sampleNote',
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             spacing: KumoSpace.s3,
@@ -360,8 +413,16 @@ class _MeterDemoState extends State<_MeterDemo> {
                 max: 10,
                 customValue: '${_gb.toStringAsFixed(0)} / 10 GB',
                 thresholds: const [
-                  KumoMeterThreshold(value: 8, tone: KumoMeterTone.warning, label: 'Approaching the 10 GB limit'),
-                  KumoMeterThreshold(value: 10, tone: KumoMeterTone.danger, label: 'Limit reached. Uploads are paused'),
+                  KumoMeterThreshold(
+                    value: 8,
+                    tone: KumoMeterTone.warning,
+                    label: 'Approaching the 10 GB limit',
+                  ),
+                  KumoMeterThreshold(
+                    value: 10,
+                    tone: KumoMeterTone.danger,
+                    label: 'Limit reached. Uploads are paused',
+                  ),
                 ],
               ),
               _wrap([
@@ -389,7 +450,12 @@ class _MeterDemoState extends State<_MeterDemo> {
         ),
         const DemoSection(
           title: 'Custom value',
-          child: KumoMeter(label: 'API requests', value: 750, max: 1000, customValue: '750 / 1,000'),
+          child: KumoMeter(
+            label: 'API requests',
+            value: 750,
+            max: 1000,
+            customValue: '750 / 1,000',
+          ),
         ),
         const DemoSection(
           title: 'Hidden value',
@@ -405,7 +471,11 @@ class _MeterDemoState extends State<_MeterDemo> {
         ),
         const DemoSection(
           title: 'Custom tone',
-          child: KumoMeter(label: 'Cache hit ratio', value: 80, tone: KumoMeterTone.success),
+          child: KumoMeter(
+            label: 'Cache hit ratio',
+            value: 80,
+            tone: KumoMeterTone.success,
+          ),
         ),
       ],
     );
@@ -470,16 +540,27 @@ class _SkeletonDemoState extends State<_SkeletonDemo> {
                             semanticLabel: 'Loading zone settings',
                           ),
                           KumoSkeletonLine(blockHeight: 21, animate: true),
-                          KumoSkeletonLine(blockHeight: 21, minWidth: 50, maxWidth: 70, animate: true),
+                          KumoSkeletonLine(
+                            blockHeight: 21,
+                            minWidth: 50,
+                            maxWidth: 70,
+                            animate: true,
+                          ),
                         ],
                       )
                     : const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         spacing: KumoSpace.s2,
                         children: [
-                          KumoText('example.com', variant: KumoTextVariant.heading),
+                          KumoText(
+                            'example.com',
+                            variant: KumoTextVariant.heading,
+                          ),
                           KumoText('SSL/TLS mode: Full (strict)'),
-                          KumoText('Always Use HTTPS is on', variant: KumoTextVariant.secondary),
+                          KumoText(
+                            'Always Use HTTPS is on',
+                            variant: KumoTextVariant.secondary,
+                          ),
                         ],
                       ),
               ),
@@ -489,7 +570,14 @@ class _SkeletonDemoState extends State<_SkeletonDemo> {
         const DemoSection(
           title: 'Default',
           caption: 'Each line picks a width between 30% and 100% once.',
-          child: Column(spacing: KumoSpace.s3, children: [KumoSkeletonLine(), KumoSkeletonLine(), KumoSkeletonLine()]),
+          child: Column(
+            spacing: KumoSpace.s3,
+            children: [
+              KumoSkeletonLine(),
+              KumoSkeletonLine(),
+              KumoSkeletonLine(),
+            ],
+          ),
         ),
         const DemoSection(
           title: 'Width ranges',
@@ -561,21 +649,30 @@ class _ProgressDemoState extends State<_ProgressDemo> {
       children: [
         DemoSection(
           title: 'Upload',
-          caption: 'Indeterminate while the upload is prepared, then the real percentage. $_sampleNote',
+          caption:
+              'Indeterminate while the upload is prepared, then the real percentage. $_sampleNote',
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             spacing: KumoSpace.s3,
             children: [
               if (upload == null)
-                const KumoText('No upload running.', variant: KumoTextVariant.secondary, size: KumoTextSize.sm)
+                const KumoText(
+                  'No upload running.',
+                  variant: KumoTextVariant.secondary,
+                  size: KumoTextSize.sm,
+                )
               else
                 KumoProgress(
                   value: upload < 0 ? null : upload,
                   label: upload < 0
                       ? 'Preparing 1,204 objects'
-                      : (upload >= 100 ? 'Uploaded to assets' : 'Uploading to assets'),
+                      : (upload >= 100
+                            ? 'Uploaded to assets'
+                            : 'Uploading to assets'),
                   showValue: true,
-                  tone: upload >= 100 ? KumoMeterTone.success : KumoMeterTone.brand,
+                  tone: upload >= 100
+                      ? KumoMeterTone.success
+                      : KumoMeterTone.brand,
                 ),
               Align(
                 alignment: AlignmentDirectional.centerStart,
@@ -593,14 +690,21 @@ class _ProgressDemoState extends State<_ProgressDemo> {
           title: 'Linear sizes',
           child: Column(
             spacing: KumoSpace.s3,
-            children: [for (final s in KumoProgressSize.values) KumoProgress(value: 60, size: s)],
+            children: [
+              for (final s in KumoProgressSize.values)
+                KumoProgress(value: 60, size: s),
+            ],
           ),
         ),
         DemoSection(
           title: 'Circular',
           child: _wrap([
             for (final s in KumoProgressSize.values)
-              KumoProgress(value: 70, size: s, variant: KumoProgressVariant.circular),
+              KumoProgress(
+                value: 70,
+                size: s,
+                variant: KumoProgressVariant.circular,
+              ),
             const KumoProgress(
               value: 35,
               variant: KumoProgressVariant.circular,
@@ -642,7 +746,10 @@ class _AvatarDemoState extends State<_AvatarDemo> {
         DemoSection(
           title: 'Sizes',
           caption: 'Initials until a picture is uploaded. Sample names.',
-          child: _wrap([for (final s in KumoAvatarSize.values) KumoAvatar(name: 'Ada Lovelace', size: s)]),
+          child: _wrap([
+            for (final s in KumoAvatarSize.values)
+              KumoAvatar(name: 'Ada Lovelace', size: s),
+          ]),
         ),
         DemoSection(
           title: 'Shapes and fallbacks',
@@ -655,7 +762,8 @@ class _AvatarDemoState extends State<_AvatarDemo> {
         ),
         DemoSection(
           title: 'Presence',
-          caption: 'Only for live presence data. Screen readers hear the status.',
+          caption:
+              'Only for live presence data. Screen readers hear the status.',
           child: _wrap([
             for (final s in KumoAvatarStatus.values)
               Row(
@@ -670,7 +778,9 @@ class _AvatarDemoState extends State<_AvatarDemo> {
         ),
         DemoSection(
           title: 'Group',
-          caption: _showAll ? 'Showing all members.' : 'Tap the +3 chip to show everyone.',
+          caption: _showAll
+              ? 'Showing all members.'
+              : 'Tap the +3 chip to show everyone.',
           child: Align(
             alignment: AlignmentDirectional.centerStart,
             child: KumoAvatarGroup(
@@ -685,7 +795,10 @@ class _AvatarDemoState extends State<_AvatarDemo> {
   }
 }
 
-List<KumoTrackerDay> _sampleDays(int count, Map<int, (KumoTrackerStatus, String)> incidents) {
+List<KumoTrackerDay> _sampleDays(
+  int count,
+  Map<int, (KumoTrackerStatus, String)> incidents,
+) {
   final today = DateTime(2026, 10, 31);
   return [
     for (var i = 0; i < count; i++)
@@ -710,14 +823,17 @@ class _TrackerDemoState extends State<_TrackerDemo> {
   Timer? _timer;
 
   static final _ninety = _sampleDays(90, {
-    for (var i = 0; i < 12; i++) i: (KumoTrackerStatus.noData, 'Monitor not created yet'),
+    for (var i = 0; i < 12; i++)
+      i: (KumoTrackerStatus.noData, 'Monitor not created yet'),
     31: (KumoTrackerStatus.degraded, 'Elevated 5xx responses for 22 min'),
     58: (KumoTrackerStatus.outage, 'Origin unreachable for 41 min'),
     59: (KumoTrackerStatus.degraded, 'Increased latency in one region'),
     77: (KumoTrackerStatus.degraded, 'Slow cold starts after deploy'),
   });
 
-  static final _thirty = _sampleDays(30, {9: (KumoTrackerStatus.outage, 'DNS resolution failures for 12 min')});
+  static final _thirty = _sampleDays(30, {
+    9: (KumoTrackerStatus.outage, 'DNS resolution failures for 12 min'),
+  });
 
   @override
   void dispose() {
@@ -744,7 +860,8 @@ class _TrackerDemoState extends State<_TrackerDemo> {
       children: [
         DemoSection(
           title: 'Last 90 days',
-          caption: 'Hover, tap, or long press and slide across the bars. Tab in and use the arrow keys. $_sampleNote',
+          caption:
+              'Hover, tap, or long press and slide across the bars. Tab in and use the arrow keys. $_sampleNote',
           child: KumoTracker(
             label: 'image-resizer',
             valueText: '99.9% uptime',
@@ -765,7 +882,9 @@ class _TrackerDemoState extends State<_TrackerDemo> {
                 startLabel: '30 days ago',
                 endLabel: 'Today',
                 loading: _loading,
-                error: _failed ? 'Could not load health checks for api.example.com' : null,
+                error: _failed
+                    ? 'Could not load health checks for api.example.com'
+                    : null,
                 days: _thirty,
               ),
               _wrap([
@@ -820,15 +939,27 @@ class _KbdDemo extends StatelessWidget {
           child: Column(
             spacing: KumoSpace.s3,
             children: [
-              row('Open command palette', const KumoKbd('K', modifiers: [KumoKbdModifier.mod])),
+              row(
+                'Open command palette',
+                const KumoKbd('K', modifiers: [KumoKbdModifier.mod]),
+              ),
               row('Search zones', const KumoKbd('/')),
-              row('Purge cache', const KumoKbd('P', modifiers: [KumoKbdModifier.mod, KumoKbdModifier.shift])),
+              row(
+                'Purge cache',
+                const KumoKbd(
+                  'P',
+                  modifiers: [KumoKbdModifier.mod, KumoKbdModifier.shift],
+                ),
+              ),
               row('Close dialog', const KumoKbd(KumoKbdKeys.escape)),
               row(
                 'Move selection',
                 const Wrap(
                   spacing: KumoSpace.s1,
-                  children: [KumoKbd(KumoKbdKeys.arrowUp), KumoKbd(KumoKbdKeys.arrowDown)],
+                  children: [
+                    KumoKbd(KumoKbdKeys.arrowUp),
+                    KumoKbd(KumoKbdKeys.arrowDown),
+                  ],
                 ),
               ),
             ],
@@ -840,8 +971,19 @@ class _KbdDemo extends StatelessWidget {
           child: Column(
             spacing: KumoSpace.s3,
             children: [
-              for (final p in [TargetPlatform.macOS, TargetPlatform.windows, TargetPlatform.linux])
-                row(p.name, KumoKbd('K', modifiers: const [KumoKbdModifier.mod, KumoKbdModifier.alt], platform: p)),
+              for (final p in [
+                TargetPlatform.macOS,
+                TargetPlatform.windows,
+                TargetPlatform.linux,
+              ])
+                row(
+                  p.name,
+                  KumoKbd(
+                    'K',
+                    modifiers: const [KumoKbdModifier.mod, KumoKbdModifier.alt],
+                    platform: p,
+                  ),
+                ),
             ],
           ),
         ),
@@ -850,7 +992,9 @@ class _KbdDemo extends StatelessWidget {
           caption: 'The hint and the binding share one definition.',
           child: row(
             'Deploy Worker',
-            KumoKbd.fromActivator(const SingleActivator(LogicalKeyboardKey.enter, meta: true)),
+            KumoKbd.fromActivator(
+              const SingleActivator(LogicalKeyboardKey.enter, meta: true),
+            ),
           ),
         ),
       ],
@@ -876,7 +1020,10 @@ class _SeparatorDemo extends StatelessWidget {
               children: [
                 KumoText('DNS records', variant: KumoTextVariant.heading),
                 KumoSeparator(),
-                KumoText('12 records, 3 proxied', variant: KumoTextVariant.secondary),
+                KumoText(
+                  '12 records, 3 proxied',
+                  variant: KumoTextVariant.secondary,
+                ),
               ],
             ),
           ),

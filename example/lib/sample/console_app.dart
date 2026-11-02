@@ -16,7 +16,11 @@ enum ConsoleSection { workers, dns }
 /// deployment history and settings, a DNS table and a command palette.
 /// Every name, route and number in it is sample data.
 class ConsoleApp extends StatefulWidget {
-  const ConsoleApp({super.key, this.initialSection = ConsoleSection.workers, this.simulateLoading = true});
+  const ConsoleApp({
+    super.key,
+    this.initialSection = ConsoleSection.workers,
+    this.simulateLoading = true,
+  });
 
   final ConsoleSection initialSection;
 
@@ -37,7 +41,12 @@ class _ConsoleAppState extends State<ConsoleApp> {
   @override
   void initState() {
     super.initState();
-    if (_loading) _loadTimer = Timer(const Duration(milliseconds: 700), () => setState(() => _loading = false));
+    if (_loading) {
+      _loadTimer = Timer(
+        const Duration(milliseconds: 700),
+        () => setState(() => _loading = false),
+      );
+    }
   }
 
   @override
@@ -102,8 +111,15 @@ class _ConsoleAppState extends State<ConsoleApp> {
       ConsoleSection.dns => 'DNS records',
     };
     final body = switch (_section) {
-      ConsoleSection.workers => _WorkersList(workers: _workers, loading: _loading, onOpen: _openWorker),
-      ConsoleSection.dns => _DnsPage(records: _records, onChanged: () => setState(() {})),
+      ConsoleSection.workers => _WorkersList(
+        workers: _workers,
+        loading: _loading,
+        onOpen: _openWorker,
+      ),
+      ConsoleSection.dns => _DnsPage(
+        records: _records,
+        onChanged: () => setState(() {}),
+      ),
     };
 
     return KumoCommandPaletteShortcut(
@@ -113,7 +129,9 @@ class _ConsoleAppState extends State<ConsoleApp> {
           header: const KumoSidebarHeader(
             children: [
               KumoIcon(KumoIcons.cloud, color: KumoColor.brand),
-              Expanded(child: KumoText('Sample account', bold: true, truncate: true)),
+              Expanded(
+                child: KumoText('Sample account', bold: true, truncate: true),
+              ),
               KumoSidebarClose(),
             ],
           ),
@@ -127,13 +145,15 @@ class _ConsoleAppState extends State<ConsoleApp> {
                     icon: KumoIcons.code,
                     label: 'Workers',
                     active: _section == ConsoleSection.workers,
-                    onPress: () => setState(() => _section = ConsoleSection.workers),
+                    onPress: () =>
+                        setState(() => _section = ConsoleSection.workers),
                   ),
                   KumoSidebarMenuButton(
                     icon: KumoIcons.globe,
                     label: 'DNS records',
                     active: _section == ConsoleSection.dns,
-                    onPress: () => setState(() => _section = ConsoleSection.dns),
+                    onPress: () =>
+                        setState(() => _section = ConsoleSection.dns),
                   ),
                 ],
               ),
@@ -142,7 +162,13 @@ class _ConsoleAppState extends State<ConsoleApp> {
         ),
         topBar: Row(
           children: [
-            Expanded(child: KumoText(title, variant: KumoTextVariant.heading, truncate: true)),
+            Expanded(
+              child: KumoText(
+                title,
+                variant: KumoTextVariant.heading,
+                truncate: true,
+              ),
+            ),
             KumoButton(
               icon: KumoIcons.magnifyingGlass,
               label: narrow ? null : 'Search',
@@ -158,7 +184,8 @@ class _ConsoleAppState extends State<ConsoleApp> {
         bottomNavigation: narrow
             ? KumoBottomNavigation(
                 value: _section.name,
-                onValueChange: (v) => setState(() => _section = ConsoleSection.values.byName(v)),
+                onValueChange: (v) =>
+                    setState(() => _section = ConsoleSection.values.byName(v)),
                 items: const [
                   KumoBottomNavigationItem(
                     value: 'workers',
@@ -182,14 +209,30 @@ class _ConsoleAppState extends State<ConsoleApp> {
 }
 
 KumoResourceListStatus workerStatus(WorkerHealth h) => switch (h) {
-  WorkerHealth.healthy => const KumoResourceListStatus(label: 'Healthy', tone: KumoResourceListStatusTone.success),
-  WorkerHealth.degraded => const KumoResourceListStatus(label: 'Degraded', tone: KumoResourceListStatusTone.warning),
-  WorkerHealth.failing => const KumoResourceListStatus(label: 'Failing', tone: KumoResourceListStatusTone.danger),
-  WorkerHealth.paused => const KumoResourceListStatus(label: 'Paused', tone: KumoResourceListStatusTone.neutral),
+  WorkerHealth.healthy => const KumoResourceListStatus(
+    label: 'Healthy',
+    tone: KumoResourceListStatusTone.success,
+  ),
+  WorkerHealth.degraded => const KumoResourceListStatus(
+    label: 'Degraded',
+    tone: KumoResourceListStatusTone.warning,
+  ),
+  WorkerHealth.failing => const KumoResourceListStatus(
+    label: 'Failing',
+    tone: KumoResourceListStatusTone.danger,
+  ),
+  WorkerHealth.paused => const KumoResourceListStatus(
+    label: 'Paused',
+    tone: KumoResourceListStatusTone.neutral,
+  ),
 };
 
 class _WorkersList extends StatefulWidget {
-  const _WorkersList({required this.workers, required this.loading, required this.onOpen});
+  const _WorkersList({
+    required this.workers,
+    required this.loading,
+    required this.onOpen,
+  });
 
   final List<SampleWorker> workers;
   final bool loading;
@@ -212,7 +255,8 @@ class _WorkersListState extends State<_WorkersList> {
     final filtered = _query.isNotEmpty || _filter != null;
     return KumoResourceList(
       title: 'Workers',
-      description: 'Code that runs on every request to your routes. Sample data.',
+      description:
+          'Code that runs on every request to your routes. Sample data.',
       icon: KumoIcons.code,
       loading: widget.loading,
       actions: [
@@ -223,7 +267,8 @@ class _WorkersListState extends State<_WorkersList> {
           onPress: () => showKumoToast(
             context,
             title: 'Creating Workers is not part of this sample',
-            description: 'This console only edits the sample data on this device.',
+            description:
+                'This console only edits the sample data on this device.',
           ),
         ),
       ],
@@ -251,7 +296,10 @@ class _WorkersListState extends State<_WorkersList> {
               options: const [
                 KumoSelectOption(value: null, label: 'All statuses'),
                 KumoSelectOption(value: WorkerHealth.healthy, label: 'Healthy'),
-                KumoSelectOption(value: WorkerHealth.degraded, label: 'Degraded'),
+                KumoSelectOption(
+                  value: WorkerHealth.degraded,
+                  label: 'Degraded',
+                ),
                 KumoSelectOption(value: WorkerHealth.failing, label: 'Failing'),
                 KumoSelectOption(value: WorkerHealth.paused, label: 'Paused'),
               ],
@@ -301,20 +349,31 @@ class _DnsPage extends StatefulWidget {
 }
 
 class _DnsPageState extends State<_DnsPage> {
-  KumoTableSort _sort = const KumoTableSort('type', KumoTableSortDirection.ascending);
+  KumoTableSort _sort = const KumoTableSort(
+    'type',
+    KumoTableSortDirection.ascending,
+  );
 
   List<SampleDnsRecord> get _sorted {
     final rows = [...widget.records];
-    int compare(SampleDnsRecord a, SampleDnsRecord b) => switch (_sort.columnId) {
-      'name' => a.name.compareTo(b.name),
-      _ => a.type.compareTo(b.type),
-    };
-    rows.sort(_sort.direction == KumoTableSortDirection.ascending ? compare : (a, b) => compare(b, a));
+    int compare(SampleDnsRecord a, SampleDnsRecord b) =>
+        switch (_sort.columnId) {
+          'name' => a.name.compareTo(b.name),
+          _ => a.type.compareTo(b.type),
+        };
+    rows.sort(
+      _sort.direction == KumoTableSortDirection.ascending
+          ? compare
+          : (a, b) => compare(b, a),
+    );
     return rows;
   }
 
   Future<void> _addRecord() async {
-    final record = await showKumoDialog<SampleDnsRecord>(context, builder: (_) => const _AddRecordDialog());
+    final record = await showKumoDialog<SampleDnsRecord>(
+      context,
+      builder: (_) => const _AddRecordDialog(),
+    );
     if (record == null || !mounted) return;
     setState(() => widget.records.add(record));
     widget.onChanged();
@@ -334,7 +393,8 @@ class _DnsPageState extends State<_DnsPage> {
       children: [
         KumoPageHeader(
           title: 'DNS records',
-          description: 'Records for example.com. Sample data using documentation address ranges.',
+          description:
+              'Records for example.com. Sample data using documentation address ranges.',
           actions: [
             KumoButton(
               label: 'Add record',
@@ -376,7 +436,8 @@ class _DnsPageState extends State<_DnsPage> {
               id: 'content',
               label: 'Content',
               width: const KumoTableColumnWidth.flex(2, 160),
-              cell: (_, r) => KumoText(r.content, variant: KumoTextVariant.mono),
+              cell: (_, r) =>
+                  KumoText(r.content, variant: KumoTextVariant.mono),
             ),
             KumoTableColumn(
               id: 'proxy',
@@ -386,14 +447,17 @@ class _DnsPageState extends State<_DnsPage> {
                 label: r.proxied ? 'Proxied' : 'DNS only',
                 size: KumoSwitchSize.sm,
                 checked: r.proxied,
-                onCheckedChange: r.type == 'MX' || r.type == 'TXT' ? null : (v) => setState(() => r.proxied = v),
+                onCheckedChange: r.type == 'MX' || r.type == 'TXT'
+                    ? null
+                    : (v) => setState(() => r.proxied = v),
               ),
             ),
             KumoTableColumn(
               id: 'ttl',
               label: 'TTL',
               width: const KumoTableColumnWidth.fixed(72),
-              cell: (_, r) => KumoText(r.ttl, variant: KumoTextVariant.secondary),
+              cell: (_, r) =>
+                  KumoText(r.ttl, variant: KumoTextVariant.secondary),
             ),
           ],
         ),
@@ -416,12 +480,17 @@ class _AddRecordDialogState extends State<_AddRecordDialog> {
   bool _proxied = true;
   bool _submitted = false;
 
-  String? get _nameError => _submitted && _name.trim().isEmpty ? 'Enter a name, or @ for the root.' : null;
+  String? get _nameError => _submitted && _name.trim().isEmpty
+      ? 'Enter a name, or @ for the root.'
+      : null;
 
   String? get _contentError {
     if (!_submitted) return null;
-    if (_content.trim().isEmpty) return 'Enter the value this record points to.';
-    if (_type == 'A' && !RegExp(r'^\d{1,3}(\.\d{1,3}){3}$').hasMatch(_content.trim())) {
+    if (_content.trim().isEmpty) {
+      return 'Enter the value this record points to.';
+    }
+    if (_type == 'A' &&
+        !RegExp(r'^\d{1,3}(\.\d{1,3}){3}$').hasMatch(_content.trim())) {
       return 'An A record needs an IPv4 address, such as 192.0.2.1.';
     }
     return null;
@@ -435,7 +504,8 @@ class _AddRecordDialogState extends State<_AddRecordDialog> {
         type: _type,
         name: _name.trim() == '@' ? 'example.com' : _name.trim(),
         content: _content.trim(),
-        proxied: _proxied && (_type == 'A' || _type == 'AAAA' || _type == 'CNAME'),
+        proxied:
+            _proxied && (_type == 'A' || _type == 'AAAA' || _type == 'CNAME'),
       ),
     );
   }
@@ -448,7 +518,11 @@ class _AddRecordDialogState extends State<_AddRecordDialog> {
       description: 'Changes apply to the sample data only.',
       actions: [
         const KumoDialogClose(label: 'Cancel'),
-        KumoButton(label: 'Save record', variant: KumoButtonVariant.primary, onPress: _save),
+        KumoButton(
+          label: 'Save record',
+          variant: KumoButtonVariant.primary,
+          onPress: _save,
+        ),
       ],
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -475,7 +549,11 @@ class _AddRecordDialogState extends State<_AddRecordDialog> {
             onValueChange: (v) => setState(() => _name = v),
           ),
           KumoInput(
-            label: _type == 'CNAME' ? 'Target' : (_type == 'TXT' ? 'Content' : 'IPv${_type == 'AAAA' ? 6 : 4} address'),
+            label: _type == 'CNAME'
+                ? 'Target'
+                : (_type == 'TXT'
+                      ? 'Content'
+                      : 'IPv${_type == 'AAAA' ? 6 : 4} address'),
             placeholder: _type == 'A' ? '192.0.2.1' : null,
             mono: true,
             value: _content,

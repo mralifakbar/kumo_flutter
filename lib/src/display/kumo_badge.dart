@@ -316,7 +316,10 @@ class KumoBadge extends StatelessWidget {
     // A new status (Deploying to Active) cross-fades the pill and eases its
     // width, so the row it sits in does not jump. Hover stays instant.
     final appearanceKey = ValueKey((label, variant, appearance, size, icon, iconWidget?.key));
-    Widget swap(Widget pill) => KumoSwap(animateSize: true, child: KeyedSubtree(key: appearanceKey, child: pill));
+    Widget swap(Widget pill) => KumoSwap(
+      animateSize: true,
+      child: KeyedSubtree(key: appearanceKey, child: pill),
+    );
 
     if (onPress == null) {
       return Semantics(label: semanticLabel, excludeSemantics: semanticLabel != null, child: swap(badge(false)));

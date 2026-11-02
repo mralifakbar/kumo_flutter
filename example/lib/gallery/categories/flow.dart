@@ -12,13 +12,15 @@ final KumoDemoCategory flowCategory = KumoDemoCategory(
   demos: [
     KumoDemo(
       title: 'KumoFlowDiagram',
-      description: 'Orientation, alignment, panning large diagrams, RTL and live structure changes.',
+      description:
+          'Orientation, alignment, panning large diagrams, RTL and live structure changes.',
       docPath: 'doc/components/KumoFlowDiagram.md',
       builder: (_) => const _DiagramDemo(),
     ),
     KumoDemo(
       title: 'KumoFlowNode',
-      description: 'Default, custom, pressable, selected, disabled and status nodes.',
+      description:
+          'Default, custom, pressable, selected, disabled and status nodes.',
       docPath: 'doc/components/KumoFlowNode.md',
       builder: (_) => const _NodeDemo(),
     ),
@@ -54,7 +56,10 @@ class _Frame extends StatelessWidget {
       borderRadius: BorderRadius.circular(KumoRadius.lg),
       border: Border.all(color: context.kumo.colors.hairline),
     ),
-    child: ClipRRect(borderRadius: BorderRadius.circular(KumoRadius.lg), child: child),
+    child: ClipRRect(
+      borderRadius: BorderRadius.circular(KumoRadius.lg),
+      child: child,
+    ),
   );
 }
 
@@ -94,8 +99,12 @@ class _DiagramDemoState extends State<_DiagramDemo> {
       children: [
         const DemoSection(
           title: 'Sequential',
-          caption: 'A request path from the edge to the origin. On a phone it pans sideways.',
-          child: KumoFlowDiagram(semanticLabel: 'Request path', children: _requestPath),
+          caption:
+              'A request path from the edge to the origin. On a phone it pans sideways.',
+          child: KumoFlowDiagram(
+            semanticLabel: 'Request path',
+            children: _requestPath,
+          ),
         ),
         DemoSection(
           title: 'Orientation',
@@ -118,7 +127,9 @@ class _DiagramDemoState extends State<_DiagramDemo> {
                         KumoFlowOrientation.auto => 'Auto',
                       },
                       size: KumoButtonSize.sm,
-                      variant: o == _orientation ? KumoButtonVariant.primary : KumoButtonVariant.secondary,
+                      variant: o == _orientation
+                          ? KumoButtonVariant.primary
+                          : KumoButtonVariant.secondary,
                       onPress: () => setState(() => _orientation = o),
                     ),
                 ],
@@ -127,7 +138,9 @@ class _DiagramDemoState extends State<_DiagramDemo> {
                 orientation: _orientation,
                 align: KumoFlowAlign.center,
                 onGeometryChange: (g) {
-                  if (g.orientation != _resolved) setState(() => _resolved = g.orientation);
+                  if (g.orientation != _resolved) {
+                    setState(() => _resolved = g.orientation);
+                  }
                 },
                 children: const [
                   KumoFlowNode(label: 'Request'),
@@ -146,14 +159,19 @@ class _DiagramDemoState extends State<_DiagramDemo> {
         ),
         DemoSection(
           title: 'Panning large diagrams',
-          caption: 'Drag or flick sideways, or scroll with a trackpad. The fading edge shows there is more.',
+          caption:
+              'Drag or flick sideways, or scroll with a trackpad. The fading edge shows there is more.',
           child: _Frame(
             child: KumoFlowDiagram(
               semanticLabel: 'Deploy pipeline',
               children: [
                 for (final step in [
                   'Push to main', 'Install', 'Lint', 'Test', 'Build', //
-                  'Upload assets', 'Deploy preview', 'Smoke test', 'Promote', 'Purge cache',
+                  'Upload assets',
+                  'Deploy preview',
+                  'Smoke test',
+                  'Promote',
+                  'Purge cache',
                 ])
                   KumoFlowNode(label: step),
               ],
@@ -239,8 +257,14 @@ class _DiagramDemoState extends State<_DiagramDemo> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       spacing: KumoSpace.s2,
                       children: [
-                        KumoLoader(size: KumoLoaderSize.sm, semanticLabel: 'Loading routes'),
-                        KumoText('Loading routes for example.com', variant: KumoTextVariant.secondary),
+                        KumoLoader(
+                          size: KumoLoaderSize.sm,
+                          semanticLabel: 'Loading routes',
+                        ),
+                        KumoText(
+                          'Loading routes for example.com',
+                          variant: KumoTextVariant.secondary,
+                        ),
                       ],
                     ),
                   ),
@@ -288,7 +312,10 @@ class _Dot extends StatelessWidget {
   Widget build(BuildContext context) => Container(
     width: KumoSpace.s4,
     height: KumoSpace.s4,
-    decoration: BoxDecoration(color: context.kumo.colors.hairline, shape: BoxShape.circle),
+    decoration: BoxDecoration(
+      color: context.kumo.colors.hairline,
+      shape: BoxShape.circle,
+    ),
   );
 }
 
@@ -299,8 +326,14 @@ class _ContrastPill extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Container(
-    padding: const EdgeInsets.symmetric(horizontal: KumoSpace.s3, vertical: KumoSpace.s2),
-    decoration: BoxDecoration(color: context.kumo.colors.contrast, borderRadius: BorderRadius.circular(KumoRadius.lg)),
+    padding: const EdgeInsets.symmetric(
+      horizontal: KumoSpace.s3,
+      vertical: KumoSpace.s2,
+    ),
+    decoration: BoxDecoration(
+      color: context.kumo.colors.contrast,
+      borderRadius: BorderRadius.circular(KumoRadius.lg),
+    ),
     child: KumoText(label, bold: true, color: KumoColor.textInverse),
   );
 }
@@ -319,8 +352,10 @@ class _NodeDemoState extends State<_NodeDemo> {
   _StepStatus _deploy = _StepStatus.failed;
 
   static const _details = {
-    'request': 'Requests to assets.example.com arrive at the nearest data center.',
-    'waf': 'Managed rules block known exploits before the request reaches the Worker.',
+    'request':
+        'Requests to assets.example.com arrive at the nearest data center.',
+    'waf':
+        'Managed rules block known exploits before the request reaches the Worker.',
     'worker': 'image-resizer reads the width parameter and resizes on the fly.',
     'r2': 'Originals are read from the R2 bucket named assets.',
   };
@@ -331,8 +366,12 @@ class _NodeDemoState extends State<_NodeDemo> {
     if (mounted) setState(() => _deploy = _StepStatus.passed);
   }
 
-  KumoFlowNode _select(String id, String label) =>
-      KumoFlowNode(id: id, label: label, selected: _selected == id, onPress: () => setState(() => _selected = id));
+  KumoFlowNode _select(String id, String label) => KumoFlowNode(
+    id: id,
+    label: label,
+    selected: _selected == id,
+    onPress: () => setState(() => _selected = id),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -350,7 +389,10 @@ class _NodeDemoState extends State<_NodeDemo> {
               KumoFlowDiagram(
                 orientation: KumoFlowOrientation.auto,
                 align: KumoFlowAlign.center,
-                padding: const EdgeInsets.symmetric(horizontal: KumoSpace.s4, vertical: KumoSpace.s6),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: KumoSpace.s4,
+                  vertical: KumoSpace.s6,
+                ),
                 children: [
                   _select('request', 'Request'),
                   _select('waf', 'WAF'),
@@ -358,24 +400,32 @@ class _NodeDemoState extends State<_NodeDemo> {
                   _select('r2', 'R2: assets'),
                 ],
               ),
-              KumoText(_details[_selected]!, variant: KumoTextVariant.secondary),
+              KumoText(
+                _details[_selected]!,
+                variant: KumoTextVariant.secondary,
+              ),
             ],
           ),
         ),
         const DemoSection(
           title: 'Custom nodes',
-          caption: 'render replaces the card; the diagram still measures and connects it.',
+          caption:
+              'render replaces the card; the diagram still measures and connects it.',
           child: KumoFlowDiagram(
             align: KumoFlowAlign.center,
             children: [
               KumoFlowNode(semanticLabel: 'Entry point', render: _Dot()),
-              KumoFlowNode(semanticLabel: 'my-worker', render: _ContrastPill('my-worker')),
+              KumoFlowNode(
+                semanticLabel: 'my-worker',
+                render: _ContrastPill('my-worker'),
+              ),
             ],
           ),
         ),
         const DemoSection(
           title: 'Disabled',
-          caption: 'Connectors to a disabled node are greyed out; the label says why.',
+          caption:
+              'Connectors to a disabled node are greyed out; the label says why.',
           child: KumoFlowDiagram(
             children: [
               KumoFlowNode(label: 'Request'),
@@ -401,7 +451,11 @@ class _NodeDemoState extends State<_NodeDemo> {
                 children: [
                   const KumoFlowNode(
                     semanticLabel: 'Build, passed',
-                    child: _Status(icon: KumoIcons.checkCircle, color: KumoColor.textSuccess, text: 'Build passed'),
+                    child: _Status(
+                      icon: KumoIcons.checkCircle,
+                      color: KumoColor.textSuccess,
+                      text: 'Build passed',
+                    ),
                   ),
                   KumoFlowNode(
                     semanticLabel: switch (_deploy) {
@@ -419,7 +473,10 @@ class _NodeDemoState extends State<_NodeDemo> {
                         mainAxisSize: MainAxisSize.min,
                         spacing: KumoSpace.s1_5,
                         children: [
-                          KumoLoader(size: KumoLoaderSize.sm, semanticLabel: 'Deploying'),
+                          KumoLoader(
+                            size: KumoLoaderSize.sm,
+                            semanticLabel: 'Deploying',
+                          ),
                           Text('Deploying'),
                         ],
                       ),
@@ -430,7 +487,10 @@ class _NodeDemoState extends State<_NodeDemo> {
                       ),
                     },
                   ),
-                  KumoFlowNode(label: 'Purge cache', disabled: _deploy != _StepStatus.passed),
+                  KumoFlowNode(
+                    label: 'Purge cache',
+                    disabled: _deploy != _StepStatus.passed,
+                  ),
                 ],
               ),
               KumoButton(
@@ -456,11 +516,17 @@ class _NodeDemoState extends State<_NodeDemo> {
                 children: [
                   KumoFlowNode(
                     id: 'auth',
-                    render: _Expandable(title: 'Auth service', body: 'Validates JWTs and session cookies.'),
+                    render: _Expandable(
+                      title: 'Auth service',
+                      body: 'Validates JWTs and session cookies.',
+                    ),
                   ),
                   KumoFlowNode(
                     id: 'rate',
-                    render: _Expandable(title: 'Rate limiter', body: 'Sample rule: 100 requests a minute per IP.'),
+                    render: _Expandable(
+                      title: 'Rate limiter',
+                      body: 'Sample rule: 100 requests a minute per IP.',
+                    ),
                   ),
                 ],
               ),
@@ -526,17 +592,32 @@ class _ExpandableState extends State<_Expandable> {
               semanticLabel: widget.title,
               borderRadius: BorderRadius.circular(KumoRadius.lg),
               builder: (context, state) => Padding(
-                padding: const EdgeInsets.symmetric(horizontal: KumoSpace.s3, vertical: KumoSpace.s2),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: KumoSpace.s3,
+                  vertical: KumoSpace.s2,
+                ),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   spacing: KumoSpace.s2,
                   children: [
-                    Flexible(child: KumoText(widget.title, size: KumoTextSize.sm, bold: true)),
+                    Flexible(
+                      child: KumoText(
+                        widget.title,
+                        size: KumoTextSize.sm,
+                        bold: true,
+                      ),
+                    ),
                     AnimatedRotation(
                       turns: _open ? 0.5 : 0,
-                      duration: KumoMotion.duration(context, KumoDurations.moderate),
+                      duration: KumoMotion.duration(
+                        context,
+                        KumoDurations.moderate,
+                      ),
                       curve: KumoCurves.standard,
-                      child: const KumoIcon(KumoIcons.caretDown, color: KumoColor.textSubtle),
+                      child: const KumoIcon(
+                        KumoIcons.caretDown,
+                        color: KumoColor.textSubtle,
+                      ),
                     ),
                   ],
                 ),
@@ -548,8 +629,15 @@ class _ExpandableState extends State<_Expandable> {
                   border: Border(top: BorderSide(color: kumo.colors.hairline)),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: KumoSpace.s3, vertical: KumoSpace.s2),
-                  child: KumoText(widget.body, size: KumoTextSize.sm, variant: KumoTextVariant.secondary),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: KumoSpace.s3,
+                    vertical: KumoSpace.s2,
+                  ),
+                  child: KumoText(
+                    widget.body,
+                    size: KumoTextSize.sm,
+                    variant: KumoTextVariant.secondary,
+                  ),
                 ),
               ),
           ],
@@ -570,7 +658,8 @@ class _ParallelDemo extends StatelessWidget {
       children: [
         DemoSection(
           title: 'Branches',
-          caption: 'The step before connects to every branch; every branch connects to the step after.',
+          caption:
+              'The step before connects to every branch; every branch connects to the step after.',
           child: KumoFlowDiagram(
             orientation: KumoFlowOrientation.auto,
             children: [
@@ -588,7 +677,8 @@ class _ParallelDemo extends StatelessWidget {
         ),
         DemoSection(
           title: 'Fan in and fan out',
-          caption: 'Two triggers start one Worker, which writes to three places.',
+          caption:
+              'Two triggers start one Worker, which writes to three places.',
           child: _Frame(
             child: KumoFlowDiagram(
               children: [
@@ -632,7 +722,8 @@ class _ParallelDemo extends StatelessWidget {
         ),
         DemoSection(
           title: 'Back-to-back groups',
-          caption: 'Two parallel groups in a row are not connected to each other.',
+          caption:
+              'Two parallel groups in a row are not connected to each other.',
           child: _Frame(
             child: KumoFlowDiagram(
               children: [
@@ -689,7 +780,8 @@ class _ListDemo extends StatelessWidget {
       children: [
         DemoSection(
           title: 'Branches with several steps',
-          caption: 'Each list is one branch; outside steps connect to its first and last node.',
+          caption:
+              'Each list is one branch; outside steps connect to its first and last node.',
           child: _Frame(
             child: KumoFlowDiagram(
               children: [
@@ -758,12 +850,16 @@ class _AnchorDemo extends StatelessWidget {
       children: [
         DemoSection(
           title: 'Header in, footer out',
-          caption: 'Traffic arrives at the Worker name and leaves from its bindings.',
+          caption:
+              'Traffic arrives at the Worker name and leaves from its bindings.',
           child: _Frame(
             child: KumoFlowDiagram(
               children: [
                 KumoFlowNode(label: 'Load balancer'),
-                KumoFlowNode(semanticLabel: 'my-worker, 2 bindings', render: _WorkerCard()),
+                KumoFlowNode(
+                  semanticLabel: 'my-worker, 2 bindings',
+                  render: _WorkerCard(),
+                ),
                 KumoFlowParallel(
                   children: [
                     KumoFlowNode(label: 'DATABASE'),
@@ -806,7 +902,10 @@ class _WorkerCard extends StatelessWidget {
                 child: Align(
                   alignment: AlignmentDirectional.centerStart,
                   widthFactor: 1,
-                  child: KumoText('my-worker', variant: KumoTextVariant.secondary),
+                  child: KumoText(
+                    'my-worker',
+                    variant: KumoTextVariant.secondary,
+                  ),
                 ),
               ),
             ),
@@ -814,8 +913,16 @@ class _WorkerCard extends StatelessWidget {
           KumoFlowAnchor(
             type: KumoFlowAnchorType.start,
             child: Container(
-              margin: const EdgeInsetsDirectional.fromSTEB(KumoSpace.s1_5, 0, KumoSpace.s1_5, KumoSpace.s1_5),
-              padding: const EdgeInsets.symmetric(horizontal: KumoSpace.s2, vertical: KumoSpace.s1_5),
+              margin: const EdgeInsetsDirectional.fromSTEB(
+                KumoSpace.s1_5,
+                0,
+                KumoSpace.s1_5,
+                KumoSpace.s1_5,
+              ),
+              padding: const EdgeInsets.symmetric(
+                horizontal: KumoSpace.s2,
+                vertical: KumoSpace.s1_5,
+              ),
               decoration: BoxDecoration(
                 color: kumo.colors.base,
                 borderRadius: BorderRadius.circular(KumoRadius.sm),

@@ -152,7 +152,10 @@ class _KumoAutocompleteState extends State<KumoAutocomplete> {
       _focus.addListener(_onFocusChange);
     }
     if (widget.value != _text.text) {
-      _text.value = TextEditingValue(text: widget.value, selection: TextSelection.collapsed(offset: widget.value.length));
+      _text.value = TextEditingValue(
+        text: widget.value,
+        selection: TextSelection.collapsed(offset: widget.value.length),
+      );
     }
     if (widget.disabled && _open) _open = false;
   }
@@ -215,7 +218,10 @@ class _KumoAutocompleteState extends State<KumoAutocomplete> {
 
   void _pick(KumoSelectOption<String> o) {
     if (o.disabled) return;
-    _text.value = TextEditingValue(text: o.value, selection: TextSelection.collapsed(offset: o.value.length));
+    _text.value = TextEditingValue(
+      text: o.value,
+      selection: TextSelection.collapsed(offset: o.value.length),
+    );
     widget.onValueChange?.call(o.value);
     _close();
   }
@@ -330,9 +336,7 @@ class _KumoAutocompleteState extends State<KumoAutocomplete> {
           maxHeight: pickerMaxHeight(context, placement, cap: widget.maxHeight, sideOffset: widget.sideOffset),
           width: placement.anchorRect.width,
           semanticLabel: widget.label ?? widget.semanticLabel,
-          leading: [
-            if (widget.loading) PickerStatusRow(text: widget.loadingMessage ?? strings.loading, loading: true),
-          ],
+          leading: [if (widget.loading) PickerStatusRow(text: widget.loadingMessage ?? strings.loading, loading: true)],
           trailing: [
             if (!widget.loading && !m.hasOptions && widget.emptyMessage != null)
               PickerStatusRow(text: widget.emptyMessage!),

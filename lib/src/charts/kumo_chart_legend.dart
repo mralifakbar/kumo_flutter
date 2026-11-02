@@ -34,9 +34,9 @@ class KumoChartLegend extends StatelessWidget {
     this.onPress,
     this.onHoverChange,
     this.semanticLabel,
-  })  : size = KumoChartLegendSize.small,
-        unit = null,
-        loading = false;
+  }) : size = KumoChartLegendSize.small,
+       unit = null,
+       loading = false;
 
   /// A stacked item with a large value.
   const KumoChartLegend.large({
@@ -49,21 +49,21 @@ class KumoChartLegend extends StatelessWidget {
     this.onPress,
     this.onHoverChange,
     this.semanticLabel,
-  })  : size = KumoChartLegendSize.large,
-        loading = false;
+  }) : size = KumoChartLegendSize.large,
+       loading = false;
 
   /// Skeleton placeholders shown while the chart's data loads. Hidden from
   /// screen readers; announce loading on the chart itself.
   const KumoChartLegend.loading({super.key, this.size = KumoChartLegendSize.small})
-      : name = null,
-        color = null,
-        value = null,
-        unit = null,
-        inactive = false,
-        onPress = null,
-        onHoverChange = null,
-        semanticLabel = null,
-        loading = true;
+    : name = null,
+      color = null,
+      value = null,
+      unit = null,
+      inactive = false,
+      onPress = null,
+      onHoverChange = null,
+      semanticLabel = null,
+      loading = true;
 
   final KumoChartLegendSize size;
 
@@ -110,12 +110,14 @@ class KumoChartLegend extends StatelessWidget {
     final dot = fade(_ChartDot(color: color!));
     // Tailwind's text-xs pairs 12px with a 16px line.
     const xsHeight = 16 / 12;
-    final nameText = fade(Text(
-      name!,
-      style: kumo.text(size: KumoTextSize.xs, height: xsHeight),
-      maxLines: 1,
-      overflow: TextOverflow.ellipsis,
-    ));
+    final nameText = fade(
+      Text(
+        name!,
+        style: kumo.text(size: KumoTextSize.xs, height: xsHeight),
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
+      ),
+    );
     const numberStyle = [FontFeature.tabularFigures()];
 
     final Widget content;
@@ -129,12 +131,14 @@ class KumoChartLegend extends StatelessWidget {
             dot,
             Flexible(child: nameText),
             if (value != null)
-              fade(Text(
-                value!,
-                style: kumo
-                    .text(size: KumoTextSize.xs, weight: KumoTypography.medium, height: xsHeight)
-                    .copyWith(fontFeatures: numberStyle),
-              )),
+              fade(
+                Text(
+                  value!,
+                  style: kumo
+                      .text(size: KumoTextSize.xs, weight: KumoTypography.medium, height: xsHeight)
+                      .copyWith(fontFeatures: numberStyle),
+                ),
+              ),
           ],
         ),
       );
@@ -150,21 +154,35 @@ class KumoChartLegend extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             spacing: KumoSpace.s2,
             children: [
-              Row(mainAxisSize: MainAxisSize.min, spacing: KumoSpace.s2, children: [dot, Flexible(child: nameText)]),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                spacing: KumoSpace.s2,
+                children: [
+                  dot,
+                  Flexible(child: nameText),
+                ],
+              ),
               Row(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.baseline,
                 textBaseline: TextBaseline.alphabetic,
                 spacing: KumoSpace.s0_5,
                 children: [
-                  fade(Text(
-                    value!,
-                    style: kumo
-                        .text(size: KumoTextSize.lg, weight: KumoTypography.medium, height: 1)
-                        .copyWith(fontFeatures: numberStyle),
-                  )),
+                  fade(
+                    Text(
+                      value!,
+                      style: kumo
+                          .text(size: KumoTextSize.lg, weight: KumoTypography.medium, height: 1)
+                          .copyWith(fontFeatures: numberStyle),
+                    ),
+                  ),
                   if (unit != null)
-                    fade(Text(unit!, style: kumo.text(size: KumoTextSize.xs, color: KumoColor.textSubtle, height: 1))),
+                    fade(
+                      Text(
+                        unit!,
+                        style: kumo.text(size: KumoTextSize.xs, color: KumoColor.textSubtle, height: 1),
+                      ),
+                    ),
                 ],
               ),
             ],
@@ -187,11 +205,7 @@ class KumoChartLegend extends StatelessWidget {
       builder: (context, state) => content,
     );
     if (onHoverChange != null) {
-      result = MouseRegion(
-        onEnter: (_) => onHoverChange!(true),
-        onExit: (_) => onHoverChange!(false),
-        child: result,
-      );
+      result = MouseRegion(onEnter: (_) => onHoverChange!(true), onExit: (_) => onHoverChange!(false), child: result);
     }
     return result;
   }
@@ -200,7 +214,9 @@ class KumoChartLegend extends StatelessWidget {
     final fill = context.kumo.colors.fill;
     final dot = SizedBox.square(
       dimension: 8,
-      child: DecoratedBox(decoration: BoxDecoration(color: fill, shape: BoxShape.circle)),
+      child: DecoratedBox(
+        decoration: BoxDecoration(color: fill, shape: BoxShape.circle),
+      ),
     );
     // Widths follow Kumo's `w-[5ch]` style sizing at 12px (one ch is about 7px).
     if (size == KumoChartLegendSize.small) {

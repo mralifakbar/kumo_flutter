@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:kumo_flutter/kumo_flutter.dart';
 
 import '../helpers/harness.dart';
+import 'package:kumo_flutter/src/system/kumo_size_reveal.dart';
 
 const _items = [
   KumoTimelineItem(
@@ -34,9 +35,11 @@ void main() {
         tester,
         Padding(
           padding: const EdgeInsets.all(16),
-          child: KumoTimeline(items: [
-            for (final s in KumoTimelineStatus.values) KumoTimelineItem(title: s.name, status: s, time: '1 min ago'),
-          ]),
+          child: KumoTimeline(
+            items: [
+              for (final s in KumoTimelineStatus.values) KumoTimelineItem(title: s.name, status: s, time: '1 min ago'),
+            ],
+          ),
         ),
         brightness: b,
       );
@@ -76,9 +79,11 @@ void main() {
     var pressed = 0;
     await pumpKumo(
       tester,
-      KumoTimeline(items: [
-        KumoTimelineItem(title: 'Deployed to production', onPress: () => pressed++, semanticLabel: 'Open deployment'),
-      ]),
+      KumoTimeline(
+        items: [
+          KumoTimelineItem(title: 'Deployed to production', onPress: () => pressed++, semanticLabel: 'Open deployment'),
+        ],
+      ),
     );
     await tester.tap(find.text('Deployed to production'));
     expect(pressed, 1);
@@ -87,9 +92,9 @@ void main() {
   testWidgets('custom content and trailing widgets render', (tester) async {
     await pumpKumo(
       tester,
-      const KumoTimeline(items: [
-        KumoTimelineItem(title: 'Rolled back', content: Text('Reverted to 7d1e9b3'), trailing: Text('Undo')),
-      ]),
+      const KumoTimeline(
+        items: [KumoTimelineItem(title: 'Rolled back', content: Text('Reverted to 7d1e9b3'), trailing: Text('Undo'))],
+      ),
     );
     expect(find.text('Reverted to 7d1e9b3'), findsOneWidget);
     expect(find.text('Undo'), findsOneWidget);
@@ -98,7 +103,10 @@ void main() {
   testWidgets('2x text at 390px in RTL does not overflow', (tester) async {
     await pumpKumo(
       tester,
-      const Padding(padding: EdgeInsets.all(16), child: KumoTimeline(items: _items)),
+      const Padding(
+        padding: EdgeInsets.all(16),
+        child: KumoTimeline(items: _items),
+      ),
       textScale: 2,
       textDirection: TextDirection.rtl,
     );
@@ -114,9 +122,9 @@ void main() {
 
   testWidgets('a status change cross-fades the marker icon', (tester) async {
     final handle = tester.ensureSemantics();
-    KumoTimeline timeline(KumoTimelineStatus status) => KumoTimeline(items: [
-          KumoTimelineItem(id: 'deploy', title: 'Deploying', status: status, statusLabel: status.name),
-        ]);
+    KumoTimeline timeline(KumoTimelineStatus status) => KumoTimeline(
+      items: [KumoTimelineItem(id: 'deploy', title: 'Deploying', status: status, statusLabel: status.name)],
+    );
     await pumpKumo(tester, timeline(KumoTimelineStatus.active));
     await pumpKumo(tester, timeline(KumoTimelineStatus.success), settle: false);
     await tester.pump(const Duration(milliseconds: 60));
@@ -136,17 +144,22 @@ void main() {
   testWidgets('an event added later slides open and fades in; first ones do not', (tester) async {
     const first = KumoTimelineItem(id: 'b', title: 'Build finished', status: KumoTimelineStatus.success);
     await pumpKumo(tester, const KumoTimeline(items: [first]));
-    expect(find.byType(SizeTransition), findsNothing);
+    expect(find.byType(KumoSizeReveal), findsNothing);
     await pumpKumo(
       tester,
-      const KumoTimeline(items: [KumoTimelineItem(id: 'a', title: 'Deploying', status: KumoTimelineStatus.active), first]),
+      const KumoTimeline(
+        items: [
+          KumoTimelineItem(id: 'a', title: 'Deploying', status: KumoTimelineStatus.active),
+          first,
+        ],
+      ),
       settle: false,
     );
     await tester.pump(const Duration(milliseconds: 100));
-    final size = tester.widget<SizeTransition>(find.byType(SizeTransition)).sizeFactor.value;
+    final size = tester.widget<KumoSizeReveal>(find.byType(KumoSizeReveal)).sizeFactor.value;
     expect(size, inExclusiveRange(0, 1));
     await tester.pumpAndSettle();
-    expect(tester.widget<SizeTransition>(find.byType(SizeTransition)).sizeFactor.value, 1);
+    expect(tester.widget<KumoSizeReveal>(find.byType(KumoSizeReveal)).sizeFactor.value, 1);
   });
 
   testWidgets('reduced motion: new events and status changes land at once', (tester) async {
@@ -154,12 +167,17 @@ void main() {
     await pumpKumo(tester, const KumoTimeline(items: [first]), disableAnimations: true);
     await pumpKumo(
       tester,
-      const KumoTimeline(items: [KumoTimelineItem(id: 'a', title: 'Deploying', status: KumoTimelineStatus.danger), first]),
+      const KumoTimeline(
+        items: [
+          KumoTimelineItem(id: 'a', title: 'Deploying', status: KumoTimelineStatus.danger),
+          first,
+        ],
+      ),
       disableAnimations: true,
       settle: false,
     );
     await tester.pump();
-    expect(tester.widget<SizeTransition>(find.byType(SizeTransition)).sizeFactor.value, 1);
+    expect(tester.widget<KumoSizeReveal>(find.byType(KumoSizeReveal)).sizeFactor.value, 1);
     expect(tester.hasRunningAnimations, isFalse);
   });
 }

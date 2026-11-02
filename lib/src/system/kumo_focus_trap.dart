@@ -100,7 +100,8 @@ class _KumoFocusTrapState extends State<KumoFocusTrap> {
         // Only take focus back when it is still lost (inside this trap or
         // nowhere): another overlay that opened meanwhile keeps its focus.
         final current = FocusManager.instance.primaryFocus;
-        final lost = current == null ||
+        final lost =
+            current == null ||
             current == FocusManager.instance.rootScope ||
             current.context == null ||
             _hadFocusAtUnmount;

@@ -52,7 +52,10 @@ void main() {
       await tester.tap(find.text('Errors only'));
       await pumpKumo(tester, KumoToggle(label: 'Errors only', pressed: true, onPressedChange: calls.add));
       await tester.tap(find.text('Errors only'));
-      await pumpKumo(tester, KumoToggle(label: 'Errors only', pressed: true, disabled: true, onPressedChange: calls.add));
+      await pumpKumo(
+        tester,
+        KumoToggle(label: 'Errors only', pressed: true, disabled: true, onPressedChange: calls.add),
+      );
       await tester.tap(find.text('Errors only'));
       expect(calls, [true, false]);
     });
@@ -61,7 +64,10 @@ void main() {
       final handle = tester.ensureSemantics();
       await pumpKumo(
         tester,
-        controlled<bool>(false, (v, set) => KumoToggle(icon: KumoIcons.textB, semanticLabel: 'Bold', pressed: v, onPressedChange: set)),
+        controlled<bool>(
+          false,
+          (v, set) => KumoToggle(icon: KumoIcons.textB, semanticLabel: 'Bold', pressed: v, onPressedChange: set),
+        ),
       );
       expect(
         tester.getSemantics(find.bySemanticsLabel('Bold')),
@@ -83,7 +89,10 @@ void main() {
     });
 
     testWidgets('icon-only toggles have a 44px hit area on touch', (tester) async {
-      await pumpKumo(tester, KumoToggle(icon: KumoIcons.textB, semanticLabel: 'Bold', pressed: false, onPressedChange: (_) {}));
+      await pumpKumo(
+        tester,
+        KumoToggle(icon: KumoIcons.textB, semanticLabel: 'Bold', pressed: false, onPressedChange: (_) {}),
+      );
       final size = tester.getSize(find.byType(KumoPressable));
       expect(size.width, greaterThanOrEqualTo(44));
       expect(size.height, greaterThanOrEqualTo(44));
@@ -97,7 +106,12 @@ void main() {
           await pumpKumo(
             tester,
             brightness: brightness,
-            KumoToggleGroup<String>.multiple(variant: variant, values: const ['info', 'error'], onValuesChange: (_) {}, items: _levels),
+            KumoToggleGroup<String>.multiple(
+              variant: variant,
+              values: const ['info', 'error'],
+              onValuesChange: (_) {},
+              items: _levels,
+            ),
           );
           expect(tester.takeException(), isNull);
         }
@@ -121,7 +135,10 @@ void main() {
 
     testWidgets('multiple: appends and removes values', (tester) async {
       final calls = <List<String>>[];
-      await pumpKumo(tester, KumoToggleGroup<String>.multiple(values: const ['info'], onValuesChange: calls.add, items: _levels));
+      await pumpKumo(
+        tester,
+        KumoToggleGroup<String>.multiple(values: const ['info'], onValuesChange: calls.add, items: _levels),
+      );
       await tester.tap(find.text('Error'));
       await tester.tap(find.text('Info'));
       expect(calls, [
@@ -132,14 +149,23 @@ void main() {
 
     testWidgets('semantics: single is a radio group, multiple are toggle buttons', (tester) async {
       final handle = tester.ensureSemantics();
-      await pumpKumo(tester, KumoToggleGroup<String>(semanticLabel: 'Log level', value: 'info', onValueChange: (_) {}, items: _levels));
+      await pumpKumo(
+        tester,
+        KumoToggleGroup<String>(semanticLabel: 'Log level', value: 'info', onValueChange: (_) {}, items: _levels),
+      );
       expect(
         tester.getSemantics(find.text('Info')),
         containsSemantics(isInMutuallyExclusiveGroup: true, isChecked: true, hasCheckedState: true),
       );
       expect(find.bySemanticsLabel('Log level'), findsOneWidget);
-      await pumpKumo(tester, KumoToggleGroup<String>.multiple(values: const ['info'], onValuesChange: (_) {}, items: _levels));
-      expect(tester.getSemantics(find.text('Info')), containsSemantics(isButton: true, hasToggledState: true, isToggled: true));
+      await pumpKumo(
+        tester,
+        KumoToggleGroup<String>.multiple(values: const ['info'], onValuesChange: (_) {}, items: _levels),
+      );
+      expect(
+        tester.getSemantics(find.text('Info')),
+        containsSemantics(isButton: true, hasToggledState: true, isToggled: true),
+      );
       handle.dispose();
     });
 
@@ -189,7 +215,8 @@ void main() {
           values: const ['GET'],
           onValuesChange: (_) {},
           items: [
-            for (final m in ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS']) KumoToggleGroupItem(value: m, label: m),
+            for (final m in ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'])
+              KumoToggleGroupItem(value: m, label: m),
           ],
         ),
       );
@@ -204,7 +231,12 @@ void main() {
           child: Row(
             children: [
               KumoToggleGroup<String>(value: 'info', onValueChange: (_) {}, items: _levels),
-              KumoToggleGroup<String>(variant: KumoToggleVariant.ghost, value: 'info', onValueChange: (_) {}, items: _levels),
+              KumoToggleGroup<String>(
+                variant: KumoToggleVariant.ghost,
+                value: 'info',
+                onValueChange: (_) {},
+                items: _levels,
+              ),
             ],
           ),
         ),
@@ -217,10 +249,8 @@ void main() {
       tester.widget<RichText>(find.descendant(of: find.text(text), matching: find.byType(RichText))).text.style?.color;
 
   testWidgets('single segmented group: the fill slides between items; instant under reduced motion', (tester) async {
-    Widget group() => controlled<String?>(
-      'info',
-      (v, set) => KumoToggleGroup<String>(value: v, onValueChange: set, items: _levels),
-    );
+    Widget group() =>
+        controlled<String?>('info', (v, set) => KumoToggleGroup<String>(value: v, onValueChange: set, items: _levels));
     await pumpKumo(tester, group());
     final off = labelColor(tester, 'Error')!;
     final on = labelColor(tester, 'Info')!;

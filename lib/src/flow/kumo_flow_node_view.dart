@@ -53,10 +53,7 @@ class _FlowNodeView extends StatelessWidget {
           decoration: BoxDecoration(
             color: Color.lerp(resting, kumo.colors.tint, t),
             borderRadius: radius,
-            border: KumoRing.border(
-              Color.lerp(kumo.colors.line, kumo.colors.interact, t)!,
-              width: 1 + t,
-            ),
+            border: KumoRing.border(Color.lerp(kumo.colors.line, kumo.colors.interact, t)!, width: 1 + t),
             boxShadow: KumoShadow.sm.boxShadows,
           ),
           child: child,

@@ -222,7 +222,8 @@ class _KumoSensitiveInputState extends FormsTextState<KumoSensitiveInput> {
     final hasOverlay = Overlay.maybeOf(context) != null;
     final inlineCopy = touch || !hasOverlay;
     final name = widget.label ?? widget.semanticLabel ?? 'Sensitive value';
-    final revealText = widget.revealText ?? (touch ? context.kumoStrings.tapToReveal : context.kumoStrings.clickToReveal);
+    final revealText =
+        widget.revealText ?? (touch ? context.kumoStrings.tapToReveal : context.kumoStrings.clickToReveal);
     final iconSize = formsIconSize(size);
     final buttonExtent = iconSize + 4;
     final masked = _mode == _Mode.masked && _hasValue;

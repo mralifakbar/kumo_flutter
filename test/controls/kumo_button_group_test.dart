@@ -20,20 +20,20 @@ void main() {
         brightness: brightness,
         SingleChildScrollView(
           child: Wrap(
-          spacing: 8,
-          runSpacing: 8,
-          children: [
-            for (final variant in KumoButtonVariant.values)
-              for (final size in KumoButtonSize.values)
-                KumoButtonGroup(
-                  variant: variant,
-                  size: size,
-                  children: [
-                    KumoButtonGroupButton(label: 'Deploy', onPress: () {}),
-                    KumoButtonGroupButton(icon: KumoIcons.caretDown, semanticLabel: 'More', onPress: () {}),
-                  ],
-                ),
-          ],
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              for (final variant in KumoButtonVariant.values)
+                for (final size in KumoButtonSize.values)
+                  KumoButtonGroup(
+                    variant: variant,
+                    size: size,
+                    children: [
+                      KumoButtonGroupButton(label: 'Deploy', onPress: () {}),
+                      KumoButtonGroupButton(icon: KumoIcons.caretDown, semanticLabel: 'More', onPress: () {}),
+                    ],
+                  ),
+            ],
           ),
         ),
       );
@@ -65,12 +65,12 @@ void main() {
 
   testWidgets('only the outer corners are rounded, mirrored in RTL', (tester) async {
     Widget group() => KumoButtonGroup(
-          children: [
-            KumoButtonGroupButton(label: 'One', onPress: () {}),
-            KumoButtonGroupButton(label: 'Two', onPress: () {}),
-            KumoButtonGroupButton(label: 'Three', onPress: () {}),
-          ],
-        );
+      children: [
+        KumoButtonGroupButton(label: 'One', onPress: () {}),
+        KumoButtonGroupButton(label: 'Two', onPress: () {}),
+        KumoButtonGroupButton(label: 'Three', onPress: () {}),
+      ],
+    );
     await pumpKumo(tester, group());
     expect(radiusOf(tester, 'One'), const BorderRadius.horizontal(left: Radius.circular(KumoRadius.lg)));
     expect(radiusOf(tester, 'Two'), BorderRadius.zero);
@@ -157,7 +157,10 @@ void main() {
       KumoButtonGroup(
         children: [
           KumoButtonGroupButton(label: 'Save', onPress: () {}),
-          KumoTooltip(content: 'Save options', child: KumoButtonGroupButton(label: 'More', onPress: () {})),
+          KumoTooltip(
+            content: 'Save options',
+            child: KumoButtonGroupButton(label: 'More', onPress: () {}),
+          ),
         ],
       ),
     );

@@ -22,6122 +22,9181 @@ abstract final class KumoIcons {
 
   /// `acorn`: savings, nut, vegetable, veggies, food, groceries.
   static const IconData acorn = IconData(0xeb9a, fontFamily: _regular, fontPackage: _package);
+
   /// `acorn`, fill weight.
   static const IconData acornFill = IconData(0xeb9a, fontFamily: _fill, fontPackage: _package);
+
   /// `activity`.
   static const IconData activity = IconData(0xe000, fontFamily: _regular, fontPackage: _package);
+
   /// `activity`, fill weight.
   static const IconData activityFill = IconData(0xe000, fontFamily: _fill, fontPackage: _package);
+
   /// `address-book`: contacts, directory, roledex.
   static const IconData addressBook = IconData(0xe6f8, fontFamily: _regular, fontPackage: _package);
+
   /// `address-book`, fill weight.
   static const IconData addressBookFill = IconData(0xe6f8, fontFamily: _fill, fontPackage: _package);
+
   /// `address-book-tabs`: contacts, directory, roledex.
   static const IconData addressBookTabs = IconData(0xee4e, fontFamily: _regular, fontPackage: _package);
+
   /// `address-book-tabs`, fill weight.
   static const IconData addressBookTabsFill = IconData(0xee4e, fontFamily: _fill, fontPackage: _package);
+
   /// `air-traffic-control`: airport, travel, transportation, buildings.
   static const IconData airTrafficControl = IconData(0xecd8, fontFamily: _regular, fontPackage: _package);
+
   /// `air-traffic-control`, fill weight.
   static const IconData airTrafficControlFill = IconData(0xecd8, fontFamily: _fill, fontPackage: _package);
+
   /// `airplane`: vehicles, airports, flights, flying, planes, transit.
   static const IconData airplane = IconData(0xe002, fontFamily: _regular, fontPackage: _package);
+
   /// `airplane`, fill weight.
   static const IconData airplaneFill = IconData(0xe002, fontFamily: _fill, fontPackage: _package);
+
   /// `airplane-in-flight`: vehicles, airports, flights, flying, planes, transit.
   static const IconData airplaneInFlight = IconData(0xe4fe, fontFamily: _regular, fontPackage: _package);
+
   /// `airplane-in-flight`, fill weight.
   static const IconData airplaneInFlightFill = IconData(0xe4fe, fontFamily: _fill, fontPackage: _package);
+
   /// `airplane-landing`: vehicles, airports, flights, flying, planes, transit.
   static const IconData airplaneLanding = IconData(0xe502, fontFamily: _regular, fontPackage: _package);
+
   /// `airplane-landing`, fill weight.
   static const IconData airplaneLandingFill = IconData(0xe502, fontFamily: _fill, fontPackage: _package);
+
   /// `airplane-takeoff`: vehicles, airports, flights, flying, planes, transit.
   static const IconData airplaneTakeoff = IconData(0xe504, fontFamily: _regular, fontPackage: _package);
+
   /// `airplane-takeoff`, fill weight.
   static const IconData airplaneTakeoffFill = IconData(0xe504, fontFamily: _fill, fontPackage: _package);
+
   /// `airplane-taxiing`: vehicles, airports, flights, flying, planes, transit.
   static const IconData airplaneTaxiing = IconData(0xe500, fontFamily: _regular, fontPackage: _package);
+
   /// `airplane-taxiing`, fill weight.
   static const IconData airplaneTaxiingFill = IconData(0xe500, fontFamily: _fill, fontPackage: _package);
+
   /// `airplane-tilt`: vehicles, airports, flights, flying, planes, transit.
   static const IconData airplaneTilt = IconData(0xe5d6, fontFamily: _regular, fontPackage: _package);
+
   /// `airplane-tilt`, fill weight.
   static const IconData airplaneTiltFill = IconData(0xe5d6, fontFamily: _fill, fontPackage: _package);
+
   /// `airplay`: apple, screencasting, television, tv.
   static const IconData airplay = IconData(0xe004, fontFamily: _regular, fontPackage: _package);
+
   /// `airplay`, fill weight.
   static const IconData airplayFill = IconData(0xe004, fontFamily: _fill, fontPackage: _package);
+
   /// `alarm`: times, timer, clock, schedule, events, watch.
   static const IconData alarm = IconData(0xe006, fontFamily: _regular, fontPackage: _package);
+
   /// `alarm`, fill weight.
   static const IconData alarmFill = IconData(0xe006, fontFamily: _fill, fontPackage: _package);
+
   /// `alien`: ufo, space, flying saucer, extra terrestrial, sci-fi.
   static const IconData alien = IconData(0xe8a6, fontFamily: _regular, fontPackage: _package);
+
   /// `alien`, fill weight.
   static const IconData alienFill = IconData(0xe8a6, fontFamily: _fill, fontPackage: _package);
+
   /// `align-bottom`: alignment, arrangement, layout, flush bottom.
   static const IconData alignBottom = IconData(0xe506, fontFamily: _regular, fontPackage: _package);
+
   /// `align-bottom`, fill weight.
   static const IconData alignBottomFill = IconData(0xe506, fontFamily: _fill, fontPackage: _package);
+
   /// `align-bottom-simple`: alignment, arrangement, layout, flush bottom.
   static const IconData alignBottomSimple = IconData(0xeb0c, fontFamily: _regular, fontPackage: _package);
+
   /// `align-bottom-simple`, fill weight.
   static const IconData alignBottomSimpleFill = IconData(0xeb0c, fontFamily: _fill, fontPackage: _package);
+
   /// `align-center-horizontal`: alignment, arrangement, layout, centered, middle.
   static const IconData alignCenterHorizontal = IconData(0xe50a, fontFamily: _regular, fontPackage: _package);
+
   /// `align-center-horizontal`, fill weight.
   static const IconData alignCenterHorizontalFill = IconData(0xe50a, fontFamily: _fill, fontPackage: _package);
+
   /// `align-center-horizontal-simple`: alignment, arrangement, layout, centered, middle.
   static const IconData alignCenterHorizontalSimple = IconData(0xeb0e, fontFamily: _regular, fontPackage: _package);
+
   /// `align-center-horizontal-simple`, fill weight.
   static const IconData alignCenterHorizontalSimpleFill = IconData(0xeb0e, fontFamily: _fill, fontPackage: _package);
+
   /// `align-center-vertical`: alignment, arrangement, layout, centered, middle.
   static const IconData alignCenterVertical = IconData(0xe50c, fontFamily: _regular, fontPackage: _package);
+
   /// `align-center-vertical`, fill weight.
   static const IconData alignCenterVerticalFill = IconData(0xe50c, fontFamily: _fill, fontPackage: _package);
+
   /// `align-center-vertical-simple`: alignment, arrangement, layout, centered, middle.
   static const IconData alignCenterVerticalSimple = IconData(0xeb10, fontFamily: _regular, fontPackage: _package);
+
   /// `align-center-vertical-simple`, fill weight.
   static const IconData alignCenterVerticalSimpleFill = IconData(0xeb10, fontFamily: _fill, fontPackage: _package);
+
   /// `align-left`: alignment, arrangement, layout, flush left.
   static const IconData alignLeft = IconData(0xe50e, fontFamily: _regular, fontPackage: _package);
+
   /// `align-left`, fill weight.
   static const IconData alignLeftFill = IconData(0xe50e, fontFamily: _fill, fontPackage: _package);
+
   /// `align-left-simple`: alignment, arrangement, layout, flush left.
   static const IconData alignLeftSimple = IconData(0xeaee, fontFamily: _regular, fontPackage: _package);
+
   /// `align-left-simple`, fill weight.
   static const IconData alignLeftSimpleFill = IconData(0xeaee, fontFamily: _fill, fontPackage: _package);
+
   /// `align-right`: alignment, arrangement, layout, flush right.
   static const IconData alignRight = IconData(0xe510, fontFamily: _regular, fontPackage: _package);
+
   /// `align-right`, fill weight.
   static const IconData alignRightFill = IconData(0xe510, fontFamily: _fill, fontPackage: _package);
+
   /// `align-right-simple`: alignment, arrangement, layout, flush right.
   static const IconData alignRightSimple = IconData(0xeb12, fontFamily: _regular, fontPackage: _package);
+
   /// `align-right-simple`, fill weight.
   static const IconData alignRightSimpleFill = IconData(0xeb12, fontFamily: _fill, fontPackage: _package);
+
   /// `align-top`: alignment, arrangement, layout, flush top.
   static const IconData alignTop = IconData(0xe512, fontFamily: _regular, fontPackage: _package);
+
   /// `align-top`, fill weight.
   static const IconData alignTopFill = IconData(0xe512, fontFamily: _fill, fontPackage: _package);
+
   /// `align-top-simple`: alignment, arrangement, layout, flush top.
   static const IconData alignTopSimple = IconData(0xeb14, fontFamily: _regular, fontPackage: _package);
+
   /// `align-top-simple`, fill weight.
   static const IconData alignTopSimpleFill = IconData(0xeb14, fontFamily: _fill, fontPackage: _package);
+
   /// `amazon-logo`: ecommerce, shopping, logos.
   static const IconData amazonLogo = IconData(0xe96c, fontFamily: _regular, fontPackage: _package);
+
   /// `amazon-logo`, fill weight.
   static const IconData amazonLogoFill = IconData(0xe96c, fontFamily: _fill, fontPackage: _package);
+
   /// `ambulance`: first-aid, emt, medical, medicine, injury, safety.
   static const IconData ambulance = IconData(0xe572, fontFamily: _regular, fontPackage: _package);
+
   /// `ambulance`, fill weight.
   static const IconData ambulanceFill = IconData(0xe572, fontFamily: _fill, fontPackage: _package);
+
   /// `anchor`: nautical, boats, ships, hope, safety, insurance.
   static const IconData anchor = IconData(0xe514, fontFamily: _regular, fontPackage: _package);
+
   /// `anchor`, fill weight.
   static const IconData anchorFill = IconData(0xe514, fontFamily: _fill, fontPackage: _package);
+
   /// `anchor-simple`: nautical, boats, ships, hope, safety, insurance.
   static const IconData anchorSimple = IconData(0xe5d8, fontFamily: _regular, fontPackage: _package);
+
   /// `anchor-simple`, fill weight.
   static const IconData anchorSimpleFill = IconData(0xe5d8, fontFamily: _fill, fontPackage: _package);
+
   /// `android-logo`: logos, google, mobile, phone, cellular, cellphone.
   static const IconData androidLogo = IconData(0xe008, fontFamily: _regular, fontPackage: _package);
+
   /// `android-logo`, fill weight.
   static const IconData androidLogoFill = IconData(0xe008, fontFamily: _fill, fontPackage: _package);
+
   /// `angle`: geometry, trigonometry, degrees, radians, measurement, protractor.
   static const IconData angle = IconData(0xe7bc, fontFamily: _regular, fontPackage: _package);
+
   /// `angle`, fill weight.
   static const IconData angleFill = IconData(0xe7bc, fontFamily: _fill, fontPackage: _package);
+
   /// `angular-logo`: framework, javascript, google, web.
   static const IconData angularLogo = IconData(0xeb80, fontFamily: _regular, fontPackage: _package);
+
   /// `angular-logo`, fill weight.
   static const IconData angularLogoFill = IconData(0xeb80, fontFamily: _fill, fontPackage: _package);
+
   /// `aperture`: photography, cameras, pictures, lens.
   static const IconData aperture = IconData(0xe00a, fontFamily: _regular, fontPackage: _package);
+
   /// `aperture`, fill weight.
   static const IconData apertureFill = IconData(0xe00a, fontFamily: _fill, fontPackage: _package);
+
   /// `app-store-logo`: macintosh, imac, iphone, ipad, macos, ios.
   static const IconData appStoreLogo = IconData(0xe974, fontFamily: _regular, fontPackage: _package);
+
   /// `app-store-logo`, fill weight.
   static const IconData appStoreLogoFill = IconData(0xe974, fontFamily: _fill, fontPackage: _package);
+
   /// `app-window`: windows, software, programs, applications.
   static const IconData appWindow = IconData(0xe5da, fontFamily: _regular, fontPackage: _package);
+
   /// `app-window`, fill weight.
   static const IconData appWindowFill = IconData(0xe5da, fontFamily: _fill, fontPackage: _package);
+
   /// `apple-logo`: macintosh, imac, iphone, ipad, macos, ios.
   static const IconData appleLogo = IconData(0xe516, fontFamily: _regular, fontPackage: _package);
+
   /// `apple-logo`, fill weight.
   static const IconData appleLogoFill = IconData(0xe516, fontFamily: _fill, fontPackage: _package);
+
   /// `apple-podcasts-logo`: macintosh, imac, iphone, ipad, macos, ios.
   static const IconData applePodcastsLogo = IconData(0xeb96, fontFamily: _regular, fontPackage: _package);
+
   /// `apple-podcasts-logo`, fill weight.
   static const IconData applePodcastsLogoFill = IconData(0xeb96, fontFamily: _fill, fontPackage: _package);
+
   /// `approximate-equals`: ≈, is approximately equal to, congruent, equality, equivalent, equivalence.
   static const IconData approximateEquals = IconData(0xedaa, fontFamily: _regular, fontPackage: _package);
+
   /// `approximate-equals`, fill weight.
   static const IconData approximateEqualsFill = IconData(0xedaa, fontFamily: _fill, fontPackage: _package);
+
   /// `archive`: saved, saving, archived, archiving, archival, downloaded.
   static const IconData archive = IconData(0xe00c, fontFamily: _regular, fontPackage: _package);
+
   /// `archive`, fill weight.
   static const IconData archiveFill = IconData(0xe00c, fontFamily: _fill, fontPackage: _package);
+
   /// `archive-box`.
   static const IconData archiveBox = IconData(0xe00e, fontFamily: _regular, fontPackage: _package);
+
   /// `archive-box`, fill weight.
   static const IconData archiveBoxFill = IconData(0xe00e, fontFamily: _fill, fontPackage: _package);
+
   /// `archive-tray`.
   static const IconData archiveTray = IconData(0xe010, fontFamily: _regular, fontPackage: _package);
+
   /// `archive-tray`, fill weight.
   static const IconData archiveTrayFill = IconData(0xe010, fontFamily: _fill, fontPackage: _package);
+
   /// `armchair`: seat, furniture.
   static const IconData armchair = IconData(0xe012, fontFamily: _regular, fontPackage: _package);
+
   /// `armchair`, fill weight.
   static const IconData armchairFill = IconData(0xe012, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-arc-left`: directional, pointer, pointing, arrowhead.
   static const IconData arrowArcLeft = IconData(0xe014, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-arc-left`, fill weight.
   static const IconData arrowArcLeftFill = IconData(0xe014, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-arc-right`: directional, pointer, pointing, arrowhead.
   static const IconData arrowArcRight = IconData(0xe016, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-arc-right`, fill weight.
   static const IconData arrowArcRightFill = IconData(0xe016, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-bend-double-up-left`: directional, pointer, pointing, arrowhead, reply-all.
   static const IconData arrowBendDoubleUpLeft = IconData(0xe03a, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-bend-double-up-left`, fill weight.
   static const IconData arrowBendDoubleUpLeftFill = IconData(0xe03a, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-bend-double-up-right`: directional, pointer, pointing, arrowhead.
   static const IconData arrowBendDoubleUpRight = IconData(0xe03c, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-bend-double-up-right`, fill weight.
   static const IconData arrowBendDoubleUpRightFill = IconData(0xe03c, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-bend-down-left`: directional, pointer, pointing, arrowhead.
   static const IconData arrowBendDownLeft = IconData(0xe018, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-bend-down-left`, fill weight.
   static const IconData arrowBendDownLeftFill = IconData(0xe018, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-bend-down-right`: directional, pointer, pointing, arrowhead.
   static const IconData arrowBendDownRight = IconData(0xe01a, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-bend-down-right`, fill weight.
   static const IconData arrowBendDownRightFill = IconData(0xe01a, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-bend-left-down`: directional, pointer, pointing, arrowhead.
   static const IconData arrowBendLeftDown = IconData(0xe01c, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-bend-left-down`, fill weight.
   static const IconData arrowBendLeftDownFill = IconData(0xe01c, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-bend-left-up`: directional, pointer, pointing, arrowhead.
   static const IconData arrowBendLeftUp = IconData(0xe01e, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-bend-left-up`, fill weight.
   static const IconData arrowBendLeftUpFill = IconData(0xe01e, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-bend-right-down`: directional, pointer, pointing, arrowhead.
   static const IconData arrowBendRightDown = IconData(0xe020, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-bend-right-down`, fill weight.
   static const IconData arrowBendRightDownFill = IconData(0xe020, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-bend-right-up`: directional, pointer, pointing, arrowhead.
   static const IconData arrowBendRightUp = IconData(0xe022, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-bend-right-up`, fill weight.
   static const IconData arrowBendRightUpFill = IconData(0xe022, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-bend-up-left`: directional, pointer, pointing, arrowhead, reply, re.
   static const IconData arrowBendUpLeft = IconData(0xe024, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-bend-up-left`, fill weight.
   static const IconData arrowBendUpLeftFill = IconData(0xe024, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-bend-up-right`: directional, pointer, pointing, arrowhead, forward, fwd.
   static const IconData arrowBendUpRight = IconData(0xe026, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-bend-up-right`, fill weight.
   static const IconData arrowBendUpRightFill = IconData(0xe026, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-circle-down`: directional, pointer, pointing, arrowhead.
   static const IconData arrowCircleDown = IconData(0xe028, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-circle-down`, fill weight.
   static const IconData arrowCircleDownFill = IconData(0xe028, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-circle-down-left`: directional, pointer, pointing, arrowhead.
   static const IconData arrowCircleDownLeft = IconData(0xe02a, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-circle-down-left`, fill weight.
   static const IconData arrowCircleDownLeftFill = IconData(0xe02a, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-circle-down-right`: directional, pointer, pointing, arrowhead.
   static const IconData arrowCircleDownRight = IconData(0xe02c, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-circle-down-right`, fill weight.
   static const IconData arrowCircleDownRightFill = IconData(0xe02c, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-circle-left`: directional, pointer, pointing, arrowhead.
   static const IconData arrowCircleLeft = IconData(0xe05a, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-circle-left`, fill weight.
   static const IconData arrowCircleLeftFill = IconData(0xe05a, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-circle-right`: directional, pointer, pointing, arrowhead.
   static const IconData arrowCircleRight = IconData(0xe02e, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-circle-right`, fill weight.
   static const IconData arrowCircleRightFill = IconData(0xe02e, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-circle-up`: directional, pointer, pointing, arrowhead.
   static const IconData arrowCircleUp = IconData(0xe030, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-circle-up`, fill weight.
   static const IconData arrowCircleUpFill = IconData(0xe030, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-circle-up-left`: directional, pointer, pointing, arrowhead.
   static const IconData arrowCircleUpLeft = IconData(0xe032, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-circle-up-left`, fill weight.
   static const IconData arrowCircleUpLeftFill = IconData(0xe032, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-circle-up-right`: directional, pointer, pointing, arrowhead.
   static const IconData arrowCircleUpRight = IconData(0xe034, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-circle-up-right`, fill weight.
   static const IconData arrowCircleUpRightFill = IconData(0xe034, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-clockwise`: directional, pointer, pointing, arrowhead, redo, refreshing.
   static const IconData arrowClockwise = IconData(0xe036, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-clockwise`, fill weight.
   static const IconData arrowClockwiseFill = IconData(0xe036, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-counter-clockwise`: directional, pointer, pointing, arrowhead, undo, refreshing.
   static const IconData arrowCounterClockwise = IconData(0xe038, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-counter-clockwise`, fill weight.
   static const IconData arrowCounterClockwiseFill = IconData(0xe038, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-down`: directional, pointer, pointing, arrowhead.
   static const IconData arrowDown = IconData(0xe03e, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-down`, fill weight.
   static const IconData arrowDownFill = IconData(0xe03e, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-down-left`: directional, pointer, pointing, arrowhead.
   static const IconData arrowDownLeft = IconData(0xe040, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-down-left`, fill weight.
   static const IconData arrowDownLeftFill = IconData(0xe040, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-down-right`: directional, pointer, pointing, arrowhead.
   static const IconData arrowDownRight = IconData(0xe042, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-down-right`, fill weight.
   static const IconData arrowDownRightFill = IconData(0xe042, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-elbow-down-left`: directional, pointer, pointing, arrowhead.
   static const IconData arrowElbowDownLeft = IconData(0xe044, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-elbow-down-left`, fill weight.
   static const IconData arrowElbowDownLeftFill = IconData(0xe044, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-elbow-down-right`: directional, pointer, pointing, arrowhead.
   static const IconData arrowElbowDownRight = IconData(0xe046, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-elbow-down-right`, fill weight.
   static const IconData arrowElbowDownRightFill = IconData(0xe046, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-elbow-left`: directional, pointer, pointing, arrowhead.
   static const IconData arrowElbowLeft = IconData(0xe048, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-elbow-left`, fill weight.
   static const IconData arrowElbowLeftFill = IconData(0xe048, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-elbow-left-down`: directional, pointer, pointing, arrowhead.
   static const IconData arrowElbowLeftDown = IconData(0xe04a, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-elbow-left-down`, fill weight.
   static const IconData arrowElbowLeftDownFill = IconData(0xe04a, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-elbow-left-up`: directional, pointer, pointing, arrowhead.
   static const IconData arrowElbowLeftUp = IconData(0xe04c, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-elbow-left-up`, fill weight.
   static const IconData arrowElbowLeftUpFill = IconData(0xe04c, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-elbow-right`: directional, pointer, pointing, arrowhead.
   static const IconData arrowElbowRight = IconData(0xe04e, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-elbow-right`, fill weight.
   static const IconData arrowElbowRightFill = IconData(0xe04e, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-elbow-right-down`: directional, pointer, pointing, arrowhead.
   static const IconData arrowElbowRightDown = IconData(0xe050, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-elbow-right-down`, fill weight.
   static const IconData arrowElbowRightDownFill = IconData(0xe050, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-elbow-right-up`: directional, pointer, pointing, arrowhead.
   static const IconData arrowElbowRightUp = IconData(0xe052, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-elbow-right-up`, fill weight.
   static const IconData arrowElbowRightUpFill = IconData(0xe052, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-elbow-up-left`: directional, pointer, pointing, arrowhead.
   static const IconData arrowElbowUpLeft = IconData(0xe054, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-elbow-up-left`, fill weight.
   static const IconData arrowElbowUpLeftFill = IconData(0xe054, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-elbow-up-right`: directional, pointer, pointing, arrowhead.
   static const IconData arrowElbowUpRight = IconData(0xe056, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-elbow-up-right`, fill weight.
   static const IconData arrowElbowUpRightFill = IconData(0xe056, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-fat-down`: directional, pointer, pointing, arrowhead, outlined.
   static const IconData arrowFatDown = IconData(0xe518, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-fat-down`, fill weight.
   static const IconData arrowFatDownFill = IconData(0xe518, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-fat-left`: directional, pointer, pointing, arrowhead, outlined.
   static const IconData arrowFatLeft = IconData(0xe51a, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-fat-left`, fill weight.
   static const IconData arrowFatLeftFill = IconData(0xe51a, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-fat-line-down`: directional, pointer, pointing, arrowhead, outlined.
   static const IconData arrowFatLineDown = IconData(0xe51c, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-fat-line-down`, fill weight.
   static const IconData arrowFatLineDownFill = IconData(0xe51c, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-fat-line-left`: directional, pointer, pointing, arrowhead, outlined.
   static const IconData arrowFatLineLeft = IconData(0xe51e, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-fat-line-left`, fill weight.
   static const IconData arrowFatLineLeftFill = IconData(0xe51e, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-fat-line-right`: directional, pointer, pointing, arrowhead, outlined.
   static const IconData arrowFatLineRight = IconData(0xe520, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-fat-line-right`, fill weight.
   static const IconData arrowFatLineRightFill = IconData(0xe520, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-fat-line-up`: directional, pointer, pointing, arrowhead, caps lock, outlined.
   static const IconData arrowFatLineUp = IconData(0xe522, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-fat-line-up`, fill weight.
   static const IconData arrowFatLineUpFill = IconData(0xe522, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-fat-lines-down`: directional, pointer, pointing, arrowhead, outlined.
   static const IconData arrowFatLinesDown = IconData(0xe524, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-fat-lines-down`, fill weight.
   static const IconData arrowFatLinesDownFill = IconData(0xe524, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-fat-lines-left`: directional, pointer, pointing, arrowhead, outlined.
   static const IconData arrowFatLinesLeft = IconData(0xe526, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-fat-lines-left`, fill weight.
   static const IconData arrowFatLinesLeftFill = IconData(0xe526, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-fat-lines-right`: directional, pointer, pointing, arrowhead, outlined.
   static const IconData arrowFatLinesRight = IconData(0xe528, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-fat-lines-right`, fill weight.
   static const IconData arrowFatLinesRightFill = IconData(0xe528, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-fat-lines-up`: directional, pointer, pointing, arrowhead, outlined.
   static const IconData arrowFatLinesUp = IconData(0xe52a, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-fat-lines-up`, fill weight.
   static const IconData arrowFatLinesUpFill = IconData(0xe52a, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-fat-right`: directional, pointer, pointing, arrowhead, outlined.
   static const IconData arrowFatRight = IconData(0xe52c, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-fat-right`, fill weight.
   static const IconData arrowFatRightFill = IconData(0xe52c, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-fat-up`: directional, pointer, pointing, arrowhead, shift, outlined.
   static const IconData arrowFatUp = IconData(0xe52e, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-fat-up`, fill weight.
   static const IconData arrowFatUpFill = IconData(0xe52e, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-left`: directional, pointer, pointing, arrowhead.
   static const IconData arrowLeft = IconData(0xe058, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-left`, fill weight.
   static const IconData arrowLeftFill = IconData(0xe058, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-line-down`: directional, pointer, pointing, arrowhead, bottom.
   static const IconData arrowLineDown = IconData(0xe05c, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-line-down`, fill weight.
   static const IconData arrowLineDownFill = IconData(0xe05c, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-line-down-left`: directional, pointer, pointing, arrowhead.
   static const IconData arrowLineDownLeft = IconData(0xe05e, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-line-down-left`, fill weight.
   static const IconData arrowLineDownLeftFill = IconData(0xe05e, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-line-down-right`: directional, pointer, pointing, arrowhead.
   static const IconData arrowLineDownRight = IconData(0xe060, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-line-down-right`, fill weight.
   static const IconData arrowLineDownRightFill = IconData(0xe060, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-line-left`: directional, pointer, pointing, arrowhead.
   static const IconData arrowLineLeft = IconData(0xe062, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-line-left`, fill weight.
   static const IconData arrowLineLeftFill = IconData(0xe062, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-line-right`: directional, pointer, pointing, arrowhead.
   static const IconData arrowLineRight = IconData(0xe064, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-line-right`, fill weight.
   static const IconData arrowLineRightFill = IconData(0xe064, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-line-up`: directional, pointer, pointing, arrowhead, top.
   static const IconData arrowLineUp = IconData(0xe066, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-line-up`, fill weight.
   static const IconData arrowLineUpFill = IconData(0xe066, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-line-up-left`: directional, pointer, pointing, arrowhead.
   static const IconData arrowLineUpLeft = IconData(0xe068, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-line-up-left`, fill weight.
   static const IconData arrowLineUpLeftFill = IconData(0xe068, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-line-up-right`: directional, pointer, pointing, arrowhead.
   static const IconData arrowLineUpRight = IconData(0xe06a, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-line-up-right`, fill weight.
   static const IconData arrowLineUpRightFill = IconData(0xe06a, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-right`: directional, pointer, pointing, arrowhead.
   static const IconData arrowRight = IconData(0xe06c, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-right`, fill weight.
   static const IconData arrowRightFill = IconData(0xe06c, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-square-down`: directional, pointer, pointing, arrowhead.
   static const IconData arrowSquareDown = IconData(0xe06e, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-square-down`, fill weight.
   static const IconData arrowSquareDownFill = IconData(0xe06e, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-square-down-left`: directional, pointer, pointing, arrowhead.
   static const IconData arrowSquareDownLeft = IconData(0xe070, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-square-down-left`, fill weight.
   static const IconData arrowSquareDownLeftFill = IconData(0xe070, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-square-down-right`: directional, pointer, pointing, arrowhead.
   static const IconData arrowSquareDownRight = IconData(0xe072, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-square-down-right`, fill weight.
   static const IconData arrowSquareDownRightFill = IconData(0xe072, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-square-in`: import, directional, pointer, pointing, arrowhead.
   static const IconData arrowSquareIn = IconData(0xe5dc, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-square-in`, fill weight.
   static const IconData arrowSquareInFill = IconData(0xe5dc, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-square-left`: directional, pointer, pointing, arrowhead.
   static const IconData arrowSquareLeft = IconData(0xe074, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-square-left`, fill weight.
   static const IconData arrowSquareLeftFill = IconData(0xe074, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-square-out`: export, external, directional, pointer, pointing, arrowhead.
   static const IconData arrowSquareOut = IconData(0xe5de, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-square-out`, fill weight.
   static const IconData arrowSquareOutFill = IconData(0xe5de, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-square-right`: directional, pointer, pointing, arrowhead.
   static const IconData arrowSquareRight = IconData(0xe076, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-square-right`, fill weight.
   static const IconData arrowSquareRightFill = IconData(0xe076, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-square-up`: directional, pointer, pointing, arrowhead.
   static const IconData arrowSquareUp = IconData(0xe078, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-square-up`, fill weight.
   static const IconData arrowSquareUpFill = IconData(0xe078, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-square-up-left`: directional, pointer, pointing, arrowhead.
   static const IconData arrowSquareUpLeft = IconData(0xe07a, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-square-up-left`, fill weight.
   static const IconData arrowSquareUpLeftFill = IconData(0xe07a, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-square-up-right`: directional, pointer, pointing, arrowhead.
   static const IconData arrowSquareUpRight = IconData(0xe07c, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-square-up-right`, fill weight.
   static const IconData arrowSquareUpRightFill = IconData(0xe07c, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-u-down-left`: directional, pointer, pointing, arrowhead, undo, return.
   static const IconData arrowUDownLeft = IconData(0xe07e, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-u-down-left`, fill weight.
   static const IconData arrowUDownLeftFill = IconData(0xe07e, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-u-down-right`: directional, pointer, pointing, arrowhead, redo, u-turns.
   static const IconData arrowUDownRight = IconData(0xe080, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-u-down-right`, fill weight.
   static const IconData arrowUDownRightFill = IconData(0xe080, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-u-left-down`: directional, pointer, pointing, arrowhead, undo, return.
   static const IconData arrowULeftDown = IconData(0xe082, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-u-left-down`, fill weight.
   static const IconData arrowULeftDownFill = IconData(0xe082, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-u-left-up`: directional, pointer, pointing, arrowhead, redo, u-turns.
   static const IconData arrowULeftUp = IconData(0xe084, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-u-left-up`, fill weight.
   static const IconData arrowULeftUpFill = IconData(0xe084, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-u-right-down`: directional, pointer, pointing, arrowhead, undo, return.
   static const IconData arrowURightDown = IconData(0xe086, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-u-right-down`, fill weight.
   static const IconData arrowURightDownFill = IconData(0xe086, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-u-right-up`: directional, pointer, pointing, arrowhead, redo, u-turns.
   static const IconData arrowURightUp = IconData(0xe088, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-u-right-up`, fill weight.
   static const IconData arrowURightUpFill = IconData(0xe088, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-u-up-left`: directional, pointer, pointing, arrowhead, undo, return.
   static const IconData arrowUUpLeft = IconData(0xe08a, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-u-up-left`, fill weight.
   static const IconData arrowUUpLeftFill = IconData(0xe08a, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-u-up-right`: directional, pointer, pointing, arrowhead, redo, u-turns.
   static const IconData arrowUUpRight = IconData(0xe08c, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-u-up-right`, fill weight.
   static const IconData arrowUUpRightFill = IconData(0xe08c, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-up`: directional, pointer, pointing, arrowhead.
   static const IconData arrowUp = IconData(0xe08e, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-up`, fill weight.
   static const IconData arrowUpFill = IconData(0xe08e, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-up-left`: directional, pointer, pointing, arrowhead.
   static const IconData arrowUpLeft = IconData(0xe090, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-up-left`, fill weight.
   static const IconData arrowUpLeftFill = IconData(0xe090, fontFamily: _fill, fontPackage: _package);
+
   /// `arrow-up-right`: directional, pointer, pointing, arrowhead.
   static const IconData arrowUpRight = IconData(0xe092, fontFamily: _regular, fontPackage: _package);
+
   /// `arrow-up-right`, fill weight.
   static const IconData arrowUpRightFill = IconData(0xe092, fontFamily: _fill, fontPackage: _package);
+
   /// `arrows-clockwise`: directional, pointer, pointing, arrowhead, redo, refreshing.
   static const IconData arrowsClockwise = IconData(0xe094, fontFamily: _regular, fontPackage: _package);
+
   /// `arrows-clockwise`, fill weight.
   static const IconData arrowsClockwiseFill = IconData(0xe094, fontFamily: _fill, fontPackage: _package);
+
   /// `arrows-counter-clockwise`: directional, pointer, pointing, arrowhead, undo, refreshing.
   static const IconData arrowsCounterClockwise = IconData(0xe096, fontFamily: _regular, fontPackage: _package);
+
   /// `arrows-counter-clockwise`, fill weight.
   static const IconData arrowsCounterClockwiseFill = IconData(0xe096, fontFamily: _fill, fontPackage: _package);
+
   /// `arrows-down-up`: directional, pointer, pointing, arrowhead.
   static const IconData arrowsDownUp = IconData(0xe098, fontFamily: _regular, fontPackage: _package);
+
   /// `arrows-down-up`, fill weight.
   static const IconData arrowsDownUpFill = IconData(0xe098, fontFamily: _fill, fontPackage: _package);
+
   /// `arrows-horizontal`: directional, pointer, cursor, resize, expand, left.
   static const IconData arrowsHorizontal = IconData(0xeb06, fontFamily: _regular, fontPackage: _package);
+
   /// `arrows-horizontal`, fill weight.
   static const IconData arrowsHorizontalFill = IconData(0xeb06, fontFamily: _fill, fontPackage: _package);
+
   /// `arrows-in`: directional, pointer, pointing, arrowhead, collapse, minimize.
   static const IconData arrowsIn = IconData(0xe09a, fontFamily: _regular, fontPackage: _package);
+
   /// `arrows-in`, fill weight.
   static const IconData arrowsInFill = IconData(0xe09a, fontFamily: _fill, fontPackage: _package);
+
   /// `arrows-in-cardinal`: directional, pointer, pointing, arrowhead, collapse, minimize.
   static const IconData arrowsInCardinal = IconData(0xe09c, fontFamily: _regular, fontPackage: _package);
+
   /// `arrows-in-cardinal`, fill weight.
   static const IconData arrowsInCardinalFill = IconData(0xe09c, fontFamily: _fill, fontPackage: _package);
+
   /// `arrows-in-line-horizontal`: directional, pointer, pointing, arrowhead, close, center.
   static const IconData arrowsInLineHorizontal = IconData(0xe530, fontFamily: _regular, fontPackage: _package);
+
   /// `arrows-in-line-horizontal`, fill weight.
   static const IconData arrowsInLineHorizontalFill = IconData(0xe530, fontFamily: _fill, fontPackage: _package);
+
   /// `arrows-in-line-vertical`: directional, pointer, pointing, arrowhead, close, center.
   static const IconData arrowsInLineVertical = IconData(0xe532, fontFamily: _regular, fontPackage: _package);
+
   /// `arrows-in-line-vertical`, fill weight.
   static const IconData arrowsInLineVerticalFill = IconData(0xe532, fontFamily: _fill, fontPackage: _package);
+
   /// `arrows-in-simple`: directional, pointer, pointing, arrowhead, collapse, minimize.
   static const IconData arrowsInSimple = IconData(0xe09e, fontFamily: _regular, fontPackage: _package);
+
   /// `arrows-in-simple`, fill weight.
   static const IconData arrowsInSimpleFill = IconData(0xe09e, fontFamily: _fill, fontPackage: _package);
+
   /// `arrows-left-right`: directional, pointer, pointing, arrowhead.
   static const IconData arrowsLeftRight = IconData(0xe0a0, fontFamily: _regular, fontPackage: _package);
+
   /// `arrows-left-right`, fill weight.
   static const IconData arrowsLeftRightFill = IconData(0xe0a0, fontFamily: _fill, fontPackage: _package);
+
   /// `arrows-merge`: arrowheads, join, combine.
   static const IconData arrowsMerge = IconData(0xed3e, fontFamily: _regular, fontPackage: _package);
+
   /// `arrows-merge`, fill weight.
   static const IconData arrowsMergeFill = IconData(0xed3e, fontFamily: _fill, fontPackage: _package);
+
   /// `arrows-out`: directional, pointer, pointing, arrowhead, expand, fullscreen.
   static const IconData arrowsOut = IconData(0xe0a2, fontFamily: _regular, fontPackage: _package);
+
   /// `arrows-out`, fill weight.
   static const IconData arrowsOutFill = IconData(0xe0a2, fontFamily: _fill, fontPackage: _package);
+
   /// `arrows-out-cardinal`: directional, pointer, pointing, arrowhead, expand, fullscreen.
   static const IconData arrowsOutCardinal = IconData(0xe0a4, fontFamily: _regular, fontPackage: _package);
+
   /// `arrows-out-cardinal`, fill weight.
   static const IconData arrowsOutCardinalFill = IconData(0xe0a4, fontFamily: _fill, fontPackage: _package);
+
   /// `arrows-out-line-horizontal`: directional, pointer, pointing, arrowhead, open, split.
   static const IconData arrowsOutLineHorizontal = IconData(0xe534, fontFamily: _regular, fontPackage: _package);
+
   /// `arrows-out-line-horizontal`, fill weight.
   static const IconData arrowsOutLineHorizontalFill = IconData(0xe534, fontFamily: _fill, fontPackage: _package);
+
   /// `arrows-out-line-vertical`: directional, pointer, pointing, arrowhead, open, split.
   static const IconData arrowsOutLineVertical = IconData(0xe536, fontFamily: _regular, fontPackage: _package);
+
   /// `arrows-out-line-vertical`, fill weight.
   static const IconData arrowsOutLineVerticalFill = IconData(0xe536, fontFamily: _fill, fontPackage: _package);
+
   /// `arrows-out-simple`: directional, pointer, pointing, arrowhead, expand, fullscreen.
   static const IconData arrowsOutSimple = IconData(0xe0a6, fontFamily: _regular, fontPackage: _package);
+
   /// `arrows-out-simple`, fill weight.
   static const IconData arrowsOutSimpleFill = IconData(0xe0a6, fontFamily: _fill, fontPackage: _package);
+
   /// `arrows-split`: arrowheads, fork.
   static const IconData arrowsSplit = IconData(0xed3c, fontFamily: _regular, fontPackage: _package);
+
   /// `arrows-split`, fill weight.
   static const IconData arrowsSplitFill = IconData(0xed3c, fontFamily: _fill, fontPackage: _package);
+
   /// `arrows-vertical`: directional, pointer, cursor, resize, expand, up.
   static const IconData arrowsVertical = IconData(0xeb04, fontFamily: _regular, fontPackage: _package);
+
   /// `arrows-vertical`, fill weight.
   static const IconData arrowsVerticalFill = IconData(0xeb04, fontFamily: _fill, fontPackage: _package);
+
   /// `article`: reading, writing, journals, periodicals, text, newspaper.
   static const IconData article = IconData(0xe0a8, fontFamily: _regular, fontPackage: _package);
+
   /// `article`, fill weight.
   static const IconData articleFill = IconData(0xe0a8, fontFamily: _fill, fontPackage: _package);
+
   /// `article-medium`: reading, writing, journals, periodicals, text, newspaper.
   static const IconData articleMedium = IconData(0xe5e0, fontFamily: _regular, fontPackage: _package);
+
   /// `article-medium`, fill weight.
   static const IconData articleMediumFill = IconData(0xe5e0, fontFamily: _fill, fontPackage: _package);
+
   /// `article-ny-times`: reading, writing, journals, periodicals, text, news.
   static const IconData articleNyTimes = IconData(0xe5e2, fontFamily: _regular, fontPackage: _package);
+
   /// `article-ny-times`, fill weight.
   static const IconData articleNyTimesFill = IconData(0xe5e2, fontFamily: _fill, fontPackage: _package);
+
   /// `asclepius`: caduceus, staff, mythology, rx, medicine, drugs.
   static const IconData asclepius = IconData(0xee34, fontFamily: _regular, fontPackage: _package);
+
   /// `asclepius`, fill weight.
   static const IconData asclepiusFill = IconData(0xee34, fontFamily: _fill, fontPackage: _package);
+
   /// `asterisk`: star, wildcard, bullet point, 6, emergency.
   static const IconData asterisk = IconData(0xe0aa, fontFamily: _regular, fontPackage: _package);
+
   /// `asterisk`, fill weight.
   static const IconData asteriskFill = IconData(0xe0aa, fontFamily: _fill, fontPackage: _package);
+
   /// `asterisk-simple`: star, wildcard, bullet point, 5, emergency.
   static const IconData asteriskSimple = IconData(0xe832, fontFamily: _regular, fontPackage: _package);
+
   /// `asterisk-simple`, fill weight.
   static const IconData asteriskSimpleFill = IconData(0xe832, fontFamily: _fill, fontPackage: _package);
+
   /// `at`: @, address, email, at symbol, commercial at, arobase.
   static const IconData at = IconData(0xe0ac, fontFamily: _regular, fontPackage: _package);
+
   /// `at`, fill weight.
   static const IconData atFill = IconData(0xe0ac, fontFamily: _fill, fontPackage: _package);
+
   /// `atom`: atomic, nucleus, nuclear, reactor, science, physics.
   static const IconData atom = IconData(0xe5e4, fontFamily: _regular, fontPackage: _package);
+
   /// `atom`, fill weight.
   static const IconData atomFill = IconData(0xe5e4, fontFamily: _fill, fontPackage: _package);
+
   /// `avocado`: food, vegetable, veggie, fruit, groceries, market.
   static const IconData avocado = IconData(0xee04, fontFamily: _regular, fontPackage: _package);
+
   /// `avocado`, fill weight.
   static const IconData avocadoFill = IconData(0xee04, fontFamily: _fill, fontPackage: _package);
+
   /// `axe`: tools, carpentry, forestry, construction.
   static const IconData axe = IconData(0xe9fc, fontFamily: _regular, fontPackage: _package);
+
   /// `axe`, fill weight.
   static const IconData axeFill = IconData(0xe9fc, fontFamily: _fill, fontPackage: _package);
+
   /// `baby`: infant, child, children, toddler.
   static const IconData baby = IconData(0xe774, fontFamily: _regular, fontPackage: _package);
+
   /// `baby`, fill weight.
   static const IconData babyFill = IconData(0xe774, fontFamily: _fill, fontPackage: _package);
+
   /// `baby-carriage`: pram, stroller, infant, child, children, toddler.
   static const IconData babyCarriage = IconData(0xe818, fontFamily: _regular, fontPackage: _package);
+
   /// `baby-carriage`, fill weight.
   static const IconData babyCarriageFill = IconData(0xe818, fontFamily: _fill, fontPackage: _package);
+
   /// `backpack`: knapsack, camping, school, bag.
   static const IconData backpack = IconData(0xe922, fontFamily: _regular, fontPackage: _package);
+
   /// `backpack`, fill weight.
   static const IconData backpackFill = IconData(0xe922, fontFamily: _fill, fontPackage: _package);
+
   /// `backspace`: keyboard, remove, delete.
   static const IconData backspace = IconData(0xe0ae, fontFamily: _regular, fontPackage: _package);
+
   /// `backspace`, fill weight.
   static const IconData backspaceFill = IconData(0xe0ae, fontFamily: _fill, fontPackage: _package);
+
   /// `bag`: suitcase, valise, baggage, folders, portfolio.
   static const IconData bag = IconData(0xe0b0, fontFamily: _regular, fontPackage: _package);
+
   /// `bag`, fill weight.
   static const IconData bagFill = IconData(0xe0b0, fontFamily: _fill, fontPackage: _package);
+
   /// `bag-simple`: suitcase, valise, baggage, folders, portfolio.
   static const IconData bagSimple = IconData(0xe5e6, fontFamily: _regular, fontPackage: _package);
+
   /// `bag-simple`, fill weight.
   static const IconData bagSimpleFill = IconData(0xe5e6, fontFamily: _fill, fontPackage: _package);
+
   /// `balloon`: helium, birthday, party.
   static const IconData balloon = IconData(0xe76c, fontFamily: _regular, fontPackage: _package);
+
   /// `balloon`, fill weight.
   static const IconData balloonFill = IconData(0xe76c, fontFamily: _fill, fontPackage: _package);
+
   /// `bandaids`: bandages, medical, medicine, first aid, injury.
   static const IconData bandaids = IconData(0xe0b2, fontFamily: _regular, fontPackage: _package);
+
   /// `bandaids`, fill weight.
   static const IconData bandaidsFill = IconData(0xe0b2, fontFamily: _fill, fontPackage: _package);
+
   /// `bank`: banking, checking, money, savings, deposit, withdraw.
   static const IconData bank = IconData(0xe0b4, fontFamily: _regular, fontPackage: _package);
+
   /// `bank`, fill weight.
   static const IconData bankFill = IconData(0xe0b4, fontFamily: _fill, fontPackage: _package);
+
   /// `barbell`: gym, weights, dumbbells, strength training, workout, exercises.
   static const IconData barbell = IconData(0xe0b6, fontFamily: _regular, fontPackage: _package);
+
   /// `barbell`, fill weight.
   static const IconData barbellFill = IconData(0xe0b6, fontFamily: _fill, fontPackage: _package);
+
   /// `barcode`: upc, qr, products, shopping, scanner.
   static const IconData barcode = IconData(0xe0b8, fontFamily: _regular, fontPackage: _package);
+
   /// `barcode`, fill weight.
   static const IconData barcodeFill = IconData(0xe0b8, fontFamily: _fill, fontPackage: _package);
+
   /// `barn`: animals, livestock, buildings, farming, agriculture.
   static const IconData barn = IconData(0xec72, fontFamily: _regular, fontPackage: _package);
+
   /// `barn`, fill weight.
   static const IconData barnFill = IconData(0xec72, fontFamily: _fill, fontPackage: _package);
+
   /// `barricade`: construction, safety, gate.
   static const IconData barricade = IconData(0xe948, fontFamily: _regular, fontPackage: _package);
+
   /// `barricade`, fill weight.
   static const IconData barricadeFill = IconData(0xe948, fontFamily: _fill, fontPackage: _package);
+
   /// `baseball`: sports, mlb.
   static const IconData baseball = IconData(0xe71a, fontFamily: _regular, fontPackage: _package);
+
   /// `baseball`, fill weight.
   static const IconData baseballFill = IconData(0xe71a, fontFamily: _fill, fontPackage: _package);
+
   /// `baseball-cap`: clothes, clothing, sports, hat.
   static const IconData baseballCap = IconData(0xea28, fontFamily: _regular, fontPackage: _package);
+
   /// `baseball-cap`, fill weight.
   static const IconData baseballCapFill = IconData(0xea28, fontFamily: _fill, fontPackage: _package);
+
   /// `baseball-helmet`: sports, mlb.
   static const IconData baseballHelmet = IconData(0xee4a, fontFamily: _regular, fontPackage: _package);
+
   /// `baseball-helmet`, fill weight.
   static const IconData baseballHelmetFill = IconData(0xee4a, fontFamily: _fill, fontPackage: _package);
+
   /// `basket`: ecommerce, market, cart, buying, shopping, groceries.
   static const IconData basket = IconData(0xe964, fontFamily: _regular, fontPackage: _package);
+
   /// `basket`, fill weight.
   static const IconData basketFill = IconData(0xe964, fontFamily: _fill, fontPackage: _package);
+
   /// `basketball`: sports, nba.
   static const IconData basketball = IconData(0xe724, fontFamily: _regular, fontPackage: _package);
+
   /// `basketball`, fill weight.
   static const IconData basketballFill = IconData(0xe724, fontFamily: _fill, fontPackage: _package);
+
   /// `bathtub`: bath, shower, bathroom, faucet.
   static const IconData bathtub = IconData(0xe81e, fontFamily: _regular, fontPackage: _package);
+
   /// `bathtub`, fill weight.
   static const IconData bathtubFill = IconData(0xe81e, fontFamily: _fill, fontPackage: _package);
+
   /// `battery-charging`: charged, charger, charging, power.
   static const IconData batteryCharging = IconData(0xe0ba, fontFamily: _regular, fontPackage: _package);
+
   /// `battery-charging`, fill weight.
   static const IconData batteryChargingFill = IconData(0xe0ba, fontFamily: _fill, fontPackage: _package);
+
   /// `battery-charging-vertical`: charged, charger, charging, power.
   static const IconData batteryChargingVertical = IconData(0xe0bc, fontFamily: _regular, fontPackage: _package);
+
   /// `battery-charging-vertical`, fill weight.
   static const IconData batteryChargingVerticalFill = IconData(0xe0bc, fontFamily: _fill, fontPackage: _package);
+
   /// `battery-empty`: charged, charger, charging, power, dead.
   static const IconData batteryEmpty = IconData(0xe0be, fontFamily: _regular, fontPackage: _package);
+
   /// `battery-empty`, fill weight.
   static const IconData batteryEmptyFill = IconData(0xe0be, fontFamily: _fill, fontPackage: _package);
+
   /// `battery-full`: charged, charger, charging, power, filled.
   static const IconData batteryFull = IconData(0xe0c0, fontFamily: _regular, fontPackage: _package);
+
   /// `battery-full`, fill weight.
   static const IconData batteryFullFill = IconData(0xe0c0, fontFamily: _fill, fontPackage: _package);
+
   /// `battery-high`: charged, charger, charging, power.
   static const IconData batteryHigh = IconData(0xe0c2, fontFamily: _regular, fontPackage: _package);
+
   /// `battery-high`, fill weight.
   static const IconData batteryHighFill = IconData(0xe0c2, fontFamily: _fill, fontPackage: _package);
+
   /// `battery-low`: charged, charger, charging, power.
   static const IconData batteryLow = IconData(0xe0c4, fontFamily: _regular, fontPackage: _package);
+
   /// `battery-low`, fill weight.
   static const IconData batteryLowFill = IconData(0xe0c4, fontFamily: _fill, fontPackage: _package);
+
   /// `battery-medium`: charged, charger, charging, power.
   static const IconData batteryMedium = IconData(0xe0c6, fontFamily: _regular, fontPackage: _package);
+
   /// `battery-medium`, fill weight.
   static const IconData batteryMediumFill = IconData(0xe0c6, fontFamily: _fill, fontPackage: _package);
+
   /// `battery-plus`: charged, charger, charging, power.
   static const IconData batteryPlus = IconData(0xe808, fontFamily: _regular, fontPackage: _package);
+
   /// `battery-plus`, fill weight.
   static const IconData batteryPlusFill = IconData(0xe808, fontFamily: _fill, fontPackage: _package);
+
   /// `battery-plus-vertical`: charged, charger, charging, power.
   static const IconData batteryPlusVertical = IconData(0xec50, fontFamily: _regular, fontPackage: _package);
+
   /// `battery-plus-vertical`, fill weight.
   static const IconData batteryPlusVerticalFill = IconData(0xec50, fontFamily: _fill, fontPackage: _package);
+
   /// `battery-vertical-empty`: charged, charger, charging, power, dead.
   static const IconData batteryVerticalEmpty = IconData(0xe7c6, fontFamily: _regular, fontPackage: _package);
+
   /// `battery-vertical-empty`, fill weight.
   static const IconData batteryVerticalEmptyFill = IconData(0xe7c6, fontFamily: _fill, fontPackage: _package);
+
   /// `battery-vertical-full`: charged, charger, charging, power.
   static const IconData batteryVerticalFull = IconData(0xe7c4, fontFamily: _regular, fontPackage: _package);
+
   /// `battery-vertical-full`, fill weight.
   static const IconData batteryVerticalFullFill = IconData(0xe7c4, fontFamily: _fill, fontPackage: _package);
+
   /// `battery-vertical-high`: charged, charger, charging, power.
   static const IconData batteryVerticalHigh = IconData(0xe7c2, fontFamily: _regular, fontPackage: _package);
+
   /// `battery-vertical-high`, fill weight.
   static const IconData batteryVerticalHighFill = IconData(0xe7c2, fontFamily: _fill, fontPackage: _package);
+
   /// `battery-vertical-low`: charged, charger, charging, power.
   static const IconData batteryVerticalLow = IconData(0xe7be, fontFamily: _regular, fontPackage: _package);
+
   /// `battery-vertical-low`, fill weight.
   static const IconData batteryVerticalLowFill = IconData(0xe7be, fontFamily: _fill, fontPackage: _package);
+
   /// `battery-vertical-medium`: charged, charger, charging, power.
   static const IconData batteryVerticalMedium = IconData(0xe7c0, fontFamily: _regular, fontPackage: _package);
+
   /// `battery-vertical-medium`, fill weight.
   static const IconData batteryVerticalMediumFill = IconData(0xe7c0, fontFamily: _fill, fontPackage: _package);
+
   /// `battery-warning`: charged, charger, charging, power, empty, critical.
   static const IconData batteryWarning = IconData(0xe0c8, fontFamily: _regular, fontPackage: _package);
+
   /// `battery-warning`, fill weight.
   static const IconData batteryWarningFill = IconData(0xe0c8, fontFamily: _fill, fontPackage: _package);
+
   /// `battery-warning-vertical`: charged, charger, charging, power, empty, critical.
   static const IconData batteryWarningVertical = IconData(0xe0ca, fontFamily: _regular, fontPackage: _package);
+
   /// `battery-warning-vertical`, fill weight.
   static const IconData batteryWarningVerticalFill = IconData(0xe0ca, fontFamily: _fill, fontPackage: _package);
+
   /// `beach-ball`: sports, ocean, party.
   static const IconData beachBall = IconData(0xed24, fontFamily: _regular, fontPackage: _package);
+
   /// `beach-ball`, fill weight.
   static const IconData beachBallFill = IconData(0xed24, fontFamily: _fill, fontPackage: _package);
+
   /// `beanie`: clothes, clothing, sports, hat, winter.
   static const IconData beanie = IconData(0xea2a, fontFamily: _regular, fontPackage: _package);
+
   /// `beanie`, fill weight.
   static const IconData beanieFill = IconData(0xea2a, fontFamily: _fill, fontPackage: _package);
+
   /// `bed`: hotels, accommodations, sleeping, places, locations, medical.
   static const IconData bed = IconData(0xe0cc, fontFamily: _regular, fontPackage: _package);
+
   /// `bed`, fill weight.
   static const IconData bedFill = IconData(0xe0cc, fontFamily: _fill, fontPackage: _package);
+
   /// `beer-bottle`: drinks, beverages, places, locations, bars, restaurants.
   static const IconData beerBottle = IconData(0xe7b0, fontFamily: _regular, fontPackage: _package);
+
   /// `beer-bottle`, fill weight.
   static const IconData beerBottleFill = IconData(0xe7b0, fontFamily: _fill, fontPackage: _package);
+
   /// `beer-stein`: drinks, beverages, places, locations, bars, restaurants.
   static const IconData beerStein = IconData(0xeb62, fontFamily: _regular, fontPackage: _package);
+
   /// `beer-stein`, fill weight.
   static const IconData beerSteinFill = IconData(0xeb62, fontFamily: _fill, fontPackage: _package);
+
   /// `behance-logo`: logos, illustration, ui, interface.
   static const IconData behanceLogo = IconData(0xe7f4, fontFamily: _regular, fontPackage: _package);
+
   /// `behance-logo`, fill weight.
   static const IconData behanceLogoFill = IconData(0xe7f4, fontFamily: _fill, fontPackage: _package);
+
   /// `bell`: alarm, notifications, times, timer, clock, schedule.
   static const IconData bell = IconData(0xe0ce, fontFamily: _regular, fontPackage: _package);
+
   /// `bell`, fill weight.
   static const IconData bellFill = IconData(0xe0ce, fontFamily: _fill, fontPackage: _package);
+
   /// `bell-ringing`: alarm, notifications, times, timer, clock, schedule.
   static const IconData bellRinging = IconData(0xe5e8, fontFamily: _regular, fontPackage: _package);
+
   /// `bell-ringing`, fill weight.
   static const IconData bellRingingFill = IconData(0xe5e8, fontFamily: _fill, fontPackage: _package);
+
   /// `bell-simple`: alarm, notifications, times, timer, clock, schedule.
   static const IconData bellSimple = IconData(0xe0d0, fontFamily: _regular, fontPackage: _package);
+
   /// `bell-simple`, fill weight.
   static const IconData bellSimpleFill = IconData(0xe0d0, fontFamily: _fill, fontPackage: _package);
+
   /// `bell-simple-ringing`: alarm, notifications, times, timer, clock, schedule.
   static const IconData bellSimpleRinging = IconData(0xe5ea, fontFamily: _regular, fontPackage: _package);
+
   /// `bell-simple-ringing`, fill weight.
   static const IconData bellSimpleRingingFill = IconData(0xe5ea, fontFamily: _fill, fontPackage: _package);
+
   /// `bell-simple-slash`: alarm, notifications, times, timer, clock, schedule.
   static const IconData bellSimpleSlash = IconData(0xe0d2, fontFamily: _regular, fontPackage: _package);
+
   /// `bell-simple-slash`, fill weight.
   static const IconData bellSimpleSlashFill = IconData(0xe0d2, fontFamily: _fill, fontPackage: _package);
+
   /// `bell-simple-z`: alarm, notifications, times, timer, clock, schedule.
   static const IconData bellSimpleZ = IconData(0xe5ec, fontFamily: _regular, fontPackage: _package);
+
   /// `bell-simple-z`, fill weight.
   static const IconData bellSimpleZFill = IconData(0xe5ec, fontFamily: _fill, fontPackage: _package);
+
   /// `bell-slash`: alarm, notifications, times, timer, clock, schedule.
   static const IconData bellSlash = IconData(0xe0d4, fontFamily: _regular, fontPackage: _package);
+
   /// `bell-slash`, fill weight.
   static const IconData bellSlashFill = IconData(0xe0d4, fontFamily: _fill, fontPackage: _package);
+
   /// `bell-z`: alarm, notifications, times, timer, clock, schedule.
   static const IconData bellZ = IconData(0xe5ee, fontFamily: _regular, fontPackage: _package);
+
   /// `bell-z`, fill weight.
   static const IconData bellZFill = IconData(0xe5ee, fontFamily: _fill, fontPackage: _package);
+
   /// `belt`: clothes, clothing.
   static const IconData belt = IconData(0xea2c, fontFamily: _regular, fontPackage: _package);
+
   /// `belt`, fill weight.
   static const IconData beltFill = IconData(0xea2c, fontFamily: _fill, fontPackage: _package);
+
   /// `bezier-curve`: shapes, drawing, path, pen, vector.
   static const IconData bezierCurve = IconData(0xeb00, fontFamily: _regular, fontPackage: _package);
+
   /// `bezier-curve`, fill weight.
   static const IconData bezierCurveFill = IconData(0xeb00, fontFamily: _fill, fontPackage: _package);
+
   /// `bicycle`: bikers, bicycling, cyclists, transit, transportation, commuter.
   static const IconData bicycle = IconData(0xe0d6, fontFamily: _regular, fontPackage: _package);
+
   /// `bicycle`, fill weight.
   static const IconData bicycleFill = IconData(0xe0d6, fontFamily: _fill, fontPackage: _package);
+
   /// `binary`: digital, 0, 1, programming, coding, executable.
   static const IconData binary = IconData(0xee60, fontFamily: _regular, fontPackage: _package);
+
   /// `binary`, fill weight.
   static const IconData binaryFill = IconData(0xee60, fontFamily: _fill, fontPackage: _package);
+
   /// `binoculars`: telescope, glasses, search, find, explore.
   static const IconData binoculars = IconData(0xea64, fontFamily: _regular, fontPackage: _package);
+
   /// `binoculars`, fill weight.
   static const IconData binocularsFill = IconData(0xea64, fontFamily: _fill, fontPackage: _package);
+
   /// `biohazard`: contamination, quarantine, toxic, poison, danger, caution.
   static const IconData biohazard = IconData(0xe9e0, fontFamily: _regular, fontPackage: _package);
+
   /// `biohazard`, fill weight.
   static const IconData biohazardFill = IconData(0xe9e0, fontFamily: _fill, fontPackage: _package);
+
   /// `bird`: animals, pets.
   static const IconData bird = IconData(0xe72c, fontFamily: _regular, fontPackage: _package);
+
   /// `bird`, fill weight.
   static const IconData birdFill = IconData(0xe72c, fontFamily: _fill, fontPackage: _package);
+
   /// `blueprint`: architecture, layout, floorplan, building, construction.
   static const IconData blueprint = IconData(0xeda0, fontFamily: _regular, fontPackage: _package);
+
   /// `blueprint`, fill weight.
   static const IconData blueprintFill = IconData(0xeda0, fontFamily: _fill, fontPackage: _package);
+
   /// `bluetooth`: wireless, connection, connected, connectivity.
   static const IconData bluetooth = IconData(0xe0da, fontFamily: _regular, fontPackage: _package);
+
   /// `bluetooth`, fill weight.
   static const IconData bluetoothFill = IconData(0xe0da, fontFamily: _fill, fontPackage: _package);
+
   /// `bluetooth-connected`: wireless, connection, connected, connectivity.
   static const IconData bluetoothConnected = IconData(0xe0dc, fontFamily: _regular, fontPackage: _package);
+
   /// `bluetooth-connected`, fill weight.
   static const IconData bluetoothConnectedFill = IconData(0xe0dc, fontFamily: _fill, fontPackage: _package);
+
   /// `bluetooth-slash`: wireless, connection, connectivity, disconnected, disabled.
   static const IconData bluetoothSlash = IconData(0xe0de, fontFamily: _regular, fontPackage: _package);
+
   /// `bluetooth-slash`, fill weight.
   static const IconData bluetoothSlashFill = IconData(0xe0de, fontFamily: _fill, fontPackage: _package);
+
   /// `bluetooth-x`: wireless, connection, connectivity, disconnected, errors.
   static const IconData bluetoothX = IconData(0xe0e0, fontFamily: _regular, fontPackage: _package);
+
   /// `bluetooth-x`, fill weight.
   static const IconData bluetoothXFill = IconData(0xe0e0, fontFamily: _fill, fontPackage: _package);
+
   /// `boat`: ferry, ship, cruise, vehicles, public transit, transportation.
   static const IconData boat = IconData(0xe786, fontFamily: _regular, fontPackage: _package);
+
   /// `boat`, fill weight.
   static const IconData boatFill = IconData(0xe786, fontFamily: _fill, fontPackage: _package);
+
   /// `bomb`: gaming, grenade, explosive, war, weapon, fuse.
   static const IconData bomb = IconData(0xee0a, fontFamily: _regular, fontPackage: _package);
+
   /// `bomb`, fill weight.
   static const IconData bombFill = IconData(0xee0a, fontFamily: _fill, fontPackage: _package);
+
   /// `bone`: dogbone.
   static const IconData bone = IconData(0xe7f2, fontFamily: _regular, fontPackage: _package);
+
   /// `bone`, fill weight.
   static const IconData boneFill = IconData(0xe7f2, fontFamily: _fill, fontPackage: _package);
+
   /// `book`: reading, reader, novel, story, library.
   static const IconData book = IconData(0xe0e2, fontFamily: _regular, fontPackage: _package);
+
   /// `book`, fill weight.
   static const IconData bookFill = IconData(0xe0e2, fontFamily: _fill, fontPackage: _package);
+
   /// `book-bookmark`: reading, reader, novel, story, library, favorites.
   static const IconData bookBookmark = IconData(0xe0e4, fontFamily: _regular, fontPackage: _package);
+
   /// `book-bookmark`, fill weight.
   static const IconData bookBookmarkFill = IconData(0xe0e4, fontFamily: _fill, fontPackage: _package);
+
   /// `book-open`: reading, reader, novel, story, library.
   static const IconData bookOpen = IconData(0xe0e6, fontFamily: _regular, fontPackage: _package);
+
   /// `book-open`, fill weight.
   static const IconData bookOpenFill = IconData(0xe0e6, fontFamily: _fill, fontPackage: _package);
+
   /// `book-open-text`: reading, reader, novel, story, library.
   static const IconData bookOpenText = IconData(0xe8f2, fontFamily: _regular, fontPackage: _package);
+
   /// `book-open-text`, fill weight.
   static const IconData bookOpenTextFill = IconData(0xe8f2, fontFamily: _fill, fontPackage: _package);
+
   /// `book-open-user`: reading, reader, easy read, library, places, locations.
   static const IconData bookOpenUser = IconData(0xede0, fontFamily: _regular, fontPackage: _package);
+
   /// `book-open-user`, fill weight.
   static const IconData bookOpenUserFill = IconData(0xede0, fontFamily: _fill, fontPackage: _package);
+
   /// `bookmark`: reading, reader, novel, story, placeholder, favorites.
   static const IconData bookmark = IconData(0xe0e8, fontFamily: _regular, fontPackage: _package);
+
   /// `bookmark`, fill weight.
   static const IconData bookmarkFill = IconData(0xe0e8, fontFamily: _fill, fontPackage: _package);
+
   /// `bookmark-simple`: reading, reader, novel, story, placeholder, favorites.
   static const IconData bookmarkSimple = IconData(0xe0ea, fontFamily: _regular, fontPackage: _package);
+
   /// `bookmark-simple`, fill weight.
   static const IconData bookmarkSimpleFill = IconData(0xe0ea, fontFamily: _fill, fontPackage: _package);
+
   /// `bookmarks`: reading, reader, novel, story, placeholder, favorites.
   static const IconData bookmarks = IconData(0xe0ec, fontFamily: _regular, fontPackage: _package);
+
   /// `bookmarks`, fill weight.
   static const IconData bookmarksFill = IconData(0xe0ec, fontFamily: _fill, fontPackage: _package);
+
   /// `bookmarks-simple`: reading, reader, novel, story, placeholder, favorites.
   static const IconData bookmarksSimple = IconData(0xe5f0, fontFamily: _regular, fontPackage: _package);
+
   /// `bookmarks-simple`, fill weight.
   static const IconData bookmarksSimpleFill = IconData(0xe5f0, fontFamily: _fill, fontPackage: _package);
+
   /// `books`: reading, reader, bookshelf, library, places, locations.
   static const IconData books = IconData(0xe758, fontFamily: _regular, fontPackage: _package);
+
   /// `books`, fill weight.
   static const IconData booksFill = IconData(0xe758, fontFamily: _fill, fontPackage: _package);
+
   /// `boot`: hiking, shoes, sports, exercise.
   static const IconData boot = IconData(0xecca, fontFamily: _regular, fontPackage: _package);
+
   /// `boot`, fill weight.
   static const IconData bootFill = IconData(0xecca, fontFamily: _fill, fontPackage: _package);
+
   /// `boules`: balls, sports, pétanque, raffa, bocce, boule lyonnaise.
   static const IconData boules = IconData(0xe722, fontFamily: _regular, fontPackage: _package);
+
   /// `boules`, fill weight.
   static const IconData boulesFill = IconData(0xe722, fontFamily: _fill, fontPackage: _package);
+
   /// `bounding-box`: polygon, shapes, outline, corners, rectangle.
   static const IconData boundingBox = IconData(0xe6ce, fontFamily: _regular, fontPackage: _package);
+
   /// `bounding-box`, fill weight.
   static const IconData boundingBoxFill = IconData(0xe6ce, fontFamily: _fill, fontPackage: _package);
+
   /// `bowl-food`: ramen, food, meal, eating, restaurants, dining.
   static const IconData bowlFood = IconData(0xeaa4, fontFamily: _regular, fontPackage: _package);
+
   /// `bowl-food`, fill weight.
   static const IconData bowlFoodFill = IconData(0xeaa4, fontFamily: _fill, fontPackage: _package);
+
   /// `bowl-steam`: food, meal, eating, restaurants, dining, locations.
   static const IconData bowlSteam = IconData(0xe8e4, fontFamily: _regular, fontPackage: _package);
+
   /// `bowl-steam`, fill weight.
   static const IconData bowlSteamFill = IconData(0xe8e4, fontFamily: _fill, fontPackage: _package);
+
   /// `bowling-ball`: sports, alley.
   static const IconData bowlingBall = IconData(0xea34, fontFamily: _regular, fontPackage: _package);
+
   /// `bowling-ball`, fill weight.
   static const IconData bowlingBallFill = IconData(0xea34, fontFamily: _fill, fontPackage: _package);
+
   /// `box-arrow-down`: saved, saving, archived, archiving, archival, downloaded.
   static const IconData boxArrowDown = IconData(0xe00e, fontFamily: _regular, fontPackage: _package);
+
   /// `box-arrow-down`, fill weight.
   static const IconData boxArrowDownFill = IconData(0xe00e, fontFamily: _fill, fontPackage: _package);
+
   /// `box-arrow-up`: unarchive, archival, upload.
   static const IconData boxArrowUp = IconData(0xee54, fontFamily: _regular, fontPackage: _package);
+
   /// `box-arrow-up`, fill weight.
   static const IconData boxArrowUpFill = IconData(0xee54, fontFamily: _fill, fontPackage: _package);
+
   /// `boxing-glove`: sports, combat, martial arts, fight, gym.
   static const IconData boxingGlove = IconData(0xea36, fontFamily: _regular, fontPackage: _package);
+
   /// `boxing-glove`, fill weight.
   static const IconData boxingGloveFill = IconData(0xea36, fontFamily: _fill, fontPackage: _package);
+
   /// `brackets-angle`: code, angle brackets, angle braces.
   static const IconData bracketsAngle = IconData(0xe862, fontFamily: _regular, fontPackage: _package);
+
   /// `brackets-angle`, fill weight.
   static const IconData bracketsAngleFill = IconData(0xe862, fontFamily: _fill, fontPackage: _package);
+
   /// `brackets-curly`: code, curly brackets, curly braces.
   static const IconData bracketsCurly = IconData(0xe860, fontFamily: _regular, fontPackage: _package);
+
   /// `brackets-curly`, fill weight.
   static const IconData bracketsCurlyFill = IconData(0xe860, fontFamily: _fill, fontPackage: _package);
+
   /// `brackets-round`: code, parentheses, round brackets, round braces.
   static const IconData bracketsRound = IconData(0xe864, fontFamily: _regular, fontPackage: _package);
+
   /// `brackets-round`, fill weight.
   static const IconData bracketsRoundFill = IconData(0xe864, fontFamily: _fill, fontPackage: _package);
+
   /// `brackets-square`: code, square brackets, square braces, array.
   static const IconData bracketsSquare = IconData(0xe85e, fontFamily: _regular, fontPackage: _package);
+
   /// `brackets-square`, fill weight.
   static const IconData bracketsSquareFill = IconData(0xe85e, fontFamily: _fill, fontPackage: _package);
+
   /// `brain`: mind, mental.
   static const IconData brain = IconData(0xe74e, fontFamily: _regular, fontPackage: _package);
+
   /// `brain`, fill weight.
   static const IconData brainFill = IconData(0xe74e, fontFamily: _fill, fontPackage: _package);
+
   /// `brandy`: drinks, beverages, whiskey, cocktail, places, locations.
   static const IconData brandy = IconData(0xe6b4, fontFamily: _regular, fontPackage: _package);
+
   /// `brandy`, fill weight.
   static const IconData brandyFill = IconData(0xe6b4, fontFamily: _fill, fontPackage: _package);
+
   /// `bread`: food, meal, bakery, sandwich, gluten, loaf.
   static const IconData bread = IconData(0xe81c, fontFamily: _regular, fontPackage: _package);
+
   /// `bread`, fill weight.
   static const IconData breadFill = IconData(0xe81c, fontFamily: _fill, fontPackage: _package);
+
   /// `bridge`: travel, transportation, infrastucture.
   static const IconData bridge = IconData(0xea68, fontFamily: _regular, fontPackage: _package);
+
   /// `bridge`, fill weight.
   static const IconData bridgeFill = IconData(0xea68, fontFamily: _fill, fontPackage: _package);
+
   /// `briefcase`: suitcase, valise, baggage, folders, portfolio.
   static const IconData briefcase = IconData(0xe0ee, fontFamily: _regular, fontPackage: _package);
+
   /// `briefcase`, fill weight.
   static const IconData briefcaseFill = IconData(0xe0ee, fontFamily: _fill, fontPackage: _package);
+
   /// `briefcase-metal`: suitcase, valise, baggage, folders, portfolio.
   static const IconData briefcaseMetal = IconData(0xe5f2, fontFamily: _regular, fontPackage: _package);
+
   /// `briefcase-metal`, fill weight.
   static const IconData briefcaseMetalFill = IconData(0xe5f2, fontFamily: _fill, fontPackage: _package);
+
   /// `broadcast`: radio, hotspot, wifi, emit.
   static const IconData broadcast = IconData(0xe0f2, fontFamily: _regular, fontPackage: _package);
+
   /// `broadcast`, fill weight.
   static const IconData broadcastFill = IconData(0xe0f2, fontFamily: _fill, fontPackage: _package);
+
   /// `broom`: sweeping, cleaning.
   static const IconData broom = IconData(0xec54, fontFamily: _regular, fontPackage: _package);
+
   /// `broom`, fill weight.
   static const IconData broomFill = IconData(0xec54, fontFamily: _fill, fontPackage: _package);
+
   /// `browser`: web browsers, windows, internet, website, webpage, chrome.
   static const IconData browser = IconData(0xe0f4, fontFamily: _regular, fontPackage: _package);
+
   /// `browser`, fill weight.
   static const IconData browserFill = IconData(0xe0f4, fontFamily: _fill, fontPackage: _package);
+
   /// `browsers`: web browsers, windows, internet, website, webpage, chrome.
   static const IconData browsers = IconData(0xe0f6, fontFamily: _regular, fontPackage: _package);
+
   /// `browsers`, fill weight.
   static const IconData browsersFill = IconData(0xe0f6, fontFamily: _fill, fontPackage: _package);
+
   /// `bug`: debug, errors, insect, ladybug.
   static const IconData bug = IconData(0xe5f4, fontFamily: _regular, fontPackage: _package);
+
   /// `bug`, fill weight.
   static const IconData bugFill = IconData(0xe5f4, fontFamily: _fill, fontPackage: _package);
+
   /// `bug-beetle`: debug, errors, insect, ladybug.
   static const IconData bugBeetle = IconData(0xe5f6, fontFamily: _regular, fontPackage: _package);
+
   /// `bug-beetle`, fill weight.
   static const IconData bugBeetleFill = IconData(0xe5f6, fontFamily: _fill, fontPackage: _package);
+
   /// `bug-droid`: debug, errors, insect, android, google.
   static const IconData bugDroid = IconData(0xe5f8, fontFamily: _regular, fontPackage: _package);
+
   /// `bug-droid`, fill weight.
   static const IconData bugDroidFill = IconData(0xe5f8, fontFamily: _fill, fontPackage: _package);
+
   /// `building`: places, locations, company, business, buildings.
   static const IconData building = IconData(0xe100, fontFamily: _regular, fontPackage: _package);
+
   /// `building`, fill weight.
   static const IconData buildingFill = IconData(0xe100, fontFamily: _fill, fontPackage: _package);
+
   /// `building-apartment`: places, locations, buildings.
   static const IconData buildingApartment = IconData(0xe0fe, fontFamily: _regular, fontPackage: _package);
+
   /// `building-apartment`, fill weight.
   static const IconData buildingApartmentFill = IconData(0xe0fe, fontFamily: _fill, fontPackage: _package);
+
   /// `building-office`: places, locations, company, business, buildings.
   static const IconData buildingOffice = IconData(0xe0ff, fontFamily: _regular, fontPackage: _package);
+
   /// `building-office`, fill weight.
   static const IconData buildingOfficeFill = IconData(0xe0ff, fontFamily: _fill, fontPackage: _package);
+
   /// `buildings`: places, locations, company, business.
   static const IconData buildings = IconData(0xe102, fontFamily: _regular, fontPackage: _package);
+
   /// `buildings`, fill weight.
   static const IconData buildingsFill = IconData(0xe102, fontFamily: _fill, fontPackage: _package);
+
   /// `bulldozer`: vehicles, construction, earth mover, dig, digger.
   static const IconData bulldozer = IconData(0xec6c, fontFamily: _regular, fontPackage: _package);
+
   /// `bulldozer`, fill weight.
   static const IconData bulldozerFill = IconData(0xec6c, fontFamily: _fill, fontPackage: _package);
+
   /// `bus`: vehicles, automobile, public transit, transportation, commuter, traveling.
   static const IconData bus = IconData(0xe106, fontFamily: _regular, fontPackage: _package);
+
   /// `bus`, fill weight.
   static const IconData busFill = IconData(0xe106, fontFamily: _fill, fontPackage: _package);
+
   /// `butterfly`: animals, insects, moth.
   static const IconData butterfly = IconData(0xea6e, fontFamily: _regular, fontPackage: _package);
+
   /// `butterfly`, fill weight.
   static const IconData butterflyFill = IconData(0xea6e, fontFamily: _fill, fontPackage: _package);
+
   /// `cable-car`: vehicles, gondola, skiing, mountains, public transit, transportation.
   static const IconData cableCar = IconData(0xe49c, fontFamily: _regular, fontPackage: _package);
+
   /// `cable-car`, fill weight.
   static const IconData cableCarFill = IconData(0xe49c, fontFamily: _fill, fontPackage: _package);
+
   /// `cactus`: plants, cacti, desert, western.
   static const IconData cactus = IconData(0xe918, fontFamily: _regular, fontPackage: _package);
+
   /// `cactus`, fill weight.
   static const IconData cactusFill = IconData(0xe918, fontFamily: _fill, fontPackage: _package);
+
   /// `caduceus`.
   static const IconData caduceus = IconData(0xee34, fontFamily: _regular, fontPackage: _package);
+
   /// `caduceus`, fill weight.
   static const IconData caduceusFill = IconData(0xee34, fontFamily: _fill, fontPackage: _package);
+
   /// `cake`: dessert, birthday, celebration, event.
   static const IconData cake = IconData(0xe780, fontFamily: _regular, fontPackage: _package);
+
   /// `cake`, fill weight.
   static const IconData cakeFill = IconData(0xe780, fontFamily: _fill, fontPackage: _package);
+
   /// `calculator`: addition, sum, subtraction, difference, multiply, multiplication.
   static const IconData calculator = IconData(0xe538, fontFamily: _regular, fontPackage: _package);
+
   /// `calculator`, fill weight.
   static const IconData calculatorFill = IconData(0xe538, fontFamily: _fill, fontPackage: _package);
+
   /// `calendar`: dates, times, events, schedule, 12.
   static const IconData calendar = IconData(0xe108, fontFamily: _regular, fontPackage: _package);
+
   /// `calendar`, fill weight.
   static const IconData calendarFill = IconData(0xe108, fontFamily: _fill, fontPackage: _package);
+
   /// `calendar-blank`: dates, times, events, schedule, none.
   static const IconData calendarBlank = IconData(0xe10a, fontFamily: _regular, fontPackage: _package);
+
   /// `calendar-blank`, fill weight.
   static const IconData calendarBlankFill = IconData(0xe10a, fontFamily: _fill, fontPackage: _package);
+
   /// `calendar-check`: dates, times, events, schedule, todo, checklist.
   static const IconData calendarCheck = IconData(0xe712, fontFamily: _regular, fontPackage: _package);
+
   /// `calendar-check`, fill weight.
   static const IconData calendarCheckFill = IconData(0xe712, fontFamily: _fill, fontPackage: _package);
+
   /// `calendar-dot`: dates, times, events, schedule, today.
   static const IconData calendarDot = IconData(0xe7b2, fontFamily: _regular, fontPackage: _package);
+
   /// `calendar-dot`, fill weight.
   static const IconData calendarDotFill = IconData(0xe7b2, fontFamily: _fill, fontPackage: _package);
+
   /// `calendar-dots`: dates, times, events, schedule.
   static const IconData calendarDots = IconData(0xe7b4, fontFamily: _regular, fontPackage: _package);
+
   /// `calendar-dots`, fill weight.
   static const IconData calendarDotsFill = IconData(0xe7b4, fontFamily: _fill, fontPackage: _package);
+
   /// `calendar-heart`: dates, times, events, schedule, favorite, star.
   static const IconData calendarHeart = IconData(0xe8b0, fontFamily: _regular, fontPackage: _package);
+
   /// `calendar-heart`, fill weight.
   static const IconData calendarHeartFill = IconData(0xe8b0, fontFamily: _fill, fontPackage: _package);
+
   /// `calendar-minus`: dates, times, events, schedule, remove, delete.
   static const IconData calendarMinus = IconData(0xea14, fontFamily: _regular, fontPackage: _package);
+
   /// `calendar-minus`, fill weight.
   static const IconData calendarMinusFill = IconData(0xea14, fontFamily: _fill, fontPackage: _package);
+
   /// `calendar-plus`: dates, times, events, schedule, add.
   static const IconData calendarPlus = IconData(0xe714, fontFamily: _regular, fontPackage: _package);
+
   /// `calendar-plus`, fill weight.
   static const IconData calendarPlusFill = IconData(0xe714, fontFamily: _fill, fontPackage: _package);
+
   /// `calendar-slash`: dates, times, events, schedule, remove, delete.
   static const IconData calendarSlash = IconData(0xea12, fontFamily: _regular, fontPackage: _package);
+
   /// `calendar-slash`, fill weight.
   static const IconData calendarSlashFill = IconData(0xea12, fontFamily: _fill, fontPackage: _package);
+
   /// `calendar-star`: dates, times, events, schedule, favorite, star.
   static const IconData calendarStar = IconData(0xe8b2, fontFamily: _regular, fontPackage: _package);
+
   /// `calendar-star`, fill weight.
   static const IconData calendarStarFill = IconData(0xe8b2, fontFamily: _fill, fontPackage: _package);
+
   /// `calendar-x`: dates, times, events, schedule, closed, cancelled.
   static const IconData calendarX = IconData(0xe10c, fontFamily: _regular, fontPackage: _package);
+
   /// `calendar-x`, fill weight.
   static const IconData calendarXFill = IconData(0xe10c, fontFamily: _fill, fontPackage: _package);
+
   /// `call-bell`: service bell, reception, attendant, concierge bell.
   static const IconData callBell = IconData(0xe7de, fontFamily: _regular, fontPackage: _package);
+
   /// `call-bell`, fill weight.
   static const IconData callBellFill = IconData(0xe7de, fontFamily: _fill, fontPackage: _package);
+
   /// `camera`: photography, pictures, lens.
   static const IconData camera = IconData(0xe10e, fontFamily: _regular, fontPackage: _package);
+
   /// `camera`, fill weight.
   static const IconData cameraFill = IconData(0xe10e, fontFamily: _fill, fontPackage: _package);
+
   /// `camera-plus`: photography, pictures, album, add.
   static const IconData cameraPlus = IconData(0xec58, fontFamily: _regular, fontPackage: _package);
+
   /// `camera-plus`, fill weight.
   static const IconData cameraPlusFill = IconData(0xec58, fontFamily: _fill, fontPackage: _package);
+
   /// `camera-rotate`: photography, pictures, orientation, portrait, landscape, selfie.
   static const IconData cameraRotate = IconData(0xe7a4, fontFamily: _regular, fontPackage: _package);
+
   /// `camera-rotate`, fill weight.
   static const IconData cameraRotateFill = IconData(0xe7a4, fontFamily: _fill, fontPackage: _package);
+
   /// `camera-slash`: photography, pictures, lens, disabled.
   static const IconData cameraSlash = IconData(0xe110, fontFamily: _regular, fontPackage: _package);
+
   /// `camera-slash`, fill weight.
   static const IconData cameraSlashFill = IconData(0xe110, fontFamily: _fill, fontPackage: _package);
+
   /// `campfire`: camping, flame, bonfire, outdoors.
   static const IconData campfire = IconData(0xe9d8, fontFamily: _regular, fontPackage: _package);
+
   /// `campfire`, fill weight.
   static const IconData campfireFill = IconData(0xe9d8, fontFamily: _fill, fontPackage: _package);
+
   /// `car`: cars, vehicles, automobile, transit, transportation, traveling.
   static const IconData car = IconData(0xe112, fontFamily: _regular, fontPackage: _package);
+
   /// `car`, fill weight.
   static const IconData carFill = IconData(0xe112, fontFamily: _fill, fontPackage: _package);
+
   /// `car-battery`: charged, charger, charging, power, voltage, electricity.
   static const IconData carBattery = IconData(0xee30, fontFamily: _regular, fontPackage: _package);
+
   /// `car-battery`, fill weight.
   static const IconData carBatteryFill = IconData(0xee30, fontFamily: _fill, fontPackage: _package);
+
   /// `car-profile`: cars, vehicles, automobile, transit, transportation, traveling.
   static const IconData carProfile = IconData(0xe8cc, fontFamily: _regular, fontPackage: _package);
+
   /// `car-profile`, fill weight.
   static const IconData carProfileFill = IconData(0xe8cc, fontFamily: _fill, fontPackage: _package);
+
   /// `car-simple`: cars, vehicles, automobile, transit, transportation, traveling.
   static const IconData carSimple = IconData(0xe114, fontFamily: _regular, fontPackage: _package);
+
   /// `car-simple`, fill weight.
   static const IconData carSimpleFill = IconData(0xe114, fontFamily: _fill, fontPackage: _package);
+
   /// `cardholder`: wallet, money, payment, paying, purchase.
   static const IconData cardholder = IconData(0xe5fa, fontFamily: _regular, fontPackage: _package);
+
   /// `cardholder`, fill weight.
   static const IconData cardholderFill = IconData(0xe5fa, fontFamily: _fill, fontPackage: _package);
+
   /// `cards`: card, slides, slideshow, windows, website, webpage.
   static const IconData cards = IconData(0xe0f8, fontFamily: _regular, fontPackage: _package);
+
   /// `cards`, fill weight.
   static const IconData cardsFill = IconData(0xe0f8, fontFamily: _fill, fontPackage: _package);
+
   /// `cards-three`: card, slides, slideshow, windows, website, webpage.
   static const IconData cardsThree = IconData(0xee50, fontFamily: _regular, fontPackage: _package);
+
   /// `cards-three`, fill weight.
   static const IconData cardsThreeFill = IconData(0xee50, fontFamily: _fill, fontPackage: _package);
+
   /// `caret-circle-double-down`: chevron, directional, pointer, pointing, arrowhead, triangle.
   static const IconData caretCircleDoubleDown = IconData(0xe116, fontFamily: _regular, fontPackage: _package);
+
   /// `caret-circle-double-down`, fill weight.
   static const IconData caretCircleDoubleDownFill = IconData(0xe116, fontFamily: _fill, fontPackage: _package);
+
   /// `caret-circle-double-left`: chevron, directional, pointer, pointing, arrowhead, triangle.
   static const IconData caretCircleDoubleLeft = IconData(0xe118, fontFamily: _regular, fontPackage: _package);
+
   /// `caret-circle-double-left`, fill weight.
   static const IconData caretCircleDoubleLeftFill = IconData(0xe118, fontFamily: _fill, fontPackage: _package);
+
   /// `caret-circle-double-right`: chevron, directional, pointer, pointing, arrowhead, triangle.
   static const IconData caretCircleDoubleRight = IconData(0xe11a, fontFamily: _regular, fontPackage: _package);
+
   /// `caret-circle-double-right`, fill weight.
   static const IconData caretCircleDoubleRightFill = IconData(0xe11a, fontFamily: _fill, fontPackage: _package);
+
   /// `caret-circle-double-up`: chevron, directional, pointer, pointing, arrowhead, triangle.
   static const IconData caretCircleDoubleUp = IconData(0xe11c, fontFamily: _regular, fontPackage: _package);
+
   /// `caret-circle-double-up`, fill weight.
   static const IconData caretCircleDoubleUpFill = IconData(0xe11c, fontFamily: _fill, fontPackage: _package);
+
   /// `caret-circle-down`: chevron, directional, pointer, pointing, arrowhead, triangle.
   static const IconData caretCircleDown = IconData(0xe11e, fontFamily: _regular, fontPackage: _package);
+
   /// `caret-circle-down`, fill weight.
   static const IconData caretCircleDownFill = IconData(0xe11e, fontFamily: _fill, fontPackage: _package);
+
   /// `caret-circle-left`: chevron, directional, pointer, pointing, arrowhead, triangle.
   static const IconData caretCircleLeft = IconData(0xe120, fontFamily: _regular, fontPackage: _package);
+
   /// `caret-circle-left`, fill weight.
   static const IconData caretCircleLeftFill = IconData(0xe120, fontFamily: _fill, fontPackage: _package);
+
   /// `caret-circle-right`: chevron, directional, pointer, pointing, arrowhead, triangle.
   static const IconData caretCircleRight = IconData(0xe122, fontFamily: _regular, fontPackage: _package);
+
   /// `caret-circle-right`, fill weight.
   static const IconData caretCircleRightFill = IconData(0xe122, fontFamily: _fill, fontPackage: _package);
+
   /// `caret-circle-up`: chevron, directional, pointer, pointing, arrowhead, triangle.
   static const IconData caretCircleUp = IconData(0xe124, fontFamily: _regular, fontPackage: _package);
+
   /// `caret-circle-up`, fill weight.
   static const IconData caretCircleUpFill = IconData(0xe124, fontFamily: _fill, fontPackage: _package);
+
   /// `caret-circle-up-down`: chevron, directional, pointer, pointing, arrowhead, triangle.
   static const IconData caretCircleUpDown = IconData(0xe13e, fontFamily: _regular, fontPackage: _package);
+
   /// `caret-circle-up-down`, fill weight.
   static const IconData caretCircleUpDownFill = IconData(0xe13e, fontFamily: _fill, fontPackage: _package);
+
   /// `caret-double-down`: chevron, directional, pointer, pointing, arrowhead, triangle.
   static const IconData caretDoubleDown = IconData(0xe126, fontFamily: _regular, fontPackage: _package);
+
   /// `caret-double-down`, fill weight.
   static const IconData caretDoubleDownFill = IconData(0xe126, fontFamily: _fill, fontPackage: _package);
+
   /// `caret-double-left`: chevron, directional, pointer, pointing, arrowhead, triangle.
   static const IconData caretDoubleLeft = IconData(0xe128, fontFamily: _regular, fontPackage: _package);
+
   /// `caret-double-left`, fill weight.
   static const IconData caretDoubleLeftFill = IconData(0xe128, fontFamily: _fill, fontPackage: _package);
+
   /// `caret-double-right`: chevron, directional, pointer, pointing, arrowhead, triangle.
   static const IconData caretDoubleRight = IconData(0xe12a, fontFamily: _regular, fontPackage: _package);
+
   /// `caret-double-right`, fill weight.
   static const IconData caretDoubleRightFill = IconData(0xe12a, fontFamily: _fill, fontPackage: _package);
+
   /// `caret-double-up`: chevron, directional, pointer, pointing, arrowhead, triangle.
   static const IconData caretDoubleUp = IconData(0xe12c, fontFamily: _regular, fontPackage: _package);
+
   /// `caret-double-up`, fill weight.
   static const IconData caretDoubleUpFill = IconData(0xe12c, fontFamily: _fill, fontPackage: _package);
+
   /// `caret-down`: chevron, directional, pointer, pointing, arrowhead, triangle.
   static const IconData caretDown = IconData(0xe136, fontFamily: _regular, fontPackage: _package);
+
   /// `caret-down`, fill weight.
   static const IconData caretDownFill = IconData(0xe136, fontFamily: _fill, fontPackage: _package);
+
   /// `caret-left`: chevron, directional, pointer, pointing, arrowhead, triangle.
   static const IconData caretLeft = IconData(0xe138, fontFamily: _regular, fontPackage: _package);
+
   /// `caret-left`, fill weight.
   static const IconData caretLeftFill = IconData(0xe138, fontFamily: _fill, fontPackage: _package);
+
   /// `caret-line-down`: chevron, directional, pointer, pointing, arrowhead, triangle.
   static const IconData caretLineDown = IconData(0xe134, fontFamily: _regular, fontPackage: _package);
+
   /// `caret-line-down`, fill weight.
   static const IconData caretLineDownFill = IconData(0xe134, fontFamily: _fill, fontPackage: _package);
+
   /// `caret-line-left`: chevron, directional, pointer, pointing, arrowhead, triangle.
   static const IconData caretLineLeft = IconData(0xe132, fontFamily: _regular, fontPackage: _package);
+
   /// `caret-line-left`, fill weight.
   static const IconData caretLineLeftFill = IconData(0xe132, fontFamily: _fill, fontPackage: _package);
+
   /// `caret-line-right`: chevron, directional, pointer, pointing, arrowhead, triangle.
   static const IconData caretLineRight = IconData(0xe130, fontFamily: _regular, fontPackage: _package);
+
   /// `caret-line-right`, fill weight.
   static const IconData caretLineRightFill = IconData(0xe130, fontFamily: _fill, fontPackage: _package);
+
   /// `caret-line-up`: chevron, directional, pointer, pointing, arrowhead, triangle.
   static const IconData caretLineUp = IconData(0xe12e, fontFamily: _regular, fontPackage: _package);
+
   /// `caret-line-up`, fill weight.
   static const IconData caretLineUpFill = IconData(0xe12e, fontFamily: _fill, fontPackage: _package);
+
   /// `caret-right`: chevron, directional, pointer, pointing, arrowhead, triangle.
   static const IconData caretRight = IconData(0xe13a, fontFamily: _regular, fontPackage: _package);
+
   /// `caret-right`, fill weight.
   static const IconData caretRightFill = IconData(0xe13a, fontFamily: _fill, fontPackage: _package);
+
   /// `caret-up`: chevron, directional, pointer, pointing, arrowhead, triangle.
   static const IconData caretUp = IconData(0xe13c, fontFamily: _regular, fontPackage: _package);
+
   /// `caret-up`, fill weight.
   static const IconData caretUpFill = IconData(0xe13c, fontFamily: _fill, fontPackage: _package);
+
   /// `caret-up-down`: chevron, directional, pointer, pointing, arrowhead, triangle.
   static const IconData caretUpDown = IconData(0xe140, fontFamily: _regular, fontPackage: _package);
+
   /// `caret-up-down`, fill weight.
   static const IconData caretUpDownFill = IconData(0xe140, fontFamily: _fill, fontPackage: _package);
+
   /// `carrot`: food, vegetable, veggie, groceries, market.
   static const IconData carrot = IconData(0xed38, fontFamily: _regular, fontPackage: _package);
+
   /// `carrot`, fill weight.
   static const IconData carrotFill = IconData(0xed38, fontFamily: _fill, fontPackage: _package);
+
   /// `cash-register`: retail, point-of-sale, pos, transaction, sales, till.
   static const IconData cashRegister = IconData(0xed80, fontFamily: _regular, fontPackage: _package);
+
   /// `cash-register`, fill weight.
   static const IconData cashRegisterFill = IconData(0xed80, fontFamily: _fill, fontPackage: _package);
+
   /// `cassette-tape`: recording, audio, album, music.
   static const IconData cassetteTape = IconData(0xed2e, fontFamily: _regular, fontPackage: _package);
+
   /// `cassette-tape`, fill weight.
   static const IconData cassetteTapeFill = IconData(0xed2e, fontFamily: _fill, fontPackage: _package);
+
   /// `castle-turret`: chess, rook.
   static const IconData castleTurret = IconData(0xe9d0, fontFamily: _regular, fontPackage: _package);
+
   /// `castle-turret`, fill weight.
   static const IconData castleTurretFill = IconData(0xe9d0, fontFamily: _fill, fontPackage: _package);
+
   /// `cat`: pets, animals, kitty, kitten.
   static const IconData cat = IconData(0xe748, fontFamily: _regular, fontPackage: _package);
+
   /// `cat`, fill weight.
   static const IconData catFill = IconData(0xe748, fontFamily: _fill, fontPackage: _package);
+
   /// `cell-signal-full`: wireless, cellular, phone, mobile, network, connection.
   static const IconData cellSignalFull = IconData(0xe142, fontFamily: _regular, fontPackage: _package);
+
   /// `cell-signal-full`, fill weight.
   static const IconData cellSignalFullFill = IconData(0xe142, fontFamily: _fill, fontPackage: _package);
+
   /// `cell-signal-high`: wireless, cellular, phone, mobile, network, connection.
   static const IconData cellSignalHigh = IconData(0xe144, fontFamily: _regular, fontPackage: _package);
+
   /// `cell-signal-high`, fill weight.
   static const IconData cellSignalHighFill = IconData(0xe144, fontFamily: _fill, fontPackage: _package);
+
   /// `cell-signal-low`: wireless, cellular, phone, mobile, network, connection.
   static const IconData cellSignalLow = IconData(0xe146, fontFamily: _regular, fontPackage: _package);
+
   /// `cell-signal-low`, fill weight.
   static const IconData cellSignalLowFill = IconData(0xe146, fontFamily: _fill, fontPackage: _package);
+
   /// `cell-signal-medium`: wireless, cellular, phone, mobile, network, connection.
   static const IconData cellSignalMedium = IconData(0xe148, fontFamily: _regular, fontPackage: _package);
+
   /// `cell-signal-medium`, fill weight.
   static const IconData cellSignalMediumFill = IconData(0xe148, fontFamily: _fill, fontPackage: _package);
+
   /// `cell-signal-none`: wireless, cellular, phone, mobile, network, connection.
   static const IconData cellSignalNone = IconData(0xe14a, fontFamily: _regular, fontPackage: _package);
+
   /// `cell-signal-none`, fill weight.
   static const IconData cellSignalNoneFill = IconData(0xe14a, fontFamily: _fill, fontPackage: _package);
+
   /// `cell-signal-slash`: wireless, cellular, phone, mobile, network, connection.
   static const IconData cellSignalSlash = IconData(0xe14c, fontFamily: _regular, fontPackage: _package);
+
   /// `cell-signal-slash`, fill weight.
   static const IconData cellSignalSlashFill = IconData(0xe14c, fontFamily: _fill, fontPackage: _package);
+
   /// `cell-signal-x`: wireless, cellular, phone, mobile, network, connection.
   static const IconData cellSignalX = IconData(0xe14e, fontFamily: _regular, fontPackage: _package);
+
   /// `cell-signal-x`, fill weight.
   static const IconData cellSignalXFill = IconData(0xe14e, fontFamily: _fill, fontPackage: _package);
+
   /// `cell-tower`: wireless, cellular, broadcast, phone, mobile, network.
   static const IconData cellTower = IconData(0xebaa, fontFamily: _regular, fontPackage: _package);
+
   /// `cell-tower`, fill weight.
   static const IconData cellTowerFill = IconData(0xebaa, fontFamily: _fill, fontPackage: _package);
+
   /// `certificate`: awards, certification, degree, diploma.
   static const IconData certificate = IconData(0xe766, fontFamily: _regular, fontPackage: _package);
+
   /// `certificate`, fill weight.
   static const IconData certificateFill = IconData(0xe766, fontFamily: _fill, fontPackage: _package);
+
   /// `chair`: seat, furniture.
   static const IconData chair = IconData(0xe950, fontFamily: _regular, fontPackage: _package);
+
   /// `chair`, fill weight.
   static const IconData chairFill = IconData(0xe950, fontFamily: _fill, fontPackage: _package);
+
   /// `chalkboard`: blackboard, whiteboard, classroom, teacher, education, school.
   static const IconData chalkboard = IconData(0xe5fc, fontFamily: _regular, fontPackage: _package);
+
   /// `chalkboard`, fill weight.
   static const IconData chalkboardFill = IconData(0xe5fc, fontFamily: _fill, fontPackage: _package);
+
   /// `chalkboard-simple`: blackboard, whiteboard, classroom, teacher, education, school.
   static const IconData chalkboardSimple = IconData(0xe5fe, fontFamily: _regular, fontPackage: _package);
+
   /// `chalkboard-simple`, fill weight.
   static const IconData chalkboardSimpleFill = IconData(0xe5fe, fontFamily: _fill, fontPackage: _package);
+
   /// `chalkboard-teacher`: blackboard, whiteboard, classroom, education, school, college.
   static const IconData chalkboardTeacher = IconData(0xe600, fontFamily: _regular, fontPackage: _package);
+
   /// `chalkboard-teacher`, fill weight.
   static const IconData chalkboardTeacherFill = IconData(0xe600, fontFamily: _fill, fontPackage: _package);
+
   /// `champagne`: glass, drinks, beverages, wine, places, locations.
   static const IconData champagne = IconData(0xeaca, fontFamily: _regular, fontPackage: _package);
+
   /// `champagne`, fill weight.
   static const IconData champagneFill = IconData(0xeaca, fontFamily: _fill, fontPackage: _package);
+
   /// `charging-station`: ev, charge, fuel, pump.
   static const IconData chargingStation = IconData(0xe8d0, fontFamily: _regular, fontPackage: _package);
+
   /// `charging-station`, fill weight.
   static const IconData chargingStationFill = IconData(0xe8d0, fontFamily: _fill, fontPackage: _package);
+
   /// `chart-bar`: graphs, graphing, charts, statistics, histogram, analyze.
   static const IconData chartBar = IconData(0xe150, fontFamily: _regular, fontPackage: _package);
+
   /// `chart-bar`, fill weight.
   static const IconData chartBarFill = IconData(0xe150, fontFamily: _fill, fontPackage: _package);
+
   /// `chart-bar-horizontal`: graphs, graphing, charts, statistics, histogram, analyze.
   static const IconData chartBarHorizontal = IconData(0xe152, fontFamily: _regular, fontPackage: _package);
+
   /// `chart-bar-horizontal`, fill weight.
   static const IconData chartBarHorizontalFill = IconData(0xe152, fontFamily: _fill, fontPackage: _package);
+
   /// `chart-donut`: graphs, graphing, charts, statistics, analyze, analysis.
   static const IconData chartDonut = IconData(0xeaa6, fontFamily: _regular, fontPackage: _package);
+
   /// `chart-donut`, fill weight.
   static const IconData chartDonutFill = IconData(0xeaa6, fontFamily: _fill, fontPackage: _package);
+
   /// `chart-line`: graphs, graphing, charts, statistics, analyze, analysis.
   static const IconData chartLine = IconData(0xe154, fontFamily: _regular, fontPackage: _package);
+
   /// `chart-line`, fill weight.
   static const IconData chartLineFill = IconData(0xe154, fontFamily: _fill, fontPackage: _package);
+
   /// `chart-line-down`: graphs, graphing, charts, statistics, analyze, analysis.
   static const IconData chartLineDown = IconData(0xe8b6, fontFamily: _regular, fontPackage: _package);
+
   /// `chart-line-down`, fill weight.
   static const IconData chartLineDownFill = IconData(0xe8b6, fontFamily: _fill, fontPackage: _package);
+
   /// `chart-line-up`: graphs, graphing, charts, statistics, analyze, analysis.
   static const IconData chartLineUp = IconData(0xe156, fontFamily: _regular, fontPackage: _package);
+
   /// `chart-line-up`, fill weight.
   static const IconData chartLineUpFill = IconData(0xe156, fontFamily: _fill, fontPackage: _package);
+
   /// `chart-pie`: graphs, graphing, charts, statistics, circle, analyze.
   static const IconData chartPie = IconData(0xe158, fontFamily: _regular, fontPackage: _package);
+
   /// `chart-pie`, fill weight.
   static const IconData chartPieFill = IconData(0xe158, fontFamily: _fill, fontPackage: _package);
+
   /// `chart-pie-slice`: graphs, graphing, charts, statistics, circle, analyze.
   static const IconData chartPieSlice = IconData(0xe15a, fontFamily: _regular, fontPackage: _package);
+
   /// `chart-pie-slice`, fill weight.
   static const IconData chartPieSliceFill = IconData(0xe15a, fontFamily: _fill, fontPackage: _package);
+
   /// `chart-polar`: graphs, graphing, charts, statistics, analyze, analysis.
   static const IconData chartPolar = IconData(0xeaa8, fontFamily: _regular, fontPackage: _package);
+
   /// `chart-polar`, fill weight.
   static const IconData chartPolarFill = IconData(0xeaa8, fontFamily: _fill, fontPackage: _package);
+
   /// `chart-scatter`: graphs, graphing, charts, statistics, analyze, analysis.
   static const IconData chartScatter = IconData(0xeaac, fontFamily: _regular, fontPackage: _package);
+
   /// `chart-scatter`, fill weight.
   static const IconData chartScatterFill = IconData(0xeaac, fontFamily: _fill, fontPackage: _package);
+
   /// `chat`: send, sent, messages, messaging, sms, texting.
   static const IconData chat = IconData(0xe15c, fontFamily: _regular, fontPackage: _package);
+
   /// `chat`, fill weight.
   static const IconData chatFill = IconData(0xe15c, fontFamily: _fill, fontPackage: _package);
+
   /// `chat-centered`: send, sent, messages, messaging, sms, texting.
   static const IconData chatCentered = IconData(0xe160, fontFamily: _regular, fontPackage: _package);
+
   /// `chat-centered`, fill weight.
   static const IconData chatCenteredFill = IconData(0xe160, fontFamily: _fill, fontPackage: _package);
+
   /// `chat-centered-dots`: send, sent, messages, messaging, sms, texting.
   static const IconData chatCenteredDots = IconData(0xe164, fontFamily: _regular, fontPackage: _package);
+
   /// `chat-centered-dots`, fill weight.
   static const IconData chatCenteredDotsFill = IconData(0xe164, fontFamily: _fill, fontPackage: _package);
+
   /// `chat-centered-slash`: messages, messaging, sms, texting, comment, square.
   static const IconData chatCenteredSlash = IconData(0xe162, fontFamily: _regular, fontPackage: _package);
+
   /// `chat-centered-slash`, fill weight.
   static const IconData chatCenteredSlashFill = IconData(0xe162, fontFamily: _fill, fontPackage: _package);
+
   /// `chat-centered-text`: send, sent, messages, messaging, sms, texting.
   static const IconData chatCenteredText = IconData(0xe166, fontFamily: _regular, fontPackage: _package);
+
   /// `chat-centered-text`, fill weight.
   static const IconData chatCenteredTextFill = IconData(0xe166, fontFamily: _fill, fontPackage: _package);
+
   /// `chat-circle`: send, sent, messages, messaging, sms, texting.
   static const IconData chatCircle = IconData(0xe168, fontFamily: _regular, fontPackage: _package);
+
   /// `chat-circle`, fill weight.
   static const IconData chatCircleFill = IconData(0xe168, fontFamily: _fill, fontPackage: _package);
+
   /// `chat-circle-dots`: send, sent, messages, messaging, sms, texting.
   static const IconData chatCircleDots = IconData(0xe16c, fontFamily: _regular, fontPackage: _package);
+
   /// `chat-circle-dots`, fill weight.
   static const IconData chatCircleDotsFill = IconData(0xe16c, fontFamily: _fill, fontPackage: _package);
+
   /// `chat-circle-slash`: messages, messaging, sms, texting, comment, round.
   static const IconData chatCircleSlash = IconData(0xe16a, fontFamily: _regular, fontPackage: _package);
+
   /// `chat-circle-slash`, fill weight.
   static const IconData chatCircleSlashFill = IconData(0xe16a, fontFamily: _fill, fontPackage: _package);
+
   /// `chat-circle-text`: send, sent, messages, messaging, sms, texting.
   static const IconData chatCircleText = IconData(0xe16e, fontFamily: _regular, fontPackage: _package);
+
   /// `chat-circle-text`, fill weight.
   static const IconData chatCircleTextFill = IconData(0xe16e, fontFamily: _fill, fontPackage: _package);
+
   /// `chat-dots`: send, sent, messages, messaging, sms, texting.
   static const IconData chatDots = IconData(0xe170, fontFamily: _regular, fontPackage: _package);
+
   /// `chat-dots`, fill weight.
   static const IconData chatDotsFill = IconData(0xe170, fontFamily: _fill, fontPackage: _package);
+
   /// `chat-slash`: messages, messaging, sms, texting, comment, square.
   static const IconData chatSlash = IconData(0xe15e, fontFamily: _regular, fontPackage: _package);
+
   /// `chat-slash`, fill weight.
   static const IconData chatSlashFill = IconData(0xe15e, fontFamily: _fill, fontPackage: _package);
+
   /// `chat-teardrop`: send, sent, messages, messaging, sms, texting.
   static const IconData chatTeardrop = IconData(0xe172, fontFamily: _regular, fontPackage: _package);
+
   /// `chat-teardrop`, fill weight.
   static const IconData chatTeardropFill = IconData(0xe172, fontFamily: _fill, fontPackage: _package);
+
   /// `chat-teardrop-dots`: send, sent, messages, messaging, sms, texting.
   static const IconData chatTeardropDots = IconData(0xe176, fontFamily: _regular, fontPackage: _package);
+
   /// `chat-teardrop-dots`, fill weight.
   static const IconData chatTeardropDotsFill = IconData(0xe176, fontFamily: _fill, fontPackage: _package);
+
   /// `chat-teardrop-slash`: messages, messaging, sms, texting, comment, bubble.
   static const IconData chatTeardropSlash = IconData(0xe174, fontFamily: _regular, fontPackage: _package);
+
   /// `chat-teardrop-slash`, fill weight.
   static const IconData chatTeardropSlashFill = IconData(0xe174, fontFamily: _fill, fontPackage: _package);
+
   /// `chat-teardrop-text`: send, sent, messages, messaging, sms, texting.
   static const IconData chatTeardropText = IconData(0xe178, fontFamily: _regular, fontPackage: _package);
+
   /// `chat-teardrop-text`, fill weight.
   static const IconData chatTeardropTextFill = IconData(0xe178, fontFamily: _fill, fontPackage: _package);
+
   /// `chat-text`: send, sent, messages, messaging, sms, texting.
   static const IconData chatText = IconData(0xe17a, fontFamily: _regular, fontPackage: _package);
+
   /// `chat-text`, fill weight.
   static const IconData chatTextFill = IconData(0xe17a, fontFamily: _fill, fontPackage: _package);
+
   /// `chats`: send, sent, messages, messaging, sms, texting.
   static const IconData chats = IconData(0xe17c, fontFamily: _regular, fontPackage: _package);
+
   /// `chats`, fill weight.
   static const IconData chatsFill = IconData(0xe17c, fontFamily: _fill, fontPackage: _package);
+
   /// `chats-circle`: send, sent, messages, messaging, sms, texting.
   static const IconData chatsCircle = IconData(0xe17e, fontFamily: _regular, fontPackage: _package);
+
   /// `chats-circle`, fill weight.
   static const IconData chatsCircleFill = IconData(0xe17e, fontFamily: _fill, fontPackage: _package);
+
   /// `chats-teardrop`: send, sent, messages, messaging, sms, texting.
   static const IconData chatsTeardrop = IconData(0xe180, fontFamily: _regular, fontPackage: _package);
+
   /// `chats-teardrop`, fill weight.
   static const IconData chatsTeardropFill = IconData(0xe180, fontFamily: _fill, fontPackage: _package);
+
   /// `check`: todo, to-do, task, list, checkbox, ok.
   static const IconData check = IconData(0xe182, fontFamily: _regular, fontPackage: _package);
+
   /// `check`, fill weight.
   static const IconData checkFill = IconData(0xe182, fontFamily: _fill, fontPackage: _package);
+
   /// `check-circle`: todo, to-do, task, list, checkbox, round.
   static const IconData checkCircle = IconData(0xe184, fontFamily: _regular, fontPackage: _package);
+
   /// `check-circle`, fill weight.
   static const IconData checkCircleFill = IconData(0xe184, fontFamily: _fill, fontPackage: _package);
+
   /// `check-fat`: todo, to-do, task, list, checkbox, ok.
   static const IconData checkFat = IconData(0xeba6, fontFamily: _regular, fontPackage: _package);
+
   /// `check-fat`, fill weight.
   static const IconData checkFatFill = IconData(0xeba6, fontFamily: _fill, fontPackage: _package);
+
   /// `check-square`: todo, to-do, task, list, checkbox, rectangle.
   static const IconData checkSquare = IconData(0xe186, fontFamily: _regular, fontPackage: _package);
+
   /// `check-square`, fill weight.
   static const IconData checkSquareFill = IconData(0xe186, fontFamily: _fill, fontPackage: _package);
+
   /// `check-square-offset`: todo, to-do, task, list, checkbox, rectangle.
   static const IconData checkSquareOffset = IconData(0xe188, fontFamily: _regular, fontPackage: _package);
+
   /// `check-square-offset`, fill weight.
   static const IconData checkSquareOffsetFill = IconData(0xe188, fontFamily: _fill, fontPackage: _package);
+
   /// `checkerboard`: crossword.
   static const IconData checkerboard = IconData(0xe8c4, fontFamily: _regular, fontPackage: _package);
+
   /// `checkerboard`, fill weight.
   static const IconData checkerboardFill = IconData(0xe8c4, fontFamily: _fill, fontPackage: _package);
+
   /// `checks`: todo, task, to-do, list, checkbox, ok.
   static const IconData checks = IconData(0xe53a, fontFamily: _regular, fontPackage: _package);
+
   /// `checks`, fill weight.
   static const IconData checksFill = IconData(0xe53a, fontFamily: _fill, fontPackage: _package);
+
   /// `cheers`: glass, drinks, beverages, champagne, toast, places.
   static const IconData cheers = IconData(0xea4a, fontFamily: _regular, fontPackage: _package);
+
   /// `cheers`, fill weight.
   static const IconData cheersFill = IconData(0xea4a, fontFamily: _fill, fontPackage: _package);
+
   /// `cheese`: dairy, wedge, food, dining.
   static const IconData cheese = IconData(0xe9fe, fontFamily: _regular, fontPackage: _package);
+
   /// `cheese`, fill weight.
   static const IconData cheeseFill = IconData(0xe9fe, fontFamily: _fill, fontPackage: _package);
+
   /// `chef-hat`: cooking, cuisine, kitchen, clothes, clothing.
   static const IconData chefHat = IconData(0xed8e, fontFamily: _regular, fontPackage: _package);
+
   /// `chef-hat`, fill weight.
   static const IconData chefHatFill = IconData(0xed8e, fontFamily: _fill, fontPackage: _package);
+
   /// `cherries`: food, fruit, cherry, groceries, market.
   static const IconData cherries = IconData(0xe830, fontFamily: _regular, fontPackage: _package);
+
   /// `cherries`, fill weight.
   static const IconData cherriesFill = IconData(0xe830, fontFamily: _fill, fontPackage: _package);
+
   /// `church`: christ, christianity, cathedral, religion, worship.
   static const IconData church = IconData(0xecea, fontFamily: _regular, fontPackage: _package);
+
   /// `church`, fill weight.
   static const IconData churchFill = IconData(0xecea, fontFamily: _fill, fontPackage: _package);
+
   /// `cigarette`: smoking, tobacco.
   static const IconData cigarette = IconData(0xed90, fontFamily: _regular, fontPackage: _package);
+
   /// `cigarette`, fill weight.
   static const IconData cigaretteFill = IconData(0xed90, fontFamily: _fill, fontPackage: _package);
+
   /// `cigarette-slash`: non-smoking, tobacco.
   static const IconData cigaretteSlash = IconData(0xed92, fontFamily: _regular, fontPackage: _package);
+
   /// `cigarette-slash`, fill weight.
   static const IconData cigaretteSlashFill = IconData(0xed92, fontFamily: _fill, fontPackage: _package);
+
   /// `circle`: round, shapes, polygons.
   static const IconData circle = IconData(0xe18a, fontFamily: _regular, fontPackage: _package);
+
   /// `circle`, fill weight.
   static const IconData circleFill = IconData(0xe18a, fontFamily: _fill, fontPackage: _package);
+
   /// `circle-dashed`: missing, round, shapes, polygons.
   static const IconData circleDashed = IconData(0xe602, fontFamily: _regular, fontPackage: _package);
+
   /// `circle-dashed`, fill weight.
   static const IconData circleDashedFill = IconData(0xe602, fontFamily: _fill, fontPackage: _package);
+
   /// `circle-half`: round, shapes, contrast, brightness.
   static const IconData circleHalf = IconData(0xe18c, fontFamily: _regular, fontPackage: _package);
+
   /// `circle-half`, fill weight.
   static const IconData circleHalfFill = IconData(0xe18c, fontFamily: _fill, fontPackage: _package);
+
   /// `circle-half-tilt`: round, shapes, contrast, brightness.
   static const IconData circleHalfTilt = IconData(0xe18e, fontFamily: _regular, fontPackage: _package);
+
   /// `circle-half-tilt`, fill weight.
   static const IconData circleHalfTiltFill = IconData(0xe18e, fontFamily: _fill, fontPackage: _package);
+
   /// `circle-notch`: round, shapes, loading, loader, spinner, waiting.
   static const IconData circleNotch = IconData(0xeb44, fontFamily: _regular, fontPackage: _package);
+
   /// `circle-notch`, fill weight.
   static const IconData circleNotchFill = IconData(0xeb44, fontFamily: _fill, fontPackage: _package);
+
   /// `circle-wavy`.
   static const IconData circleWavy = IconData(0xe604, fontFamily: _regular, fontPackage: _package);
+
   /// `circle-wavy`, fill weight.
   static const IconData circleWavyFill = IconData(0xe604, fontFamily: _fill, fontPackage: _package);
+
   /// `circle-wavy-check`.
   static const IconData circleWavyCheck = IconData(0xe606, fontFamily: _regular, fontPackage: _package);
+
   /// `circle-wavy-check`, fill weight.
   static const IconData circleWavyCheckFill = IconData(0xe606, fontFamily: _fill, fontPackage: _package);
+
   /// `circle-wavy-question`.
   static const IconData circleWavyQuestion = IconData(0xe608, fontFamily: _regular, fontPackage: _package);
+
   /// `circle-wavy-question`, fill weight.
   static const IconData circleWavyQuestionFill = IconData(0xe608, fontFamily: _fill, fontPackage: _package);
+
   /// `circle-wavy-warning`.
   static const IconData circleWavyWarning = IconData(0xe60c, fontFamily: _regular, fontPackage: _package);
+
   /// `circle-wavy-warning`, fill weight.
   static const IconData circleWavyWarningFill = IconData(0xe60c, fontFamily: _fill, fontPackage: _package);
+
   /// `circles-four`: round, shapes, polygons, 4.
   static const IconData circlesFour = IconData(0xe190, fontFamily: _regular, fontPackage: _package);
+
   /// `circles-four`, fill weight.
   static const IconData circlesFourFill = IconData(0xe190, fontFamily: _fill, fontPackage: _package);
+
   /// `circles-three`: round, shapes, polygons, 3, asana.
   static const IconData circlesThree = IconData(0xe192, fontFamily: _regular, fontPackage: _package);
+
   /// `circles-three`, fill weight.
   static const IconData circlesThreeFill = IconData(0xe192, fontFamily: _fill, fontPackage: _package);
+
   /// `circles-three-plus`: round, shapes, polygons, 3, +.
   static const IconData circlesThreePlus = IconData(0xe194, fontFamily: _regular, fontPackage: _package);
+
   /// `circles-three-plus`, fill weight.
   static const IconData circlesThreePlusFill = IconData(0xe194, fontFamily: _fill, fontPackage: _package);
+
   /// `circuitry`: processor, microchip, computer, circuit, electronics, motherboard.
   static const IconData circuitry = IconData(0xe9c2, fontFamily: _regular, fontPackage: _package);
+
   /// `circuitry`, fill weight.
   static const IconData circuitryFill = IconData(0xe9c2, fontFamily: _fill, fontPackage: _package);
+
   /// `city`: skyline, skyscrapers, places, locations, buildings.
   static const IconData city = IconData(0xea6a, fontFamily: _regular, fontPackage: _package);
+
   /// `city`, fill weight.
   static const IconData cityFill = IconData(0xea6a, fontFamily: _fill, fontPackage: _package);
+
   /// `clipboard`: copy, copied, checklist.
   static const IconData clipboard = IconData(0xe196, fontFamily: _regular, fontPackage: _package);
+
   /// `clipboard`, fill weight.
   static const IconData clipboardFill = IconData(0xe196, fontFamily: _fill, fontPackage: _package);
+
   /// `clipboard-text`: copy, copied, checklist.
   static const IconData clipboardText = IconData(0xe198, fontFamily: _regular, fontPackage: _package);
+
   /// `clipboard-text`, fill weight.
   static const IconData clipboardTextFill = IconData(0xe198, fontFamily: _fill, fontPackage: _package);
+
   /// `clock`: times, timer, alarm, schedule, events, watch.
   static const IconData clock = IconData(0xe19a, fontFamily: _regular, fontPackage: _package);
+
   /// `clock`, fill weight.
   static const IconData clockFill = IconData(0xe19a, fontFamily: _fill, fontPackage: _package);
+
   /// `clock-afternoon`: times, timer, alarm, schedule, events, watch.
   static const IconData clockAfternoon = IconData(0xe19c, fontFamily: _regular, fontPackage: _package);
+
   /// `clock-afternoon`, fill weight.
   static const IconData clockAfternoonFill = IconData(0xe19c, fontFamily: _fill, fontPackage: _package);
+
   /// `clock-clockwise`: times, timer, alarm, schedule, events, restore.
   static const IconData clockClockwise = IconData(0xe19e, fontFamily: _regular, fontPackage: _package);
+
   /// `clock-clockwise`, fill weight.
   static const IconData clockClockwiseFill = IconData(0xe19e, fontFamily: _fill, fontPackage: _package);
+
   /// `clock-countdown`: times, timer, alarm, schedule, events, watch.
   static const IconData clockCountdown = IconData(0xed2c, fontFamily: _regular, fontPackage: _package);
+
   /// `clock-countdown`, fill weight.
   static const IconData clockCountdownFill = IconData(0xed2c, fontFamily: _fill, fontPackage: _package);
+
   /// `clock-counter-clockwise`: times, timer, alarm, schedule, events, backup.
   static const IconData clockCounterClockwise = IconData(0xe1a0, fontFamily: _regular, fontPackage: _package);
+
   /// `clock-counter-clockwise`, fill weight.
   static const IconData clockCounterClockwiseFill = IconData(0xe1a0, fontFamily: _fill, fontPackage: _package);
+
   /// `clock-user`: times, timer, shift, schedule, events, watch.
   static const IconData clockUser = IconData(0xedec, fontFamily: _regular, fontPackage: _package);
+
   /// `clock-user`, fill weight.
   static const IconData clockUserFill = IconData(0xedec, fontFamily: _fill, fontPackage: _package);
+
   /// `closed-captioning`: subtitles, television, tv, transcribed, transcription, accessibility.
   static const IconData closedCaptioning = IconData(0xe1a4, fontFamily: _regular, fontPackage: _package);
+
   /// `closed-captioning`, fill weight.
   static const IconData closedCaptioningFill = IconData(0xe1a4, fontFamily: _fill, fontPackage: _package);
+
   /// `cloud`: serverless, backup, storage, meteorology, cloudy, overcast.
   static const IconData cloud = IconData(0xe1aa, fontFamily: _regular, fontPackage: _package);
+
   /// `cloud`, fill weight.
   static const IconData cloudFill = IconData(0xe1aa, fontFamily: _fill, fontPackage: _package);
+
   /// `cloud-arrow-down`: serverless, backup, storage, download.
   static const IconData cloudArrowDown = IconData(0xe1ac, fontFamily: _regular, fontPackage: _package);
+
   /// `cloud-arrow-down`, fill weight.
   static const IconData cloudArrowDownFill = IconData(0xe1ac, fontFamily: _fill, fontPackage: _package);
+
   /// `cloud-arrow-up`: serverless, backup, storage, upload.
   static const IconData cloudArrowUp = IconData(0xe1ae, fontFamily: _regular, fontPackage: _package);
+
   /// `cloud-arrow-up`, fill weight.
   static const IconData cloudArrowUpFill = IconData(0xe1ae, fontFamily: _fill, fontPackage: _package);
+
   /// `cloud-check`: serverless, backup, storage, sync, synchronized.
   static const IconData cloudCheck = IconData(0xe1b0, fontFamily: _regular, fontPackage: _package);
+
   /// `cloud-check`, fill weight.
   static const IconData cloudCheckFill = IconData(0xe1b0, fontFamily: _fill, fontPackage: _package);
+
   /// `cloud-fog`: meteorology, cloudy, overcast, foggy, mist, haze.
   static const IconData cloudFog = IconData(0xe53c, fontFamily: _regular, fontPackage: _package);
+
   /// `cloud-fog`, fill weight.
   static const IconData cloudFogFill = IconData(0xe53c, fontFamily: _fill, fontPackage: _package);
+
   /// `cloud-lightning`: meteorology, cloudy, overcast, stormy, thunderstorm.
   static const IconData cloudLightning = IconData(0xe1b2, fontFamily: _regular, fontPackage: _package);
+
   /// `cloud-lightning`, fill weight.
   static const IconData cloudLightningFill = IconData(0xe1b2, fontFamily: _fill, fontPackage: _package);
+
   /// `cloud-moon`: meteorology, cloudy, partly cloudy, night, evening.
   static const IconData cloudMoon = IconData(0xe53e, fontFamily: _regular, fontPackage: _package);
+
   /// `cloud-moon`, fill weight.
   static const IconData cloudMoonFill = IconData(0xe53e, fontFamily: _fill, fontPackage: _package);
+
   /// `cloud-rain`: meteorology, cloudy, rainy, raining, stormy, rainstorm.
   static const IconData cloudRain = IconData(0xe1b4, fontFamily: _regular, fontPackage: _package);
+
   /// `cloud-rain`, fill weight.
   static const IconData cloudRainFill = IconData(0xe1b4, fontFamily: _fill, fontPackage: _package);
+
   /// `cloud-slash`: serverless, backup, storage, sync, disabled.
   static const IconData cloudSlash = IconData(0xe1b6, fontFamily: _regular, fontPackage: _package);
+
   /// `cloud-slash`, fill weight.
   static const IconData cloudSlashFill = IconData(0xe1b6, fontFamily: _fill, fontPackage: _package);
+
   /// `cloud-snow`: meteorology, cloudy, snowy, snowing, stormy, snowstorm.
   static const IconData cloudSnow = IconData(0xe1b8, fontFamily: _regular, fontPackage: _package);
+
   /// `cloud-snow`, fill weight.
   static const IconData cloudSnowFill = IconData(0xe1b8, fontFamily: _fill, fontPackage: _package);
+
   /// `cloud-sun`: meteorology, cloudy, partly cloudy, partly sunny.
   static const IconData cloudSun = IconData(0xe540, fontFamily: _regular, fontPackage: _package);
+
   /// `cloud-sun`, fill weight.
   static const IconData cloudSunFill = IconData(0xe540, fontFamily: _fill, fontPackage: _package);
+
   /// `cloud-warning`: serverless, backup, storage, errors.
   static const IconData cloudWarning = IconData(0xea98, fontFamily: _regular, fontPackage: _package);
+
   /// `cloud-warning`, fill weight.
   static const IconData cloudWarningFill = IconData(0xea98, fontFamily: _fill, fontPackage: _package);
+
   /// `cloud-x`: serverless, backup, storage, errors.
   static const IconData cloudX = IconData(0xea96, fontFamily: _regular, fontPackage: _package);
+
   /// `cloud-x`, fill weight.
   static const IconData cloudXFill = IconData(0xea96, fontFamily: _fill, fontPackage: _package);
+
   /// `clover`: four leaf clover, plants, luck, lucky, irish.
   static const IconData clover = IconData(0xedc8, fontFamily: _regular, fontPackage: _package);
+
   /// `clover`, fill weight.
   static const IconData cloverFill = IconData(0xedc8, fontFamily: _fill, fontPackage: _package);
+
   /// `club`: clubs, suits, cards, gambling, casino, gaming.
   static const IconData club = IconData(0xe1ba, fontFamily: _regular, fontPackage: _package);
+
   /// `club`, fill weight.
   static const IconData clubFill = IconData(0xe1ba, fontFamily: _fill, fontPackage: _package);
+
   /// `coat-hanger`: clothing, clothes, closet.
   static const IconData coatHanger = IconData(0xe7fe, fontFamily: _regular, fontPackage: _package);
+
   /// `coat-hanger`, fill weight.
   static const IconData coatHangerFill = IconData(0xe7fe, fontFamily: _fill, fontPackage: _package);
+
   /// `coda-logo`: project management, productivity, documentation, wiki, logos.
   static const IconData codaLogo = IconData(0xe7ce, fontFamily: _regular, fontPackage: _package);
+
   /// `coda-logo`, fill weight.
   static const IconData codaLogoFill = IconData(0xe7ce, fontFamily: _fill, fontPackage: _package);
+
   /// `code`: angle brackets, angle braces, snippets.
   static const IconData code = IconData(0xe1bc, fontFamily: _regular, fontPackage: _package);
+
   /// `code`, fill weight.
   static const IconData codeFill = IconData(0xe1bc, fontFamily: _fill, fontPackage: _package);
+
   /// `code-block`: angle brackets, angle braces, snippets.
   static const IconData codeBlock = IconData(0xeafe, fontFamily: _regular, fontPackage: _package);
+
   /// `code-block`, fill weight.
   static const IconData codeBlockFill = IconData(0xeafe, fontFamily: _fill, fontPackage: _package);
+
   /// `code-simple`: angle brackets, angle braces, snippets.
   static const IconData codeSimple = IconData(0xe1be, fontFamily: _regular, fontPackage: _package);
+
   /// `code-simple`, fill weight.
   static const IconData codeSimpleFill = IconData(0xe1be, fontFamily: _fill, fontPackage: _package);
+
   /// `codepen-logo`: ide, logos.
   static const IconData codepenLogo = IconData(0xe978, fontFamily: _regular, fontPackage: _package);
+
   /// `codepen-logo`, fill weight.
   static const IconData codepenLogoFill = IconData(0xe978, fontFamily: _fill, fontPackage: _package);
+
   /// `codesandbox-logo`: ide, logos.
   static const IconData codesandboxLogo = IconData(0xea06, fontFamily: _regular, fontPackage: _package);
+
   /// `codesandbox-logo`, fill weight.
   static const IconData codesandboxLogoFill = IconData(0xea06, fontFamily: _fill, fontPackage: _package);
+
   /// `coffee`: tea, java, beverages, drinks, cafe, cup.
   static const IconData coffee = IconData(0xe1c2, fontFamily: _regular, fontPackage: _package);
+
   /// `coffee`, fill weight.
   static const IconData coffeeFill = IconData(0xe1c2, fontFamily: _fill, fontPackage: _package);
+
   /// `coffee-bean`: tea, java, beverages, drinks, cafe, cup.
   static const IconData coffeeBean = IconData(0xe1c0, fontFamily: _regular, fontPackage: _package);
+
   /// `coffee-bean`, fill weight.
   static const IconData coffeeBeanFill = IconData(0xe1c0, fontFamily: _fill, fontPackage: _package);
+
   /// `coin`: coins, cents, change, money, currency, payment.
   static const IconData coin = IconData(0xe60e, fontFamily: _regular, fontPackage: _package);
+
   /// `coin`, fill weight.
   static const IconData coinFill = IconData(0xe60e, fontFamily: _fill, fontPackage: _package);
+
   /// `coin-vertical`: cents, change, money, currency, payment, paying.
   static const IconData coinVertical = IconData(0xeb48, fontFamily: _regular, fontPackage: _package);
+
   /// `coin-vertical`, fill weight.
   static const IconData coinVerticalFill = IconData(0xeb48, fontFamily: _fill, fontPackage: _package);
+
   /// `coins`: cents, change, money, currency, payment, paying.
   static const IconData coins = IconData(0xe78e, fontFamily: _regular, fontPackage: _package);
+
   /// `coins`, fill weight.
   static const IconData coinsFill = IconData(0xe78e, fontFamily: _fill, fontPackage: _package);
+
   /// `columns`: 2, shapes, polygons, box, stack, list.
   static const IconData columns = IconData(0xe546, fontFamily: _regular, fontPackage: _package);
+
   /// `columns`, fill weight.
   static const IconData columnsFill = IconData(0xe546, fontFamily: _fill, fontPackage: _package);
+
   /// `columns-plus-left`: 2, shapes, polygons, box, stack, list.
   static const IconData columnsPlusLeft = IconData(0xe544, fontFamily: _regular, fontPackage: _package);
+
   /// `columns-plus-left`, fill weight.
   static const IconData columnsPlusLeftFill = IconData(0xe544, fontFamily: _fill, fontPackage: _package);
+
   /// `columns-plus-right`: 2, shapes, polygons, box, stack, list.
   static const IconData columnsPlusRight = IconData(0xe542, fontFamily: _regular, fontPackage: _package);
+
   /// `columns-plus-right`, fill weight.
   static const IconData columnsPlusRightFill = IconData(0xe542, fontFamily: _fill, fontPackage: _package);
+
   /// `command`: apple, keyboard, shortcut, modifier, looped square, bowen knot.
   static const IconData command = IconData(0xe1c4, fontFamily: _regular, fontPackage: _package);
+
   /// `command`, fill weight.
   static const IconData commandFill = IconData(0xe1c4, fontFamily: _fill, fontPackage: _package);
+
   /// `compass`: navigation, directions, maps, safari, apple.
   static const IconData compass = IconData(0xe1c8, fontFamily: _regular, fontPackage: _package);
+
   /// `compass`, fill weight.
   static const IconData compassFill = IconData(0xe1c8, fontFamily: _fill, fontPackage: _package);
+
   /// `compass-rose`: navigation, directions, maps, cardinal, cartography.
   static const IconData compassRose = IconData(0xe1c6, fontFamily: _regular, fontPackage: _package);
+
   /// `compass-rose`, fill weight.
   static const IconData compassRoseFill = IconData(0xe1c6, fontFamily: _fill, fontPackage: _package);
+
   /// `compass-tool`: drawing, geometry, trigonometry, degrees, radians, measurement.
   static const IconData compassTool = IconData(0xea0e, fontFamily: _regular, fontPackage: _package);
+
   /// `compass-tool`, fill weight.
   static const IconData compassToolFill = IconData(0xea0e, fontFamily: _fill, fontPackage: _package);
+
   /// `computer-tower`: desktop, pc, imac.
   static const IconData computerTower = IconData(0xe548, fontFamily: _regular, fontPackage: _package);
+
   /// `computer-tower`, fill weight.
   static const IconData computerTowerFill = IconData(0xe548, fontFamily: _fill, fontPackage: _package);
+
   /// `confetti`: tada, party, emoji.
   static const IconData confetti = IconData(0xe81a, fontFamily: _regular, fontPackage: _package);
+
   /// `confetti`, fill weight.
   static const IconData confettiFill = IconData(0xe81a, fontFamily: _fill, fontPackage: _package);
+
   /// `contactless-payment`: purchase, credit card, nfc.
   static const IconData contactlessPayment = IconData(0xed42, fontFamily: _regular, fontPackage: _package);
+
   /// `contactless-payment`, fill weight.
   static const IconData contactlessPaymentFill = IconData(0xed42, fontFamily: _fill, fontPackage: _package);
+
   /// `control`: ctrl, key, keyboard, shortcut, caret.
   static const IconData control = IconData(0xeca6, fontFamily: _regular, fontPackage: _package);
+
   /// `control`, fill weight.
   static const IconData controlFill = IconData(0xeca6, fontFamily: _fill, fontPackage: _package);
+
   /// `cookie`: privacy, dessert, food, dining.
   static const IconData cookie = IconData(0xe6ca, fontFamily: _regular, fontPackage: _package);
+
   /// `cookie`, fill weight.
   static const IconData cookieFill = IconData(0xe6ca, fontFamily: _fill, fontPackage: _package);
+
   /// `cooking-pot`: stew, kitchen, steaming, restaurants, food, dining.
   static const IconData cookingPot = IconData(0xe764, fontFamily: _regular, fontPackage: _package);
+
   /// `cooking-pot`, fill weight.
   static const IconData cookingPotFill = IconData(0xe764, fontFamily: _fill, fontPackage: _package);
+
   /// `copy`: duplicated, copied, clipboard.
   static const IconData copy = IconData(0xe1ca, fontFamily: _regular, fontPackage: _package);
+
   /// `copy`, fill weight.
   static const IconData copyFill = IconData(0xe1ca, fontFamily: _fill, fontPackage: _package);
+
   /// `copy-simple`: duplicated, copied, clipboard.
   static const IconData copySimple = IconData(0xe1cc, fontFamily: _regular, fontPackage: _package);
+
   /// `copy-simple`, fill weight.
   static const IconData copySimpleFill = IconData(0xe1cc, fontFamily: _fill, fontPackage: _package);
+
   /// `copyleft`: 🄯, intellectual property, copr., symbol.
   static const IconData copyleft = IconData(0xe86a, fontFamily: _regular, fontPackage: _package);
+
   /// `copyleft`, fill weight.
   static const IconData copyleftFill = IconData(0xe86a, fontFamily: _fill, fontPackage: _package);
+
   /// `copyright`: ©, intellectual property, copr., symbol.
   static const IconData copyright = IconData(0xe54a, fontFamily: _regular, fontPackage: _package);
+
   /// `copyright`, fill weight.
   static const IconData copyrightFill = IconData(0xe54a, fontFamily: _fill, fontPackage: _package);
+
   /// `corners-in`: collapse, windowed, minimized.
   static const IconData cornersIn = IconData(0xe1ce, fontFamily: _regular, fontPackage: _package);
+
   /// `corners-in`, fill weight.
   static const IconData cornersInFill = IconData(0xe1ce, fontFamily: _fill, fontPackage: _package);
+
   /// `corners-out`: expand, fullscreen, maximized.
   static const IconData cornersOut = IconData(0xe1d0, fontFamily: _regular, fontPackage: _package);
+
   /// `corners-out`, fill weight.
   static const IconData cornersOutFill = IconData(0xe1d0, fontFamily: _fill, fontPackage: _package);
+
   /// `couch`: furniture, seat.
   static const IconData couch = IconData(0xe7f6, fontFamily: _regular, fontPackage: _package);
+
   /// `couch`, fill weight.
   static const IconData couchFill = IconData(0xe7f6, fontFamily: _fill, fontPackage: _package);
+
   /// `court-basketball`: sports, nba.
   static const IconData courtBasketball = IconData(0xee36, fontFamily: _regular, fontPackage: _package);
+
   /// `court-basketball`, fill weight.
   static const IconData courtBasketballFill = IconData(0xee36, fontFamily: _fill, fontPackage: _package);
+
   /// `cow`: animals, livestock, beef, bull, milk, dairy.
   static const IconData cow = IconData(0xeabe, fontFamily: _regular, fontPackage: _package);
+
   /// `cow`, fill weight.
   static const IconData cowFill = IconData(0xeabe, fontFamily: _fill, fontPackage: _package);
+
   /// `cowboy-hat`: clothes, clothing, stetson.
   static const IconData cowboyHat = IconData(0xed12, fontFamily: _regular, fontPackage: _package);
+
   /// `cowboy-hat`, fill weight.
   static const IconData cowboyHatFill = IconData(0xed12, fontFamily: _fill, fontPackage: _package);
+
   /// `cpu`: processor, microchip, computer, circuit.
   static const IconData cpu = IconData(0xe610, fontFamily: _regular, fontPackage: _package);
+
   /// `cpu`, fill weight.
   static const IconData cpuFill = IconData(0xe610, fontFamily: _fill, fontPackage: _package);
+
   /// `crane`: construction, industry.
   static const IconData crane = IconData(0xed48, fontFamily: _regular, fontPackage: _package);
+
   /// `crane`, fill weight.
   static const IconData craneFill = IconData(0xed48, fontFamily: _fill, fontPackage: _package);
+
   /// `crane-tower`: construction, industry.
   static const IconData craneTower = IconData(0xed49, fontFamily: _regular, fontPackage: _package);
+
   /// `crane-tower`, fill weight.
   static const IconData craneTowerFill = IconData(0xed49, fontFamily: _fill, fontPackage: _package);
+
   /// `credit-card`: debit, visa, mastercard, money, payment, paying.
   static const IconData creditCard = IconData(0xe1d2, fontFamily: _regular, fontPackage: _package);
+
   /// `credit-card`, fill weight.
   static const IconData creditCardFill = IconData(0xe1d2, fontFamily: _fill, fontPackage: _package);
+
   /// `cricket`: sports, ball, bat.
   static const IconData cricket = IconData(0xee12, fontFamily: _regular, fontPackage: _package);
+
   /// `cricket`, fill weight.
   static const IconData cricketFill = IconData(0xee12, fontFamily: _fill, fontPackage: _package);
+
   /// `crop`: photography, clip, screenshots.
   static const IconData crop = IconData(0xe1d4, fontFamily: _regular, fontPackage: _package);
+
   /// `crop`, fill weight.
   static const IconData cropFill = IconData(0xe1d4, fontFamily: _fill, fontPackage: _package);
+
   /// `cross`: dagger, crucifix, christ, christianity, religion, worship.
   static const IconData cross = IconData(0xe8a0, fontFamily: _regular, fontPackage: _package);
+
   /// `cross`, fill weight.
   static const IconData crossFill = IconData(0xe8a0, fontFamily: _fill, fontPackage: _package);
+
   /// `crosshair`: geolocation, gps, aiming, targeting.
   static const IconData crosshair = IconData(0xe1d6, fontFamily: _regular, fontPackage: _package);
+
   /// `crosshair`, fill weight.
   static const IconData crosshairFill = IconData(0xe1d6, fontFamily: _fill, fontPackage: _package);
+
   /// `crosshair-simple`: geolocation, gps, aiming, targeting.
   static const IconData crosshairSimple = IconData(0xe1d8, fontFamily: _regular, fontPackage: _package);
+
   /// `crosshair-simple`, fill weight.
   static const IconData crosshairSimpleFill = IconData(0xe1d8, fontFamily: _fill, fontPackage: _package);
+
   /// `crown`: king, queen, royalty, monarch, ruler, leader.
   static const IconData crown = IconData(0xe614, fontFamily: _regular, fontPackage: _package);
+
   /// `crown`, fill weight.
   static const IconData crownFill = IconData(0xe614, fontFamily: _fill, fontPackage: _package);
+
   /// `crown-cross`: king, queen, royalty, monarch, ruler, leader.
   static const IconData crownCross = IconData(0xee5e, fontFamily: _regular, fontPackage: _package);
+
   /// `crown-cross`, fill weight.
   static const IconData crownCrossFill = IconData(0xee5e, fontFamily: _fill, fontPackage: _package);
+
   /// `crown-simple`: king, queen, royalty, monarch, ruler, leader.
   static const IconData crownSimple = IconData(0xe616, fontFamily: _regular, fontPackage: _package);
+
   /// `crown-simple`, fill weight.
   static const IconData crownSimpleFill = IconData(0xe616, fontFamily: _fill, fontPackage: _package);
+
   /// `cube`: square, box, 3d, volume, blocks.
   static const IconData cube = IconData(0xe1da, fontFamily: _regular, fontPackage: _package);
+
   /// `cube`, fill weight.
   static const IconData cubeFill = IconData(0xe1da, fontFamily: _fill, fontPackage: _package);
+
   /// `cube-focus`: augmented reality, ar, virual reality, vr, 3d, scan.
   static const IconData cubeFocus = IconData(0xed0a, fontFamily: _regular, fontPackage: _package);
+
   /// `cube-focus`, fill weight.
   static const IconData cubeFocusFill = IconData(0xed0a, fontFamily: _fill, fontPackage: _package);
+
   /// `cube-transparent`: square, box, 3d, volume, blocks, necker.
   static const IconData cubeTransparent = IconData(0xec7c, fontFamily: _regular, fontPackage: _package);
+
   /// `cube-transparent`, fill weight.
   static const IconData cubeTransparentFill = IconData(0xec7c, fontFamily: _fill, fontPackage: _package);
+
   /// `currency-btc`: money, btc, bitcoin, crypto, cryptocurrency, payment.
   static const IconData currencyBtc = IconData(0xe618, fontFamily: _regular, fontPackage: _package);
+
   /// `currency-btc`, fill weight.
   static const IconData currencyBtcFill = IconData(0xe618, fontFamily: _fill, fontPackage: _package);
+
   /// `currency-circle-dollar`: money, usd, payment, paying, purchase.
   static const IconData currencyCircleDollar = IconData(0xe54c, fontFamily: _regular, fontPackage: _package);
+
   /// `currency-circle-dollar`, fill weight.
   static const IconData currencyCircleDollarFill = IconData(0xe54c, fontFamily: _fill, fontPackage: _package);
+
   /// `currency-cny`: money, yuan, payment, paying, purchase.
   static const IconData currencyCny = IconData(0xe54e, fontFamily: _regular, fontPackage: _package);
+
   /// `currency-cny`, fill weight.
   static const IconData currencyCnyFill = IconData(0xe54e, fontFamily: _fill, fontPackage: _package);
+
   /// `currency-dollar`: money, usd, payment, paying, purchase.
   static const IconData currencyDollar = IconData(0xe550, fontFamily: _regular, fontPackage: _package);
+
   /// `currency-dollar`, fill weight.
   static const IconData currencyDollarFill = IconData(0xe550, fontFamily: _fill, fontPackage: _package);
+
   /// `currency-dollar-simple`: money, usd, payment, paying, purchase.
   static const IconData currencyDollarSimple = IconData(0xe552, fontFamily: _regular, fontPackage: _package);
+
   /// `currency-dollar-simple`, fill weight.
   static const IconData currencyDollarSimpleFill = IconData(0xe552, fontFamily: _fill, fontPackage: _package);
+
   /// `currency-eth`: money, ethereum, crypto, cryptocurrency, payment, paying.
   static const IconData currencyEth = IconData(0xeada, fontFamily: _regular, fontPackage: _package);
+
   /// `currency-eth`, fill weight.
   static const IconData currencyEthFill = IconData(0xeada, fontFamily: _fill, fontPackage: _package);
+
   /// `currency-eur`: money, euros, payment, paying, purchase.
   static const IconData currencyEur = IconData(0xe554, fontFamily: _regular, fontPackage: _package);
+
   /// `currency-eur`, fill weight.
   static const IconData currencyEurFill = IconData(0xe554, fontFamily: _fill, fontPackage: _package);
+
   /// `currency-gbp`: money, pounds sterling, payment, paying, purchase.
   static const IconData currencyGbp = IconData(0xe556, fontFamily: _regular, fontPackage: _package);
+
   /// `currency-gbp`, fill weight.
   static const IconData currencyGbpFill = IconData(0xe556, fontFamily: _fill, fontPackage: _package);
+
   /// `currency-inr`: money, rupees, payment, paying, purchase.
   static const IconData currencyInr = IconData(0xe558, fontFamily: _regular, fontPackage: _package);
+
   /// `currency-inr`, fill weight.
   static const IconData currencyInrFill = IconData(0xe558, fontFamily: _fill, fontPackage: _package);
+
   /// `currency-jpy`: money, yen, payment, paying, purchase.
   static const IconData currencyJpy = IconData(0xe55a, fontFamily: _regular, fontPackage: _package);
+
   /// `currency-jpy`, fill weight.
   static const IconData currencyJpyFill = IconData(0xe55a, fontFamily: _fill, fontPackage: _package);
+
   /// `currency-krw`: money, won, payment, paying, purchase.
   static const IconData currencyKrw = IconData(0xe55c, fontFamily: _regular, fontPackage: _package);
+
   /// `currency-krw`, fill weight.
   static const IconData currencyKrwFill = IconData(0xe55c, fontFamily: _fill, fontPackage: _package);
+
   /// `currency-kzt`: money, kazakhstan, tenge, payment, paying, purchase.
   static const IconData currencyKzt = IconData(0xec4c, fontFamily: _regular, fontPackage: _package);
+
   /// `currency-kzt`, fill weight.
   static const IconData currencyKztFill = IconData(0xec4c, fontFamily: _fill, fontPackage: _package);
+
   /// `currency-ngn`: money, nigeria, naira, payment, paying, purchase.
   static const IconData currencyNgn = IconData(0xeb52, fontFamily: _regular, fontPackage: _package);
+
   /// `currency-ngn`, fill weight.
   static const IconData currencyNgnFill = IconData(0xeb52, fontFamily: _fill, fontPackage: _package);
+
   /// `currency-rub`: money, rubles, payment, paying, purchase.
   static const IconData currencyRub = IconData(0xe55e, fontFamily: _regular, fontPackage: _package);
+
   /// `currency-rub`, fill weight.
   static const IconData currencyRubFill = IconData(0xe55e, fontFamily: _fill, fontPackage: _package);
+
   /// `cursor`: pointer, arrowhead, mouse, click.
   static const IconData cursor = IconData(0xe1dc, fontFamily: _regular, fontPackage: _package);
+
   /// `cursor`, fill weight.
   static const IconData cursorFill = IconData(0xe1dc, fontFamily: _fill, fontPackage: _package);
+
   /// `cursor-click`: pointer, arrowhead, mouse.
   static const IconData cursorClick = IconData(0xe7c8, fontFamily: _regular, fontPackage: _package);
+
   /// `cursor-click`, fill weight.
   static const IconData cursorClickFill = IconData(0xe7c8, fontFamily: _fill, fontPackage: _package);
+
   /// `cursor-text`: i-beam, input, select.
   static const IconData cursorText = IconData(0xe7d8, fontFamily: _regular, fontPackage: _package);
+
   /// `cursor-text`, fill weight.
   static const IconData cursorTextFill = IconData(0xe7d8, fontFamily: _fill, fontPackage: _package);
+
   /// `cylinder`: shapes, tube.
   static const IconData cylinder = IconData(0xe8fc, fontFamily: _regular, fontPackage: _package);
+
   /// `cylinder`, fill weight.
   static const IconData cylinderFill = IconData(0xe8fc, fontFamily: _fill, fontPackage: _package);
+
   /// `database`: saved, saving, archived, archiving, archival, hard disk.
   static const IconData database = IconData(0xe1de, fontFamily: _regular, fontPackage: _package);
+
   /// `database`, fill weight.
   static const IconData databaseFill = IconData(0xe1de, fontFamily: _fill, fontPackage: _package);
+
   /// `desk`: furniture, workspace, table.
   static const IconData desk = IconData(0xed16, fontFamily: _regular, fontPackage: _package);
+
   /// `desk`, fill weight.
   static const IconData deskFill = IconData(0xed16, fontFamily: _fill, fontPackage: _package);
+
   /// `desktop`: computer, pc, imac, tower.
   static const IconData desktop = IconData(0xe560, fontFamily: _regular, fontPackage: _package);
+
   /// `desktop`, fill weight.
   static const IconData desktopFill = IconData(0xe560, fontFamily: _fill, fontPackage: _package);
+
   /// `desktop-tower`: computer, pc, imac.
   static const IconData desktopTower = IconData(0xe562, fontFamily: _regular, fontPackage: _package);
+
   /// `desktop-tower`, fill weight.
   static const IconData desktopTowerFill = IconData(0xe562, fontFamily: _fill, fontPackage: _package);
+
   /// `detective`: incognito, police, law enforcement, spy, secret.
   static const IconData detective = IconData(0xe83e, fontFamily: _regular, fontPackage: _package);
+
   /// `detective`, fill weight.
   static const IconData detectiveFill = IconData(0xe83e, fontFamily: _fill, fontPackage: _package);
+
   /// `dev-to-logo`: reading, writing, social media, logos.
   static const IconData devToLogo = IconData(0xed0e, fontFamily: _regular, fontPackage: _package);
+
   /// `dev-to-logo`, fill weight.
   static const IconData devToLogoFill = IconData(0xed0e, fontFamily: _fill, fontPackage: _package);
+
   /// `device-mobile`: cellphone, cellular.
   static const IconData deviceMobile = IconData(0xe1e0, fontFamily: _regular, fontPackage: _package);
+
   /// `device-mobile`, fill weight.
   static const IconData deviceMobileFill = IconData(0xe1e0, fontFamily: _fill, fontPackage: _package);
+
   /// `device-mobile-camera`: cellphone, cellular.
   static const IconData deviceMobileCamera = IconData(0xe1e2, fontFamily: _regular, fontPackage: _package);
+
   /// `device-mobile-camera`, fill weight.
   static const IconData deviceMobileCameraFill = IconData(0xe1e2, fontFamily: _fill, fontPackage: _package);
+
   /// `device-mobile-slash`: cellphone, cellular.
   static const IconData deviceMobileSlash = IconData(0xee46, fontFamily: _regular, fontPackage: _package);
+
   /// `device-mobile-slash`, fill weight.
   static const IconData deviceMobileSlashFill = IconData(0xee46, fontFamily: _fill, fontPackage: _package);
+
   /// `device-mobile-speaker`: cellphone, cellular.
   static const IconData deviceMobileSpeaker = IconData(0xe1e4, fontFamily: _regular, fontPackage: _package);
+
   /// `device-mobile-speaker`, fill weight.
   static const IconData deviceMobileSpeakerFill = IconData(0xe1e4, fontFamily: _fill, fontPackage: _package);
+
   /// `device-rotate`: orientation, landscape, portrait, spin, flip.
   static const IconData deviceRotate = IconData(0xedf2, fontFamily: _regular, fontPackage: _package);
+
   /// `device-rotate`, fill weight.
   static const IconData deviceRotateFill = IconData(0xedf2, fontFamily: _fill, fontPackage: _package);
+
   /// `device-tablet`: cellphone, cellular, ipad, phablet.
   static const IconData deviceTablet = IconData(0xe1e6, fontFamily: _regular, fontPackage: _package);
+
   /// `device-tablet`, fill weight.
   static const IconData deviceTabletFill = IconData(0xe1e6, fontFamily: _fill, fontPackage: _package);
+
   /// `device-tablet-camera`: cellphone, cellular, ipad, phablet.
   static const IconData deviceTabletCamera = IconData(0xe1e8, fontFamily: _regular, fontPackage: _package);
+
   /// `device-tablet-camera`, fill weight.
   static const IconData deviceTabletCameraFill = IconData(0xe1e8, fontFamily: _fill, fontPackage: _package);
+
   /// `device-tablet-speaker`: cellphone, cellular, ipad, phablet.
   static const IconData deviceTabletSpeaker = IconData(0xe1ea, fontFamily: _regular, fontPackage: _package);
+
   /// `device-tablet-speaker`, fill weight.
   static const IconData deviceTabletSpeakerFill = IconData(0xe1ea, fontFamily: _fill, fontPackage: _package);
+
   /// `devices`: responsive, cellphone, cellular, tablet, desktop.
   static const IconData devices = IconData(0xeba4, fontFamily: _regular, fontPackage: _package);
+
   /// `devices`, fill weight.
   static const IconData devicesFill = IconData(0xeba4, fontFamily: _fill, fontPackage: _package);
+
   /// `diamond`: rectangle, shapes, polygons, diamonds, suits, cards.
   static const IconData diamond = IconData(0xe1ec, fontFamily: _regular, fontPackage: _package);
+
   /// `diamond`, fill weight.
   static const IconData diamondFill = IconData(0xe1ec, fontFamily: _fill, fontPackage: _package);
+
   /// `diamonds-four`: shapes, grid, component.
   static const IconData diamondsFour = IconData(0xe8f4, fontFamily: _regular, fontPackage: _package);
+
   /// `diamonds-four`, fill weight.
   static const IconData diamondsFourFill = IconData(0xe8f4, fontFamily: _fill, fontPackage: _package);
+
   /// `dice-five`: die, rolling, gamble, gambling, casino, gaming.
   static const IconData diceFive = IconData(0xe1ee, fontFamily: _regular, fontPackage: _package);
+
   /// `dice-five`, fill weight.
   static const IconData diceFiveFill = IconData(0xe1ee, fontFamily: _fill, fontPackage: _package);
+
   /// `dice-four`: die, rolling, gamble, gambling, casino, gaming.
   static const IconData diceFour = IconData(0xe1f0, fontFamily: _regular, fontPackage: _package);
+
   /// `dice-four`, fill weight.
   static const IconData diceFourFill = IconData(0xe1f0, fontFamily: _fill, fontPackage: _package);
+
   /// `dice-one`: die, rolling, gamble, gambling, casino, gaming.
   static const IconData diceOne = IconData(0xe1f2, fontFamily: _regular, fontPackage: _package);
+
   /// `dice-one`, fill weight.
   static const IconData diceOneFill = IconData(0xe1f2, fontFamily: _fill, fontPackage: _package);
+
   /// `dice-six`: die, rolling, gamble, gambling, casino, gaming.
   static const IconData diceSix = IconData(0xe1f4, fontFamily: _regular, fontPackage: _package);
+
   /// `dice-six`, fill weight.
   static const IconData diceSixFill = IconData(0xe1f4, fontFamily: _fill, fontPackage: _package);
+
   /// `dice-three`: die, rolling, gamble, gambling, casino, gaming.
   static const IconData diceThree = IconData(0xe1f6, fontFamily: _regular, fontPackage: _package);
+
   /// `dice-three`, fill weight.
   static const IconData diceThreeFill = IconData(0xe1f6, fontFamily: _fill, fontPackage: _package);
+
   /// `dice-two`: die, rolling, gamble, gambling, casino, gaming.
   static const IconData diceTwo = IconData(0xe1f8, fontFamily: _regular, fontPackage: _package);
+
   /// `dice-two`, fill weight.
   static const IconData diceTwoFill = IconData(0xe1f8, fontFamily: _fill, fontPackage: _package);
+
   /// `disc`: cd-rom, compact disk, album, record.
   static const IconData disc = IconData(0xe564, fontFamily: _regular, fontPackage: _package);
+
   /// `disc`, fill weight.
   static const IconData discFill = IconData(0xe564, fontFamily: _fill, fontPackage: _package);
+
   /// `disco-ball`: danging, club, 70s.
   static const IconData discoBall = IconData(0xed98, fontFamily: _regular, fontPackage: _package);
+
   /// `disco-ball`, fill weight.
   static const IconData discoBallFill = IconData(0xed98, fontFamily: _fill, fontPackage: _package);
+
   /// `discord-logo`: logos, messages, messaging, chat.
   static const IconData discordLogo = IconData(0xe61a, fontFamily: _regular, fontPackage: _package);
+
   /// `discord-logo`, fill weight.
   static const IconData discordLogoFill = IconData(0xe61a, fontFamily: _fill, fontPackage: _package);
+
   /// `divide`: division, divisor, dividend, quotient, mathematics, arithmetic.
   static const IconData divide = IconData(0xe1fa, fontFamily: _regular, fontPackage: _package);
+
   /// `divide`, fill weight.
   static const IconData divideFill = IconData(0xe1fa, fontFamily: _fill, fontPackage: _package);
+
   /// `dna`: double helix, gene, genetics.
   static const IconData dna = IconData(0xe924, fontFamily: _regular, fontPackage: _package);
+
   /// `dna`, fill weight.
   static const IconData dnaFill = IconData(0xe924, fontFamily: _fill, fontPackage: _package);
+
   /// `dog`: pets, animals, puppy.
   static const IconData dog = IconData(0xe74a, fontFamily: _regular, fontPackage: _package);
+
   /// `dog`, fill weight.
   static const IconData dogFill = IconData(0xe74a, fontFamily: _fill, fontPackage: _package);
+
   /// `door`: entrance, exit.
   static const IconData door = IconData(0xe61c, fontFamily: _regular, fontPackage: _package);
+
   /// `door`, fill weight.
   static const IconData doorFill = IconData(0xe61c, fontFamily: _fill, fontPackage: _package);
+
   /// `door-open`: entrance, exit.
   static const IconData doorOpen = IconData(0xe7e6, fontFamily: _regular, fontPackage: _package);
+
   /// `door-open`, fill weight.
   static const IconData doorOpenFill = IconData(0xe7e6, fontFamily: _fill, fontPackage: _package);
+
   /// `dot`: dots, circles, shapes, polygons.
   static const IconData dot = IconData(0xecde, fontFamily: _regular, fontPackage: _package);
+
   /// `dot`, fill weight.
   static const IconData dotFill = IconData(0xecde, fontFamily: _fill, fontPackage: _package);
+
   /// `dot-outline`: dots, circles, shapes, polygons.
   static const IconData dotOutline = IconData(0xece0, fontFamily: _regular, fontPackage: _package);
+
   /// `dot-outline`, fill weight.
   static const IconData dotOutlineFill = IconData(0xece0, fontFamily: _fill, fontPackage: _package);
+
   /// `dots-nine`: grid, circles, shapes, polygons, 9.
   static const IconData dotsNine = IconData(0xe1fc, fontFamily: _regular, fontPackage: _package);
+
   /// `dots-nine`, fill weight.
   static const IconData dotsNineFill = IconData(0xe1fc, fontFamily: _fill, fontPackage: _package);
+
   /// `dots-six`: drag handle, knurling, circles, shapes, polygons, 6.
   static const IconData dotsSix = IconData(0xe794, fontFamily: _regular, fontPackage: _package);
+
   /// `dots-six`, fill weight.
   static const IconData dotsSixFill = IconData(0xe794, fontFamily: _fill, fontPackage: _package);
+
   /// `dots-six-vertical`: drag handle, knurling, circles, shapes, polygons, 6.
   static const IconData dotsSixVertical = IconData(0xeae2, fontFamily: _regular, fontPackage: _package);
+
   /// `dots-six-vertical`, fill weight.
   static const IconData dotsSixVerticalFill = IconData(0xeae2, fontFamily: _fill, fontPackage: _package);
+
   /// `dots-three`: menu, overflow, circles, shapes, polygons, 3.
   static const IconData dotsThree = IconData(0xe1fe, fontFamily: _regular, fontPackage: _package);
+
   /// `dots-three`, fill weight.
   static const IconData dotsThreeFill = IconData(0xe1fe, fontFamily: _fill, fontPackage: _package);
+
   /// `dots-three-circle`: menu, overflow, circles, shapes, polygons, 3.
   static const IconData dotsThreeCircle = IconData(0xe200, fontFamily: _regular, fontPackage: _package);
+
   /// `dots-three-circle`, fill weight.
   static const IconData dotsThreeCircleFill = IconData(0xe200, fontFamily: _fill, fontPackage: _package);
+
   /// `dots-three-circle-vertical`: menu, overflow, circles, shapes, polygons, 3.
   static const IconData dotsThreeCircleVertical = IconData(0xe202, fontFamily: _regular, fontPackage: _package);
+
   /// `dots-three-circle-vertical`, fill weight.
   static const IconData dotsThreeCircleVerticalFill = IconData(0xe202, fontFamily: _fill, fontPackage: _package);
+
   /// `dots-three-outline`: menu, overflow, circles, shapes, polygons, 3.
   static const IconData dotsThreeOutline = IconData(0xe204, fontFamily: _regular, fontPackage: _package);
+
   /// `dots-three-outline`, fill weight.
   static const IconData dotsThreeOutlineFill = IconData(0xe204, fontFamily: _fill, fontPackage: _package);
+
   /// `dots-three-outline-vertical`: menu, overflow, circles, shapes, polygons, 3.
   static const IconData dotsThreeOutlineVertical = IconData(0xe206, fontFamily: _regular, fontPackage: _package);
+
   /// `dots-three-outline-vertical`, fill weight.
   static const IconData dotsThreeOutlineVerticalFill = IconData(0xe206, fontFamily: _fill, fontPackage: _package);
+
   /// `dots-three-vertical`: menu, overflow, circles, shapes, polygons, 3.
   static const IconData dotsThreeVertical = IconData(0xe208, fontFamily: _regular, fontPackage: _package);
+
   /// `dots-three-vertical`, fill weight.
   static const IconData dotsThreeVerticalFill = IconData(0xe208, fontFamily: _fill, fontPackage: _package);
+
   /// `download`: saved, saving, archived, archiving, archival, downloaded.
   static const IconData download = IconData(0xe20a, fontFamily: _regular, fontPackage: _package);
+
   /// `download`, fill weight.
   static const IconData downloadFill = IconData(0xe20a, fontFamily: _fill, fontPackage: _package);
+
   /// `download-simple`: saved, saving, archived, archiving, archival, downloaded.
   static const IconData downloadSimple = IconData(0xe20c, fontFamily: _regular, fontPackage: _package);
+
   /// `download-simple`, fill weight.
   static const IconData downloadSimpleFill = IconData(0xe20c, fontFamily: _fill, fontPackage: _package);
+
   /// `dress`: clothes, clothing.
   static const IconData dress = IconData(0xea7e, fontFamily: _regular, fontPackage: _package);
+
   /// `dress`, fill weight.
   static const IconData dressFill = IconData(0xea7e, fontFamily: _fill, fontPackage: _package);
+
   /// `dresser`: furniture, bedroom, storage, drawers, wardrobe.
   static const IconData dresser = IconData(0xe94e, fontFamily: _regular, fontPackage: _package);
+
   /// `dresser`, fill weight.
   static const IconData dresserFill = IconData(0xe94e, fontFamily: _fill, fontPackage: _package);
+
   /// `dribbble-logo`: logos, round, basketball, sports, design.
   static const IconData dribbbleLogo = IconData(0xe20e, fontFamily: _regular, fontPackage: _package);
+
   /// `dribbble-logo`, fill weight.
   static const IconData dribbbleLogoFill = IconData(0xe20e, fontFamily: _fill, fontPackage: _package);
+
   /// `drone`: aerial, uav, photography, remote.
   static const IconData drone = IconData(0xed74, fontFamily: _regular, fontPackage: _package);
+
   /// `drone`, fill weight.
   static const IconData droneFill = IconData(0xed74, fontFamily: _fill, fontPackage: _package);
+
   /// `drop`: droplet, teardrop, raindrop, raining, meteorology, water.
   static const IconData drop = IconData(0xe210, fontFamily: _regular, fontPackage: _package);
+
   /// `drop`, fill weight.
   static const IconData dropFill = IconData(0xe210, fontFamily: _fill, fontPackage: _package);
+
   /// `drop-half`: droplet, teardrop, raindrop, humidity, water, contrast.
   static const IconData dropHalf = IconData(0xe566, fontFamily: _regular, fontPackage: _package);
+
   /// `drop-half`, fill weight.
   static const IconData dropHalfFill = IconData(0xe566, fontFamily: _fill, fontPackage: _package);
+
   /// `drop-half-bottom`: droplet, teardrop, raindrop, humidity, water, contrast.
   static const IconData dropHalfBottom = IconData(0xeb40, fontFamily: _regular, fontPackage: _package);
+
   /// `drop-half-bottom`, fill weight.
   static const IconData dropHalfBottomFill = IconData(0xeb40, fontFamily: _fill, fontPackage: _package);
+
   /// `drop-simple`: droplet, teardrop, raindrop, raining, humidity, meteorology.
   static const IconData dropSimple = IconData(0xee32, fontFamily: _regular, fontPackage: _package);
+
   /// `drop-simple`, fill weight.
   static const IconData dropSimpleFill = IconData(0xee32, fontFamily: _fill, fontPackage: _package);
+
   /// `drop-slash`: droplet, teardrop, raindrop, raining, humidity, meteorology.
   static const IconData dropSlash = IconData(0xe954, fontFamily: _regular, fontPackage: _package);
+
   /// `drop-slash`, fill weight.
   static const IconData dropSlashFill = IconData(0xe954, fontFamily: _fill, fontPackage: _package);
+
   /// `dropbox-logo`: cloud, storage, backup, logos.
   static const IconData dropboxLogo = IconData(0xe7d0, fontFamily: _regular, fontPackage: _package);
+
   /// `dropbox-logo`, fill weight.
   static const IconData dropboxLogoFill = IconData(0xe7d0, fontFamily: _fill, fontPackage: _package);
+
   /// `ear`: hearing, audio, sound.
   static const IconData ear = IconData(0xe70c, fontFamily: _regular, fontPackage: _package);
+
   /// `ear`, fill weight.
   static const IconData earFill = IconData(0xe70c, fontFamily: _fill, fontPackage: _package);
+
   /// `ear-slash`: hearing, audio, sound, mute, accessible.
   static const IconData earSlash = IconData(0xe70e, fontFamily: _regular, fontPackage: _package);
+
   /// `ear-slash`, fill weight.
   static const IconData earSlashFill = IconData(0xe70e, fontFamily: _fill, fontPackage: _package);
+
   /// `egg`: chicken, food, meal, baby, hatch.
   static const IconData egg = IconData(0xe812, fontFamily: _regular, fontPackage: _package);
+
   /// `egg`, fill weight.
   static const IconData eggFill = IconData(0xe812, fontFamily: _fill, fontPackage: _package);
+
   /// `egg-crack`: chicken, food, meal, baby, hatch, break.
   static const IconData eggCrack = IconData(0xeb64, fontFamily: _regular, fontPackage: _package);
+
   /// `egg-crack`, fill weight.
   static const IconData eggCrackFill = IconData(0xeb64, fontFamily: _fill, fontPackage: _package);
+
   /// `eject`: disconnect.
   static const IconData eject = IconData(0xe212, fontFamily: _regular, fontPackage: _package);
+
   /// `eject`, fill weight.
   static const IconData ejectFill = IconData(0xe212, fontFamily: _fill, fontPackage: _package);
+
   /// `eject-simple`: disconnect.
   static const IconData ejectSimple = IconData(0xe6ae, fontFamily: _regular, fontPackage: _package);
+
   /// `eject-simple`, fill weight.
   static const IconData ejectSimpleFill = IconData(0xe6ae, fontFamily: _fill, fontPackage: _package);
+
   /// `elevator`: lift.
   static const IconData elevator = IconData(0xecc0, fontFamily: _regular, fontPackage: _package);
+
   /// `elevator`, fill weight.
   static const IconData elevatorFill = IconData(0xecc0, fontFamily: _fill, fontPackage: _package);
+
   /// `empty`: ∅, empty set, member, mathematics, arithmetic, calculator.
   static const IconData empty = IconData(0xedbc, fontFamily: _regular, fontPackage: _package);
+
   /// `empty`, fill weight.
   static const IconData emptyFill = IconData(0xedbc, fontFamily: _fill, fontPackage: _package);
+
   /// `engine`: motor, repair, vehicles, automobile.
   static const IconData engine = IconData(0xea80, fontFamily: _regular, fontPackage: _package);
+
   /// `engine`, fill weight.
   static const IconData engineFill = IconData(0xea80, fontFamily: _fill, fontPackage: _package);
+
   /// `envelope`: mail, email, send, sent, message, post.
   static const IconData envelope = IconData(0xe214, fontFamily: _regular, fontPackage: _package);
+
   /// `envelope`, fill weight.
   static const IconData envelopeFill = IconData(0xe214, fontFamily: _fill, fontPackage: _package);
+
   /// `envelope-open`: mail, email, send, sent, message, read.
   static const IconData envelopeOpen = IconData(0xe216, fontFamily: _regular, fontPackage: _package);
+
   /// `envelope-open`, fill weight.
   static const IconData envelopeOpenFill = IconData(0xe216, fontFamily: _fill, fontPackage: _package);
+
   /// `envelope-simple`: mail, email, send, sent, message, post.
   static const IconData envelopeSimple = IconData(0xe218, fontFamily: _regular, fontPackage: _package);
+
   /// `envelope-simple`, fill weight.
   static const IconData envelopeSimpleFill = IconData(0xe218, fontFamily: _fill, fontPackage: _package);
+
   /// `envelope-simple-open`: mail, email, send, sent, message, read.
   static const IconData envelopeSimpleOpen = IconData(0xe21a, fontFamily: _regular, fontPackage: _package);
+
   /// `envelope-simple-open`, fill weight.
   static const IconData envelopeSimpleOpenFill = IconData(0xe21a, fontFamily: _fill, fontPackage: _package);
+
   /// `equalizer`: music, audio, meter, volume, spectrum, eq.
   static const IconData equalizer = IconData(0xebbc, fontFamily: _regular, fontPackage: _package);
+
   /// `equalizer`, fill weight.
   static const IconData equalizerFill = IconData(0xebbc, fontFamily: _fill, fontPackage: _package);
+
   /// `equals`: =, equality, equivalent, equivalence, mathematics, arithmetic.
   static const IconData equals = IconData(0xe21c, fontFamily: _regular, fontPackage: _package);
+
   /// `equals`, fill weight.
   static const IconData equalsFill = IconData(0xe21c, fontFamily: _fill, fontPackage: _package);
+
   /// `eraser`: write, writing, editing, undo, deleted.
   static const IconData eraser = IconData(0xe21e, fontFamily: _regular, fontPackage: _package);
+
   /// `eraser`, fill weight.
   static const IconData eraserFill = IconData(0xe21e, fontFamily: _fill, fontPackage: _package);
+
   /// `escalator-down`: stairs.
   static const IconData escalatorDown = IconData(0xecba, fontFamily: _regular, fontPackage: _package);
+
   /// `escalator-down`, fill weight.
   static const IconData escalatorDownFill = IconData(0xecba, fontFamily: _fill, fontPackage: _package);
+
   /// `escalator-up`: stairs.
   static const IconData escalatorUp = IconData(0xecbc, fontFamily: _regular, fontPackage: _package);
+
   /// `escalator-up`, fill weight.
   static const IconData escalatorUpFill = IconData(0xecbc, fontFamily: _fill, fontPackage: _package);
+
   /// `exam`: text, examination, paper, school, grade.
   static const IconData exam = IconData(0xe742, fontFamily: _regular, fontPackage: _package);
+
   /// `exam`, fill weight.
   static const IconData examFill = IconData(0xe742, fontFamily: _fill, fontPackage: _package);
+
   /// `exclamation-mark`: !, alert, warning, caution, interjection, punctuation.
   static const IconData exclamationMark = IconData(0xee44, fontFamily: _regular, fontPackage: _package);
+
   /// `exclamation-mark`, fill weight.
   static const IconData exclamationMarkFill = IconData(0xee44, fontFamily: _fill, fontPackage: _package);
+
   /// `exclude`: venn-diagram, difference, intersection.
   static const IconData exclude = IconData(0xe882, fontFamily: _regular, fontPackage: _package);
+
   /// `exclude`, fill weight.
   static const IconData excludeFill = IconData(0xe882, fontFamily: _fill, fontPackage: _package);
+
   /// `exclude-square`: venn-diagram, difference, intersection.
   static const IconData excludeSquare = IconData(0xe880, fontFamily: _regular, fontPackage: _package);
+
   /// `exclude-square`, fill weight.
   static const IconData excludeSquareFill = IconData(0xe880, fontFamily: _fill, fontPackage: _package);
+
   /// `export`: share, send to, arrows.
   static const IconData export = IconData(0xeaf0, fontFamily: _regular, fontPackage: _package);
+
   /// `export`, fill weight.
   static const IconData exportFill = IconData(0xeaf0, fontFamily: _fill, fontPackage: _package);
+
   /// `eye`: visible, hidden, show, hide, visibility, view.
   static const IconData eye = IconData(0xe220, fontFamily: _regular, fontPackage: _package);
+
   /// `eye`, fill weight.
   static const IconData eyeFill = IconData(0xe220, fontFamily: _fill, fontPackage: _package);
+
   /// `eye-closed`: visible, hidden, show, hide, visibility, view.
   static const IconData eyeClosed = IconData(0xe222, fontFamily: _regular, fontPackage: _package);
+
   /// `eye-closed`, fill weight.
   static const IconData eyeClosedFill = IconData(0xe222, fontFamily: _fill, fontPackage: _package);
+
   /// `eye-slash`: visible, hidden, show, hide, visibility, view.
   static const IconData eyeSlash = IconData(0xe224, fontFamily: _regular, fontPackage: _package);
+
   /// `eye-slash`, fill weight.
   static const IconData eyeSlashFill = IconData(0xe224, fontFamily: _fill, fontPackage: _package);
+
   /// `eyedropper`: colors, color picker, sample, arts.
   static const IconData eyedropper = IconData(0xe568, fontFamily: _regular, fontPackage: _package);
+
   /// `eyedropper`, fill weight.
   static const IconData eyedropperFill = IconData(0xe568, fontFamily: _fill, fontPackage: _package);
+
   /// `eyedropper-sample`: colors, color picker, arts.
   static const IconData eyedropperSample = IconData(0xeac4, fontFamily: _regular, fontPackage: _package);
+
   /// `eyedropper-sample`, fill weight.
   static const IconData eyedropperSampleFill = IconData(0xeac4, fontFamily: _fill, fontPackage: _package);
+
   /// `eyeglasses`: vision, spectacles.
   static const IconData eyeglasses = IconData(0xe7ba, fontFamily: _regular, fontPackage: _package);
+
   /// `eyeglasses`, fill weight.
   static const IconData eyeglassesFill = IconData(0xe7ba, fontFamily: _fill, fontPackage: _package);
+
   /// `eyes`: look, glance.
   static const IconData eyes = IconData(0xee5c, fontFamily: _regular, fontPackage: _package);
+
   /// `eyes`, fill weight.
   static const IconData eyesFill = IconData(0xee5c, fontFamily: _fill, fontPackage: _package);
+
   /// `face-mask`: ppe, facemask, covid-19, coronavirus, flu, cold.
   static const IconData faceMask = IconData(0xe56a, fontFamily: _regular, fontPackage: _package);
+
   /// `face-mask`, fill weight.
   static const IconData faceMaskFill = IconData(0xe56a, fontFamily: _fill, fontPackage: _package);
+
   /// `facebook-logo`: logos, social media.
   static const IconData facebookLogo = IconData(0xe226, fontFamily: _regular, fontPackage: _package);
+
   /// `facebook-logo`, fill weight.
   static const IconData facebookLogoFill = IconData(0xe226, fontFamily: _fill, fontPackage: _package);
+
   /// `factory`: industry, manufacture, buildings, places, locations.
   static const IconData factory = IconData(0xe760, fontFamily: _regular, fontPackage: _package);
+
   /// `factory`, fill weight.
   static const IconData factoryFill = IconData(0xe760, fontFamily: _fill, fontPackage: _package);
+
   /// `faders`: music, audio, sliders, filters, equalizer, volume.
   static const IconData faders = IconData(0xe228, fontFamily: _regular, fontPackage: _package);
+
   /// `faders`, fill weight.
   static const IconData fadersFill = IconData(0xe228, fontFamily: _fill, fontPackage: _package);
+
   /// `faders-horizontal`: music, audio, sliders, filters, equalizer, volume.
   static const IconData fadersHorizontal = IconData(0xe22a, fontFamily: _regular, fontPackage: _package);
+
   /// `faders-horizontal`, fill weight.
   static const IconData fadersHorizontalFill = IconData(0xe22a, fontFamily: _fill, fontPackage: _package);
+
   /// `fallout-shelter`: radiation, radioactive, nuclear, bunker, contamination, quarantine.
   static const IconData falloutShelter = IconData(0xe9de, fontFamily: _regular, fontPackage: _package);
+
   /// `fallout-shelter`, fill weight.
   static const IconData falloutShelterFill = IconData(0xe9de, fontFamily: _fill, fontPackage: _package);
+
   /// `fan`: desk fan, air conditioning.
   static const IconData fan = IconData(0xe9f2, fontFamily: _regular, fontPackage: _package);
+
   /// `fan`, fill weight.
   static const IconData fanFill = IconData(0xe9f2, fontFamily: _fill, fontPackage: _package);
+
   /// `farm`: farmer, field, farming, agriculture.
   static const IconData farm = IconData(0xec70, fontFamily: _regular, fontPackage: _package);
+
   /// `farm`, fill weight.
   static const IconData farmFill = IconData(0xec70, fontFamily: _fill, fontPackage: _package);
+
   /// `fast-forward`: audio, music, seek, scrub, scan, ahead.
   static const IconData fastForward = IconData(0xe6a6, fontFamily: _regular, fontPackage: _package);
+
   /// `fast-forward`, fill weight.
   static const IconData fastForwardFill = IconData(0xe6a6, fontFamily: _fill, fontPackage: _package);
+
   /// `fast-forward-circle`: audio, music, seek, scrub, scan, ahead.
   static const IconData fastForwardCircle = IconData(0xe22c, fontFamily: _regular, fontPackage: _package);
+
   /// `fast-forward-circle`, fill weight.
   static const IconData fastForwardCircleFill = IconData(0xe22c, fontFamily: _fill, fontPackage: _package);
+
   /// `feather`: bird.
   static const IconData feather = IconData(0xe9c0, fontFamily: _regular, fontPackage: _package);
+
   /// `feather`, fill weight.
   static const IconData featherFill = IconData(0xe9c0, fontFamily: _fill, fontPackage: _package);
+
   /// `fediverse-logo`: social media, decentralized.
   static const IconData fediverseLogo = IconData(0xed66, fontFamily: _regular, fontPackage: _package);
+
   /// `fediverse-logo`, fill weight.
   static const IconData fediverseLogoFill = IconData(0xed66, fontFamily: _fill, fontPackage: _package);
+
   /// `figma-logo`: logos, drawing, art, illustration, ui, interface.
   static const IconData figmaLogo = IconData(0xe22e, fontFamily: _regular, fontPackage: _package);
+
   /// `figma-logo`, fill weight.
   static const IconData figmaLogoFill = IconData(0xe22e, fontFamily: _fill, fontPackage: _package);
+
   /// `file`: documents, files, save, write, page.
   static const IconData file = IconData(0xe230, fontFamily: _regular, fontPackage: _package);
+
   /// `file`, fill weight.
   static const IconData fileFill = IconData(0xe230, fontFamily: _fill, fontPackage: _package);
+
   /// `file-archive`: documents, zip, compression.
   static const IconData fileArchive = IconData(0xeb2a, fontFamily: _regular, fontPackage: _package);
+
   /// `file-archive`, fill weight.
   static const IconData fileArchiveFill = IconData(0xeb2a, fontFamily: _fill, fontPackage: _package);
+
   /// `file-arrow-down`: documents, files, save, write, download, directional.
   static const IconData fileArrowDown = IconData(0xe232, fontFamily: _regular, fontPackage: _package);
+
   /// `file-arrow-down`, fill weight.
   static const IconData fileArrowDownFill = IconData(0xe232, fontFamily: _fill, fontPackage: _package);
+
   /// `file-arrow-up`: documents, files, save, write, upload, directional.
   static const IconData fileArrowUp = IconData(0xe61e, fontFamily: _regular, fontPackage: _package);
+
   /// `file-arrow-up`, fill weight.
   static const IconData fileArrowUpFill = IconData(0xe61e, fontFamily: _fill, fontPackage: _package);
+
   /// `file-audio`: documents, music, sound.
   static const IconData fileAudio = IconData(0xea20, fontFamily: _regular, fontPackage: _package);
+
   /// `file-audio`, fill weight.
   static const IconData fileAudioFill = IconData(0xea20, fontFamily: _fill, fontPackage: _package);
+
   /// `file-c`: documents, code.
   static const IconData fileC = IconData(0xeb32, fontFamily: _regular, fontPackage: _package);
+
   /// `file-c`, fill weight.
   static const IconData fileCFill = IconData(0xeb32, fontFamily: _fill, fontPackage: _package);
+
   /// `file-c-sharp`: documents, code, c#.
   static const IconData fileCSharp = IconData(0xeb30, fontFamily: _regular, fontPackage: _package);
+
   /// `file-c-sharp`, fill weight.
   static const IconData fileCSharpFill = IconData(0xeb30, fontFamily: _fill, fontPackage: _package);
+
   /// `file-cloud`: documents, sync.
   static const IconData fileCloud = IconData(0xe95e, fontFamily: _regular, fontPackage: _package);
+
   /// `file-cloud`, fill weight.
   static const IconData fileCloudFill = IconData(0xe95e, fontFamily: _fill, fontPackage: _package);
+
   /// `file-code`: documents.
   static const IconData fileCode = IconData(0xe914, fontFamily: _regular, fontPackage: _package);
+
   /// `file-code`, fill weight.
   static const IconData fileCodeFill = IconData(0xe914, fontFamily: _fill, fontPackage: _package);
+
   /// `file-cpp`: documents, code, c++.
   static const IconData fileCpp = IconData(0xeb2e, fontFamily: _regular, fontPackage: _package);
+
   /// `file-cpp`, fill weight.
   static const IconData fileCppFill = IconData(0xeb2e, fontFamily: _fill, fontPackage: _package);
+
   /// `file-css`: documents, code.
   static const IconData fileCss = IconData(0xeb34, fontFamily: _regular, fontPackage: _package);
+
   /// `file-css`, fill weight.
   static const IconData fileCssFill = IconData(0xeb34, fontFamily: _fill, fontPackage: _package);
+
   /// `file-csv`: documents, data.
   static const IconData fileCsv = IconData(0xeb1c, fontFamily: _regular, fontPackage: _package);
+
   /// `file-csv`, fill weight.
   static const IconData fileCsvFill = IconData(0xeb1c, fontFamily: _fill, fontPackage: _package);
+
   /// `file-dashed`: documents, files, browse, draft, open, dotted.
   static const IconData fileDashed = IconData(0xe704, fontFamily: _regular, fontPackage: _package);
+
   /// `file-dashed`, fill weight.
   static const IconData fileDashedFill = IconData(0xe704, fontFamily: _fill, fontPackage: _package);
+
   /// `file-doc`: documents, word, microsoft.
   static const IconData fileDoc = IconData(0xeb1e, fontFamily: _regular, fontPackage: _package);
+
   /// `file-doc`, fill weight.
   static const IconData fileDocFill = IconData(0xeb1e, fontFamily: _fill, fontPackage: _package);
+
   /// `file-dotted`.
   static const IconData fileDotted = IconData(0xe704, fontFamily: _regular, fontPackage: _package);
+
   /// `file-dotted`, fill weight.
   static const IconData fileDottedFill = IconData(0xe704, fontFamily: _fill, fontPackage: _package);
+
   /// `file-html`: documents, code.
   static const IconData fileHtml = IconData(0xeb38, fontFamily: _regular, fontPackage: _package);
+
   /// `file-html`, fill weight.
   static const IconData fileHtmlFill = IconData(0xeb38, fontFamily: _fill, fontPackage: _package);
+
   /// `file-image`: documents, pictures, photograph.
   static const IconData fileImage = IconData(0xea24, fontFamily: _regular, fontPackage: _package);
+
   /// `file-image`, fill weight.
   static const IconData fileImageFill = IconData(0xea24, fontFamily: _fill, fontPackage: _package);
+
   /// `file-ini`: documents.
   static const IconData fileIni = IconData(0xeb33, fontFamily: _regular, fontPackage: _package);
+
   /// `file-ini`, fill weight.
   static const IconData fileIniFill = IconData(0xeb33, fontFamily: _fill, fontPackage: _package);
+
   /// `file-jpg`: documents, pictures, photograph, jpeg.
   static const IconData fileJpg = IconData(0xeb1a, fontFamily: _regular, fontPackage: _package);
+
   /// `file-jpg`, fill weight.
   static const IconData fileJpgFill = IconData(0xeb1a, fontFamily: _fill, fontPackage: _package);
+
   /// `file-js`: documents, code, javascript.
   static const IconData fileJs = IconData(0xeb24, fontFamily: _regular, fontPackage: _package);
+
   /// `file-js`, fill weight.
   static const IconData fileJsFill = IconData(0xeb24, fontFamily: _fill, fontPackage: _package);
+
   /// `file-jsx`: documents, code, javascript.
   static const IconData fileJsx = IconData(0xeb3a, fontFamily: _regular, fontPackage: _package);
+
   /// `file-jsx`, fill weight.
   static const IconData fileJsxFill = IconData(0xeb3a, fontFamily: _fill, fontPackage: _package);
+
   /// `file-lock`: documents, secure, locked, private.
   static const IconData fileLock = IconData(0xe95c, fontFamily: _regular, fontPackage: _package);
+
   /// `file-lock`, fill weight.
   static const IconData fileLockFill = IconData(0xe95c, fontFamily: _fill, fontPackage: _package);
+
   /// `file-magnifying-glass`: documents, files, search, find, locate, browse.
   static const IconData fileMagnifyingGlass = IconData(0xe238, fontFamily: _regular, fontPackage: _package);
+
   /// `file-magnifying-glass`, fill weight.
   static const IconData fileMagnifyingGlassFill = IconData(0xe238, fontFamily: _fill, fontPackage: _package);
+
   /// `file-md`: documents, notes, markdown.
   static const IconData fileMd = IconData(0xed50, fontFamily: _regular, fontPackage: _package);
+
   /// `file-md`, fill weight.
   static const IconData fileMdFill = IconData(0xed50, fontFamily: _fill, fontPackage: _package);
+
   /// `file-minus`: documents, files, delete, write, remove, -.
   static const IconData fileMinus = IconData(0xe234, fontFamily: _regular, fontPackage: _package);
+
   /// `file-minus`, fill weight.
   static const IconData fileMinusFill = IconData(0xe234, fontFamily: _fill, fontPackage: _package);
+
   /// `file-pdf`: documents, files, acrobat.
   static const IconData filePdf = IconData(0xe702, fontFamily: _regular, fontPackage: _package);
+
   /// `file-pdf`, fill weight.
   static const IconData filePdfFill = IconData(0xe702, fontFamily: _fill, fontPackage: _package);
+
   /// `file-plus`: documents, files, save, write, add, new.
   static const IconData filePlus = IconData(0xe236, fontFamily: _regular, fontPackage: _package);
+
   /// `file-plus`, fill weight.
   static const IconData filePlusFill = IconData(0xe236, fontFamily: _fill, fontPackage: _package);
+
   /// `file-png`: documents, pictures, photograph.
   static const IconData filePng = IconData(0xeb18, fontFamily: _regular, fontPackage: _package);
+
   /// `file-png`, fill weight.
   static const IconData filePngFill = IconData(0xeb18, fontFamily: _fill, fontPackage: _package);
+
   /// `file-ppt`: documents, powerpoint, microsoft.
   static const IconData filePpt = IconData(0xeb20, fontFamily: _regular, fontPackage: _package);
+
   /// `file-ppt`, fill weight.
   static const IconData filePptFill = IconData(0xeb20, fontFamily: _fill, fontPackage: _package);
+
   /// `file-py`: documents, code, python.
   static const IconData filePy = IconData(0xeb2c, fontFamily: _regular, fontPackage: _package);
+
   /// `file-py`, fill weight.
   static const IconData filePyFill = IconData(0xeb2c, fontFamily: _fill, fontPackage: _package);
+
   /// `file-rs`: documents, code, rust.
   static const IconData fileRs = IconData(0xeb28, fontFamily: _regular, fontPackage: _package);
+
   /// `file-rs`, fill weight.
   static const IconData fileRsFill = IconData(0xeb28, fontFamily: _fill, fontPackage: _package);
+
   /// `file-search`.
   static const IconData fileSearch = IconData(0xe238, fontFamily: _regular, fontPackage: _package);
+
   /// `file-search`, fill weight.
   static const IconData fileSearchFill = IconData(0xe238, fontFamily: _fill, fontPackage: _package);
+
   /// `file-sql`: documents, database.
   static const IconData fileSql = IconData(0xed4e, fontFamily: _regular, fontPackage: _package);
+
   /// `file-sql`, fill weight.
   static const IconData fileSqlFill = IconData(0xed4e, fontFamily: _fill, fontPackage: _package);
+
   /// `file-svg`: documents, images, vector.
   static const IconData fileSvg = IconData(0xed08, fontFamily: _regular, fontPackage: _package);
+
   /// `file-svg`, fill weight.
   static const IconData fileSvgFill = IconData(0xed08, fontFamily: _fill, fontPackage: _package);
+
   /// `file-text`: documents, files, save, write.
   static const IconData fileText = IconData(0xe23a, fontFamily: _regular, fontPackage: _package);
+
   /// `file-text`, fill weight.
   static const IconData fileTextFill = IconData(0xe23a, fontFamily: _fill, fontPackage: _package);
+
   /// `file-ts`: documents, code, typescript.
   static const IconData fileTs = IconData(0xeb26, fontFamily: _regular, fontPackage: _package);
+
   /// `file-ts`, fill weight.
   static const IconData fileTsFill = IconData(0xeb26, fontFamily: _fill, fontPackage: _package);
+
   /// `file-tsx`: documents, code, typescript.
   static const IconData fileTsx = IconData(0xeb3c, fontFamily: _regular, fontPackage: _package);
+
   /// `file-tsx`, fill weight.
   static const IconData fileTsxFill = IconData(0xeb3c, fontFamily: _fill, fontPackage: _package);
+
   /// `file-txt`: documents.
   static const IconData fileTxt = IconData(0xeb35, fontFamily: _regular, fontPackage: _package);
+
   /// `file-txt`, fill weight.
   static const IconData fileTxtFill = IconData(0xeb35, fontFamily: _fill, fontPackage: _package);
+
   /// `file-video`: documents, movie.
   static const IconData fileVideo = IconData(0xea22, fontFamily: _regular, fontPackage: _package);
+
   /// `file-video`, fill weight.
   static const IconData fileVideoFill = IconData(0xea22, fontFamily: _fill, fontPackage: _package);
+
   /// `file-vue`: documents, code.
   static const IconData fileVue = IconData(0xeb3e, fontFamily: _regular, fontPackage: _package);
+
   /// `file-vue`, fill weight.
   static const IconData fileVueFill = IconData(0xeb3e, fontFamily: _fill, fontPackage: _package);
+
   /// `file-x`: documents, files, cancelled, deleted, removed, errors.
   static const IconData fileX = IconData(0xe23c, fontFamily: _regular, fontPackage: _package);
+
   /// `file-x`, fill weight.
   static const IconData fileXFill = IconData(0xe23c, fontFamily: _fill, fontPackage: _package);
+
   /// `file-xls`: documents, excel, microsoft.
   static const IconData fileXls = IconData(0xeb22, fontFamily: _regular, fontPackage: _package);
+
   /// `file-xls`, fill weight.
   static const IconData fileXlsFill = IconData(0xeb22, fontFamily: _fill, fontPackage: _package);
+
   /// `file-zip`: documents, archive, compression.
   static const IconData fileZip = IconData(0xe958, fontFamily: _regular, fontPackage: _package);
+
   /// `file-zip`, fill weight.
   static const IconData fileZipFill = IconData(0xe958, fontFamily: _fill, fontPackage: _package);
+
   /// `files`: documents, open, library.
   static const IconData files = IconData(0xe710, fontFamily: _regular, fontPackage: _package);
+
   /// `files`, fill weight.
   static const IconData filesFill = IconData(0xe710, fontFamily: _fill, fontPackage: _package);
+
   /// `film-reel`: videography, films, movies, recording.
   static const IconData filmReel = IconData(0xe8c0, fontFamily: _regular, fontPackage: _package);
+
   /// `film-reel`, fill weight.
   static const IconData filmReelFill = IconData(0xe8c0, fontFamily: _fill, fontPackage: _package);
+
   /// `film-script`: screenplay, movie.
   static const IconData filmScript = IconData(0xeb50, fontFamily: _regular, fontPackage: _package);
+
   /// `film-script`, fill weight.
   static const IconData filmScriptFill = IconData(0xeb50, fontFamily: _fill, fontPackage: _package);
+
   /// `film-slate`: clapper, movie.
   static const IconData filmSlate = IconData(0xe8c2, fontFamily: _regular, fontPackage: _package);
+
   /// `film-slate`, fill weight.
   static const IconData filmSlateFill = IconData(0xe8c2, fontFamily: _fill, fontPackage: _package);
+
   /// `film-strip`: camera, photography, darkroom, movie, analog.
   static const IconData filmStrip = IconData(0xe792, fontFamily: _regular, fontPackage: _package);
+
   /// `film-strip`, fill weight.
   static const IconData filmStripFill = IconData(0xe792, fontFamily: _fill, fontPackage: _package);
+
   /// `fingerprint`: security, secured, authentication, authenticated, login, locked.
   static const IconData fingerprint = IconData(0xe23e, fontFamily: _regular, fontPackage: _package);
+
   /// `fingerprint`, fill weight.
   static const IconData fingerprintFill = IconData(0xe23e, fontFamily: _fill, fontPackage: _package);
+
   /// `fingerprint-simple`: security, secured, authentication, authenticated, login, locked.
   static const IconData fingerprintSimple = IconData(0xe240, fontFamily: _regular, fontPackage: _package);
+
   /// `fingerprint-simple`, fill weight.
   static const IconData fingerprintSimpleFill = IconData(0xe240, fontFamily: _fill, fontPackage: _package);
+
   /// `finn-the-human`: adventure time, cartoons, television, tv, character.
   static const IconData finnTheHuman = IconData(0xe56c, fontFamily: _regular, fontPackage: _package);
+
   /// `finn-the-human`, fill weight.
   static const IconData finnTheHumanFill = IconData(0xe56c, fontFamily: _fill, fontPackage: _package);
+
   /// `fire`: flame, burning, match, lighter.
   static const IconData fire = IconData(0xe242, fontFamily: _regular, fontPackage: _package);
+
   /// `fire`, fill weight.
   static const IconData fireFill = IconData(0xe242, fontFamily: _fill, fontPackage: _package);
+
   /// `fire-extinguisher`: safety, prevention, emergency, hazard, danger, caution.
   static const IconData fireExtinguisher = IconData(0xe9e8, fontFamily: _regular, fontPackage: _package);
+
   /// `fire-extinguisher`, fill weight.
   static const IconData fireExtinguisherFill = IconData(0xe9e8, fontFamily: _fill, fontPackage: _package);
+
   /// `fire-simple`: flame, burning, match, lighter.
   static const IconData fireSimple = IconData(0xe620, fontFamily: _regular, fontPackage: _package);
+
   /// `fire-simple`, fill weight.
   static const IconData fireSimpleFill = IconData(0xe620, fontFamily: _fill, fontPackage: _package);
+
   /// `fire-truck`: first-aid, emt, medical, medicine, injury, safety.
   static const IconData fireTruck = IconData(0xe574, fontFamily: _regular, fontPackage: _package);
+
   /// `fire-truck`, fill weight.
   static const IconData fireTruckFill = IconData(0xe574, fontFamily: _fill, fontPackage: _package);
+
   /// `first-aid`: hospital, cross, medical, medicine, injury, safety.
   static const IconData firstAid = IconData(0xe56e, fontFamily: _regular, fontPackage: _package);
+
   /// `first-aid`, fill weight.
   static const IconData firstAidFill = IconData(0xe56e, fontFamily: _fill, fontPackage: _package);
+
   /// `first-aid-kit`: bandages, medical, medicine, injury, safety, emergency.
   static const IconData firstAidKit = IconData(0xe570, fontFamily: _regular, fontPackage: _package);
+
   /// `first-aid-kit`, fill weight.
   static const IconData firstAidKitFill = IconData(0xe570, fontFamily: _fill, fontPackage: _package);
+
   /// `fish`: animals, pets, food, seafood, restaurants, dining.
   static const IconData fish = IconData(0xe728, fontFamily: _regular, fontPackage: _package);
+
   /// `fish`, fill weight.
   static const IconData fishFill = IconData(0xe728, fontFamily: _fill, fontPackage: _package);
+
   /// `fish-simple`: animals, pets, food, seafood, restaurants, dining.
   static const IconData fishSimple = IconData(0xe72a, fontFamily: _regular, fontPackage: _package);
+
   /// `fish-simple`, fill weight.
   static const IconData fishSimpleFill = IconData(0xe72a, fontFamily: _fill, fontPackage: _package);
+
   /// `flag`: country, countries, finished, completed, flags.
   static const IconData flag = IconData(0xe244, fontFamily: _regular, fontPackage: _package);
+
   /// `flag`, fill weight.
   static const IconData flagFill = IconData(0xe244, fontFamily: _fill, fontPackage: _package);
+
   /// `flag-banner`: ribbon, country, countries, finished, completed, flags.
   static const IconData flagBanner = IconData(0xe622, fontFamily: _regular, fontPackage: _package);
+
   /// `flag-banner`, fill weight.
   static const IconData flagBannerFill = IconData(0xe622, fontFamily: _fill, fontPackage: _package);
+
   /// `flag-banner-fold`: ribbon, country, countries, finished, completed, flags.
   static const IconData flagBannerFold = IconData(0xecf2, fontFamily: _regular, fontPackage: _package);
+
   /// `flag-banner-fold`, fill weight.
   static const IconData flagBannerFoldFill = IconData(0xecf2, fontFamily: _fill, fontPackage: _package);
+
   /// `flag-checkered`: flags, race, racing, finish line.
   static const IconData flagCheckered = IconData(0xea38, fontFamily: _regular, fontPackage: _package);
+
   /// `flag-checkered`, fill weight.
   static const IconData flagCheckeredFill = IconData(0xea38, fontFamily: _fill, fontPackage: _package);
+
   /// `flag-pennant`: flags, race, sports, team.
   static const IconData flagPennant = IconData(0xecf0, fontFamily: _regular, fontPackage: _package);
+
   /// `flag-pennant`, fill weight.
   static const IconData flagPennantFill = IconData(0xecf0, fontFamily: _fill, fontPackage: _package);
+
   /// `flame`: fire, burning, match, lighter.
   static const IconData flame = IconData(0xe624, fontFamily: _regular, fontPackage: _package);
+
   /// `flame`, fill weight.
   static const IconData flameFill = IconData(0xe624, fontFamily: _fill, fontPackage: _package);
+
   /// `flashlight`: torch, find, search, locate.
   static const IconData flashlight = IconData(0xe246, fontFamily: _regular, fontPackage: _package);
+
   /// `flashlight`, fill weight.
   static const IconData flashlightFill = IconData(0xe246, fontFamily: _fill, fontPackage: _package);
+
   /// `flask`: beaker, science, chemistry, experiment, erlenmeyer.
   static const IconData flask = IconData(0xe79e, fontFamily: _regular, fontPackage: _package);
+
   /// `flask`, fill weight.
   static const IconData flaskFill = IconData(0xe79e, fontFamily: _fill, fontPackage: _package);
+
   /// `flip-horizontal`: mirror, rotate, invert.
   static const IconData flipHorizontal = IconData(0xed6a, fontFamily: _regular, fontPackage: _package);
+
   /// `flip-horizontal`, fill weight.
   static const IconData flipHorizontalFill = IconData(0xed6a, fontFamily: _fill, fontPackage: _package);
+
   /// `flip-vertical`: mirror, rotate, invert.
   static const IconData flipVertical = IconData(0xed6c, fontFamily: _regular, fontPackage: _package);
+
   /// `flip-vertical`, fill weight.
   static const IconData flipVerticalFill = IconData(0xed6c, fontFamily: _fill, fontPackage: _package);
+
   /// `floppy-disk`: diskette, directory, directories, folders, documents, files.
   static const IconData floppyDisk = IconData(0xe248, fontFamily: _regular, fontPackage: _package);
+
   /// `floppy-disk`, fill weight.
   static const IconData floppyDiskFill = IconData(0xe248, fontFamily: _fill, fontPackage: _package);
+
   /// `floppy-disk-back`: diskette, directory, directories, folders, documents, files.
   static const IconData floppyDiskBack = IconData(0xeaf4, fontFamily: _regular, fontPackage: _package);
+
   /// `floppy-disk-back`, fill weight.
   static const IconData floppyDiskBackFill = IconData(0xeaf4, fontFamily: _fill, fontPackage: _package);
+
   /// `flow-arrow`: flowchart, arrowhead.
   static const IconData flowArrow = IconData(0xe6ec, fontFamily: _regular, fontPackage: _package);
+
   /// `flow-arrow`, fill weight.
   static const IconData flowArrowFill = IconData(0xe6ec, fontFamily: _fill, fontPackage: _package);
+
   /// `flower`: plants, green, environmental.
   static const IconData flower = IconData(0xe75e, fontFamily: _regular, fontPackage: _package);
+
   /// `flower`, fill weight.
   static const IconData flowerFill = IconData(0xe75e, fontFamily: _fill, fontPackage: _package);
+
   /// `flower-lotus`: plants, green, environmental, spirituality.
   static const IconData flowerLotus = IconData(0xe6cc, fontFamily: _regular, fontPackage: _package);
+
   /// `flower-lotus`, fill weight.
   static const IconData flowerLotusFill = IconData(0xe6cc, fontFamily: _fill, fontPackage: _package);
+
   /// `flower-tulip`: plants, green, environmental.
   static const IconData flowerTulip = IconData(0xeacc, fontFamily: _regular, fontPackage: _package);
+
   /// `flower-tulip`, fill weight.
   static const IconData flowerTulipFill = IconData(0xeacc, fontFamily: _fill, fontPackage: _package);
+
   /// `flying-saucer`: ufo, space, aliens, extra terrestrial, sci-fi.
   static const IconData flyingSaucer = IconData(0xeb4a, fontFamily: _regular, fontPackage: _package);
+
   /// `flying-saucer`, fill weight.
   static const IconData flyingSaucerFill = IconData(0xeb4a, fontFamily: _fill, fontPackage: _package);
+
   /// `folder`: directory, directories, files, folders.
   static const IconData folder = IconData(0xe24a, fontFamily: _regular, fontPackage: _package);
+
   /// `folder`, fill weight.
   static const IconData folderFill = IconData(0xe24a, fontFamily: _fill, fontPackage: _package);
+
   /// `folder-dashed`: directory, directories, files, folders, missing, temporary.
   static const IconData folderDashed = IconData(0xe8f8, fontFamily: _regular, fontPackage: _package);
+
   /// `folder-dashed`, fill weight.
   static const IconData folderDashedFill = IconData(0xe8f8, fontFamily: _fill, fontPackage: _package);
+
   /// `folder-dotted`.
   static const IconData folderDotted = IconData(0xe8f8, fontFamily: _regular, fontPackage: _package);
+
   /// `folder-dotted`, fill weight.
   static const IconData folderDottedFill = IconData(0xe8f8, fontFamily: _fill, fontPackage: _package);
+
   /// `folder-lock`: directory, directories, files, folders, private, secure.
   static const IconData folderLock = IconData(0xea3c, fontFamily: _regular, fontPackage: _package);
+
   /// `folder-lock`, fill weight.
   static const IconData folderLockFill = IconData(0xea3c, fontFamily: _fill, fontPackage: _package);
+
   /// `folder-minus`: directory, directories, files, delete, write, remove.
   static const IconData folderMinus = IconData(0xe254, fontFamily: _regular, fontPackage: _package);
+
   /// `folder-minus`, fill weight.
   static const IconData folderMinusFill = IconData(0xe254, fontFamily: _fill, fontPackage: _package);
+
   /// `folder-notch`.
   static const IconData folderNotch = IconData(0xe24a, fontFamily: _regular, fontPackage: _package);
+
   /// `folder-notch`, fill weight.
   static const IconData folderNotchFill = IconData(0xe24a, fontFamily: _fill, fontPackage: _package);
+
   /// `folder-notch-minus`.
   static const IconData folderNotchMinus = IconData(0xe254, fontFamily: _regular, fontPackage: _package);
+
   /// `folder-notch-minus`, fill weight.
   static const IconData folderNotchMinusFill = IconData(0xe254, fontFamily: _fill, fontPackage: _package);
+
   /// `folder-notch-open`.
   static const IconData folderNotchOpen = IconData(0xe256, fontFamily: _regular, fontPackage: _package);
+
   /// `folder-notch-open`, fill weight.
   static const IconData folderNotchOpenFill = IconData(0xe256, fontFamily: _fill, fontPackage: _package);
+
   /// `folder-notch-plus`.
   static const IconData folderNotchPlus = IconData(0xe258, fontFamily: _regular, fontPackage: _package);
+
   /// `folder-notch-plus`, fill weight.
   static const IconData folderNotchPlusFill = IconData(0xe258, fontFamily: _fill, fontPackage: _package);
+
   /// `folder-open`: directory, directories, files, folders, load.
   static const IconData folderOpen = IconData(0xe256, fontFamily: _regular, fontPackage: _package);
+
   /// `folder-open`, fill weight.
   static const IconData folderOpenFill = IconData(0xe256, fontFamily: _fill, fontPackage: _package);
+
   /// `folder-plus`: directory, directories, files, save, write, add.
   static const IconData folderPlus = IconData(0xe258, fontFamily: _regular, fontPackage: _package);
+
   /// `folder-plus`, fill weight.
   static const IconData folderPlusFill = IconData(0xe258, fontFamily: _fill, fontPackage: _package);
+
   /// `folder-simple`: directory, directories, files, folders.
   static const IconData folderSimple = IconData(0xe25a, fontFamily: _regular, fontPackage: _package);
+
   /// `folder-simple`, fill weight.
   static const IconData folderSimpleFill = IconData(0xe25a, fontFamily: _fill, fontPackage: _package);
+
   /// `folder-simple-dashed`: directory, directories, files, folders, missing, temporary.
   static const IconData folderSimpleDashed = IconData(0xec2a, fontFamily: _regular, fontPackage: _package);
+
   /// `folder-simple-dashed`, fill weight.
   static const IconData folderSimpleDashedFill = IconData(0xec2a, fontFamily: _fill, fontPackage: _package);
+
   /// `folder-simple-dotted`.
   static const IconData folderSimpleDotted = IconData(0xec2a, fontFamily: _regular, fontPackage: _package);
+
   /// `folder-simple-dotted`, fill weight.
   static const IconData folderSimpleDottedFill = IconData(0xec2a, fontFamily: _fill, fontPackage: _package);
+
   /// `folder-simple-lock`: directory, directories, files, folders, private, secure.
   static const IconData folderSimpleLock = IconData(0xeb5e, fontFamily: _regular, fontPackage: _package);
+
   /// `folder-simple-lock`, fill weight.
   static const IconData folderSimpleLockFill = IconData(0xeb5e, fontFamily: _fill, fontPackage: _package);
+
   /// `folder-simple-minus`: directory, directories, files, delete, write, remove.
   static const IconData folderSimpleMinus = IconData(0xe25c, fontFamily: _regular, fontPackage: _package);
+
   /// `folder-simple-minus`, fill weight.
   static const IconData folderSimpleMinusFill = IconData(0xe25c, fontFamily: _fill, fontPackage: _package);
+
   /// `folder-simple-plus`: directory, directories, files, save, write, add.
   static const IconData folderSimplePlus = IconData(0xe25e, fontFamily: _regular, fontPackage: _package);
+
   /// `folder-simple-plus`, fill weight.
   static const IconData folderSimplePlusFill = IconData(0xe25e, fontFamily: _fill, fontPackage: _package);
+
   /// `folder-simple-star`: directory, directories, files, folders, favorite, starred.
   static const IconData folderSimpleStar = IconData(0xec2e, fontFamily: _regular, fontPackage: _package);
+
   /// `folder-simple-star`, fill weight.
   static const IconData folderSimpleStarFill = IconData(0xec2e, fontFamily: _fill, fontPackage: _package);
+
   /// `folder-simple-user`: directory, directories, files, folders, personal.
   static const IconData folderSimpleUser = IconData(0xeb60, fontFamily: _regular, fontPackage: _package);
+
   /// `folder-simple-user`, fill weight.
   static const IconData folderSimpleUserFill = IconData(0xeb60, fontFamily: _fill, fontPackage: _package);
+
   /// `folder-star`: directory, directories, files, folders, favorite, starred.
   static const IconData folderStar = IconData(0xea86, fontFamily: _regular, fontPackage: _package);
+
   /// `folder-star`, fill weight.
   static const IconData folderStarFill = IconData(0xea86, fontFamily: _fill, fontPackage: _package);
+
   /// `folder-user`: directory, directories, files, folders, personal.
   static const IconData folderUser = IconData(0xeb46, fontFamily: _regular, fontPackage: _package);
+
   /// `folder-user`, fill weight.
   static const IconData folderUserFill = IconData(0xeb46, fontFamily: _fill, fontPackage: _package);
+
   /// `folders`: directory, directories, files, folders, copy, copied.
   static const IconData folders = IconData(0xe260, fontFamily: _regular, fontPackage: _package);
+
   /// `folders`, fill weight.
   static const IconData foldersFill = IconData(0xe260, fontFamily: _fill, fontPackage: _package);
+
   /// `football`: sports, american football, nfl.
   static const IconData football = IconData(0xe718, fontFamily: _regular, fontPackage: _package);
+
   /// `football`, fill weight.
   static const IconData footballFill = IconData(0xe718, fontFamily: _fill, fontPackage: _package);
+
   /// `football-helmet`: sports, american football, nfl.
   static const IconData footballHelmet = IconData(0xee4c, fontFamily: _regular, fontPackage: _package);
+
   /// `football-helmet`, fill weight.
   static const IconData footballHelmetFill = IconData(0xee4c, fontFamily: _fill, fontPackage: _package);
+
   /// `footprints`: path, trail, walk, route, hike, hiking.
   static const IconData footprints = IconData(0xea88, fontFamily: _regular, fontPackage: _package);
+
   /// `footprints`, fill weight.
   static const IconData footprintsFill = IconData(0xea88, fontFamily: _fill, fontPackage: _package);
+
   /// `fork-knife`: food, meal, eating, restaurants, dining, utensils.
   static const IconData forkKnife = IconData(0xe262, fontFamily: _regular, fontPackage: _package);
+
   /// `fork-knife`, fill weight.
   static const IconData forkKnifeFill = IconData(0xe262, fontFamily: _fill, fontPackage: _package);
+
   /// `four-k`: uhd, resolution, video.
   static const IconData fourK = IconData(0xea5c, fontFamily: _regular, fontPackage: _package);
+
   /// `four-k`, fill weight.
   static const IconData fourKFill = IconData(0xea5c, fontFamily: _fill, fontPackage: _package);
+
   /// `frame-corners`: expand, fullscreen, maximized, resize, windowed, capture.
   static const IconData frameCorners = IconData(0xe626, fontFamily: _regular, fontPackage: _package);
+
   /// `frame-corners`, fill weight.
   static const IconData frameCornersFill = IconData(0xe626, fontFamily: _fill, fontPackage: _package);
+
   /// `framer-logo`: logos, interface, ui, motion, prototype, prototyping.
   static const IconData framerLogo = IconData(0xe264, fontFamily: _regular, fontPackage: _package);
+
   /// `framer-logo`, fill weight.
   static const IconData framerLogoFill = IconData(0xe264, fontFamily: _fill, fontPackage: _package);
+
   /// `function`: mathematics, arithmetic, f-stop.
   static const IconData function = IconData(0xebe4, fontFamily: _regular, fontPackage: _package);
+
   /// `function`, fill weight.
   static const IconData functionFill = IconData(0xebe4, fontFamily: _fill, fontPackage: _package);
+
   /// `funnel`: filters, refine, sorting.
   static const IconData funnel = IconData(0xe266, fontFamily: _regular, fontPackage: _package);
+
   /// `funnel`, fill weight.
   static const IconData funnelFill = IconData(0xe266, fontFamily: _fill, fontPackage: _package);
+
   /// `funnel-simple`: filters, refine, sorting.
   static const IconData funnelSimple = IconData(0xe268, fontFamily: _regular, fontPackage: _package);
+
   /// `funnel-simple`, fill weight.
   static const IconData funnelSimpleFill = IconData(0xe268, fontFamily: _fill, fontPackage: _package);
+
   /// `funnel-simple-x`: filters, refine, sorting.
   static const IconData funnelSimpleX = IconData(0xe26a, fontFamily: _regular, fontPackage: _package);
+
   /// `funnel-simple-x`, fill weight.
   static const IconData funnelSimpleXFill = IconData(0xe26a, fontFamily: _fill, fontPackage: _package);
+
   /// `funnel-x`: filters, refine, sorting.
   static const IconData funnelX = IconData(0xe26c, fontFamily: _regular, fontPackage: _package);
+
   /// `funnel-x`, fill weight.
   static const IconData funnelXFill = IconData(0xe26c, fontFamily: _fill, fontPackage: _package);
+
   /// `game-controller`: gaming, video games, nintendo switch, sony playstation, microsoft xbox.
   static const IconData gameController = IconData(0xe26e, fontFamily: _regular, fontPackage: _package);
+
   /// `game-controller`, fill weight.
   static const IconData gameControllerFill = IconData(0xe26e, fontFamily: _fill, fontPackage: _package);
+
   /// `garage`: vehicles, automobile, buildings, transportation.
   static const IconData garage = IconData(0xecd6, fontFamily: _regular, fontPackage: _package);
+
   /// `garage`, fill weight.
   static const IconData garageFill = IconData(0xecd6, fontFamily: _fill, fontPackage: _package);
+
   /// `gas-can`: jerrycan, petrol, fuel, gasoline.
   static const IconData gasCan = IconData(0xe8ce, fontFamily: _regular, fontPackage: _package);
+
   /// `gas-can`, fill weight.
   static const IconData gasCanFill = IconData(0xe8ce, fontFamily: _fill, fontPackage: _package);
+
   /// `gas-pump`: gas station, petrol, fuel, gasoline.
   static const IconData gasPump = IconData(0xe768, fontFamily: _regular, fontPackage: _package);
+
   /// `gas-pump`, fill weight.
   static const IconData gasPumpFill = IconData(0xe768, fontFamily: _fill, fontPackage: _package);
+
   /// `gauge`: dashboard, meter, speed, speedometer, odometer, performance.
   static const IconData gauge = IconData(0xe628, fontFamily: _regular, fontPackage: _package);
+
   /// `gauge`, fill weight.
   static const IconData gaugeFill = IconData(0xe628, fontFamily: _fill, fontPackage: _package);
+
   /// `gavel`: judge, justice, legal, law, court, hammer.
   static const IconData gavel = IconData(0xea32, fontFamily: _regular, fontPackage: _package);
+
   /// `gavel`, fill weight.
   static const IconData gavelFill = IconData(0xea32, fontFamily: _fill, fontPackage: _package);
+
   /// `gear`: 8, settings, setup, preferences, cogs, gears.
   static const IconData gear = IconData(0xe270, fontFamily: _regular, fontPackage: _package);
+
   /// `gear`, fill weight.
   static const IconData gearFill = IconData(0xe270, fontFamily: _fill, fontPackage: _package);
+
   /// `gear-fine`: setup, preferences, cogs, gears, machinery, mechanical.
   static const IconData gearFine = IconData(0xe87c, fontFamily: _regular, fontPackage: _package);
+
   /// `gear-fine`, fill weight.
   static const IconData gearFineFill = IconData(0xe87c, fontFamily: _fill, fontPackage: _package);
+
   /// `gear-six`: 6, settings, setup, preferences, cogs, gears.
   static const IconData gearSix = IconData(0xe272, fontFamily: _regular, fontPackage: _package);
+
   /// `gear-six`, fill weight.
   static const IconData gearSixFill = IconData(0xe272, fontFamily: _fill, fontPackage: _package);
+
   /// `gender-female`: woman, feminine, venus.
   static const IconData genderFemale = IconData(0xe6e0, fontFamily: _regular, fontPackage: _package);
+
   /// `gender-female`, fill weight.
   static const IconData genderFemaleFill = IconData(0xe6e0, fontFamily: _fill, fontPackage: _package);
+
   /// `gender-intersex`: transgender, non-binary.
   static const IconData genderIntersex = IconData(0xe6e6, fontFamily: _regular, fontPackage: _package);
+
   /// `gender-intersex`, fill weight.
   static const IconData genderIntersexFill = IconData(0xe6e6, fontFamily: _fill, fontPackage: _package);
+
   /// `gender-male`: man, masculine, mars.
   static const IconData genderMale = IconData(0xe6e2, fontFamily: _regular, fontPackage: _package);
+
   /// `gender-male`, fill weight.
   static const IconData genderMaleFill = IconData(0xe6e2, fontFamily: _fill, fontPackage: _package);
+
   /// `gender-neuter`: agender, non-binary, asexual.
   static const IconData genderNeuter = IconData(0xe6ea, fontFamily: _regular, fontPackage: _package);
+
   /// `gender-neuter`, fill weight.
   static const IconData genderNeuterFill = IconData(0xe6ea, fontFamily: _fill, fontPackage: _package);
+
   /// `gender-nonbinary`: intersex, non-binary.
   static const IconData genderNonbinary = IconData(0xe6e4, fontFamily: _regular, fontPackage: _package);
+
   /// `gender-nonbinary`, fill weight.
   static const IconData genderNonbinaryFill = IconData(0xe6e4, fontFamily: _fill, fontPackage: _package);
+
   /// `gender-transgender`: intersex, non-binary.
   static const IconData genderTransgender = IconData(0xe6e8, fontFamily: _regular, fontPackage: _package);
+
   /// `gender-transgender`, fill weight.
   static const IconData genderTransgenderFill = IconData(0xe6e8, fontFamily: _fill, fontPackage: _package);
+
   /// `ghost`: pac-man, spirit, scary, halloween.
   static const IconData ghost = IconData(0xe62a, fontFamily: _regular, fontPackage: _package);
+
   /// `ghost`, fill weight.
   static const IconData ghostFill = IconData(0xe62a, fontFamily: _fill, fontPackage: _package);
+
   /// `gif`: gifs, .gif, giphy.
   static const IconData gif = IconData(0xe274, fontFamily: _regular, fontPackage: _package);
+
   /// `gif`, fill weight.
   static const IconData gifFill = IconData(0xe274, fontFamily: _fill, fontPackage: _package);
+
   /// `gift`: presents, holiday, birthday.
   static const IconData gift = IconData(0xe276, fontFamily: _regular, fontPackage: _package);
+
   /// `gift`, fill weight.
   static const IconData giftFill = IconData(0xe276, fontFamily: _fill, fontPackage: _package);
+
   /// `git-branch`: github, vcs, source control, version control, versioning, branches.
   static const IconData gitBranch = IconData(0xe278, fontFamily: _regular, fontPackage: _package);
+
   /// `git-branch`, fill weight.
   static const IconData gitBranchFill = IconData(0xe278, fontFamily: _fill, fontPackage: _package);
+
   /// `git-commit`: github, vcs, source control, version control, versioning, commits.
   static const IconData gitCommit = IconData(0xe27a, fontFamily: _regular, fontPackage: _package);
+
   /// `git-commit`, fill weight.
   static const IconData gitCommitFill = IconData(0xe27a, fontFamily: _fill, fontPackage: _package);
+
   /// `git-diff`: github, vcs, source control, version control, versioning, difference.
   static const IconData gitDiff = IconData(0xe27c, fontFamily: _regular, fontPackage: _package);
+
   /// `git-diff`, fill weight.
   static const IconData gitDiffFill = IconData(0xe27c, fontFamily: _fill, fontPackage: _package);
+
   /// `git-fork`: github, vcs, source control, version control, versioning, split.
   static const IconData gitFork = IconData(0xe27e, fontFamily: _regular, fontPackage: _package);
+
   /// `git-fork`, fill weight.
   static const IconData gitForkFill = IconData(0xe27e, fontFamily: _fill, fontPackage: _package);
+
   /// `git-merge`: github, vcs, source control, version control, versioning, split.
   static const IconData gitMerge = IconData(0xe280, fontFamily: _regular, fontPackage: _package);
+
   /// `git-merge`, fill weight.
   static const IconData gitMergeFill = IconData(0xe280, fontFamily: _fill, fontPackage: _package);
+
   /// `git-pull-request`: github, vcs, source control, version control, versioning, merge request.
   static const IconData gitPullRequest = IconData(0xe282, fontFamily: _regular, fontPackage: _package);
+
   /// `git-pull-request`, fill weight.
   static const IconData gitPullRequestFill = IconData(0xe282, fontFamily: _fill, fontPackage: _package);
+
   /// `github-logo`: octocat, vcs, source control, version control, versioning, branches.
   static const IconData githubLogo = IconData(0xe576, fontFamily: _regular, fontPackage: _package);
+
   /// `github-logo`, fill weight.
   static const IconData githubLogoFill = IconData(0xe576, fontFamily: _fill, fontPackage: _package);
+
   /// `gitlab-logo`: vcs, source control, version control, versioning, branches.
   static const IconData gitlabLogo = IconData(0xe694, fontFamily: _regular, fontPackage: _package);
+
   /// `gitlab-logo`, fill weight.
   static const IconData gitlabLogoFill = IconData(0xe694, fontFamily: _fill, fontPackage: _package);
+
   /// `gitlab-logo-simple`: vcs, source control, version control, versioning, branches.
   static const IconData gitlabLogoSimple = IconData(0xe696, fontFamily: _regular, fontPackage: _package);
+
   /// `gitlab-logo-simple`, fill weight.
   static const IconData gitlabLogoSimpleFill = IconData(0xe696, fontFamily: _fill, fontPackage: _package);
+
   /// `globe`: world, earth, global, planet, circle, round.
   static const IconData globe = IconData(0xe288, fontFamily: _regular, fontPackage: _package);
+
   /// `globe`, fill weight.
   static const IconData globeFill = IconData(0xe288, fontFamily: _fill, fontPackage: _package);
+
   /// `globe-hemisphere-east`: world, earth, global, planet, circle, round.
   static const IconData globeHemisphereEast = IconData(0xe28a, fontFamily: _regular, fontPackage: _package);
+
   /// `globe-hemisphere-east`, fill weight.
   static const IconData globeHemisphereEastFill = IconData(0xe28a, fontFamily: _fill, fontPackage: _package);
+
   /// `globe-hemisphere-west`: world, earth, global, planet, circle, round.
   static const IconData globeHemisphereWest = IconData(0xe28c, fontFamily: _regular, fontPackage: _package);
+
   /// `globe-hemisphere-west`, fill weight.
   static const IconData globeHemisphereWestFill = IconData(0xe28c, fontFamily: _fill, fontPackage: _package);
+
   /// `globe-simple`: world, earth, global, planet, circle, round.
   static const IconData globeSimple = IconData(0xe28e, fontFamily: _regular, fontPackage: _package);
+
   /// `globe-simple`, fill weight.
   static const IconData globeSimpleFill = IconData(0xe28e, fontFamily: _fill, fontPackage: _package);
+
   /// `globe-simple-x`: world, earth, global, planet, circle, round.
   static const IconData globeSimpleX = IconData(0xe284, fontFamily: _regular, fontPackage: _package);
+
   /// `globe-simple-x`, fill weight.
   static const IconData globeSimpleXFill = IconData(0xe284, fontFamily: _fill, fontPackage: _package);
+
   /// `globe-stand`: world, global, planet, circle, round, internationalization.
   static const IconData globeStand = IconData(0xe290, fontFamily: _regular, fontPackage: _package);
+
   /// `globe-stand`, fill weight.
   static const IconData globeStandFill = IconData(0xe290, fontFamily: _fill, fontPackage: _package);
+
   /// `globe-x`: world, earth, global, planet, circle, round.
   static const IconData globeX = IconData(0xe286, fontFamily: _regular, fontPackage: _package);
+
   /// `globe-x`, fill weight.
   static const IconData globeXFill = IconData(0xe286, fontFamily: _fill, fontPackage: _package);
+
   /// `goggles`: swim, swimming, sports, exercise, olympics, aquatics.
   static const IconData goggles = IconData(0xecb4, fontFamily: _regular, fontPackage: _package);
+
   /// `goggles`, fill weight.
   static const IconData gogglesFill = IconData(0xecb4, fontFamily: _fill, fontPackage: _package);
+
   /// `golf`: sports, pga, tee, ball.
   static const IconData golf = IconData(0xea3e, fontFamily: _regular, fontPackage: _package);
+
   /// `golf`, fill weight.
   static const IconData golfFill = IconData(0xea3e, fontFamily: _fill, fontPackage: _package);
+
   /// `goodreads-logo`: reading, books, social media, logos.
   static const IconData goodreadsLogo = IconData(0xed10, fontFamily: _regular, fontPackage: _package);
+
   /// `goodreads-logo`, fill weight.
   static const IconData goodreadsLogoFill = IconData(0xed10, fontFamily: _fill, fontPackage: _package);
+
   /// `google-cardboard-logo`: virtual reality, vr, logos.
   static const IconData googleCardboardLogo = IconData(0xe7b6, fontFamily: _regular, fontPackage: _package);
+
   /// `google-cardboard-logo`, fill weight.
   static const IconData googleCardboardLogoFill = IconData(0xe7b6, fontFamily: _fill, fontPackage: _package);
+
   /// `google-chrome-logo`: web browsers, internet.
   static const IconData googleChromeLogo = IconData(0xe976, fontFamily: _regular, fontPackage: _package);
+
   /// `google-chrome-logo`, fill weight.
   static const IconData googleChromeLogoFill = IconData(0xe976, fontFamily: _fill, fontPackage: _package);
+
   /// `google-drive-logo`: cloud, storage, backup, logos.
   static const IconData googleDriveLogo = IconData(0xe8f6, fontFamily: _regular, fontPackage: _package);
+
   /// `google-drive-logo`, fill weight.
   static const IconData googleDriveLogoFill = IconData(0xe8f6, fontFamily: _fill, fontPackage: _package);
+
   /// `google-logo`: logos, search engine, phone, mobile, android.
   static const IconData googleLogo = IconData(0xe292, fontFamily: _regular, fontPackage: _package);
+
   /// `google-logo`, fill weight.
   static const IconData googleLogoFill = IconData(0xe292, fontFamily: _fill, fontPackage: _package);
+
   /// `google-photos-logo`: album, pictures, photography.
   static const IconData googlePhotosLogo = IconData(0xeb92, fontFamily: _regular, fontPackage: _package);
+
   /// `google-photos-logo`, fill weight.
   static const IconData googlePhotosLogoFill = IconData(0xeb92, fontFamily: _fill, fontPackage: _package);
+
   /// `google-play-logo`: logos, games, apps, applications, play store, app store.
   static const IconData googlePlayLogo = IconData(0xe294, fontFamily: _regular, fontPackage: _package);
+
   /// `google-play-logo`, fill weight.
   static const IconData googlePlayLogoFill = IconData(0xe294, fontFamily: _fill, fontPackage: _package);
+
   /// `google-podcasts-logo`: audio.
   static const IconData googlePodcastsLogo = IconData(0xeb94, fontFamily: _regular, fontPackage: _package);
+
   /// `google-podcasts-logo`, fill weight.
   static const IconData googlePodcastsLogoFill = IconData(0xeb94, fontFamily: _fill, fontPackage: _package);
+
   /// `gps`: geolocation, location, navigation.
   static const IconData gps = IconData(0xedd8, fontFamily: _regular, fontPackage: _package);
+
   /// `gps`, fill weight.
   static const IconData gpsFill = IconData(0xedd8, fontFamily: _fill, fontPackage: _package);
+
   /// `gps-fix`: geolocation, location, navigation.
   static const IconData gpsFix = IconData(0xedd6, fontFamily: _regular, fontPackage: _package);
+
   /// `gps-fix`, fill weight.
   static const IconData gpsFixFill = IconData(0xedd6, fontFamily: _fill, fontPackage: _package);
+
   /// `gps-slash`: geolocation, location, navigation, disabled.
   static const IconData gpsSlash = IconData(0xedd4, fontFamily: _regular, fontPackage: _package);
+
   /// `gps-slash`, fill weight.
   static const IconData gpsSlashFill = IconData(0xedd4, fontFamily: _fill, fontPackage: _package);
+
   /// `gradient`: fade, ombre, opacity.
   static const IconData gradient = IconData(0xeb42, fontFamily: _regular, fontPackage: _package);
+
   /// `gradient`, fill weight.
   static const IconData gradientFill = IconData(0xeb42, fontFamily: _fill, fontPackage: _package);
+
   /// `graduation-cap`: classroom, teacher, education, school, college, university.
   static const IconData graduationCap = IconData(0xe62c, fontFamily: _regular, fontPackage: _package);
+
   /// `graduation-cap`, fill weight.
   static const IconData graduationCapFill = IconData(0xe62c, fontFamily: _fill, fontPackage: _package);
+
   /// `grains`: wheat, gluten, farm, farming, agriculture.
   static const IconData grains = IconData(0xec68, fontFamily: _regular, fontPackage: _package);
+
   /// `grains`, fill weight.
   static const IconData grainsFill = IconData(0xec68, fontFamily: _fill, fontPackage: _package);
+
   /// `grains-slash`: gluten-free, wheat, gluten, farm, farming, agriculture.
   static const IconData grainsSlash = IconData(0xec6a, fontFamily: _regular, fontPackage: _package);
+
   /// `grains-slash`, fill weight.
   static const IconData grainsSlashFill = IconData(0xec6a, fontFamily: _fill, fontPackage: _package);
+
   /// `graph`: nodes, tree.
   static const IconData graph = IconData(0xeb58, fontFamily: _regular, fontPackage: _package);
+
   /// `graph`, fill weight.
   static const IconData graphFill = IconData(0xeb58, fontFamily: _fill, fontPackage: _package);
+
   /// `graphics-card`: graphics card, microchip, computer, circuit.
   static const IconData graphicsCard = IconData(0xe612, fontFamily: _regular, fontPackage: _package);
+
   /// `graphics-card`, fill weight.
   static const IconData graphicsCardFill = IconData(0xe612, fontFamily: _fill, fontPackage: _package);
+
   /// `greater-than`: >, greater than, gt, comparison, mathematics, arithmetic.
   static const IconData greaterThan = IconData(0xedc4, fontFamily: _regular, fontPackage: _package);
+
   /// `greater-than`, fill weight.
   static const IconData greaterThanFill = IconData(0xedc4, fontFamily: _fill, fontPackage: _package);
+
   /// `greater-than-or-equal`: ≥, greater than or equal, gte, comparison, mathematics, arithmetic.
   static const IconData greaterThanOrEqual = IconData(0xeda2, fontFamily: _regular, fontPackage: _package);
+
   /// `greater-than-or-equal`, fill weight.
   static const IconData greaterThanOrEqualFill = IconData(0xeda2, fontFamily: _fill, fontPackage: _package);
+
   /// `grid-four`: 4, apps, applications, squares, tiles, cells.
   static const IconData gridFour = IconData(0xe296, fontFamily: _regular, fontPackage: _package);
+
   /// `grid-four`, fill weight.
   static const IconData gridFourFill = IconData(0xe296, fontFamily: _fill, fontPackage: _package);
+
   /// `grid-nine`: 9, apps, applications, squares, tiles, cells.
   static const IconData gridNine = IconData(0xec8c, fontFamily: _regular, fontPackage: _package);
+
   /// `grid-nine`, fill weight.
   static const IconData gridNineFill = IconData(0xec8c, fontFamily: _fill, fontPackage: _package);
+
   /// `guitar`: music, instrument.
   static const IconData guitar = IconData(0xea8a, fontFamily: _regular, fontPackage: _package);
+
   /// `guitar`, fill weight.
   static const IconData guitarFill = IconData(0xea8a, fontFamily: _fill, fontPackage: _package);
+
   /// `hair-dryer`: blow dryer, beauty, grooming, salon.
   static const IconData hairDryer = IconData(0xea66, fontFamily: _regular, fontPackage: _package);
+
   /// `hair-dryer`, fill weight.
   static const IconData hairDryerFill = IconData(0xea66, fontFamily: _fill, fontPackage: _package);
+
   /// `hamburger`: fast food, party, places, locations, restaurants, food.
   static const IconData hamburger = IconData(0xe790, fontFamily: _regular, fontPackage: _package);
+
   /// `hamburger`, fill weight.
   static const IconData hamburgerFill = IconData(0xe790, fontFamily: _fill, fontPackage: _package);
+
   /// `hammer`: tools, carpentry, construction.
   static const IconData hammer = IconData(0xe80e, fontFamily: _regular, fontPackage: _package);
+
   /// `hammer`, fill weight.
   static const IconData hammerFill = IconData(0xe80e, fontFamily: _fill, fontPackage: _package);
+
   /// `hand`: pointers, cursors, emoji, backhand.
   static const IconData hand = IconData(0xe298, fontFamily: _regular, fontPackage: _package);
+
   /// `hand`, fill weight.
   static const IconData handFill = IconData(0xe298, fontFamily: _fill, fontPackage: _package);
+
   /// `hand-arrow-down`: take, receive, remove, withdraw, emoji.
   static const IconData handArrowDown = IconData(0xea4e, fontFamily: _regular, fontPackage: _package);
+
   /// `hand-arrow-down`, fill weight.
   static const IconData handArrowDownFill = IconData(0xea4e, fontFamily: _fill, fontPackage: _package);
+
   /// `hand-arrow-up`: give, insert, deposit, donation, emoji.
   static const IconData handArrowUp = IconData(0xee5a, fontFamily: _regular, fontPackage: _package);
+
   /// `hand-arrow-up`, fill weight.
   static const IconData handArrowUpFill = IconData(0xee5a, fontFamily: _fill, fontPackage: _package);
+
   /// `hand-coins`: donation, payment, money, paying, purchase.
   static const IconData handCoins = IconData(0xea8c, fontFamily: _regular, fontPackage: _package);
+
   /// `hand-coins`, fill weight.
   static const IconData handCoinsFill = IconData(0xea8c, fontFamily: _fill, fontPackage: _package);
+
   /// `hand-deposit`: give, insert, donation, atm, emoji.
   static const IconData handDeposit = IconData(0xee82, fontFamily: _regular, fontPackage: _package);
+
   /// `hand-deposit`, fill weight.
   static const IconData handDepositFill = IconData(0xee82, fontFamily: _fill, fontPackage: _package);
+
   /// `hand-eye`: emoji, hamsa, evil eye.
   static const IconData handEye = IconData(0xea4c, fontFamily: _regular, fontPackage: _package);
+
   /// `hand-eye`, fill weight.
   static const IconData handEyeFill = IconData(0xea4c, fontFamily: _fill, fontPackage: _package);
+
   /// `hand-fist`: emoji, power, protest, blm.
   static const IconData handFist = IconData(0xe57a, fontFamily: _regular, fontPackage: _package);
+
   /// `hand-fist`, fill weight.
   static const IconData handFistFill = IconData(0xe57a, fontFamily: _fill, fontPackage: _package);
+
   /// `hand-grabbing`: pointers, cursors, emoji, drag, hold.
   static const IconData handGrabbing = IconData(0xe57c, fontFamily: _regular, fontPackage: _package);
+
   /// `hand-grabbing`, fill weight.
   static const IconData handGrabbingFill = IconData(0xe57c, fontFamily: _fill, fontPackage: _package);
+
   /// `hand-heart`: donation, care, emoji.
   static const IconData handHeart = IconData(0xe810, fontFamily: _regular, fontPackage: _package);
+
   /// `hand-heart`, fill weight.
   static const IconData handHeartFill = IconData(0xe810, fontFamily: _fill, fontPackage: _package);
+
   /// `hand-palm`: pointers, cursors, emoji, palm, stop, wait.
   static const IconData handPalm = IconData(0xe57e, fontFamily: _regular, fontPackage: _package);
+
   /// `hand-palm`, fill weight.
   static const IconData handPalmFill = IconData(0xe57e, fontFamily: _fill, fontPackage: _package);
+
   /// `hand-peace`: emoji, victory.
   static const IconData handPeace = IconData(0xe7cc, fontFamily: _regular, fontPackage: _package);
+
   /// `hand-peace`, fill weight.
   static const IconData handPeaceFill = IconData(0xe7cc, fontFamily: _fill, fontPackage: _package);
+
   /// `hand-pointing`: pointers, cursors, emoji, fingers, clicks, mouse.
   static const IconData handPointing = IconData(0xe29a, fontFamily: _regular, fontPackage: _package);
+
   /// `hand-pointing`, fill weight.
   static const IconData handPointingFill = IconData(0xe29a, fontFamily: _fill, fontPackage: _package);
+
   /// `hand-soap`: dispenser, pump, sanitizer, disinfectant, lotion, bottle.
   static const IconData handSoap = IconData(0xe630, fontFamily: _regular, fontPackage: _package);
+
   /// `hand-soap`, fill weight.
   static const IconData handSoapFill = IconData(0xe630, fontFamily: _fill, fontPackage: _package);
+
   /// `hand-swipe-left`: pointers, cursors, gesture.
   static const IconData handSwipeLeft = IconData(0xec94, fontFamily: _regular, fontPackage: _package);
+
   /// `hand-swipe-left`, fill weight.
   static const IconData handSwipeLeftFill = IconData(0xec94, fontFamily: _fill, fontPackage: _package);
+
   /// `hand-swipe-right`: pointers, cursors, gesture.
   static const IconData handSwipeRight = IconData(0xec92, fontFamily: _regular, fontPackage: _package);
+
   /// `hand-swipe-right`, fill weight.
   static const IconData handSwipeRightFill = IconData(0xec92, fontFamily: _fill, fontPackage: _package);
+
   /// `hand-tap`: pointers, cursors, gesture.
   static const IconData handTap = IconData(0xec90, fontFamily: _regular, fontPackage: _package);
+
   /// `hand-tap`, fill weight.
   static const IconData handTapFill = IconData(0xec90, fontFamily: _fill, fontPackage: _package);
+
   /// `hand-waving`: emoji, palm, wave, hello, goodbye.
   static const IconData handWaving = IconData(0xe580, fontFamily: _regular, fontPackage: _package);
+
   /// `hand-waving`, fill weight.
   static const IconData handWavingFill = IconData(0xe580, fontFamily: _fill, fontPackage: _package);
+
   /// `hand-withdraw`: take, remove, withdrawal, atm, emoji.
   static const IconData handWithdraw = IconData(0xee80, fontFamily: _regular, fontPackage: _package);
+
   /// `hand-withdraw`, fill weight.
   static const IconData handWithdrawFill = IconData(0xee80, fontFamily: _fill, fontPackage: _package);
+
   /// `handbag`: suitcases, valises, baggage, purses.
   static const IconData handbag = IconData(0xe29c, fontFamily: _regular, fontPackage: _package);
+
   /// `handbag`, fill weight.
   static const IconData handbagFill = IconData(0xe29c, fontFamily: _fill, fontPackage: _package);
+
   /// `handbag-simple`: suitcases, valises, baggage, purses.
   static const IconData handbagSimple = IconData(0xe62e, fontFamily: _regular, fontPackage: _package);
+
   /// `handbag-simple`, fill weight.
   static const IconData handbagSimpleFill = IconData(0xe62e, fontFamily: _fill, fontPackage: _package);
+
   /// `hands-clapping`: emoji, clap, applause.
   static const IconData handsClapping = IconData(0xe6a0, fontFamily: _regular, fontPackage: _package);
+
   /// `hands-clapping`, fill weight.
   static const IconData handsClappingFill = IconData(0xe6a0, fontFamily: _fill, fontPackage: _package);
+
   /// `hands-praying`: emoji, religion, worship, prayer, thanks, thank you.
   static const IconData handsPraying = IconData(0xecc8, fontFamily: _regular, fontPackage: _package);
+
   /// `hands-praying`, fill weight.
   static const IconData handsPrayingFill = IconData(0xecc8, fontFamily: _fill, fontPackage: _package);
+
   /// `handshake`: emoji, deal, agreement.
   static const IconData handshake = IconData(0xe582, fontFamily: _regular, fontPackage: _package);
+
   /// `handshake`, fill weight.
   static const IconData handshakeFill = IconData(0xe582, fontFamily: _fill, fontPackage: _package);
+
   /// `hard-drive`: saved, saving, archived, archiving, archival, hard disk.
   static const IconData hardDrive = IconData(0xe29e, fontFamily: _regular, fontPackage: _package);
+
   /// `hard-drive`, fill weight.
   static const IconData hardDriveFill = IconData(0xe29e, fontFamily: _fill, fontPackage: _package);
+
   /// `hard-drives`: saved, saving, archived, archiving, archival, hard disk.
   static const IconData hardDrives = IconData(0xe2a0, fontFamily: _regular, fontPackage: _package);
+
   /// `hard-drives`, fill weight.
   static const IconData hardDrivesFill = IconData(0xe2a0, fontFamily: _fill, fontPackage: _package);
+
   /// `hard-hat`: safety, construction, industry, helmet, ppe.
   static const IconData hardHat = IconData(0xed46, fontFamily: _regular, fontPackage: _package);
+
   /// `hard-hat`, fill weight.
   static const IconData hardHatFill = IconData(0xed46, fontFamily: _fill, fontPackage: _package);
+
   /// `hash`: hashtag, octothorpe, pound sign, number sign, tic-tac-toe, symbol.
   static const IconData hash = IconData(0xe2a2, fontFamily: _regular, fontPackage: _package);
+
   /// `hash`, fill weight.
   static const IconData hashFill = IconData(0xe2a2, fontFamily: _fill, fontPackage: _package);
+
   /// `hash-straight`: hashtag, octothorpe, pound sign, number sign, tic-tac-toe, symbol.
   static const IconData hashStraight = IconData(0xe2a4, fontFamily: _regular, fontPackage: _package);
+
   /// `hash-straight`, fill weight.
   static const IconData hashStraightFill = IconData(0xe2a4, fontFamily: _fill, fontPackage: _package);
+
   /// `head-circuit`: automaton, artificial intelligence, ai.
   static const IconData headCircuit = IconData(0xe7d4, fontFamily: _regular, fontPackage: _package);
+
   /// `head-circuit`, fill weight.
   static const IconData headCircuitFill = IconData(0xe7d4, fontFamily: _fill, fontPackage: _package);
+
   /// `headlights`: brights, high beams.
   static const IconData headlights = IconData(0xe6fe, fontFamily: _regular, fontPackage: _package);
+
   /// `headlights`, fill weight.
   static const IconData headlightsFill = IconData(0xe6fe, fontFamily: _fill, fontPackage: _package);
+
   /// `headphones`: music, audio, listening.
   static const IconData headphones = IconData(0xe2a6, fontFamily: _regular, fontPackage: _package);
+
   /// `headphones`, fill weight.
   static const IconData headphonesFill = IconData(0xe2a6, fontFamily: _fill, fontPackage: _package);
+
   /// `headset`: music, audio, listening, gaming, voice chat, microphone.
   static const IconData headset = IconData(0xe584, fontFamily: _regular, fontPackage: _package);
+
   /// `headset`, fill weight.
   static const IconData headsetFill = IconData(0xe584, fontFamily: _fill, fontPackage: _package);
+
   /// `heart`: wellness, love, healthy, like, favorites, favorited.
   static const IconData heart = IconData(0xe2a8, fontFamily: _regular, fontPackage: _package);
+
   /// `heart`, fill weight.
   static const IconData heartFill = IconData(0xe2a8, fontFamily: _fill, fontPackage: _package);
+
   /// `heart-break`: love, hate, crack, split, divorce, emoji.
   static const IconData heartBreak = IconData(0xebe8, fontFamily: _regular, fontPackage: _package);
+
   /// `heart-break`, fill weight.
   static const IconData heartBreakFill = IconData(0xebe8, fontFamily: _fill, fontPackage: _package);
+
   /// `heart-half`: wellness, love, healthy, like, favorites, favorited.
   static const IconData heartHalf = IconData(0xec48, fontFamily: _regular, fontPackage: _package);
+
   /// `heart-half`, fill weight.
   static const IconData heartHalfFill = IconData(0xec48, fontFamily: _fill, fontPackage: _package);
+
   /// `heart-straight`: wellness, love, healthy, like, favorites, favorited.
   static const IconData heartStraight = IconData(0xe2aa, fontFamily: _regular, fontPackage: _package);
+
   /// `heart-straight`, fill weight.
   static const IconData heartStraightFill = IconData(0xe2aa, fontFamily: _fill, fontPackage: _package);
+
   /// `heart-straight-break`: love, hate, crack, split, divorce, emoji.
   static const IconData heartStraightBreak = IconData(0xeb98, fontFamily: _regular, fontPackage: _package);
+
   /// `heart-straight-break`, fill weight.
   static const IconData heartStraightBreakFill = IconData(0xeb98, fontFamily: _fill, fontPackage: _package);
+
   /// `heartbeat`: wellness, healthy, ecg, ekg, vitals, monitor.
   static const IconData heartbeat = IconData(0xe2ac, fontFamily: _regular, fontPackage: _package);
+
   /// `heartbeat`, fill weight.
   static const IconData heartbeatFill = IconData(0xe2ac, fontFamily: _fill, fontPackage: _package);
+
   /// `hexagon`: 6, shapes, polygons.
   static const IconData hexagon = IconData(0xe2ae, fontFamily: _regular, fontPackage: _package);
+
   /// `hexagon`, fill weight.
   static const IconData hexagonFill = IconData(0xe2ae, fontFamily: _fill, fontPackage: _package);
+
   /// `high-definition`: hd, resolution, video.
   static const IconData highDefinition = IconData(0xea8e, fontFamily: _regular, fontPackage: _package);
+
   /// `high-definition`, fill weight.
   static const IconData highDefinitionFill = IconData(0xea8e, fontFamily: _fill, fontPackage: _package);
+
   /// `high-heel`: pumps, clothes, clothing, shoes.
   static const IconData highHeel = IconData(0xe8e8, fontFamily: _regular, fontPackage: _package);
+
   /// `high-heel`, fill weight.
   static const IconData highHeelFill = IconData(0xe8e8, fontFamily: _fill, fontPackage: _package);
+
   /// `highlighter`: marker, write, writing, editing.
   static const IconData highlighter = IconData(0xec76, fontFamily: _regular, fontPackage: _package);
+
   /// `highlighter`, fill weight.
   static const IconData highlighterFill = IconData(0xec76, fontFamily: _fill, fontPackage: _package);
+
   /// `highlighter-circle`: write, writing, editing, drawing.
   static const IconData highlighterCircle = IconData(0xe632, fontFamily: _regular, fontPackage: _package);
+
   /// `highlighter-circle`, fill weight.
   static const IconData highlighterCircleFill = IconData(0xe632, fontFamily: _fill, fontPackage: _package);
+
   /// `hockey`: sports, nhl, stick, puck.
   static const IconData hockey = IconData(0xec86, fontFamily: _regular, fontPackage: _package);
+
   /// `hockey`, fill weight.
   static const IconData hockeyFill = IconData(0xec86, fontFamily: _fill, fontPackage: _package);
+
   /// `hoodie`: clothes, clothing, sweatshirt.
   static const IconData hoodie = IconData(0xecd0, fontFamily: _regular, fontPackage: _package);
+
   /// `hoodie`, fill weight.
   static const IconData hoodieFill = IconData(0xecd0, fontFamily: _fill, fontPackage: _package);
+
   /// `horse`: animals, equestrian, chess, knight, sports.
   static const IconData horse = IconData(0xe2b0, fontFamily: _regular, fontPackage: _package);
+
   /// `horse`, fill weight.
   static const IconData horseFill = IconData(0xe2b0, fontFamily: _fill, fontPackage: _package);
+
   /// `hospital`: places, locations, medical, medicine, emergency, doctor.
   static const IconData hospital = IconData(0xe844, fontFamily: _regular, fontPackage: _package);
+
   /// `hospital`, fill weight.
   static const IconData hospitalFill = IconData(0xe844, fontFamily: _fill, fontPackage: _package);
+
   /// `hourglass`: times, timer, alarms, clock, schedule, events.
   static const IconData hourglass = IconData(0xe2b2, fontFamily: _regular, fontPackage: _package);
+
   /// `hourglass`, fill weight.
   static const IconData hourglassFill = IconData(0xe2b2, fontFamily: _fill, fontPackage: _package);
+
   /// `hourglass-high`: times, timer, alarms, clock, schedule, events.
   static const IconData hourglassHigh = IconData(0xe2b4, fontFamily: _regular, fontPackage: _package);
+
   /// `hourglass-high`, fill weight.
   static const IconData hourglassHighFill = IconData(0xe2b4, fontFamily: _fill, fontPackage: _package);
+
   /// `hourglass-low`: times, timer, alarms, clock, schedule, events.
   static const IconData hourglassLow = IconData(0xe2b6, fontFamily: _regular, fontPackage: _package);
+
   /// `hourglass-low`, fill weight.
   static const IconData hourglassLowFill = IconData(0xe2b6, fontFamily: _fill, fontPackage: _package);
+
   /// `hourglass-medium`: times, timer, alarms, clock, schedule, events.
   static const IconData hourglassMedium = IconData(0xe2b8, fontFamily: _regular, fontPackage: _package);
+
   /// `hourglass-medium`, fill weight.
   static const IconData hourglassMediumFill = IconData(0xe2b8, fontFamily: _fill, fontPackage: _package);
+
   /// `hourglass-simple`: times, timer, alarms, clock, schedule, events.
   static const IconData hourglassSimple = IconData(0xe2ba, fontFamily: _regular, fontPackage: _package);
+
   /// `hourglass-simple`, fill weight.
   static const IconData hourglassSimpleFill = IconData(0xe2ba, fontFamily: _fill, fontPackage: _package);
+
   /// `hourglass-simple-high`: times, timer, alarms, clock, schedule, events.
   static const IconData hourglassSimpleHigh = IconData(0xe2bc, fontFamily: _regular, fontPackage: _package);
+
   /// `hourglass-simple-high`, fill weight.
   static const IconData hourglassSimpleHighFill = IconData(0xe2bc, fontFamily: _fill, fontPackage: _package);
+
   /// `hourglass-simple-low`: times, timer, alarms, clock, schedule, events.
   static const IconData hourglassSimpleLow = IconData(0xe2be, fontFamily: _regular, fontPackage: _package);
+
   /// `hourglass-simple-low`, fill weight.
   static const IconData hourglassSimpleLowFill = IconData(0xe2be, fontFamily: _fill, fontPackage: _package);
+
   /// `hourglass-simple-medium`: times, timer, alarms, clock, schedule, events.
   static const IconData hourglassSimpleMedium = IconData(0xe2c0, fontFamily: _regular, fontPackage: _package);
+
   /// `hourglass-simple-medium`, fill weight.
   static const IconData hourglassSimpleMediumFill = IconData(0xe2c0, fontFamily: _fill, fontPackage: _package);
+
   /// `house`: homes, buildings, places, locations.
   static const IconData house = IconData(0xe2c2, fontFamily: _regular, fontPackage: _package);
+
   /// `house`, fill weight.
   static const IconData houseFill = IconData(0xe2c2, fontFamily: _fill, fontPackage: _package);
+
   /// `house-line`: homes, buildings, places, locations.
   static const IconData houseLine = IconData(0xe2c4, fontFamily: _regular, fontPackage: _package);
+
   /// `house-line`, fill weight.
   static const IconData houseLineFill = IconData(0xe2c4, fontFamily: _fill, fontPackage: _package);
+
   /// `house-simple`: homes, buildings, places, locations.
   static const IconData houseSimple = IconData(0xe2c6, fontFamily: _regular, fontPackage: _package);
+
   /// `house-simple`, fill weight.
   static const IconData houseSimpleFill = IconData(0xe2c6, fontFamily: _fill, fontPackage: _package);
+
   /// `hurricane`: meteorology, cyclone, storm, disaster, wind.
   static const IconData hurricane = IconData(0xe88e, fontFamily: _regular, fontPackage: _package);
+
   /// `hurricane`, fill weight.
   static const IconData hurricaneFill = IconData(0xe88e, fontFamily: _fill, fontPackage: _package);
+
   /// `ice-cream`: food, dessert, cone.
   static const IconData iceCream = IconData(0xe804, fontFamily: _regular, fontPackage: _package);
+
   /// `ice-cream`, fill weight.
   static const IconData iceCreamFill = IconData(0xe804, fontFamily: _fill, fontPackage: _package);
+
   /// `identification-badge`: license, credentials, nametag, user, verification.
   static const IconData identificationBadge = IconData(0xe6f6, fontFamily: _regular, fontPackage: _package);
+
   /// `identification-badge`, fill weight.
   static const IconData identificationBadgeFill = IconData(0xe6f6, fontFamily: _fill, fontPackage: _package);
+
   /// `identification-card`: license, badge, credentials, nametag, user, verification.
   static const IconData identificationCard = IconData(0xe2c8, fontFamily: _regular, fontPackage: _package);
+
   /// `identification-card`, fill weight.
   static const IconData identificationCardFill = IconData(0xe2c8, fontFamily: _fill, fontPackage: _package);
+
   /// `image`: pictures, photographs, photography, wallpapers, gallery, landscape.
   static const IconData image = IconData(0xe2ca, fontFamily: _regular, fontPackage: _package);
+
   /// `image`, fill weight.
   static const IconData imageFill = IconData(0xe2ca, fontFamily: _fill, fontPackage: _package);
+
   /// `image-broken`: pictures, photographs, photography, wallpapers, gallery, landscape.
   static const IconData imageBroken = IconData(0xe7a8, fontFamily: _regular, fontPackage: _package);
+
   /// `image-broken`, fill weight.
   static const IconData imageBrokenFill = IconData(0xe7a8, fontFamily: _fill, fontPackage: _package);
+
   /// `image-square`: pictures, photographs, photography, wallpapers, gallery, landscape.
   static const IconData imageSquare = IconData(0xe2cc, fontFamily: _regular, fontPackage: _package);
+
   /// `image-square`, fill weight.
   static const IconData imageSquareFill = IconData(0xe2cc, fontFamily: _fill, fontPackage: _package);
+
   /// `images`: pictures, photographs, photography, wallpapers, gallery, landscape.
   static const IconData images = IconData(0xe836, fontFamily: _regular, fontPackage: _package);
+
   /// `images`, fill weight.
   static const IconData imagesFill = IconData(0xe836, fontFamily: _fill, fontPackage: _package);
+
   /// `images-square`: pictures, photographs, photography, wallpapers, gallery, landscape.
   static const IconData imagesSquare = IconData(0xe834, fontFamily: _regular, fontPackage: _package);
+
   /// `images-square`, fill weight.
   static const IconData imagesSquareFill = IconData(0xe834, fontFamily: _fill, fontPackage: _package);
+
   /// `infinity`: infinite, lemniscate, figure-eight, mathematics, arithmetic, calculator.
   static const IconData infinity = IconData(0xe634, fontFamily: _regular, fontPackage: _package);
+
   /// `infinity`, fill weight.
   static const IconData infinityFill = IconData(0xe634, fontFamily: _fill, fontPackage: _package);
+
   /// `info`: information, help, support.
   static const IconData info = IconData(0xe2ce, fontFamily: _regular, fontPackage: _package);
+
   /// `info`, fill weight.
   static const IconData infoFill = IconData(0xe2ce, fontFamily: _fill, fontPackage: _package);
+
   /// `instagram-logo`: logos, social media, photography, camera.
   static const IconData instagramLogo = IconData(0xe2d0, fontFamily: _regular, fontPackage: _package);
+
   /// `instagram-logo`, fill weight.
   static const IconData instagramLogoFill = IconData(0xe2d0, fontFamily: _fill, fontPackage: _package);
+
   /// `intersect`: round, join, union, merge, combine, intersecting.
   static const IconData intersect = IconData(0xe2d2, fontFamily: _regular, fontPackage: _package);
+
   /// `intersect`, fill weight.
   static const IconData intersectFill = IconData(0xe2d2, fontFamily: _fill, fontPackage: _package);
+
   /// `intersect-square`: venn-diagram, join, intersection.
   static const IconData intersectSquare = IconData(0xe87a, fontFamily: _regular, fontPackage: _package);
+
   /// `intersect-square`, fill weight.
   static const IconData intersectSquareFill = IconData(0xe87a, fontFamily: _fill, fontPackage: _package);
+
   /// `intersect-three`: venn-diagram, join, intersection, gender, pronouns.
   static const IconData intersectThree = IconData(0xecc4, fontFamily: _regular, fontPackage: _package);
+
   /// `intersect-three`, fill weight.
   static const IconData intersectThreeFill = IconData(0xecc4, fontFamily: _fill, fontPackage: _package);
+
   /// `intersection`: ∩, intersection, set, member, mathematics, arithmetic.
   static const IconData intersection = IconData(0xedba, fontFamily: _regular, fontPackage: _package);
+
   /// `intersection`, fill weight.
   static const IconData intersectionFill = IconData(0xedba, fontFamily: _fill, fontPackage: _package);
+
   /// `invoice`: receipt, expense, bill.
   static const IconData invoice = IconData(0xee42, fontFamily: _regular, fontPackage: _package);
+
   /// `invoice`, fill weight.
   static const IconData invoiceFill = IconData(0xee42, fontFamily: _fill, fontPackage: _package);
+
   /// `island`: geography, beach, ocean, tropical, palm, vacation.
   static const IconData island = IconData(0xee06, fontFamily: _regular, fontPackage: _package);
+
   /// `island`, fill weight.
   static const IconData islandFill = IconData(0xee06, fontFamily: _fill, fontPackage: _package);
+
   /// `jar`: mason jar, kitchen, pantry, canning, preserves, food.
   static const IconData jar = IconData(0xe7e0, fontFamily: _regular, fontPackage: _package);
+
   /// `jar`, fill weight.
   static const IconData jarFill = IconData(0xe7e0, fontFamily: _fill, fontPackage: _package);
+
   /// `jar-label`: mason jar, kitchen, pantry, canning, preserves, food.
   static const IconData jarLabel = IconData(0xe7e1, fontFamily: _regular, fontPackage: _package);
+
   /// `jar-label`, fill weight.
   static const IconData jarLabelFill = IconData(0xe7e1, fontFamily: _fill, fontPackage: _package);
+
   /// `jeep`: vehicles, automobile, suv, cars, trucks, wrangler.
   static const IconData jeep = IconData(0xe2d4, fontFamily: _regular, fontPackage: _package);
+
   /// `jeep`, fill weight.
   static const IconData jeepFill = IconData(0xe2d4, fontFamily: _fill, fontPackage: _package);
+
   /// `joystick`: gaming, game controller, video games, arcade game, atari.
   static const IconData joystick = IconData(0xea5e, fontFamily: _regular, fontPackage: _package);
+
   /// `joystick`, fill weight.
   static const IconData joystickFill = IconData(0xea5e, fontFamily: _fill, fontPackage: _package);
+
   /// `kanban`: scheduling, tasks, project management, process, lean, agile.
   static const IconData kanban = IconData(0xeb54, fontFamily: _regular, fontPackage: _package);
+
   /// `kanban`, fill weight.
   static const IconData kanbanFill = IconData(0xeb54, fontFamily: _fill, fontPackage: _package);
+
   /// `key`: padlock, security, secured, authentication, authenticated, login.
   static const IconData key = IconData(0xe2d6, fontFamily: _regular, fontPackage: _package);
+
   /// `key`, fill weight.
   static const IconData keyFill = IconData(0xe2d6, fontFamily: _fill, fontPackage: _package);
+
   /// `key-return`: keyboard, enter.
   static const IconData keyReturn = IconData(0xe782, fontFamily: _regular, fontPackage: _package);
+
   /// `key-return`, fill weight.
   static const IconData keyReturnFill = IconData(0xe782, fontFamily: _fill, fontPackage: _package);
+
   /// `keyboard`: typing, type, keys, input.
   static const IconData keyboard = IconData(0xe2d8, fontFamily: _regular, fontPackage: _package);
+
   /// `keyboard`, fill weight.
   static const IconData keyboardFill = IconData(0xe2d8, fontFamily: _fill, fontPackage: _package);
+
   /// `keyhole`: lock, security, secured, authentication, authenticated, login.
   static const IconData keyhole = IconData(0xea78, fontFamily: _regular, fontPackage: _package);
+
   /// `keyhole`, fill weight.
   static const IconData keyholeFill = IconData(0xea78, fontFamily: _fill, fontPackage: _package);
+
   /// `knife`: tools, food, meal, eating, restaurants, dining.
   static const IconData knife = IconData(0xe636, fontFamily: _regular, fontPackage: _package);
+
   /// `knife`, fill weight.
   static const IconData knifeFill = IconData(0xe636, fontFamily: _fill, fontPackage: _package);
+
   /// `ladder`: stairs, steps, climbing.
   static const IconData ladder = IconData(0xe9e4, fontFamily: _regular, fontPackage: _package);
+
   /// `ladder`, fill weight.
   static const IconData ladderFill = IconData(0xe9e4, fontFamily: _fill, fontPackage: _package);
+
   /// `ladder-simple`: stairs, steps, climbing.
   static const IconData ladderSimple = IconData(0xec26, fontFamily: _regular, fontPackage: _package);
+
   /// `ladder-simple`, fill weight.
   static const IconData ladderSimpleFill = IconData(0xec26, fontFamily: _fill, fontPackage: _package);
+
   /// `lamp`: light, furniture, appliances.
   static const IconData lamp = IconData(0xe638, fontFamily: _regular, fontPackage: _package);
+
   /// `lamp`, fill weight.
   static const IconData lampFill = IconData(0xe638, fontFamily: _fill, fontPackage: _package);
+
   /// `lamp-pendant`: light, furniture, appliances.
   static const IconData lampPendant = IconData(0xee2e, fontFamily: _regular, fontPackage: _package);
+
   /// `lamp-pendant`, fill weight.
   static const IconData lampPendantFill = IconData(0xee2e, fontFamily: _fill, fontPackage: _package);
+
   /// `laptop`: computer, notebook, pc, macbook.
   static const IconData laptop = IconData(0xe586, fontFamily: _regular, fontPackage: _package);
+
   /// `laptop`, fill weight.
   static const IconData laptopFill = IconData(0xe586, fontFamily: _fill, fontPackage: _package);
+
   /// `lasso`: select, selection, loop, rope, cowboy.
   static const IconData lasso = IconData(0xedc6, fontFamily: _regular, fontPackage: _package);
+
   /// `lasso`, fill weight.
   static const IconData lassoFill = IconData(0xedc6, fontFamily: _fill, fontPackage: _package);
+
   /// `lastfm-logo`: scrobble, music, social media.
   static const IconData lastfmLogo = IconData(0xe842, fontFamily: _regular, fontPackage: _package);
+
   /// `lastfm-logo`, fill weight.
   static const IconData lastfmLogoFill = IconData(0xe842, fontFamily: _fill, fontPackage: _package);
+
   /// `layout`: wireframe, sidebar, ui, interface.
   static const IconData layout = IconData(0xe6d6, fontFamily: _regular, fontPackage: _package);
+
   /// `layout`, fill weight.
   static const IconData layoutFill = IconData(0xe6d6, fontFamily: _fill, fontPackage: _package);
+
   /// `leaf`: plants, trees, branches, leaves, nodes, green.
   static const IconData leaf = IconData(0xe2da, fontFamily: _regular, fontPackage: _package);
+
   /// `leaf`, fill weight.
   static const IconData leafFill = IconData(0xe2da, fontFamily: _fill, fontPackage: _package);
+
   /// `lectern`: lecture, podium, pulpit, stand, speech, presentation.
   static const IconData lectern = IconData(0xe95a, fontFamily: _regular, fontPackage: _package);
+
   /// `lectern`, fill weight.
   static const IconData lecternFill = IconData(0xe95a, fontFamily: _fill, fontPackage: _package);
+
   /// `lego`: toys, blocks, bricks.
   static const IconData lego = IconData(0xe8c6, fontFamily: _regular, fontPackage: _package);
+
   /// `lego`, fill weight.
   static const IconData legoFill = IconData(0xe8c6, fontFamily: _fill, fontPackage: _package);
+
   /// `lego-smiley`: face, emoji, toys, blocks, bricks.
   static const IconData legoSmiley = IconData(0xe8c7, fontFamily: _regular, fontPackage: _package);
+
   /// `lego-smiley`, fill weight.
   static const IconData legoSmileyFill = IconData(0xe8c7, fontFamily: _fill, fontPackage: _package);
+
   /// `lemniscate`.
   static const IconData lemniscate = IconData(0xe634, fontFamily: _regular, fontPackage: _package);
+
   /// `lemniscate`, fill weight.
   static const IconData lemniscateFill = IconData(0xe634, fontFamily: _fill, fontPackage: _package);
+
   /// `less-than`: <, less than, lt, comparison, mathematics, arithmetic.
   static const IconData lessThan = IconData(0xedac, fontFamily: _regular, fontPackage: _package);
+
   /// `less-than`, fill weight.
   static const IconData lessThanFill = IconData(0xedac, fontFamily: _fill, fontPackage: _package);
+
   /// `less-than-or-equal`: ≤, less than or equal, lte, comparison, mathematics, arithmetic.
   static const IconData lessThanOrEqual = IconData(0xeda4, fontFamily: _regular, fontPackage: _package);
+
   /// `less-than-or-equal`, fill weight.
   static const IconData lessThanOrEqualFill = IconData(0xeda4, fontFamily: _fill, fontPackage: _package);
+
   /// `letter-circle-h`: hospital, letter, glyph, character.
   static const IconData letterCircleH = IconData(0xebf8, fontFamily: _regular, fontPackage: _package);
+
   /// `letter-circle-h`, fill weight.
   static const IconData letterCircleHFill = IconData(0xebf8, fontFamily: _fill, fontPackage: _package);
+
   /// `letter-circle-p`: parking lot, valet, vehicles, letter, glyph, character.
   static const IconData letterCircleP = IconData(0xec08, fontFamily: _regular, fontPackage: _package);
+
   /// `letter-circle-p`, fill weight.
   static const IconData letterCirclePFill = IconData(0xec08, fontFamily: _fill, fontPackage: _package);
+
   /// `letter-circle-v`: vegan, letter, glyph, character.
   static const IconData letterCircleV = IconData(0xec14, fontFamily: _regular, fontPackage: _package);
+
   /// `letter-circle-v`, fill weight.
   static const IconData letterCircleVFill = IconData(0xec14, fontFamily: _fill, fontPackage: _package);
+
   /// `lifebuoy`: lifebelt, lifesaver, safety, help, support, nautical.
   static const IconData lifebuoy = IconData(0xe63a, fontFamily: _regular, fontPackage: _package);
+
   /// `lifebuoy`, fill weight.
   static const IconData lifebuoyFill = IconData(0xe63a, fontFamily: _fill, fontPackage: _package);
+
   /// `lightbulb`: flashlight, bulbs, lighting, led, energy, idea.
   static const IconData lightbulb = IconData(0xe2dc, fontFamily: _regular, fontPackage: _package);
+
   /// `lightbulb`, fill weight.
   static const IconData lightbulbFill = IconData(0xe2dc, fontFamily: _fill, fontPackage: _package);
+
   /// `lightbulb-filament`: flashlight, bulbs, lighting, led, energy, idea.
   static const IconData lightbulbFilament = IconData(0xe63c, fontFamily: _regular, fontPackage: _package);
+
   /// `lightbulb-filament`, fill weight.
   static const IconData lightbulbFilamentFill = IconData(0xe63c, fontFamily: _fill, fontPackage: _package);
+
   /// `lighthouse`: buildings, nautical, navigation, boats, ships, safety.
   static const IconData lighthouse = IconData(0xe9f6, fontFamily: _regular, fontPackage: _package);
+
   /// `lighthouse`, fill weight.
   static const IconData lighthouseFill = IconData(0xe9f6, fontFamily: _fill, fontPackage: _package);
+
   /// `lightning`: meteorology, stormy, thunderstorm, thunderbolt, charged, charger.
   static const IconData lightning = IconData(0xe2de, fontFamily: _regular, fontPackage: _package);
+
   /// `lightning`, fill weight.
   static const IconData lightningFill = IconData(0xe2de, fontFamily: _fill, fontPackage: _package);
+
   /// `lightning-a`: flash, auto.
   static const IconData lightningA = IconData(0xea84, fontFamily: _regular, fontPackage: _package);
+
   /// `lightning-a`, fill weight.
   static const IconData lightningAFill = IconData(0xea84, fontFamily: _fill, fontPackage: _package);
+
   /// `lightning-slash`: thunderbolt, charged, charger, charging, power, electricity.
   static const IconData lightningSlash = IconData(0xe2e0, fontFamily: _regular, fontPackage: _package);
+
   /// `lightning-slash`, fill weight.
   static const IconData lightningSlashFill = IconData(0xe2e0, fontFamily: _fill, fontPackage: _package);
+
   /// `line-segment`: shapes, drawing, path, pen, vector.
   static const IconData lineSegment = IconData(0xe6d2, fontFamily: _regular, fontPackage: _package);
+
   /// `line-segment`, fill weight.
   static const IconData lineSegmentFill = IconData(0xe6d2, fontFamily: _fill, fontPackage: _package);
+
   /// `line-segments`: shapes, drawing, path, pen, vector.
   static const IconData lineSegments = IconData(0xe6d4, fontFamily: _regular, fontPackage: _package);
+
   /// `line-segments`, fill weight.
   static const IconData lineSegmentsFill = IconData(0xe6d4, fontFamily: _fill, fontPackage: _package);
+
   /// `line-vertical`: bar, pipe, |, divider. symbol.
   static const IconData lineVertical = IconData(0xed70, fontFamily: _regular, fontPackage: _package);
+
   /// `line-vertical`, fill weight.
   static const IconData lineVerticalFill = IconData(0xed70, fontFamily: _fill, fontPackage: _package);
+
   /// `link`: anchor, hyperlink, hypertext, chains, chained.
   static const IconData link = IconData(0xe2e2, fontFamily: _regular, fontPackage: _package);
+
   /// `link`, fill weight.
   static const IconData linkFill = IconData(0xe2e2, fontFamily: _fill, fontPackage: _package);
+
   /// `link-break`: anchor, hyperlink, hypertext, chains, chained, errors.
   static const IconData linkBreak = IconData(0xe2e4, fontFamily: _regular, fontPackage: _package);
+
   /// `link-break`, fill weight.
   static const IconData linkBreakFill = IconData(0xe2e4, fontFamily: _fill, fontPackage: _package);
+
   /// `link-simple`: anchor, hyperlink, hypertext, chains, chained.
   static const IconData linkSimple = IconData(0xe2e6, fontFamily: _regular, fontPackage: _package);
+
   /// `link-simple`, fill weight.
   static const IconData linkSimpleFill = IconData(0xe2e6, fontFamily: _fill, fontPackage: _package);
+
   /// `link-simple-break`: anchor, hyperlink, hypertext, chains, chained, errors.
   static const IconData linkSimpleBreak = IconData(0xe2e8, fontFamily: _regular, fontPackage: _package);
+
   /// `link-simple-break`, fill weight.
   static const IconData linkSimpleBreakFill = IconData(0xe2e8, fontFamily: _fill, fontPackage: _package);
+
   /// `link-simple-horizontal`: anchor, hyperlink, hypertext, chains, chained.
   static const IconData linkSimpleHorizontal = IconData(0xe2ea, fontFamily: _regular, fontPackage: _package);
+
   /// `link-simple-horizontal`, fill weight.
   static const IconData linkSimpleHorizontalFill = IconData(0xe2ea, fontFamily: _fill, fontPackage: _package);
+
   /// `link-simple-horizontal-break`: anchor, hyperlink, hypertext, chains, chained, errors.
   static const IconData linkSimpleHorizontalBreak = IconData(0xe2ec, fontFamily: _regular, fontPackage: _package);
+
   /// `link-simple-horizontal-break`, fill weight.
   static const IconData linkSimpleHorizontalBreakFill = IconData(0xe2ec, fontFamily: _fill, fontPackage: _package);
+
   /// `linkedin-logo`: logos, jobs, employment, social media.
   static const IconData linkedinLogo = IconData(0xe2ee, fontFamily: _regular, fontPackage: _package);
+
   /// `linkedin-logo`, fill weight.
   static const IconData linkedinLogoFill = IconData(0xe2ee, fontFamily: _fill, fontPackage: _package);
+
   /// `linktree-logo`: social media, links.
   static const IconData linktreeLogo = IconData(0xedee, fontFamily: _regular, fontPackage: _package);
+
   /// `linktree-logo`, fill weight.
   static const IconData linktreeLogoFill = IconData(0xedee, fontFamily: _fill, fontPackage: _package);
+
   /// `linux-logo`: penguin, computer, animals.
   static const IconData linuxLogo = IconData(0xeb02, fontFamily: _regular, fontPackage: _package);
+
   /// `linux-logo`, fill weight.
   static const IconData linuxLogoFill = IconData(0xeb02, fontFamily: _fill, fontPackage: _package);
+
   /// `list`: hamburger menu, overflow menu, sidebar, 3, ul, ol.
   static const IconData list = IconData(0xe2f0, fontFamily: _regular, fontPackage: _package);
+
   /// `list`, fill weight.
   static const IconData listFill = IconData(0xe2f0, fontFamily: _fill, fontPackage: _package);
+
   /// `list-bullets`: ul, unordered list, bulleted list, checklist.
   static const IconData listBullets = IconData(0xe2f2, fontFamily: _regular, fontPackage: _package);
+
   /// `list-bullets`, fill weight.
   static const IconData listBulletsFill = IconData(0xe2f2, fontFamily: _fill, fontPackage: _package);
+
   /// `list-checks`: checklist, todo.
   static const IconData listChecks = IconData(0xeadc, fontFamily: _regular, fontPackage: _package);
+
   /// `list-checks`, fill weight.
   static const IconData listChecksFill = IconData(0xeadc, fontFamily: _fill, fontPackage: _package);
+
   /// `list-dashes`: ul, unordered list, dashed list, checklist.
   static const IconData listDashes = IconData(0xe2f4, fontFamily: _regular, fontPackage: _package);
+
   /// `list-dashes`, fill weight.
   static const IconData listDashesFill = IconData(0xe2f4, fontFamily: _fill, fontPackage: _package);
+
   /// `list-heart`: favorites, wishlist, liked.
   static const IconData listHeart = IconData(0xebde, fontFamily: _regular, fontPackage: _package);
+
   /// `list-heart`, fill weight.
   static const IconData listHeartFill = IconData(0xebde, fontFamily: _fill, fontPackage: _package);
+
   /// `list-magnifying-glass`: search, find, locate, query, inspect.
   static const IconData listMagnifyingGlass = IconData(0xebe0, fontFamily: _regular, fontPackage: _package);
+
   /// `list-magnifying-glass`, fill weight.
   static const IconData listMagnifyingGlassFill = IconData(0xebe0, fontFamily: _fill, fontPackage: _package);
+
   /// `list-numbers`: ol, ordered list, numbered list, checklist.
   static const IconData listNumbers = IconData(0xe2f6, fontFamily: _regular, fontPackage: _package);
+
   /// `list-numbers`, fill weight.
   static const IconData listNumbersFill = IconData(0xe2f6, fontFamily: _fill, fontPackage: _package);
+
   /// `list-plus`: ul, ol, unordered list, ordered list, checklist, add.
   static const IconData listPlus = IconData(0xe2f8, fontFamily: _regular, fontPackage: _package);
+
   /// `list-plus`, fill weight.
   static const IconData listPlusFill = IconData(0xe2f8, fontFamily: _fill, fontPackage: _package);
+
   /// `list-star`: favorites, wishlist, liked.
   static const IconData listStar = IconData(0xebdc, fontFamily: _regular, fontPackage: _package);
+
   /// `list-star`, fill weight.
   static const IconData listStarFill = IconData(0xebdc, fontFamily: _fill, fontPackage: _package);
+
   /// `lock`: padlock, security, secured, authentication, authenticated, login.
   static const IconData lock = IconData(0xe2fa, fontFamily: _regular, fontPackage: _package);
+
   /// `lock`, fill weight.
   static const IconData lockFill = IconData(0xe2fa, fontFamily: _fill, fontPackage: _package);
+
   /// `lock-key`: padlock, security, secured, authentication, authenticated, login.
   static const IconData lockKey = IconData(0xe2fe, fontFamily: _regular, fontPackage: _package);
+
   /// `lock-key`, fill weight.
   static const IconData lockKeyFill = IconData(0xe2fe, fontFamily: _fill, fontPackage: _package);
+
   /// `lock-key-open`: padlock, security, unsecured, authentication, unauthenticated, login.
   static const IconData lockKeyOpen = IconData(0xe300, fontFamily: _regular, fontPackage: _package);
+
   /// `lock-key-open`, fill weight.
   static const IconData lockKeyOpenFill = IconData(0xe300, fontFamily: _fill, fontPackage: _package);
+
   /// `lock-laminated`: padlock, security, secured, authentication, authenticated, login.
   static const IconData lockLaminated = IconData(0xe302, fontFamily: _regular, fontPackage: _package);
+
   /// `lock-laminated`, fill weight.
   static const IconData lockLaminatedFill = IconData(0xe302, fontFamily: _fill, fontPackage: _package);
+
   /// `lock-laminated-open`: padlock, security, unsecured, authentication, unauthenticated, login.
   static const IconData lockLaminatedOpen = IconData(0xe304, fontFamily: _regular, fontPackage: _package);
+
   /// `lock-laminated-open`, fill weight.
   static const IconData lockLaminatedOpenFill = IconData(0xe304, fontFamily: _fill, fontPackage: _package);
+
   /// `lock-open`: padlock, security, unsecured, authentication, unauthenticated, login.
   static const IconData lockOpen = IconData(0xe306, fontFamily: _regular, fontPackage: _package);
+
   /// `lock-open`, fill weight.
   static const IconData lockOpenFill = IconData(0xe306, fontFamily: _fill, fontPackage: _package);
+
   /// `lock-simple`: padlock, security, secured, authentication, authenticated, login.
   static const IconData lockSimple = IconData(0xe308, fontFamily: _regular, fontPackage: _package);
+
   /// `lock-simple`, fill weight.
   static const IconData lockSimpleFill = IconData(0xe308, fontFamily: _fill, fontPackage: _package);
+
   /// `lock-simple-open`: padlock, security, unsecured, authentication, unauthenticated, login.
   static const IconData lockSimpleOpen = IconData(0xe30a, fontFamily: _regular, fontPackage: _package);
+
   /// `lock-simple-open`, fill weight.
   static const IconData lockSimpleOpenFill = IconData(0xe30a, fontFamily: _fill, fontPackage: _package);
+
   /// `lockers`: locker room, gym, storage.
   static const IconData lockers = IconData(0xecb8, fontFamily: _regular, fontPackage: _package);
+
   /// `lockers`, fill weight.
   static const IconData lockersFill = IconData(0xecb8, fontFamily: _fill, fontPackage: _package);
+
   /// `log`: tree, stump, stick, branch.
   static const IconData log = IconData(0xed82, fontFamily: _regular, fontPackage: _package);
+
   /// `log`, fill weight.
   static const IconData logFill = IconData(0xed82, fontFamily: _fill, fontPackage: _package);
+
   /// `magic-wand`: selection, wizard, games.
   static const IconData magicWand = IconData(0xe6b6, fontFamily: _regular, fontPackage: _package);
+
   /// `magic-wand`, fill weight.
   static const IconData magicWandFill = IconData(0xe6b6, fontFamily: _fill, fontPackage: _package);
+
   /// `magnet`: magnetism, science, physics.
   static const IconData magnet = IconData(0xe680, fontFamily: _regular, fontPackage: _package);
+
   /// `magnet`, fill weight.
   static const IconData magnetFill = IconData(0xe680, fontFamily: _fill, fontPackage: _package);
+
   /// `magnet-straight`: magnetism, science, physics.
   static const IconData magnetStraight = IconData(0xe682, fontFamily: _regular, fontPackage: _package);
+
   /// `magnet-straight`, fill weight.
   static const IconData magnetStraightFill = IconData(0xe682, fontFamily: _fill, fontPackage: _package);
+
   /// `magnifying-glass`: search, find, locate, query, inspect.
   static const IconData magnifyingGlass = IconData(0xe30c, fontFamily: _regular, fontPackage: _package);
+
   /// `magnifying-glass`, fill weight.
   static const IconData magnifyingGlassFill = IconData(0xe30c, fontFamily: _fill, fontPackage: _package);
+
   /// `magnifying-glass-minus`: search, find, locate, query, inspect, zoom out.
   static const IconData magnifyingGlassMinus = IconData(0xe30e, fontFamily: _regular, fontPackage: _package);
+
   /// `magnifying-glass-minus`, fill weight.
   static const IconData magnifyingGlassMinusFill = IconData(0xe30e, fontFamily: _fill, fontPackage: _package);
+
   /// `magnifying-glass-plus`: search, find, locate, query, inspect, zoom in.
   static const IconData magnifyingGlassPlus = IconData(0xe310, fontFamily: _regular, fontPackage: _package);
+
   /// `magnifying-glass-plus`, fill weight.
   static const IconData magnifyingGlassPlusFill = IconData(0xe310, fontFamily: _fill, fontPackage: _package);
+
   /// `mailbox`: email, letters, messaging, post.
   static const IconData mailbox = IconData(0xec1e, fontFamily: _regular, fontPackage: _package);
+
   /// `mailbox`, fill weight.
   static const IconData mailboxFill = IconData(0xec1e, fontFamily: _fill, fontPackage: _package);
+
   /// `map-pin`: maps, places, markers, pins, locations, poi.
   static const IconData mapPin = IconData(0xe316, fontFamily: _regular, fontPackage: _package);
+
   /// `map-pin`, fill weight.
   static const IconData mapPinFill = IconData(0xe316, fontFamily: _fill, fontPackage: _package);
+
   /// `map-pin-area`: maps, places, markers, pins, locations, poi.
   static const IconData mapPinArea = IconData(0xee3a, fontFamily: _regular, fontPackage: _package);
+
   /// `map-pin-area`, fill weight.
   static const IconData mapPinAreaFill = IconData(0xee3a, fontFamily: _fill, fontPackage: _package);
+
   /// `map-pin-line`: maps, places, markers, pins, locations, poi.
   static const IconData mapPinLine = IconData(0xe318, fontFamily: _regular, fontPackage: _package);
+
   /// `map-pin-line`, fill weight.
   static const IconData mapPinLineFill = IconData(0xe318, fontFamily: _fill, fontPackage: _package);
+
   /// `map-pin-plus`: maps, places, markers, pins, locations, add.
   static const IconData mapPinPlus = IconData(0xe314, fontFamily: _regular, fontPackage: _package);
+
   /// `map-pin-plus`, fill weight.
   static const IconData mapPinPlusFill = IconData(0xe314, fontFamily: _fill, fontPackage: _package);
+
   /// `map-pin-simple`: maps, places, markers, pins, locations, poi.
   static const IconData mapPinSimple = IconData(0xee3e, fontFamily: _regular, fontPackage: _package);
+
   /// `map-pin-simple`, fill weight.
   static const IconData mapPinSimpleFill = IconData(0xee3e, fontFamily: _fill, fontPackage: _package);
+
   /// `map-pin-simple-area`: maps, places, markers, pins, locations, poi.
   static const IconData mapPinSimpleArea = IconData(0xee3c, fontFamily: _regular, fontPackage: _package);
+
   /// `map-pin-simple-area`, fill weight.
   static const IconData mapPinSimpleAreaFill = IconData(0xee3c, fontFamily: _fill, fontPackage: _package);
+
   /// `map-pin-simple-line`: maps, places, markers, pins, locations, poi.
   static const IconData mapPinSimpleLine = IconData(0xee38, fontFamily: _regular, fontPackage: _package);
+
   /// `map-pin-simple-line`, fill weight.
   static const IconData mapPinSimpleLineFill = IconData(0xee38, fontFamily: _fill, fontPackage: _package);
+
   /// `map-trifold`: maps, places, locations, cartography, geography.
   static const IconData mapTrifold = IconData(0xe31a, fontFamily: _regular, fontPackage: _package);
+
   /// `map-trifold`, fill weight.
   static const IconData mapTrifoldFill = IconData(0xe31a, fontFamily: _fill, fontPackage: _package);
+
   /// `markdown-logo`: markup, editor, .md.
   static const IconData markdownLogo = IconData(0xe508, fontFamily: _regular, fontPackage: _package);
+
   /// `markdown-logo`, fill weight.
   static const IconData markdownLogoFill = IconData(0xe508, fontFamily: _fill, fontPackage: _package);
+
   /// `marker-circle`: write, writing, editing, drawing.
   static const IconData markerCircle = IconData(0xe640, fontFamily: _regular, fontPackage: _package);
+
   /// `marker-circle`, fill weight.
   static const IconData markerCircleFill = IconData(0xe640, fontFamily: _fill, fontPackage: _package);
+
   /// `martini`: glass, drinks, beverages, cocktails, places, locations.
   static const IconData martini = IconData(0xe31c, fontFamily: _regular, fontPackage: _package);
+
   /// `martini`, fill weight.
   static const IconData martiniFill = IconData(0xe31c, fontFamily: _fill, fontPackage: _package);
+
   /// `mask-happy`: theater, costume, smile, smiling, thalia.
   static const IconData maskHappy = IconData(0xe9f4, fontFamily: _regular, fontPackage: _package);
+
   /// `mask-happy`, fill weight.
   static const IconData maskHappyFill = IconData(0xe9f4, fontFamily: _fill, fontPackage: _package);
+
   /// `mask-sad`: theater, costume, cry, crying, melpomene.
   static const IconData maskSad = IconData(0xeb9e, fontFamily: _regular, fontPackage: _package);
+
   /// `mask-sad`, fill weight.
   static const IconData maskSadFill = IconData(0xeb9e, fontFamily: _fill, fontPackage: _package);
+
   /// `mastodon-logo`: fediverse, social media, decentralized.
   static const IconData mastodonLogo = IconData(0xed68, fontFamily: _regular, fontPackage: _package);
+
   /// `mastodon-logo`, fill weight.
   static const IconData mastodonLogoFill = IconData(0xed68, fontFamily: _fill, fontPackage: _package);
+
   /// `math-operations`: addition, sum, subtraction, difference, multiply, multiplication.
   static const IconData mathOperations = IconData(0xe31e, fontFamily: _regular, fontPackage: _package);
+
   /// `math-operations`, fill weight.
   static const IconData mathOperationsFill = IconData(0xe31e, fontFamily: _fill, fontPackage: _package);
+
   /// `matrix-logo`: matrix protocol, brands, logos.
   static const IconData matrixLogo = IconData(0xed64, fontFamily: _regular, fontPackage: _package);
+
   /// `matrix-logo`, fill weight.
   static const IconData matrixLogoFill = IconData(0xed64, fontFamily: _fill, fontPackage: _package);
+
   /// `medal`: ribbons, winning, victory, awards, rosette.
   static const IconData medal = IconData(0xe320, fontFamily: _regular, fontPackage: _package);
+
   /// `medal`, fill weight.
   static const IconData medalFill = IconData(0xe320, fontFamily: _fill, fontPackage: _package);
+
   /// `medal-military`: ribbons, winning, victory, awards, military.
   static const IconData medalMilitary = IconData(0xecfc, fontFamily: _regular, fontPackage: _package);
+
   /// `medal-military`, fill weight.
   static const IconData medalMilitaryFill = IconData(0xecfc, fontFamily: _fill, fontPackage: _package);
+
   /// `medium-logo`: logos, reading, writing, news, social media.
   static const IconData mediumLogo = IconData(0xe322, fontFamily: _regular, fontPackage: _package);
+
   /// `medium-logo`, fill weight.
   static const IconData mediumLogoFill = IconData(0xe322, fontFamily: _fill, fontPackage: _package);
+
   /// `megaphone`: bullhorn, announcements, loudspeaker, broadcast.
   static const IconData megaphone = IconData(0xe324, fontFamily: _regular, fontPackage: _package);
+
   /// `megaphone`, fill weight.
   static const IconData megaphoneFill = IconData(0xe324, fontFamily: _fill, fontPackage: _package);
+
   /// `megaphone-simple`: bullhorn, announcements, loudspeaker, broadcast.
   static const IconData megaphoneSimple = IconData(0xe642, fontFamily: _regular, fontPackage: _package);
+
   /// `megaphone-simple`, fill weight.
   static const IconData megaphoneSimpleFill = IconData(0xe642, fontFamily: _fill, fontPackage: _package);
+
   /// `member-of`: ∈, is element of, set, member, mathematics, arithmetic.
   static const IconData memberOf = IconData(0xedc2, fontFamily: _regular, fontPackage: _package);
+
   /// `member-of`, fill weight.
   static const IconData memberOfFill = IconData(0xedc2, fontFamily: _fill, fontPackage: _package);
+
   /// `memory`: ram, microchip, computer, circuit, electronics.
   static const IconData memory = IconData(0xe9c4, fontFamily: _regular, fontPackage: _package);
+
   /// `memory`, fill weight.
   static const IconData memoryFill = IconData(0xe9c4, fontFamily: _fill, fontPackage: _package);
+
   /// `messenger-logo`: logos, facebook, social media.
   static const IconData messengerLogo = IconData(0xe6d8, fontFamily: _regular, fontPackage: _package);
+
   /// `messenger-logo`, fill weight.
   static const IconData messengerLogoFill = IconData(0xe6d8, fontFamily: _fill, fontPackage: _package);
+
   /// `meta-logo`: facebook, logos, social media, logos.
   static const IconData metaLogo = IconData(0xed02, fontFamily: _regular, fontPackage: _package);
+
   /// `meta-logo`, fill weight.
   static const IconData metaLogoFill = IconData(0xed02, fontFamily: _fill, fontPackage: _package);
+
   /// `meteor`: astronomy, asteroid, fireball.
   static const IconData meteor = IconData(0xe9ba, fontFamily: _regular, fontPackage: _package);
+
   /// `meteor`, fill weight.
   static const IconData meteorFill = IconData(0xe9ba, fontFamily: _fill, fontPackage: _package);
+
   /// `metronome`: music, beat, tempo, bpm.
   static const IconData metronome = IconData(0xec8e, fontFamily: _regular, fontPackage: _package);
+
   /// `metronome`, fill weight.
   static const IconData metronomeFill = IconData(0xec8e, fontFamily: _fill, fontPackage: _package);
+
   /// `microphone`: audio, recording, music, sound, podcast, studio.
   static const IconData microphone = IconData(0xe326, fontFamily: _regular, fontPackage: _package);
+
   /// `microphone`, fill weight.
   static const IconData microphoneFill = IconData(0xe326, fontFamily: _fill, fontPackage: _package);
+
   /// `microphone-slash`: audio, recording, music, sound, podcast, studio.
   static const IconData microphoneSlash = IconData(0xe328, fontFamily: _regular, fontPackage: _package);
+
   /// `microphone-slash`, fill weight.
   static const IconData microphoneSlashFill = IconData(0xe328, fontFamily: _fill, fontPackage: _package);
+
   /// `microphone-stage`: audio, recording, music, sound, performance, concert.
   static const IconData microphoneStage = IconData(0xe75c, fontFamily: _regular, fontPackage: _package);
+
   /// `microphone-stage`, fill weight.
   static const IconData microphoneStageFill = IconData(0xe75c, fontFamily: _fill, fontPackage: _package);
+
   /// `microscope`: science, biology, experiment, magnify.
   static const IconData microscope = IconData(0xec7a, fontFamily: _regular, fontPackage: _package);
+
   /// `microscope`, fill weight.
   static const IconData microscopeFill = IconData(0xec7a, fontFamily: _fill, fontPackage: _package);
+
   /// `microsoft-excel-logo`: tables, spreadsheets, tabular.
   static const IconData microsoftExcelLogo = IconData(0xeb6c, fontFamily: _regular, fontPackage: _package);
+
   /// `microsoft-excel-logo`, fill weight.
   static const IconData microsoftExcelLogoFill = IconData(0xeb6c, fontFamily: _fill, fontPackage: _package);
+
   /// `microsoft-outlook-logo`: email, logos.
   static const IconData microsoftOutlookLogo = IconData(0xeb70, fontFamily: _regular, fontPackage: _package);
+
   /// `microsoft-outlook-logo`, fill weight.
   static const IconData microsoftOutlookLogoFill = IconData(0xeb70, fontFamily: _fill, fontPackage: _package);
+
   /// `microsoft-powerpoint-logo`: slides, slideshow, presentation.
   static const IconData microsoftPowerpointLogo = IconData(0xeace, fontFamily: _regular, fontPackage: _package);
+
   /// `microsoft-powerpoint-logo`, fill weight.
   static const IconData microsoftPowerpointLogoFill = IconData(0xeace, fontFamily: _fill, fontPackage: _package);
+
   /// `microsoft-teams-logo`: chat, video conference.
   static const IconData microsoftTeamsLogo = IconData(0xeb66, fontFamily: _regular, fontPackage: _package);
+
   /// `microsoft-teams-logo`, fill weight.
   static const IconData microsoftTeamsLogoFill = IconData(0xeb66, fontFamily: _fill, fontPackage: _package);
+
   /// `microsoft-word-logo`: documents, word processor, doc, docx.
   static const IconData microsoftWordLogo = IconData(0xeb6a, fontFamily: _regular, fontPackage: _package);
+
   /// `microsoft-word-logo`, fill weight.
   static const IconData microsoftWordLogoFill = IconData(0xeb6a, fontFamily: _fill, fontPackage: _package);
+
   /// `minus`: -, subtraction, difference, mathematics, arithmetic, calculator.
   static const IconData minus = IconData(0xe32a, fontFamily: _regular, fontPackage: _package);
+
   /// `minus`, fill weight.
   static const IconData minusFill = IconData(0xe32a, fontFamily: _fill, fontPackage: _package);
+
   /// `minus-circle`: -, subtraction, difference, mathematics, arithmetic, calculator.
   static const IconData minusCircle = IconData(0xe32c, fontFamily: _regular, fontPackage: _package);
+
   /// `minus-circle`, fill weight.
   static const IconData minusCircleFill = IconData(0xe32c, fontFamily: _fill, fontPackage: _package);
+
   /// `minus-square`: -, subtraction, difference, mathematics, arithmetic, calculator.
   static const IconData minusSquare = IconData(0xed4c, fontFamily: _regular, fontPackage: _package);
+
   /// `minus-square`, fill weight.
   static const IconData minusSquareFill = IconData(0xed4c, fontFamily: _fill, fontPackage: _package);
+
   /// `money`: cash, dollars, paper bills, payment, paying, purchase.
   static const IconData money = IconData(0xe588, fontFamily: _regular, fontPackage: _package);
+
   /// `money`, fill weight.
   static const IconData moneyFill = IconData(0xe588, fontFamily: _fill, fontPackage: _package);
+
   /// `money-wavy`: cash, dollars, paper bills, payment, paying, purchase.
   static const IconData moneyWavy = IconData(0xee68, fontFamily: _regular, fontPackage: _package);
+
   /// `money-wavy`, fill weight.
   static const IconData moneyWavyFill = IconData(0xee68, fontFamily: _fill, fontPackage: _package);
+
   /// `monitor`: screen, television, tv, displays.
   static const IconData monitor = IconData(0xe32e, fontFamily: _regular, fontPackage: _package);
+
   /// `monitor`, fill weight.
   static const IconData monitorFill = IconData(0xe32e, fontFamily: _fill, fontPackage: _package);
+
   /// `monitor-arrow-up`: screen, screencast, screenshare, upload, video, movie.
   static const IconData monitorArrowUp = IconData(0xe58a, fontFamily: _regular, fontPackage: _package);
+
   /// `monitor-arrow-up`, fill weight.
   static const IconData monitorArrowUpFill = IconData(0xe58a, fontFamily: _fill, fontPackage: _package);
+
   /// `monitor-play`: screen, television, tv, displays, screencast, video.
   static const IconData monitorPlay = IconData(0xe58c, fontFamily: _regular, fontPackage: _package);
+
   /// `monitor-play`, fill weight.
   static const IconData monitorPlayFill = IconData(0xe58c, fontFamily: _fill, fontPackage: _package);
+
   /// `moon`: night, evening, clear, sleep, snooze, night mode.
   static const IconData moon = IconData(0xe330, fontFamily: _regular, fontPackage: _package);
+
   /// `moon`, fill weight.
   static const IconData moonFill = IconData(0xe330, fontFamily: _fill, fontPackage: _package);
+
   /// `moon-stars`: night, evening, clear, sleep, snooze, night mode.
   static const IconData moonStars = IconData(0xe58e, fontFamily: _regular, fontPackage: _package);
+
   /// `moon-stars`, fill weight.
   static const IconData moonStarsFill = IconData(0xe58e, fontFamily: _fill, fontPackage: _package);
+
   /// `moped`: scooter, vehicles, vespa, transportation, travel.
   static const IconData moped = IconData(0xe824, fontFamily: _regular, fontPackage: _package);
+
   /// `moped`, fill weight.
   static const IconData mopedFill = IconData(0xe824, fontFamily: _fill, fontPackage: _package);
+
   /// `moped-front`: scooter, vehicles, vespa, transportation, travel.
   static const IconData mopedFront = IconData(0xe822, fontFamily: _regular, fontPackage: _package);
+
   /// `moped-front`, fill weight.
   static const IconData mopedFrontFill = IconData(0xe822, fontFamily: _fill, fontPackage: _package);
+
   /// `mosque`: islam, muslim, religion, worship.
   static const IconData mosque = IconData(0xecee, fontFamily: _regular, fontPackage: _package);
+
   /// `mosque`, fill weight.
   static const IconData mosqueFill = IconData(0xecee, fontFamily: _fill, fontPackage: _package);
+
   /// `motorcycle`: vehicles, motorbike, transportation, travel.
   static const IconData motorcycle = IconData(0xe80a, fontFamily: _regular, fontPackage: _package);
+
   /// `motorcycle`, fill weight.
   static const IconData motorcycleFill = IconData(0xe80a, fontFamily: _fill, fontPackage: _package);
+
   /// `mountains`: hills, outdoors, terrain, geology, adventure.
   static const IconData mountains = IconData(0xe7ae, fontFamily: _regular, fontPackage: _package);
+
   /// `mountains`, fill weight.
   static const IconData mountainsFill = IconData(0xe7ae, fontFamily: _fill, fontPackage: _package);
+
   /// `mouse`: clicks, input.
   static const IconData mouse = IconData(0xe33a, fontFamily: _regular, fontPackage: _package);
+
   /// `mouse`, fill weight.
   static const IconData mouseFill = IconData(0xe33a, fontFamily: _fill, fontPackage: _package);
+
   /// `mouse-left-click`: clicks, input.
   static const IconData mouseLeftClick = IconData(0xe334, fontFamily: _regular, fontPackage: _package);
+
   /// `mouse-left-click`, fill weight.
   static const IconData mouseLeftClickFill = IconData(0xe334, fontFamily: _fill, fontPackage: _package);
+
   /// `mouse-middle-click`: clicks, input.
   static const IconData mouseMiddleClick = IconData(0xe338, fontFamily: _regular, fontPackage: _package);
+
   /// `mouse-middle-click`, fill weight.
   static const IconData mouseMiddleClickFill = IconData(0xe338, fontFamily: _fill, fontPackage: _package);
+
   /// `mouse-right-click`: clicks, input.
   static const IconData mouseRightClick = IconData(0xe336, fontFamily: _regular, fontPackage: _package);
+
   /// `mouse-right-click`, fill weight.
   static const IconData mouseRightClickFill = IconData(0xe336, fontFamily: _fill, fontPackage: _package);
+
   /// `mouse-scroll`: clicks, input.
   static const IconData mouseScroll = IconData(0xe332, fontFamily: _regular, fontPackage: _package);
+
   /// `mouse-scroll`, fill weight.
   static const IconData mouseScrollFill = IconData(0xe332, fontFamily: _fill, fontPackage: _package);
+
   /// `mouse-simple`: clicks, input.
   static const IconData mouseSimple = IconData(0xe644, fontFamily: _regular, fontPackage: _package);
+
   /// `mouse-simple`, fill weight.
   static const IconData mouseSimpleFill = IconData(0xe644, fontFamily: _fill, fontPackage: _package);
+
   /// `music-note`: songs, audio, playlist, albums.
   static const IconData musicNote = IconData(0xe33c, fontFamily: _regular, fontPackage: _package);
+
   /// `music-note`, fill weight.
   static const IconData musicNoteFill = IconData(0xe33c, fontFamily: _fill, fontPackage: _package);
+
   /// `music-note-simple`: songs, audio, playlist, albums.
   static const IconData musicNoteSimple = IconData(0xe33e, fontFamily: _regular, fontPackage: _package);
+
   /// `music-note-simple`, fill weight.
   static const IconData musicNoteSimpleFill = IconData(0xe33e, fontFamily: _fill, fontPackage: _package);
+
   /// `music-notes`: songs, audio, playlist, albums.
   static const IconData musicNotes = IconData(0xe340, fontFamily: _regular, fontPackage: _package);
+
   /// `music-notes`, fill weight.
   static const IconData musicNotesFill = IconData(0xe340, fontFamily: _fill, fontPackage: _package);
+
   /// `music-notes-minus`: songs, audio, playlist, albums, remove, subtract.
   static const IconData musicNotesMinus = IconData(0xee0c, fontFamily: _regular, fontPackage: _package);
+
   /// `music-notes-minus`, fill weight.
   static const IconData musicNotesMinusFill = IconData(0xee0c, fontFamily: _fill, fontPackage: _package);
+
   /// `music-notes-plus`: songs, audio, playlist, albums, add.
   static const IconData musicNotesPlus = IconData(0xeb7c, fontFamily: _regular, fontPackage: _package);
+
   /// `music-notes-plus`, fill weight.
   static const IconData musicNotesPlusFill = IconData(0xeb7c, fontFamily: _fill, fontPackage: _package);
+
   /// `music-notes-simple`: songs, audio, playlist, albums.
   static const IconData musicNotesSimple = IconData(0xe342, fontFamily: _regular, fontPackage: _package);
+
   /// `music-notes-simple`, fill weight.
   static const IconData musicNotesSimpleFill = IconData(0xe342, fontFamily: _fill, fontPackage: _package);
+
   /// `navigation-arrow`: location, directions, compass, gps.
   static const IconData navigationArrow = IconData(0xeade, fontFamily: _regular, fontPackage: _package);
+
   /// `navigation-arrow`, fill weight.
   static const IconData navigationArrowFill = IconData(0xeade, fontFamily: _fill, fontPackage: _package);
+
   /// `needle`: sewing, thread, awl, tailor.
   static const IconData needle = IconData(0xe82e, fontFamily: _regular, fontPackage: _package);
+
   /// `needle`, fill weight.
   static const IconData needleFill = IconData(0xe82e, fontFamily: _fill, fontPackage: _package);
+
   /// `network`: internet, ethernet, lan.
   static const IconData network = IconData(0xedde, fontFamily: _regular, fontPackage: _package);
+
   /// `network`, fill weight.
   static const IconData networkFill = IconData(0xedde, fontFamily: _fill, fontPackage: _package);
+
   /// `network-slash`: internet, ethernet, lan, error.
   static const IconData networkSlash = IconData(0xeddc, fontFamily: _regular, fontPackage: _package);
+
   /// `network-slash`, fill weight.
   static const IconData networkSlashFill = IconData(0xeddc, fontFamily: _fill, fontPackage: _package);
+
   /// `network-x`: internet, ethernet, lan, disabled.
   static const IconData networkX = IconData(0xedda, fontFamily: _regular, fontPackage: _package);
+
   /// `network-x`, fill weight.
   static const IconData networkXFill = IconData(0xedda, fontFamily: _fill, fontPackage: _package);
+
   /// `newspaper`: reading, writing, journals, periodicals.
   static const IconData newspaper = IconData(0xe344, fontFamily: _regular, fontPackage: _package);
+
   /// `newspaper`, fill weight.
   static const IconData newspaperFill = IconData(0xe344, fontFamily: _fill, fontPackage: _package);
+
   /// `newspaper-clipping`: reading, writing, journals, periodicals.
   static const IconData newspaperClipping = IconData(0xe346, fontFamily: _regular, fontPackage: _package);
+
   /// `newspaper-clipping`, fill weight.
   static const IconData newspaperClippingFill = IconData(0xe346, fontFamily: _fill, fontPackage: _package);
+
   /// `not-equals`: ≠, equality, equivalent, equivalence, mathematics, arithmetic.
   static const IconData notEquals = IconData(0xeda6, fontFamily: _regular, fontPackage: _package);
+
   /// `not-equals`, fill weight.
   static const IconData notEqualsFill = IconData(0xeda6, fontFamily: _fill, fontPackage: _package);
+
   /// `not-member-of`: ∉, is not element of, set, member, mathematics, arithmetic.
   static const IconData notMemberOf = IconData(0xedae, fontFamily: _regular, fontPackage: _package);
+
   /// `not-member-of`, fill weight.
   static const IconData notMemberOfFill = IconData(0xedae, fontFamily: _fill, fontPackage: _package);
+
   /// `not-subset-of`: ⊄, not subset of, set, member, mathematics, arithmetic.
   static const IconData notSubsetOf = IconData(0xedb0, fontFamily: _regular, fontPackage: _package);
+
   /// `not-subset-of`, fill weight.
   static const IconData notSubsetOfFill = IconData(0xedb0, fontFamily: _fill, fontPackage: _package);
+
   /// `not-superset-of`: ⊉, not superset of, set, member, mathematics, arithmetic.
   static const IconData notSupersetOf = IconData(0xedb2, fontFamily: _regular, fontPackage: _package);
+
   /// `not-superset-of`, fill weight.
   static const IconData notSupersetOfFill = IconData(0xedb2, fontFamily: _fill, fontPackage: _package);
+
   /// `notches`: textarea, resize, drag handle, knurling.
   static const IconData notches = IconData(0xed3a, fontFamily: _regular, fontPackage: _package);
+
   /// `notches`, fill weight.
   static const IconData notchesFill = IconData(0xed3a, fontFamily: _fill, fontPackage: _package);
+
   /// `note`: notes, note-taking, memorandum, post-it, reminders.
   static const IconData note = IconData(0xe348, fontFamily: _regular, fontPackage: _package);
+
   /// `note`, fill weight.
   static const IconData noteFill = IconData(0xe348, fontFamily: _fill, fontPackage: _package);
+
   /// `note-blank`: notes, note-taking, memorandum, post-it, reminders.
   static const IconData noteBlank = IconData(0xe34a, fontFamily: _regular, fontPackage: _package);
+
   /// `note-blank`, fill weight.
   static const IconData noteBlankFill = IconData(0xe34a, fontFamily: _fill, fontPackage: _package);
+
   /// `note-pencil`: notes, note-taking, memorandum, post-it, reminders.
   static const IconData notePencil = IconData(0xe34c, fontFamily: _regular, fontPackage: _package);
+
   /// `note-pencil`, fill weight.
   static const IconData notePencilFill = IconData(0xe34c, fontFamily: _fill, fontPackage: _package);
+
   /// `notebook`: notes, note-taking, memorandum, journal, diary, logs.
   static const IconData notebook = IconData(0xe34e, fontFamily: _regular, fontPackage: _package);
+
   /// `notebook`, fill weight.
   static const IconData notebookFill = IconData(0xe34e, fontFamily: _fill, fontPackage: _package);
+
   /// `notepad`: logs, logbook, notes, note-taking, memorandum, journal.
   static const IconData notepad = IconData(0xe63e, fontFamily: _regular, fontPackage: _package);
+
   /// `notepad`, fill weight.
   static const IconData notepadFill = IconData(0xe63e, fontFamily: _fill, fontPackage: _package);
+
   /// `notification`: badge, pip.
   static const IconData notification = IconData(0xe6fa, fontFamily: _regular, fontPackage: _package);
+
   /// `notification`, fill weight.
   static const IconData notificationFill = IconData(0xe6fa, fontFamily: _fill, fontPackage: _package);
+
   /// `notion-logo`: documentation, productivity, wiki, logos.
   static const IconData notionLogo = IconData(0xe9a0, fontFamily: _regular, fontPackage: _package);
+
   /// `notion-logo`, fill weight.
   static const IconData notionLogoFill = IconData(0xe9a0, fontFamily: _fill, fontPackage: _package);
+
   /// `nuclear-plant`: renewable, energy, power, electricity.
   static const IconData nuclearPlant = IconData(0xed7c, fontFamily: _regular, fontPackage: _package);
+
   /// `nuclear-plant`, fill weight.
   static const IconData nuclearPlantFill = IconData(0xed7c, fontFamily: _fill, fontPackage: _package);
+
   /// `number-circle-eight`: 8, round, numbers, numerals, digits, mathematics.
   static const IconData numberCircleEight = IconData(0xe352, fontFamily: _regular, fontPackage: _package);
+
   /// `number-circle-eight`, fill weight.
   static const IconData numberCircleEightFill = IconData(0xe352, fontFamily: _fill, fontPackage: _package);
+
   /// `number-circle-five`: 5, round, numbers, numerals, digits, mathematics.
   static const IconData numberCircleFive = IconData(0xe358, fontFamily: _regular, fontPackage: _package);
+
   /// `number-circle-five`, fill weight.
   static const IconData numberCircleFiveFill = IconData(0xe358, fontFamily: _fill, fontPackage: _package);
+
   /// `number-circle-four`: 4, round, numbers, numerals, digits, mathematics.
   static const IconData numberCircleFour = IconData(0xe35e, fontFamily: _regular, fontPackage: _package);
+
   /// `number-circle-four`, fill weight.
   static const IconData numberCircleFourFill = IconData(0xe35e, fontFamily: _fill, fontPackage: _package);
+
   /// `number-circle-nine`: 9, round, numbers, numerals, digits, mathematics.
   static const IconData numberCircleNine = IconData(0xe364, fontFamily: _regular, fontPackage: _package);
+
   /// `number-circle-nine`, fill weight.
   static const IconData numberCircleNineFill = IconData(0xe364, fontFamily: _fill, fontPackage: _package);
+
   /// `number-circle-one`: 1, round, numbers, numerals, digits, mathematics.
   static const IconData numberCircleOne = IconData(0xe36a, fontFamily: _regular, fontPackage: _package);
+
   /// `number-circle-one`, fill weight.
   static const IconData numberCircleOneFill = IconData(0xe36a, fontFamily: _fill, fontPackage: _package);
+
   /// `number-circle-seven`: 7, round, numbers, numerals, digits, mathematics.
   static const IconData numberCircleSeven = IconData(0xe370, fontFamily: _regular, fontPackage: _package);
+
   /// `number-circle-seven`, fill weight.
   static const IconData numberCircleSevenFill = IconData(0xe370, fontFamily: _fill, fontPackage: _package);
+
   /// `number-circle-six`: 6, round, numbers, numerals, digits, mathematics.
   static const IconData numberCircleSix = IconData(0xe376, fontFamily: _regular, fontPackage: _package);
+
   /// `number-circle-six`, fill weight.
   static const IconData numberCircleSixFill = IconData(0xe376, fontFamily: _fill, fontPackage: _package);
+
   /// `number-circle-three`: 3, round, numbers, numerals, digits, mathematics.
   static const IconData numberCircleThree = IconData(0xe37c, fontFamily: _regular, fontPackage: _package);
+
   /// `number-circle-three`, fill weight.
   static const IconData numberCircleThreeFill = IconData(0xe37c, fontFamily: _fill, fontPackage: _package);
+
   /// `number-circle-two`: 2, round, numbers, numerals, digits, mathematics.
   static const IconData numberCircleTwo = IconData(0xe382, fontFamily: _regular, fontPackage: _package);
+
   /// `number-circle-two`, fill weight.
   static const IconData numberCircleTwoFill = IconData(0xe382, fontFamily: _fill, fontPackage: _package);
+
   /// `number-circle-zero`: 0, round, numbers, numerals, digits, mathematics.
   static const IconData numberCircleZero = IconData(0xe388, fontFamily: _regular, fontPackage: _package);
+
   /// `number-circle-zero`, fill weight.
   static const IconData numberCircleZeroFill = IconData(0xe388, fontFamily: _fill, fontPackage: _package);
+
   /// `number-eight`: 8, numbers, numerals, digits, mathematics, arithmetic.
   static const IconData numberEight = IconData(0xe350, fontFamily: _regular, fontPackage: _package);
+
   /// `number-eight`, fill weight.
   static const IconData numberEightFill = IconData(0xe350, fontFamily: _fill, fontPackage: _package);
+
   /// `number-five`: 5, numbers, numerals, digits, mathematics, arithmetic.
   static const IconData numberFive = IconData(0xe356, fontFamily: _regular, fontPackage: _package);
+
   /// `number-five`, fill weight.
   static const IconData numberFiveFill = IconData(0xe356, fontFamily: _fill, fontPackage: _package);
+
   /// `number-four`: 4, numbers, numerals, digits, mathematics, arithmetic.
   static const IconData numberFour = IconData(0xe35c, fontFamily: _regular, fontPackage: _package);
+
   /// `number-four`, fill weight.
   static const IconData numberFourFill = IconData(0xe35c, fontFamily: _fill, fontPackage: _package);
+
   /// `number-nine`: 9, numbers, numerals, digits, mathematics, arithmetic.
   static const IconData numberNine = IconData(0xe362, fontFamily: _regular, fontPackage: _package);
+
   /// `number-nine`, fill weight.
   static const IconData numberNineFill = IconData(0xe362, fontFamily: _fill, fontPackage: _package);
+
   /// `number-one`: 1, numbers, numerals, digits, mathematics, arithmetic.
   static const IconData numberOne = IconData(0xe368, fontFamily: _regular, fontPackage: _package);
+
   /// `number-one`, fill weight.
   static const IconData numberOneFill = IconData(0xe368, fontFamily: _fill, fontPackage: _package);
+
   /// `number-seven`: 7, numbers, numerals, digits, mathematics, arithmetic.
   static const IconData numberSeven = IconData(0xe36e, fontFamily: _regular, fontPackage: _package);
+
   /// `number-seven`, fill weight.
   static const IconData numberSevenFill = IconData(0xe36e, fontFamily: _fill, fontPackage: _package);
+
   /// `number-six`: 6, numbers, numerals, digits, mathematics, arithmetic.
   static const IconData numberSix = IconData(0xe374, fontFamily: _regular, fontPackage: _package);
+
   /// `number-six`, fill weight.
   static const IconData numberSixFill = IconData(0xe374, fontFamily: _fill, fontPackage: _package);
+
   /// `number-square-eight`: 8, numbers, numerals, digits, mathematics, arithmetic.
   static const IconData numberSquareEight = IconData(0xe354, fontFamily: _regular, fontPackage: _package);
+
   /// `number-square-eight`, fill weight.
   static const IconData numberSquareEightFill = IconData(0xe354, fontFamily: _fill, fontPackage: _package);
+
   /// `number-square-five`: 5, numbers, numerals, digits, mathematics, arithmetic.
   static const IconData numberSquareFive = IconData(0xe35a, fontFamily: _regular, fontPackage: _package);
+
   /// `number-square-five`, fill weight.
   static const IconData numberSquareFiveFill = IconData(0xe35a, fontFamily: _fill, fontPackage: _package);
+
   /// `number-square-four`: 4, numbers, numerals, digits, mathematics, arithmetic.
   static const IconData numberSquareFour = IconData(0xe360, fontFamily: _regular, fontPackage: _package);
+
   /// `number-square-four`, fill weight.
   static const IconData numberSquareFourFill = IconData(0xe360, fontFamily: _fill, fontPackage: _package);
+
   /// `number-square-nine`: 9, numbers, numerals, digits, mathematics, arithmetic.
   static const IconData numberSquareNine = IconData(0xe366, fontFamily: _regular, fontPackage: _package);
+
   /// `number-square-nine`, fill weight.
   static const IconData numberSquareNineFill = IconData(0xe366, fontFamily: _fill, fontPackage: _package);
+
   /// `number-square-one`: 1, numbers, numerals, digits, mathematics, arithmetic.
   static const IconData numberSquareOne = IconData(0xe36c, fontFamily: _regular, fontPackage: _package);
+
   /// `number-square-one`, fill weight.
   static const IconData numberSquareOneFill = IconData(0xe36c, fontFamily: _fill, fontPackage: _package);
+
   /// `number-square-seven`: 7, numbers, numerals, digits, mathematics, arithmetic.
   static const IconData numberSquareSeven = IconData(0xe372, fontFamily: _regular, fontPackage: _package);
+
   /// `number-square-seven`, fill weight.
   static const IconData numberSquareSevenFill = IconData(0xe372, fontFamily: _fill, fontPackage: _package);
+
   /// `number-square-six`: 6, numbers, numerals, digits, mathematics, arithmetic.
   static const IconData numberSquareSix = IconData(0xe378, fontFamily: _regular, fontPackage: _package);
+
   /// `number-square-six`, fill weight.
   static const IconData numberSquareSixFill = IconData(0xe378, fontFamily: _fill, fontPackage: _package);
+
   /// `number-square-three`: 3, numbers, numerals, digits, mathematics, arithmetic.
   static const IconData numberSquareThree = IconData(0xe37e, fontFamily: _regular, fontPackage: _package);
+
   /// `number-square-three`, fill weight.
   static const IconData numberSquareThreeFill = IconData(0xe37e, fontFamily: _fill, fontPackage: _package);
+
   /// `number-square-two`: 2, numbers, numerals, digits, mathematics, arithmetic.
   static const IconData numberSquareTwo = IconData(0xe384, fontFamily: _regular, fontPackage: _package);
+
   /// `number-square-two`, fill weight.
   static const IconData numberSquareTwoFill = IconData(0xe384, fontFamily: _fill, fontPackage: _package);
+
   /// `number-square-zero`: 0, numbers, numerals, digits, mathematics, arithmetic.
   static const IconData numberSquareZero = IconData(0xe38a, fontFamily: _regular, fontPackage: _package);
+
   /// `number-square-zero`, fill weight.
   static const IconData numberSquareZeroFill = IconData(0xe38a, fontFamily: _fill, fontPackage: _package);
+
   /// `number-three`: 3, numbers, numerals, digits, mathematics, arithmetic.
   static const IconData numberThree = IconData(0xe37a, fontFamily: _regular, fontPackage: _package);
+
   /// `number-three`, fill weight.
   static const IconData numberThreeFill = IconData(0xe37a, fontFamily: _fill, fontPackage: _package);
+
   /// `number-two`: 2, numbers, numerals, digits, mathematics, arithmetic.
   static const IconData numberTwo = IconData(0xe380, fontFamily: _regular, fontPackage: _package);
+
   /// `number-two`, fill weight.
   static const IconData numberTwoFill = IconData(0xe380, fontFamily: _fill, fontPackage: _package);
+
   /// `number-zero`: 0, numbers, numerals, digits, mathematics, arithmetic.
   static const IconData numberZero = IconData(0xe386, fontFamily: _regular, fontPackage: _package);
+
   /// `number-zero`, fill weight.
   static const IconData numberZeroFill = IconData(0xe386, fontFamily: _fill, fontPackage: _package);
+
   /// `numpad`: dialer, dialpad, call-center, telephone, landline, password.
   static const IconData numpad = IconData(0xe3c8, fontFamily: _regular, fontPackage: _package);
+
   /// `numpad`, fill weight.
   static const IconData numpadFill = IconData(0xe3c8, fontFamily: _fill, fontPackage: _package);
+
   /// `nut`: bolts, screws, machinery, tools, hexagon.
   static const IconData nut = IconData(0xe38c, fontFamily: _regular, fontPackage: _package);
+
   /// `nut`, fill weight.
   static const IconData nutFill = IconData(0xe38c, fontFamily: _fill, fontPackage: _package);
+
   /// `ny-times-logo`: nyt, new york times, logos, reading, writing, news.
   static const IconData nyTimesLogo = IconData(0xe646, fontFamily: _regular, fontPackage: _package);
+
   /// `ny-times-logo`, fill weight.
   static const IconData nyTimesLogoFill = IconData(0xe646, fontFamily: _fill, fontPackage: _package);
+
   /// `octagon`: 8, shapes, polygons.
   static const IconData octagon = IconData(0xe38e, fontFamily: _regular, fontPackage: _package);
+
   /// `octagon`, fill weight.
   static const IconData octagonFill = IconData(0xe38e, fontFamily: _fill, fontPackage: _package);
+
   /// `office-chair`: furniture, seat.
   static const IconData officeChair = IconData(0xea46, fontFamily: _regular, fontPackage: _package);
+
   /// `office-chair`, fill weight.
   static const IconData officeChairFill = IconData(0xea46, fontFamily: _fill, fontPackage: _package);
+
   /// `onigiri`: rice ball, japanese, food, restaurant.
   static const IconData onigiri = IconData(0xee2c, fontFamily: _regular, fontPackage: _package);
+
   /// `onigiri`, fill weight.
   static const IconData onigiriFill = IconData(0xee2c, fontFamily: _fill, fontPackage: _package);
+
   /// `open-ai-logo`: artificial intelligence, ai, chatgpt, llm, logos.
   static const IconData openAiLogo = IconData(0xe7d2, fontFamily: _regular, fontPackage: _package);
+
   /// `open-ai-logo`, fill weight.
   static const IconData openAiLogoFill = IconData(0xe7d2, fontFamily: _fill, fontPackage: _package);
+
   /// `option`: keyboard, shortcut, modifier.
   static const IconData option = IconData(0xe8a8, fontFamily: _regular, fontPackage: _package);
+
   /// `option`, fill weight.
   static const IconData optionFill = IconData(0xe8a8, fontFamily: _fill, fontPackage: _package);
+
   /// `orange`: food, fruit, juice, citrus, groceries, market.
   static const IconData orange = IconData(0xee40, fontFamily: _regular, fontPackage: _package);
+
   /// `orange`, fill weight.
   static const IconData orangeFill = IconData(0xee40, fontFamily: _fill, fontPackage: _package);
+
   /// `orange-slice`: food, fruit, juice, citrus, groceries, market.
   static const IconData orangeSlice = IconData(0xed36, fontFamily: _regular, fontPackage: _package);
+
   /// `orange-slice`, fill weight.
   static const IconData orangeSliceFill = IconData(0xed36, fontFamily: _fill, fontPackage: _package);
+
   /// `oven`: stove, stovetop, food, cooking, cuisine, kitchen.
   static const IconData oven = IconData(0xed8c, fontFamily: _regular, fontPackage: _package);
+
   /// `oven`, fill weight.
   static const IconData ovenFill = IconData(0xed8c, fontFamily: _fill, fontPackage: _package);
+
   /// `package`: packages, boxes, delivery, mail, postal service, bundles.
   static const IconData package = IconData(0xe390, fontFamily: _regular, fontPackage: _package);
+
   /// `package`, fill weight.
   static const IconData packageFill = IconData(0xe390, fontFamily: _fill, fontPackage: _package);
+
   /// `paint-brush`: colors, color picker, arts.
   static const IconData paintBrush = IconData(0xe6f0, fontFamily: _regular, fontPackage: _package);
+
   /// `paint-brush`, fill weight.
   static const IconData paintBrushFill = IconData(0xe6f0, fontFamily: _fill, fontPackage: _package);
+
   /// `paint-brush-broad`: fill, colors, color picker, arts.
   static const IconData paintBrushBroad = IconData(0xe590, fontFamily: _regular, fontPackage: _package);
+
   /// `paint-brush-broad`, fill weight.
   static const IconData paintBrushBroadFill = IconData(0xe590, fontFamily: _fill, fontPackage: _package);
+
   /// `paint-brush-household`: colors, color picker, arts.
   static const IconData paintBrushHousehold = IconData(0xe6f2, fontFamily: _regular, fontPackage: _package);
+
   /// `paint-brush-household`, fill weight.
   static const IconData paintBrushHouseholdFill = IconData(0xe6f2, fontFamily: _fill, fontPackage: _package);
+
   /// `paint-bucket`: paintbucket, colors, color picker, fill, arts.
   static const IconData paintBucket = IconData(0xe392, fontFamily: _regular, fontPackage: _package);
+
   /// `paint-bucket`, fill weight.
   static const IconData paintBucketFill = IconData(0xe392, fontFamily: _fill, fontPackage: _package);
+
   /// `paint-roller`: colors, color picker, fill, arts, theme.
   static const IconData paintRoller = IconData(0xe6f4, fontFamily: _regular, fontPackage: _package);
+
   /// `paint-roller`, fill weight.
   static const IconData paintRollerFill = IconData(0xe6f4, fontFamily: _fill, fontPackage: _package);
+
   /// `palette`: paint, colors, color picker, arts.
   static const IconData palette = IconData(0xe6c8, fontFamily: _regular, fontPackage: _package);
+
   /// `palette`, fill weight.
   static const IconData paletteFill = IconData(0xe6c8, fontFamily: _fill, fontPackage: _package);
+
   /// `panorama`: image, picture, photography, landscape, 360.
   static const IconData panorama = IconData(0xeaa2, fontFamily: _regular, fontPackage: _package);
+
   /// `panorama`, fill weight.
   static const IconData panoramaFill = IconData(0xeaa2, fontFamily: _fill, fontPackage: _package);
+
   /// `pants`: clothing, clothes, jeans.
   static const IconData pants = IconData(0xec88, fontFamily: _regular, fontPackage: _package);
+
   /// `pants`, fill weight.
   static const IconData pantsFill = IconData(0xec88, fontFamily: _fill, fontPackage: _package);
+
   /// `paper-plane`: mail, email, send, sent, messages, messaging.
   static const IconData paperPlane = IconData(0xe394, fontFamily: _regular, fontPackage: _package);
+
   /// `paper-plane`, fill weight.
   static const IconData paperPlaneFill = IconData(0xe394, fontFamily: _fill, fontPackage: _package);
+
   /// `paper-plane-right`: mail, email, send, sent, messages, messaging.
   static const IconData paperPlaneRight = IconData(0xe396, fontFamily: _regular, fontPackage: _package);
+
   /// `paper-plane-right`, fill weight.
   static const IconData paperPlaneRightFill = IconData(0xe396, fontFamily: _fill, fontPackage: _package);
+
   /// `paper-plane-tilt`: mail, email, send, sent, messages, messaging.
   static const IconData paperPlaneTilt = IconData(0xe398, fontFamily: _regular, fontPackage: _package);
+
   /// `paper-plane-tilt`, fill weight.
   static const IconData paperPlaneTiltFill = IconData(0xe398, fontFamily: _fill, fontPackage: _package);
+
   /// `paperclip`: attachments, mail, email, office.
   static const IconData paperclip = IconData(0xe39a, fontFamily: _regular, fontPackage: _package);
+
   /// `paperclip`, fill weight.
   static const IconData paperclipFill = IconData(0xe39a, fontFamily: _fill, fontPackage: _package);
+
   /// `paperclip-horizontal`: attachments, mail, email, office.
   static const IconData paperclipHorizontal = IconData(0xe592, fontFamily: _regular, fontPackage: _package);
+
   /// `paperclip-horizontal`, fill weight.
   static const IconData paperclipHorizontalFill = IconData(0xe592, fontFamily: _fill, fontPackage: _package);
+
   /// `parachute`: skydiving, safety.
   static const IconData parachute = IconData(0xea7c, fontFamily: _regular, fontPackage: _package);
+
   /// `parachute`, fill weight.
   static const IconData parachuteFill = IconData(0xea7c, fontFamily: _fill, fontPackage: _package);
+
   /// `paragraph`: pilcrow.
   static const IconData paragraph = IconData(0xe960, fontFamily: _regular, fontPackage: _package);
+
   /// `paragraph`, fill weight.
   static const IconData paragraphFill = IconData(0xe960, fontFamily: _fill, fontPackage: _package);
+
   /// `parallelogram`: shapes, bandcamp, logos.
   static const IconData parallelogram = IconData(0xecc6, fontFamily: _regular, fontPackage: _package);
+
   /// `parallelogram`, fill weight.
   static const IconData parallelogramFill = IconData(0xecc6, fontFamily: _fill, fontPackage: _package);
+
   /// `park`: bench, outdoors.
   static const IconData park = IconData(0xecb2, fontFamily: _regular, fontPackage: _package);
+
   /// `park`, fill weight.
   static const IconData parkFill = IconData(0xecb2, fontFamily: _fill, fontPackage: _package);
+
   /// `password`: security, secured, authentication, authenticated, login, locked.
   static const IconData password = IconData(0xe752, fontFamily: _regular, fontPackage: _package);
+
   /// `password`, fill weight.
   static const IconData passwordFill = IconData(0xe752, fontFamily: _fill, fontPackage: _package);
+
   /// `path`: transit, travel, trail, gps, navigation, route.
   static const IconData path = IconData(0xe39c, fontFamily: _regular, fontPackage: _package);
+
   /// `path`, fill weight.
   static const IconData pathFill = IconData(0xe39c, fontFamily: _fill, fontPackage: _package);
+
   /// `patreon-logo`: crowdfunding, logos.
   static const IconData patreonLogo = IconData(0xe98a, fontFamily: _regular, fontPackage: _package);
+
   /// `patreon-logo`, fill weight.
   static const IconData patreonLogoFill = IconData(0xe98a, fontFamily: _fill, fontPackage: _package);
+
   /// `pause`: music, audio, resume, start, stop.
   static const IconData pause = IconData(0xe39e, fontFamily: _regular, fontPackage: _package);
+
   /// `pause`, fill weight.
   static const IconData pauseFill = IconData(0xe39e, fontFamily: _fill, fontPackage: _package);
+
   /// `pause-circle`: music, audio, resume, start, stop, round.
   static const IconData pauseCircle = IconData(0xe3a0, fontFamily: _regular, fontPackage: _package);
+
   /// `pause-circle`, fill weight.
   static const IconData pauseCircleFill = IconData(0xe3a0, fontFamily: _fill, fontPackage: _package);
+
   /// `paw-print`: pets, pet store, pet shop, animals, cat, dog.
   static const IconData pawPrint = IconData(0xe648, fontFamily: _regular, fontPackage: _package);
+
   /// `paw-print`, fill weight.
   static const IconData pawPrintFill = IconData(0xe648, fontFamily: _fill, fontPackage: _package);
+
   /// `paypal-logo`: payments, paying, purchase, logos.
   static const IconData paypalLogo = IconData(0xe98c, fontFamily: _regular, fontPackage: _package);
+
   /// `paypal-logo`, fill weight.
   static const IconData paypalLogoFill = IconData(0xe98c, fontFamily: _fill, fontPackage: _package);
+
   /// `peace`: love, hippies, peace sign, symbols.
   static const IconData peace = IconData(0xe3a2, fontFamily: _regular, fontPackage: _package);
+
   /// `peace`, fill weight.
   static const IconData peaceFill = IconData(0xe3a2, fontFamily: _fill, fontPackage: _package);
+
   /// `pen`: ink, write, writing, editing, sign, signature.
   static const IconData pen = IconData(0xe3aa, fontFamily: _regular, fontPackage: _package);
+
   /// `pen`, fill weight.
   static const IconData penFill = IconData(0xe3aa, fontFamily: _fill, fontPackage: _package);
+
   /// `pen-nib`: ink, write, writing, editing, sign, signature.
   static const IconData penNib = IconData(0xe3ac, fontFamily: _regular, fontPackage: _package);
+
   /// `pen-nib`, fill weight.
   static const IconData penNibFill = IconData(0xe3ac, fontFamily: _fill, fontPackage: _package);
+
   /// `pen-nib-straight`: ink, write, writing, editing, sign, signature.
   static const IconData penNibStraight = IconData(0xe64a, fontFamily: _regular, fontPackage: _package);
+
   /// `pen-nib-straight`, fill weight.
   static const IconData penNibStraightFill = IconData(0xe64a, fontFamily: _fill, fontPackage: _package);
+
   /// `pencil`: write, writing, editing, sign, signature.
   static const IconData pencil = IconData(0xe3ae, fontFamily: _regular, fontPackage: _package);
+
   /// `pencil`, fill weight.
   static const IconData pencilFill = IconData(0xe3ae, fontFamily: _fill, fontPackage: _package);
+
   /// `pencil-circle`: write, writing, editing, sign, signature.
   static const IconData pencilCircle = IconData(0xe3b0, fontFamily: _regular, fontPackage: _package);
+
   /// `pencil-circle`, fill weight.
   static const IconData pencilCircleFill = IconData(0xe3b0, fontFamily: _fill, fontPackage: _package);
+
   /// `pencil-line`: write, writing, editing, sign, signature.
   static const IconData pencilLine = IconData(0xe3b2, fontFamily: _regular, fontPackage: _package);
+
   /// `pencil-line`, fill weight.
   static const IconData pencilLineFill = IconData(0xe3b2, fontFamily: _fill, fontPackage: _package);
+
   /// `pencil-ruler`: drawing, drafting, construction, tools.
   static const IconData pencilRuler = IconData(0xe906, fontFamily: _regular, fontPackage: _package);
+
   /// `pencil-ruler`, fill weight.
   static const IconData pencilRulerFill = IconData(0xe906, fontFamily: _fill, fontPackage: _package);
+
   /// `pencil-simple`: write, writing, editing, sign, signature.
   static const IconData pencilSimple = IconData(0xe3b4, fontFamily: _regular, fontPackage: _package);
+
   /// `pencil-simple`, fill weight.
   static const IconData pencilSimpleFill = IconData(0xe3b4, fontFamily: _fill, fontPackage: _package);
+
   /// `pencil-simple-line`: write, writing, editing, sign, signature.
   static const IconData pencilSimpleLine = IconData(0xebc6, fontFamily: _regular, fontPackage: _package);
+
   /// `pencil-simple-line`, fill weight.
   static const IconData pencilSimpleLineFill = IconData(0xebc6, fontFamily: _fill, fontPackage: _package);
+
   /// `pencil-simple-slash`: read-only, write, writing, editing.
   static const IconData pencilSimpleSlash = IconData(0xecf6, fontFamily: _regular, fontPackage: _package);
+
   /// `pencil-simple-slash`, fill weight.
   static const IconData pencilSimpleSlashFill = IconData(0xecf6, fontFamily: _fill, fontPackage: _package);
+
   /// `pencil-slash`: read-only, write, writing, editing.
   static const IconData pencilSlash = IconData(0xecf8, fontFamily: _regular, fontPackage: _package);
+
   /// `pencil-slash`, fill weight.
   static const IconData pencilSlashFill = IconData(0xecf8, fontFamily: _fill, fontPackage: _package);
+
   /// `pentagon`: shapes, polygons, 5.
   static const IconData pentagon = IconData(0xec7e, fontFamily: _regular, fontPackage: _package);
+
   /// `pentagon`, fill weight.
   static const IconData pentagonFill = IconData(0xec7e, fontFamily: _fill, fontPackage: _package);
+
   /// `pentagram`: star, wicca, satan, satanism, religion, spirituality.
   static const IconData pentagram = IconData(0xec5c, fontFamily: _regular, fontPackage: _package);
+
   /// `pentagram`, fill weight.
   static const IconData pentagramFill = IconData(0xec5c, fontFamily: _fill, fontPackage: _package);
+
   /// `pepper`: food, spicy, chile, vegetable.
   static const IconData pepper = IconData(0xe94a, fontFamily: _regular, fontPackage: _package);
+
   /// `pepper`, fill weight.
   static const IconData pepperFill = IconData(0xe94a, fontFamily: _fill, fontPackage: _package);
+
   /// `percent`: %, percentage, percentile, ratio, delta, mathematics.
   static const IconData percent = IconData(0xe3b6, fontFamily: _regular, fontPackage: _package);
+
   /// `percent`, fill weight.
   static const IconData percentFill = IconData(0xe3b6, fontFamily: _fill, fontPackage: _package);
+
   /// `person`: walking, human, woman, man, body, transit.
   static const IconData person = IconData(0xe3a8, fontFamily: _regular, fontPackage: _package);
+
   /// `person`, fill weight.
   static const IconData personFill = IconData(0xe3a8, fontFamily: _fill, fontPackage: _package);
+
   /// `person-arms-spread`: accessibility, vitruvian, stretch, sports.
   static const IconData personArmsSpread = IconData(0xecfe, fontFamily: _regular, fontPackage: _package);
+
   /// `person-arms-spread`, fill weight.
   static const IconData personArmsSpreadFill = IconData(0xecfe, fontFamily: _fill, fontPackage: _package);
+
   /// `person-simple`: pedestrian, walking, human, woman, man, body.
   static const IconData personSimple = IconData(0xe72e, fontFamily: _regular, fontPackage: _package);
+
   /// `person-simple`, fill weight.
   static const IconData personSimpleFill = IconData(0xe72e, fontFamily: _fill, fontPackage: _package);
+
   /// `person-simple-bike`: pedestrian, biking, bicycle, human, woman, man.
   static const IconData personSimpleBike = IconData(0xe734, fontFamily: _regular, fontPackage: _package);
+
   /// `person-simple-bike`, fill weight.
   static const IconData personSimpleBikeFill = IconData(0xe734, fontFamily: _fill, fontPackage: _package);
+
   /// `person-simple-circle`: human, accessibility, a11y, vitruvius, vitruvian.
   static const IconData personSimpleCircle = IconData(0xee58, fontFamily: _regular, fontPackage: _package);
+
   /// `person-simple-circle`, fill weight.
   static const IconData personSimpleCircleFill = IconData(0xee58, fontFamily: _fill, fontPackage: _package);
+
   /// `person-simple-hike`: pedestrian, climbing, mountaineering, bouldering.
   static const IconData personSimpleHike = IconData(0xed54, fontFamily: _regular, fontPackage: _package);
+
   /// `person-simple-hike`, fill weight.
   static const IconData personSimpleHikeFill = IconData(0xed54, fontFamily: _fill, fontPackage: _package);
+
   /// `person-simple-run`: pedestrian, running, human, woman, man, body.
   static const IconData personSimpleRun = IconData(0xe730, fontFamily: _regular, fontPackage: _package);
+
   /// `person-simple-run`, fill weight.
   static const IconData personSimpleRunFill = IconData(0xe730, fontFamily: _fill, fontPackage: _package);
+
   /// `person-simple-ski`: sports, skiing, winter, mountain.
   static const IconData personSimpleSki = IconData(0xe71c, fontFamily: _regular, fontPackage: _package);
+
   /// `person-simple-ski`, fill weight.
   static const IconData personSimpleSkiFill = IconData(0xe71c, fontFamily: _fill, fontPackage: _package);
+
   /// `person-simple-snowboard`: sports, snowboarding, winter, mountain.
   static const IconData personSimpleSnowboard = IconData(0xe71e, fontFamily: _regular, fontPackage: _package);
+
   /// `person-simple-snowboard`, fill weight.
   static const IconData personSimpleSnowboardFill = IconData(0xe71e, fontFamily: _fill, fontPackage: _package);
+
   /// `person-simple-swim`: pedestrian, swimming, human, woman, man, body.
   static const IconData personSimpleSwim = IconData(0xe736, fontFamily: _regular, fontPackage: _package);
+
   /// `person-simple-swim`, fill weight.
   static const IconData personSimpleSwimFill = IconData(0xe736, fontFamily: _fill, fontPackage: _package);
+
   /// `person-simple-tai-chi`: mindfulness, martial arts, meditation, sports, exercise, yoga.
   static const IconData personSimpleTaiChi = IconData(0xed5c, fontFamily: _regular, fontPackage: _package);
+
   /// `person-simple-tai-chi`, fill weight.
   static const IconData personSimpleTaiChiFill = IconData(0xed5c, fontFamily: _fill, fontPackage: _package);
+
   /// `person-simple-throw`: pedestrian, tennis, human, woman, man, body.
   static const IconData personSimpleThrow = IconData(0xe732, fontFamily: _regular, fontPackage: _package);
+
   /// `person-simple-throw`, fill weight.
   static const IconData personSimpleThrowFill = IconData(0xe732, fontFamily: _fill, fontPackage: _package);
+
   /// `person-simple-walk`: pedestrian, walking, human, woman, man, body.
   static const IconData personSimpleWalk = IconData(0xe73a, fontFamily: _regular, fontPackage: _package);
+
   /// `person-simple-walk`, fill weight.
   static const IconData personSimpleWalkFill = IconData(0xe73a, fontFamily: _fill, fontPackage: _package);
+
   /// `perspective`: 3d, skew, warp, trapezoid.
   static const IconData perspective = IconData(0xebe6, fontFamily: _regular, fontPackage: _package);
+
   /// `perspective`, fill weight.
   static const IconData perspectiveFill = IconData(0xebe6, fontFamily: _fill, fontPackage: _package);
+
   /// `phone`: calls, telephone, landline, talk.
   static const IconData phone = IconData(0xe3b8, fontFamily: _regular, fontPackage: _package);
+
   /// `phone`, fill weight.
   static const IconData phoneFill = IconData(0xe3b8, fontFamily: _fill, fontPackage: _package);
+
   /// `phone-call`: calls, calling, ringing, telephone, landline, talk.
   static const IconData phoneCall = IconData(0xe3ba, fontFamily: _regular, fontPackage: _package);
+
   /// `phone-call`, fill weight.
   static const IconData phoneCallFill = IconData(0xe3ba, fontFamily: _fill, fontPackage: _package);
+
   /// `phone-disconnect`: calls, hang up, disconnected, telephone, landline, talk.
   static const IconData phoneDisconnect = IconData(0xe3bc, fontFamily: _regular, fontPackage: _package);
+
   /// `phone-disconnect`, fill weight.
   static const IconData phoneDisconnectFill = IconData(0xe3bc, fontFamily: _fill, fontPackage: _package);
+
   /// `phone-incoming`: calls, calling, telephone, landline, talk.
   static const IconData phoneIncoming = IconData(0xe3be, fontFamily: _regular, fontPackage: _package);
+
   /// `phone-incoming`, fill weight.
   static const IconData phoneIncomingFill = IconData(0xe3be, fontFamily: _fill, fontPackage: _package);
+
   /// `phone-list`: calls, call-center, telephone, landline, talk.
   static const IconData phoneList = IconData(0xe3cc, fontFamily: _regular, fontPackage: _package);
+
   /// `phone-list`, fill weight.
   static const IconData phoneListFill = IconData(0xe3cc, fontFamily: _fill, fontPackage: _package);
+
   /// `phone-outgoing`: calls, calling, telephone, landline, talk.
   static const IconData phoneOutgoing = IconData(0xe3c0, fontFamily: _regular, fontPackage: _package);
+
   /// `phone-outgoing`, fill weight.
   static const IconData phoneOutgoingFill = IconData(0xe3c0, fontFamily: _fill, fontPackage: _package);
+
   /// `phone-pause`: calls, hold, call-center, telephone, landline, talk.
   static const IconData phonePause = IconData(0xe3ca, fontFamily: _regular, fontPackage: _package);
+
   /// `phone-pause`, fill weight.
   static const IconData phonePauseFill = IconData(0xe3ca, fontFamily: _fill, fontPackage: _package);
+
   /// `phone-plus`: calls, telephone, landline, talk, conference, add.
   static const IconData phonePlus = IconData(0xec56, fontFamily: _regular, fontPackage: _package);
+
   /// `phone-plus`, fill weight.
   static const IconData phonePlusFill = IconData(0xec56, fontFamily: _fill, fontPackage: _package);
+
   /// `phone-slash`: calls, disabled, disconnected, telephone, landline, talk.
   static const IconData phoneSlash = IconData(0xe3c2, fontFamily: _regular, fontPackage: _package);
+
   /// `phone-slash`, fill weight.
   static const IconData phoneSlashFill = IconData(0xe3c2, fontFamily: _fill, fontPackage: _package);
+
   /// `phone-transfer`: calls, call-center, telephone, landline, talk.
   static const IconData phoneTransfer = IconData(0xe3c6, fontFamily: _regular, fontPackage: _package);
+
   /// `phone-transfer`, fill weight.
   static const IconData phoneTransferFill = IconData(0xe3c6, fontFamily: _fill, fontPackage: _package);
+
   /// `phone-x`: calls, missed, errors, telephone, landline, talk.
   static const IconData phoneX = IconData(0xe3c4, fontFamily: _regular, fontPackage: _package);
+
   /// `phone-x`, fill weight.
   static const IconData phoneXFill = IconData(0xe3c4, fontFamily: _fill, fontPackage: _package);
+
   /// `phosphor-logo`: logos.
   static const IconData phosphorLogo = IconData(0xe3ce, fontFamily: _regular, fontPackage: _package);
+
   /// `phosphor-logo`, fill weight.
   static const IconData phosphorLogoFill = IconData(0xe3ce, fontFamily: _fill, fontPackage: _package);
+
   /// `pi`: π, symbol, mathematics, circle.
   static const IconData pi = IconData(0xec80, fontFamily: _regular, fontPackage: _package);
+
   /// `pi`, fill weight.
   static const IconData piFill = IconData(0xec80, fontFamily: _fill, fontPackage: _package);
+
   /// `piano-keys`: music, instrument, keyboard.
   static const IconData pianoKeys = IconData(0xe9c8, fontFamily: _regular, fontPackage: _package);
+
   /// `piano-keys`, fill weight.
   static const IconData pianoKeysFill = IconData(0xe9c8, fontFamily: _fill, fontPackage: _package);
+
   /// `picnic-table`: bench, park, outdoors.
   static const IconData picnicTable = IconData(0xee26, fontFamily: _regular, fontPackage: _package);
+
   /// `picnic-table`, fill weight.
   static const IconData picnicTableFill = IconData(0xee26, fontFamily: _fill, fontPackage: _package);
+
   /// `picture-in-picture`: pip, pop-out, minimize, maximize.
   static const IconData pictureInPicture = IconData(0xe64c, fontFamily: _regular, fontPackage: _package);
+
   /// `picture-in-picture`, fill weight.
   static const IconData pictureInPictureFill = IconData(0xe64c, fontFamily: _fill, fontPackage: _package);
+
   /// `piggy-bank`: savings, deposit, money, coins.
   static const IconData piggyBank = IconData(0xea04, fontFamily: _regular, fontPackage: _package);
+
   /// `piggy-bank`, fill weight.
   static const IconData piggyBankFill = IconData(0xea04, fontFamily: _fill, fontPackage: _package);
+
   /// `pill`: capsule, medicine, rx, pharmacy, pharmacist, pharmaceuticals.
   static const IconData pill = IconData(0xe700, fontFamily: _regular, fontPackage: _package);
+
   /// `pill`, fill weight.
   static const IconData pillFill = IconData(0xe700, fontFamily: _fill, fontPackage: _package);
+
   /// `ping-pong`: sports, paddle.
   static const IconData pingPong = IconData(0xea42, fontFamily: _regular, fontPackage: _package);
+
   /// `ping-pong`, fill weight.
   static const IconData pingPongFill = IconData(0xea42, fontFamily: _fill, fontPackage: _package);
+
   /// `pint-glass`: water, beverage, drinks, beverages, food, dining.
   static const IconData pintGlass = IconData(0xedd0, fontFamily: _regular, fontPackage: _package);
+
   /// `pint-glass`, fill weight.
   static const IconData pintGlassFill = IconData(0xedd0, fontFamily: _fill, fontPackage: _package);
+
   /// `pinterest-logo`: logos, vision board, mood board, social media.
   static const IconData pinterestLogo = IconData(0xe64e, fontFamily: _regular, fontPackage: _package);
+
   /// `pinterest-logo`, fill weight.
   static const IconData pinterestLogoFill = IconData(0xe64e, fontFamily: _fill, fontPackage: _package);
+
   /// `pinwheel`: toys, whirligig.
   static const IconData pinwheel = IconData(0xeb9c, fontFamily: _regular, fontPackage: _package);
+
   /// `pinwheel`, fill weight.
   static const IconData pinwheelFill = IconData(0xeb9c, fontFamily: _fill, fontPackage: _package);
+
   /// `pipe`: tube, plumber, plumbing, construction.
   static const IconData pipe = IconData(0xed86, fontFamily: _regular, fontPackage: _package);
+
   /// `pipe`, fill weight.
   static const IconData pipeFill = IconData(0xed86, fontFamily: _fill, fontPackage: _package);
+
   /// `pipe-wrench`: plumber, plumbing, tools, construction.
   static const IconData pipeWrench = IconData(0xed88, fontFamily: _regular, fontPackage: _package);
+
   /// `pipe-wrench`, fill weight.
   static const IconData pipeWrenchFill = IconData(0xed88, fontFamily: _fill, fontPackage: _package);
+
   /// `pix-logo`: payments, paying, purchase, logos.
   static const IconData pixLogo = IconData(0xecc2, fontFamily: _regular, fontPackage: _package);
+
   /// `pix-logo`, fill weight.
   static const IconData pixLogoFill = IconData(0xecc2, fontFamily: _fill, fontPackage: _package);
+
   /// `pizza`: fast food, party, places, locations, restaurants, food.
   static const IconData pizza = IconData(0xe796, fontFamily: _regular, fontPackage: _package);
+
   /// `pizza`, fill weight.
   static const IconData pizzaFill = IconData(0xe796, fontFamily: _fill, fontPackage: _package);
+
   /// `placeholder`: empty, notdef, tofu, rectangle slash, missing.
   static const IconData placeholder = IconData(0xe650, fontFamily: _regular, fontPackage: _package);
+
   /// `placeholder`, fill weight.
   static const IconData placeholderFill = IconData(0xe650, fontFamily: _fill, fontPackage: _package);
+
   /// `planet`: saturn, world, globe, astronomy, space.
   static const IconData planet = IconData(0xe652, fontFamily: _regular, fontPackage: _package);
+
   /// `planet`, fill weight.
   static const IconData planetFill = IconData(0xe652, fontFamily: _fill, fontPackage: _package);
+
   /// `plant`: sprout, vegan, farm, farming, garden, gardening.
   static const IconData plant = IconData(0xebae, fontFamily: _regular, fontPackage: _package);
+
   /// `plant`, fill weight.
   static const IconData plantFill = IconData(0xebae, fontFamily: _fill, fontPackage: _package);
+
   /// `play`: music, audio, resume, start.
   static const IconData play = IconData(0xe3d0, fontFamily: _regular, fontPackage: _package);
+
   /// `play`, fill weight.
   static const IconData playFill = IconData(0xe3d0, fontFamily: _fill, fontPackage: _package);
+
   /// `play-circle`: music, audio, resume, start, round.
   static const IconData playCircle = IconData(0xe3d2, fontFamily: _regular, fontPackage: _package);
+
   /// `play-circle`, fill weight.
   static const IconData playCircleFill = IconData(0xe3d2, fontFamily: _fill, fontPackage: _package);
+
   /// `play-pause`: music, audio, resume, start, stop.
   static const IconData playPause = IconData(0xe8be, fontFamily: _regular, fontPackage: _package);
+
   /// `play-pause`, fill weight.
   static const IconData playPauseFill = IconData(0xe8be, fontFamily: _fill, fontPackage: _package);
+
   /// `playlist`: music, audio, queue.
   static const IconData playlist = IconData(0xe6aa, fontFamily: _regular, fontPackage: _package);
+
   /// `playlist`, fill weight.
   static const IconData playlistFill = IconData(0xe6aa, fontFamily: _fill, fontPackage: _package);
+
   /// `plug`: outlet, socket, plugin, integration.
   static const IconData plug = IconData(0xe946, fontFamily: _regular, fontPackage: _package);
+
   /// `plug`, fill weight.
   static const IconData plugFill = IconData(0xe946, fontFamily: _fill, fontPackage: _package);
+
   /// `plug-charging`: outlet, socket, plugin, integration, charge, charging.
   static const IconData plugCharging = IconData(0xeb5c, fontFamily: _regular, fontPackage: _package);
+
   /// `plug-charging`, fill weight.
   static const IconData plugChargingFill = IconData(0xeb5c, fontFamily: _fill, fontPackage: _package);
+
   /// `plugs`: outlet, socket, plugin, integration, disconnected.
   static const IconData plugs = IconData(0xeb56, fontFamily: _regular, fontPackage: _package);
+
   /// `plugs`, fill weight.
   static const IconData plugsFill = IconData(0xeb56, fontFamily: _fill, fontPackage: _package);
+
   /// `plugs-connected`: outlet, socket, plugin, integration.
   static const IconData plugsConnected = IconData(0xeb5a, fontFamily: _regular, fontPackage: _package);
+
   /// `plugs-connected`, fill weight.
   static const IconData plugsConnectedFill = IconData(0xeb5a, fontFamily: _fill, fontPackage: _package);
+
   /// `plus`: addition, sum, mathematics, arithmetic, calculator, +.
   static const IconData plus = IconData(0xe3d4, fontFamily: _regular, fontPackage: _package);
+
   /// `plus`, fill weight.
   static const IconData plusFill = IconData(0xe3d4, fontFamily: _fill, fontPackage: _package);
+
   /// `plus-circle`: addition, sum, mathematics, arithmetic, calculator, round.
   static const IconData plusCircle = IconData(0xe3d6, fontFamily: _regular, fontPackage: _package);
+
   /// `plus-circle`, fill weight.
   static const IconData plusCircleFill = IconData(0xe3d6, fontFamily: _fill, fontPackage: _package);
+
   /// `plus-minus`: plus or minus, plus/minus, add/subtract, addition, sum, subtraction.
   static const IconData plusMinus = IconData(0xe3d8, fontFamily: _regular, fontPackage: _package);
+
   /// `plus-minus`, fill weight.
   static const IconData plusMinusFill = IconData(0xe3d8, fontFamily: _fill, fontPackage: _package);
+
   /// `plus-square`: addition, sum, mathematics, arithmetic, calculator, +.
   static const IconData plusSquare = IconData(0xed4a, fontFamily: _regular, fontPackage: _package);
+
   /// `plus-square`, fill weight.
   static const IconData plusSquareFill = IconData(0xed4a, fontFamily: _fill, fontPackage: _package);
+
   /// `poker-chip`: chips, tokens, cards, gambling, casino.
   static const IconData pokerChip = IconData(0xe594, fontFamily: _regular, fontPackage: _package);
+
   /// `poker-chip`, fill weight.
   static const IconData pokerChipFill = IconData(0xe594, fontFamily: _fill, fontPackage: _package);
+
   /// `police-car`: vehicles, cars, automobiles, law enforcement.
   static const IconData policeCar = IconData(0xec4a, fontFamily: _regular, fontPackage: _package);
+
   /// `police-car`, fill weight.
   static const IconData policeCarFill = IconData(0xec4a, fontFamily: _fill, fontPackage: _package);
+
   /// `polygon`: shapes, drawing.
   static const IconData polygon = IconData(0xe6d0, fontFamily: _regular, fontPackage: _package);
+
   /// `polygon`, fill weight.
   static const IconData polygonFill = IconData(0xe6d0, fontFamily: _fill, fontPackage: _package);
+
   /// `popcorn`: food, movies, theater.
   static const IconData popcorn = IconData(0xeb4e, fontFamily: _regular, fontPackage: _package);
+
   /// `popcorn`, fill weight.
   static const IconData popcornFill = IconData(0xeb4e, fontFamily: _fill, fontPackage: _package);
+
   /// `popsicle`: ice cream, dessert, summer, food.
   static const IconData popsicle = IconData(0xebbe, fontFamily: _regular, fontPackage: _package);
+
   /// `popsicle`, fill weight.
   static const IconData popsicleFill = IconData(0xebbe, fontFamily: _fill, fontPackage: _package);
+
   /// `potted-plant`: sprout, vegan, garden, gardening.
   static const IconData pottedPlant = IconData(0xec22, fontFamily: _regular, fontPackage: _package);
+
   /// `potted-plant`, fill weight.
   static const IconData pottedPlantFill = IconData(0xec22, fontFamily: _fill, fontPackage: _package);
+
   /// `power`: charged, charger, charging, on, off, on/off.
   static const IconData power = IconData(0xe3da, fontFamily: _regular, fontPackage: _package);
+
   /// `power`, fill weight.
   static const IconData powerFill = IconData(0xe3da, fontFamily: _fill, fontPackage: _package);
+
   /// `prescription`: rx, medicine, drugs, pharmacy, pharmacist, pharmaceuticals.
   static const IconData prescription = IconData(0xe7a2, fontFamily: _regular, fontPackage: _package);
+
   /// `prescription`, fill weight.
   static const IconData prescriptionFill = IconData(0xe7a2, fontFamily: _fill, fontPackage: _package);
+
   /// `presentation`: whiteboard, flipchart, charts, statistics, analyze, analysis.
   static const IconData presentation = IconData(0xe654, fontFamily: _regular, fontPackage: _package);
+
   /// `presentation`, fill weight.
   static const IconData presentationFill = IconData(0xe654, fontFamily: _fill, fontPackage: _package);
+
   /// `presentation-chart`: whiteboard, flipchart, graphs, graphing, charts, statistics.
   static const IconData presentationChart = IconData(0xe656, fontFamily: _regular, fontPackage: _package);
+
   /// `presentation-chart`, fill weight.
   static const IconData presentationChartFill = IconData(0xe656, fontFamily: _fill, fontPackage: _package);
+
   /// `printer`: printing.
   static const IconData printer = IconData(0xe3dc, fontFamily: _regular, fontPackage: _package);
+
   /// `printer`, fill weight.
   static const IconData printerFill = IconData(0xe3dc, fontFamily: _fill, fontPackage: _package);
+
   /// `prohibit`: forbidden, prohibited, cancelled, prevent, stop, do not enter.
   static const IconData prohibit = IconData(0xe3de, fontFamily: _regular, fontPackage: _package);
+
   /// `prohibit`, fill weight.
   static const IconData prohibitFill = IconData(0xe3de, fontFamily: _fill, fontPackage: _package);
+
   /// `prohibit-inset`: forbidden, prohibited, cancelled, prevent, stop, do not enter.
   static const IconData prohibitInset = IconData(0xe3e0, fontFamily: _regular, fontPackage: _package);
+
   /// `prohibit-inset`, fill weight.
   static const IconData prohibitInsetFill = IconData(0xe3e0, fontFamily: _fill, fontPackage: _package);
+
   /// `projector-screen`: projection, presentation, slideshow, movies, charts, statistics.
   static const IconData projectorScreen = IconData(0xe658, fontFamily: _regular, fontPackage: _package);
+
   /// `projector-screen`, fill weight.
   static const IconData projectorScreenFill = IconData(0xe658, fontFamily: _fill, fontPackage: _package);
+
   /// `projector-screen-chart`: projection, presentation, slideshow, graphs, graphing, charts.
   static const IconData projectorScreenChart = IconData(0xe65a, fontFamily: _regular, fontPackage: _package);
+
   /// `projector-screen-chart`, fill weight.
   static const IconData projectorScreenChartFill = IconData(0xe65a, fontFamily: _fill, fontPackage: _package);
+
   /// `pulse`: activity, heartbeat, medical, ecg, ekg, vitals.
   static const IconData pulse = IconData(0xe000, fontFamily: _regular, fontPackage: _package);
+
   /// `pulse`, fill weight.
   static const IconData pulseFill = IconData(0xe000, fontFamily: _fill, fontPackage: _package);
+
   /// `push-pin`: favorites, favorited, pushpin.
   static const IconData pushPin = IconData(0xe3e2, fontFamily: _regular, fontPackage: _package);
+
   /// `push-pin`, fill weight.
   static const IconData pushPinFill = IconData(0xe3e2, fontFamily: _fill, fontPackage: _package);
+
   /// `push-pin-simple`: favorites, favorited, pushpin.
   static const IconData pushPinSimple = IconData(0xe65c, fontFamily: _regular, fontPackage: _package);
+
   /// `push-pin-simple`, fill weight.
   static const IconData pushPinSimpleFill = IconData(0xe65c, fontFamily: _fill, fontPackage: _package);
+
   /// `push-pin-simple-slash`: favorites, favorited, pushpin, disabled.
   static const IconData pushPinSimpleSlash = IconData(0xe65e, fontFamily: _regular, fontPackage: _package);
+
   /// `push-pin-simple-slash`, fill weight.
   static const IconData pushPinSimpleSlashFill = IconData(0xe65e, fontFamily: _fill, fontPackage: _package);
+
   /// `push-pin-slash`: favorites, favorited, pushpin, disabled.
   static const IconData pushPinSlash = IconData(0xe3e4, fontFamily: _regular, fontPackage: _package);
+
   /// `push-pin-slash`, fill weight.
   static const IconData pushPinSlashFill = IconData(0xe3e4, fontFamily: _fill, fontPackage: _package);
+
   /// `puzzle-piece`: board game, element, component, extension, plugin.
   static const IconData puzzlePiece = IconData(0xe596, fontFamily: _regular, fontPackage: _package);
+
   /// `puzzle-piece`, fill weight.
   static const IconData puzzlePieceFill = IconData(0xe596, fontFamily: _fill, fontPackage: _package);
+
   /// `qr-code`: upc, barcode, products, shopping, scanner.
   static const IconData qrCode = IconData(0xe3e6, fontFamily: _regular, fontPackage: _package);
+
   /// `qr-code`, fill weight.
   static const IconData qrCodeFill = IconData(0xe3e6, fontFamily: _fill, fontPackage: _package);
+
   /// `question`: information, help, support, questions.
   static const IconData question = IconData(0xe3e8, fontFamily: _regular, fontPackage: _package);
+
   /// `question`, fill weight.
   static const IconData questionFill = IconData(0xe3e8, fontFamily: _fill, fontPackage: _package);
+
   /// `question-mark`: ?, information, help, support, questions, punctuation.
   static const IconData questionMark = IconData(0xe3e9, fontFamily: _regular, fontPackage: _package);
+
   /// `question-mark`, fill weight.
   static const IconData questionMarkFill = IconData(0xe3e9, fontFamily: _fill, fontPackage: _package);
+
   /// `queue`: music, audio, playlist.
   static const IconData queue = IconData(0xe6ac, fontFamily: _regular, fontPackage: _package);
+
   /// `queue`, fill weight.
   static const IconData queueFill = IconData(0xe6ac, fontFamily: _fill, fontPackage: _package);
+
   /// `quotes`: quoations, quotation marks, double-quotes, writing, books.
   static const IconData quotes = IconData(0xe660, fontFamily: _regular, fontPackage: _package);
+
   /// `quotes`, fill weight.
   static const IconData quotesFill = IconData(0xe660, fontFamily: _fill, fontPackage: _package);
+
   /// `rabbit`: hare, fast, animal.
   static const IconData rabbit = IconData(0xeac2, fontFamily: _regular, fontPackage: _package);
+
   /// `rabbit`, fill weight.
   static const IconData rabbitFill = IconData(0xeac2, fontFamily: _fill, fontPackage: _package);
+
   /// `racquet`: sports, tennis, squash, pickleball.
   static const IconData racquet = IconData(0xee02, fontFamily: _regular, fontPackage: _package);
+
   /// `racquet`, fill weight.
   static const IconData racquetFill = IconData(0xee02, fontFamily: _fill, fontPackage: _package);
+
   /// `radical`: √, radix, radicand, square root, squareroot, mathematics.
   static const IconData radical = IconData(0xe3ea, fontFamily: _regular, fontPackage: _package);
+
   /// `radical`, fill weight.
   static const IconData radicalFill = IconData(0xe3ea, fontFamily: _fill, fontPackage: _package);
+
   /// `radio`: broadcast, fm, am, xm, transmitter, receiver.
   static const IconData radio = IconData(0xe77e, fontFamily: _regular, fontPackage: _package);
+
   /// `radio`, fill weight.
   static const IconData radioFill = IconData(0xe77e, fontFamily: _fill, fontPackage: _package);
+
   /// `radio-button`: input, checkbox, checked.
   static const IconData radioButton = IconData(0xeb08, fontFamily: _regular, fontPackage: _package);
+
   /// `radio-button`, fill weight.
   static const IconData radioButtonFill = IconData(0xeb08, fontFamily: _fill, fontPackage: _package);
+
   /// `radioactive`: radiation, danger, warning, nuclear, atomic.
   static const IconData radioactive = IconData(0xe9dc, fontFamily: _regular, fontPackage: _package);
+
   /// `radioactive`, fill weight.
   static const IconData radioactiveFill = IconData(0xe9dc, fontFamily: _fill, fontPackage: _package);
+
   /// `rainbow`: meteorology, rainstorm, arc, pride, lgbtq+, leprechaun.
   static const IconData rainbow = IconData(0xe598, fontFamily: _regular, fontPackage: _package);
+
   /// `rainbow`, fill weight.
   static const IconData rainbowFill = IconData(0xe598, fontFamily: _fill, fontPackage: _package);
+
   /// `rainbow-cloud`: meteorology, rainstorm, cloudy, partly cloudy, partly sunny, pride.
   static const IconData rainbowCloud = IconData(0xe59a, fontFamily: _regular, fontPackage: _package);
+
   /// `rainbow-cloud`, fill weight.
   static const IconData rainbowCloudFill = IconData(0xe59a, fontFamily: _fill, fontPackage: _package);
+
   /// `ranking`: medal, rank, leaderboard, winner, sports.
   static const IconData ranking = IconData(0xed62, fontFamily: _regular, fontPackage: _package);
+
   /// `ranking`, fill weight.
   static const IconData rankingFill = IconData(0xed62, fontFamily: _fill, fontPackage: _package);
+
   /// `read-cv-logo`: resume, jobs, logos.
   static const IconData readCvLogo = IconData(0xed0c, fontFamily: _regular, fontPackage: _package);
+
   /// `read-cv-logo`, fill weight.
   static const IconData readCvLogoFill = IconData(0xed0c, fontFamily: _fill, fontPackage: _package);
+
   /// `receipt`: purchase, money, clipping, expense.
   static const IconData receipt = IconData(0xe3ec, fontFamily: _regular, fontPackage: _package);
+
   /// `receipt`, fill weight.
   static const IconData receiptFill = IconData(0xe3ec, fontFamily: _fill, fontPackage: _package);
+
   /// `receipt-x`: purchase, money, clipping, expense, cancel.
   static const IconData receiptX = IconData(0xed40, fontFamily: _regular, fontPackage: _package);
+
   /// `receipt-x`, fill weight.
   static const IconData receiptXFill = IconData(0xed40, fontFamily: _fill, fontPackage: _package);
+
   /// `record`: music, audio, recording, recorder, voice memo.
   static const IconData record = IconData(0xe3ee, fontFamily: _regular, fontPackage: _package);
+
   /// `record`, fill weight.
   static const IconData recordFill = IconData(0xe3ee, fontFamily: _fill, fontPackage: _package);
+
   /// `rectangle`: 4, shapes, polygons, box.
   static const IconData rectangle = IconData(0xe3f0, fontFamily: _regular, fontPackage: _package);
+
   /// `rectangle`, fill weight.
   static const IconData rectangleFill = IconData(0xe3f0, fontFamily: _fill, fontPackage: _package);
+
   /// `rectangle-dashed`: 4, shapes, polygons, box, missing.
   static const IconData rectangleDashed = IconData(0xe3f2, fontFamily: _regular, fontPackage: _package);
+
   /// `rectangle-dashed`, fill weight.
   static const IconData rectangleDashedFill = IconData(0xe3f2, fontFamily: _fill, fontPackage: _package);
+
   /// `recycle`: recycling, trash, environmental, green.
   static const IconData recycle = IconData(0xe75a, fontFamily: _regular, fontPackage: _package);
+
   /// `recycle`, fill weight.
   static const IconData recycleFill = IconData(0xe75a, fontFamily: _fill, fontPackage: _package);
+
   /// `reddit-logo`: logos, subreddit, snoo, social media.
   static const IconData redditLogo = IconData(0xe59c, fontFamily: _regular, fontPackage: _package);
+
   /// `reddit-logo`, fill weight.
   static const IconData redditLogoFill = IconData(0xe59c, fontFamily: _fill, fontPackage: _package);
+
   /// `repeat`: music, audio, recycle.
   static const IconData repeat = IconData(0xe3f6, fontFamily: _regular, fontPackage: _package);
+
   /// `repeat`, fill weight.
   static const IconData repeatFill = IconData(0xe3f6, fontFamily: _fill, fontPackage: _package);
+
   /// `repeat-once`: music, audio, recycle.
   static const IconData repeatOnce = IconData(0xe3f8, fontFamily: _regular, fontPackage: _package);
+
   /// `repeat-once`, fill weight.
   static const IconData repeatOnceFill = IconData(0xe3f8, fontFamily: _fill, fontPackage: _package);
+
   /// `replit-logo`: logos, ide, editor, coding.
   static const IconData replitLogo = IconData(0xeb8a, fontFamily: _regular, fontPackage: _package);
+
   /// `replit-logo`, fill weight.
   static const IconData replitLogoFill = IconData(0xeb8a, fontFamily: _fill, fontPackage: _package);
+
   /// `resize`: maximize, expand, grow.
   static const IconData resize = IconData(0xed6e, fontFamily: _regular, fontPackage: _package);
+
   /// `resize`, fill weight.
   static const IconData resizeFill = IconData(0xed6e, fontFamily: _fill, fontPackage: _package);
+
   /// `rewind`: music, audio, seek, scrub, scan, skip.
   static const IconData rewind = IconData(0xe6a8, fontFamily: _regular, fontPackage: _package);
+
   /// `rewind`, fill weight.
   static const IconData rewindFill = IconData(0xe6a8, fontFamily: _fill, fontPackage: _package);
+
   /// `rewind-circle`: music, audio, seek, scrub, scan, skip.
   static const IconData rewindCircle = IconData(0xe3fa, fontFamily: _regular, fontPackage: _package);
+
   /// `rewind-circle`, fill weight.
   static const IconData rewindCircleFill = IconData(0xe3fa, fontFamily: _fill, fontPackage: _package);
+
   /// `road-horizon`: trip, drive, road, travel, transportation, highway.
   static const IconData roadHorizon = IconData(0xe838, fontFamily: _regular, fontPackage: _package);
+
   /// `road-horizon`, fill weight.
   static const IconData roadHorizonFill = IconData(0xe838, fontFamily: _fill, fontPackage: _package);
+
   /// `robot`: automaton, artificial intelligence, ai.
   static const IconData robot = IconData(0xe762, fontFamily: _regular, fontPackage: _package);
+
   /// `robot`, fill weight.
   static const IconData robotFill = IconData(0xe762, fontFamily: _fill, fontPackage: _package);
+
   /// `rocket`: spaceship, launch, deployment, rocketship.
   static const IconData rocket = IconData(0xe3fc, fontFamily: _regular, fontPackage: _package);
+
   /// `rocket`, fill weight.
   static const IconData rocketFill = IconData(0xe3fc, fontFamily: _fill, fontPackage: _package);
+
   /// `rocket-launch`: spaceship, flying, blastoff, deployment, rocketship.
   static const IconData rocketLaunch = IconData(0xe3fe, fontFamily: _regular, fontPackage: _package);
+
   /// `rocket-launch`, fill weight.
   static const IconData rocketLaunchFill = IconData(0xe3fe, fontFamily: _fill, fontPackage: _package);
+
   /// `rows`: 2, shapes, polygons, box, stack, list.
   static const IconData rows = IconData(0xe5a2, fontFamily: _regular, fontPackage: _package);
+
   /// `rows`, fill weight.
   static const IconData rowsFill = IconData(0xe5a2, fontFamily: _fill, fontPackage: _package);
+
   /// `rows-plus-bottom`: 2, shapes, polygons, box, stack, list.
   static const IconData rowsPlusBottom = IconData(0xe59e, fontFamily: _regular, fontPackage: _package);
+
   /// `rows-plus-bottom`, fill weight.
   static const IconData rowsPlusBottomFill = IconData(0xe59e, fontFamily: _fill, fontPackage: _package);
+
   /// `rows-plus-top`: 2, shapes, polygons, box, stack, list.
   static const IconData rowsPlusTop = IconData(0xe5a0, fontFamily: _regular, fontPackage: _package);
+
   /// `rows-plus-top`, fill weight.
   static const IconData rowsPlusTopFill = IconData(0xe5a0, fontFamily: _fill, fontPackage: _package);
+
   /// `rss`: radio, broadcast, web feed, news, aggregator.
   static const IconData rss = IconData(0xe400, fontFamily: _regular, fontPackage: _package);
+
   /// `rss`, fill weight.
   static const IconData rssFill = IconData(0xe400, fontFamily: _fill, fontPackage: _package);
+
   /// `rss-simple`: radio, broadcast, web feed, news, aggregator.
   static const IconData rssSimple = IconData(0xe402, fontFamily: _regular, fontPackage: _package);
+
   /// `rss-simple`, fill weight.
   static const IconData rssSimpleFill = IconData(0xe402, fontFamily: _fill, fontPackage: _package);
+
   /// `rug`: tapestry, carpet.
   static const IconData rug = IconData(0xea1a, fontFamily: _regular, fontPackage: _package);
+
   /// `rug`, fill weight.
   static const IconData rugFill = IconData(0xea1a, fontFamily: _fill, fontPackage: _package);
+
   /// `ruler`: measure, scale, distance.
   static const IconData ruler = IconData(0xe6b8, fontFamily: _regular, fontPackage: _package);
+
   /// `ruler`, fill weight.
   static const IconData rulerFill = IconData(0xe6b8, fontFamily: _fill, fontPackage: _package);
+
   /// `sailboat`: sailing, ship, vehicles, transportation, sports, places.
   static const IconData sailboat = IconData(0xe78a, fontFamily: _regular, fontPackage: _package);
+
   /// `sailboat`, fill weight.
   static const IconData sailboatFill = IconData(0xe78a, fontFamily: _fill, fontPackage: _package);
+
   /// `scales`: measure, balance, law, justice, government.
   static const IconData scales = IconData(0xe750, fontFamily: _regular, fontPackage: _package);
+
   /// `scales`, fill weight.
   static const IconData scalesFill = IconData(0xe750, fontFamily: _fill, fontPackage: _package);
+
   /// `scan`: upc, barcode, products, shopping, scanner.
   static const IconData scan = IconData(0xebb6, fontFamily: _regular, fontPackage: _package);
+
   /// `scan`, fill weight.
   static const IconData scanFill = IconData(0xebb6, fontFamily: _fill, fontPackage: _package);
+
   /// `scan-smiley`: facial recognition, face unlock, scanner.
   static const IconData scanSmiley = IconData(0xebb4, fontFamily: _regular, fontPackage: _package);
+
   /// `scan-smiley`, fill weight.
   static const IconData scanSmileyFill = IconData(0xebb4, fontFamily: _fill, fontPackage: _package);
+
   /// `scissors`: cut, snip, clipboard.
   static const IconData scissors = IconData(0xeae0, fontFamily: _regular, fontPackage: _package);
+
   /// `scissors`, fill weight.
   static const IconData scissorsFill = IconData(0xeae0, fontFamily: _fill, fontPackage: _package);
+
   /// `scooter`: vehicles, transportation, travel, transit.
   static const IconData scooter = IconData(0xe820, fontFamily: _regular, fontPackage: _package);
+
   /// `scooter`, fill weight.
   static const IconData scooterFill = IconData(0xe820, fontFamily: _fill, fontPackage: _package);
+
   /// `screencast`: apple, airplay, screencasting, screen share, television, tv.
   static const IconData screencast = IconData(0xe404, fontFamily: _regular, fontPackage: _package);
+
   /// `screencast`, fill weight.
   static const IconData screencastFill = IconData(0xe404, fontFamily: _fill, fontPackage: _package);
+
   /// `screwdriver`: tools, construction, flathead, drill.
   static const IconData screwdriver = IconData(0xe86e, fontFamily: _regular, fontPackage: _package);
+
   /// `screwdriver`, fill weight.
   static const IconData screwdriverFill = IconData(0xe86e, fontFamily: _fill, fontPackage: _package);
+
   /// `scribble`: doodles, squiggle, drawing, sign, signature.
   static const IconData scribble = IconData(0xe806, fontFamily: _regular, fontPackage: _package);
+
   /// `scribble`, fill weight.
   static const IconData scribbleFill = IconData(0xe806, fontFamily: _fill, fontPackage: _package);
+
   /// `scribble-loop`: doodles, drawing, sign, signature.
   static const IconData scribbleLoop = IconData(0xe662, fontFamily: _regular, fontPackage: _package);
+
   /// `scribble-loop`, fill weight.
   static const IconData scribbleLoopFill = IconData(0xe662, fontFamily: _fill, fontPackage: _package);
+
   /// `scroll`: parchment, paper, script, spell, fantasy.
   static const IconData scroll = IconData(0xeb7a, fontFamily: _regular, fontPackage: _package);
+
   /// `scroll`, fill weight.
   static const IconData scrollFill = IconData(0xeb7a, fontFamily: _fill, fontPackage: _package);
+
   /// `seal`: badge, verified, verification, shapes, polygons, circle-wavy.
   static const IconData seal = IconData(0xe604, fontFamily: _regular, fontPackage: _package);
+
   /// `seal`, fill weight.
   static const IconData sealFill = IconData(0xe604, fontFamily: _fill, fontPackage: _package);
+
   /// `seal-check`: badge, verified, verification, shapes, polygons, circle-wavy.
   static const IconData sealCheck = IconData(0xe606, fontFamily: _regular, fontPackage: _package);
+
   /// `seal-check`, fill weight.
   static const IconData sealCheckFill = IconData(0xe606, fontFamily: _fill, fontPackage: _package);
+
   /// `seal-percent`: badge, discount, sale, shapes, polygons, circle-wavy.
   static const IconData sealPercent = IconData(0xe60a, fontFamily: _regular, fontPackage: _package);
+
   /// `seal-percent`, fill weight.
   static const IconData sealPercentFill = IconData(0xe60a, fontFamily: _fill, fontPackage: _package);
+
   /// `seal-question`: badge, unverified, verification, shapes, polygons, circle-wavy.
   static const IconData sealQuestion = IconData(0xe608, fontFamily: _regular, fontPackage: _package);
+
   /// `seal-question`, fill weight.
   static const IconData sealQuestionFill = IconData(0xe608, fontFamily: _fill, fontPackage: _package);
+
   /// `seal-warning`: badge, unverified, verification, errors, shapes, polygons.
   static const IconData sealWarning = IconData(0xe60c, fontFamily: _regular, fontPackage: _package);
+
   /// `seal-warning`, fill weight.
   static const IconData sealWarningFill = IconData(0xe60c, fontFamily: _fill, fontPackage: _package);
+
   /// `seat`: chair, car seat, airplane seat, transit, transportation, traveling.
   static const IconData seat = IconData(0xeb8e, fontFamily: _regular, fontPackage: _package);
+
   /// `seat`, fill weight.
   static const IconData seatFill = IconData(0xeb8e, fontFamily: _fill, fontPackage: _package);
+
   /// `seatbelt`: vehicles, safety.
   static const IconData seatbelt = IconData(0xedfe, fontFamily: _regular, fontPackage: _package);
+
   /// `seatbelt`, fill weight.
   static const IconData seatbeltFill = IconData(0xedfe, fontFamily: _fill, fontPackage: _package);
+
   /// `security-camera`: cctv, surveillance, video, monitor, motion detector, safety.
   static const IconData securityCamera = IconData(0xeca4, fontFamily: _regular, fontPackage: _package);
+
   /// `security-camera`, fill weight.
   static const IconData securityCameraFill = IconData(0xeca4, fontFamily: _fill, fontPackage: _package);
+
   /// `selection`: marquis, select, square dashed.
   static const IconData selection = IconData(0xe69a, fontFamily: _regular, fontPackage: _package);
+
   /// `selection`, fill weight.
   static const IconData selectionFill = IconData(0xe69a, fontFamily: _fill, fontPackage: _package);
+
   /// `selection-all`: marquis, select all.
   static const IconData selectionAll = IconData(0xe746, fontFamily: _regular, fontPackage: _package);
+
   /// `selection-all`, fill weight.
   static const IconData selectionAllFill = IconData(0xe746, fontFamily: _fill, fontPackage: _package);
+
   /// `selection-background`: marquis.
   static const IconData selectionBackground = IconData(0xeaf8, fontFamily: _regular, fontPackage: _package);
+
   /// `selection-background`, fill weight.
   static const IconData selectionBackgroundFill = IconData(0xeaf8, fontFamily: _fill, fontPackage: _package);
+
   /// `selection-foreground`: marquis.
   static const IconData selectionForeground = IconData(0xeaf6, fontFamily: _regular, fontPackage: _package);
+
   /// `selection-foreground`, fill weight.
   static const IconData selectionForegroundFill = IconData(0xeaf6, fontFamily: _fill, fontPackage: _package);
+
   /// `selection-inverse`: marquis, invert.
   static const IconData selectionInverse = IconData(0xe744, fontFamily: _regular, fontPackage: _package);
+
   /// `selection-inverse`, fill weight.
   static const IconData selectionInverseFill = IconData(0xe744, fontFamily: _fill, fontPackage: _package);
+
   /// `selection-plus`: marquis, add.
   static const IconData selectionPlus = IconData(0xe69c, fontFamily: _regular, fontPackage: _package);
+
   /// `selection-plus`, fill weight.
   static const IconData selectionPlusFill = IconData(0xe69c, fontFamily: _fill, fontPackage: _package);
+
   /// `selection-slash`: marquis, unselect.
   static const IconData selectionSlash = IconData(0xe69e, fontFamily: _regular, fontPackage: _package);
+
   /// `selection-slash`, fill weight.
   static const IconData selectionSlashFill = IconData(0xe69e, fontFamily: _fill, fontPackage: _package);
+
   /// `shapes`: geometry, square, circle, triangle.
   static const IconData shapes = IconData(0xec5e, fontFamily: _regular, fontPackage: _package);
+
   /// `shapes`, fill weight.
   static const IconData shapesFill = IconData(0xec5e, fontFamily: _fill, fontPackage: _package);
+
   /// `share`: send to, export, arrows.
   static const IconData share = IconData(0xe406, fontFamily: _regular, fontPackage: _package);
+
   /// `share`, fill weight.
   static const IconData shareFill = IconData(0xe406, fontFamily: _fill, fontPackage: _package);
+
   /// `share-fat`: export, send to.
   static const IconData shareFat = IconData(0xed52, fontFamily: _regular, fontPackage: _package);
+
   /// `share-fat`, fill weight.
   static const IconData shareFatFill = IconData(0xed52, fontFamily: _fill, fontPackage: _package);
+
   /// `share-network`: send to, export.
   static const IconData shareNetwork = IconData(0xe408, fontFamily: _regular, fontPackage: _package);
+
   /// `share-network`, fill weight.
   static const IconData shareNetworkFill = IconData(0xe408, fontFamily: _fill, fontPackage: _package);
+
   /// `shield`: badge, security, secured, defense, defended, authentication.
   static const IconData shield = IconData(0xe40a, fontFamily: _regular, fontPackage: _package);
+
   /// `shield`, fill weight.
   static const IconData shieldFill = IconData(0xe40a, fontFamily: _fill, fontPackage: _package);
+
   /// `shield-check`: badge, security, defense, authentication, authenticated, guarded.
   static const IconData shieldCheck = IconData(0xe40c, fontFamily: _regular, fontPackage: _package);
+
   /// `shield-check`, fill weight.
   static const IconData shieldCheckFill = IconData(0xe40c, fontFamily: _fill, fontPackage: _package);
+
   /// `shield-checkered`: badge, security, defense, authentication, authenticated, guarded.
   static const IconData shieldCheckered = IconData(0xe708, fontFamily: _regular, fontPackage: _package);
+
   /// `shield-checkered`, fill weight.
   static const IconData shieldCheckeredFill = IconData(0xe708, fontFamily: _fill, fontPackage: _package);
+
   /// `shield-chevron`: badge, security, defense, authentication, authenticated, guarded.
   static const IconData shieldChevron = IconData(0xe40e, fontFamily: _regular, fontPackage: _package);
+
   /// `shield-chevron`, fill weight.
   static const IconData shieldChevronFill = IconData(0xe40e, fontFamily: _fill, fontPackage: _package);
+
   /// `shield-plus`: badge, security, defense, authentication, authenticated, guarded.
   static const IconData shieldPlus = IconData(0xe706, fontFamily: _regular, fontPackage: _package);
+
   /// `shield-plus`, fill weight.
   static const IconData shieldPlusFill = IconData(0xe706, fontFamily: _fill, fontPackage: _package);
+
   /// `shield-slash`: badge, security, unsecured, defense, undefended, authentication.
   static const IconData shieldSlash = IconData(0xe410, fontFamily: _regular, fontPackage: _package);
+
   /// `shield-slash`, fill weight.
   static const IconData shieldSlashFill = IconData(0xe410, fontFamily: _fill, fontPackage: _package);
+
   /// `shield-star`: badge, security, defense, authentication, authenticated, guarded.
   static const IconData shieldStar = IconData(0xec34, fontFamily: _regular, fontPackage: _package);
+
   /// `shield-star`, fill weight.
   static const IconData shieldStarFill = IconData(0xec34, fontFamily: _fill, fontPackage: _package);
+
   /// `shield-warning`: badge, security, unsecured, defense, undefended, authentication.
   static const IconData shieldWarning = IconData(0xe412, fontFamily: _regular, fontPackage: _package);
+
   /// `shield-warning`, fill weight.
   static const IconData shieldWarningFill = IconData(0xe412, fontFamily: _fill, fontPackage: _package);
+
   /// `shipping-container`: shipping, transportation, places, locations.
   static const IconData shippingContainer = IconData(0xe78c, fontFamily: _regular, fontPackage: _package);
+
   /// `shipping-container`, fill weight.
   static const IconData shippingContainerFill = IconData(0xe78c, fontFamily: _fill, fontPackage: _package);
+
   /// `shirt-folded`: clothes, clothing.
   static const IconData shirtFolded = IconData(0xea92, fontFamily: _regular, fontPackage: _package);
+
   /// `shirt-folded`, fill weight.
   static const IconData shirtFoldedFill = IconData(0xea92, fontFamily: _fill, fontPackage: _package);
+
   /// `shooting-star`: wish, comet, meteor.
   static const IconData shootingStar = IconData(0xecfa, fontFamily: _regular, fontPackage: _package);
+
   /// `shooting-star`, fill weight.
   static const IconData shootingStarFill = IconData(0xecfa, fontFamily: _fill, fontPackage: _package);
+
   /// `shopping-bag`: ecommerce, market, basket, cart, buying, checkout.
   static const IconData shoppingBag = IconData(0xe416, fontFamily: _regular, fontPackage: _package);
+
   /// `shopping-bag`, fill weight.
   static const IconData shoppingBagFill = IconData(0xe416, fontFamily: _fill, fontPackage: _package);
+
   /// `shopping-bag-open`: ecommerce, market, basket, cart, buying, checkout.
   static const IconData shoppingBagOpen = IconData(0xe418, fontFamily: _regular, fontPackage: _package);
+
   /// `shopping-bag-open`, fill weight.
   static const IconData shoppingBagOpenFill = IconData(0xe418, fontFamily: _fill, fontPackage: _package);
+
   /// `shopping-cart`: ecommerce, market, basket, buying, groceries, checkout.
   static const IconData shoppingCart = IconData(0xe41e, fontFamily: _regular, fontPackage: _package);
+
   /// `shopping-cart`, fill weight.
   static const IconData shoppingCartFill = IconData(0xe41e, fontFamily: _fill, fontPackage: _package);
+
   /// `shopping-cart-simple`: ecommerce, market, basket, buying, groceries, checkout.
   static const IconData shoppingCartSimple = IconData(0xe420, fontFamily: _regular, fontPackage: _package);
+
   /// `shopping-cart-simple`, fill weight.
   static const IconData shoppingCartSimpleFill = IconData(0xe420, fontFamily: _fill, fontPackage: _package);
+
   /// `shovel`: tools, digging, construction.
   static const IconData shovel = IconData(0xe9e6, fontFamily: _regular, fontPackage: _package);
+
   /// `shovel`, fill weight.
   static const IconData shovelFill = IconData(0xe9e6, fontFamily: _fill, fontPackage: _package);
+
   /// `shower`: bath, bathtub, bathroom, faucet.
   static const IconData shower = IconData(0xe776, fontFamily: _regular, fontPackage: _package);
+
   /// `shower`, fill weight.
   static const IconData showerFill = IconData(0xe776, fontFamily: _fill, fontPackage: _package);
+
   /// `shrimp`: food, seafood, prawn.
   static const IconData shrimp = IconData(0xeab4, fontFamily: _regular, fontPackage: _package);
+
   /// `shrimp`, fill weight.
   static const IconData shrimpFill = IconData(0xeab4, fontFamily: _fill, fontPackage: _package);
+
   /// `shuffle`: music, audio, randomize, crossed.
   static const IconData shuffle = IconData(0xe422, fontFamily: _regular, fontPackage: _package);
+
   /// `shuffle`, fill weight.
   static const IconData shuffleFill = IconData(0xe422, fontFamily: _fill, fontPackage: _package);
+
   /// `shuffle-angular`: music, audio, randomize, crossed.
   static const IconData shuffleAngular = IconData(0xe424, fontFamily: _regular, fontPackage: _package);
+
   /// `shuffle-angular`, fill weight.
   static const IconData shuffleAngularFill = IconData(0xe424, fontFamily: _fill, fontPackage: _package);
+
   /// `shuffle-simple`: music, audio, randomize, crossed.
   static const IconData shuffleSimple = IconData(0xe426, fontFamily: _regular, fontPackage: _package);
+
   /// `shuffle-simple`, fill weight.
   static const IconData shuffleSimpleFill = IconData(0xe426, fontFamily: _fill, fontPackage: _package);
+
   /// `sidebar`: left rail, wireframe, ui, interface.
   static const IconData sidebar = IconData(0xeab6, fontFamily: _regular, fontPackage: _package);
+
   /// `sidebar`, fill weight.
   static const IconData sidebarFill = IconData(0xeab6, fontFamily: _fill, fontPackage: _package);
+
   /// `sidebar-simple`: left rail, wireframe, ui, interface.
   static const IconData sidebarSimple = IconData(0xec24, fontFamily: _regular, fontPackage: _package);
+
   /// `sidebar-simple`, fill weight.
   static const IconData sidebarSimpleFill = IconData(0xec24, fontFamily: _fill, fontPackage: _package);
+
   /// `sigma`: σ, symbol, mathematics, sum.
   static const IconData sigma = IconData(0xeab8, fontFamily: _regular, fontPackage: _package);
+
   /// `sigma`, fill weight.
   static const IconData sigmaFill = IconData(0xeab8, fontFamily: _fill, fontPackage: _package);
+
   /// `sign-in`: signin, login, log in, enter.
   static const IconData signIn = IconData(0xe428, fontFamily: _regular, fontPackage: _package);
+
   /// `sign-in`, fill weight.
   static const IconData signInFill = IconData(0xe428, fontFamily: _fill, fontPackage: _package);
+
   /// `sign-out`: signout, logout, log out, exit.
   static const IconData signOut = IconData(0xe42a, fontFamily: _regular, fontPackage: _package);
+
   /// `sign-out`, fill weight.
   static const IconData signOutFill = IconData(0xe42a, fontFamily: _fill, fontPackage: _package);
+
   /// `signature`: sign, autograph, verify.
   static const IconData signature = IconData(0xebac, fontFamily: _regular, fontPackage: _package);
+
   /// `signature`, fill weight.
   static const IconData signatureFill = IconData(0xebac, fontFamily: _fill, fontPackage: _package);
+
   /// `signpost`: direction, traffic, road sign, transit, transportation.
   static const IconData signpost = IconData(0xe89c, fontFamily: _regular, fontPackage: _package);
+
   /// `signpost`, fill weight.
   static const IconData signpostFill = IconData(0xe89c, fontFamily: _fill, fontPackage: _package);
+
   /// `sim-card`: cellular, cellphone, mobile.
   static const IconData simCard = IconData(0xe664, fontFamily: _regular, fontPackage: _package);
+
   /// `sim-card`, fill weight.
   static const IconData simCardFill = IconData(0xe664, fontFamily: _fill, fontPackage: _package);
+
   /// `siren`: alarm, police, lights, warning.
   static const IconData siren = IconData(0xe9b8, fontFamily: _regular, fontPackage: _package);
+
   /// `siren`, fill weight.
   static const IconData sirenFill = IconData(0xe9b8, fontFamily: _fill, fontPackage: _package);
+
   /// `sketch-logo`: drawing, art, illustration, ui, interface, prototype.
   static const IconData sketchLogo = IconData(0xe42c, fontFamily: _regular, fontPackage: _package);
+
   /// `sketch-logo`, fill weight.
   static const IconData sketchLogoFill = IconData(0xe42c, fontFamily: _fill, fontPackage: _package);
+
   /// `skip-back`: music, audio, seek, scrub, scan, back.
   static const IconData skipBack = IconData(0xe5a4, fontFamily: _regular, fontPackage: _package);
+
   /// `skip-back`, fill weight.
   static const IconData skipBackFill = IconData(0xe5a4, fontFamily: _fill, fontPackage: _package);
+
   /// `skip-back-circle`: music, audio, seek, scrub, scan, back.
   static const IconData skipBackCircle = IconData(0xe42e, fontFamily: _regular, fontPackage: _package);
+
   /// `skip-back-circle`, fill weight.
   static const IconData skipBackCircleFill = IconData(0xe42e, fontFamily: _fill, fontPackage: _package);
+
   /// `skip-forward`: music, audio, seek, scrub, scan, ahead.
   static const IconData skipForward = IconData(0xe5a6, fontFamily: _regular, fontPackage: _package);
+
   /// `skip-forward`, fill weight.
   static const IconData skipForwardFill = IconData(0xe5a6, fontFamily: _fill, fontPackage: _package);
+
   /// `skip-forward-circle`: music, audio, seek, scrub, scan, ahead.
   static const IconData skipForwardCircle = IconData(0xe430, fontFamily: _regular, fontPackage: _package);
+
   /// `skip-forward-circle`, fill weight.
   static const IconData skipForwardCircleFill = IconData(0xe430, fontFamily: _fill, fontPackage: _package);
+
   /// `skull`: death, dead, kill.
   static const IconData skull = IconData(0xe916, fontFamily: _regular, fontPackage: _package);
+
   /// `skull`, fill weight.
   static const IconData skullFill = IconData(0xe916, fontFamily: _fill, fontPackage: _package);
+
   /// `skype-logo`: chat, video conference.
   static const IconData skypeLogo = IconData(0xe8dc, fontFamily: _regular, fontPackage: _package);
+
   /// `skype-logo`, fill weight.
   static const IconData skypeLogoFill = IconData(0xe8dc, fontFamily: _fill, fontPackage: _package);
+
   /// `slack-logo`: logos, messaging.
   static const IconData slackLogo = IconData(0xe5a8, fontFamily: _regular, fontPackage: _package);
+
   /// `slack-logo`, fill weight.
   static const IconData slackLogoFill = IconData(0xe5a8, fontFamily: _fill, fontPackage: _package);
+
   /// `sliders`: music, audio, faders, filters, equalizer, volume.
   static const IconData sliders = IconData(0xe432, fontFamily: _regular, fontPackage: _package);
+
   /// `sliders`, fill weight.
   static const IconData slidersFill = IconData(0xe432, fontFamily: _fill, fontPackage: _package);
+
   /// `sliders-horizontal`: music, audio, faders, filters, equalizer, volume.
   static const IconData slidersHorizontal = IconData(0xe434, fontFamily: _regular, fontPackage: _package);
+
   /// `sliders-horizontal`, fill weight.
   static const IconData slidersHorizontalFill = IconData(0xe434, fontFamily: _fill, fontPackage: _package);
+
   /// `slideshow`: pictures, images, photography, gallery, carousel.
   static const IconData slideshow = IconData(0xed32, fontFamily: _regular, fontPackage: _package);
+
   /// `slideshow`, fill weight.
   static const IconData slideshowFill = IconData(0xed32, fontFamily: _fill, fontPackage: _package);
+
   /// `smiley`: face, emoji, happy, grinning, smiling.
   static const IconData smiley = IconData(0xe436, fontFamily: _regular, fontPackage: _package);
+
   /// `smiley`, fill weight.
   static const IconData smileyFill = IconData(0xe436, fontFamily: _fill, fontPackage: _package);
+
   /// `smiley-angry`: face, emoji, mad, frown.
   static const IconData smileyAngry = IconData(0xec62, fontFamily: _regular, fontPackage: _package);
+
   /// `smiley-angry`, fill weight.
   static const IconData smileyAngryFill = IconData(0xec62, fontFamily: _fill, fontPackage: _package);
+
   /// `smiley-blank`: face, emoji, unimpressed, no face.
   static const IconData smileyBlank = IconData(0xe438, fontFamily: _regular, fontPackage: _package);
+
   /// `smiley-blank`, fill weight.
   static const IconData smileyBlankFill = IconData(0xe438, fontFamily: _fill, fontPackage: _package);
+
   /// `smiley-meh`: face, emoji, unimpressed, neutral.
   static const IconData smileyMeh = IconData(0xe43a, fontFamily: _regular, fontPackage: _package);
+
   /// `smiley-meh`, fill weight.
   static const IconData smileyMehFill = IconData(0xe43a, fontFamily: _fill, fontPackage: _package);
+
   /// `smiley-melting`: face, emoji, embarrassment, sarcasm, shame, hot.
   static const IconData smileyMelting = IconData(0xee56, fontFamily: _regular, fontPackage: _package);
+
   /// `smiley-melting`, fill weight.
   static const IconData smileyMeltingFill = IconData(0xee56, fontFamily: _fill, fontPackage: _package);
+
   /// `smiley-nervous`: face, emoji, anxious, uncomfortable, uneasy, queasy.
   static const IconData smileyNervous = IconData(0xe43c, fontFamily: _regular, fontPackage: _package);
+
   /// `smiley-nervous`, fill weight.
   static const IconData smileyNervousFill = IconData(0xe43c, fontFamily: _fill, fontPackage: _package);
+
   /// `smiley-sad`: face, emoji, unhappy, frowning.
   static const IconData smileySad = IconData(0xe43e, fontFamily: _regular, fontPackage: _package);
+
   /// `smiley-sad`, fill weight.
   static const IconData smileySadFill = IconData(0xe43e, fontFamily: _fill, fontPackage: _package);
+
   /// `smiley-sticker`: face, emoji, happy, grinning, smiling.
   static const IconData smileySticker = IconData(0xe440, fontFamily: _regular, fontPackage: _package);
+
   /// `smiley-sticker`, fill weight.
   static const IconData smileyStickerFill = IconData(0xe440, fontFamily: _fill, fontPackage: _package);
+
   /// `smiley-wink`: face, emoji, winking, flirting, cute.
   static const IconData smileyWink = IconData(0xe666, fontFamily: _regular, fontPackage: _package);
+
   /// `smiley-wink`, fill weight.
   static const IconData smileyWinkFill = IconData(0xe666, fontFamily: _fill, fontPackage: _package);
+
   /// `smiley-x-eyes`: face, emoji, dead, killed, unconscious.
   static const IconData smileyXEyes = IconData(0xe442, fontFamily: _regular, fontPackage: _package);
+
   /// `smiley-x-eyes`, fill weight.
   static const IconData smileyXEyesFill = IconData(0xe442, fontFamily: _fill, fontPackage: _package);
+
   /// `snapchat-logo`: logos, messaging, social media.
   static const IconData snapchatLogo = IconData(0xe668, fontFamily: _regular, fontPackage: _package);
+
   /// `snapchat-logo`, fill weight.
   static const IconData snapchatLogoFill = IconData(0xe668, fontFamily: _fill, fontPackage: _package);
+
   /// `sneaker`: clothes, clothing, shoes, trainers, sports.
   static const IconData sneaker = IconData(0xe80c, fontFamily: _regular, fontPackage: _package);
+
   /// `sneaker`, fill weight.
   static const IconData sneakerFill = IconData(0xe80c, fontFamily: _fill, fontPackage: _package);
+
   /// `sneaker-move`: clothes, clothing, shoes, trainers, sports.
   static const IconData sneakerMove = IconData(0xed60, fontFamily: _regular, fontPackage: _package);
+
   /// `sneaker-move`, fill weight.
   static const IconData sneakerMoveFill = IconData(0xed60, fontFamily: _fill, fontPackage: _package);
+
   /// `snowflake`: meteorology, snowy, snowing, snowstorm.
   static const IconData snowflake = IconData(0xe5aa, fontFamily: _regular, fontPackage: _package);
+
   /// `snowflake`, fill weight.
   static const IconData snowflakeFill = IconData(0xe5aa, fontFamily: _fill, fontPackage: _package);
+
   /// `soccer-ball`: sports, football, mls.
   static const IconData soccerBall = IconData(0xe716, fontFamily: _regular, fontPackage: _package);
+
   /// `soccer-ball`, fill weight.
   static const IconData soccerBallFill = IconData(0xe716, fontFamily: _fill, fontPackage: _package);
+
   /// `sock`: clothes, clothing.
   static const IconData sock = IconData(0xecce, fontFamily: _regular, fontPackage: _package);
+
   /// `sock`, fill weight.
   static const IconData sockFill = IconData(0xecce, fontFamily: _fill, fontPackage: _package);
+
   /// `solar-panel`: renewable, energy, power, electricity.
   static const IconData solarPanel = IconData(0xed7a, fontFamily: _regular, fontPackage: _package);
+
   /// `solar-panel`, fill weight.
   static const IconData solarPanelFill = IconData(0xed7a, fontFamily: _fill, fontPackage: _package);
+
   /// `solar-roof`: renewable, energy, power, electricity.
   static const IconData solarRoof = IconData(0xed7b, fontFamily: _regular, fontPackage: _package);
+
   /// `solar-roof`, fill weight.
   static const IconData solarRoofFill = IconData(0xed7b, fontFamily: _fill, fontPackage: _package);
+
   /// `sort-ascending`: sorted, sorting, increasing, a to z, arrows, list.
   static const IconData sortAscending = IconData(0xe444, fontFamily: _regular, fontPackage: _package);
+
   /// `sort-ascending`, fill weight.
   static const IconData sortAscendingFill = IconData(0xe444, fontFamily: _fill, fontPackage: _package);
+
   /// `sort-descending`: sorted, sorting, decreasing, z to a, arrows, list.
   static const IconData sortDescending = IconData(0xe446, fontFamily: _regular, fontPackage: _package);
+
   /// `sort-descending`, fill weight.
   static const IconData sortDescendingFill = IconData(0xe446, fontFamily: _fill, fontPackage: _package);
+
   /// `soundcloud-logo`: music, social media, logos.
   static const IconData soundcloudLogo = IconData(0xe8de, fontFamily: _regular, fontPackage: _package);
+
   /// `soundcloud-logo`, fill weight.
   static const IconData soundcloudLogoFill = IconData(0xe8de, fontFamily: _fill, fontPackage: _package);
+
   /// `spade`: spades, suits, cards, gambling, casino, gaming.
   static const IconData spade = IconData(0xe448, fontFamily: _regular, fontPackage: _package);
+
   /// `spade`, fill weight.
   static const IconData spadeFill = IconData(0xe448, fontFamily: _fill, fontPackage: _package);
+
   /// `sparkle`: star, rate, ratings, favorites, favorited.
   static const IconData sparkle = IconData(0xe6a2, fontFamily: _regular, fontPackage: _package);
+
   /// `sparkle`, fill weight.
   static const IconData sparkleFill = IconData(0xe6a2, fontFamily: _fill, fontPackage: _package);
+
   /// `speaker-hifi`: music, audio, sound, stereo.
   static const IconData speakerHifi = IconData(0xea08, fontFamily: _regular, fontPackage: _package);
+
   /// `speaker-hifi`, fill weight.
   static const IconData speakerHifiFill = IconData(0xea08, fontFamily: _fill, fontPackage: _package);
+
   /// `speaker-high`: music, audio, volume, sound.
   static const IconData speakerHigh = IconData(0xe44a, fontFamily: _regular, fontPackage: _package);
+
   /// `speaker-high`, fill weight.
   static const IconData speakerHighFill = IconData(0xe44a, fontFamily: _fill, fontPackage: _package);
+
   /// `speaker-low`: music, audio, volume, sound.
   static const IconData speakerLow = IconData(0xe44c, fontFamily: _regular, fontPackage: _package);
+
   /// `speaker-low`, fill weight.
   static const IconData speakerLowFill = IconData(0xe44c, fontFamily: _fill, fontPackage: _package);
+
   /// `speaker-none`: music, audio, muted, volume, sound.
   static const IconData speakerNone = IconData(0xe44e, fontFamily: _regular, fontPackage: _package);
+
   /// `speaker-none`, fill weight.
   static const IconData speakerNoneFill = IconData(0xe44e, fontFamily: _fill, fontPackage: _package);
+
   /// `speaker-simple-high`: music, audio, volume, sound.
   static const IconData speakerSimpleHigh = IconData(0xe450, fontFamily: _regular, fontPackage: _package);
+
   /// `speaker-simple-high`, fill weight.
   static const IconData speakerSimpleHighFill = IconData(0xe450, fontFamily: _fill, fontPackage: _package);
+
   /// `speaker-simple-low`: music, audio, volume, sound.
   static const IconData speakerSimpleLow = IconData(0xe452, fontFamily: _regular, fontPackage: _package);
+
   /// `speaker-simple-low`, fill weight.
   static const IconData speakerSimpleLowFill = IconData(0xe452, fontFamily: _fill, fontPackage: _package);
+
   /// `speaker-simple-none`: music, audio, muted, volume, sound.
   static const IconData speakerSimpleNone = IconData(0xe454, fontFamily: _regular, fontPackage: _package);
+
   /// `speaker-simple-none`, fill weight.
   static const IconData speakerSimpleNoneFill = IconData(0xe454, fontFamily: _fill, fontPackage: _package);
+
   /// `speaker-simple-slash`: music, audio, muted, volume, sound, disabled.
   static const IconData speakerSimpleSlash = IconData(0xe456, fontFamily: _regular, fontPackage: _package);
+
   /// `speaker-simple-slash`, fill weight.
   static const IconData speakerSimpleSlashFill = IconData(0xe456, fontFamily: _fill, fontPackage: _package);
+
   /// `speaker-simple-x`: music, audio, muted, volume, sound, disabled.
   static const IconData speakerSimpleX = IconData(0xe458, fontFamily: _regular, fontPackage: _package);
+
   /// `speaker-simple-x`, fill weight.
   static const IconData speakerSimpleXFill = IconData(0xe458, fontFamily: _fill, fontPackage: _package);
+
   /// `speaker-slash`: music, audio, muted, volume, sound, disabled.
   static const IconData speakerSlash = IconData(0xe45a, fontFamily: _regular, fontPackage: _package);
+
   /// `speaker-slash`, fill weight.
   static const IconData speakerSlashFill = IconData(0xe45a, fontFamily: _fill, fontPackage: _package);
+
   /// `speaker-x`: music, audio, muted, volume, sound, disabled.
   static const IconData speakerX = IconData(0xe45c, fontFamily: _regular, fontPackage: _package);
+
   /// `speaker-x`, fill weight.
   static const IconData speakerXFill = IconData(0xe45c, fontFamily: _fill, fontPackage: _package);
+
   /// `speedometer`: gauge, dashboard, meter, speed, odometer, performance.
   static const IconData speedometer = IconData(0xee74, fontFamily: _regular, fontPackage: _package);
+
   /// `speedometer`, fill weight.
   static const IconData speedometerFill = IconData(0xee74, fontFamily: _fill, fontPackage: _package);
+
   /// `sphere`: circle, ball, 3d, mesh, cad, model.
   static const IconData sphere = IconData(0xee66, fontFamily: _regular, fontPackage: _package);
+
   /// `sphere`, fill weight.
   static const IconData sphereFill = IconData(0xee66, fontFamily: _fill, fontPackage: _package);
+
   /// `spinner`: loading, loader, waiting, progress.
   static const IconData spinner = IconData(0xe66a, fontFamily: _regular, fontPackage: _package);
+
   /// `spinner`, fill weight.
   static const IconData spinnerFill = IconData(0xe66a, fontFamily: _fill, fontPackage: _package);
+
   /// `spinner-ball`: loading, loader, waiting, progress.
   static const IconData spinnerBall = IconData(0xee28, fontFamily: _regular, fontPackage: _package);
+
   /// `spinner-ball`, fill weight.
   static const IconData spinnerBallFill = IconData(0xee28, fontFamily: _fill, fontPackage: _package);
+
   /// `spinner-gap`: loading, loader, waiting, progress.
   static const IconData spinnerGap = IconData(0xe66c, fontFamily: _regular, fontPackage: _package);
+
   /// `spinner-gap`, fill weight.
   static const IconData spinnerGapFill = IconData(0xe66c, fontFamily: _fill, fontPackage: _package);
+
   /// `spiral`: spin, rotate, dizzy.
   static const IconData spiral = IconData(0xe9fa, fontFamily: _regular, fontPackage: _package);
+
   /// `spiral`, fill weight.
   static const IconData spiralFill = IconData(0xe9fa, fontFamily: _fill, fontPackage: _package);
+
   /// `split-horizontal`: resize, columns.
   static const IconData splitHorizontal = IconData(0xe872, fontFamily: _regular, fontPackage: _package);
+
   /// `split-horizontal`, fill weight.
   static const IconData splitHorizontalFill = IconData(0xe872, fontFamily: _fill, fontPackage: _package);
+
   /// `split-vertical`: resize, rows.
   static const IconData splitVertical = IconData(0xe876, fontFamily: _regular, fontPackage: _package);
+
   /// `split-vertical`, fill weight.
   static const IconData splitVerticalFill = IconData(0xe876, fontFamily: _fill, fontPackage: _package);
+
   /// `spotify-logo`: music, player, streaming.
   static const IconData spotifyLogo = IconData(0xe66e, fontFamily: _regular, fontPackage: _package);
+
   /// `spotify-logo`, fill weight.
   static const IconData spotifyLogoFill = IconData(0xe66e, fontFamily: _fill, fontPackage: _package);
+
   /// `spray-bottle`: cleaner, cleaning.
   static const IconData sprayBottle = IconData(0xe7e4, fontFamily: _regular, fontPackage: _package);
+
   /// `spray-bottle`, fill weight.
   static const IconData sprayBottleFill = IconData(0xe7e4, fontFamily: _fill, fontPackage: _package);
+
   /// `square`: 4, shapes, polygons, box.
   static const IconData square = IconData(0xe45e, fontFamily: _regular, fontPackage: _package);
+
   /// `square`, fill weight.
   static const IconData squareFill = IconData(0xe45e, fontFamily: _fill, fontPackage: _package);
+
   /// `square-half`: 4, shapes, polygons, box, columns, sidebar.
   static const IconData squareHalf = IconData(0xe462, fontFamily: _regular, fontPackage: _package);
+
   /// `square-half`, fill weight.
   static const IconData squareHalfFill = IconData(0xe462, fontFamily: _fill, fontPackage: _package);
+
   /// `square-half-bottom`: 4, shapes, polygons, box, columns, sidebar.
   static const IconData squareHalfBottom = IconData(0xeb16, fontFamily: _regular, fontPackage: _package);
+
   /// `square-half-bottom`, fill weight.
   static const IconData squareHalfBottomFill = IconData(0xeb16, fontFamily: _fill, fontPackage: _package);
+
   /// `square-logo`: squareup, payment.
   static const IconData squareLogo = IconData(0xe690, fontFamily: _regular, fontPackage: _package);
+
   /// `square-logo`, fill weight.
   static const IconData squareLogoFill = IconData(0xe690, fontFamily: _fill, fontPackage: _package);
+
   /// `square-split-horizontal`: shapes, polygons, columns.
   static const IconData squareSplitHorizontal = IconData(0xe870, fontFamily: _regular, fontPackage: _package);
+
   /// `square-split-horizontal`, fill weight.
   static const IconData squareSplitHorizontalFill = IconData(0xe870, fontFamily: _fill, fontPackage: _package);
+
   /// `square-split-vertical`: shapes, polygons, rows.
   static const IconData squareSplitVertical = IconData(0xe874, fontFamily: _regular, fontPackage: _package);
+
   /// `square-split-vertical`, fill weight.
   static const IconData squareSplitVerticalFill = IconData(0xe874, fontFamily: _fill, fontPackage: _package);
+
   /// `squares-four`: 4, shapes, polygons, apps, applications, grid.
   static const IconData squaresFour = IconData(0xe464, fontFamily: _regular, fontPackage: _package);
+
   /// `squares-four`, fill weight.
   static const IconData squaresFourFill = IconData(0xe464, fontFamily: _fill, fontPackage: _package);
+
   /// `stack`: cards, layers.
   static const IconData stack = IconData(0xe466, fontFamily: _regular, fontPackage: _package);
+
   /// `stack`, fill weight.
   static const IconData stackFill = IconData(0xe466, fontFamily: _fill, fontPackage: _package);
+
   /// `stack-minus`: cards, layers, remove, delete.
   static const IconData stackMinus = IconData(0xedf4, fontFamily: _regular, fontPackage: _package);
+
   /// `stack-minus`, fill weight.
   static const IconData stackMinusFill = IconData(0xedf4, fontFamily: _fill, fontPackage: _package);
+
   /// `stack-overflow-logo`: logos, code.
   static const IconData stackOverflowLogo = IconData(0xeb78, fontFamily: _regular, fontPackage: _package);
+
   /// `stack-overflow-logo`, fill weight.
   static const IconData stackOverflowLogoFill = IconData(0xeb78, fontFamily: _fill, fontPackage: _package);
+
   /// `stack-plus`: cards, layers, add.
   static const IconData stackPlus = IconData(0xedf6, fontFamily: _regular, fontPackage: _package);
+
   /// `stack-plus`, fill weight.
   static const IconData stackPlusFill = IconData(0xedf6, fontFamily: _fill, fontPackage: _package);
+
   /// `stack-simple`: cards, layers.
   static const IconData stackSimple = IconData(0xe468, fontFamily: _regular, fontPackage: _package);
+
   /// `stack-simple`, fill weight.
   static const IconData stackSimpleFill = IconData(0xe468, fontFamily: _fill, fontPackage: _package);
+
   /// `stairs`: staircase, steps, escalator, exit, signs.
   static const IconData stairs = IconData(0xe8ec, fontFamily: _regular, fontPackage: _package);
+
   /// `stairs`, fill weight.
   static const IconData stairsFill = IconData(0xe8ec, fontFamily: _fill, fontPackage: _package);
+
   /// `stamp`: clone, seal, official.
   static const IconData stamp = IconData(0xea48, fontFamily: _regular, fontPackage: _package);
+
   /// `stamp`, fill weight.
   static const IconData stampFill = IconData(0xea48, fontFamily: _fill, fontPackage: _package);
+
   /// `standard-definition`: sd, resolution, video.
   static const IconData standardDefinition = IconData(0xea90, fontFamily: _regular, fontPackage: _package);
+
   /// `standard-definition`, fill weight.
   static const IconData standardDefinitionFill = IconData(0xea90, fontFamily: _fill, fontPackage: _package);
+
   /// `star`: rate, ratings, favorites, favorited.
   static const IconData star = IconData(0xe46a, fontFamily: _regular, fontPackage: _package);
+
   /// `star`, fill weight.
   static const IconData starFill = IconData(0xe46a, fontFamily: _fill, fontPackage: _package);
+
   /// `star-and-crescent`: islam, muslim, moon, religion, worship, symbol.
   static const IconData starAndCrescent = IconData(0xecf4, fontFamily: _regular, fontPackage: _package);
+
   /// `star-and-crescent`, fill weight.
   static const IconData starAndCrescentFill = IconData(0xecf4, fontFamily: _fill, fontPackage: _package);
+
   /// `star-four`: rate, ratings, favorites, favorited.
   static const IconData starFour = IconData(0xe6a4, fontFamily: _regular, fontPackage: _package);
+
   /// `star-four`, fill weight.
   static const IconData starFourFill = IconData(0xe6a4, fontFamily: _fill, fontPackage: _package);
+
   /// `star-half`: rate, ratings.
   static const IconData starHalf = IconData(0xe70a, fontFamily: _regular, fontPackage: _package);
+
   /// `star-half`, fill weight.
   static const IconData starHalfFill = IconData(0xe70a, fontFamily: _fill, fontPackage: _package);
+
   /// `star-of-david`: judaism, jewish, hexagram, religion, worship, symbol.
   static const IconData starOfDavid = IconData(0xe89e, fontFamily: _regular, fontPackage: _package);
+
   /// `star-of-david`, fill weight.
   static const IconData starOfDavidFill = IconData(0xe89e, fontFamily: _fill, fontPackage: _package);
+
   /// `steam-logo`: gaming, games.
   static const IconData steamLogo = IconData(0xead4, fontFamily: _regular, fontPackage: _package);
+
   /// `steam-logo`, fill weight.
   static const IconData steamLogoFill = IconData(0xead4, fontFamily: _fill, fontPackage: _package);
+
   /// `steering-wheel`: cars, vehicles, automobiles, driving.
   static const IconData steeringWheel = IconData(0xe9ac, fontFamily: _regular, fontPackage: _package);
+
   /// `steering-wheel`, fill weight.
   static const IconData steeringWheelFill = IconData(0xe9ac, fontFamily: _fill, fontPackage: _package);
+
   /// `steps`: stairs, staircase, exit, signs.
   static const IconData steps = IconData(0xecbe, fontFamily: _regular, fontPackage: _package);
+
   /// `steps`, fill weight.
   static const IconData stepsFill = IconData(0xecbe, fontFamily: _fill, fontPackage: _package);
+
   /// `stethoscope`: hospital, medical, medicine, injury, safety, emergency.
   static const IconData stethoscope = IconData(0xe7ea, fontFamily: _regular, fontPackage: _package);
+
   /// `stethoscope`, fill weight.
   static const IconData stethoscopeFill = IconData(0xe7ea, fontFamily: _fill, fontPackage: _package);
+
   /// `sticker`: stickers, sticker pack, labels.
   static const IconData sticker = IconData(0xe5ac, fontFamily: _regular, fontPackage: _package);
+
   /// `sticker`, fill weight.
   static const IconData stickerFill = IconData(0xe5ac, fontFamily: _fill, fontPackage: _package);
+
   /// `stool`: chair, seat, furniture.
   static const IconData stool = IconData(0xea44, fontFamily: _regular, fontPackage: _package);
+
   /// `stool`, fill weight.
   static const IconData stoolFill = IconData(0xea44, fontFamily: _fill, fontPackage: _package);
+
   /// `stop`: music, audio.
   static const IconData stop = IconData(0xe46c, fontFamily: _regular, fontPackage: _package);
+
   /// `stop`, fill weight.
   static const IconData stopFill = IconData(0xe46c, fontFamily: _fill, fontPackage: _package);
+
   /// `stop-circle`: music, audio, round.
   static const IconData stopCircle = IconData(0xe46e, fontFamily: _regular, fontPackage: _package);
+
   /// `stop-circle`, fill weight.
   static const IconData stopCircleFill = IconData(0xe46e, fontFamily: _fill, fontPackage: _package);
+
   /// `storefront`: shops, shopping, markets, stores, buildings, places.
   static const IconData storefront = IconData(0xe470, fontFamily: _regular, fontPackage: _package);
+
   /// `storefront`, fill weight.
   static const IconData storefrontFill = IconData(0xe470, fontFamily: _fill, fontPackage: _package);
+
   /// `strategy`: sports, strategem, plan, tic-tac-toe.
   static const IconData strategy = IconData(0xea3a, fontFamily: _regular, fontPackage: _package);
+
   /// `strategy`, fill weight.
   static const IconData strategyFill = IconData(0xea3a, fontFamily: _fill, fontPackage: _package);
+
   /// `stripe-logo`: payment.
   static const IconData stripeLogo = IconData(0xe698, fontFamily: _regular, fontPackage: _package);
+
   /// `stripe-logo`, fill weight.
   static const IconData stripeLogoFill = IconData(0xe698, fontFamily: _fill, fontPackage: _package);
+
   /// `student`: pupil, graduate, classroom, teacher, education, school.
   static const IconData student = IconData(0xe73e, fontFamily: _regular, fontPackage: _package);
+
   /// `student`, fill weight.
   static const IconData studentFill = IconData(0xe73e, fontFamily: _fill, fontPackage: _package);
+
   /// `subset-of`: ⊆, subset of, set, member, mathematics, arithmetic.
   static const IconData subsetOf = IconData(0xedc0, fontFamily: _regular, fontPackage: _package);
+
   /// `subset-of`, fill weight.
   static const IconData subsetOfFill = IconData(0xedc0, fontFamily: _fill, fontPackage: _package);
+
   /// `subset-proper-of`: ⊂, proper subset of, set, member, mathematics, arithmetic.
   static const IconData subsetProperOf = IconData(0xedb6, fontFamily: _regular, fontPackage: _package);
+
   /// `subset-proper-of`, fill weight.
   static const IconData subsetProperOfFill = IconData(0xedb6, fontFamily: _fill, fontPackage: _package);
+
   /// `subtitles`: subtitles, television, tv, transcribed, transcription, accessibility.
   static const IconData subtitles = IconData(0xe1a8, fontFamily: _regular, fontPackage: _package);
+
   /// `subtitles`, fill weight.
   static const IconData subtitlesFill = IconData(0xe1a8, fontFamily: _fill, fontPackage: _package);
+
   /// `subtitles-slash`: subtitles, television, tv, transcribed, transcription, accessibility.
   static const IconData subtitlesSlash = IconData(0xe1a6, fontFamily: _regular, fontPackage: _package);
+
   /// `subtitles-slash`, fill weight.
   static const IconData subtitlesSlashFill = IconData(0xe1a6, fontFamily: _fill, fontPackage: _package);
+
   /// `subtract`: boolean, intersection, combine, split, merge, union.
   static const IconData subtract = IconData(0xebd6, fontFamily: _regular, fontPackage: _package);
+
   /// `subtract`, fill weight.
   static const IconData subtractFill = IconData(0xebd6, fontFamily: _fill, fontPackage: _package);
+
   /// `subtract-square`: boolean, intersection, combine, split, merge, union.
   static const IconData subtractSquare = IconData(0xebd4, fontFamily: _regular, fontPackage: _package);
+
   /// `subtract-square`, fill weight.
   static const IconData subtractSquareFill = IconData(0xebd4, fontFamily: _fill, fontPackage: _package);
+
   /// `subway`: vehicles, underground, train, tunnel, metro, light rail.
   static const IconData subway = IconData(0xe498, fontFamily: _regular, fontPackage: _package);
+
   /// `subway`, fill weight.
   static const IconData subwayFill = IconData(0xe498, fontFamily: _fill, fontPackage: _package);
+
   /// `suitcase`: briefcase, valise, baggage, folders, portfolio.
   static const IconData suitcase = IconData(0xe5ae, fontFamily: _regular, fontPackage: _package);
+
   /// `suitcase`, fill weight.
   static const IconData suitcaseFill = IconData(0xe5ae, fontFamily: _fill, fontPackage: _package);
+
   /// `suitcase-rolling`: suitcase, luggage, travel, transportation.
   static const IconData suitcaseRolling = IconData(0xe9b0, fontFamily: _regular, fontPackage: _package);
+
   /// `suitcase-rolling`, fill weight.
   static const IconData suitcaseRollingFill = IconData(0xe9b0, fontFamily: _fill, fontPackage: _package);
+
   /// `suitcase-simple`: briefcase, valise, baggage, folders, portfolio.
   static const IconData suitcaseSimple = IconData(0xe5b0, fontFamily: _regular, fontPackage: _package);
+
   /// `suitcase-simple`, fill weight.
   static const IconData suitcaseSimpleFill = IconData(0xe5b0, fontFamily: _fill, fontPackage: _package);
+
   /// `sun`: day, daytime, daylight, clear, sunny, sunshine.
   static const IconData sun = IconData(0xe472, fontFamily: _regular, fontPackage: _package);
+
   /// `sun`, fill weight.
   static const IconData sunFill = IconData(0xe472, fontFamily: _fill, fontPackage: _package);
+
   /// `sun-dim`: day, daytime, daylight, clear, sunny, sunshine.
   static const IconData sunDim = IconData(0xe474, fontFamily: _regular, fontPackage: _package);
+
   /// `sun-dim`, fill weight.
   static const IconData sunDimFill = IconData(0xe474, fontFamily: _fill, fontPackage: _package);
+
   /// `sun-horizon`: day, daytime, daylight, clear, sunny, sunshine.
   static const IconData sunHorizon = IconData(0xe5b6, fontFamily: _regular, fontPackage: _package);
+
   /// `sun-horizon`, fill weight.
   static const IconData sunHorizonFill = IconData(0xe5b6, fontFamily: _fill, fontPackage: _package);
+
   /// `sunglasses`: vision, sun, spectacles.
   static const IconData sunglasses = IconData(0xe816, fontFamily: _regular, fontPackage: _package);
+
   /// `sunglasses`, fill weight.
   static const IconData sunglassesFill = IconData(0xe816, fontFamily: _fill, fontPackage: _package);
+
   /// `superset-of`: ⊇, superset of, set, member, mathematics, arithmetic.
   static const IconData supersetOf = IconData(0xedb8, fontFamily: _regular, fontPackage: _package);
+
   /// `superset-of`, fill weight.
   static const IconData supersetOfFill = IconData(0xedb8, fontFamily: _fill, fontPackage: _package);
+
   /// `superset-proper-of`: ⊃, proper superset of, set, member, mathematics, arithmetic.
   static const IconData supersetProperOf = IconData(0xedb4, fontFamily: _regular, fontPackage: _package);
+
   /// `superset-proper-of`, fill weight.
   static const IconData supersetProperOfFill = IconData(0xedb4, fontFamily: _fill, fontPackage: _package);
+
   /// `swap`: layers, replace, exchange, reverse.
   static const IconData swap = IconData(0xe83c, fontFamily: _regular, fontPackage: _package);
+
   /// `swap`, fill weight.
   static const IconData swapFill = IconData(0xe83c, fontFamily: _fill, fontPackage: _package);
+
   /// `swatches`: colors, color picker, samples, pantone.
   static const IconData swatches = IconData(0xe5b8, fontFamily: _regular, fontPackage: _package);
+
   /// `swatches`, fill weight.
   static const IconData swatchesFill = IconData(0xe5b8, fontFamily: _fill, fontPackage: _package);
+
   /// `swimming-pool`: swim, sports, exercise, olympics, aquatics.
   static const IconData swimmingPool = IconData(0xecb6, fontFamily: _regular, fontPackage: _package);
+
   /// `swimming-pool`, fill weight.
   static const IconData swimmingPoolFill = IconData(0xecb6, fontFamily: _fill, fontPackage: _package);
+
   /// `sword`: weapon, knife, dagger, gladius, video games, rpg.
   static const IconData sword = IconData(0xe5ba, fontFamily: _regular, fontPackage: _package);
+
   /// `sword`, fill weight.
   static const IconData swordFill = IconData(0xe5ba, fontFamily: _fill, fontPackage: _package);
+
   /// `synagogue`: jewish, judaism, temple, religion, worship.
   static const IconData synagogue = IconData(0xecec, fontFamily: _regular, fontPackage: _package);
+
   /// `synagogue`, fill weight.
   static const IconData synagogueFill = IconData(0xecec, fontFamily: _fill, fontPackage: _package);
+
   /// `syringe`: needle, hypodermic, vaccine, medicine, doctor, shot.
   static const IconData syringe = IconData(0xe968, fontFamily: _regular, fontPackage: _package);
+
   /// `syringe`, fill weight.
   static const IconData syringeFill = IconData(0xe968, fontFamily: _fill, fontPackage: _package);
+
   /// `t-shirt`: clothes, clothing.
   static const IconData tShirt = IconData(0xe670, fontFamily: _regular, fontPackage: _package);
+
   /// `t-shirt`, fill weight.
   static const IconData tShirtFill = IconData(0xe670, fontFamily: _fill, fontPackage: _package);
+
   /// `table`: tables, tabular, spreadsheets, excel, grid, form.
   static const IconData table = IconData(0xe476, fontFamily: _regular, fontPackage: _package);
+
   /// `table`, fill weight.
   static const IconData tableFill = IconData(0xe476, fontFamily: _fill, fontPackage: _package);
+
   /// `tabs`: browser, window, folders, files.
   static const IconData tabs = IconData(0xe778, fontFamily: _regular, fontPackage: _package);
+
   /// `tabs`, fill weight.
   static const IconData tabsFill = IconData(0xe778, fontFamily: _fill, fontPackage: _package);
+
   /// `tag`: tags, hashtag, labels, sale, sell, price.
   static const IconData tag = IconData(0xe478, fontFamily: _regular, fontPackage: _package);
+
   /// `tag`, fill weight.
   static const IconData tagFill = IconData(0xe478, fontFamily: _fill, fontPackage: _package);
+
   /// `tag-chevron`: tags, hashtag, labels, sale.
   static const IconData tagChevron = IconData(0xe672, fontFamily: _regular, fontPackage: _package);
+
   /// `tag-chevron`, fill weight.
   static const IconData tagChevronFill = IconData(0xe672, fontFamily: _fill, fontPackage: _package);
+
   /// `tag-simple`: tags, hashtag, labels, sale, sell, price.
   static const IconData tagSimple = IconData(0xe47a, fontFamily: _regular, fontPackage: _package);
+
   /// `tag-simple`, fill weight.
   static const IconData tagSimpleFill = IconData(0xe47a, fontFamily: _fill, fontPackage: _package);
+
   /// `target`: bullseye, radar, archery, accuracy, precision.
   static const IconData target = IconData(0xe47c, fontFamily: _regular, fontPackage: _package);
+
   /// `target`, fill weight.
   static const IconData targetFill = IconData(0xe47c, fontFamily: _fill, fontPackage: _package);
+
   /// `taxi`: vehicles, cars, automobiles, livery, limousine, uber.
   static const IconData taxi = IconData(0xe902, fontFamily: _regular, fontPackage: _package);
+
   /// `taxi`, fill weight.
   static const IconData taxiFill = IconData(0xe902, fontFamily: _fill, fontPackage: _package);
+
   /// `tea-bag`: drinks, beverages, sachet, caffeine, places, locations.
   static const IconData teaBag = IconData(0xe8e6, fontFamily: _regular, fontPackage: _package);
+
   /// `tea-bag`, fill weight.
   static const IconData teaBagFill = IconData(0xe8e6, fontFamily: _fill, fontPackage: _package);
+
   /// `telegram-logo`: logos, messages, messaging.
   static const IconData telegramLogo = IconData(0xe5bc, fontFamily: _regular, fontPackage: _package);
+
   /// `telegram-logo`, fill weight.
   static const IconData telegramLogoFill = IconData(0xe5bc, fontFamily: _fill, fontPackage: _package);
+
   /// `television`: screen, tv, displays.
   static const IconData television = IconData(0xe754, fontFamily: _regular, fontPackage: _package);
+
   /// `television`, fill weight.
   static const IconData televisionFill = IconData(0xe754, fontFamily: _fill, fontPackage: _package);
+
   /// `television-simple`: screen, tv, displays.
   static const IconData televisionSimple = IconData(0xeae6, fontFamily: _regular, fontPackage: _package);
+
   /// `television-simple`, fill weight.
   static const IconData televisionSimpleFill = IconData(0xeae6, fontFamily: _fill, fontPackage: _package);
+
   /// `tennis-ball`: sports, mlb.
   static const IconData tennisBall = IconData(0xe720, fontFamily: _regular, fontPackage: _package);
+
   /// `tennis-ball`, fill weight.
   static const IconData tennisBallFill = IconData(0xe720, fontFamily: _fill, fontPackage: _package);
+
   /// `tent`: camping, outdoors, tarp.
   static const IconData tent = IconData(0xe8ba, fontFamily: _regular, fontPackage: _package);
+
   /// `tent`, fill weight.
   static const IconData tentFill = IconData(0xe8ba, fontFamily: _fill, fontPackage: _package);
+
   /// `terminal`: command line, cli, bash, shell, caret, console.
   static const IconData terminal = IconData(0xe47e, fontFamily: _regular, fontPackage: _package);
+
   /// `terminal`, fill weight.
   static const IconData terminalFill = IconData(0xe47e, fontFamily: _fill, fontPackage: _package);
+
   /// `terminal-window`: command line, cli, bash, shell, caret, console.
   static const IconData terminalWindow = IconData(0xeae8, fontFamily: _regular, fontPackage: _package);
+
   /// `terminal-window`, fill weight.
   static const IconData terminalWindowFill = IconData(0xeae8, fontFamily: _fill, fontPackage: _package);
+
   /// `test-tube`: science, chemistry, experiment, vial.
   static const IconData testTube = IconData(0xe7a0, fontFamily: _regular, fontPackage: _package);
+
   /// `test-tube`, fill weight.
   static const IconData testTubeFill = IconData(0xe7a0, fontFamily: _fill, fontPackage: _package);
+
   /// `text-a-underline`: typography, typeface, print, font, underscore, emphasis.
   static const IconData textAUnderline = IconData(0xed34, fontFamily: _regular, fontPackage: _package);
+
   /// `text-a-underline`, fill weight.
   static const IconData textAUnderlineFill = IconData(0xed34, fontFamily: _fill, fontPackage: _package);
+
   /// `text-aa`: typography, typeface, print, font.
   static const IconData textAa = IconData(0xe6ee, fontFamily: _regular, fontPackage: _package);
+
   /// `text-aa`, fill weight.
   static const IconData textAaFill = IconData(0xe6ee, fontFamily: _fill, fontPackage: _package);
+
   /// `text-align-center`: typography, print, font, alignment, centered.
   static const IconData textAlignCenter = IconData(0xe480, fontFamily: _regular, fontPackage: _package);
+
   /// `text-align-center`, fill weight.
   static const IconData textAlignCenterFill = IconData(0xe480, fontFamily: _fill, fontPackage: _package);
+
   /// `text-align-justify`: typography, print, font, alignment, justified.
   static const IconData textAlignJustify = IconData(0xe482, fontFamily: _regular, fontPackage: _package);
+
   /// `text-align-justify`, fill weight.
   static const IconData textAlignJustifyFill = IconData(0xe482, fontFamily: _fill, fontPackage: _package);
+
   /// `text-align-left`: typography, print, font, alignment, flush left.
   static const IconData textAlignLeft = IconData(0xe484, fontFamily: _regular, fontPackage: _package);
+
   /// `text-align-left`, fill weight.
   static const IconData textAlignLeftFill = IconData(0xe484, fontFamily: _fill, fontPackage: _package);
+
   /// `text-align-right`: typography, print, font, alignment, flush right.
   static const IconData textAlignRight = IconData(0xe486, fontFamily: _regular, fontPackage: _package);
+
   /// `text-align-right`, fill weight.
   static const IconData textAlignRightFill = IconData(0xe486, fontFamily: _fill, fontPackage: _package);
+
   /// `text-b`: typography, typeface, print, font, bold, boldface.
   static const IconData textB = IconData(0xe5be, fontFamily: _regular, fontPackage: _package);
+
   /// `text-b`, fill weight.
   static const IconData textBFill = IconData(0xe5be, fontFamily: _fill, fontPackage: _package);
+
   /// `text-bolder`.
   static const IconData textBolder = IconData(0xe5be, fontFamily: _regular, fontPackage: _package);
+
   /// `text-bolder`, fill weight.
   static const IconData textBolderFill = IconData(0xe5be, fontFamily: _fill, fontPackage: _package);
+
   /// `text-columns`: typography, print, font, alignment, article.
   static const IconData textColumns = IconData(0xec96, fontFamily: _regular, fontPackage: _package);
+
   /// `text-columns`, fill weight.
   static const IconData textColumnsFill = IconData(0xec96, fontFamily: _fill, fontPackage: _package);
+
   /// `text-h`: heading, typography, print.
   static const IconData textH = IconData(0xe6ba, fontFamily: _regular, fontPackage: _package);
+
   /// `text-h`, fill weight.
   static const IconData textHFill = IconData(0xe6ba, fontFamily: _fill, fontPackage: _package);
+
   /// `text-h-five`: heading, h5, typography, print.
   static const IconData textHFive = IconData(0xe6c4, fontFamily: _regular, fontPackage: _package);
+
   /// `text-h-five`, fill weight.
   static const IconData textHFiveFill = IconData(0xe6c4, fontFamily: _fill, fontPackage: _package);
+
   /// `text-h-four`: heading, h4, typography, print.
   static const IconData textHFour = IconData(0xe6c2, fontFamily: _regular, fontPackage: _package);
+
   /// `text-h-four`, fill weight.
   static const IconData textHFourFill = IconData(0xe6c2, fontFamily: _fill, fontPackage: _package);
+
   /// `text-h-one`: heading, h1, typography, print.
   static const IconData textHOne = IconData(0xe6bc, fontFamily: _regular, fontPackage: _package);
+
   /// `text-h-one`, fill weight.
   static const IconData textHOneFill = IconData(0xe6bc, fontFamily: _fill, fontPackage: _package);
+
   /// `text-h-six`: heading, h6, typography, print.
   static const IconData textHSix = IconData(0xe6c6, fontFamily: _regular, fontPackage: _package);
+
   /// `text-h-six`, fill weight.
   static const IconData textHSixFill = IconData(0xe6c6, fontFamily: _fill, fontPackage: _package);
+
   /// `text-h-three`: heading, h3, typography, print.
   static const IconData textHThree = IconData(0xe6c0, fontFamily: _regular, fontPackage: _package);
+
   /// `text-h-three`, fill weight.
   static const IconData textHThreeFill = IconData(0xe6c0, fontFamily: _fill, fontPackage: _package);
+
   /// `text-h-two`: heading, h2, typography, print.
   static const IconData textHTwo = IconData(0xe6be, fontFamily: _regular, fontPackage: _package);
+
   /// `text-h-two`, fill weight.
   static const IconData textHTwoFill = IconData(0xe6be, fontFamily: _fill, fontPackage: _package);
+
   /// `text-indent`: alignment, tab, menu.
   static const IconData textIndent = IconData(0xea1e, fontFamily: _regular, fontPackage: _package);
+
   /// `text-indent`, fill weight.
   static const IconData textIndentFill = IconData(0xea1e, fontFamily: _fill, fontPackage: _package);
+
   /// `text-italic`: typography, typeface, print, font, slant, oblique.
   static const IconData textItalic = IconData(0xe5c0, fontFamily: _regular, fontPackage: _package);
+
   /// `text-italic`, fill weight.
   static const IconData textItalicFill = IconData(0xe5c0, fontFamily: _fill, fontPackage: _package);
+
   /// `text-outdent`: alignment, tab, unindent, dedent, menu.
   static const IconData textOutdent = IconData(0xea1c, fontFamily: _regular, fontPackage: _package);
+
   /// `text-outdent`, fill weight.
   static const IconData textOutdentFill = IconData(0xea1c, fontFamily: _fill, fontPackage: _package);
+
   /// `text-strikethrough`: typography, typeface, print, font, struck, remove.
   static const IconData textStrikethrough = IconData(0xe5c2, fontFamily: _regular, fontPackage: _package);
+
   /// `text-strikethrough`, fill weight.
   static const IconData textStrikethroughFill = IconData(0xe5c2, fontFamily: _fill, fontPackage: _package);
+
   /// `text-subscript`: typography, font, formatting, mathematics, power, exponent.
   static const IconData textSubscript = IconData(0xec98, fontFamily: _regular, fontPackage: _package);
+
   /// `text-subscript`, fill weight.
   static const IconData textSubscriptFill = IconData(0xec98, fontFamily: _fill, fontPackage: _package);
+
   /// `text-superscript`: typography, font, formatting, mathematics, calculator.
   static const IconData textSuperscript = IconData(0xec9a, fontFamily: _regular, fontPackage: _package);
+
   /// `text-superscript`, fill weight.
   static const IconData textSuperscriptFill = IconData(0xec9a, fontFamily: _fill, fontPackage: _package);
+
   /// `text-t`: typography, typeface, print, font.
   static const IconData textT = IconData(0xe48a, fontFamily: _regular, fontPackage: _package);
+
   /// `text-t`, fill weight.
   static const IconData textTFill = IconData(0xe48a, fontFamily: _fill, fontPackage: _package);
+
   /// `text-t-slash`: typography, typeface, print, font, formatting, clear.
   static const IconData textTSlash = IconData(0xe488, fontFamily: _regular, fontPackage: _package);
+
   /// `text-t-slash`, fill weight.
   static const IconData textTSlashFill = IconData(0xe488, fontFamily: _fill, fontPackage: _package);
+
   /// `text-underline`: typography, typeface, print, font, underscore, emphasis.
   static const IconData textUnderline = IconData(0xe5c4, fontFamily: _regular, fontPackage: _package);
+
   /// `text-underline`, fill weight.
   static const IconData textUnderlineFill = IconData(0xe5c4, fontFamily: _fill, fontPackage: _package);
+
   /// `textbox`: input, cursor, field.
   static const IconData textbox = IconData(0xeb0a, fontFamily: _regular, fontPackage: _package);
+
   /// `textbox`, fill weight.
   static const IconData textboxFill = IconData(0xeb0a, fontFamily: _fill, fontPackage: _package);
+
   /// `thermometer`: meteorology, temperature, degrees, °, celcius, centigrade.
   static const IconData thermometer = IconData(0xe5c6, fontFamily: _regular, fontPackage: _package);
+
   /// `thermometer`, fill weight.
   static const IconData thermometerFill = IconData(0xe5c6, fontFamily: _fill, fontPackage: _package);
+
   /// `thermometer-cold`: meteorology, temperature, degrees, °, celcius, centigrade.
   static const IconData thermometerCold = IconData(0xe5c8, fontFamily: _regular, fontPackage: _package);
+
   /// `thermometer-cold`, fill weight.
   static const IconData thermometerColdFill = IconData(0xe5c8, fontFamily: _fill, fontPackage: _package);
+
   /// `thermometer-hot`: meteorology, temperature, degrees, °, celcius, centigrade.
   static const IconData thermometerHot = IconData(0xe5ca, fontFamily: _regular, fontPackage: _package);
+
   /// `thermometer-hot`, fill weight.
   static const IconData thermometerHotFill = IconData(0xe5ca, fontFamily: _fill, fontPackage: _package);
+
   /// `thermometer-simple`: meteorology, temperature, degrees, °, celcius, centigrade.
   static const IconData thermometerSimple = IconData(0xe5cc, fontFamily: _regular, fontPackage: _package);
+
   /// `thermometer-simple`, fill weight.
   static const IconData thermometerSimpleFill = IconData(0xe5cc, fontFamily: _fill, fontPackage: _package);
+
   /// `threads-logo`: meta, instagram, social media.
   static const IconData threadsLogo = IconData(0xed9e, fontFamily: _regular, fontPackage: _package);
+
   /// `threads-logo`, fill weight.
   static const IconData threadsLogoFill = IconData(0xed9e, fontFamily: _fill, fontPackage: _package);
+
   /// `three-d`: 3d, cad, model.
   static const IconData threeD = IconData(0xea5a, fontFamily: _regular, fontPackage: _package);
+
   /// `three-d`, fill weight.
   static const IconData threeDFill = IconData(0xea5a, fontFamily: _fill, fontPackage: _package);
+
   /// `thumbs-down`: dislike, hate, emoji, no.
   static const IconData thumbsDown = IconData(0xe48c, fontFamily: _regular, fontPackage: _package);
+
   /// `thumbs-down`, fill weight.
   static const IconData thumbsDownFill = IconData(0xe48c, fontFamily: _fill, fontPackage: _package);
+
   /// `thumbs-up`: like, love, favorited, favorites, emoji, yes.
   static const IconData thumbsUp = IconData(0xe48e, fontFamily: _regular, fontPackage: _package);
+
   /// `thumbs-up`, fill weight.
   static const IconData thumbsUpFill = IconData(0xe48e, fontFamily: _fill, fontPackage: _package);
+
   /// `ticket`: ticketstub, movie ticket, entry, admissions, events.
   static const IconData ticket = IconData(0xe490, fontFamily: _regular, fontPackage: _package);
+
   /// `ticket`, fill weight.
   static const IconData ticketFill = IconData(0xe490, fontFamily: _fill, fontPackage: _package);
+
   /// `tidal-logo`: music, logos.
   static const IconData tidalLogo = IconData(0xed1c, fontFamily: _regular, fontPackage: _package);
+
   /// `tidal-logo`, fill weight.
   static const IconData tidalLogoFill = IconData(0xed1c, fontFamily: _fill, fontPackage: _package);
+
   /// `tiktok-logo`: logos, social media.
   static const IconData tiktokLogo = IconData(0xeaf2, fontFamily: _regular, fontPackage: _package);
+
   /// `tiktok-logo`, fill weight.
   static const IconData tiktokLogoFill = IconData(0xeaf2, fontFamily: _fill, fontPackage: _package);
+
   /// `tilde`: ~, ∼, proportional, comparison, mathematics, arithmetic.
   static const IconData tilde = IconData(0xeda8, fontFamily: _regular, fontPackage: _package);
+
   /// `tilde`, fill weight.
   static const IconData tildeFill = IconData(0xeda8, fontFamily: _fill, fontPackage: _package);
+
   /// `timer`: clock, alarm, schedule, events, stopwatch, sports.
   static const IconData timer = IconData(0xe492, fontFamily: _regular, fontPackage: _package);
+
   /// `timer`, fill weight.
   static const IconData timerFill = IconData(0xe492, fontFamily: _fill, fontPackage: _package);
+
   /// `tip-jar`: give, deposit, donation, savings, money.
   static const IconData tipJar = IconData(0xe7e2, fontFamily: _regular, fontPackage: _package);
+
   /// `tip-jar`, fill weight.
   static const IconData tipJarFill = IconData(0xe7e2, fontFamily: _fill, fontPackage: _package);
+
   /// `tipi`: teepee, lodge, tent, outdoors, camping, tarp.
   static const IconData tipi = IconData(0xed30, fontFamily: _regular, fontPackage: _package);
+
   /// `tipi`, fill weight.
   static const IconData tipiFill = IconData(0xed30, fontFamily: _fill, fontPackage: _package);
+
   /// `tire`: wheel, vehicles, transportation.
   static const IconData tire = IconData(0xedd2, fontFamily: _regular, fontPackage: _package);
+
   /// `tire`, fill weight.
   static const IconData tireFill = IconData(0xedd2, fontFamily: _fill, fontPackage: _package);
+
   /// `toggle-left`: switch, controls, settings, preferences.
   static const IconData toggleLeft = IconData(0xe674, fontFamily: _regular, fontPackage: _package);
+
   /// `toggle-left`, fill weight.
   static const IconData toggleLeftFill = IconData(0xe674, fontFamily: _fill, fontPackage: _package);
+
   /// `toggle-right`: switch, controls, settings, preferences.
   static const IconData toggleRight = IconData(0xe676, fontFamily: _regular, fontPackage: _package);
+
   /// `toggle-right`, fill weight.
   static const IconData toggleRightFill = IconData(0xe676, fontFamily: _fill, fontPackage: _package);
+
   /// `toilet`: bathroom, restroom, lavatory, water closet.
   static const IconData toilet = IconData(0xe79a, fontFamily: _regular, fontPackage: _package);
+
   /// `toilet`, fill weight.
   static const IconData toiletFill = IconData(0xe79a, fontFamily: _fill, fontPackage: _package);
+
   /// `toilet-paper`: bathroom, restroom, lavatory, water closet.
   static const IconData toiletPaper = IconData(0xe79c, fontFamily: _regular, fontPackage: _package);
+
   /// `toilet-paper`, fill weight.
   static const IconData toiletPaperFill = IconData(0xe79c, fontFamily: _fill, fontPackage: _package);
+
   /// `toolbox`: tools, carpentry, construction.
   static const IconData toolbox = IconData(0xeca0, fontFamily: _regular, fontPackage: _package);
+
   /// `toolbox`, fill weight.
   static const IconData toolboxFill = IconData(0xeca0, fontFamily: _fill, fontPackage: _package);
+
   /// `tooth`: teeth, dentistry, medical, medicine, doctor, cavity.
   static const IconData tooth = IconData(0xe9cc, fontFamily: _regular, fontPackage: _package);
+
   /// `tooth`, fill weight.
   static const IconData toothFill = IconData(0xe9cc, fontFamily: _fill, fontPackage: _package);
+
   /// `tornado`: meteorology, twister, storm, wind, disaster.
   static const IconData tornado = IconData(0xe88c, fontFamily: _regular, fontPackage: _package);
+
   /// `tornado`, fill weight.
   static const IconData tornadoFill = IconData(0xe88c, fontFamily: _fill, fontPackage: _package);
+
   /// `tote`: suitcases, valises, baggage, tote-bag, portfolios.
   static const IconData tote = IconData(0xe494, fontFamily: _regular, fontPackage: _package);
+
   /// `tote`, fill weight.
   static const IconData toteFill = IconData(0xe494, fontFamily: _fill, fontPackage: _package);
+
   /// `tote-simple`: suitcases, valises, baggage, tote-bag, portfolios.
   static const IconData toteSimple = IconData(0xe678, fontFamily: _regular, fontPackage: _package);
+
   /// `tote-simple`, fill weight.
   static const IconData toteSimpleFill = IconData(0xe678, fontFamily: _fill, fontPackage: _package);
+
   /// `towel`: clothing, linen, hotel, beach, pool, swimming.
   static const IconData towel = IconData(0xede6, fontFamily: _regular, fontPackage: _package);
+
   /// `towel`, fill weight.
   static const IconData towelFill = IconData(0xede6, fontFamily: _fill, fontPackage: _package);
+
   /// `tractor`: vehicles, farmer, field, farming, agriculture.
   static const IconData tractor = IconData(0xec6e, fontFamily: _regular, fontPackage: _package);
+
   /// `tractor`, fill weight.
   static const IconData tractorFill = IconData(0xec6e, fontFamily: _fill, fontPackage: _package);
+
   /// `trademark`: tm, ®, ™, intellectual property.
   static const IconData trademark = IconData(0xe9f0, fontFamily: _regular, fontPackage: _package);
+
   /// `trademark`, fill weight.
   static const IconData trademarkFill = IconData(0xe9f0, fontFamily: _fill, fontPackage: _package);
+
   /// `trademark-registered`: ®, ™, intellectual property.
   static const IconData trademarkRegistered = IconData(0xe3f4, fontFamily: _regular, fontPackage: _package);
+
   /// `trademark-registered`, fill weight.
   static const IconData trademarkRegisteredFill = IconData(0xe3f4, fontFamily: _fill, fontPackage: _package);
+
   /// `traffic-cone`: pylon, safety, transit, transportation.
   static const IconData trafficCone = IconData(0xe9a8, fontFamily: _regular, fontPackage: _package);
+
   /// `traffic-cone`, fill weight.
   static const IconData trafficConeFill = IconData(0xe9a8, fontFamily: _fill, fontPackage: _package);
+
   /// `traffic-sign`: road signs, transit, transportation.
   static const IconData trafficSign = IconData(0xe67a, fontFamily: _regular, fontPackage: _package);
+
   /// `traffic-sign`, fill weight.
   static const IconData trafficSignFill = IconData(0xe67a, fontFamily: _fill, fontPackage: _package);
+
   /// `traffic-signal`: stop light, safety, transit, transportation.
   static const IconData trafficSignal = IconData(0xe9aa, fontFamily: _regular, fontPackage: _package);
+
   /// `traffic-signal`, fill weight.
   static const IconData trafficSignalFill = IconData(0xe9aa, fontFamily: _fill, fontPackage: _package);
+
   /// `train`: vehicles, subway, light rail, public transit, transportation, commuter.
   static const IconData train = IconData(0xe496, fontFamily: _regular, fontPackage: _package);
+
   /// `train`, fill weight.
   static const IconData trainFill = IconData(0xe496, fontFamily: _fill, fontPackage: _package);
+
   /// `train-regional`: vehicles, subway, railroad, public transit, transportation, commuter.
   static const IconData trainRegional = IconData(0xe49e, fontFamily: _regular, fontPackage: _package);
+
   /// `train-regional`, fill weight.
   static const IconData trainRegionalFill = IconData(0xe49e, fontFamily: _fill, fontPackage: _package);
+
   /// `train-simple`: vehicles, subway, light rail, public transit, transportation, commuter.
   static const IconData trainSimple = IconData(0xe4a0, fontFamily: _regular, fontPackage: _package);
+
   /// `train-simple`, fill weight.
   static const IconData trainSimpleFill = IconData(0xe4a0, fontFamily: _fill, fontPackage: _package);
+
   /// `tram`: vehicles, subway, railroad, public transit, transportation, commuter.
   static const IconData tram = IconData(0xe9ec, fontFamily: _regular, fontPackage: _package);
+
   /// `tram`, fill weight.
   static const IconData tramFill = IconData(0xe9ec, fontFamily: _fill, fontPackage: _package);
+
   /// `translate`: translation, languages, internationalization, i18n, speech.
   static const IconData translate = IconData(0xe4a2, fontFamily: _regular, fontPackage: _package);
+
   /// `translate`, fill weight.
   static const IconData translateFill = IconData(0xe4a2, fontFamily: _fill, fontPackage: _package);
+
   /// `trash`: garbage, remove, delete, destroy, recycle, recycling.
   static const IconData trash = IconData(0xe4a6, fontFamily: _regular, fontPackage: _package);
+
   /// `trash`, fill weight.
   static const IconData trashFill = IconData(0xe4a6, fontFamily: _fill, fontPackage: _package);
+
   /// `trash-simple`: garbage, remove, delete, destroy, recycle, recycling.
   static const IconData trashSimple = IconData(0xe4a8, fontFamily: _regular, fontPackage: _package);
+
   /// `trash-simple`, fill weight.
   static const IconData trashSimpleFill = IconData(0xe4a8, fontFamily: _fill, fontPackage: _package);
+
   /// `tray`: inbox, mailbox, bin.
   static const IconData tray = IconData(0xe4aa, fontFamily: _regular, fontPackage: _package);
+
   /// `tray`, fill weight.
   static const IconData trayFill = IconData(0xe4aa, fontFamily: _fill, fontPackage: _package);
+
   /// `tray-arrow-down`: inbox, saved, saving, archived, archiving, archival.
   static const IconData trayArrowDown = IconData(0xe010, fontFamily: _regular, fontPackage: _package);
+
   /// `tray-arrow-down`, fill weight.
   static const IconData trayArrowDownFill = IconData(0xe010, fontFamily: _fill, fontPackage: _package);
+
   /// `tray-arrow-up`: outbox, archival, unarchive, uploaded, uploading.
   static const IconData trayArrowUp = IconData(0xee52, fontFamily: _regular, fontPackage: _package);
+
   /// `tray-arrow-up`, fill weight.
   static const IconData trayArrowUpFill = IconData(0xee52, fontFamily: _fill, fontPackage: _package);
+
   /// `treasure-chest`: loot, lootbox, inventory, rewards, gaming, pirate.
   static const IconData treasureChest = IconData(0xede2, fontFamily: _regular, fontPackage: _package);
+
   /// `treasure-chest`, fill weight.
   static const IconData treasureChestFill = IconData(0xede2, fontFamily: _fill, fontPackage: _package);
+
   /// `tree`: plants, branches, leaves, green, environmental.
   static const IconData tree = IconData(0xe6da, fontFamily: _regular, fontPackage: _package);
+
   /// `tree`, fill weight.
   static const IconData treeFill = IconData(0xe6da, fontFamily: _fill, fontPackage: _package);
+
   /// `tree-evergreen`: plants, branches, leaves, pine, conifer, green.
   static const IconData treeEvergreen = IconData(0xe6dc, fontFamily: _regular, fontPackage: _package);
+
   /// `tree-evergreen`, fill weight.
   static const IconData treeEvergreenFill = IconData(0xe6dc, fontFamily: _fill, fontPackage: _package);
+
   /// `tree-palm`: tropical, beach, plants, branches, leaves, green.
   static const IconData treePalm = IconData(0xe91a, fontFamily: _regular, fontPackage: _package);
+
   /// `tree-palm`, fill weight.
   static const IconData treePalmFill = IconData(0xe91a, fontFamily: _fill, fontPackage: _package);
+
   /// `tree-structure`: data structures, family tree, genealogy, hierarchy, taxonomy, charts.
   static const IconData treeStructure = IconData(0xe67c, fontFamily: _regular, fontPackage: _package);
+
   /// `tree-structure`, fill weight.
   static const IconData treeStructureFill = IconData(0xe67c, fontFamily: _fill, fontPackage: _package);
+
   /// `tree-view`: hierarchy.
   static const IconData treeView = IconData(0xee48, fontFamily: _regular, fontPackage: _package);
+
   /// `tree-view`, fill weight.
   static const IconData treeViewFill = IconData(0xee48, fontFamily: _fill, fontPackage: _package);
+
   /// `trend-down`: graphs, graphing, charts, statistics, analyze, analysis.
   static const IconData trendDown = IconData(0xe4ac, fontFamily: _regular, fontPackage: _package);
+
   /// `trend-down`, fill weight.
   static const IconData trendDownFill = IconData(0xe4ac, fontFamily: _fill, fontPackage: _package);
+
   /// `trend-up`: graphs, graphing, charts, statistics, analyze, analysis.
   static const IconData trendUp = IconData(0xe4ae, fontFamily: _regular, fontPackage: _package);
+
   /// `trend-up`, fill weight.
   static const IconData trendUpFill = IconData(0xe4ae, fontFamily: _fill, fontPackage: _package);
+
   /// `triangle`: 3, shapes, polygons.
   static const IconData triangle = IconData(0xe4b0, fontFamily: _regular, fontPackage: _package);
+
   /// `triangle`, fill weight.
   static const IconData triangleFill = IconData(0xe4b0, fontFamily: _fill, fontPackage: _package);
+
   /// `triangle-dashed`: 3, shapes, polygons, missing.
   static const IconData triangleDashed = IconData(0xe4b2, fontFamily: _regular, fontPackage: _package);
+
   /// `triangle-dashed`, fill weight.
   static const IconData triangleDashedFill = IconData(0xe4b2, fontFamily: _fill, fontPackage: _package);
+
   /// `trolley`: airport, briefcase, valise, baggage.
   static const IconData trolley = IconData(0xe5b2, fontFamily: _regular, fontPackage: _package);
+
   /// `trolley`, fill weight.
   static const IconData trolleyFill = IconData(0xe5b2, fontFamily: _fill, fontPackage: _package);
+
   /// `trolley-suitcase`: airport, briefcase, valise, baggage.
   static const IconData trolleySuitcase = IconData(0xe5b4, fontFamily: _regular, fontPackage: _package);
+
   /// `trolley-suitcase`, fill weight.
   static const IconData trolleySuitcaseFill = IconData(0xe5b4, fontFamily: _fill, fontPackage: _package);
+
   /// `trophy`: ribbons, medals, winning, victory, awards, prize.
   static const IconData trophy = IconData(0xe67e, fontFamily: _regular, fontPackage: _package);
+
   /// `trophy`, fill weight.
   static const IconData trophyFill = IconData(0xe67e, fontFamily: _fill, fontPackage: _package);
+
   /// `truck`: trucks, cars, vehicles, automobile, shipping, delivery.
   static const IconData truck = IconData(0xe4b4, fontFamily: _regular, fontPackage: _package);
+
   /// `truck`, fill weight.
   static const IconData truckFill = IconData(0xe4b4, fontFamily: _fill, fontPackage: _package);
+
   /// `truck-trailer`: vehicles, automobile, shipping, tractor, semi.
   static const IconData truckTrailer = IconData(0xe4b6, fontFamily: _regular, fontPackage: _package);
+
   /// `truck-trailer`, fill weight.
   static const IconData truckTrailerFill = IconData(0xe4b6, fontFamily: _fill, fontPackage: _package);
+
   /// `tumblr-logo`: social media, logos.
   static const IconData tumblrLogo = IconData(0xe8d4, fontFamily: _regular, fontPackage: _package);
+
   /// `tumblr-logo`, fill weight.
   static const IconData tumblrLogoFill = IconData(0xe8d4, fontFamily: _fill, fontPackage: _package);
+
   /// `twitch-logo`: logos, streaming, livestream, gaming, video games, social media.
   static const IconData twitchLogo = IconData(0xe5ce, fontFamily: _regular, fontPackage: _package);
+
   /// `twitch-logo`, fill weight.
   static const IconData twitchLogoFill = IconData(0xe5ce, fontFamily: _fill, fontPackage: _package);
+
   /// `twitter-logo`: logos, social media, tweets, birds.
   static const IconData twitterLogo = IconData(0xe4ba, fontFamily: _regular, fontPackage: _package);
+
   /// `twitter-logo`, fill weight.
   static const IconData twitterLogoFill = IconData(0xe4ba, fontFamily: _fill, fontPackage: _package);
+
   /// `umbrella`: raining, rainy, insurance.
   static const IconData umbrella = IconData(0xe684, fontFamily: _regular, fontPackage: _package);
+
   /// `umbrella`, fill weight.
   static const IconData umbrellaFill = IconData(0xe684, fontFamily: _fill, fontPackage: _package);
+
   /// `umbrella-simple`: raining, rainy, insurance.
   static const IconData umbrellaSimple = IconData(0xe686, fontFamily: _regular, fontPackage: _package);
+
   /// `umbrella-simple`, fill weight.
   static const IconData umbrellaSimpleFill = IconData(0xe686, fontFamily: _fill, fontPackage: _package);
+
   /// `union`: ∪, union, set, member, mathematics, arithmetic.
   static const IconData union = IconData(0xedbe, fontFamily: _regular, fontPackage: _package);
+
   /// `union`, fill weight.
   static const IconData unionFill = IconData(0xedbe, fontFamily: _fill, fontPackage: _package);
+
   /// `unite`: round, join, union, merge, combine, intersecting.
   static const IconData unite = IconData(0xe87e, fontFamily: _regular, fontPackage: _package);
+
   /// `unite`, fill weight.
   static const IconData uniteFill = IconData(0xe87e, fontFamily: _fill, fontPackage: _package);
+
   /// `unite-square`: join, union, merge, combine, intersecting, intersection.
   static const IconData uniteSquare = IconData(0xe878, fontFamily: _regular, fontPackage: _package);
+
   /// `unite-square`, fill weight.
   static const IconData uniteSquareFill = IconData(0xe878, fontFamily: _fill, fontPackage: _package);
+
   /// `upload`: saved, saving, archived, archiving, archival, uploaded.
   static const IconData upload = IconData(0xe4be, fontFamily: _regular, fontPackage: _package);
+
   /// `upload`, fill weight.
   static const IconData uploadFill = IconData(0xe4be, fontFamily: _fill, fontPackage: _package);
+
   /// `upload-simple`: saved, saving, archived, archiving, archival, uploaded.
   static const IconData uploadSimple = IconData(0xe4c0, fontFamily: _regular, fontPackage: _package);
+
   /// `upload-simple`, fill weight.
   static const IconData uploadSimpleFill = IconData(0xe4c0, fontFamily: _fill, fontPackage: _package);
+
   /// `usb`: serial, port, plug, peripheral, device.
   static const IconData usb = IconData(0xe956, fontFamily: _regular, fontPackage: _package);
+
   /// `usb`, fill weight.
   static const IconData usbFill = IconData(0xe956, fontFamily: _fill, fontPackage: _package);
+
   /// `user`: person, users, profile, account, contact, login.
   static const IconData user = IconData(0xe4c2, fontFamily: _regular, fontPackage: _package);
+
   /// `user`, fill weight.
   static const IconData userFill = IconData(0xe4c2, fontFamily: _fill, fontPackage: _package);
+
   /// `user-check`: person, users, profile, account, contact, login.
   static const IconData userCheck = IconData(0xeafa, fontFamily: _regular, fontPackage: _package);
+
   /// `user-check`, fill weight.
   static const IconData userCheckFill = IconData(0xeafa, fontFamily: _fill, fontPackage: _package);
+
   /// `user-circle`: person, users, profile, account, contact, login.
   static const IconData userCircle = IconData(0xe4c4, fontFamily: _regular, fontPackage: _package);
+
   /// `user-circle`, fill weight.
   static const IconData userCircleFill = IconData(0xe4c4, fontFamily: _fill, fontPackage: _package);
+
   /// `user-circle-check`: person, users, profile, account, contact, login.
   static const IconData userCircleCheck = IconData(0xec38, fontFamily: _regular, fontPackage: _package);
+
   /// `user-circle-check`, fill weight.
   static const IconData userCircleCheckFill = IconData(0xec38, fontFamily: _fill, fontPackage: _package);
+
   /// `user-circle-dashed`: person, users, profile, account, contact, login.
   static const IconData userCircleDashed = IconData(0xec36, fontFamily: _regular, fontPackage: _package);
+
   /// `user-circle-dashed`, fill weight.
   static const IconData userCircleDashedFill = IconData(0xec36, fontFamily: _fill, fontPackage: _package);
+
   /// `user-circle-gear`: person, users, profile, account, contact, settings.
   static const IconData userCircleGear = IconData(0xe4c6, fontFamily: _regular, fontPackage: _package);
+
   /// `user-circle-gear`, fill weight.
   static const IconData userCircleGearFill = IconData(0xe4c6, fontFamily: _fill, fontPackage: _package);
+
   /// `user-circle-minus`: person, users, profile, account, contact, delete.
   static const IconData userCircleMinus = IconData(0xe4c8, fontFamily: _regular, fontPackage: _package);
+
   /// `user-circle-minus`, fill weight.
   static const IconData userCircleMinusFill = IconData(0xe4c8, fontFamily: _fill, fontPackage: _package);
+
   /// `user-circle-plus`: person, users, profile, account, contact, add.
   static const IconData userCirclePlus = IconData(0xe4ca, fontFamily: _regular, fontPackage: _package);
+
   /// `user-circle-plus`, fill weight.
   static const IconData userCirclePlusFill = IconData(0xe4ca, fontFamily: _fill, fontPackage: _package);
+
   /// `user-focus`: identification, biometrics, facial recognition, profile, person, account.
   static const IconData userFocus = IconData(0xe6fc, fontFamily: _regular, fontPackage: _package);
+
   /// `user-focus`, fill weight.
   static const IconData userFocusFill = IconData(0xe6fc, fontFamily: _fill, fontPackage: _package);
+
   /// `user-gear`: person, users, profile, account, contact, settings.
   static const IconData userGear = IconData(0xe4cc, fontFamily: _regular, fontPackage: _package);
+
   /// `user-gear`, fill weight.
   static const IconData userGearFill = IconData(0xe4cc, fontFamily: _fill, fontPackage: _package);
+
   /// `user-list`: person, users, profiles, accounts, members, address book.
   static const IconData userList = IconData(0xe73c, fontFamily: _regular, fontPackage: _package);
+
   /// `user-list`, fill weight.
   static const IconData userListFill = IconData(0xe73c, fontFamily: _fill, fontPackage: _package);
+
   /// `user-minus`: person, users, profile, account, contact, delete.
   static const IconData userMinus = IconData(0xe4ce, fontFamily: _regular, fontPackage: _package);
+
   /// `user-minus`, fill weight.
   static const IconData userMinusFill = IconData(0xe4ce, fontFamily: _fill, fontPackage: _package);
+
   /// `user-plus`: person, users, profile, account, contact, add.
   static const IconData userPlus = IconData(0xe4d0, fontFamily: _regular, fontPackage: _package);
+
   /// `user-plus`, fill weight.
   static const IconData userPlusFill = IconData(0xe4d0, fontFamily: _fill, fontPackage: _package);
+
   /// `user-rectangle`: person, users, profile, account, contact, login.
   static const IconData userRectangle = IconData(0xe4d2, fontFamily: _regular, fontPackage: _package);
+
   /// `user-rectangle`, fill weight.
   static const IconData userRectangleFill = IconData(0xe4d2, fontFamily: _fill, fontPackage: _package);
+
   /// `user-sound`: person, users, profile, speech, speaking, voice.
   static const IconData userSound = IconData(0xeca8, fontFamily: _regular, fontPackage: _package);
+
   /// `user-sound`, fill weight.
   static const IconData userSoundFill = IconData(0xeca8, fontFamily: _fill, fontPackage: _package);
+
   /// `user-square`: person, users, profile, account, contact, login.
   static const IconData userSquare = IconData(0xe4d4, fontFamily: _regular, fontPackage: _package);
+
   /// `user-square`, fill weight.
   static const IconData userSquareFill = IconData(0xe4d4, fontFamily: _fill, fontPackage: _package);
+
   /// `user-switch`: person, users, profile, account, login, logout.
   static const IconData userSwitch = IconData(0xe756, fontFamily: _regular, fontPackage: _package);
+
   /// `user-switch`, fill weight.
   static const IconData userSwitchFill = IconData(0xe756, fontFamily: _fill, fontPackage: _package);
+
   /// `users`: user, group, team, people, profiles, accounts.
   static const IconData users = IconData(0xe4d6, fontFamily: _regular, fontPackage: _package);
+
   /// `users`, fill weight.
   static const IconData usersFill = IconData(0xe4d6, fontFamily: _fill, fontPackage: _package);
+
   /// `users-four`: user, group, team, department, community, people.
   static const IconData usersFour = IconData(0xe68c, fontFamily: _regular, fontPackage: _package);
+
   /// `users-four`, fill weight.
   static const IconData usersFourFill = IconData(0xe68c, fontFamily: _fill, fontPackage: _package);
+
   /// `users-three`: user, group, team, community, people, profiles.
   static const IconData usersThree = IconData(0xe68e, fontFamily: _regular, fontPackage: _package);
+
   /// `users-three`, fill weight.
   static const IconData usersThreeFill = IconData(0xe68e, fontFamily: _fill, fontPackage: _package);
+
   /// `van`: westfalia, microbus, vanagon, cars, vehicles, automobile.
   static const IconData van = IconData(0xe826, fontFamily: _regular, fontPackage: _package);
+
   /// `van`, fill weight.
   static const IconData vanFill = IconData(0xe826, fontFamily: _fill, fontPackage: _package);
+
   /// `vault`: safe, bank, security, secured, authentication, authenticated.
   static const IconData vault = IconData(0xe76e, fontFamily: _regular, fontPackage: _package);
+
   /// `vault`, fill weight.
   static const IconData vaultFill = IconData(0xe76e, fontFamily: _fill, fontPackage: _package);
+
   /// `vector-three`: 3d, xyz, cartesian, coordinates, plane, volume.
   static const IconData vectorThree = IconData(0xee62, fontFamily: _regular, fontPackage: _package);
+
   /// `vector-three`, fill weight.
   static const IconData vectorThreeFill = IconData(0xee62, fontFamily: _fill, fontPackage: _package);
+
   /// `vector-two`: 2d, xy, cartesian, coordinates, plane, dimensions.
   static const IconData vectorTwo = IconData(0xee64, fontFamily: _regular, fontPackage: _package);
+
   /// `vector-two`, fill weight.
   static const IconData vectorTwoFill = IconData(0xee64, fontFamily: _fill, fontPackage: _package);
+
   /// `vibrate`: audio, volume, viration, ringer, calls, silent.
   static const IconData vibrate = IconData(0xe4d8, fontFamily: _regular, fontPackage: _package);
+
   /// `vibrate`, fill weight.
   static const IconData vibrateFill = IconData(0xe4d8, fontFamily: _fill, fontPackage: _package);
+
   /// `video`: training, course, education, tutorial.
   static const IconData video = IconData(0xe740, fontFamily: _regular, fontPackage: _package);
+
   /// `video`, fill weight.
   static const IconData videoFill = IconData(0xe740, fontFamily: _fill, fontPackage: _package);
+
   /// `video-camera`: videography, films, movies, recording.
   static const IconData videoCamera = IconData(0xe4da, fontFamily: _regular, fontPackage: _package);
+
   /// `video-camera`, fill weight.
   static const IconData videoCameraFill = IconData(0xe4da, fontFamily: _fill, fontPackage: _package);
+
   /// `video-camera-slash`: videography, films, movies, recording, disabled.
   static const IconData videoCameraSlash = IconData(0xe4dc, fontFamily: _regular, fontPackage: _package);
+
   /// `video-camera-slash`, fill weight.
   static const IconData videoCameraSlashFill = IconData(0xe4dc, fontFamily: _fill, fontPackage: _package);
+
   /// `video-conference`: video call, zoom, skype, discord, facetime, meeting.
   static const IconData videoConference = IconData(0xedce, fontFamily: _regular, fontPackage: _package);
+
   /// `video-conference`, fill weight.
   static const IconData videoConferenceFill = IconData(0xedce, fontFamily: _fill, fontPackage: _package);
+
   /// `vignette`: photography, darkroom, movie, analog.
   static const IconData vignette = IconData(0xeba2, fontFamily: _regular, fontPackage: _package);
+
   /// `vignette`, fill weight.
   static const IconData vignetteFill = IconData(0xeba2, fontFamily: _fill, fontPackage: _package);
+
   /// `vinyl-record`: recording, audio, album, music, ep, lp.
   static const IconData vinylRecord = IconData(0xecac, fontFamily: _regular, fontPackage: _package);
+
   /// `vinyl-record`, fill weight.
   static const IconData vinylRecordFill = IconData(0xecac, fontFamily: _fill, fontPackage: _package);
+
   /// `virtual-reality`: virtual reality, vr, headset, metaverse.
   static const IconData virtualReality = IconData(0xe7b8, fontFamily: _regular, fontPackage: _package);
+
   /// `virtual-reality`, fill weight.
   static const IconData virtualRealityFill = IconData(0xe7b8, fontFamily: _fill, fontPackage: _package);
+
   /// `virus`: germs, disease, illness.
   static const IconData virus = IconData(0xe7d6, fontFamily: _regular, fontPackage: _package);
+
   /// `virus`, fill weight.
   static const IconData virusFill = IconData(0xe7d6, fontFamily: _fill, fontPackage: _package);
+
   /// `visor`: goggles, vision.
   static const IconData visor = IconData(0xee2a, fontFamily: _regular, fontPackage: _package);
+
   /// `visor`, fill weight.
   static const IconData visorFill = IconData(0xee2a, fontFamily: _fill, fontPackage: _package);
+
   /// `voicemail`: phonecalls, missed, recording, telephone, landline.
   static const IconData voicemail = IconData(0xe4de, fontFamily: _regular, fontPackage: _package);
+
   /// `voicemail`, fill weight.
   static const IconData voicemailFill = IconData(0xe4de, fontFamily: _fill, fontPackage: _package);
+
   /// `volleyball`: sports.
   static const IconData volleyball = IconData(0xe726, fontFamily: _regular, fontPackage: _package);
+
   /// `volleyball`, fill weight.
   static const IconData volleyballFill = IconData(0xe726, fontFamily: _fill, fontPackage: _package);
+
   /// `wall`: firewall, security, secured, blocks, bricks.
   static const IconData wall = IconData(0xe688, fontFamily: _regular, fontPackage: _package);
+
   /// `wall`, fill weight.
   static const IconData wallFill = IconData(0xe688, fontFamily: _fill, fontPackage: _package);
+
   /// `wallet`: money, payment, paying, purchase.
   static const IconData wallet = IconData(0xe68a, fontFamily: _regular, fontPackage: _package);
+
   /// `wallet`, fill weight.
   static const IconData walletFill = IconData(0xe68a, fontFamily: _fill, fontPackage: _package);
+
   /// `warehouse`: storage, industry, manufacture, buildings, places, locations.
   static const IconData warehouse = IconData(0xecd4, fontFamily: _regular, fontPackage: _package);
+
   /// `warehouse`, fill weight.
   static const IconData warehouseFill = IconData(0xecd4, fontFamily: _fill, fontPackage: _package);
+
   /// `warning`: alert, danger, dangerous, caution, errors.
   static const IconData warning = IconData(0xe4e0, fontFamily: _regular, fontPackage: _package);
+
   /// `warning`, fill weight.
   static const IconData warningFill = IconData(0xe4e0, fontFamily: _fill, fontPackage: _package);
+
   /// `warning-circle`: alert, danger, dangerous, caution, errors, round.
   static const IconData warningCircle = IconData(0xe4e2, fontFamily: _regular, fontPackage: _package);
+
   /// `warning-circle`, fill weight.
   static const IconData warningCircleFill = IconData(0xe4e2, fontFamily: _fill, fontPackage: _package);
+
   /// `warning-diamond`: alert, danger, dangerous, caution, errors.
   static const IconData warningDiamond = IconData(0xe7fc, fontFamily: _regular, fontPackage: _package);
+
   /// `warning-diamond`, fill weight.
   static const IconData warningDiamondFill = IconData(0xe7fc, fontFamily: _fill, fontPackage: _package);
+
   /// `warning-octagon`: alert, danger, dangerous, caution, errors, 8.
   static const IconData warningOctagon = IconData(0xe4e4, fontFamily: _regular, fontPackage: _package);
+
   /// `warning-octagon`, fill weight.
   static const IconData warningOctagonFill = IconData(0xe4e4, fontFamily: _fill, fontPackage: _package);
+
   /// `washing-machine`: clothing, laundry, cleaning.
   static const IconData washingMachine = IconData(0xede8, fontFamily: _regular, fontPackage: _package);
+
   /// `washing-machine`, fill weight.
   static const IconData washingMachineFill = IconData(0xede8, fontFamily: _fill, fontPackage: _package);
+
   /// `watch`: times, timer, alarm, schedule, events, clock.
   static const IconData watch = IconData(0xe4e6, fontFamily: _regular, fontPackage: _package);
+
   /// `watch`, fill weight.
   static const IconData watchFill = IconData(0xe4e6, fontFamily: _fill, fontPackage: _package);
+
   /// `wave-sawtooth`: synth, synthesizer, sound, audio, music, waveform.
   static const IconData waveSawtooth = IconData(0xea9c, fontFamily: _regular, fontPackage: _package);
+
   /// `wave-sawtooth`, fill weight.
   static const IconData waveSawtoothFill = IconData(0xea9c, fontFamily: _fill, fontPackage: _package);
+
   /// `wave-sine`: synth, synthesizer, sound, audio, music, waveform.
   static const IconData waveSine = IconData(0xea9a, fontFamily: _regular, fontPackage: _package);
+
   /// `wave-sine`, fill weight.
   static const IconData waveSineFill = IconData(0xea9a, fontFamily: _fill, fontPackage: _package);
+
   /// `wave-square`: synth, synthesizer, sound, audio, music, waveform.
   static const IconData waveSquare = IconData(0xea9e, fontFamily: _regular, fontPackage: _package);
+
   /// `wave-square`, fill weight.
   static const IconData waveSquareFill = IconData(0xea9e, fontFamily: _fill, fontPackage: _package);
+
   /// `wave-triangle`: synth, synthesizer, sound, audio, music, waveform.
   static const IconData waveTriangle = IconData(0xeaa0, fontFamily: _regular, fontPackage: _package);
+
   /// `wave-triangle`, fill weight.
   static const IconData waveTriangleFill = IconData(0xeaa0, fontFamily: _fill, fontPackage: _package);
+
   /// `waveform`: audio, sound, spectrum, spectrograph, music.
   static const IconData waveform = IconData(0xe802, fontFamily: _regular, fontPackage: _package);
+
   /// `waveform`, fill weight.
   static const IconData waveformFill = IconData(0xe802, fontFamily: _fill, fontPackage: _package);
+
   /// `waveform-slash`: audio, sound, spectrum, spectrograph, music.
   static const IconData waveformSlash = IconData(0xe800, fontFamily: _regular, fontPackage: _package);
+
   /// `waveform-slash`, fill weight.
   static const IconData waveformSlashFill = IconData(0xe800, fontFamily: _fill, fontPackage: _package);
+
   /// `waves`: ocean, tides, surf.
   static const IconData waves = IconData(0xe6de, fontFamily: _regular, fontPackage: _package);
+
   /// `waves`, fill weight.
   static const IconData wavesFill = IconData(0xe6de, fontFamily: _fill, fontPackage: _package);
+
   /// `webcam`: camera, video conference.
   static const IconData webcam = IconData(0xe9b2, fontFamily: _regular, fontPackage: _package);
+
   /// `webcam`, fill weight.
   static const IconData webcamFill = IconData(0xe9b2, fontFamily: _fill, fontPackage: _package);
+
   /// `webcam-slash`: camera, video conference.
   static const IconData webcamSlash = IconData(0xecdc, fontFamily: _regular, fontPackage: _package);
+
   /// `webcam-slash`, fill weight.
   static const IconData webcamSlashFill = IconData(0xecdc, fontFamily: _fill, fontPackage: _package);
+
   /// `webhooks-logo`: api.
   static const IconData webhooksLogo = IconData(0xecae, fontFamily: _regular, fontPackage: _package);
+
   /// `webhooks-logo`, fill weight.
   static const IconData webhooksLogoFill = IconData(0xecae, fontFamily: _fill, fontPackage: _package);
+
   /// `wechat-logo`: weixin, logos.
   static const IconData wechatLogo = IconData(0xe8d2, fontFamily: _regular, fontPackage: _package);
+
   /// `wechat-logo`, fill weight.
   static const IconData wechatLogoFill = IconData(0xe8d2, fontFamily: _fill, fontPackage: _package);
+
   /// `whatsapp-logo`: logos, messages, messaging.
   static const IconData whatsappLogo = IconData(0xe5d0, fontFamily: _regular, fontPackage: _package);
+
   /// `whatsapp-logo`, fill weight.
   static const IconData whatsappLogoFill = IconData(0xe5d0, fontFamily: _fill, fontPackage: _package);
+
   /// `wheelchair`: handicapped, medical, disabled, differently abled, accessible, accessibility.
   static const IconData wheelchair = IconData(0xe4e8, fontFamily: _regular, fontPackage: _package);
+
   /// `wheelchair`, fill weight.
   static const IconData wheelchairFill = IconData(0xe4e8, fontFamily: _fill, fontPackage: _package);
+
   /// `wheelchair-motion`: handicapped, medical, disabled, differently abled, accessible, accessibility.
   static const IconData wheelchairMotion = IconData(0xe89a, fontFamily: _regular, fontPackage: _package);
+
   /// `wheelchair-motion`, fill weight.
   static const IconData wheelchairMotionFill = IconData(0xe89a, fontFamily: _fill, fontPackage: _package);
+
   /// `wifi-high`: wireless, internet, network, connection, connectivity.
   static const IconData wifiHigh = IconData(0xe4ea, fontFamily: _regular, fontPackage: _package);
+
   /// `wifi-high`, fill weight.
   static const IconData wifiHighFill = IconData(0xe4ea, fontFamily: _fill, fontPackage: _package);
+
   /// `wifi-low`: wireless, internet, network, connection, connectivity.
   static const IconData wifiLow = IconData(0xe4ec, fontFamily: _regular, fontPackage: _package);
+
   /// `wifi-low`, fill weight.
   static const IconData wifiLowFill = IconData(0xe4ec, fontFamily: _fill, fontPackage: _package);
+
   /// `wifi-medium`: wireless, internet, network, connection, connectivity.
   static const IconData wifiMedium = IconData(0xe4ee, fontFamily: _regular, fontPackage: _package);
+
   /// `wifi-medium`, fill weight.
   static const IconData wifiMediumFill = IconData(0xe4ee, fontFamily: _fill, fontPackage: _package);
+
   /// `wifi-none`: wireless, internet, network, connection, connectivity.
   static const IconData wifiNone = IconData(0xe4f0, fontFamily: _regular, fontPackage: _package);
+
   /// `wifi-none`, fill weight.
   static const IconData wifiNoneFill = IconData(0xe4f0, fontFamily: _fill, fontPackage: _package);
+
   /// `wifi-slash`: wireless, internet, network, connection, connectivity, disabled.
   static const IconData wifiSlash = IconData(0xe4f2, fontFamily: _regular, fontPackage: _package);
+
   /// `wifi-slash`, fill weight.
   static const IconData wifiSlashFill = IconData(0xe4f2, fontFamily: _fill, fontPackage: _package);
+
   /// `wifi-x`: wireless, internet, network, connection, connectivity, disconnected.
   static const IconData wifiX = IconData(0xe4f4, fontFamily: _regular, fontPackage: _package);
+
   /// `wifi-x`, fill weight.
   static const IconData wifiXFill = IconData(0xe4f4, fontFamily: _fill, fontPackage: _package);
+
   /// `wind`: meteorology, windy, stormy, blustery, gusty, air.
   static const IconData wind = IconData(0xe5d2, fontFamily: _regular, fontPackage: _package);
+
   /// `wind`, fill weight.
   static const IconData windFill = IconData(0xe5d2, fontFamily: _fill, fontPackage: _package);
+
   /// `windmill`: turbine, energy, renewable, sustainability, countryside, landscape.
   static const IconData windmill = IconData(0xe9f8, fontFamily: _regular, fontPackage: _package);
+
   /// `windmill`, fill weight.
   static const IconData windmillFill = IconData(0xe9f8, fontFamily: _fill, fontPackage: _package);
+
   /// `windows-logo`: microsoft, computers.
   static const IconData windowsLogo = IconData(0xe692, fontFamily: _regular, fontPackage: _package);
+
   /// `windows-logo`, fill weight.
   static const IconData windowsLogoFill = IconData(0xe692, fontFamily: _fill, fontPackage: _package);
+
   /// `wine`: drinks, beverages, vineyard, places, locations, bars.
   static const IconData wine = IconData(0xe6b2, fontFamily: _regular, fontPackage: _package);
+
   /// `wine`, fill weight.
   static const IconData wineFill = IconData(0xe6b2, fontFamily: _fill, fontPackage: _package);
+
   /// `wrench`: settings, setup, preferences, tools, machinery, mechanical.
   static const IconData wrench = IconData(0xe5d4, fontFamily: _regular, fontPackage: _package);
+
   /// `wrench`, fill weight.
   static const IconData wrenchFill = IconData(0xe5d4, fontFamily: _fill, fontPackage: _package);
+
   /// `x`: ×, closed, cancelled, dismissed, times, multiply.
   static const IconData x = IconData(0xe4f6, fontFamily: _regular, fontPackage: _package);
+
   /// `x`, fill weight.
   static const IconData xFill = IconData(0xe4f6, fontFamily: _fill, fontPackage: _package);
+
   /// `x-circle`: closed, cancelled, dismissed, round.
   static const IconData xCircle = IconData(0xe4f8, fontFamily: _regular, fontPackage: _package);
+
   /// `x-circle`, fill weight.
   static const IconData xCircleFill = IconData(0xe4f8, fontFamily: _fill, fontPackage: _package);
+
   /// `x-logo`: twitter, logos, social media, tweets.
   static const IconData xLogo = IconData(0xe4bc, fontFamily: _regular, fontPackage: _package);
+
   /// `x-logo`, fill weight.
   static const IconData xLogoFill = IconData(0xe4bc, fontFamily: _fill, fontPackage: _package);
+
   /// `x-square`: closed, cancelled, dismissed.
   static const IconData xSquare = IconData(0xe4fa, fontFamily: _regular, fontPackage: _package);
+
   /// `x-square`, fill weight.
   static const IconData xSquareFill = IconData(0xe4fa, fontFamily: _fill, fontPackage: _package);
+
   /// `yarn`: knitting, sewing.
   static const IconData yarn = IconData(0xed9a, fontFamily: _regular, fontPackage: _package);
+
   /// `yarn`, fill weight.
   static const IconData yarnFill = IconData(0xed9a, fontFamily: _fill, fontPackage: _package);
+
   /// `yin-yang`: symbol, good, evil, black, white.
   static const IconData yinYang = IconData(0xe92a, fontFamily: _regular, fontPackage: _package);
+
   /// `yin-yang`, fill weight.
   static const IconData yinYangFill = IconData(0xe92a, fontFamily: _fill, fontPackage: _package);
+
   /// `youtube-logo`: logos, google, videos, movies, social media.
   static const IconData youtubeLogo = IconData(0xe4fc, fontFamily: _regular, fontPackage: _package);
+
   /// `youtube-logo`, fill weight.
   static const IconData youtubeLogoFill = IconData(0xe4fc, fontFamily: _fill, fontPackage: _package);
 }

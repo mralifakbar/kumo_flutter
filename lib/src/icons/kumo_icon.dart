@@ -17,14 +17,7 @@ import '../theme/kumo_theme.dart';
 /// const KumoIcon(KumoIcons.warningCircle, color: KumoColor.textDanger, semanticLabel: 'Error')
 /// ```
 class KumoIcon extends StatelessWidget {
-  const KumoIcon(
-    this.icon, {
-    super.key,
-    this.size = 16,
-    this.color,
-    this.dangerouslySetColor,
-    this.semanticLabel,
-  });
+  const KumoIcon(this.icon, {super.key, this.size = 16, this.color, this.dangerouslySetColor, this.semanticLabel});
 
   final IconData icon;
   final double size;
@@ -34,7 +27,8 @@ class KumoIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final resolved = dangerouslySetColor ??
+    final resolved =
+        dangerouslySetColor ??
         (color != null ? context.kumo.color(color!) : DefaultTextStyle.of(context).style.color) ??
         context.kumo.colors.textDefault;
     final glyph = Icon(icon, size: size, color: resolved, semanticLabel: semanticLabel);

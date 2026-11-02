@@ -93,108 +93,121 @@ class KumoPageHeader extends StatelessWidget {
     final kumo = context.kumo;
     final c = kumo.colors;
     final hasTabs = tabs != null && tabs!.isNotEmpty;
-    return LayoutBuilder(builder: (context, constraints) {
-      final narrow = constraints.maxWidth < narrowBreakpoint;
-      Widget? actionBar;
-      if (actions.isNotEmpty) {
-        actionBar = Wrap(
-          spacing: KumoSpace.s2,
-          runSpacing: KumoSpace.s2,
-          crossAxisAlignment: WrapCrossAlignment.center,
-          children: actions,
-        );
-      }
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final narrow = constraints.maxWidth < narrowBreakpoint;
+        Widget? actionBar;
+        if (actions.isNotEmpty) {
+          actionBar = Wrap(
+            spacing: KumoSpace.s2,
+            runSpacing: KumoSpace.s2,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            children: actions,
+          );
+        }
 
-      Widget? titleBlock;
-      if (title != null || description != null) {
-        titleBlock = Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        Widget? titleBlock;
+        if (title != null || description != null) {
+          titleBlock = Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            spacing: KumoSpace.s2,
+            children: [
+              if (title != null)
+                Semantics(
+                  header: true,
+                  headingLevel: 1,
+                  child: Text(title!, style: kumo.heading(size: KumoHeadingSize.h1)),
+                ),
+              if (description != null)
+                ConstrainedBox(
+                  // Tailwind's `max-w-prose` (65ch).
+                  constraints: const BoxConstraints(maxWidth: 560),
+                  child: Text(description!, style: kumo.text(color: KumoColor.textSubtle)),
+                ),
+            ],
+          );
+          if (actionBar != null && !hasTabs) {
+            titleBlock = narrow
+                ? Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    spacing: KumoSpace.s3,
+                    children: [titleBlock, actionBar],
+                  )
+                : Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    spacing: KumoSpace.s4,
+                    children: [
+                      Expanded(child: titleBlock),
+                      actionBar,
+                    ],
+                  );
+          }
+          titleBlock = Padding(
+            padding: const EdgeInsetsDirectional.only(start: KumoSpace.s3, top: KumoSpace.s3, bottom: KumoSpace.s3),
+            child: titleBlock,
+          );
+        }
+
+        Widget? tabRow;
+        if (hasTabs) {
+          final strip = KumoTabs(
+            tabs: [for (final t in tabs!) KumoTab(value: t.value, label: t.label)],
+            value: value ?? tabs!.first.value,
+            // Read-only tabs still need a tap action for the tab role; without
+            // a callback a press simply changes nothing.
+            onValueChange: onValueChange ?? (_) {},
+          );
+          final Widget row;
+          if (actionBar == null) {
+            row = Align(alignment: AlignmentDirectional.centerStart, child: strip);
+          } else if (narrow) {
+            row = Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: KumoSpace.s3,
+              children: [strip, actionBar],
+            );
+          } else {
+            row = Row(
+              spacing: KumoSpace.s4,
+              children: [
+                Flexible(child: strip),
+                const Spacer(),
+                actionBar,
+              ],
+            );
+          }
+          tabRow = Container(
+            padding: const EdgeInsetsDirectional.only(start: KumoSpace.s3, top: KumoSpace.s1, bottom: KumoSpace.s3),
+            decoration: BoxDecoration(
+              border: Border(bottom: BorderSide(color: c.line)),
+            ),
+            child: row,
+          );
+        } else if (actionBar != null && titleBlock == null) {
+          tabRow = Padding(
+            padding: const EdgeInsetsDirectional.only(start: KumoSpace.s3, top: KumoSpace.s1, bottom: KumoSpace.s3),
+            child: actionBar,
+          );
+        }
+
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisSize: MainAxisSize.min,
-          spacing: KumoSpace.s2,
+          spacing: spacing.gap,
           children: [
-            if (title != null)
-              Semantics(
-                header: true,
-                headingLevel: 1,
-                child: Text(title!, style: kumo.heading(size: KumoHeadingSize.h1)),
+            if (breadcrumbs != null)
+              DecoratedBox(
+                decoration: BoxDecoration(
+                  border: Border(bottom: BorderSide(color: c.line)),
+                ),
+                child: breadcrumbs,
               ),
-            if (description != null)
-              ConstrainedBox(
-                // Tailwind's `max-w-prose` (65ch).
-                constraints: const BoxConstraints(maxWidth: 560),
-                child: Text(description!, style: kumo.text(color: KumoColor.textSubtle)),
-              ),
+            ?titleBlock,
+            ?tabRow,
           ],
         );
-        if (actionBar != null && !hasTabs) {
-          titleBlock = narrow
-              ? Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  spacing: KumoSpace.s3,
-                  children: [titleBlock, actionBar],
-                )
-              : Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  spacing: KumoSpace.s4,
-                  children: [Expanded(child: titleBlock), actionBar],
-                );
-        }
-        titleBlock = Padding(
-          padding: const EdgeInsetsDirectional.only(start: KumoSpace.s3, top: KumoSpace.s3, bottom: KumoSpace.s3),
-          child: titleBlock,
-        );
-      }
-
-      Widget? tabRow;
-      if (hasTabs) {
-        final strip = KumoTabs(
-          tabs: [for (final t in tabs!) KumoTab(value: t.value, label: t.label)],
-          value: value ?? tabs!.first.value,
-          // Read-only tabs still need a tap action for the tab role; without
-          // a callback a press simply changes nothing.
-          onValueChange: onValueChange ?? (_) {},
-        );
-        final Widget row;
-        if (actionBar == null) {
-          row = Align(alignment: AlignmentDirectional.centerStart, child: strip);
-        } else if (narrow) {
-          row = Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            spacing: KumoSpace.s3,
-            children: [strip, actionBar],
-          );
-        } else {
-          row = Row(
-            spacing: KumoSpace.s4,
-            children: [Flexible(child: strip), const Spacer(), actionBar],
-          );
-        }
-        tabRow = Container(
-          padding: const EdgeInsetsDirectional.only(start: KumoSpace.s3, top: KumoSpace.s1, bottom: KumoSpace.s3),
-          decoration: BoxDecoration(border: Border(bottom: BorderSide(color: c.line))),
-          child: row,
-        );
-      } else if (actionBar != null && titleBlock == null) {
-        tabRow = Padding(
-          padding: const EdgeInsetsDirectional.only(start: KumoSpace.s3, top: KumoSpace.s1, bottom: KumoSpace.s3),
-          child: actionBar,
-        );
-      }
-
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisSize: MainAxisSize.min,
-        spacing: spacing.gap,
-        children: [
-          if (breadcrumbs != null)
-            DecoratedBox(
-              decoration: BoxDecoration(border: Border(bottom: BorderSide(color: c.line))),
-              child: breadcrumbs,
-            ),
-          ?titleBlock,
-          ?tabRow,
-        ],
-      );
-    });
+      },
+    );
   }
 }

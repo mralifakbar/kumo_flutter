@@ -80,7 +80,8 @@ class KumoRadio<T> extends StatelessWidget {
     final appearance = s.groupAppearance == KumoRadioAppearance.segmented
         ? KumoRadioAppearance.segmented
         : (this.appearance ?? s.groupAppearance);
-    final isError = (variant ?? (s.groupError ? KumoRadioVariant.error : KumoRadioVariant.base)) == KumoRadioVariant.error;
+    final isError =
+        (variant ?? (s.groupError ? KumoRadioVariant.error : KumoRadioVariant.base)) == KumoRadioVariant.error;
     final itemDisabled = s.disabled || disabled;
     final onPress = itemDisabled ? null : s.onSelect;
 
@@ -110,10 +111,7 @@ class KumoRadio<T> extends StatelessWidget {
             selection: s.selection,
             height: 34,
             touchPad: s.touchPad,
-            padding: EdgeInsetsDirectional.only(
-              start: p.first ? 11 : KumoSpace.s3,
-              end: p.last ? 11 : KumoSpace.s3,
-            ),
+            padding: EdgeInsetsDirectional.only(start: p.first ? 11 : KumoSpace.s3, end: p.last ? 11 : KumoSpace.s3),
             // The label turns inverse as the sliding fill covers it.
             builder: (context, covered) => DefaultTextStyle(
               style: kumo
@@ -131,7 +129,8 @@ class KumoRadio<T> extends StatelessWidget {
     }
 
     final card = appearance == KumoRadioAppearance.card;
-    final controlAtStart = (s.controlPosition ?? (card ? KumoRadioControlPosition.end : KumoRadioControlPosition.start)) ==
+    final controlAtStart =
+        (s.controlPosition ?? (card ? KumoRadioControlPosition.end : KumoRadioControlPosition.start)) ==
         KumoRadioControlPosition.start;
     final joined = card && s.groupAppearance == KumoRadioAppearance.card;
 
@@ -158,12 +157,15 @@ class KumoRadio<T> extends StatelessWidget {
             hovered: state.active && !itemDisabled,
           ),
         );
-        final labelText = labelWidget ??
-            Text(label, style: kumo.text(weight: card ? KumoTypography.medium : KumoTypography.normal));
+        final labelText =
+            labelWidget ?? Text(label, style: kumo.text(weight: card ? KumoTypography.medium : KumoTypography.normal));
         final text = ControlLabelStack(label: labelText, description: description);
         Widget result;
         if (card) {
-          final aligned = Padding(padding: const EdgeInsets.only(top: KumoSpace.s0_5), child: dot);
+          final aligned = Padding(
+            padding: const EdgeInsets.only(top: KumoSpace.s0_5),
+            child: dot,
+          );
           final background = s.selected && !isError
               ? c.tint
               : (state.active && !s.selected && !itemDisabled && !isError ? c.elevated : c.base);
@@ -423,12 +425,7 @@ class _KumoRadioGroupState<T> extends State<KumoRadioGroup<T>> with TickerProvid
         _select(i);
         _focus.nodes[i].requestFocus();
       },
-      child: Semantics(
-        role: SemanticsRole.radioGroup,
-        container: true,
-        explicitChildNodes: true,
-        child: body,
-      ),
+      child: Semantics(role: SemanticsRole.radioGroup, container: true, explicitChildNodes: true, child: body),
     );
 
     return ControlFieldset(
@@ -491,10 +488,10 @@ class _RadioDotState extends State<_RadioDot> with SingleTickerProviderStateMixi
     final ring = widget.focused
         ? c.brand
         : widget.error
-            ? c.danger
-            : widget.hovered
-                ? c.hairline
-                : c.line;
+        ? c.danger
+        : widget.hovered
+        ? c.hairline
+        : c.line;
     return SizedBox(
       width: 16,
       height: 16,
@@ -514,7 +511,9 @@ class _RadioDotState extends State<_RadioDot> with SingleTickerProviderStateMixi
               child: SizedBox(
                 width: size,
                 height: size,
-                child: DecoratedBox(decoration: BoxDecoration(color: c.base, shape: BoxShape.circle)),
+                child: DecoratedBox(
+                  decoration: BoxDecoration(color: c.base, shape: BoxShape.circle),
+                ),
               ),
             );
           },

@@ -39,7 +39,12 @@ class KumoDemoCategory {
 /// Standard frame for one scenario inside a demo: a heading, an optional
 /// caption and the live widget.
 class DemoSection extends StatelessWidget {
-  const DemoSection({super.key, required this.title, required this.child, this.caption});
+  const DemoSection({
+    super.key,
+    required this.title,
+    required this.child,
+    this.caption,
+  });
 
   final String title;
   final String? caption;
@@ -54,7 +59,11 @@ class DemoSection extends StatelessWidget {
         KumoText(title, variant: KumoTextVariant.heading),
         if (caption != null) ...[
           const SizedBox(height: KumoSpace.s1),
-          KumoText(caption!, variant: KumoTextVariant.secondary, size: KumoTextSize.sm),
+          KumoText(
+            caption!,
+            variant: KumoTextVariant.secondary,
+            size: KumoTextSize.sm,
+          ),
         ],
         const SizedBox(height: KumoSpace.s3),
         child,

@@ -13,7 +13,12 @@ const _tabs = [
   KumoPageHeaderTab(label: 'Settings', value: 'settings'),
 ];
 
-Widget _header({String value = 'overview', ValueChanged<String>? onValueChange, bool tabs = true, VoidCallback? onDeploy}) {
+Widget _header({
+  String value = 'overview',
+  ValueChanged<String>? onValueChange,
+  bool tabs = true,
+  VoidCallback? onDeploy,
+}) {
   return Align(
     alignment: Alignment.topCenter,
     child: KumoPageHeader(

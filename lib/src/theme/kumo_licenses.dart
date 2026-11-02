@@ -18,6 +18,7 @@ void registerKumoLicenses() {
       ('Inter', 'Inter-OFL.txt'),
       ('JetBrains Mono', 'JetBrainsMono-OFL.txt'),
       ('Phosphor Icons', 'Phosphor-MIT.txt'),
+      ('Kumo', 'Kumo-MIT.txt'),
     ]) {
       final text = await rootBundle.loadString('packages/kumo_flutter/assets/licenses/$file');
       yield LicenseEntryWithLineBreaks([package], text);

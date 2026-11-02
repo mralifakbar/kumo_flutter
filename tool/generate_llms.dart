@@ -10,12 +10,16 @@ void main() {
   final index = StringBuffer()
     ..writeln('# kumo_flutter')
     ..writeln()
-    ..writeln('> Unofficial Flutter port of Kumo, Cloudflare\'s design system: OKLCH-accurate light and dark '
-        'themes, 1,530 Phosphor icons, and accessible, spring-driven components. Not affiliated with Cloudflare.')
+    ..writeln(
+      '> Unofficial Flutter port of Kumo, Cloudflare\'s design system: OKLCH-accurate light and dark '
+      'themes, 1,530 Phosphor icons, and accessible, spring-driven components. Not affiliated with Cloudflare.',
+    )
     ..writeln()
-    ..writeln('Import `package:kumo_flutter/kumo_flutter.dart`, wrap the app in `KumoThemeProvider`, read the theme '
-        'with `context.kumo`. Widgets are prefixed `Kumo`; props follow Kumo names; colors are `KumoColor` tokens; '
-        'spacing follows the Tailwind 4px grid (`KumoSpace.s3` is 12px); content text is 14px.')
+    ..writeln(
+      'Import `package:kumo_flutter/kumo_flutter.dart`, wrap the app in `KumoThemeProvider`, read the theme '
+      'with `context.kumo`. Widgets are prefixed `Kumo`; props follow Kumo names; colors are `KumoColor` tokens; '
+      'spacing follows the Tailwind 4px grid (`KumoSpace.s3` is 12px); content text is 14px.',
+    )
     ..writeln()
     ..writeln('## Guides')
     ..writeln();

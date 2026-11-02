@@ -193,7 +193,10 @@ void main() {
   });
 
   test('dart annotations, types, raw and triple strings', () {
-    final t = tok("@override\nWidget build(BuildContext context) => const Text(r'\$raw');\nfinal s = '''a\nb''';", 'dart');
+    final t = tok(
+      "@override\nWidget build(BuildContext context) => const Text(r'\$raw');\nfinal s = '''a\nb''';",
+      'dart',
+    );
     expect(_typeOf(t, '@override'), _T.meta);
     expect(_typeOf(t, 'Widget'), _T.type);
     expect(_typeOf(t, 'build'), _T.function);

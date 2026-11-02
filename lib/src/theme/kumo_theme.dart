@@ -101,9 +101,17 @@ class _KumoThemeProviderState extends State<KumoThemeProvider> {
     };
     final base = brightness == Brightness.dark
         ? (widget.dark ??
-            KumoThemeData.dark(variant: widget.variant, typography: widget.typography, tapTargetSize: widget.tapTargetSize))
+              KumoThemeData.dark(
+                variant: widget.variant,
+                typography: widget.typography,
+                tapTargetSize: widget.tapTargetSize,
+              ))
         : (widget.light ??
-            KumoThemeData.light(variant: widget.variant, typography: widget.typography, tapTargetSize: widget.tapTargetSize));
+              KumoThemeData.light(
+                variant: widget.variant,
+                typography: widget.typography,
+                tapTargetSize: widget.tapTargetSize,
+              ));
     return base;
   }
 

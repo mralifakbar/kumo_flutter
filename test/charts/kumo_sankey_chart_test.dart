@@ -23,9 +23,9 @@ const _links = [
 Finder get _chart => find.byType(KumoSankeyChart);
 
 Finder get _node => find.descendant(
-      of: _chart,
-      matching: find.byWidgetPredicate((w) => w is Semantics && (w.properties.label?.contains('Sankey chart, ') ?? false)),
-    );
+  of: _chart,
+  matching: find.byWidgetPredicate((w) => w is Semantics && (w.properties.label?.contains('Sankey chart, ') ?? false)),
+);
 
 Future<TestGesture> _mouse(WidgetTester tester) async {
   final g = await tester.createGesture(kind: PointerDeviceKind.mouse);
@@ -47,7 +47,9 @@ void main() {
               height: 300,
               nodeAlign: align,
               nodeLabelLayout: layout,
-              linkColor: layout == KumoSankeyLabelLayout.inline ? KumoSankeyLinkColor.gray : KumoSankeyLinkColor.gradient,
+              linkColor: layout == KumoSankeyLabelLayout.inline
+                  ? KumoSankeyLinkColor.gray
+                  : KumoSankeyLinkColor.gradient,
             ),
             brightness: b,
           );
@@ -109,7 +111,13 @@ void main() {
     KumoSankeyLink? pressed;
     await pumpKumo(
       tester,
-      KumoSankeyChart(nodes: _nodes, links: _links, height: 300, onLinkPress: (l) => pressed = l, formatValue: (v) => '${v ~/ 1000}k'),
+      KumoSankeyChart(
+        nodes: _nodes,
+        links: _links,
+        height: 300,
+        onLinkPress: (l) => pressed = l,
+        formatValue: (v) => '${v ~/ 1000}k',
+      ),
     );
     final rect = tester.getRect(_chart);
     final g = await _mouse(tester);
@@ -128,10 +136,12 @@ void main() {
     int? pressedIndex;
     await pumpKumo(
       tester,
-      Column(children: [
-        KumoSankeyChart(nodes: _nodes, links: _links, height: 300, onNodePress: (n, i) => pressedIndex = i),
-        const SizedBox(height: 200, width: 300),
-      ]),
+      Column(
+        children: [
+          KumoSankeyChart(nodes: _nodes, links: _links, height: 300, onNodePress: (n, i) => pressedIndex = i),
+          const SizedBox(height: 200, width: 300),
+        ],
+      ),
     );
     final rect = tester.getRect(_chart);
     await tester.tapAt(Offset(rect.right - 4, rect.top + 60));
@@ -204,7 +214,10 @@ void main() {
     await pumpKumo(tester, const KumoSankeyChart(nodes: [], links: [], loading: true), settle: false);
     expect(find.bySemanticsLabel('Loading chart'), findsOneWidget);
     var retries = 0;
-    await pumpKumo(tester, KumoSankeyChart(nodes: _nodes, links: _links, error: 'Could not load traffic flows.', onRetry: () => retries++));
+    await pumpKumo(
+      tester,
+      KumoSankeyChart(nodes: _nodes, links: _links, error: 'Could not load traffic flows.', onRetry: () => retries++),
+    );
     expect(find.text('Could not load traffic flows.'), findsOneWidget);
     await tester.tap(find.text('Retry'));
     expect(retries, 1);
@@ -220,10 +233,12 @@ void main() {
 
   group('highlight motion', () {
     CustomPainter painter(WidgetTester tester) => tester
-        .widget<CustomPaint>(find.descendant(
-          of: _chart,
-          matching: find.byWidgetPredicate((w) => w is CustomPaint && '${w.painter.runtimeType}' == '_SankeyPainter'),
-        ))
+        .widget<CustomPaint>(
+          find.descendant(
+            of: _chart,
+            matching: find.byWidgetPredicate((w) => w is CustomPaint && '${w.painter.runtimeType}' == '_SankeyPainter'),
+          ),
+        )
         .painter!;
 
     testWidgets('hovering eases the other flows down instead of popping', (tester) async {

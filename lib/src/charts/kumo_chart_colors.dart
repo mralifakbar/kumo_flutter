@@ -73,8 +73,8 @@ class KumoChartColors {
     required this.textPrimary,
     required this.textSecondary,
     required this.map,
-  })  : _semantic = semanticColors,
-        _blues = blues;
+  }) : _semantic = semanticColors,
+       _blues = blues;
 
   /// The light-mode palette.
   static const KumoChartColors light = KumoChartColors._(

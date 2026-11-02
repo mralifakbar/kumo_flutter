@@ -12,6 +12,7 @@ import '../theme/kumo_theme_data.dart';
 import '../theme/kumo_tokens.dart';
 import '../theme/kumo_typography.dart';
 import '../utils/kumo_color_utils.dart';
+import '../system/kumo_size_reveal.dart';
 
 /// Banner styles from Kumo's `banner.tsx`.
 enum KumoBannerVariant {
@@ -64,18 +65,18 @@ class _BannerScope extends InheritedWidget {
 const Color _neutral700 = Color(0xFF404040);
 
 Color _accent(KumoThemeData kumo, KumoBannerVariant variant) => switch (variant) {
-      KumoBannerVariant.info => kumo.colors.info,
-      KumoBannerVariant.alert => kumo.colors.warning,
-      KumoBannerVariant.error => kumo.colors.danger,
-      KumoBannerVariant.secondary => _neutral700,
-    };
+  KumoBannerVariant.info => kumo.colors.info,
+  KumoBannerVariant.alert => kumo.colors.warning,
+  KumoBannerVariant.error => kumo.colors.danger,
+  KumoBannerVariant.secondary => _neutral700,
+};
 
 Color _textColor(KumoThemeData kumo, KumoBannerVariant variant) => switch (variant) {
-      KumoBannerVariant.info => kumo.colors.textInfo,
-      KumoBannerVariant.alert => kumo.colors.textWarning,
-      KumoBannerVariant.error => kumo.colors.textDanger,
-      KumoBannerVariant.secondary => kumo.colors.textDefault.withValues(alpha: 0.7),
-    };
+  KumoBannerVariant.info => kumo.colors.textInfo,
+  KumoBannerVariant.alert => kumo.colors.textWarning,
+  KumoBannerVariant.error => kumo.colors.textDanger,
+  KumoBannerVariant.secondary => kumo.colors.textDefault.withValues(alpha: 0.7),
+};
 
 /// Kumo's `Banner`: a full-width message bar for information, warnings and
 /// errors that belong to a page or a section.
@@ -203,9 +204,8 @@ class _KumoBannerState extends State<KumoBanner> with SingleTickerProviderStateM
         excluding: _presence.value <= 0,
         child: IgnorePointer(ignoring: _presence.value < 1, child: child),
       ),
-      child: SizeTransition(
+      child: KumoSizeReveal(
         sizeFactor: _curve,
-        axisAlignment: -1,
         child: FadeTransition(opacity: _curve, child: content),
       ),
     );
@@ -296,7 +296,10 @@ class _BannerContent extends StatelessWidget {
           }
           return Row(
             spacing: rowGap,
-            children: [Expanded(child: text), actionRow],
+            children: [
+              Expanded(child: text),
+              actionRow,
+            ],
           );
         },
       );
@@ -323,7 +326,9 @@ class _BannerContent extends StatelessWidget {
             child: DefaultTextStyle(
               style: baseStyle,
               child: Row(
-                crossAxisAlignment: compact && allActions.isEmpty ? CrossAxisAlignment.center : CrossAxisAlignment.start,
+                crossAxisAlignment: compact && allActions.isEmpty
+                    ? CrossAxisAlignment.center
+                    : CrossAxisAlignment.start,
                 spacing: compact ? KumoSpace.s2 : KumoSpace.s3,
                 children: [
                   if (icon != null)
@@ -451,7 +456,13 @@ class KumoBannerAction extends StatelessWidget {
                 Flexible(
                   child: Transform.translate(
                     offset: Offset(0, -size.textLift),
-                    child: Text(label!, style: textStyle, maxLines: 1, overflow: TextOverflow.ellipsis, softWrap: false),
+                    child: Text(
+                      label!,
+                      style: textStyle,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      softWrap: false,
+                    ),
                   ),
                 ),
               ],

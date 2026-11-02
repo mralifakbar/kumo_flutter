@@ -17,14 +17,18 @@ const _values = {'wnam': 120.0, 'enam': 480.0};
 Finder get _chart => find.byType(KumoMapChart);
 
 Finder get _node => find.descendant(
-      of: _chart,
-      matching: find.byWidgetPredicate((w) => w is Semantics && (w.properties.label?.contains('Map, ') ?? false)),
-    );
+  of: _chart,
+  matching: find.byWidgetPredicate((w) => w is Semantics && (w.properties.label?.contains('Map, ') ?? false)),
+);
 
 void main() {
   testWidgets('renders in light and dark, with and without a legend', (tester) async {
     for (final b in Brightness.values) {
-      await pumpKumo(tester, KumoMapChart(regions: _regions, values: _values, showLegend: true), brightness: b);
+      await pumpKumo(
+        tester,
+        KumoMapChart(regions: _regions, values: _values, showLegend: true),
+        brightness: b,
+      );
       expect(tester.takeException(), isNull);
       expect(find.text('Low'), findsOneWidget);
       expect(find.text('High'), findsOneWidget);
@@ -96,15 +100,20 @@ void main() {
     expect(tester.hasRunningAnimations, isTrue);
     await tester.pumpAndSettle();
     await pumpKumo(tester, KumoMapChart(regions: _regions, values: _values), disableAnimations: true);
-    await tester.pumpWidget(kumoHarness(KumoMapChart(regions: _regions, values: const {'wnam': 10}), disableAnimations: true));
+    await tester.pumpWidget(
+      kumoHarness(KumoMapChart(regions: _regions, values: const {'wnam': 10}), disableAnimations: true),
+    );
     await tester.pump();
     expect(tester.hasRunningAnimations, isFalse);
   });
 
   testWidgets('fromPolygons projects longitude and latitude north up', (tester) async {
-    final r = KumoMapRegion.fromPolygons(id: 'box', rings: const [
-      [Offset(-10, 50), Offset(10, 50), Offset(10, 40), Offset(-10, 40)],
-    ]);
+    final r = KumoMapRegion.fromPolygons(
+      id: 'box',
+      rings: const [
+        [Offset(-10, 50), Offset(10, 50), Offset(10, 40), Offset(-10, 40)],
+      ],
+    );
     expect(r.path.getBounds(), const Rect.fromLTRB(-10, -50, 10, -40));
     expect(r.label, 'box');
   });
@@ -114,7 +123,10 @@ void main() {
     await pumpKumo(tester, KumoMapChart(regions: _regions, values: _values, loading: true));
     expect(find.bySemanticsLabel('Loading map'), findsOneWidget);
     var retries = 0;
-    await pumpKumo(tester, KumoMapChart(regions: _regions, values: _values, error: 'Could not load regions.', onRetry: () => retries++));
+    await pumpKumo(
+      tester,
+      KumoMapChart(regions: _regions, values: _values, error: 'Could not load regions.', onRetry: () => retries++),
+    );
     await tester.tap(find.text('Retry'));
     expect(retries, 1);
     await pumpKumo(tester, KumoMapChart(regions: _regions, values: const {}));

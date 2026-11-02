@@ -52,10 +52,16 @@ class ControlFieldset extends StatelessWidget {
       if (error != null)
         Semantics(
           liveRegion: true,
-          child: Text(error!, style: kumo.text(size: KumoTextSize.sm, color: KumoColor.textDanger)),
+          child: Text(
+            error!,
+            style: kumo.text(size: KumoTextSize.sm, color: KumoColor.textDanger),
+          ),
         ),
       if (description != null)
-        Text(description!, style: kumo.text(size: KumoTextSize.sm, color: KumoColor.textSubtle)),
+        Text(
+          description!,
+          style: kumo.text(size: KumoTextSize.sm, color: KumoColor.textSubtle),
+        ),
     ];
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -93,7 +99,11 @@ class ControlLabelText extends StatelessWidget {
         style: style,
         children: [
           TextSpan(text: text),
-          if (showOptional) TextSpan(text: ' ${strings.optional}', style: kumo.text(color: KumoColor.textSubtle)),
+          if (showOptional)
+            TextSpan(
+              text: ' ${strings.optional}',
+              style: kumo.text(color: KumoColor.textSubtle),
+            ),
           if (tooltip != null)
             WidgetSpan(
               alignment: PlaceholderAlignment.middle,
@@ -136,7 +146,12 @@ class ControlRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final aligned = centered ? control : Padding(padding: const EdgeInsets.only(top: KumoSpace.s0_5), child: control);
+    final aligned = centered
+        ? control
+        : Padding(
+            padding: const EdgeInsets.only(top: KumoSpace.s0_5),
+            child: control,
+          );
     final text = Flexible(child: label);
     return Row(
       mainAxisSize: MainAxisSize.min,
@@ -165,7 +180,10 @@ class ControlLabelStack extends StatelessWidget {
       spacing: KumoSpace.s0_5,
       children: [
         label,
-        Text(description!, style: kumo.text(size: KumoTextSize.sm, color: KumoColor.textSubtle)),
+        Text(
+          description!,
+          style: kumo.text(size: KumoTextSize.sm, color: KumoColor.textSubtle),
+        ),
       ],
     );
   }
@@ -533,8 +551,11 @@ class SegmentDivider extends StatelessWidget {
         child: color == null
             ? null
             : bothSelected
-                ? ColoredBox(color: c.contrast, child: ColoredBox(color: color))
-                : ColoredBox(color: color),
+            ? ColoredBox(
+                color: c.contrast,
+                child: ColoredBox(color: color),
+              )
+            : ColoredBox(color: color),
       ),
     );
   }
@@ -635,7 +656,10 @@ class SegmentSurface extends StatelessWidget {
                 child: Opacity(
                   opacity: opacity.clamp(0.0, 1.0),
                   child: DecoratedBox(
-                    decoration: BoxDecoration(color: c.contrast, borderRadius: fillRadius(atStart: atStart, atEnd: atEnd)),
+                    decoration: BoxDecoration(
+                      color: c.contrast,
+                      borderRadius: fillRadius(atStart: atStart, atEnd: atEnd),
+                    ),
                   ),
                 ),
               ),
@@ -669,7 +693,10 @@ class SegmentSurface extends StatelessWidget {
             offset: -2,
             child: ConstrainedBox(
               constraints: BoxConstraints(minHeight: height, minWidth: math.max(minWidth, 0)),
-              child: Padding(padding: padding, child: Center(widthFactor: 1, child: content)),
+              child: Padding(
+                padding: padding,
+                child: Center(widthFactor: 1, child: content),
+              ),
             ),
           ),
         ],
@@ -697,10 +724,7 @@ class JoinedCards extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          for (var i = 0; i < children.length; i++) ...[
-            if (i > 0) SizedBox(height: 1, child: seam),
-            children[i],
-          ],
+          for (var i = 0; i < children.length; i++) ...[if (i > 0) SizedBox(height: 1, child: seam), children[i]],
         ],
       );
     } else {
@@ -708,17 +732,19 @@ class JoinedCards extends StatelessWidget {
       for (var i = 0; i < children.length; i += 2) {
         if (i > 0) rows.add(SizedBox(height: 1, child: seam));
         final hasPair = i + 1 < children.length;
-        rows.add(IntrinsicHeight(
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Expanded(child: children[i]),
-              // A lone last item keeps its column; only a pair gets the seam.
-              if (hasPair) SizedBox(width: 1, child: seam),
-              Expanded(child: hasPair ? children[i + 1] : const SizedBox.shrink()),
-            ],
+        rows.add(
+          IntrinsicHeight(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(child: children[i]),
+                // A lone last item keeps its column; only a pair gets the seam.
+                if (hasPair) SizedBox(width: 1, child: seam),
+                Expanded(child: hasPair ? children[i + 1] : const SizedBox.shrink()),
+              ],
+            ),
           ),
-        ));
+        );
       }
       content = Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.stretch, children: rows);
     }

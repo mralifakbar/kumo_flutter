@@ -207,11 +207,8 @@ class KumoMeterTrack extends StatelessWidget {
           tween: Tween(begin: target, end: target),
           duration: KumoMotion.duration(context, KumoDurations.slow),
           curve: KumoCurves.enter,
-          builder: (context, f, child) => FractionallySizedBox(
-            widthFactor: f.clamp(0.0, 1.0),
-            heightFactor: 1,
-            child: child,
-          ),
+          builder: (context, f, child) =>
+              FractionallySizedBox(widthFactor: f.clamp(0.0, 1.0), heightFactor: 1, child: child),
           // Crossing a threshold eases the indicator to its new tone along
           // with the width, instead of flashing.
           child: TweenAnimationBuilder<Color?>(

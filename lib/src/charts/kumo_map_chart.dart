@@ -301,29 +301,40 @@ class _KumoMapChartState extends State<KumoMapChart> with SingleTickerProviderSt
   Widget build(BuildContext context) {
     final kumo = context.kumo;
     final palette = KumoChartColors.forBrightness(kumo.brightness).map;
-    return LayoutBuilder(builder: (context, constraints) {
-      final width = constraints.maxWidth.isFinite ? constraints.maxWidth : 400.0;
-      final bounds = _bounds();
-      final aspect = widget.aspectRatio ?? (bounds.height == 0 ? 2 : bounds.width / bounds.height);
-      final height = widget.height ?? (width / aspect).clamp(120.0, 640.0);
-      final size = Size(width, height);
-      Widget body;
-      if (widget.error != null) {
-        body = Semantics(
-          liveRegion: true,
-          child: _ChartMessage(icon: KumoIcons.warningCircle, title: widget.error!, onRetry: widget.onRetry, danger: true),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final width = constraints.maxWidth.isFinite ? constraints.maxWidth : 400.0;
+        final bounds = _bounds();
+        final aspect = widget.aspectRatio ?? (bounds.height == 0 ? 2 : bounds.width / bounds.height);
+        final height = widget.height ?? (width / aspect).clamp(120.0, 640.0);
+        final size = Size(width, height);
+        Widget body;
+        if (widget.error != null) {
+          body = Semantics(
+            liveRegion: true,
+            child: _ChartMessage(
+              icon: KumoIcons.warningCircle,
+              title: widget.error!,
+              onRetry: widget.onRetry,
+              danger: true,
+            ),
+          );
+          body = SizedBox(width: width, height: math.max(height, 160), child: body);
+        } else {
+          body = AnimatedBuilder(animation: _fade, builder: (context, _) => _buildMap(context, size, bounds, palette));
+        }
+        if (!widget.showLegend || widget.loading || widget.error != null || widget.values.isEmpty) return body;
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            body,
+            const SizedBox(height: KumoSpace.s2),
+            _buildLegend(context, palette),
+          ],
         );
-        body = SizedBox(width: width, height: math.max(height, 160), child: body);
-      } else {
-        body = AnimatedBuilder(animation: _fade, builder: (context, _) => _buildMap(context, size, bounds, palette));
-      }
-      if (!widget.showLegend || widget.loading || widget.error != null || widget.values.isEmpty) return body;
-      return Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [body, const SizedBox(height: KumoSpace.s2), _buildLegend(context, palette)],
-      );
-    });
+      },
+    );
   }
 
   Widget _buildLegend(BuildContext context, KumoChartMapColors palette) {
@@ -345,9 +356,7 @@ class _KumoMapChartState extends State<KumoMapChart> with SingleTickerProviderSt
             child: DecoratedBox(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(KumoRadius.xs),
-                gradient: LinearGradient(colors: [
-                  for (var i = 0; i <= 8; i++) _scaleColor(stops, i / 8),
-                ]),
+                gradient: LinearGradient(colors: [for (var i = 0; i <= 8; i++) _scaleColor(stops, i / 8)]),
               ),
             ),
           ),
@@ -367,8 +376,7 @@ class _KumoMapChartState extends State<KumoMapChart> with SingleTickerProviderSt
       final t = KumoCurves.standard.transform(_fade.value);
       final noData = widget.noDataColor ?? palette.area;
       colors = {
-        for (final id in {...from.keys, ...target.keys})
-          id: Color.lerp(from[id] ?? noData, target[id] ?? noData, t)!,
+        for (final id in {...from.keys, ...target.keys}) id: Color.lerp(from[id] ?? noData, target[id] ?? noData, t)!,
       };
     } else {
       _lastColors = target;
@@ -380,7 +388,9 @@ class _KumoMapChartState extends State<KumoMapChart> with SingleTickerProviderSt
       painter: _MapPainter(
         regions: widget.regions,
         colors: widget.loading ? const {} : colors,
-        noData: widget.loading ? skeleton.withValues(alpha: kumo.isDark ? 0.35 : 0.5) : (widget.noDataColor ?? palette.area),
+        noData: widget.loading
+            ? skeleton.withValues(alpha: kumo.isDark ? 0.35 : 0.5)
+            : (widget.noDataColor ?? palette.area),
         matrix: matrix,
         active: widget.loading ? null : _active,
       ),
@@ -397,12 +407,18 @@ class _KumoMapChartState extends State<KumoMapChart> with SingleTickerProviderSt
     if (widget.values.isEmpty) {
       return SizedBox.fromSize(
         size: Size(size.width, math.max(size.height, 160)),
-        child: Stack(children: [
-          Positioned.fill(child: Opacity(opacity: 0.6, child: map)),
-          Positioned.fill(
-            child: _ChartMessage(icon: KumoIcons.mapTrifold, title: widget.emptyMessage, description: widget.emptyDescription),
-          ),
-        ]),
+        child: Stack(
+          children: [
+            Positioned.fill(child: Opacity(opacity: 0.6, child: map)),
+            Positioned.fill(
+              child: _ChartMessage(
+                icon: KumoIcons.mapTrifold,
+                title: widget.emptyMessage,
+                description: widget.emptyDescription,
+              ),
+            ),
+          ],
+        ),
       );
     }
 
@@ -412,13 +428,17 @@ class _KumoMapChartState extends State<KumoMapChart> with SingleTickerProviderSt
       final value = widget.values[active.id]!;
       final custom = widget.tooltipBuilder?.call(context, active, value);
       tooltip = _ChartTooltipSurface(
-        child: custom ??
+        child:
+            custom ??
             Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               spacing: KumoSpace.s0_5,
               children: [
-                Text(active.label, style: kumo.text(size: KumoTextSize.sm, weight: KumoTypography.semibold)),
+                Text(
+                  active.label,
+                  style: kumo.text(size: KumoTextSize.sm, weight: KumoTypography.semibold),
+                ),
                 Text(
                   _format(value),
                   style: kumo
@@ -443,7 +463,12 @@ class _KumoMapChartState extends State<KumoMapChart> with SingleTickerProviderSt
         map,
         if (tooltip != null)
           Positioned.fill(
-            child: IgnorePointer(child: CustomSingleChildLayout(delegate: _ChartTooltipLayout(anchor: anchor), child: tooltip)),
+            child: IgnorePointer(
+              child: CustomSingleChildLayout(
+                delegate: _ChartTooltipLayout(anchor: anchor),
+                child: tooltip,
+              ),
+            ),
           ),
       ],
     );
@@ -481,7 +506,9 @@ class _KumoMapChartState extends State<KumoMapChart> with SingleTickerProviderSt
         container: true,
         label: _summary(),
         value: active == null ? null : '${active.label}, ${_format(widget.values[active.id]!)}',
-        child: ExcludeSemantics(child: SizedBox.fromSize(size: size, child: map)),
+        child: ExcludeSemantics(
+          child: SizedBox.fromSize(size: size, child: map),
+        ),
       ),
     );
   }

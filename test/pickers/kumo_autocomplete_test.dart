@@ -7,9 +7,10 @@ import '../helpers/harness.dart';
 
 final _routes = <KumoSelectItem<String>>[
   ...KumoSelectOption.fromLabels(['example.com/*', 'api.example.com/*', 'example.com/images/*']),
-  const KumoSelectGroup(label: 'Staging', options: [
-    KumoSelectOption(value: 'staging.example.com/*', label: 'staging.example.com/*'),
-  ]),
+  const KumoSelectGroup(
+    label: 'Staging',
+    options: [KumoSelectOption(value: 'staging.example.com/*', label: 'staging.example.com/*')],
+  ),
 ];
 
 class _Host extends StatefulWidget {
@@ -28,30 +29,30 @@ class _HostState extends State<_Host> {
 
   @override
   Widget build(BuildContext context) => Align(
-        alignment: Alignment.topCenter,
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: SizedBox(
-            width: 320,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                KumoAutocomplete(
-                  label: 'Route pattern',
-                  placeholder: 'example.com/*',
-                  options: _routes,
-                  value: value,
-                  emptyMessage: widget.emptyMessage,
-                  onOpenChange: widget.onOpenChange,
-                  disabled: widget.disabled,
-                  onValueChange: (v) => setState(() => value = v),
-                ),
-                Text('value=$value'),
-              ],
+    alignment: Alignment.topCenter,
+    child: Padding(
+      padding: const EdgeInsets.all(16),
+      child: SizedBox(
+        width: 320,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            KumoAutocomplete(
+              label: 'Route pattern',
+              placeholder: 'example.com/*',
+              options: _routes,
+              value: value,
+              emptyMessage: widget.emptyMessage,
+              onOpenChange: widget.onOpenChange,
+              disabled: widget.disabled,
+              onValueChange: (v) => setState(() => value = v),
             ),
-          ),
+            Text('value=$value'),
+          ],
         ),
-      );
+      ),
+    ),
+  );
 }
 
 Finder get _input => find.byType(TextField);
@@ -111,7 +112,12 @@ void main() {
 
   testWidgets('emptyMessage keeps the list open with a message; onOpenChange reports', (tester) async {
     final opens = <bool>[];
-    await pumpKumo(tester, _Host(emptyMessage: 'No saved routes match', onOpenChange: opens.add), size: kumoDesktopSize, center: false);
+    await pumpKumo(
+      tester,
+      _Host(emptyMessage: 'No saved routes match', onOpenChange: opens.add),
+      size: kumoDesktopSize,
+      center: false,
+    );
     await tester.tap(_input);
     await tester.enterText(_input, 'zzz');
     await tester.pumpAndSettle();

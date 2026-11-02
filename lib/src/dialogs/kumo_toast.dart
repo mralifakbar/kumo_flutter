@@ -108,20 +108,18 @@ class KumoToastData {
     Duration? timeout,
     VoidCallback? onClose,
     String? semanticLabel,
-  }) =>
-      KumoToastData(
-        title: title ?? this.title,
-        description: description ?? this.description,
-        variant: variant ?? this.variant,
-        content: content ?? this.content,
-        actions: actions ?? this.actions,
-        timeout: timeout ?? this.timeout,
-        onClose: onClose ?? this.onClose,
-        semanticLabel: semanticLabel ?? this.semanticLabel,
-      );
+  }) => KumoToastData(
+    title: title ?? this.title,
+    description: description ?? this.description,
+    variant: variant ?? this.variant,
+    content: content ?? this.content,
+    actions: actions ?? this.actions,
+    timeout: timeout ?? this.timeout,
+    onClose: onClose ?? this.onClose,
+    semanticLabel: semanticLabel ?? this.semanticLabel,
+  );
 
-  String get _announcement =>
-      semanticLabel ?? [?title, ?description].join('. ');
+  String get _announcement => semanticLabel ?? [?title, ?description].join('. ');
 }
 
 class _ToastRecord {
@@ -428,13 +426,7 @@ String showKumoToast(
 /// a flick carries on at the finger's speed; a short drag springs back. New
 /// toasts are announced to screen readers.
 class KumoToaster extends StatefulWidget {
-  const KumoToaster({
-    super.key,
-    required this.child,
-    this.manager,
-    this.limit = 3,
-    this.timeout = defaultTimeout,
-  });
+  const KumoToaster({super.key, required this.child, this.manager, this.limit = 3, this.timeout = defaultTimeout});
 
   /// Kumo's default auto-dismiss time.
   static const Duration defaultTimeout = Duration(milliseconds: 5000);
@@ -551,7 +543,11 @@ class _KumoToasterState extends State<KumoToaster> with WidgetsBindingObserver {
       // Android and the web read the toast's live region; elsewhere the
       // announcement has to be sent explicitly.
       if (message.isEmpty || kIsWeb || defaultTargetPlatform == TargetPlatform.android) continue;
-      SemanticsService.sendAnnouncement(View.of(context), message, Directionality.maybeOf(context) ?? TextDirection.ltr);
+      SemanticsService.sendAnnouncement(
+        View.of(context),
+        message,
+        Directionality.maybeOf(context) ?? TextDirection.ltr,
+      );
     }
   }
 
@@ -570,10 +566,7 @@ class _KumoToasterState extends State<KumoToaster> with WidgetsBindingObserver {
         child: Stack(
           // The child sizes the toaster, so it also works below the root.
           fit: StackFit.passthrough,
-          children: [
-            widget.child,
-            _viewport(context),
-          ],
+          children: [widget.child, _viewport(context)],
         ),
       ),
     );
@@ -587,7 +580,10 @@ class _KumoToasterState extends State<KumoToaster> with WidgetsBindingObserver {
     final bottom = math.max(media.viewInsets.bottom, media.viewPadding.bottom) + gutter;
 
     final records = _manager._records.reversed.toList();
-    final active = [for (final r in records) if (!r.exiting) r];
+    final active = [
+      for (final r in records)
+        if (!r.exiting) r,
+    ];
     final visible = active.take(widget.limit).toList();
     final expanded = _expanded;
     final frontHeight = visible.isEmpty ? 0.0 : (_heights[visible.first.id] ?? 0);
@@ -622,8 +618,8 @@ class _KumoToasterState extends State<KumoToaster> with WidgetsBindingObserver {
     final stackHeight = visible.isEmpty
         ? 0.0
         : expanded
-            ? math.max(0.0, offset - _gap)
-            : frontHeight + (visible.length - 1) * _peek;
+        ? math.max(0.0, offset - _gap)
+        : frontHeight + (visible.length - 1) * _peek;
 
     // Paint the front toast last so it sits on top.
     final ordered = [...records]..sort((a, b) => layouts[b.id]!.index.compareTo(layouts[a.id]!.index));
@@ -1015,22 +1011,13 @@ class _ToastItemState extends State<_ToastItem> with TickerProviderStateMixin {
           opacity: opacity,
           child: Transform.translate(
             offset: Offset(_swipeX.value, _swipeY.value + _y.value + enterY),
-            child: Transform.scale(
-              scale: math.max(0.0, _scale.value),
-              alignment: Alignment.bottomCenter,
-              child: child,
-            ),
+            child: Transform.scale(scale: math.max(0.0, _scale.value), alignment: Alignment.bottomCenter, child: child),
           ),
         );
       },
     );
 
-    Widget result = Semantics(
-      container: true,
-      liveRegion: !widget.exiting,
-      explicitChildNodes: true,
-      child: animated,
-    );
+    Widget result = Semantics(container: true, liveRegion: !widget.exiting, explicitChildNodes: true, child: animated);
     if (widget.limited || widget.exiting) result = ExcludeSemantics(child: IgnorePointer(child: result));
     return result;
   }
@@ -1110,42 +1097,42 @@ class _ToastStyle {
     return switch (variant) {
       KumoToastVariant.neutral => _ToastStyle(background: layered(c.base, null), ring: c.line, ringWidth: 1),
       KumoToastVariant.success => _ToastStyle(
-          background: layered(c.base, c.successTint.withValues(alpha: 0.2)),
-          ring: c.success,
-          ringWidth: 0.3,
-          accent: KumoColor.textSuccess,
-          icon: KumoIcons.checkCircleFill,
-        ),
+        background: layered(c.base, c.successTint.withValues(alpha: 0.2)),
+        ring: c.success,
+        ringWidth: 0.3,
+        accent: KumoColor.textSuccess,
+        icon: KumoIcons.checkCircleFill,
+      ),
       KumoToastVariant.error => _ToastStyle(
-          background: layered(c.base, c.dangerTint.withValues(alpha: 0.5)),
-          ring: c.danger,
-          ringWidth: 0.3,
-          accent: KumoColor.textDanger,
-          icon: KumoIcons.warningOctagonFill,
-        ),
+        background: layered(c.base, c.dangerTint.withValues(alpha: 0.5)),
+        ring: c.danger,
+        ringWidth: 0.3,
+        accent: KumoColor.textDanger,
+        icon: KumoIcons.warningOctagonFill,
+      ),
       KumoToastVariant.warning => _ToastStyle(
-          background: layered(c.base, c.warningTint.withValues(alpha: 0.5)),
-          ring: c.warning,
-          ringWidth: 0.3,
-          accent: KumoColor.textWarning,
-          icon: KumoIcons.warningFill,
-        ),
+        background: layered(c.base, c.warningTint.withValues(alpha: 0.5)),
+        ring: c.warning,
+        ringWidth: 0.3,
+        accent: KumoColor.textWarning,
+        icon: KumoIcons.warningFill,
+      ),
       KumoToastVariant.info => _ToastStyle(
-          background: layered(c.control, c.infoTint.withValues(alpha: 0.5)),
-          ring: c.info,
-          ringWidth: 0.3,
-          accent: KumoColor.textInfo,
-          icon: KumoIcons.infoFill,
-        ),
+        background: layered(c.control, c.infoTint.withValues(alpha: 0.5)),
+        ring: c.info,
+        ringWidth: 0.3,
+        accent: KumoColor.textInfo,
+        icon: KumoIcons.infoFill,
+      ),
     };
   }
 
   BoxDecoration decoration(BorderRadius radius) => BoxDecoration(
-        color: background,
-        borderRadius: radius,
-        border: KumoRing.border(ring, width: ringWidth),
-        boxShadow: KumoShadow.lg.boxShadows,
-      );
+    color: background,
+    borderRadius: radius,
+    border: KumoRing.border(ring, width: ringWidth),
+    boxShadow: KumoShadow.lg.boxShadows,
+  );
 }
 
 class _ToastContent extends StatelessWidget {
@@ -1168,11 +1155,15 @@ class _ToastContent extends StatelessWidget {
     final accent = style.accent == null ? c.textDefault : kumo.color(style.accent!);
     // Kumo sets toast text in rem: 0.975rem titles, 0.925rem descriptions,
     // both on a 20px line.
-    final titleStyle = kumo.typography.body(weight: KumoTypography.medium, color: accent).copyWith(fontSize: 15.6, height: 20 / 15.6);
-    final descriptionStyle =
-        kumo.typography.body(color: c.textDefault.withValues(alpha: 0.7)).copyWith(fontSize: 14.8, height: 20 / 14.8);
+    final titleStyle = kumo.typography
+        .body(weight: KumoTypography.medium, color: accent)
+        .copyWith(fontSize: 15.6, height: 20 / 15.6);
+    final descriptionStyle = kumo.typography
+        .body(color: c.textDefault.withValues(alpha: 0.7))
+        .copyWith(fontSize: 14.8, height: 20 / 14.8);
 
-    final body = data.content ??
+    final body =
+        data.content ??
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           spacing: KumoSpace.s2,
@@ -1309,7 +1300,13 @@ class KumoToast extends StatelessWidget {
   Widget build(BuildContext context) {
     final style = _ToastStyle.of(context.kumo, variant);
     final radius = BorderRadius.circular(KumoRadius.xl);
-    final data = KumoToastData(title: title, description: description, variant: variant, content: content, actions: actions);
+    final data = KumoToastData(
+      title: title,
+      description: description,
+      variant: variant,
+      content: content,
+      actions: actions,
+    );
     return Semantics(
       container: true,
       child: DecoratedBox(

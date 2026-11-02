@@ -9,14 +9,17 @@ void main() {
     for (final b in Brightness.values) {
       await pumpKumo(
         tester,
-        const Column(mainAxisSize: MainAxisSize.min, children: [
-          KumoSparkline(values: [1, 4, 2, 8, 5]),
-          KumoSparkline(values: [1, 4, double.nan, 8, 5], area: true, showEndDot: true, showMinMax: true),
-          KumoSparkline(values: [3, 3, 3], showMinMax: true),
-          KumoSparkline(values: [7]),
-          KumoSparkline(values: []),
-          KumoSparkline(values: [], loading: true),
-        ]),
+        const Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            KumoSparkline(values: [1, 4, 2, 8, 5]),
+            KumoSparkline(values: [1, 4, double.nan, 8, 5], area: true, showEndDot: true, showMinMax: true),
+            KumoSparkline(values: [3, 3, 3], showMinMax: true),
+            KumoSparkline(values: [7]),
+            KumoSparkline(values: []),
+            KumoSparkline(values: [], loading: true),
+          ],
+        ),
         brightness: b,
       );
       expect(tester.takeException(), isNull);
@@ -32,7 +35,14 @@ void main() {
 
   testWidgets('semantics describe the trend', (tester) async {
     final handle = tester.ensureSemantics();
-    await pumpKumo(tester, KumoSparkline(values: const [12, 8, 41, 30], semanticLabel: 'Requests, last 4 days', valueFormat: (v) => '${v.round()}k'));
+    await pumpKumo(
+      tester,
+      KumoSparkline(
+        values: const [12, 8, 41, 30],
+        semanticLabel: 'Requests, last 4 days',
+        valueFormat: (v) => '${v.round()}k',
+      ),
+    );
     expect(find.bySemanticsLabel('Requests, last 4 days, 4 points, from 12k to 30k, low 8k, high 41k'), findsOneWidget);
     await pumpKumo(tester, const KumoSparkline(values: []));
     expect(find.bySemanticsLabel('Trend, no data'), findsOneWidget);

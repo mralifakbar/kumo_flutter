@@ -348,11 +348,10 @@ void main() {
 
   group('motion', () {
     Transform checkTransform(WidgetTester tester) => tester.widget<Transform>(
-          find.ancestor(of: find.byIcon(KumoIcons.check), matching: find.byType(Transform)).first,
-        );
-    Opacity checkOpacity(WidgetTester tester) => tester.widget<Opacity>(
-          find.ancestor(of: find.byIcon(KumoIcons.check), matching: find.byType(Opacity)).first,
-        );
+      find.ancestor(of: find.byIcon(KumoIcons.check), matching: find.byType(Transform)).first,
+    );
+    Opacity checkOpacity(WidgetTester tester) =>
+        tester.widget<Opacity>(find.ancestor(of: find.byIcon(KumoIcons.check), matching: find.byType(Opacity)).first);
 
     testWidgets('a checkbox check lands with a bounce and fades when cleared', (tester) async {
       await pumpKumo(tester, const _Host(), size: kumoDesktopSize, center: false);
@@ -428,21 +427,29 @@ void main() {
     });
 
     Widget caretMenu() => Align(
-          alignment: AlignmentDirectional.topStart,
-          child: KumoDropdownMenu(
-            presentation: KumoPresentation.popover,
-            triggerBuilder: (context, menu) => KumoButton(
-              onPress: menu.toggle,
-              child: Row(mainAxisSize: MainAxisSize.min, children: [const Text('Zone'), KumoDropdownCaret(open: menu.isOpen)]),
-            ),
-            items: const [KumoDropdownItem(label: 'example.com')],
+      alignment: AlignmentDirectional.topStart,
+      child: KumoDropdownMenu(
+        presentation: KumoPresentation.popover,
+        triggerBuilder: (context, menu) => KumoButton(
+          onPress: menu.toggle,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Text('Zone'),
+              KumoDropdownCaret(open: menu.isOpen),
+            ],
           ),
-        );
+        ),
+        items: const [KumoDropdownItem(label: 'example.com')],
+      ),
+    );
 
-    double caretTurns(WidgetTester tester) =>
-        tester.widget<RotationTransition>(
+    double caretTurns(WidgetTester tester) => tester
+        .widget<RotationTransition>(
           find.descendant(of: find.byType(KumoDropdownCaret), matching: find.byType(RotationTransition)),
-        ).turns.value;
+        )
+        .turns
+        .value;
 
     testWidgets('KumoDropdownCaret turns over with the menu and reverses mid-flight', (tester) async {
       await pumpKumo(tester, caretMenu(), size: kumoDesktopSize, center: false);
@@ -476,7 +483,10 @@ void main() {
     testWidgets('backLabel defaults to KumoStrings.back', (tester) async {
       await pumpKumo(
         tester,
-        const KumoLocale(strings: KumoStrings(back: 'Kembali'), child: _Host()),
+        const KumoLocale(
+          strings: KumoStrings(back: 'Kembali'),
+          child: _Host(),
+        ),
         center: false,
       );
       await tester.tap(find.text('Actions'));

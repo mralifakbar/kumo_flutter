@@ -60,8 +60,9 @@ class KumoSelectOption<T> extends KumoSelectItem<T> {
   /// ```dart
   /// KumoSelectOption.fromLabels(['production', 'staging', 'preview'])
   /// ```
-  static List<KumoSelectOption<String>> fromLabels(Iterable<String> labels) =>
-      [for (final l in labels) KumoSelectOption<String>(value: l, label: l)];
+  static List<KumoSelectOption<String>> fromLabels(Iterable<String> labels) => [
+    for (final l in labels) KumoSelectOption<String>(value: l, label: l),
+  ];
 }
 
 /// Options under a heading (Kumo's `Select.Group` + `Select.GroupLabel`).

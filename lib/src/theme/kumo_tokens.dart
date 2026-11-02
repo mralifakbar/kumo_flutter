@@ -123,8 +123,8 @@ enum KumoWindowSize {
   static KumoWindowSize of(double width) => width < KumoBreakpoints.sm
       ? compact
       : width < KumoBreakpoints.lg
-          ? medium
-          : expanded;
+      ? medium
+      : expanded;
 }
 
 /// Window size helpers on [BuildContext].

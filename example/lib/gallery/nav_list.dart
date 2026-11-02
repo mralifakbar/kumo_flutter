@@ -3,7 +3,13 @@ import 'package:kumo_flutter/kumo_flutter.dart';
 
 /// One destination in a [NavList].
 class NavEntry {
-  const NavEntry({required this.title, required this.description, required this.icon, required this.onPress, this.count});
+  const NavEntry({
+    required this.title,
+    required this.description,
+    required this.icon,
+    required this.onPress,
+    this.count,
+  });
 
   final String title;
   final String description;
@@ -26,7 +32,11 @@ class NavList extends StatelessWidget {
     final kumo = context.kumo;
     final rows = <Widget>[];
     for (var i = 0; i < entries.length; i++) {
-      if (i > 0) rows.add(SizedBox(height: 1, child: ColoredBox(color: kumo.colors.hairline)));
+      if (i > 0) {
+        rows.add(
+          SizedBox(height: 1, child: ColoredBox(color: kumo.colors.hairline)),
+        );
+      }
       rows.add(_NavRow(entry: entries[i]));
     }
     return DecoratedBox(
@@ -38,7 +48,11 @@ class NavList extends StatelessWidget {
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(KumoRadius.lg),
-        child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.stretch, children: rows),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: rows,
+        ),
       ),
     );
   }
@@ -60,7 +74,10 @@ class _NavRow extends StatelessWidget {
       excludeChildSemantics: true,
       builder: (context, state) => Container(
         color: state.active ? kumo.colors.tint : null,
-        padding: const EdgeInsets.symmetric(horizontal: KumoSpace.s4, vertical: KumoSpace.s3),
+        padding: const EdgeInsets.symmetric(
+          horizontal: KumoSpace.s4,
+          vertical: KumoSpace.s3,
+        ),
         child: Row(
           spacing: KumoSpace.s3,
           children: [
@@ -71,7 +88,9 @@ class _NavRow extends StatelessWidget {
                 color: kumo.colors.recessed,
                 borderRadius: BorderRadius.circular(KumoRadius.md),
               ),
-              child: Center(child: KumoIcon(entry.icon, color: KumoColor.textSubtle)),
+              child: Center(
+                child: KumoIcon(entry.icon, color: KumoColor.textSubtle),
+              ),
             ),
             Expanded(
               child: Column(
@@ -79,11 +98,22 @@ class _NavRow extends StatelessWidget {
                 spacing: KumoSpace.s0_5,
                 children: [
                   KumoText(entry.title, bold: true),
-                  KumoText(entry.description, variant: KumoTextVariant.secondary, size: KumoTextSize.sm, maxLines: 2),
+                  KumoText(
+                    entry.description,
+                    variant: KumoTextVariant.secondary,
+                    size: KumoTextSize.sm,
+                    maxLines: 2,
+                  ),
                 ],
               ),
             ),
-            if (entry.count != null) KumoText('${entry.count}', variant: KumoTextVariant.secondary, size: KumoTextSize.sm, tabularNumbers: true),
+            if (entry.count != null)
+              KumoText(
+                '${entry.count}',
+                variant: KumoTextVariant.secondary,
+                size: KumoTextSize.sm,
+                tabularNumbers: true,
+              ),
             const KumoIcon(KumoIcons.caretRight, color: KumoColor.textSubtle),
           ],
         ),

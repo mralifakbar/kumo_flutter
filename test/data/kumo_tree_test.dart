@@ -6,6 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:kumo_flutter/kumo_flutter.dart';
 
 import '../helpers/harness.dart';
+import 'package:kumo_flutter/src/system/kumo_size_reveal.dart';
 
 const _nodes = [
   KumoTreeNode(
@@ -45,11 +46,11 @@ class _HostState extends State<_Host> {
 
   @override
   Widget build(BuildContext context) => Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          SizedBox(
-            width: 320,
-            child: KumoTree(
+    mainAxisSize: MainAxisSize.min,
+    children: [
+      SizedBox(
+        width: 320,
+        child: KumoTree(
           nodes: widget.nodes,
           expanded: expanded,
           onExpandedChange: (ids) => setState(() => expanded = ids),
@@ -58,11 +59,11 @@ class _HostState extends State<_Host> {
           loadChildren: widget.loadChildren,
           showGuides: widget.showGuides,
           semanticLabel: 'Worker files',
-            ),
-          ),
-          KumoButton(label: 'Deploy', onPress: () {}),
-        ],
-      );
+        ),
+      ),
+      KumoButton(label: 'Deploy', onPress: () {}),
+    ],
+  );
 }
 
 _HostState _host(WidgetTester tester) => tester.state<_HostState>(find.byType(_Host));
@@ -84,9 +85,9 @@ void main() {
     await tester.pump(const Duration(milliseconds: 100));
     expect(find.text('index.ts'), findsOneWidget);
     // Mid-animation the children are clipped, not reflowed.
-    final mid = tester.getSize(find.byType(SizeTransition).first).height;
+    final mid = tester.getSize(find.byType(KumoSizeReveal).first).height;
     await tester.pumpAndSettle();
-    expect(tester.getSize(find.byType(SizeTransition).first).height, greaterThan(mid));
+    expect(tester.getSize(find.byType(KumoSizeReveal).first).height, greaterThan(mid));
     expect(_host(tester).expanded, {'src'});
     expect(_host(tester).value, 'src');
     expect(find.byIcon(KumoIcons.folderOpen), findsOneWidget);
@@ -195,7 +196,12 @@ void main() {
   });
 
   testWidgets('RTL swaps Left and Right', (tester) async {
-    await pumpKumo(tester, const _Host(), tapTargetSize: KumoTapTargetSize.shrinkWrap, textDirection: TextDirection.rtl);
+    await pumpKumo(
+      tester,
+      const _Host(),
+      tapTargetSize: KumoTapTargetSize.shrinkWrap,
+      textDirection: TextDirection.rtl,
+    );
     await tester.sendKeyEvent(LogicalKeyboardKey.tab);
     await tester.sendKeyEvent(LogicalKeyboardKey.arrowLeft);
     await tester.pumpAndSettle();
@@ -254,7 +260,12 @@ void main() {
   });
 
   testWidgets('disabled nodes ignore presses', (tester) async {
-    await pumpKumo(tester, const _Host(nodes: [KumoTreeNode(id: 'x', label: 'locked', disabled: true)]));
+    await pumpKumo(
+      tester,
+      const _Host(
+        nodes: [KumoTreeNode(id: 'x', label: 'locked', disabled: true)],
+      ),
+    );
     await tester.tap(find.text('locked'));
     await tester.pumpAndSettle();
     expect(_host(tester).value, isNull);
@@ -280,10 +291,12 @@ void main() {
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 100));
     final caret = tester
-        .widget<RotationTransition>(find.ancestor(of: find.byIcon(KumoIcons.caretRight).first, matching: find.byType(RotationTransition)))
+        .widget<RotationTransition>(
+          find.ancestor(of: find.byIcon(KumoIcons.caretRight).first, matching: find.byType(RotationTransition)),
+        )
         .turns
         .value;
-    final size = tester.widget<SizeTransition>(find.byType(SizeTransition).first).sizeFactor.value;
+    final size = tester.widget<KumoSizeReveal>(find.byType(KumoSizeReveal).first).sizeFactor.value;
     final fade = tester
         .widgetList<FadeTransition>(find.ancestor(of: find.text('index.ts'), matching: find.byType(FadeTransition)))
         .map((f) => f.opacity.value)
@@ -301,11 +314,11 @@ void main() {
     await tester.tap(find.text('src'));
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 100));
-    final opened = tester.widget<SizeTransition>(find.byType(SizeTransition).first).sizeFactor.value;
+    final opened = tester.widget<KumoSizeReveal>(find.byType(KumoSizeReveal).first).sizeFactor.value;
     await tester.tap(find.text('src'));
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 16));
-    final reversing = tester.widget<SizeTransition>(find.byType(SizeTransition).first).sizeFactor.value;
+    final reversing = tester.widget<KumoSizeReveal>(find.byType(KumoSizeReveal).first).sizeFactor.value;
     expect(reversing, inExclusiveRange(0, opened));
     expect(opened - reversing, lessThan(0.2), reason: 'no jump back to closed');
     await tester.pumpAndSettle();

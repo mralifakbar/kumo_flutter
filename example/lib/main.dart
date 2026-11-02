@@ -61,7 +61,12 @@ Widget _startPage() {
   const start = String.fromEnvironment('KUMO_GALLERY_START');
   if (start.isEmpty) return const HomePage();
   if (start == 'console') return const ConsoleApp(simulateLoading: false);
-  if (start == 'console:dns') return const ConsoleApp(initialSection: ConsoleSection.dns, simulateLoading: false);
+  if (start == 'console:dns') {
+    return const ConsoleApp(
+      initialSection: ConsoleSection.dns,
+      simulateLoading: false,
+    );
+  }
   if (start == 'console:worker') {
     final worker = sampleWorkers().firstWhere((w) => w.name == 'auth-proxy');
     return WorkerPage(worker: worker, onChanged: () {}, onDeleted: () {});

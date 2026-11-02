@@ -89,15 +89,7 @@ class KumoTimeValue implements Comparable<KumoTimeValue> {
 /// ```
 @immutable
 class KumoTimeLabels {
-  const KumoTimeLabels({
-    this.hour,
-    this.minute,
-    this.second,
-    this.period,
-    this.am = 'AM',
-    this.pm = 'PM',
-    this.done,
-  });
+  const KumoTimeLabels({this.hour, this.minute, this.second, this.period, this.am = 'AM', this.pm = 'PM', this.done});
 
   /// Accessible names of the hour, minute and second parts. Default
   /// [KumoStrings.hours], [KumoStrings.minutes] and [KumoStrings.seconds].

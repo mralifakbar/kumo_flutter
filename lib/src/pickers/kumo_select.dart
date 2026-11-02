@@ -80,9 +80,9 @@ class KumoSelect<T> extends StatefulWidget {
     this.sheetTitle,
     this.focusNode,
     this.autofocus = false,
-  })  : multiple = false,
-        values = const <Never>[],
-        onValuesChange = null;
+  }) : multiple = false,
+       values = const <Never>[],
+       onValuesChange = null;
 
   /// A select that lets the user pick any number of options. The list stays
   /// open while options are toggled.
@@ -120,9 +120,9 @@ class KumoSelect<T> extends StatefulWidget {
     this.sheetTitle,
     this.focusNode,
     this.autofocus = false,
-  })  : multiple = true,
-        value = null,
-        onValueChange = null;
+  }) : multiple = true,
+       value = null,
+       onValueChange = null;
 
   /// Options, groups and separators, in display order.
   final List<KumoSelectItem<T>> options;
@@ -259,7 +259,8 @@ class _KumoSelectState<T> extends State<KumoSelect<T>> {
     if (mounted && _focus.hasFocus) setState(() {});
   }
 
-  bool _isSelected(KumoSelectOption<T> o) => widget.multiple ? widget.values.contains(o.value) : o.value == widget.value;
+  bool _isSelected(KumoSelectOption<T> o) =>
+      widget.multiple ? widget.values.contains(o.value) : o.value == widget.value;
 
   List<KumoSelectOption<T>> get _selected {
     if (widget.multiple) {
@@ -423,13 +424,19 @@ class _KumoSelectState<T> extends State<KumoSelect<T>> {
         child: widget.renderValue!(context, selected),
       );
     }
-    return Text(_summary(selected), maxLines: 1, overflow: TextOverflow.ellipsis, style: kumo.text(size: textSize));
+    return Text(
+      _summary(selected),
+      maxLines: 1,
+      overflow: TextOverflow.ellipsis,
+      style: kumo.text(size: textSize),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     final open = _open || _sheetOpen;
-    final showFocus = _focus.hasFocus && (open || FocusManager.instance.highlightMode == FocusHighlightMode.traditional);
+    final showFocus =
+        _focus.hasFocus && (open || FocusManager.instance.highlightMode == FocusHighlightMode.traditional);
     final selected = _selected;
     final accessibleName = widget.label ?? widget.semanticLabel ?? widget.placeholder;
 

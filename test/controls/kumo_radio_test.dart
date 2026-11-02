@@ -24,18 +24,17 @@ Widget _group({
   List<KumoRadio<String>> items = _levels,
   String? error,
   bool disabled = false,
-}) =>
-    KumoRadioGroup<String>(
-      legend: 'Cache level',
-      description: 'Applies to every route on example.com.',
-      error: error,
-      value: value,
-      onValueChange: onValueChange,
-      appearance: appearance,
-      orientation: orientation,
-      disabled: disabled,
-      items: items,
-    );
+}) => KumoRadioGroup<String>(
+  legend: 'Cache level',
+  description: 'Applies to every route on example.com.',
+  error: error,
+  value: value,
+  onValueChange: onValueChange,
+  appearance: appearance,
+  orientation: orientation,
+  disabled: disabled,
+  items: items,
+);
 
 void main() {
   for (final appearance in KumoRadioAppearance.values) {
@@ -78,7 +77,10 @@ void main() {
     await pumpKumo(tester, controlled<String?>('basic', (v, set) => _group(value: v, onValueChange: set)));
     await tester.tap(find.text('Standard'));
     await tester.pumpAndSettle();
-    expect(tester.getSemantics(find.text('Standard')), containsSemantics(isChecked: true, isInMutuallyExclusiveGroup: true));
+    expect(
+      tester.getSemantics(find.text('Standard')),
+      containsSemantics(isChecked: true, isInMutuallyExclusiveGroup: true),
+    );
     expect(tester.getSemantics(find.text('No query string')), containsSemantics(isChecked: false));
     handle.dispose();
   });
@@ -153,10 +155,15 @@ void main() {
         (v, set) => Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            _group(value: v, onValueChange: set, orientation: Axis.horizontal, items: const [
-              KumoRadio(value: 'basic', label: 'A'),
-              KumoRadio(value: 'aggressive', label: 'B'),
-            ]),
+            _group(
+              value: v,
+              onValueChange: set,
+              orientation: Axis.horizontal,
+              items: const [
+                KumoRadio(value: 'basic', label: 'A'),
+                KumoRadio(value: 'aggressive', label: 'B'),
+              ],
+            ),
             KumoText('Selected: $v'),
           ],
         ),
@@ -180,11 +187,16 @@ void main() {
     final calls = <String>[];
     await pumpKumo(
       tester,
-      _group(value: '1', onValueChange: calls.add, appearance: KumoRadioAppearance.segmented, items: const [
-        KumoRadio(value: '1', label: '1h'),
-        KumoRadio(value: '12', label: '12h'),
-        KumoRadio(value: '24', label: '24h'),
-      ]),
+      _group(
+        value: '1',
+        onValueChange: calls.add,
+        appearance: KumoRadioAppearance.segmented,
+        items: const [
+          KumoRadio(value: '1', label: '1h'),
+          KumoRadio(value: '12', label: '12h'),
+          KumoRadio(value: '24', label: '24h'),
+        ],
+      ),
     );
     await tester.tap(find.text('24h'));
     expect(calls, ['24']);
@@ -194,10 +206,15 @@ void main() {
     await pumpKumo(
       tester,
       textScale: 2,
-      _group(value: 'auto', onValueChange: (_) {}, appearance: KumoRadioAppearance.segmented, items: const [
-        KumoRadio(value: 'auto', label: 'Automatic processing'),
-        KumoRadio(value: 'manual', label: 'Manual configuration'),
-      ]),
+      _group(
+        value: 'auto',
+        onValueChange: (_) {},
+        appearance: KumoRadioAppearance.segmented,
+        items: const [
+          KumoRadio(value: 'auto', label: 'Automatic processing'),
+          KumoRadio(value: 'manual', label: 'Manual configuration'),
+        ],
+      ),
     );
     expect(tester.takeException(), isNull);
   });
@@ -206,10 +223,15 @@ void main() {
     await pumpKumo(
       tester,
       textScale: 2,
-      _group(value: 'pro', onValueChange: (_) {}, appearance: KumoRadioAppearance.card, items: const [
-        KumoRadio(value: 'free', label: 'Free', description: 'For personal projects and testing.'),
-        KumoRadio(value: 'pro', label: 'Pro', description: 'Image optimization and more page rules.'),
-      ]),
+      _group(
+        value: 'pro',
+        onValueChange: (_) {},
+        appearance: KumoRadioAppearance.card,
+        items: const [
+          KumoRadio(value: 'free', label: 'Free', description: 'For personal projects and testing.'),
+          KumoRadio(value: 'pro', label: 'Pro', description: 'Image optimization and more page rules.'),
+        ],
+      ),
     );
     expect(find.text('Image optimization and more page rules.'), findsOneWidget);
     expect(tester.takeException(), isNull);
@@ -307,7 +329,9 @@ void main() {
 
   testWidgets('the circle presses in on pointer-down, and not under reduced motion', (tester) async {
     Iterable<double> scales() => tester
-        .widgetList<ScaleTransition>(find.descendant(of: find.byType(KumoRadioGroup<String>), matching: find.byType(ScaleTransition)))
+        .widgetList<ScaleTransition>(
+          find.descendant(of: find.byType(KumoRadioGroup<String>), matching: find.byType(ScaleTransition)),
+        )
         .map((s) => s.scale.value);
     await pumpKumo(tester, _group(value: 'basic', onValueChange: (_) {}));
     final gesture = await tester.startGesture(tester.getCenter(find.text('Standard')));

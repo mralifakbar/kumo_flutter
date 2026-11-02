@@ -80,11 +80,11 @@ class KumoCombobox<T> extends StatefulWidget {
     this.showOptionsLabel,
     this.focusNode,
     this.autofocus = false,
-  })  : multiple = false,
-        values = const <Never>[],
-        onValuesChange = null,
-        inputSide = KumoComboboxInputSide.right,
-        removeLabel = null;
+  }) : multiple = false,
+       values = const <Never>[],
+       onValuesChange = null,
+       inputSide = KumoComboboxInputSide.right,
+       removeLabel = null;
 
   /// A combobox that collects several options as chips.
   ///
@@ -123,11 +123,11 @@ class KumoCombobox<T> extends StatefulWidget {
     this.removeLabel,
     this.focusNode,
     this.autofocus = false,
-  })  : multiple = true,
-        value = null,
-        onValueChange = null,
-        clearLabel = null,
-        showOptionsLabel = null;
+  }) : multiple = true,
+       value = null,
+       onValueChange = null,
+       clearLabel = null,
+       showOptionsLabel = null;
 
   /// Options, groups and separators. Groups are divided by a hairline, as
   /// in Kumo's combobox.
@@ -221,9 +221,12 @@ class _KumoComboboxState<T> extends State<KumoCombobox<T>> with TickerProviderSt
   @override
   void initState() {
     super.initState();
-    _chipMotion = PickerChipMotion(vsync: this, onChanged: () {
-      if (mounted) setState(() {});
-    });
+    _chipMotion = PickerChipMotion(
+      vsync: this,
+      onChanged: () {
+        if (mounted) setState(() {});
+      },
+    );
     _text = TextEditingController(text: _labelOf(widget.value));
     _side = widget.side;
     _focus.addListener(_onFocusChange);
@@ -264,7 +267,10 @@ class _KumoComboboxState<T> extends State<KumoCombobox<T>> with TickerProviderSt
   String _labelOf(T? value) => value == null ? '' : _lookup(value) ?? '';
 
   void _setText(String text) {
-    _text.value = TextEditingValue(text: text, selection: TextSelection.collapsed(offset: text.length));
+    _text.value = TextEditingValue(
+      text: text,
+      selection: TextSelection.collapsed(offset: text.length),
+    );
   }
 
   String get _query => _dirty ? _text.text : '';
@@ -284,7 +290,8 @@ class _KumoComboboxState<T> extends State<KumoCombobox<T>> with TickerProviderSt
     return _model!;
   }
 
-  bool _isSelected(KumoSelectOption<T> o) => widget.multiple ? widget.values.contains(o.value) : o.value == widget.value;
+  bool _isSelected(KumoSelectOption<T> o) =>
+      widget.multiple ? widget.values.contains(o.value) : o.value == widget.value;
 
   void _onFocusChange() {
     if (!mounted) return;
@@ -485,7 +492,10 @@ class _KumoComboboxState<T> extends State<KumoCombobox<T>> with TickerProviderSt
       } else {
         content = PickerChipWrap(
           padding: const EdgeInsetsDirectional.symmetric(horizontal: KumoSpace.s1_5, vertical: KumoSpace.s1),
-          children: [...chips, _editable(context, padding: inputPadding)],
+          children: [
+            ...chips,
+            _editable(context, padding: inputPadding),
+          ],
         );
       }
       return GestureDetector(
@@ -544,7 +554,8 @@ class _KumoComboboxState<T> extends State<KumoCombobox<T>> with TickerProviderSt
           : Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                if (showClear) iconButton(icon: KumoIcons.x, label: widget.clearLabel ?? strings.clear, onPress: _clear),
+                if (showClear)
+                  iconButton(icon: KumoIcons.x, label: widget.clearLabel ?? strings.clear, onPress: _clear),
                 iconButton(
                   icon: KumoIcons.caretUpDown,
                   label: widget.showOptionsLabel ?? strings.showOptions,
@@ -555,7 +566,10 @@ class _KumoComboboxState<T> extends State<KumoCombobox<T>> with TickerProviderSt
                 ),
               ],
             ),
-      child: DefaultTextStyle.merge(style: kumo.text(size: widget.size.textSize), child: _editable(context)),
+      child: DefaultTextStyle.merge(
+        style: kumo.text(size: widget.size.textSize),
+        child: _editable(context),
+      ),
     );
   }
 
@@ -598,9 +612,7 @@ class _KumoComboboxState<T> extends State<KumoCombobox<T>> with TickerProviderSt
           maxHeight: pickerMaxHeight(context, placement, cap: widget.maxHeight, sideOffset: widget.sideOffset),
           width: placement.anchorRect.width,
           semanticLabel: widget.label ?? widget.semanticLabel,
-          leading: [
-            if (widget.loading) PickerStatusRow(text: widget.loadingMessage ?? strings.loading, loading: true),
-          ],
+          leading: [if (widget.loading) PickerStatusRow(text: widget.loadingMessage ?? strings.loading, loading: true)],
           trailing: [
             if (!widget.loading && !m.hasOptions) PickerStatusRow(text: widget.emptyMessage ?? strings.noResults),
           ],

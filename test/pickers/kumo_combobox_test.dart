@@ -10,10 +10,13 @@ const _databases = <KumoSelectItem<String>>[
   KumoSelectOption(value: 'hyperdrive', label: 'Hyperdrive'),
   KumoSelectOption(value: 'kv', label: 'Workers KV'),
   KumoSelectOption(value: 'do', label: 'Durable Objects', disabled: true),
-  KumoSelectGroup(label: 'Storage', options: [
-    KumoSelectOption(value: 'r2', label: 'R2 buckets'),
-    KumoSelectOption(value: 'queues', label: 'Queues'),
-  ]),
+  KumoSelectGroup(
+    label: 'Storage',
+    options: [
+      KumoSelectOption(value: 'r2', label: 'R2 buckets'),
+      KumoSelectOption(value: 'queues', label: 'Queues'),
+    ],
+  ),
 ];
 
 class _Single extends StatefulWidget {
@@ -34,27 +37,27 @@ class _SingleState extends State<_Single> {
 
   @override
   Widget build(BuildContext context) => Align(
-        alignment: Alignment.topCenter,
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: SizedBox(
-            width: 300,
-            child: KumoCombobox<String>(
-              label: 'Database',
-              placeholder: 'Search databases',
-              options: _databases,
-              value: value,
-              disabled: widget.disabled,
-              loading: widget.loading,
-              filter: widget.filter,
-              onValueChange: (v) {
-                widget.onChange?.call(v);
-                setState(() => value = v);
-              },
-            ),
-          ),
+    alignment: Alignment.topCenter,
+    child: Padding(
+      padding: const EdgeInsets.all(16),
+      child: SizedBox(
+        width: 300,
+        child: KumoCombobox<String>(
+          label: 'Database',
+          placeholder: 'Search databases',
+          options: _databases,
+          value: value,
+          disabled: widget.disabled,
+          loading: widget.loading,
+          filter: widget.filter,
+          onValueChange: (v) {
+            widget.onChange?.call(v);
+            setState(() => value = v);
+          },
         ),
-      );
+      ),
+    ),
+  );
 }
 
 class _Multi extends StatefulWidget {
@@ -71,22 +74,22 @@ class _MultiState extends State<_Multi> {
 
   @override
   Widget build(BuildContext context) => Align(
-        alignment: Alignment.topCenter,
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: SizedBox(
-            width: 300,
-            child: KumoCombobox<String>.multiple(
-              label: 'Bindings',
-              placeholder: 'Add a binding',
-              inputSide: widget.inputSide,
-              options: _databases,
-              values: values,
-              onValuesChange: (v) => setState(() => values = v),
-            ),
-          ),
+    alignment: Alignment.topCenter,
+    child: Padding(
+      padding: const EdgeInsets.all(16),
+      child: SizedBox(
+        width: 300,
+        child: KumoCombobox<String>.multiple(
+          label: 'Bindings',
+          placeholder: 'Add a binding',
+          inputSide: widget.inputSide,
+          options: _databases,
+          values: values,
+          onValuesChange: (v) => setState(() => values = v),
         ),
-      );
+      ),
+    ),
+  );
 }
 
 Finder get _input => find.byType(TextField);
@@ -94,7 +97,13 @@ Finder get _input => find.byType(TextField);
 void main() {
   testWidgets('renders in light and dark, with the chosen label in the field', (tester) async {
     for (final b in Brightness.values) {
-      await pumpKumo(tester, const _Single(initial: 'kv'), brightness: b, size: kumoDesktopSize, center: false);
+      await pumpKumo(
+        tester,
+        const _Single(initial: 'kv'),
+        brightness: b,
+        size: kumoDesktopSize,
+        center: false,
+      );
       expect(find.text('Workers KV'), findsOneWidget);
       expect(tester.takeException(), isNull);
     }
@@ -143,7 +152,10 @@ void main() {
     expect(find.text('No results'), findsOneWidget);
     await pumpKumo(
       tester,
-      const KumoLocale(strings: KumoStrings(noResults: 'Tidak ada hasil'), child: _Single()),
+      const KumoLocale(
+        strings: KumoStrings(noResults: 'Tidak ada hasil'),
+        child: _Single(),
+      ),
       size: kumoDesktopSize,
       center: false,
     );
@@ -154,12 +166,7 @@ void main() {
   });
 
   testWidgets('custom filter replaces the substring match', (tester) async {
-    await pumpKumo(
-      tester,
-      _Single(filter: (o, q) => o.value.startsWith(q)),
-      size: kumoDesktopSize,
-      center: false,
-    );
+    await pumpKumo(tester, _Single(filter: (o, q) => o.value.startsWith(q)), size: kumoDesktopSize, center: false);
     await tester.tap(_input);
     await tester.enterText(_input, 'r');
     await tester.pumpAndSettle();
@@ -179,7 +186,12 @@ void main() {
 
   testWidgets('clear button resets the value; Escape closes and reverts typed text', (tester) async {
     final picked = <String?>[];
-    await pumpKumo(tester, _Single(initial: 'd1', onChange: picked.add), size: kumoDesktopSize, center: false);
+    await pumpKumo(
+      tester,
+      _Single(initial: 'd1', onChange: picked.add),
+      size: kumoDesktopSize,
+      center: false,
+    );
     await tester.tap(_input);
     await tester.enterText(_input, 'hyp');
     await tester.pumpAndSettle();

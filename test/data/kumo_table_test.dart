@@ -20,23 +20,23 @@ const _workers = [
 ];
 
 List<KumoTableColumn<Worker>> _columns({bool sortable = true, KumoTableColumnPin? pinLast}) => [
-      KumoTableColumn(id: 'name', label: 'Name', sortable: sortable, cell: (context, w) => Text(w.name)),
-      KumoTableColumn(
-        id: 'requests',
-        label: 'Requests',
-        numeric: true,
-        sortable: sortable,
-        width: const KumoTableColumnWidth.fixed(120),
-        cell: (context, w) => Text('${w.requests}'),
-      ),
-      KumoTableColumn(
-        id: 'status',
-        label: 'Status',
-        pin: pinLast,
-        width: const KumoTableColumnWidth.fixed(100),
-        cell: (context, w) => Text(w.status),
-      ),
-    ];
+  KumoTableColumn(id: 'name', label: 'Name', sortable: sortable, cell: (context, w) => Text(w.name)),
+  KumoTableColumn(
+    id: 'requests',
+    label: 'Requests',
+    numeric: true,
+    sortable: sortable,
+    width: const KumoTableColumnWidth.fixed(120),
+    cell: (context, w) => Text('${w.requests}'),
+  ),
+  KumoTableColumn(
+    id: 'status',
+    label: 'Status',
+    pin: pinLast,
+    width: const KumoTableColumnWidth.fixed(100),
+    cell: (context, w) => Text(w.status),
+  ),
+];
 
 void main() {
   testWidgets('renders header variants, densities and states in light and dark', (tester) async {
@@ -44,15 +44,27 @@ void main() {
       await pumpKumo(
         tester,
         SingleChildScrollView(
-          child: Column(children: [
-            for (final h in KumoTableHeaderVariant.values)
-              for (final d in KumoTableDensity.values)
-                KumoTable<Worker>(rows: _workers, columns: _columns(), headerVariant: h, density: d),
-            KumoTable<Worker>(rows: const [], columns: _columns()),
-            KumoTable<Worker>(rows: _workers, columns: _columns(), loading: true),
-            KumoTable<Worker>(rows: _workers, columns: _columns(), error: const KumoTablePlaceholder(title: 'Could not load')),
-            KumoTable<Worker>(rows: _workers, columns: _columns(), layout: KumoTableLayout.cards, selected: const {}, rowId: (w) => w.name),
-          ]),
+          child: Column(
+            children: [
+              for (final h in KumoTableHeaderVariant.values)
+                for (final d in KumoTableDensity.values)
+                  KumoTable<Worker>(rows: _workers, columns: _columns(), headerVariant: h, density: d),
+              KumoTable<Worker>(rows: const [], columns: _columns()),
+              KumoTable<Worker>(rows: _workers, columns: _columns(), loading: true),
+              KumoTable<Worker>(
+                rows: _workers,
+                columns: _columns(),
+                error: const KumoTablePlaceholder(title: 'Could not load'),
+              ),
+              KumoTable<Worker>(
+                rows: _workers,
+                columns: _columns(),
+                layout: KumoTableLayout.cards,
+                selected: const {},
+                rowId: (w) => w.name,
+              ),
+            ],
+          ),
         ),
         brightness: b,
         settle: false,
@@ -63,7 +75,11 @@ void main() {
   });
 
   testWidgets('header has a bottom border in kumo-fill; rows are striped', (tester) async {
-    await pumpKumo(tester, KumoTable<Worker>(rows: _workers, columns: _columns()), size: kumoDesktopSize);
+    await pumpKumo(
+      tester,
+      KumoTable<Worker>(rows: _workers, columns: _columns()),
+      size: kumoDesktopSize,
+    );
     final light = KumoThemeData.light().colors;
     final boxes = tester.widgetList<DecoratedBox>(find.byType(DecoratedBox));
     expect(
@@ -78,7 +94,11 @@ void main() {
   });
 
   testWidgets('numeric columns align to the end with tabular figures', (tester) async {
-    await pumpKumo(tester, KumoTable<Worker>(rows: _workers, columns: _columns()), size: kumoDesktopSize);
+    await pumpKumo(
+      tester,
+      KumoTable<Worker>(rows: _workers, columns: _columns()),
+      size: kumoDesktopSize,
+    );
     final number = find.text('12');
     final style = tester.widget<RichText>(find.descendant(of: number, matching: find.byType(RichText))).text.style!;
     expect(style.fontFeatures, contains(const FontFeature.tabularFigures()));
@@ -141,25 +161,50 @@ void main() {
     late StateSetter set;
     await pumpKumo(
       tester,
-      StatefulBuilder(builder: (context, setState) {
-        set = setState;
-        return KumoTable<Worker>(
-          rows: _workers,
-          columns: _columns(),
-          rowId: (w) => w.name,
-          rowLabel: (w) => w.name,
-          selected: selected,
-          onSelectionChange: (ids) => setState(() => selected = ids),
-        );
-      }),
+      StatefulBuilder(
+        builder: (context, setState) {
+          set = setState;
+          return KumoTable<Worker>(
+            rows: _workers,
+            columns: _columns(),
+            rowId: (w) => w.name,
+            rowLabel: (w) => w.name,
+            selected: selected,
+            onSelectionChange: (ids) => setState(() => selected = ids),
+          );
+        },
+      ),
       size: kumoDesktopSize,
     );
     expect(set, isNotNull);
     final all = find.bySemanticsLabel('Select all');
-    expect(tester.getSemantics(all), matchesSemantics(label: 'Select all', isButton: true, isCheckStateMixed: true, hasCheckedState: true, hasEnabledState: true, isEnabled: true, hasTapAction: true, isFocusable: true, hasFocusAction: true));
+    expect(
+      tester.getSemantics(all),
+      matchesSemantics(
+        label: 'Select all',
+        isButton: true,
+        isCheckStateMixed: true,
+        hasCheckedState: true,
+        hasEnabledState: true,
+        isEnabled: true,
+        hasTapAction: true,
+        isFocusable: true,
+        hasFocusAction: true,
+      ),
+    );
     expect(
       tester.getSemantics(find.bySemanticsLabel('Select auth-proxy')),
-      matchesSemantics(label: 'Select auth-proxy', isButton: true, hasCheckedState: true, isChecked: true, hasEnabledState: true, isEnabled: true, hasTapAction: true, isFocusable: true, hasFocusAction: true),
+      matchesSemantics(
+        label: 'Select auth-proxy',
+        isButton: true,
+        hasCheckedState: true,
+        isChecked: true,
+        hasEnabledState: true,
+        isEnabled: true,
+        hasTapAction: true,
+        isFocusable: true,
+        hasFocusAction: true,
+      ),
     );
     final tint = KumoThemeData.light().colors.tint;
     expect(tester.widgetList<ColoredBox>(find.byType(ColoredBox)).where((c) => c.color == tint), hasLength(1));
@@ -215,7 +260,11 @@ void main() {
 
     await pumpKumo(
       tester,
-      KumoTable<Worker>(rows: _workers, columns: _columns(), error: const KumoTablePlaceholder(title: 'Could not load Workers')),
+      KumoTable<Worker>(
+        rows: _workers,
+        columns: _columns(),
+        error: const KumoTablePlaceholder(title: 'Could not load Workers'),
+      ),
     );
     expect(find.text('Could not load Workers'), findsOneWidget);
   });
@@ -226,7 +275,10 @@ void main() {
     addTearDown(controller.dispose);
     await pumpKumo(
       tester,
-      SizedBox(height: 400, child: KumoTable<Worker>(rows: many, columns: _columns(), controller: controller)),
+      SizedBox(
+        height: 400,
+        child: KumoTable<Worker>(rows: many, columns: _columns(), controller: controller),
+      ),
       size: kumoDesktopSize,
     );
     expect(find.text('worker-0'), findsOneWidget);
@@ -246,11 +298,18 @@ void main() {
         width: 300,
         child: KumoTable<Worker>(
           rows: _workers,
-          columns: [
-            ..._columns(pinLast: KumoTableColumnPin.end),
-          ].map((c) => c.id == 'name'
-              ? KumoTableColumn<Worker>(id: 'name', label: 'Name', width: const KumoTableColumnWidth.flex(1, 200), cell: c.cell)
-              : c).toList(),
+          columns: [..._columns(pinLast: KumoTableColumnPin.end)]
+              .map(
+                (c) => c.id == 'name'
+                    ? KumoTableColumn<Worker>(
+                        id: 'name',
+                        label: 'Name',
+                        width: const KumoTableColumnWidth.flex(1, 200),
+                        cell: c.cell,
+                      )
+                    : c,
+              )
+              .toList(),
         ),
       ),
     );
@@ -258,7 +317,12 @@ void main() {
     final scroll = find.byWidgetPredicate((w) => w is SingleChildScrollView && w.scrollDirection == Axis.horizontal);
     expect(scroll, findsOneWidget);
     // The end fade shows while content is hidden to the right.
-    expect(find.byWidgetPredicate((w) => w is DecoratedBox && w.decoration is BoxDecoration && (w.decoration as BoxDecoration).gradient != null), findsWidgets);
+    expect(
+      find.byWidgetPredicate(
+        (w) => w is DecoratedBox && w.decoration is BoxDecoration && (w.decoration as BoxDecoration).gradient != null,
+      ),
+      findsWidgets,
+    );
 
     final pinnedBefore = tester.getRect(find.text('Paused'));
     final nameBefore = tester.getRect(find.text('cron-cleanup'));
@@ -280,7 +344,12 @@ void main() {
         child: KumoTable<Worker>(
           rows: _workers.take(1).toList(),
           columns: [
-            KumoTableColumn(id: 'name', label: 'Name', width: const KumoTableColumnWidth.fixed(400), cell: (context, w) => Text(w.name)),
+            KumoTableColumn(
+              id: 'name',
+              label: 'Name',
+              width: const KumoTableColumnWidth.fixed(400),
+              cell: (context, w) => Text(w.name),
+            ),
             KumoTableColumn(
               id: 'actions',
               label: '',
@@ -308,7 +377,12 @@ void main() {
       tester,
       Padding(
         padding: const EdgeInsets.all(16),
-        child: KumoTable<Worker>(rows: _workers, columns: _columns(), layout: KumoTableLayout.cards, onRowPress: (w) => pressed = w),
+        child: KumoTable<Worker>(
+          rows: _workers,
+          columns: _columns(),
+          layout: KumoTableLayout.cards,
+          onRowPress: (w) => pressed = w,
+        ),
       ),
     );
     expect(find.text('Requests'), findsNWidgets(3));
@@ -350,7 +424,12 @@ void main() {
   });
 
   testWidgets('RTL puts the first column on the right', (tester) async {
-    await pumpKumo(tester, KumoTable<Worker>(rows: _workers, columns: _columns()), textDirection: TextDirection.rtl, size: kumoDesktopSize);
+    await pumpKumo(
+      tester,
+      KumoTable<Worker>(rows: _workers, columns: _columns()),
+      textDirection: TextDirection.rtl,
+      size: kumoDesktopSize,
+    );
     expect(tester.getCenter(find.text('Name')).dx, greaterThan(tester.getCenter(find.text('Status')).dx));
   });
 
@@ -367,7 +446,11 @@ void main() {
       textScale: 2,
     );
     expect(tester.takeException(), isNull);
-    await pumpKumo(tester, KumoTable<Worker>(rows: _workers, columns: _columns(), layout: KumoTableLayout.cards), textScale: 2);
+    await pumpKumo(
+      tester,
+      KumoTable<Worker>(rows: _workers, columns: _columns(), layout: KumoTableLayout.cards),
+      textScale: 2,
+    );
     expect(tester.takeException(), isNull);
   });
 
@@ -407,7 +490,9 @@ void main() {
   testWidgets('unbounded parents build every row', (tester) async {
     await pumpKumo(
       tester,
-      SingleChildScrollView(child: KumoTable<Worker>(rows: _workers, columns: _columns())),
+      SingleChildScrollView(
+        child: KumoTable<Worker>(rows: _workers, columns: _columns()),
+      ),
     );
     expect(find.text('cron-cleanup'), findsOneWidget);
     expect(find.byType(ListView), findsNothing);
@@ -421,7 +506,13 @@ void main() {
   });
 
   testWidgets('render object reports semantics bounds for pinned cells', (tester) async {
-    await pumpKumo(tester, KumoTable<Worker>(rows: _workers, columns: _columns(pinLast: KumoTableColumnPin.end)));
+    await pumpKumo(
+      tester,
+      KumoTable<Worker>(
+        rows: _workers,
+        columns: _columns(pinLast: KumoTableColumnPin.end),
+      ),
+    );
     final box = tester.renderObject<RenderBox>(find.text('Paused'));
     expect(box.localToGlobal(Offset.zero).dx, isNonNegative);
   });
@@ -457,14 +548,14 @@ void main() {
 
   group('motion', () {
     Widget table({KumoTableSort? sort, Set<Object> selected = const {}}) => KumoTable<Worker>(
-          rows: _workers,
-          columns: _columns(),
-          rowId: (w) => w.name,
-          sort: sort,
-          onSortChange: (_) {},
-          selected: selected,
-          onSelectionChange: (_) {},
-        );
+      rows: _workers,
+      columns: _columns(),
+      rowId: (w) => w.name,
+      sort: sort,
+      onSortChange: (_) {},
+      selected: selected,
+      onSelectionChange: (_) {},
+    );
     double turns(WidgetTester tester) => tester
         .widget<RotationTransition>(
           find.ancestor(of: find.byIcon(KumoIcons.arrowUp), matching: find.byType(RotationTransition)).first,

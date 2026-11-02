@@ -5,13 +5,13 @@ import 'package:kumo_flutter/kumo_flutter.dart';
 import '../helpers/harness.dart';
 
 List<Widget> _tiles(int n, {double? tallIndexHeight}) => [
-      for (var i = 0; i < n; i++)
-        Container(
-          key: ValueKey(i),
-          height: i == 1 && tallIndexHeight != null ? tallIndexHeight : 40,
-          color: const Color(0xFF888888),
-        ),
-    ];
+  for (var i = 0; i < n; i++)
+    Container(
+      key: ValueKey(i),
+      height: i == 1 && tallIndexHeight != null ? tallIndexHeight : 40,
+      color: const Color(0xFF888888),
+    ),
+];
 
 Rect _tile(WidgetTester tester, int i) => tester.getRect(find.byKey(ValueKey(i)));
 
@@ -56,7 +56,12 @@ void main() {
     expect(_tile(tester, 1).top - _tile(tester, 0).bottom, 8);
     expect(_tile(tester, 0).width, 390);
 
-    await pumpKumo(tester, KumoGrid(variant: KumoGridVariant.twoUp, children: _tiles(2)), size: kumoDesktopSize, center: false);
+    await pumpKumo(
+      tester,
+      KumoGrid(variant: KumoGridVariant.twoUp, children: _tiles(2)),
+      size: kumoDesktopSize,
+      center: false,
+    );
     expect(_tile(tester, 0).top, _tile(tester, 1).top);
     expect(_tile(tester, 1).left - _tile(tester, 0).right, 32);
     expect(_tile(tester, 0).width, (1280 - 32) / 2);
@@ -90,7 +95,11 @@ void main() {
       tester,
       SizedBox(
         width: 400,
-        child: KumoGrid(variant: KumoGridVariant.twoUp, breakpoints: KumoGridBreakpoints.container, children: _tiles(2)),
+        child: KumoGrid(
+          variant: KumoGridVariant.twoUp,
+          breakpoints: KumoGridBreakpoints.container,
+          children: _tiles(2),
+        ),
       ),
       size: kumoDesktopSize,
     );
@@ -108,7 +117,11 @@ void main() {
   });
 
   testWidgets('mobile dividers separate stacked 4up items', (tester) async {
-    await pumpKumo(tester, KumoGrid(variant: KumoGridVariant.fourUp, mobileDivider: true, children: _tiles(3)), center: false);
+    await pumpKumo(
+      tester,
+      KumoGrid(variant: KumoGridVariant.fourUp, mobileDivider: true, children: _tiles(3)),
+      center: false,
+    );
     final hairline = KumoThemeData.light().colors.hairline;
     final dividers = tester.widgetList<DecoratedBox>(find.byType(DecoratedBox)).where((d) {
       final dec = d.decoration;
@@ -123,7 +136,9 @@ void main() {
       SingleChildScrollView(
         child: KumoGrid(
           columns: const KumoGridColumns(base: 2),
-          children: [for (var i = 0; i < 6; i++) const KumoLayerCard(child: Text('Requests today across every Worker'))],
+          children: [
+            for (var i = 0; i < 6; i++) const KumoLayerCard(child: Text('Requests today across every Worker')),
+          ],
         ),
       ),
       brightness: Brightness.dark,

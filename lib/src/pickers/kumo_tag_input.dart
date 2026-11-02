@@ -145,9 +145,12 @@ class _KumoTagInputState extends State<KumoTagInput> with TickerProviderStateMix
   @override
   void initState() {
     super.initState();
-    _chipMotion = PickerChipMotion(vsync: this, onChanged: () {
-      if (mounted) setState(() {});
-    });
+    _chipMotion = PickerChipMotion(
+      vsync: this,
+      onChanged: () {
+        if (mounted) setState(() {});
+      },
+    );
     _focus.addListener(_onFocusChange);
   }
 
@@ -177,7 +180,10 @@ class _KumoTagInputState extends State<KumoTagInput> with TickerProviderStateMix
 
   void _setText(String text) {
     _lastText = text;
-    _text.value = TextEditingValue(text: text, selection: TextSelection.collapsed(offset: text.length));
+    _text.value = TextEditingValue(
+      text: text,
+      selection: TextSelection.collapsed(offset: text.length),
+    );
   }
 
   void _emit(List<String> next) {
@@ -199,7 +205,9 @@ class _KumoTagInputState extends State<KumoTagInput> with TickerProviderStateMix
       } else {
         final verdict = widget.validateValue?.call(entry, List.unmodifiable(next));
         if (verdict != null) {
-          problem = verdict.isNotEmpty ? verdict : (widget.labels.invalidValue?.call(entry) ?? context.kumoStrings.invalidValue(entry));
+          problem = verdict.isNotEmpty
+              ? verdict
+              : (widget.labels.invalidValue?.call(entry) ?? context.kumoStrings.invalidValue(entry));
         }
       }
       if (problem != null) {
@@ -263,7 +271,10 @@ class _KumoTagInputState extends State<KumoTagInput> with TickerProviderStateMix
     final chips = [
       for (var i = 0; i < widget.value.length; i++)
         PickerChip(
-          key: ValueKey<(String, int)>((widget.value[i], seen.update(widget.value[i], (n) => n + 1, ifAbsent: () => 0))),
+          key: ValueKey<(String, int)>((
+            widget.value[i],
+            seen.update(widget.value[i], (n) => n + 1, ifAbsent: () => 0),
+          )),
           label: widget.value[i],
           removeSize: 20,
           disabled: locked,

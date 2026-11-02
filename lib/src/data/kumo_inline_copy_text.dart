@@ -47,8 +47,8 @@ class KumoInlineCopyText extends StatefulWidget {
     this.copyLabel,
     this.copiedLabel,
     this.onCopy,
-  })  : child = null,
-        assert(variant != KumoTextVariant.heading, 'Heading variants are not supported');
+  }) : child = null,
+       assert(variant != KumoTextVariant.heading, 'Heading variants are not supported');
 
   /// Shows any [child] and copies [value].
   const KumoInlineCopyText.rich({
@@ -63,8 +63,8 @@ class KumoInlineCopyText extends StatefulWidget {
     this.copyLabel,
     this.copiedLabel,
     this.onCopy,
-  })  : text = null,
-        assert(variant != KumoTextVariant.heading, 'Heading variants are not supported');
+  }) : text = null,
+       assert(variant != KumoTextVariant.heading, 'Heading variants are not supported');
 
   final String? text;
   final Widget? child;
@@ -150,21 +150,21 @@ class _KumoInlineCopyTextState extends State<KumoInlineCopyText>
         final Widget icon = KumoSwap(
           child: switch (copyStatus) {
             DataCopyStatus.copied => ScaleTransition(
-                key: const ValueKey(DataCopyStatus.copied),
-                scale: copyBump,
-                child: KumoIcon(KumoIcons.check, size: 14, dangerouslySetColor: iconColor),
-              ),
+              key: const ValueKey(DataCopyStatus.copied),
+              scale: copyBump,
+              child: KumoIcon(KumoIcons.check, size: 14, dangerouslySetColor: iconColor),
+            ),
             DataCopyStatus.failed => ScaleTransition(
-                key: const ValueKey(DataCopyStatus.failed),
-                scale: copyBump,
-                child: const KumoIcon(KumoIcons.warningCircle, size: 14, color: KumoColor.textDanger),
-              ),
+              key: const ValueKey(DataCopyStatus.failed),
+              scale: copyBump,
+              child: const KumoIcon(KumoIcons.warningCircle, size: 14, color: KumoColor.textDanger),
+            ),
             DataCopyStatus.idle => AnimatedOpacity(
-                key: const ValueKey(DataCopyStatus.idle),
-                opacity: lit || rowActive || touch || widget.alwaysShowIcon ? 1 : 0,
-                duration: KumoMotion.duration(context, KumoDurations.quick),
-                child: KumoIcon(KumoIcons.copySimple, size: 14, dangerouslySetColor: iconColor),
-              ),
+              key: const ValueKey(DataCopyStatus.idle),
+              opacity: lit || rowActive || touch || widget.alwaysShowIcon ? 1 : 0,
+              duration: KumoMotion.duration(context, KumoDurations.quick),
+              child: KumoIcon(KumoIcons.copySimple, size: 14, dangerouslySetColor: iconColor),
+            ),
           },
         );
         final content = widget.child != null
@@ -184,7 +184,10 @@ class _KumoInlineCopyTextState extends State<KumoInlineCopyText>
         return Row(
           mainAxisSize: MainAxisSize.min,
           spacing: KumoSpace.s1,
-          children: [Flexible(child: content), icon],
+          children: [
+            Flexible(child: content),
+            icon,
+          ],
         );
       },
     );

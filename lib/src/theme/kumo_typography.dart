@@ -1,6 +1,5 @@
 import 'package:flutter/widgets.dart';
 
-
 /// Body text sizes. Kumo content text is 14px ([base]); 16px and up is for
 /// headings, so reach for [lg] only in places that are not running copy.
 enum KumoTextSize {
@@ -87,34 +86,34 @@ class KumoTypography {
     FontWeight weight = normal,
     Color? color,
     double height = bodyHeight,
-  }) =>
-      TextStyle(
-        fontFamily: sans,
-        package: package,
-        fontFamilyFallback: sansFallback,
-        fontSize: size.fontSize,
-        fontWeight: weight,
-        height: height,
-        color: color,
-        leadingDistribution: TextLeadingDistribution.even,
-      );
+  }) => TextStyle(
+    fontFamily: sans,
+    package: package,
+    fontFamilyFallback: sansFallback,
+    fontSize: size.fontSize,
+    fontWeight: weight,
+    height: height,
+    color: color,
+    leadingDistribution: TextLeadingDistribution.even,
+  );
 
   /// A semibold heading.
   TextStyle heading({KumoHeadingSize size = KumoHeadingSize.base, Color? color}) => TextStyle(
-        fontFamily: sans,
-        package: package,
-        fontFamilyFallback: sansFallback,
-        fontSize: size.fontSize,
-        fontWeight: semibold,
-        height: size.lineHeight / size.fontSize,
-        color: color,
-        leadingDistribution: TextLeadingDistribution.even,
-      );
+    fontFamily: sans,
+    package: package,
+    fontFamilyFallback: sansFallback,
+    fontSize: size.fontSize,
+    fontWeight: semibold,
+    height: size.lineHeight / size.fontSize,
+    color: color,
+    leadingDistribution: TextLeadingDistribution.even,
+  );
 
   /// Monospace text. Mono reads larger than Inter at the same size, so Kumo
   /// sets it 1px smaller than the text around it: 13px by default, 14px for
   /// [large].
-  TextStyle code({bool large = false, FontWeight weight = normal, Color? color, double height = bodyHeight}) => TextStyle(
+  TextStyle code({bool large = false, FontWeight weight = normal, Color? color, double height = bodyHeight}) =>
+      TextStyle(
         fontFamily: mono,
         package: package,
         fontFamilyFallback: monoFallback,
@@ -126,12 +125,12 @@ class KumoTypography {
       );
 
   KumoTypography copyWith({String? sans, String? mono, String? package}) => KumoTypography(
-        sans: sans ?? this.sans,
-        mono: mono ?? this.mono,
-        package: package ?? this.package,
-        sansFallback: sansFallback,
-        monoFallback: monoFallback,
-      );
+    sans: sans ?? this.sans,
+    mono: mono ?? this.mono,
+    package: package ?? this.package,
+    sansFallback: sansFallback,
+    monoFallback: monoFallback,
+  );
 
   @override
   bool operator ==(Object other) =>
@@ -140,4 +139,3 @@ class KumoTypography {
   @override
   int get hashCode => Object.hash(sans, mono, package);
 }
-

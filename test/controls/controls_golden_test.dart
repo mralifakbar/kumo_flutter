@@ -25,7 +25,12 @@ void main() {
                 KumoCheckbox(label: 'Off', checked: false, onCheckedChange: (_) {}),
                 KumoCheckbox(label: 'On', checked: true, onCheckedChange: (_) {}),
                 KumoCheckbox(label: 'Some', checked: false, indeterminate: true, onCheckedChange: (_) {}),
-                KumoCheckbox(label: 'Error', checked: false, variant: KumoCheckboxVariant.error, onCheckedChange: (_) {}),
+                KumoCheckbox(
+                  label: 'Error',
+                  checked: false,
+                  variant: KumoCheckboxVariant.error,
+                  onCheckedChange: (_) {},
+                ),
                 const KumoCheckbox(label: 'Disabled', checked: true),
               ],
             ),
@@ -67,12 +72,22 @@ void main() {
               children: [
                 KumoSwitch(label: 'Off', checked: false, onCheckedChange: (_) {}),
                 KumoSwitch(label: 'On', checked: true, onCheckedChange: (_) {}),
-                KumoSwitch(label: 'Neutral', variant: KumoSwitchVariant.neutral, checked: true, onCheckedChange: (_) {}),
+                KumoSwitch(
+                  label: 'Neutral',
+                  variant: KumoSwitchVariant.neutral,
+                  checked: true,
+                  onCheckedChange: (_) {},
+                ),
                 KumoSwitch(label: 'Small', size: KumoSwitchSize.sm, checked: true, onCheckedChange: (_) {}),
               ],
             ),
             KumoSlider(label: 'Volume', value: 40, onValueChange: (_) {}),
-            KumoSlider.range(label: 'Range', size: KumoSliderSize.sm, values: (start: 25, end: 75), onValuesChange: (_) {}),
+            KumoSlider.range(
+              label: 'Range',
+              size: KumoSliderSize.sm,
+              values: (start: 25, end: 75),
+              onValuesChange: (_) {},
+            ),
             KumoButtonGroup(
               variant: KumoButtonVariant.primary,
               children: [
@@ -91,8 +106,18 @@ void main() {
               spacing: 8,
               children: [
                 KumoToggle(icon: KumoIcons.textB, semanticLabel: 'Bold', pressed: true, onPressedChange: (_) {}),
-                KumoToggle(icon: KumoIcons.textItalic, semanticLabel: 'Italic', pressed: false, onPressedChange: (_) {}),
-                KumoToggle(label: 'Errors', variant: KumoToggleVariant.outline, pressed: false, onPressedChange: (_) {}),
+                KumoToggle(
+                  icon: KumoIcons.textItalic,
+                  semanticLabel: 'Italic',
+                  pressed: false,
+                  onPressedChange: (_) {},
+                ),
+                KumoToggle(
+                  label: 'Errors',
+                  variant: KumoToggleVariant.outline,
+                  pressed: false,
+                  onPressedChange: (_) {},
+                ),
               ],
             ),
             KumoToggleGroup<String>.multiple(

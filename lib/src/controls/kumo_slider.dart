@@ -75,11 +75,11 @@ class KumoSlider extends StatefulWidget {
     this.disabled = false,
     this.format,
     this.thumbSemanticLabel,
-  })  : values = null,
-        onValuesChange = null,
-        onValuesCommitted = null,
-        assert(max > min),
-        assert(step > 0);
+  }) : values = null,
+       onValuesChange = null,
+       onValuesCommitted = null,
+       assert(max > min),
+       assert(step > 0);
 
   /// A slider with two thumbs selecting a range. The thumbs never cross.
   ///
@@ -108,11 +108,11 @@ class KumoSlider extends StatefulWidget {
     this.disabled = false,
     this.format,
     this.thumbSemanticLabel,
-  })  : value = null,
-        onValueChange = null,
-        onValueCommitted = null,
-        assert(max > min),
-        assert(step > 0);
+  }) : value = null,
+       onValueChange = null,
+       onValueCommitted = null,
+       assert(max > min),
+       assert(step > 0);
 
   /// The value of a single-thumb slider.
   final double? value;
@@ -624,7 +624,10 @@ class _KumoSliderState extends State<KumoSlider> with TickerProviderStateMixin {
         if (widget.label != null)
           // The thumbs carry the label as their accessible name.
           ExcludeSemantics(
-            child: Text(widget.label!, style: kumo.text(size: size.textSize, weight: KumoTypography.medium)),
+            child: Text(
+              widget.label!,
+              style: kumo.text(size: size.textSize, weight: KumoTypography.medium),
+            ),
           ),
         slider,
       ],

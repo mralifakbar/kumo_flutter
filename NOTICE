@@ -1,0 +1,29 @@
+kumo_flutter
+Copyright (c) 2026 Alif Akbar Kartadinata and the kumo_flutter contributors
+
+This product is an unofficial Flutter port of Kumo, Cloudflare's design
+system. It is not affiliated with, sponsored by, or endorsed by Cloudflare,
+Inc. "Cloudflare" and "Kumo" are used only to describe what this package is a
+port of. The MIT License grants no rights to Cloudflare trade names,
+trademarks or logos; the Cloudflare logo component is not included.
+
+Third-party material included in this product:
+
+  * Kumo (https://github.com/cloudflare/kumo), Copyright (c) 2026 Cloudflare,
+    Inc., MIT License (full text in LICENSE). Derived material: semantic color
+    tokens of the kumo and fedramp themes (converted from OKLCH CSS by
+    tool/generate_theme.dart), typography and spacing scales, component
+    variants, dimensions, copy defaults and behavior, re-implemented in Dart.
+
+  * Phosphor Icons 2.1 (https://phosphoricons.com), Copyright (c) 2020-2021
+    Phosphor Icons, MIT License (assets/licenses/Phosphor-MIT.txt). The
+    regular and fill icon fonts are redistributed unmodified as
+    assets/fonts/Phosphor.ttf and assets/fonts/Phosphor-Fill.ttf; icon names,
+    categories and tags are converted to Dart by tool/generate_icons.dart.
+    Brand logo glyphs in the set remain trademarks of their owners.
+
+  * Inter 4.1, Copyright (c) 2016 The Inter Project Authors, SIL Open Font
+    License 1.1 (assets/licenses/Inter-OFL.txt).
+
+  * JetBrains Mono 2.304, Copyright 2020 The JetBrains Mono Project Authors,
+    SIL Open Font License 1.1 (assets/licenses/JetBrainsMono-OFL.txt).

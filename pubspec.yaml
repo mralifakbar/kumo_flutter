@@ -1,0 +1,62 @@
+name: kumo_flutter
+description: >-
+  Unofficial Flutter port of Cloudflare's Kumo design system: OKLCH-accurate light and dark themes, 1,530 Phosphor icons and accessible, spring-driven components.
+version: 0.1.0
+homepage: https://github.com/mralifakbar/kumo_flutter
+repository: https://github.com/mralifakbar/kumo_flutter
+issue_tracker: https://github.com/mralifakbar/kumo_flutter/issues
+documentation: https://github.com/mralifakbar/kumo_flutter/tree/main/doc
+screenshots:
+  - description: Sample console listing Workers with status, light mode.
+    path: doc/images/console-light.png
+  - description: DNS records as cards on a phone, dark mode.
+    path: doc/images/dns-dark.png
+  - description: Worker overview with a requests chart, dark mode.
+    path: doc/images/worker-chart-dark.png
+  - description: Button variants and layer cards in light and dark.
+    path: doc/images/foundation.png
+topics:
+  - design-system
+  - ui
+  - widgets
+  - theme
+  - components
+
+environment:
+  sdk: ^3.10.0
+  flutter: ">=3.38.0"
+
+dependencies:
+  clock: ^1.1.1
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  assets:
+    - assets/licenses/
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Inter-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Inter-SemiBold.ttf
+          weight: 600
+    - family: JetBrainsMono
+      fonts:
+        - asset: assets/fonts/JetBrainsMono-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/JetBrainsMono-Medium.ttf
+          weight: 500
+    - family: Phosphor
+      fonts:
+        - asset: assets/fonts/Phosphor.ttf
+    - family: PhosphorFill
+      fonts:
+        - asset: assets/fonts/Phosphor-Fill.ttf

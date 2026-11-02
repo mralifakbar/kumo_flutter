@@ -1,0 +1,11 @@
+.dart_tool/
+.packages
+build/
+coverage/
+pubspec.lock
+**/failures/
+.idea/
+*.iml
+.DS_Store
+example/ios/Pods/
+example/.flutter-plugins-dependencies

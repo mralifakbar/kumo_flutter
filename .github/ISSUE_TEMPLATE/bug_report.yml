@@ -1,0 +1,43 @@
+name: Bug report
+description: Something renders, behaves or reads wrong.
+labels: [bug]
+body:
+  - type: input
+    id: component
+    attributes:
+      label: Component
+      description: Which widget or API, for example KumoSelect or KumoDialog.
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Minimal reproduction
+      description: The smallest code sample that shows the problem.
+      render: dart
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: kumo_flutter and Flutter versions
+      placeholder: kumo_flutter 0.1.0, Flutter 3.38.5
+    validations:
+      required: true
+  - type: dropdown
+    id: platforms
+    attributes:
+      label: Platforms
+      multiple: true
+      options: [iOS, Android, Web, macOS, Windows, Linux]
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or recordings
+      description: Light and dark if relevant.

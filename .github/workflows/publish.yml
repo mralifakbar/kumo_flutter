@@ -1,0 +1,30 @@
+# Publishes to pub.dev when a version tag (v0.1.1, v1.0.0, ...) is pushed.
+# Uses pub.dev automated publishing (OIDC), so no secret is stored here.
+# One-time setup on pub.dev: package page -> Admin -> Automated publishing ->
+# Enable publishing from GitHub Actions, repository mralifakbar/kumo_flutter,
+# tag pattern v{{version}}, and require the "pub.dev" environment.
+name: Publish to pub.dev
+
+on:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+*'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: pub.dev
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+      # setup-dart configures the OIDC token exchange with pub.dev.
+      - uses: dart-lang/setup-dart@v1
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+      - run: flutter pub get
+      - run: flutter analyze --no-fatal-infos
+      - run: flutter test --exclude-tags golden
+      - run: flutter pub publish --force

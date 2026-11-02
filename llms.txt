@@ -1,0 +1,118 @@
+# kumo_flutter
+
+> Unofficial Flutter port of Kumo, Cloudflare's design system: OKLCH-accurate light and dark themes, 1,530 Phosphor icons, and accessible, spring-driven components. Not affiliated with Cloudflare.
+
+Import `package:kumo_flutter/kumo_flutter.dart`, wrap the app in `KumoThemeProvider`, read the theme with `context.kumo`. Widgets are prefixed `Kumo`; props follow Kumo names; colors are `KumoColor` tokens; spacing follows the Tailwind 4px grid (`KumoSpace.s3` is 12px); content text is 14px.
+
+## Guides
+
+- [Accessibility](doc/guides/accessibility.md): - **Semantics.** Every control exposes its role, label and state (button, checked, toggled, selected, expanded, slider value). Icon-only buttons require a `semanticLabel` (an assert enforces it for `KumoButton`).
+- [For AI agents](doc/guides/for-ai-agents.md): This page is for coding agents that build Flutter apps with kumo_flutter.
+- [Getting started](doc/guides/getting-started.md): Install the package, wrap your app in `KumoThemeProvider`, and build with `Kumo*` widgets.
+- [Mobile](doc/guides/mobile.md): Kumo is designed for wide dashboards. kumo_flutter keeps Kumo's dense look and adapts the behavior for phones.
+- [Motion](doc/guides/motion.md): Motion answers touch. Feedback on press, springs that start from where things are, sheets that follow the finger. Nothing loops forever.
+- [Theming](doc/guides/theming.md): `KumoThemeProvider(mode: ...)` takes `KumoThemeMode.system` (default, follows the platform), `.light` or `.dark`. Mode changes cross-fade every token over 300ms, instantly under reduced motion.
+- [Tokens](doc/guides/tokens.md): Kumo defines 54 semantic tokens in OKLCH. `tool/generate_theme.dart` converts them to sRGB with CSS Color 4 gamut mapping (the same result a browser shows on an sRGB screen) into `KumoColorSchemes.light`, `.dark`, `.fedrampLight` and `.fedrampDark`.
+
+## Components
+
+- [KumoAccordion](doc/components/KumoAccordion.md): A stack of collapsible sections separated by hairlines, for FAQs and grouped settings where people open one or a few sections at a time. Shaped after shadcn's accordion and drawn with Kumo tokens; Kumo has no accordion of its own.
+- [KumoAnchoredOverlay](doc/components/KumoAnchoredOverlay.md): The positioning primitive behind popovers, tooltips, menus, selects and comboboxes. Use it to build custom floating panels.
+- [KumoAppShell](doc/components/KumoAppShell.md): The responsive frame a Kumo app is built on: a `KumoSidebar`, a sticky top bar and the page, switching between a persistent sidebar, an icon rail and a phone drawer.
+- [KumoAutocomplete](doc/components/KumoAutocomplete.md): A free-text field with a list of suggestions. Reach for it when any value is valid but common ones are worth offering: route patterns, hostnames, dates.
+- [KumoAvatar](doc/components/KumoAvatar.md): A person's or account's picture, with initials while it loads or when there is none, optional live presence, and `KumoAvatarGroup` for stacks.
+- [KumoAvatarGroup](doc/components/KumoAvatarGroup.md): Overlapping `KumoAvatar`s with a "+3" chip for the ones that do not fit.
+- [KumoBadge](doc/components/KumoBadge.md): Kumo's `Badge`: a small label for status, categories or metadata, such as "Active", "Beta" or "Proxied".
+- [KumoBanner](doc/components/KumoBanner.md): A full-width inline message for information, warnings and errors that belong to a page or a section, with optional accent-tinted actions.
+- [KumoBottomNavigation](doc/components/KumoBottomNavigation.md): A tab bar for phone layouts of Kumo apps: three to five destinations, each an icon over a label, pinned to the bottom with room for the home indicator.
+- [KumoBreadcrumbs](doc/components/KumoBreadcrumbs.md): The trail from the account root to the current page, for dashboards with nested resources (account, zone, DNS, record).
+- [KumoButton](doc/components/KumoButton.md): Kumo's `Button`: the control for actions, in six variants and four sizes, with icon-only shapes, a loading state and an optional tooltip.
+- [KumoButtonGroup](doc/components/KumoButtonGroup.md): Kumo's `ButtonGroup`: a few tightly coupled buttons joined into one control, most often a split button (an action next to a menu trigger for related actions).
+- [KumoCalendar](doc/components/KumoCalendar.md): The month grid of Kumo's `DatePicker`, for picking one day, a run of days or a set of days, inline on a page or inside your own panel.
+- [KumoChartColors](doc/components/KumoChartColors.md): Kumo's chart palette (`ChartPalette`): categorical colors for series, semantic colors for status data, a sequential scale for density and map fills, each tuned for light and dark mode.
+- [KumoChartLegend](doc/components/KumoChartLegend.md): A legend item for a chart series: a colored dot, the series name and its value. Kumo's `ChartLegend.SmallItem` and `ChartLegend.LargeItem`.
+- [KumoCheckbox](doc/components/KumoCheckbox.md): Kumo's `Checkbox`: a 16px box with a label for a single yes or no choice, or the "select all" control above a list (with `indeterminate`).
+- [KumoCheckboxGroup](doc/components/KumoCheckboxGroup.md): Kumo's `Checkbox.Group`: a legend over a set of checkboxes, with an error and a description below, controlled with the list of checked values.
+- [KumoClipboardText](doc/components/KumoClipboardText.md): Kumo's `ClipboardText`: a read-only, input-like field holding a value with a copy button at its end.
+- [KumoCode](doc/components/KumoCode.md): Kumo's `Code` and `Code.Block`: monospace code without syntax colors, in `text-kumo-subtle` at 13px on 20px lines.
+- [KumoCodeHighlighted](doc/components/KumoCodeHighlighted.md): Kumo's `CodeHighlighted`: a syntax-colored code block with optional line numbers, highlighted lines and a copy button.
+- [KumoCollapsible](doc/components/KumoCollapsible.md): A trigger that shows and hides a panel, for optional detail (advanced settings, an explanation) that most people skip.
+- [KumoCombobox](doc/components/KumoCombobox.md): A text field that filters a list of options as you type, for one value or several shown as chips. Reach for it when the list is long enough that searching beats scrolling.
+- [KumoCommandPalette](doc/components/KumoCommandPalette.md): A searchable list of commands, opened with Cmd+K or Ctrl+K. Reach for it to let keyboard users jump to any page or action without the navigation.
+- [KumoContextMenu](doc/components/KumoContextMenu.md): A menu that opens where the user right-clicks a widget, or long-presses it on touch screens. It takes the same items as `KumoDropdownMenu`.
+- [KumoDateInput](doc/components/KumoDateInput.md): Typed date entry with validation and a calendar button. Separators are inserted as you type, impossible or unavailable days show an inline error, and the button opens a `KumoCalendar`.
+- [KumoDatePicker](doc/components/KumoDatePicker.md): A date field that opens a `KumoCalendar`: Kumo's `DatePicker` composed with a `Popover`, as the Kumo docs show it, for single days, ranges with presets and sets of days.
+- [KumoDateRangePicker](doc/components/KumoDateRangePicker.md): Deprecated. Kumo replaced `DateRangePicker` with `DatePicker mode="range"`; this alias forwards every argument to `KumoDatePicker.range` so code can move over gradually.
+- [KumoDeleteResource](doc/components/KumoDeleteResource.md): A confirmation dialog for deleting a resource: the destructive button stays disabled until the user types the resource's name.
+- [KumoDialog](doc/components/KumoDialog.md): A modal panel near the top of the screen over a recessed backdrop, for focused tasks and confirmations that block the page behind them.
+- [KumoDialogRoute](doc/components/KumoDialogRoute.md): The route behind Kumo dialogs: Kumo's backdrop (recessed surface at 80%), a scale-from-0.9 entry, focus trap, Escape and backdrop dismissal. `showKumoDialog` uses it; push it directly for a custom modal.
+- [KumoDrawer](doc/components/KumoDrawer.md): A panel attached to a screen edge, for details, settings and filters that sit beside the page instead of over its center.
+- [KumoDropdownMenu](doc/components/KumoDropdownMenu.md): A list of actions anchored to a trigger, with checkbox items, radio groups and submenus. Reach for it for row actions, account menus and "Add" buttons.
+- [KumoEmpty](doc/components/KumoEmpty.md): Kumo's `Empty`: what a list, table or page shows when it has nothing to show, with an optional copyable command and actions.
+- [KumoField](doc/components/KumoField.md): Kumo's `Field`: a label above a control, with a description or an error message below it. Use it to give a custom or bare control the same layout as Kumo's form components.
+- [KumoFieldBox](doc/components/KumoFieldBox.md): The chrome of every Kumo text field, and `KumoEditable`, the bare text-editing core that goes inside it. Use them to build custom fields that match `KumoInput`.
+- [KumoFlowAnchor](doc/components/KumoFlowAnchor.md): Marks where connectors attach inside a [KumoFlowNode](KumoFlowNode.md), so they meet a header or leave from a footer instead of the node's center.
+- [KumoFlowDiagram](doc/components/KumoFlowDiagram.md): A directed step diagram: nodes joined by connectors with rounded elbows, plus parallel branches and custom anchor points. Use it when the order of steps matters, as in a request path, a deploy pipeline or a set of routing rules.
+- [KumoFlowList](doc/components/KumoFlowList.md): A sequence of connected steps inside a [KumoFlowParallel](KumoFlowParallel.md), for a branch with more than one step.
+- [KumoFlowNode](doc/components/KumoFlowNode.md): One step in a [KumoFlowDiagram](KumoFlowDiagram.md). By default it is Kumo's node card. It can show custom content, be pressable and selected, or be disabled.
+- [KumoFlowParallel](doc/components/KumoFlowParallel.md): Parallel branches in a [KumoFlowDiagram](KumoFlowDiagram.md). The step before the group fans out to every branch, and every branch joins the step after it.
+- [KumoFocusTrap](doc/components/KumoFocusTrap.md): Keeps keyboard focus inside a subtree while it is on screen and hands it back when it goes away. Dialogs, sheets and focus-trapping popovers already use it.
+- [KumoGrid](doc/components/KumoGrid.md): Kumo's `Grid`: a responsive column grid with a gap, whose columns collapse at Kumo's breakpoints.
+- [KumoHoverCard](doc/components/KumoHoverCard.md): A preview card that opens while the pointer rests on a link or name: a Worker's last deployment, a zone's status.
+- [KumoIcon](doc/components/KumoIcon.md): Renders a Phosphor glyph from `KumoIcons` (or any `IconData`) at Kumo's 16px default size.
+- [KumoInlineCopyText](doc/components/KumoInlineCopyText.md): Kumo's `InlineCopyText`: a compact, borderless copy control for IDs and other short values in text and dense table cells.
+- [KumoInput](doc/components/KumoInput.md): Kumo's `Input`: a single-line text field with a built-in label, description and error message. Use it for names, hostnames, emails, URLs, search boxes and any other short text.
+- [KumoInputArea](doc/components/KumoInputArea.md): Kumo's `InputArea`: a multi-line text field (a textarea) with a built-in label, description and error message. Use it for notes, descriptions, messages and pasted config or scripts.
+- [KumoInputGroup](doc/components/KumoInputGroup.md): Kumo's `InputGroup`: one field built from an input and the parts around it (icons, text addons, an inline suffix, buttons), drawn inside a single ring with a single focus ring.
+- [KumoInputOtp](doc/components/KumoInputOtp.md): A one-time code field drawn as a row of cells, for verification codes sent by SMS, email or an authenticator app.
+- [KumoKbd](doc/components/KumoKbd.md): Keyboard key chips: one key ("K") or a shortcut ("⌘ K" on a Mac, "Ctrl K" elsewhere), named the way each platform names it.
+- [KumoLabel](doc/components/KumoLabel.md): Kumo's `Label`: the medium-weight 14px text above a form control, with an optional "(optional)" marker and an info tooltip.
+- [KumoLayerCard](doc/components/KumoLayerCard.md): Kumo's `LayerCard`: the standard container for a block of content, plain or layered with a header strip.
+- [KumoLayerDialog](doc/components/KumoLayerDialog.md): A strict responsive dialog with a sticky title frame and one primary action: a centered panel from 640px up, a bottom sheet that follows the finger on phones.
+- [KumoLink](doc/components/KumoLink.md): A styled text link: link blue with a soft underline, or inheriting the surrounding color, or plain. Flutter has no `href`, so navigation happens in `onPress`.
+- [KumoLoader](doc/components/KumoLoader.md): Kumo's `Loader`: a spinner for work of unknown length.
+- [KumoMapChart](doc/components/KumoMapChart.md): A choropleth map: Kumo's `ChoroplethMap`, drawn over region shapes you provide. Each region is filled from a continuous color scale by its value; regions without a value keep the neutral no-data fill.
+- [KumoMenuPanel](doc/components/KumoMenuPanel.md): The shared parts of every menu and option list: `KumoMenuPanel` (surface), `KumoMenuRow` (row), `KumoMenuSeparator`, `KumoMenuGroupLabel` and `KumoMenuKeyboard` (arrow-key movement).
+- [KumoMenubar](doc/components/KumoMenubar.md): A horizontal bar of menus (File, View, Deploy) in Kumo's `MenuBar` look: a recessed track where the open menu's trigger is raised onto the base surface.
+- [KumoMeter](doc/components/KumoMeter.md): Kumo's `Meter`: a labeled bar for a measured value within a known range, such as storage used or request quota.
+- [KumoNumberInput](doc/components/KumoNumberInput.md): A numeric field with minus and plus steppers, bounds, decimals and keyboard stepping, in Kumo's input style. Use it for counts, ports, rates and durations.
+- [KumoPageHeader](doc/components/KumoPageHeader.md): The top of a page: breadcrumbs, a title and description, then segmented tabs with the page's actions.
+- [KumoPagination](doc/components/KumoPagination.md): Page navigation under a table or list: "Showing 1-25 of 500" on one side, joined first, previous, page number, next and last buttons on the other.
+- [KumoPopover](doc/components/KumoPopover.md): Rich, interactive content anchored to a trigger: a notification list, a small settings form, a confirmation with buttons.
+- [KumoPressable](doc/components/KumoPressable.md): The interaction primitive under every tappable Kumo component. Use it for custom rows, tiles and chips.
+- [KumoProgress](doc/components/KumoProgress.md): Linear and circular progress for work that finishes: an upload, a deployment, a migration.
+- [KumoRadio](doc/components/KumoRadio.md): Kumo's `Radio.Item`: one option of a `KumoRadioGroup`. It is only valid as an item of a group, which supplies its selection, focus and appearance.
+- [KumoRadioGroup](doc/components/KumoRadioGroup.md): Kumo's `Radio.Group`: a legend over mutually exclusive `KumoRadio` items, as circles, choice cards or a compact segmented bar.
+- [KumoResourceList](doc/components/KumoResourceList.md): The page for a list of resources (Workers, buckets, namespaces): a title with an icon and description, resource cards with metadata, status and actions, an aside for usage notes, and loading, empty and error states.
+- [KumoSankeyChart](doc/components/KumoSankeyChart.md): A Sankey diagram: flows between nodes, each link as wide as its value. Kumo's `SankeyChart`, laid out with the d3/ECharts Sankey algorithm and drawn with `CustomPainter`.
+- [KumoSelect](doc/components/KumoSelect.md): A field-styled trigger that opens a list of options. Reach for it when the user picks one value (or a few) from a known list: a region, a plan, an environment.
+- [KumoSensitiveInput](doc/components/KumoSensitiveInput.md): Kumo's `SensitiveInput`: a field for secrets (API tokens, signing keys, passwords) that shows a mask until it is tapped, with a hide toggle and a copy button.
+- [KumoSeparator](doc/components/KumoSeparator.md): A 1px hairline between groups of content, horizontal or vertical, with an optional centered label.
+- [KumoSheet](doc/components/KumoSheet.md): A sheet attached to a screen edge that follows the finger. Open one with `showKumoSheet`.
+- [KumoSidebar](doc/components/KumoSidebar.md): App navigation: a header, scrolling groups of rows with icons, badges and nested collapsible sections, and a footer with the collapse button. Collapses to a 57px icon rail.
+- [KumoSkeletonLine](doc/components/KumoSkeletonLine.md): Kumo's `SkeletonLine`: a placeholder bar that stands in for a line of text while it loads.
+- [KumoSlider](doc/components/KumoSlider.md): Kumo's `Slider`: pick a number, or a range between two numbers, by dragging a thumb along a recessed track. The value shows in a badge under each thumb, with the min and max at the ends.
+- [KumoSparkline](doc/components/KumoSparkline.md): A compact trend line for table cells, stat tiles and list rows: no axes, no tooltip, just the shape of the data. Kumo has no sparkline; this one follows its chart styling.
+- [KumoStepper](doc/components/KumoStepper.md): A multi-step flow: `KumoSteps`, the current step's content and Back / Continue buttons, with a named final action. For onboarding flows such as adding a zone or creating a Worker.
+- [KumoSteps](doc/components/KumoSteps.md): A progress indicator for multi-step flows: numbered markers joined by connectors, horizontal on wide layouts and vertical on narrow ones. Shaped after shadcn's steps and drawn with Kumo tokens; Kumo has no steps component.
+- [KumoStrings](doc/components/KumoStrings.md): All built-in copy (labels, announcements, month names) in one place, provided by `KumoLocale`.
+- [KumoSwitch](doc/components/KumoSwitch.md): Kumo's `Switch`: an on/off control for a setting that takes effect at once, with a thumb you can tap or drag.
+- [KumoSwitchGroup](doc/components/KumoSwitchGroup.md): Kumo's `Switch.Group`: a legend over related `KumoSwitch`es, each with its own value, with an error and a description below.
+- [KumoTable](doc/components/KumoTable.md): Kumo's `Table`: rows of data under a header, with sorting, row selection, pinned columns, lazy rows and a card layout for phones.
+- [KumoTableOfContents](doc/components/KumoTableOfContents.md): "On this page" navigation beside a long page: section links with a brand rule on the active one, which follows the scroll position. It combines Kumo's `TableOfContents` with its `useTableOfContentsActiveId` hook.
+- [KumoTabs](doc/components/KumoTabs.md): A row of tabs with a moving active indicator, for switching between views of one resource (a Worker's overview, metrics and settings). `KumoTabPanels` adds content pages that swipe with the finger.
+- [KumoTagInput](doc/components/KumoTagInput.md): A field that collects short values as removable tags. Reach for it for lists the user types: email recipients, allowed origins, labels.
+- [KumoText](doc/components/KumoText.md): Kumo's `Text`: every string in a Kumo UI, with Kumo's variants and sizes.
+- [KumoThemeProvider](doc/components/KumoThemeProvider.md): The root of a Kumo app: resolves light or dark mode, applies a theme variant and typography, provides `context.kumo`, and cross-fades a mode change.
+- [KumoTimeInput](doc/components/KumoTimeInput.md): A typed time field: hours, minutes and optionally seconds as separate parts in one Kumo field, with an AM/PM toggle in 12-hour mode. Kumo has no time component; this follows shadcn's time input in Kumo's field style.
+- [KumoTimePicker](doc/components/KumoTimePicker.md): A time field that opens a picker: scrolling columns in a popover on wide screens, snapping wheels in a bottom sheet on phones. Kumo has no time component; this follows shadcn's time picker in Kumo's field style.
+- [KumoTimeline](doc/components/KumoTimeline.md): A vertical list of events, each with a status marker, title, time and description: deployment history, audit logs, rollout steps.
+- [KumoTimeseriesChart](doc/components/KumoTimeseriesChart.md): Lines, area fills or stacked bars over time, with nice value ticks, time labels that adapt to the range, thresholds, reference markers and a crosshair tooltip. Kumo's `TimeseriesChart`, drawn with `CustomPainter` (no ECharts).
+- [KumoToast](doc/components/KumoToast.md): Brief, non-blocking notifications that stack in a corner of the screen, pause while the user looks at them and swipe away.
+- [KumoToggle](doc/components/KumoToggle.md): A two-state button that stays pressed: a filter, a view option, a formatting style. Not a Kumo component; it follows shadcn's Toggle with Kumo's segmented styling, where the pressed state fills with `contrast` and inverse text.
+- [KumoToggleGroup](doc/components/KumoToggleGroup.md): A row of toggles that act together: one pressed at a time (a view mode, a log level) or any number (HTTP methods, text formatting). Not a Kumo component; it follows shadcn's ToggleGroup and draws Kumo's segmented bar by default.
+- [KumoToolbar](doc/components/KumoToolbar.md): Controls grouped into one compact card, with shared borders between items and only the outer corners rounded. Items that do not fit move into a "More" menu.
+- [KumoTooltip](doc/components/KumoTooltip.md): Kumo's `Tooltip`: a short label for a control, shown on hover after a delay, at once on keyboard focus, and on long press with touch.
+- [KumoTracker](doc/components/KumoTracker.md): An uptime tracker: a row of day bars colored by status, a tooltip per bar with the date and status, a legend, and a spoken summary.
+- [KumoTree](doc/components/KumoTree.md): A nested list of expandable items with selection, keyboard arrows and lazy children: files in a Worker bundle, objects in an R2 bucket, zones by account.
+- [showKumoAlertDialog](doc/components/showKumoAlertDialog.md): Asks the user to confirm one action and returns `true` only when they pick it; Cancel, Escape and the back gesture return `false`.

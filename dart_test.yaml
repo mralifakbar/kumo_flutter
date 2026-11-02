@@ -1,0 +1,5 @@
+tags:
+  golden:
+    # Font rasterisation differs per OS. Goldens are recorded on macOS;
+    # run them there with `flutter test --tags golden`.
+    skip: false

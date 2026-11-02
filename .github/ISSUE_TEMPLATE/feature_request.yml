@@ -1,0 +1,21 @@
+name: Feature or component request
+description: Ask for a missing Kumo component, prop or behavior.
+labels: [enhancement]
+body:
+  - type: input
+    id: kumo
+    attributes:
+      label: Kumo reference
+      description: Link to the Kumo docs page or source, if this exists in Kumo.
+      placeholder: https://kumo-ui.com/components/...
+  - type: textarea
+    id: need
+    attributes:
+      label: What do you need, and why?
+    validations:
+      required: true
+  - type: textarea
+    id: api
+    attributes:
+      label: Proposed API
+      render: dart

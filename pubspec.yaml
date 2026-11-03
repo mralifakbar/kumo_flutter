@@ -1,7 +1,7 @@
 name: kumo_flutter
 description: >-
   Unofficial Flutter port of Cloudflare's Kumo design system: OKLCH-accurate light and dark themes, 1,530 Phosphor icons and accessible, spring-driven components.
-version: 0.1.0
+version: 0.1.1
 homepage: https://github.com/mralifakbar/kumo_flutter
 repository: https://github.com/mralifakbar/kumo_flutter
 issue_tracker: https://github.com/mralifakbar/kumo_flutter/issues

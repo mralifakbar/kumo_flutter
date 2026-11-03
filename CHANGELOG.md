@@ -1,3 +1,9 @@
+## 0.1.1
+
+- License: `LICENSE` is now the standard MIT text, with copyright lines for the kumo_flutter authors and Cloudflare, Inc., so pub.dev recognizes it. Kumo's original notice is kept in `assets/licenses/Kumo-MIT.txt` and appears on the app's license page.
+- Newer Flutter: expand and collapse animations (tree, timeline, banner, field messages, resource list) no longer use the deprecated `SizeTransition.axisAlignment`. Motion is unchanged, and 3.38 is still supported.
+- Code is formatted with `dart format`.
+
 ## 0.1.0
 
 First release.

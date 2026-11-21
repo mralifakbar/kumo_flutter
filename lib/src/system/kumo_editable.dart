@@ -133,7 +133,7 @@ class KumoEditable extends StatelessWidget {
         minLines: minLines,
         maxLines: obscureText ? 1 : maxLines,
         textAlign: textAlign,
-        textAlignVertical: multiline ? TextAlignVertical.top : TextAlignVertical.center,
+        textAlignVertical: TextAlignVertical.top,
         autofillHints: autofillHints,
         style: style,
         cursorColor: caret,
